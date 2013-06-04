@@ -1,0 +1,957 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>Embedded GUI Framework</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="Embedded GUI Framework"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2013-06-04 Tue"/>
+<meta name="author" content="slayer"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style>
+<link rel="stylesheet" type="text/css" href="./nmg.css" />
+<script type="text/javascript" src="http://orgmode.org/org-info.js">
+/**
+ *
+ * @source: http://orgmode.org/org-info.js
+ *
+ * @licstart  The following is the entire license notice for the
+ *  JavaScript code in http://orgmode.org/org-info.js.
+ *
+ * Copyright (C) 2012-2013  Sebastian Rose
+ *
+ *
+ * The JavaScript code in this tag is free software: you can
+ * redistribute it and/or modify it under the terms of the GNU
+ * General Public License (GNU GPL) as published by the Free Software
+ * Foundation, either version 3 of the License, or (at your option)
+ * any later version.  The code is distributed WITHOUT ANY WARRANTY;
+ * without even the implied warranty of MERCHANTABILITY or FITNESS
+ * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+ *
+ * As additional permission under GNU GPL version 3 section 7, you
+ * may distribute non-source (e.g., minimized or compacted) forms of
+ * that code without the copy of the GNU GPL normally required by
+ * section 4, provided you include this license notice and a URL
+ * through which recipients can access the Corresponding Source.
+ *
+ * @licend  The above is the entire license notice
+ * for the JavaScript code in http://orgmode.org/org-info.js.
+ *
+ */
+</script>
+
+<script type="text/javascript">
+
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+
+<!--/*--><![CDATA[/*><!--*/
+org_html_manager.set("TOC_DEPTH", "3");
+org_html_manager.set("LINK_HOME", "");
+org_html_manager.set("LINK_UP", "");
+org_html_manager.set("LOCAL_TOC", "1");
+org_html_manager.set("VIEW_BUTTONS", "0");
+org_html_manager.set("MOUSE_HINT", "underline");
+org_html_manager.set("FIXED_TOC", "0");
+org_html_manager.set("TOC", "0");
+org_html_manager.set("VIEW", "overview");
+org_html_manager.setup();  // activate after the parameters are set
+/*]]>*///-->
+</script>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">Embedded GUI Framework</h1>
+
+
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Overview</a>
+<ul>
+<li><a href="#sec-1-1">Embedded GUI Framework</a>
+<ul>
+<li><a href="#sec-1-1-1">Background:</a></li>
+<li><a href="#sec-1-1-2">Why we need it:</a></li>
+<li><a href="#sec-1-1-3">How/Technologies:</a></li>
+<li><a href="#sec-1-1-4">Features:</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">Vital Vio LLC:</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">Hardware</a>
+<ul>
+<li><a href="#sec-2-1">A13-OLinuXino-MICRO</a>
+<ul>
+<li><a href="#sec-2-1-1">Features</a></li>
+<li><a href="#sec-2-1-2">FAQ</a></li>
+<li><a href="#sec-2-1-3">Documentation</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-3">Links</a>
+<ul>
+<li><a href="#sec-3-1">General</a></li>
+<li><a href="#sec-3-2">Software Sources</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">Resources</a>
+<ul>
+<li><a href="#sec-4-1">Hello World</a>
+<ul>
+<li><a href="#sec-4-1-1">Programming for A13 in debian</a></li>
+<li><a href="#sec-4-1-2">Cross Compiling</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-2">Debugging on embedded using opensource tools (part 1) {source}</a>
+<ul>
+<li><a href="#sec-4-2-1">Overview</a></li>
+<li><a href="#sec-4-2-2">Set up a GCC Cross compiler project in Eclipse</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Overview</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">Embedded GUI Framework</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">Background:</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p>We live in a world surrounded by computers - from our (arguably excessive) coffee  machines to our cell phones and cars, microcomputers play an integral role in our everyday lives. With the cost of electronics rapidly decreasing, and touchscreens becoming commonplace even on low cost consumer products, a unique need has arisen for a unified way of creating user interfaces on embedded devices.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2">Why we need it:</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+<p>It is easy for small companies and hobbyists to prototype microcontroller based products, such as environmental sensors and other equipment. However, user interface design is generally left at basic pushbuttons and potentiometers, with at most a simple text display on a serial LCD. The barrier to entry into high end touchscreen interfaces is high: it often involves more development/work than the device itself, and there exist few unified solutions for multi-processor and display targeted builds. The few solutions that do exist are prohibitively expensive: For example, a license of Segger EmWin costs $12,300&hellip; per target architecture/CPU! The Embedded GUI Framework aims to be a “drop in” interface for embedded developers to rapidly incorporate touchscreens into projects.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3">How/Technologies:</h4>
+<div class="outline-text-4" id="text-1-1-3">
+
+<p>The Embedded GUI Framework will be built in C to allow use with the vast majority of embedded toolchains in use. All hardware specific code will be isolated into header files, with preprocessor directives to allow targeted builds for different architectures. As a testing platform, TI Stellaris ARM M4 microprocessors will be used, driving a low cost 480 x 272px TFT touchscreen via a 24 bit parallel interface (the most common interface for LCD drivers).
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4">Features:</h4>
+<div class="outline-text-4" id="text-1-1-4">
+
+<ul>
+<li id="sec-1-1-4-1">Controls/Widgets<br/>
+<ul>
+<li>Pushbutton
+</li>
+<li>Slider/Fader
+</li>
+<li>Label/Text control
+</li>
+<li>Tabs/groups for controls
+</li>
+<li>Events
+<ul>
+<li>Touchscreen ‘coordinates’
+</li>
+<li>Button events (‘callback’ / function pointer)
+</li>
+<li>Encapsulated hardware specific code (to allow easy addition of new architectures/display drivers)
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Vital Vio LLC:</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>Vital Vio is a privately held biomedical and lighting design startup focused on manipulating light to address real world problems by developing innovative methods of delivery. Through precise combination and control of visible light, Vital Vio products utilize light for more than just illumination. Vital Vio units currently focus on the benefits of passive decontamination for human health aspects and environmental safety from microorganisms. This RCOS project will be under the guidance of Vital Vio, and supported in part (office space, some additional benefits) by Vital Vio LLC. The scope of the Embedded GUI Framework does not include any Vital Vio specific features, and is useful to a variety of other applications involving touchscreen interfaces. Vital Vio’s involvement in the project offers a unique and valuable opportunity for an open source project from RCOS to be immediately incorporated into a production product.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Hardware</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">A13-OLinuXino-MICRO</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p><img src="./img/A13-OLinuXino-MICRO-2.jpg"  alt="./img/A13-OLinuXino-MICRO-2.jpg" />
+</p>
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">Features</h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<ul>
+<li>A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
+</li>
+<li>256 MB RAM (128Mbit x 16)
+</li>
+<li>5VDC input power supply with own ICs, noise immune design
+</li>
+<li>1 USB host
+</li>
+<li>1 USB OTG which can power the board
+</li>
+<li>SD-card connector for booting the Linux image
+</li>
+<li>VGA video output
+</li>
+<li>LCD signals available on connector so you still can use LCD if you diasble VGA/HDMI
+</li>
+<li>Audio output
+</li>
+<li>Microphone input pads (no connector)
+</li>
+<li>1 User key
+</li>
+<li>4 Mount holes
+</li>
+<li>UEXT connectorfor connecting addtional UEXT modules like Zigbee, Bluetooth, Relays, etc
+</li>
+<li>GPIO connector with 68/74 pins and these signals:
+<ul>
+<li>17 for adding NAND flash;
+</li>
+<li>22 for connecting LCDs;
+</li>
+<li>20+4 including 8 GPIOs which can be input, output, interrupt sources;
+</li>
+<li>3x I2C;
+</li>
+<li>2x UARTs;
+</li>
+<li>SDIO2 for connectinf SDcards and modules;
+</li>
+<li>5 system pins: +5V, +3.3V, GND, RESET, NMI
+</li>
+</ul>
+
+</li>
+<li>Dimensions: 100 x 85 mm (3.950x3.350'')
+</li>
+<li>Optional low-cost 7" LCD with touchscreen
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2">FAQ</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+<ul>
+<li id="sec-2-1-2-1">There is only 1 USB host on the board, how can I connect simultaneously my USB mouse and USB keyboard?<br/>
+<ul>
+<li>You should use external USB hub.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-2-1-2-2">What software is available for the board?<br/>
+<ul>
+<li>The software development changes very rapidly. So far we have reports for number of Linux distributions working properly with the MICRO, please visit the WIKI and the GitHub     pages of A13-OLinuXino-MICRO to find suitable distributions;additionally you might want to check on the forum for additional help
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-2-1-2-3">I bought A13-LCD7-TS but when I connect it to the A13-OLinuXino-MICRO I receive no image on the display. What do I do wrong?<br/>
+<ul>
+<li>The default A13-OLinuXino-MICRO image is set for a VGA display and resolution. To use LCD with A13-OLinuXino-MICRO you need to upload new image with the appropriate settings.
+</li>
+<li>The download links for the images may be found in the wiki article for A13-OLinuXino.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-2-1-2-4">What is the operating temperature range of A13-OLinuXino?<br/>
+<ul>
+<li>The board works in the commercial temeprature range 0+70C
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-2-1-2-5">Where can I find the Android image for the A13-OLinuXino-MICRO?<br/>
+<ul>
+<li>At the moment we haven't tested Android booting from SD card. Android from SD card is currently not officially supported. However note that there are people reporting success getting it to run - head to the Olimex forums for more recent info.
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-2-1-3" class="outline-4">
+<h4 id="sec-2-1-3">Documentation</h4>
+<div class="outline-text-4" id="text-2-1-3">
+
+<ul>
+<li><a href="./doc/A13-OLINUXINO-MICRO.pdf">A13-OLinuXino-MICRO User Manual</a>
+</li>
+<li><a href="./doc/A13-Brief.pdf">ManyCore Lite SoC for Android 4.0 PAD</a>
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Links</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">General</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li><a href="https://github.com/OLIMEX/OLINUXINO">https://github.com/OLIMEX/OLINUXINO</a>
+</li>
+<li><a href="https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/">https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/</a>
+</li>
+<li><a href="http://linux-sunxi.org/Main_Page">http://linux-sunxi.org/Main_Page</a> - for discussion and community support
+</li>
+<li><a href="https://www.olimex.com/forum/">https://www.olimex.com/forum/</a> - for OLinuXino development discussions 
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Software Sources</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<ul>
+<li><a href="https://www.olimex.com/wiki/A13-OLinuXino-MICRO">https://www.olimex.com/wiki/A13-OLinuXino-MICRO</a>
+<ul>
+<li><a href="https://docs.google.com/file/d/0B-bAEPML8fwlTWFweEZGM0hmMkE/edit">https://docs.google.com/file/d/0B-bAEPML8fwlTWFweEZGM0hmMkE/edit</a>
+</li>
+</ul>
+
+</li>
+<li><a href="https://www.olimex.com/wiki/A13-OLinuXino">https://www.olimex.com/wiki/A13-OLinuXino</a>
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Resources</h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Hello World</h3>
+<div class="outline-text-3" id="text-4-1">
+
+
+</div>
+
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1">Programming for A13 in debian</h4>
+<div class="outline-text-4" id="text-4-1-1">
+
+<ul>
+<li>There are 2 main methods to create programs for your A13 board.
+<dl>
+<dt>Cross compiling</dt><dd>Setting up a tool chain to compile on another system, which is typically faster and easier to manage.
+</dd>
+<dt>Programming on board</dt><dd>installing a compiler to compile directly on the board
+</dd>
+</dl>
+
+</li>
+<li>The sections below contain instructions for these 2 methods
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2">Cross Compiling</h4>
+<div class="outline-text-4" id="text-4-1-2">
+
+<ul>
+<li>Cross compiling is usually performed on another linux machine, it seems the most common for doing this is ubuntu.
+</li>
+<li>If you have compiled the kernel and setup the SD card you will already have most of the tool chain setup on your machine
+</li>
+</ul>
+
+<ul>
+<li id="sec-4-1-2-1">Setting up the tool chain<br/>
+<ul>
+<li>The following instructions are to be performed on a linux machine which is not the A13 board.
+</li>
+<li>Complete the following steps to setup the tool chain.
+</li>
+<li>These instructions have been tested on ubuntu only however they may work for other distributions.
+</li>
+</ul>
+
+<ul>
+<li id="sec-4-1-2-1-1">Instructions<br/>
+<ul>
+<li id="sec-4-1-2-1-1-1">Install eclipse<br/>
+<ul>
+<li>Eclipse is a GUI which enables easy compilation and debugging when the appropriate tools have been installed.
+</li>
+<li>This may be able to be installed using the package manager on your linux system.
+</li>
+<li>Manual eclipes install
+<ul>
+<li>To manually install the most up to date eclipse perform the following:
+<ol>
+<li>Go to the eclipse download section
+</li>
+<li>Eclipse download Download to your linux machine the suitable eclipse version.
+</li>
+<li>Decompress the downloaded file into any directory you like by moving the downloaded file to your desired directory. Open a terminal, go to the directory and decompress with the command
+
+
+
+<pre class="src src-sh">tar -xzvf FILENAME.
+</pre>
+
+<ul>
+<li>This will create a directory in this location called eclipse Within this directory is the executable eclipse.exe
+</li>
+</ul>
+
+</li>
+<li>It is recommended to create a launcher on your desktop which points to this executable file to make it easier to start.
+</li>
+</ol>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-2-1-1-2">Manual Java runtime install<br/>
+<ul>
+<li>As eclipse is written in java the jave runtime is required as well.
+</li>
+<li>Download the java runtime.
+</li>
+<li>Java download page Download the java RPM file that your eclipse version requires.
+</li>
+<li>Follow the instructions on the java download page beside the download to install
+<ul>
+<li>Your eclipse installation should now start up.
+</li>
+</ul>
+
+</li>
+<li>Install the tool chain
+<ul>
+<li>The instructions contained in this wiki were originally sourced from this page Debugging on embedded using opensource tools
+</li>
+</ul>
+
+</li>
+<li>To compile code for the A13 the ArmV5 tool chain is required.
+</li>
+<li>Change to super user
+
+
+
+<pre class="src src-sh"><span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">sudo su</span>
+</pre>
+
+</li>
+<li>Install compilers, libs and make # apt-get install gcc g++ make libncurses5-dev
+</li>
+<li>Open the repository file "/etc/apt/sources.list"
+</li>
+<li>Add the following line
+
+
+
+<pre class="example">deb http://www.emdebian.org/debian/ squeeze main
+</pre>
+
+</li>
+<li>update the repository info
+
+
+
+<pre class="src src-sh"><span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">apt-get update</span>
+</pre>
+
+
+</li>
+<li>install some packages
+
+
+
+<pre class="src src-sh"><span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">apt-get install linux-libc-dev-armel-cross</span>
+<span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">apt-get install libc6-armel-cross</span>
+<span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">apt-get install libc6-dev-armel-cross</span>
+<span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">apt-get install binutils-arm-linux-gnueabi</span>
+<span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">apt-get install gcc-4.4-arm-linux-gnueabi</span>
+<span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">apt-get install g++-4.4-arm-linux-gnueabi</span>
+<span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">apt-get install uboot-mkimage</span>
+</pre>
+
+<ul>
+<li>The tool chain should now be installed
+</li>
+</ul>
+
+</li>
+<li>Creating a hello world program using eclipse
+<ul>
+<li>Follow this tutorial to create a hello world program Debugging on embedded using opensource tools
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-2-1-2">Some issues found for some users:<br/>
+<ul>
+<li id="sec-4-1-2-1-2-1">Issue : After having installed eclipse and the toolchain the path and prefix for the compiler as listed in the example could not be found.<br/>
+<ul>
+<li>Solution : Look for the same prefix in a different path, /usr/bin is likely to hold the files.
+</li>
+</ul>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-2-1-2-2">Issue : Having built the program and copied it to the A13 board it will not run resulting in "permission denied"<br/>
+<ul>
+<li>Solution: Check the permissions for the file are set to allow execution by typing #ls -l . if you dont see a lot of x's (3) in the first column its likely your cause. To change the permissions type #chmod ugo+x FileName
+</li>
+</ul>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-2-1-2-3">Issue : executing the file returns "command not found"<br/>
+<ul>
+<li>Solution: A library file can not be found this is either /lib/ld-linux.so.3 or /lib/ld-linux-armhf.so.3 . To find the specific one your file is looking for open the executable in a text editor on the first line or 2 you will find the file name its looking for ld-linux.so.3 .
+</li>
+</ul>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-2-1-3">Programming on the A13 board<br/>
+<ul>
+<li>Below is a way to create a hello world program on your A13 olinuxino board in a suitable folder create your code file by typing
+
+
+
+<pre class="src src-sh">nano hello.c
+</pre>
+
+</li>
+<li>type the following into the program
+
+
+
+<pre class="src src-c"><span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;stdio.h&gt;</span>
+
+<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">main</span> ()
+{
+printf(<span style="color: #ffc1c1;">"hello world\n"</span>);
+}
+
+save by pressing ctrl o
+exit by pressing <span style="color: #63b8ff;">ctrl</span> <span style="color: #7fffd4;">x</span>  
+</pre>
+
+</li>
+<li>compile the program in the command line by typing
+
+
+
+<pre class="src src-sh">gcc -o hello hello.c
+</pre>
+
+<p>
+  OR
+</p>
+
+
+<pre class="src src-sh">gcc-4.6 -o hello hello.c
+</pre>
+
+
+</li>
+<li>make the file executable by typing
+
+
+
+<pre class="src src-sh">chmod z+x hello
+</pre>
+
+
+</li>
+<li>execute the binary file
+
+
+
+<pre class="src src-sh">./hello
+</pre>
+
+</li>
+<li>this should print out hello world
+</li>
+<li>if it has this means you have created a program on your A13 olinuxino board 
+</li>
+</ul>
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">Debugging on embedded using opensource tools (part 1) <a href="http://www.agilart.com/blog/debugging-on-embedded-using-opensource-tools-part-1">{source}</a></h3>
+<div class="outline-text-3" id="text-4-2">
+
+
+</div>
+
+<div id="outline-container-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1">Overview</h4>
+<div class="outline-text-4" id="text-4-2-1">
+
+<ul>
+<li>written by brakova on Dec 19 2012 1:39 PM
+</li>
+<li>Just a few days ago we got a great surprise from Olimex - the new Olinuxino A13! After setting up the SD card, installing Debian and trying the Agilart platform works on it we wanted to set up the developing environment in order to make it easy to cross compile and cross debug C/C++ code that would run on the microcontroller from the host machine.
+</li>
+<li>So here is how we worked our way through this and managed to get cross compiling and cross debugging working with the standart GCC and GDB on the Olinuxino Micro board. The same set of steps would work for other microcontrollers too, you just need to have the right toolchain.
+</li>
+<li>First make sure that you have installed the Eclipse CDT plugin. You cal also install the whole Eclipse IDE for C/C++ Developers. Then you need the appropriate arm toolchain against which you can cross compile your code. In order to generate programs that can run and be debugged on the Olinuxino, we need to install the appropriate compiler and debugger and set up the project in Eclipse.
+</li>
+<li>Setting up your toolchain for cross compilation
+</li>
+<li>You don't need ARM based host to develop software for Olinuxino. You can do everything with Ubuntu and a proper cross compiler. To produce code that will run on the Olinuxino you need a toolchain with ARMv5 support. Because Ubuntu has default toolchain arm-linux-gnueabi for ARMv7arm, solution is to get proper toolchain from Debian repositories.
+
+
+
+<pre class="src src-sh">sudo apt-get install gcc g++ make libncurses5-dev
+</pre>
+
+</li>
+<li>Add the following line to /etc/apt/sources.list
+
+
+
+<pre class="src src-sh">deb http://www.emdebian.org/debian/ squeeze main
+</pre>
+
+</li>
+<li>Install the following packages:
+
+
+
+<pre class="src src-sh">sudo apt-get install linux-libc-dev-armel-cross
+sudo apt-get install libc6-armel-cross
+sudo apt-get install libc6-dev-armel-cross
+sudo apt-get install binutils-arm-linux-gnueabi
+sudo apt-get install gcc-4.4-arm-linux-gnueabi
+sudo apt-get install g++-4.4-arm-linux-gnueabi
+sudo apt-get install uboot-mkimage
+</pre>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2">Set up a GCC Cross compiler project in Eclipse</h4>
+<div class="outline-text-4" id="text-4-2-2">
+
+<ul>
+<li id="sec-4-2-2-1">Open Eclipse and click on File &gt;&gt; New &gt;&gt; C++ Project<br/>
+<img src="./img/cross-compile-blog01.png"  alt="./img/cross-compile-blog01.png" />
+<ul>
+<li>In the Project Type section select the Cross-compile Project. This is how eclipse will know that we don't want to use the standart gcc but another tooolchain(arm-unknown-linux-gnueabi-gcc).
+</li>
+<li>When you create the project add a simple main.cpp source file.
+<ul>
+<li>Here we'll do the 'Hello World' in this case 'Hello Olinuxino' project.
+</li>
+<li>Then go to the project's Settings page and check the cross compiler configuration settings. Have a look at the Path and the Prefix options:
+    <img src="./img/cross-compile-blog02.png"  alt="./img/cross-compile-blog02.png" />
+</li>
+</ul>
+
+</li>
+<li>Then we are ready to build the project. In the console check that Eclipse is using the right gcc toolchain. In this case it should be 'arm-unknown-linux-gnueabi-g++'. If it doesn't work for some reason check that the toolchain is installed correctly by building the preject by manually from the terminal. If for some reason you have problems with the toolchain you can download build it yourself by following <a href="http://archlinuxarm.org/developers/distcc-cross-compiling">this guide from the Archlinux community</a>.
+<ul>
+<li><img src="./img/cross-compile-blog03.png"  alt="./img/cross-compile-blog03.png" />
+</li>
+</ul>
+
+</li>
+<li>Get the executable on the Olinuxino. An easy way to do this is usinf sshfs:
+
+
+
+<pre class="src src-sh">sshfs root@olinuxino-hostname:/ ~/olinuxino
+</pre>
+
+</li>
+<li>It will ask you for the password - remember that the default one is root. Here we use Olinuxino Micro, but any arm-based microcontroller would be the same. You just need the right toolchain. for Raspberry Pi you even need the exact same toolchain.
+<ul>
+<li><img src="./img/cross-compile-blog04.png"  alt="./img/cross-compile-blog04.png" />
+<ul>
+<li>The next part would cover what are the steps you need to do in order to coss debug from your GCC Exclipse project on the Olinuxino Micro.
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>Cheers!
+</li>
+</ul>
+
+
+
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2013-06-04 Tue</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3e with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
