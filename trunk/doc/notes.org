@@ -1337,3 +1337,29 @@ Powered by WordPress.com
 3. Format SD Card as ext3 (using gparted)
 4. Copy img file to card
 
+*** Links
++ http://www.cnx-software.com/2012/12/21/olimex-a13-olinuxino-micro-development-board-unboxing-and-review/
+
+*** dd - https://sites.google.com/site/jennasbeagleboardsite/tutorials/getting-started/flash-and-image-to-the-sd-card
++ Identify which disk belongs to your SD card, in my case it is disk1.  Your output may look different depending on how your SD card is formatted.
++ Next, you need to unmount the disk, so do:
+  #+BEGIN_SRC sh
+    diskutil unmountDisk /dev/diskX  
+  #+END_SRC
+  + (replace X with whatever disk # applies to you, in my case it would be /dev/disk1).
++ Finally, run dd to save your .img file onto the card:
+  #+BEGIN_SRC sh
+    dd -bs 1m if="path to your .img file" of=/dev/diskX  
+  #+END_SRC
++ This could take some time.  If you want to check on the status of this process while it's running, open up another terminal and search for the process ID by doing:
+  #+BEGIN_SRC sh
+    ps ax | grep dd
+  #+END_SRC
++ This should print a list of all processes running dd, which, if you aren't running dd for anything else, should just bring up one process.  To see the status, do:
+  #+BEGIN_SRC sh
+    kill -INFO gpid  
+  #+END_SRC
+  + replacing gpid with the process ID you found from the previous step.  This output will actually print to the terminal which is running the dd process, and will show you how many bytes have been written so far.  Once it's finished, you should have a Beagleboard ready SD card.
+
+
+*** https://www.olimex.com/wiki/Prebuilt_SD_card_images_running_debian
