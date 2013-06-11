@@ -7,11 +7,10 @@
  *  
  *  @title FILENAME
  *  @author Nicholas Guthrie
- *  @email guthrn@rpi.edu
  *  @web http//nickguthrie.com
  *  @created DATE
  * 
- *  Compile with: g++ -g -o ../FILENAME FILENAME.EXTENSION
+ *  Compile with: g++ -g -o ../bin/FILENAME FILENAME.EXTENSION
  */
 ////////////////////////////////////////////////////////////////////////////////
 //------------------------------------------------------------------ :Libraries:

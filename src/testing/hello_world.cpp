@@ -1,17 +1,14 @@
 ////////////////////////////////////////////////////////////////////////////////
 /**
- *  @file FILENAME.EXTENSION
- *  @brief 
+ *  @file hello_world.cpp
+ *  @brief Test basic functionality.
  *
- *  DETAILED DESCRIPTION
- *  
- *  @title FILENAME
+ *  @title hello_world
  *  @author Nicholas Guthrie
- *  @email guthrn@rpi.edu
  *  @web http//nickguthrie.com
- *  @created DATE
+ *  @created June 11, 2013
  * 
- *  Compile with: g++ -g -o ../FILENAME FILENAME.EXTENSION
+ *  Compile with: g++ -g -o ../../bin/testing/hello_world hello_world.cpp
  */
 ////////////////////////////////////////////////////////////////////////////////
 //------------------------------------------------------------------ :Libraries:
@@ -62,12 +59,13 @@ int Example_Function();
 // -----------------------------------------------------------------------------
 int main ( int argc, char* argv[] )
 {
-    //////////////////////////////
-    // Variables
-    //////////////////////////////
-      
-    //////////////////////////////
-    // Input 
+  //////////////////////////////
+  // Variables
+  //////////////////////////////
+  cout << "hello world" << endl;
+  
+  //////////////////////////////
+  // Input 
     //////////////////////////////  
       
     //////////////////////////////
