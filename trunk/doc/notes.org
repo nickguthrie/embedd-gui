@@ -1320,8 +1320,51 @@ Powered by WordPress.com
 + [[http://opensource.org/licenses/BSD-2-Clause][BSD 2 Clause]]
 + [[http://opensource.org/licenses/BSD-3-Clause][BSD 3 Clause]]
 
-* Work
-** Installation of Debian
+* Notes
+** Communicate Bluetooth
+*** Steps
+**** Connect to Linvar
+Passphrase: 1234
+
+**** Edit /etc/bluetooth/rfcomm.conf file
+#+BEGIN_EXAMPLE
+#
+# RFCOMM configuration file.
+#
+
+rfcomm0 {
+	# Automatically bind the device at startup
+	bind no;
+
+	# Bluetooth address of the device
+	device 00:12:03:27:71:07;
+
+	# RFCOMM channel for the connection
+	channel	1;
+
+	# Description of the connection
+	comment "Example Bluetooth device";
+}
+#+END_EXAMPLE
+
+**** Restart Bluetooth
+#+BEGIN_SRC sh
+service bluetooth restart
+#+END_SRC
+
+**** Determine the Hardware Address
+The hardware address should be replaced with that of your phone. If you don't know the hardware address of your phone yet, you can get it by running:
+# hcitool scan
+
+**** Bind the Address
+#+BEGIN_SRC sh
+sudo rfcomm bind 0 00:12:03:27:71:07 
+#+END_SRC
+*** Links
++ [[http://www.thinkwiki.org/wiki/How_to_setup_Bluetooth][How to setup Bluetooth]]
+* Objectives
+** DONE Obtain Hardware
+** DONE Get Debian Running
 *** Overview
 + I am installing a Debian Image found here: https://www.olimex.com/wiki/A13-OLinuXino-MICRO
   + Debian Image Includes:
@@ -1336,30 +1379,158 @@ Powered by WordPress.com
    #+END_SRC
 3. Format SD Card as ext3 (using gparted)
 4. Copy img file to card
+   #+BEGIN_SRC sh
+   dd bs=4M oflag=sync if=A13_Micro_Debian_1GHz_GPIO_100kHz_I2C_WIFI_USB_LAN_without_X_and_touch_first_release.img of=/dev/mmcblk0
+   #+END_SRC
 
 *** Links
 + http://www.cnx-software.com/2012/12/21/olimex-a13-olinuxino-micro-development-board-unboxing-and-review/
++ https://www.olimex.com/wiki/Prebuilt_SD_card_images_running_debian
 
-*** dd - https://sites.google.com/site/jennasbeagleboardsite/tutorials/getting-started/flash-and-image-to-the-sd-card
-+ Identify which disk belongs to your SD card, in my case it is disk1.  Your output may look different depending on how your SD card is formatted.
-+ Next, you need to unmount the disk, so do:
-  #+BEGIN_SRC sh
-    diskutil unmountDisk /dev/diskX  
-  #+END_SRC
-  + (replace X with whatever disk # applies to you, in my case it would be /dev/disk1).
-+ Finally, run dd to save your .img file onto the card:
-  #+BEGIN_SRC sh
-    dd -bs 1m if="path to your .img file" of=/dev/diskX  
-  #+END_SRC
-+ This could take some time.  If you want to check on the status of this process while it's running, open up another terminal and search for the process ID by doing:
-  #+BEGIN_SRC sh
-    ps ax | grep dd
-  #+END_SRC
-+ This should print a list of all processes running dd, which, if you aren't running dd for anything else, should just bring up one process.  To see the status, do:
-  #+BEGIN_SRC sh
-    kill -INFO gpid  
-  #+END_SRC
-  + replacing gpid with the process ID you found from the previous step.  This output will actually print to the terminal which is running the dd process, and will show you how many bytes have been written so far.  Once it's finished, you should have a Beagleboard ready SD card.
+** DONE Set Up Wireless In Debian
+*** Steps
+**** Determine Wireless Device
+#+BEGIN_SRC sh
+dmesg
+#+END_SRC
++ Found as wlan3
 
+**** Configure /etc/network/interfaces as Root
+#+BEGIN_EXAMPLE
+  auto wlan3
+  iface wlan3 inet dhcp
+      wpa-ssid TVCOG
+      wpa-psk COGpass1
+#+END_EXAMPLE
 
-*** https://www.olimex.com/wiki/Prebuilt_SD_card_images_running_debian
+**** Restart the Networking Service
+#+BEGIN_SRC sh
+  service networking restart
+#+END_SRC
+
+**** Test the Network
+#+BEGIN_SRC sh
+  ifconfig
+  ping google.com
+#+END_SRC
+
+*** Links
++ [[http://blog.tplus1.com/blog/2008/06/13/how-to-connect-to-a-wireless-network-from-the-ubuntu-command-line/][How to connect to a wireless network from the ubuntu command line]]
++ [[http://www.cyberciti.biz/faq/debian-linux-wpa-wpa2-wireless-wifi-networking/][debian linux wpa wpa2 wireless wifi networking]]
+** DONE Get Serial Over Linux
+*** Installation
+**** Modify /etc/bluetooth/rfcomm.conf as Root
+#+BEGIN_EXAMPLE
+rfcomm2 {
+	# Automatically bind the device at startup
+	bind no;
+
+	# Bluetooth address of the device
+	device 00:12:03:27:71:07;
+
+	# RFCOMM channel for the connection
+	channel	1;
+
+	# Description of the connection
+	comment "Olimex";
+}
+#+END_EXAMPLE
+**** Restart Bluetooth
+#+BEGIN_SRC sh
+  sudo service bluetooth restart
+#+END_SRC
+
+*** Connecting
+1. Initialize Connection
+   #+BEGIN_SRC sh
+     sudo rfcomm connect rfcomm2
+   #+END_SRC
+2. Connect with Screen
+   #+BEGIN_SRC sh
+   screen /dev/rfcomm2 115200
+   #+END_SRC
+3. Login
+*** Links
++ [[http://www.cyberciti.biz/hardware/5-linux-unix-commands-for-connecting-to-the-serial-console/][5 linux unix commands for connecting to the serial console]]
++ [[http://www.heatxsink.com/entry/how-to-pair-a-bluetooth-device-from-command-line-on-linux][how to pair a bluetooth device from command line on linux]]
+** DONE Install Programs
+*** Steps
+**** Update Packages
+#+BEGIN_SRC sh
+apt-get update; apt-get upgrade; apt-get dist-upgrade
+#+END_SRC
+
+**** Install Packages
+#+BEGIN_SRC sh
+apt-get install aptitude
+apt-get install emacs
+#+END_SRC
+
+** Configure SSH to start on Boot
+*** Steps
+**** Install ssh server
+#+BEGIN_SRC sh
+apt-get install openssh-server
+#+END_SRC
+**** Create or modify the /etc/init.d/sshd init script as follows:
+#+BEGIN_SRC sh
+    #! /bin/sh
+    #
+    # start/stop the secure shell daemon
+
+    case "$1" in
+    'start')
+
+    	# Start the ssh daemon
+    	if [ -x /usr/sbin/sshd ]; then
+    		echo "starting SSHD daemon"
+    		/usr/sbin/sshd &
+    	fi
+    	;;
+
+    'stop')
+    	# Stop the ssh daemon
+    	/usr/bin/pkill -x sshd
+    	;;
+    *)
+    	echo "usage: /etc/init.d/sshd {start|stop}"
+    ;;
+#+END_SRC
+**** Check that /etc/rc3.d/S89sshd exists (or any sshd startup script exists) and is a soft link to /etc/init.d/sshd.
++ If not, create it using the following command:
+  #+BEGIN_SRC sh
+      ln -s /etc/init.d/sshd /etc/rc3.d/S89sshd
+  #+END_SRC
+**** Determine that ssh is running
+#+BEGIN_SRC sh
+  service ssh status
+#+END_SRC
+**** Determine Port Open
+#+BEGIN_SRC sh
+  netstat -tlpn
+#+END_SRC
++ Port is: 22122
+
+**** Determine IP Address to connect to
+#+BEGIN_SRC sh
+  ifconfig
+#+END_SRC
+
+**** Connect to ssh
+#+BEGIN_SRC sh
+  ssh root@192.168.12.128 -p 22122
+#+END_SRC
+*** Debugging
+**** Check ports being listened on
+#+BEGIN_SRC sh
+netstat -an | grep "LISTEN"
+#+END_SRC
+*** Links
++ [[http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic%3D%252Fcom.ibm.tnpm.doc%252Finstall%252Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html][Configure Open SSH Server to start up on system boot]]
++ [[http://raspberrypi.stackexchange.com/questions/4709/ssh-connection-refused-on-raspberry-pi-cannot-find-why][ssh connection refused on raspberry pi cannot find why]]
+** Hello World Program
+** Successfully Toggle Pins
+** Build Connector for Screen
+** Successfully Recieve Input
+** Output to Screen
+** Build a Button that does Something
