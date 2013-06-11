@@ -1464,9 +1464,10 @@ apt-get update; apt-get upgrade; apt-get dist-upgrade
 #+BEGIN_SRC sh
 apt-get install aptitude
 apt-get install emacs
+apt-get install build-essentials
 #+END_SRC
 
-** Configure SSH to start on Boot
+** DONE Configure SSH to start on Boot
 *** Steps
 **** Install ssh server
 #+BEGIN_SRC sh
@@ -1528,7 +1529,8 @@ netstat -an | grep "LISTEN"
 *** Links
 + [[http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic%3D%252Fcom.ibm.tnpm.doc%252Finstall%252Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html][Configure Open SSH Server to start up on system boot]]
 + [[http://raspberrypi.stackexchange.com/questions/4709/ssh-connection-refused-on-raspberry-pi-cannot-find-why][ssh connection refused on raspberry pi cannot find why]]
-** Hello World Program
+** Configure Static IP Address
+** DONE Hello World Program
 ** Successfully Toggle Pins
 ** Build Connector for Screen
 ** Successfully Recieve Input
