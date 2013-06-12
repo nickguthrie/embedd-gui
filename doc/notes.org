@@ -1,3 +1,4 @@
+
 #+TITLE:     Embedded GUI Framework
 #+DATE:      2013-06-04 Tue
 
@@ -1530,10 +1531,48 @@ netstat -an | grep "LISTEN"
 *** Links
 + [[http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic%3D%252Fcom.ibm.tnpm.doc%252Finstall%252Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html][Configure Open SSH Server to start up on system boot]]
 + [[http://raspberrypi.stackexchange.com/questions/4709/ssh-connection-refused-on-raspberry-pi-cannot-find-why][ssh connection refused on raspberry pi cannot find why]]
-** Configure Static IP Address
+** DONE Configure Static IP Address
+*** Steps
+**** Determine Information
+     #+begin_src sh
+       ifconfig
+     #+end_src
+       + Find:
+	 + address
+	 + netmask
+	 + gateway
+	 + DNS Servers
+**** Modify /etc/network/interfaces as Root
+     #+begin_example
+       auto wlan3 
+       iface wlan3 inet static
+          wpa-ssid TVCOG
+          wpa-psk COGpass1
+          address 192.168.12.200
+          netmask 255.255.255.0
+          gateway 192.168.12.1
+     #+end_example
+**** Modify /etc/resolv.conf as Root
+     #+begin_example
+     domain techvalleycenterofgravity.com
+     search techvalleycenterofgravity.com
+     nameserver 64.22.32.8
+     nameserver 64.22.32.9
+     #+end_example
+**** Restart Networking as Root
+     #+begin_src sh
+       /etc/init.d/networking restart
+     #+end_src
+**** Test Results
+     #+begin_src sh
+       ifconfig
+       ping google.com
+     #+end_src
+*** Links
+    + [[http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu][Linux Basics set a Static IP on Ubuntu]]
 ** DONE Hello World Program
 ** Successfully Toggle Pins
 ** Build Connector for Screen
-** Successfully Recieve Input
+** Successfully Recieve Input from Screen
 ** Output to Screen
-** Build a Button that does Something
+** Build a Button that does Something on Screen
