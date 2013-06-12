@@ -2,7 +2,7 @@
 #+DATE:      2013-06-04 Tue
 
 #+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:{} -:t f:t *:t <:t
-#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:nil pri:nil tags:not-in-toc
+#+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+INFOJS_OPT: view:overview toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
 #+OPTIONS: LaTeX:dvipng 
 #+STYLE: <link rel="stylesheet" type="text/css" href="./nmg.css" />
@@ -1316,93 +1316,25 @@ Powered by WordPress.com
 + [[http://linux-sunxi.org/U-boot][U-boot]] to build community U-boot
 + [[http://olimex.wordpress.com/2012/10/12/building-bootable-sd-card-with-debian-linux-image-for-a13-olinuxino/][Building bootable Debian SD card]] for A13-OLinuXino Original step by step instructions how to make SD card image with above Kernel and U-boot
 + [[https://www.olimex.com/forum/index.php?topic%3D518.0][Forum post]] with yet another more up to date explanation how to build SD card 
-* License
+* License Information
 + [[http://opensource.org/licenses/BSD-2-Clause][BSD 2 Clause]]
 + [[http://opensource.org/licenses/BSD-3-Clause][BSD 3 Clause]]
 
-* Notes
-** Communicate Bluetooth
-*** Steps
-**** Connect to Linvar
-Passphrase: 1234
-
-**** Edit /etc/bluetooth/rfcomm.conf file
-#+BEGIN_EXAMPLE
-#
-# RFCOMM configuration file.
-#
-
-rfcomm0 {
-	# Automatically bind the device at startup
-	bind no;
-
-	# Bluetooth address of the device
-	device 00:12:03:27:71:07;
-
-	# RFCOMM channel for the connection
-	channel	1;
-
-	# Description of the connection
-	comment "Example Bluetooth device";
-}
-#+END_EXAMPLE
-
-**** Restart Bluetooth
+* Quick Reference
+** Connect to Serial (After configuring rfcomm.conf)
+1. Initialize Connection
+   #+BEGIN_SRC sh
+     sudo rfcomm connect rfcomm2
+   #+END_SRC
+2. Connect with Screen
+   #+BEGIN_SRC sh
+   screen /dev/rfcomm2 115200
+   #+END_SRC
+3. Login
+** Communicate via SSH
 #+BEGIN_SRC sh
-service bluetooth restart
+ssh root@192.168.12.200 -p 22122
 #+END_SRC
-
-**** Determine the Hardware Address
-The hardware address should be replaced with that of your phone. If you don't know the hardware address of your phone yet, you can get it by running:
-# hcitool scan
-
-**** Bind the Address
-#+BEGIN_SRC sh
-sudo rfcomm bind 0 00:12:03:27:71:07 
-#+END_SRC
-*** Links
-+ [[http://www.thinkwiki.org/wiki/How_to_setup_Bluetooth][How to setup Bluetooth]]
-* Research
-** Connecting to the LCD
-*** http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/
-*** http://microcontrollershop.com/product_info.php?products_id=5557
-    + LCD Made for board
-    + Able to [[http://www.youtube.com/watch%3Fv%3Dd2lFHBMhQ64][run android]]
-*** [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][Changing A13-OLinuxino settings to VGA800x600 or LCD800x480]]
-**** GPIO changing
-     + Type:
-       #+begin_src sh
-         lsmod
-       #+end_src
-	 + if sun4i-gpio is present - OK
-	 + unless type modprobe sun4i-gpio
-     + go to /sys/devices/virtual/misc/sun4i-gpio/pins and type ls
-       + list of supported pins will be shown
-       + example for port reading: 
-	 #+begin_src sh
-	   cat pe4 read PortE4 the result should be 0 or 1 example for port writing: echo 1 > pg9 - turn on LED
-	 #+end_src
-     + Changing A13 GPIO direction
-       + extract fex2bin_bin2fex_tools on linux machine
-	 #+begin_src sh
-	   sudo su
-           cd fex2bin_bin2fex_tools directory
-	 #+end_src
-     + mount /dev/sdx1 /mnt/sd - mount first partitition on SD card
-     + ./bin2fex /mnt/sd/script.bin > /mnt/sd/script_test.fex- convert bin file to fex
-       #+begin_src sh
-         gedit /mnt/sd/script_test.fex
-       #+end_src
-     + GPIOs are defined in the end.
-       + where
-	 + Pxx<mode><pull><drive><data> mode 0-7, 0=input, 1=ouput, 2-7 I/O function pull 0=none, 1=up, 2=down drive 0-3, I/O drive level data - data output - logical 0 or 1
-       + for example: if you want to change GPIO direction then change first parameter after port name: gpio_pin_8 = port:PE08<0><default><default><default>make PE8 input gpio_pin_8 = port:PE08<1><default><default><default>make PE8 output
-       + save and exit
-       + convert
-	 #+begin_src sh
-	   ./fex2bin /mnt/sd/script_test.fex > /mnt/sd/script.bin- convert fex to bin
-	 #+end_src
-
 * Objectives
 ** DONE Obtain Hardware
 ** DONE Get Debian Running
@@ -1458,8 +1390,51 @@ dmesg
 *** Links
 + [[http://blog.tplus1.com/blog/2008/06/13/how-to-connect-to-a-wireless-network-from-the-ubuntu-command-line/][How to connect to a wireless network from the ubuntu command line]]
 + [[http://www.cyberciti.biz/faq/debian-linux-wpa-wpa2-wireless-wifi-networking/][debian linux wpa wpa2 wireless wifi networking]]
+** DONE Communicate to Bluetooth
+*** Connecting
+*** Installation
+**** Connect to Linvar
+Passphrase: 1234
+
+**** Edit /etc/bluetooth/rfcomm.conf file
+#+BEGIN_EXAMPLE
+#
+# RFCOMM configuration file.
+#
+
+rfcomm0 {
+	# Automatically bind the device at startup
+	bind no;
+
+	# Bluetooth address of the device
+	device 00:12:03:27:71:07;
+
+	# RFCOMM channel for the connection
+	channel	1;
+
+	# Description of the connection
+	comment "Example Bluetooth device";
+}
+#+END_EXAMPLE
+
+**** Restart Bluetooth
+#+BEGIN_SRC sh
+service bluetooth restart
+#+END_SRC
+
+**** Determine the Hardware Address
+The hardware address should be replaced with that of your phone. If you don't know the hardware address of your phone yet, you can get it by running:
+# hcitool scan
+
+**** Bind the Address
+#+BEGIN_SRC sh
+sudo rfcomm bind 0 00:12:03:27:71:07 
+#+END_SRC
+*** Links
++ [[http://www.thinkwiki.org/wiki/How_to_setup_Bluetooth][How to setup Bluetooth]]
 ** DONE Get Serial Over Linux
 *** Installation
+**** Determine hardware a
 **** Modify /etc/bluetooth/rfcomm.conf as Root
 #+BEGIN_EXAMPLE
 rfcomm2 {
@@ -1611,18 +1586,55 @@ netstat -an | grep "LISTEN"
 *** Links
     + [[http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu][Linux Basics set a Static IP on Ubuntu]]
 ** DONE Hello World Program
+*** Source Code
+#+INCLUDE: "../src/testing/hello_world.cpp" src cpp
 ** Successfully Toggle Pins
 ** Build Connector for Screen
 ** Configure Debian to Communicate to LCD
-***  https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image
-**** Script file
-     + The script.bin is a text file with very important configuration parameters like port GPIO assignments, DDR memory parameters, Video resolution etc, by changing these parameters in the script.bin you can configure your Linux without need to re-compile your kernel again and again this is smart way Allwinner provides for tweaking A13 Linux Kernel
+*** Messing with the script file
+**** Installation
+1. Extract A13 tar file
+   #+BEGIN_SRC sh
+     cd bin/
+     tar -zxvf fex2bin_bin_fex_tools.tar.gz 
+   #+END_SRC
+2. install libusb
+   #+BEGIN_SRC sh
+   sudo apt-get install libusb-1.0-0-dev
+   #+END_SRC
+3. Build Files
+   #+BEGIN_SRC sh
+     make clean
+     make -k
+   #+END_SRC
+**** Usage
+***** Using bin2fex
++ First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
+  #+BEGIN_SRC sh
+    # ./bin2fex script.bin script.fex
+    ../bin/A13_script_files/fex2bin_bin_fex_tools/bin2fex script.bin script.fex
+  #+END_SRC
+  + This converts the script.bin file into script.fex. Here's the output produced - script.fex.
 
-**** fex
+***** Using fex2bin
++ To convert back, it's simply the reverse:
+  #+BEGIN_SRC sh
+    # ./fex2bin script.fex script.bin
+    ../bin/A13_script_files/fex2bin_bin_fex_tools/fex2bin script.fex script.bin
+  #+END_SRC
+  + This can then be placed back on the bootloader partition (remember to also overwrite script0.bin).
+
+*** Links
+**** Configuration of hardware in the debian image [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][{Link}]]
+***** Tools
+****** Script file
++ The script.bin is a text file with very important configuration parameters like port GPIO assignments, DDR memory parameters, Video resolution etc, by changing these parameters in the script.bin you can configure your Linux without need to re-compile your kernel again and again this is smart way Allwinner provides for tweaking A13 Linux Kernel
+
+****** fex
 + The fex tool will convert a script.bin file to a text file and back again.
 + This allows the easy modification of the settings that are in the script.bin file
 
-**** Tools and script files
+****** Tools and script files
 + A13 script bin and fex tool
 + The directory A13_script_files contains:
   + script.bin :: the default script with VGA800x600settings
@@ -1631,9 +1643,9 @@ netstat -an | grep "LISTEN"
   + script_GPIO_LCD_800x480 :: script with LCD800x480settings
 
 
-**** Changing A13-OLinuxino settings to VGA800x600 or LCD800x480
+***** Changing A13-OLinuxino settings to VGA800x600 or LCD800x480
 + The default SD card setup is made with settings for VGA 800x600. If you want to switch between VGA 800x600 and LCD800x480 mode then you have to replace the existing script.bin file from the first SD card partitition (note that this partition is FAT - so you can replace the file under Windows or Linux) with the script.bin file from script_GPIO_VGA directory (if you want to change to VGA800x600 mode) or from script_GPIO_LCD_800x480 directory (if you want to change to LCD800x600 mode).
-**** Establish WIFI connection
+****** Establish WIFI connection
 1. plug in MOD-WIFI-RTL8188 if the board is not A13-OLinuXino-WIFI
    #+begin_src sh
    type ifconfig -a
@@ -1694,7 +1706,7 @@ netstat -an | grep "LISTEN"
          collisions:0 txqueuelen:1000
          RX bytes:31361 (30.6 KiB)  TX bytes:1248 (1.2 KiB)
        #+end_example
-***** Establish ethernet connection using USB-ETHERNET adapter recommended supported adapter USB-ETHERNET-AX88772B
+****** Establish ethernet connection using USB-ETHERNET adapter recommended supported adapter USB-ETHERNET-AX88772B
 1. plug in USB-ETHERNET-AX88772B adapter
 2. type
    #+begin_src sh
@@ -1788,7 +1800,107 @@ gedit /mnt/sd/script_test.fex
   #+end_example
 + save and exit
 + ./fex2bin /mnt/sd/script_test.fex > /mnt/sd/script.bin- convert fex to bin
-** Successfully Recieve Input from Screen
 
+**** fex2bin and bin2fex - script.bin [[http://www.imajeenyus.com/computer/20130301_android_tablet/android/fex2bin_etc.html][{Link}]]
+***** Overview
++ During the boot process, the processor reads a file called script.bin, located in the bootloader (nanda) partition. This file contains all of the processor configuration details (such as pin functions, voltages, clock frequencies, memory configuration etc) and is essential to the correct operation of the tablet. The purpose of this file should be distinguished from that of build.prop, located in /system/build.prop. The latter is a configuration for Android, once it's started. script.bin is configuration for the processor.
++ Note that there is also a file in the bootloader partition called script0.bin - this is a backup and must be identical to script.bin.
++ For more information on the boot process and the function of script.bin, have a look at these links:
+  + http://rhombus-tech.net/allwinner_a10/a10_boot_process/
+  + http://elinux.org/Hack_A10_devices
+  + http://www.cnx-software.com/2012/05/06/editing-allwinner-a10-board-configuration-files-script-bin/
+  + http://linux-sunxi.org/Sunxi-tools
+  + The second link above shows a really neat trick where the pins normally intended for interfacing with the SD card are remapped to a UART port, so you can get a serial port by connecting to the SD card slot!
++ The script.bin file is actually the binary equivalent of the COMMON_SYS_CONFIG100000 file found in the unpacked Livesuit image. The human-readable version is called a "FEX" file, since that's the extension used by some conversion programs. There are a couple of tools available which can convert between the binary and FEX formats, and these are described below. This - http://linux-sunxi.org/Fex_Guide - is a description of the sections in the FEX file.
+  + (There is an online version of these tools available at https://www.miniand.com/tools/fexc, but I couldn't get it to work.)
+
+***** Installation
++ To get the tools, go to the git repository at https://github.com/linux-sunxi/sunxi-tools/ and download the ZIP file (called sunxi-tools-master.zip). Extract this, and place the folder on the Desktop of your Linux machine. Open a terminal, cd to the folder, then run
+  #+BEGIN_SRC sh
+    sudo apt-get install libusb-1.0-0-dev
+  #+END_SRC
+  + (this installs libusb, which is required for compilation). Then type make which should compile the files. This creates two programs (actually it creates a lot more, but these are the only two we're interested in) called bin2fex and fex2bin.
+
+***** Using bin2fex
++ First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
+  #+BEGIN_SRC sh
+    sunxi-tools-master/bin2fex script.bin script.fex
+  #+END_SRC
+  + This converts the script.bin file into script.fex. Here's the output produced - script.fex.
+
+***** Using fex2bin
++ To convert back, it's simply the reverse:
+  #+BEGIN_SRC sh
+    sunxi-tools-master/fex2bin script.fex script.bin
+  #+END_SRC
+  + This can then be placed back on the bootloader partition (remember to also overwrite script0.bin).
+
+***** Using fex2bin on the COMMON_SYS_CONFIG100000 LiveSuit file
++ You can use fex2bin to convert the COMMON_SYS_CONFIG100000 file from the unpacked LiveSuit image into a script.bin file. However, I initially got an error saying "E: CONFIG:696: invalid character at 27" or similar (which means line 696, character 27). Looking at the file, it turned out there were quotes missing at a certain point. Here's the original part of the file:
+  #+BEGIN_EXAMPLE
+    [msc_feature]
+    vendor_name              =USB 2.0
+    product_name             =USB Flash Driver
+    To get it to convert properly, I put quotes as follows:
+    
+    [msc_feature]
+    vendor_name              ="USB 2.0"
+    product_name             ="USB Flash Driver"
+  #+END_EXAMPLE
+  + I'm not sure why quotes were missed out here, since they're present everywhere else.
+
+***** Which version ends up on the tablet?
++ If you're eagle-eyed, you may notice something at this point. In the unpacked LiveSuit files, there are essentially two copies of script.bin. One is the human-readable COMMON_SYS_CONFIG100000 file, the other is the script.bin located within the RFSFAT16_BOOTLOADER_00000 image file. The two copies are identical (if you use fex2bin/bin2fex to convert between them, and remember the quotation marks). So, which one actually ends up on the tablet?
++ I made a slight modification to one, then the other, packing and burning a complete LiveSuit image each time, and determined that it's the script.bin inside RFSFAT16_BOOTLOADER_00000 which ends up on the tablet (hardly surprising, since RFSFAT16_BOOTLOADER_00000 is a byte-for-byte copy of the nanda tablet partition). To be on the safe side, I would still ensure that COMMON_SYS_CONFIG100000 is identical to the script.bin file - maybe LiveSuit uses COMMON_SYS_CONFIG100000 for its own initial configuration, or something.
+
+
+**** imx233-olinuxino-with-lcd-4-3-and-touchscreen [[http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/][{Link}]]
+**** Product Info [[http://microcontrollershop.com/product_info.php?products_id%3D5557][{Link}]]
+**** Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][{Link}]]
+
+** Successfully Recieve Input from Screen
 ** Output to Screen
 ** Build a Button that does Something on Screen
+* Backups
+** Backup the SD Card
+*** Steps
+**** Backup
+1. Navigate to backup directoryhttp://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi
+   #+BEGIN_SRC sh
+     cd BAK/
+   #+END_SRC
+2. connect card to linux, unmounted
+3. copy card contents with dd
+   #+BEGIN_SRC sh
+   sudo dd if=/dev/mmcblk0 | gzip > ./debian_configured_v1.image.gz
+   #+END_SRC
+**** Restore
+1. insert unmounted card
+2. unzip to card
+   #+BEGIN_SRC sh
+   sudo gzip -dc /path/to/debian_configured_v1.image.gz | dd of=/dev/mmcblk0
+   #+END_SRC
+
+*** Links
+**** How do I make a Backup of my Rasberry Pi [[http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi][{Link}]]
+1. Make a full backup of the image
+   + If you are running linux then you can use the dd command to make a full backup of the image:
+     #+BEGIN_SRC sh
+       dd if=/dev/sdx of=/path/to/image
+     #+END_SRC
+   + or for compression:
+     #+BEGIN_SRC sh
+       dd if=/dev/sdx | gzip > /path/to/image.gz
+     #+END_SRC
+   + Where sdx is your SD card.
+2. To restore the backup you reverse the commands:
+   + Uncompressed
+     #+BEGIN_SRC sh
+       dd if=/path/to/image of=/dev/sdx
+     #+END_SRC
+   + or when compressed:
+     #+BEGIN_SRC sh
+       gzip -dc /path/to/image.gz | dd of=/dev/sdx 
+     #+END_SRC
+
+
