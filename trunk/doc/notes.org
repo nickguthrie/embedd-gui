@@ -1,4 +1,3 @@
-
 #+TITLE:     Embedded GUI Framework
 #+DATE:      2013-06-04 Tue
 
@@ -1363,6 +1362,47 @@ sudo rfcomm bind 0 00:12:03:27:71:07
 #+END_SRC
 *** Links
 + [[http://www.thinkwiki.org/wiki/How_to_setup_Bluetooth][How to setup Bluetooth]]
+* Research
+** Connecting to the LCD
+*** http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/
+*** http://microcontrollershop.com/product_info.php?products_id=5557
+    + LCD Made for board
+    + Able to [[http://www.youtube.com/watch%3Fv%3Dd2lFHBMhQ64][run android]]
+*** [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][Changing A13-OLinuxino settings to VGA800x600 or LCD800x480]]
+**** GPIO changing
+     + Type:
+       #+begin_src sh
+         lsmod
+       #+end_src
+	 + if sun4i-gpio is present - OK
+	 + unless type modprobe sun4i-gpio
+     + go to /sys/devices/virtual/misc/sun4i-gpio/pins and type ls
+       + list of supported pins will be shown
+       + example for port reading: 
+	 #+begin_src sh
+	   cat pe4 read PortE4 the result should be 0 or 1 example for port writing: echo 1 > pg9 - turn on LED
+	 #+end_src
+     + Changing A13 GPIO direction
+       + extract fex2bin_bin2fex_tools on linux machine
+	 #+begin_src sh
+	   sudo su
+           cd fex2bin_bin2fex_tools directory
+	 #+end_src
+     + mount /dev/sdx1 /mnt/sd - mount first partitition on SD card
+     + ./bin2fex /mnt/sd/script.bin > /mnt/sd/script_test.fex- convert bin file to fex
+       #+begin_src sh
+         gedit /mnt/sd/script_test.fex
+       #+end_src
+     + GPIOs are defined in the end.
+       + where
+	 + Pxx<mode><pull><drive><data> mode 0-7, 0=input, 1=ouput, 2-7 I/O function pull 0=none, 1=up, 2=down drive 0-3, I/O drive level data - data output - logical 0 or 1
+       + for example: if you want to change GPIO direction then change first parameter after port name: gpio_pin_8 = port:PE08<0><default><default><default>make PE8 input gpio_pin_8 = port:PE08<1><default><default><default>make PE8 output
+       + save and exit
+       + convert
+	 #+begin_src sh
+	   ./fex2bin /mnt/sd/script_test.fex > /mnt/sd/script.bin- convert fex to bin
+	 #+end_src
+
 * Objectives
 ** DONE Obtain Hardware
 ** DONE Get Debian Running
@@ -1573,6 +1613,182 @@ netstat -an | grep "LISTEN"
 ** DONE Hello World Program
 ** Successfully Toggle Pins
 ** Build Connector for Screen
+** Configure Debian to Communicate to LCD
+***  https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image
+**** Script file
+     + The script.bin is a text file with very important configuration parameters like port GPIO assignments, DDR memory parameters, Video resolution etc, by changing these parameters in the script.bin you can configure your Linux without need to re-compile your kernel again and again this is smart way Allwinner provides for tweaking A13 Linux Kernel
+
+**** fex
++ The fex tool will convert a script.bin file to a text file and back again.
++ This allows the easy modification of the settings that are in the script.bin file
+
+**** Tools and script files
++ A13 script bin and fex tool
++ The directory A13_script_files contains:
+  + script.bin :: the default script with VGA800x600settings
+  + fex2bin_bin_fex_tools.tar.gz :: tools fex2bin and bin2fex for converting the *.bin script file to *.fex(text file)
+  + script_GPIO_VGA :: script with VGA800x600settings
+  + script_GPIO_LCD_800x480 :: script with LCD800x480settings
+
+
+**** Changing A13-OLinuxino settings to VGA800x600 or LCD800x480
++ The default SD card setup is made with settings for VGA 800x600. If you want to switch between VGA 800x600 and LCD800x480 mode then you have to replace the existing script.bin file from the first SD card partitition (note that this partition is FAT - so you can replace the file under Windows or Linux) with the script.bin file from script_GPIO_VGA directory (if you want to change to VGA800x600 mode) or from script_GPIO_LCD_800x480 directory (if you want to change to LCD800x600 mode).
+**** Establish WIFI connection
+1. plug in MOD-WIFI-RTL8188 if the board is not A13-OLinuXino-WIFI
+   #+begin_src sh
+   type ifconfig -a
+   #+end_src
+   + Output
+     #+begin_example
+       lo Link encap:Local Loopback
+       
+                inet addr:127.0.0.1  Mask:255.0.0.0
+                UP LOOPBACK RUNNING  MTU:16436  Metric:1
+                RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:0
+                RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+       tunl0 Link encap:IPIP Tunnel HWaddr
+       
+                NOARP  MTU:1480  Metric:1
+                RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:0
+                RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+       wlan2 Link encap:Ethernet HWaddr 48:02:2a:eb:21:1c
+       
+                inet addr:192.168.0.229  Bcast:192.168.0.255  Mask:255.255.255.0
+                UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+                RX packets:166 errors:0 dropped:726 overruns:0 frame:0
+                TX packets:7 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:1000
+                RX bytes:31361 (30.6 KiB)  TX bytes:1248 (1.2 KiB)
+     #+end_example
+     + and look at your wlan number. In this case we have wlan2
+2. open the file /etc/network/interfaces- for example using vi tool
+   #+begin_src sh
+   vi /etc/network/interfaces
+   #+end_src
+   + and change
+     #+begin_example
+       auto wlan2
+       iface wlan2 inet dhcp
+       wpa-ssid YourSSIDname
+       wpa-psk YourWPAkey
+       reboot A13-OLinuXino board
+        
+       
+     #+end_example
+   + Chek your connection
+     #+begin_src sh
+       ifconfig -a
+     #+end_src
+     + if everything is ok you should see something as:
+       #+begin_example
+       wlan1 Link encap:Ethernet HWaddr 48:02:2a:eb:21:1c
+
+         inet addr:192.168.0.229  Bcast:192.168.0.255  Mask:255.255.255.0
+         UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+         RX packets:166 errors:0 dropped:726 overruns:0 frame:0
+         TX packets:7 errors:0 dropped:0 overruns:0 carrier:0
+         collisions:0 txqueuelen:1000
+         RX bytes:31361 (30.6 KiB)  TX bytes:1248 (1.2 KiB)
+       #+end_example
+***** Establish ethernet connection using USB-ETHERNET adapter recommended supported adapter USB-ETHERNET-AX88772B
+1. plug in USB-ETHERNET-AX88772B adapter
+2. type
+   #+begin_src sh
+   ifconfig -a
+   #+end_src
+   + you should see something like this
+     #+begin_example
+       eth1 Link encap:Ethernet HWaddr 00:80:80:9a:4a:63
+       
+                inet addr:192.168.0.113  Bcast:192.168.0.255  Mask:255.255.255.0
+                UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+                RX packets:58 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:4 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:1000
+                RX bytes:7852 (7.6 KiB)  TX bytes:510 (510.0 B)
+       lo Link encap:Local Loopback
+       
+                inet addr:127.0.0.1  Mask:255.0.0.0
+                UP LOOPBACK RUNNING  MTU:16436  Metric:1
+                RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:0
+                RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+       tunl0 Link encap:IPIP Tunnel HWaddr
+       
+                NOARP  MTU:1480  Metric:1
+                RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:0
+                RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+     #+end_example
+	 + look at your eth number. In this case we have eth1
+3. open the file /etc/network/interfaces- for example using vi tool
+   #+begin_src sh
+   vi /etc/network/interfaces
+   #+end_src
+   + and change the following rows
+     #+begin_example
+       auto eth1
+       iface eth1 inet dhcp
+       where eth1 is the interface number
+       reboot A13-OLinuXino board
+     #+end_example
+   + or type ifup eth1
+4. Check your connection
+   #+begin_src sh
+   ifconfig -a
+   #+end_src
+   + if everything is ok you should see something as:
+     #+begin_example
+       eth1 Link encap:Ethernet HWaddr 00:80:80:9a:4a:63
+       
+                inet addr:192.168.0.113  Bcast:192.168.0.255  Mask:255.255.255.0
+                UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+                RX packets:725 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:10 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:1000
+                RX bytes:77056 (75.2 KiB)  TX bytes:1686 (1.6 KiB)     
+     #+end_example
+****** GPIO changing
+1. lsmod
+   #+begin_src sh
+   type lsmod
+   #+end_src
+   + if sun4i-gpio is present - OK
+   + unless type modprobe sun4i-gpio
+2. go to /sys/devices/virtual/misc/sun4i-gpio/pins and type ls
+   + list of supported pins will be shown
+   + example for port reading: 
+     #+begin_src sh
+     cat pe4 read PortE4 the result should be 0 or 1 example for port writing: echo 1 > pg9 - turn on LED
+     #+end_src
+
+******* Changing A13 GPIO direction
+1. extract fex2bin_bin2fex_tools on linux machine
+   #+begin_src sh
+   sudo su
+   cd fex2bin_bin2fex_tools directory
+   mount /dev/sdx1 /mnt/sd # mount first partitition on SD card
+   ./bin2fex /mnt/sd/script.bin > /mnt/sd/script_test.fex # convert bin file to fex
+gedit /mnt/sd/script_test.fex
+   #+end_src
+******* GPIOs are defined in the end.
++ where
+  #+begin_example
+  Pxx<mode><pull><drive><data> mode 0-7, 0=input, 1=ouput, 2-7 I/O function pull 0=none, 1=up, 2=down drive 0-3, I/O drive level data - data output - logical 0 or 1
+  #+end_example
++ for example: if you want to change GPIO direction then change first parameter after port name
+  #+begin_example
+  gpio_pin_8 = port:PE08<0><default><default><default>make PE8 input gpio_pin_8 = port:PE08<1><default><default><default>make PE8 output
+  #+end_example
++ save and exit
++ ./fex2bin /mnt/sd/script_test.fex > /mnt/sd/script.bin- convert fex to bin
 ** Successfully Recieve Input from Screen
+
 ** Output to Screen
 ** Build a Button that does Something on Screen
