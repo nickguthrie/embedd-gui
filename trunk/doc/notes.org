@@ -388,7 +388,23 @@ netstat -an | grep "LISTEN"
 ** DONE Hello World Program
 *** Source Code
 #+INCLUDE: "../src/testing/hello_world.cpp" src cpp
-** Successfully Toggle Pins
+** DONE Toggle A LED
+*** Toggle a LED
+**** Using the Commandline
+***** Turn it On
+#+BEGIN_SRC sh
+echo 1 > /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
+#+END_SRC
+***** Turn it Off
+#+BEGIN_SRC sh
+echo 0 > /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
+#+END_SRC
+**** Using C Code
+#+INCLUDE: "../src/testing/gpio.c" src c
+
+**** Links
++ [[http://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/][A13 Olinuxino Playing with GPIOS]]
+
 ** Build Connector for Screen
 ** Configure Debian to Communicate to LCD
 *** Messing with the script file

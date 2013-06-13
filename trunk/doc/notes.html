@@ -293,7 +293,11 @@ for the JavaScript code in this tag.
 <li><a href="#sec-5-9-1">Source Code</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-10">Successfully Toggle Pins</a></li>
+<li><a href="#sec-5-10">Toggle A LED</a>
+<ul>
+<li><a href="#sec-5-10-1">Toggle a LED</a></li>
+</ul>
+</li>
 <li><a href="#sec-5-11">Build Connector for Screen</a></li>
 <li><a href="#sec-5-12">Configure Debian to Communicate to LCD</a>
 <ul>
@@ -1556,9 +1560,148 @@ ping google.com
 </div>
 
 <div id="outline-container-5-10" class="outline-3">
-<h3 id="sec-5-10">Successfully Toggle Pins</h3>
+<h3 id="sec-5-10"><span class="done DONE">DONE</span> Toggle A LED</h3>
 <div class="outline-text-3" id="text-5-10">
 
+
+</div>
+
+<div id="outline-container-5-10-1" class="outline-4">
+<h4 id="sec-5-10-1">Toggle a LED</h4>
+<div class="outline-text-4" id="text-5-10-1">
+
+<ul>
+<li id="sec-5-10-1-1">Using the Commandline<br/>
+<ul>
+<li id="sec-5-10-1-1-1">Turn it On<br/>
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">echo</span> 1 &gt; /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-10-1-1-2">Turn it Off<br/>
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">echo</span> 0 &gt; /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
+</pre>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-5-10-1-2">Using C Code<br/>
+
+
+
+<pre class="src src-c"><span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @file gpio.c</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Toggle pg9 LED gpio.</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> *  Turns the Status LED on for two seconds, off for two seconds, then exits.</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @title gpio.c</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @author Nicholas Guthrie</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @created 2013-06-13</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> *  Compile with: gcc gpio.c -o ../../bin/testing/gpio</span>
+<span style="color: #ff7f24; font-style: italic;"> </span><span style="color: #fa8072;">*/</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">------------------------------------------------------------------ :Libraries:</span>
+<span style="color: #fa8072;">//                      </span><span style="color: #ff7f24; font-style: italic;">_    _ _                 _</span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">| |  (_) |__ _ _ __ _ _ _(_)___ ___</span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">| |__| | '_ \ '_/ _` | '_| / -_|_-&lt;</span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">|____|_|_.__/_| \__,_|_| |_\___/__/</span>
+<span style="color: #fa8072;">//</span>
+<span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">-----------------------------------------------------------------------------</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;stdio.h&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;fcntl.h&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;string.h&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;unistd.h&gt;</span> <span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">for sleep</span>
+
+<span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">----------------------------------------------------------------------- :Main:</span>
+<span style="color: #fa8072;">//                              </span><span style="color: #ff7f24; font-style: italic;">__  __      _</span>
+<span style="color: #fa8072;">//                             </span><span style="color: #ff7f24; font-style: italic;">|  \/  |__ _(_)_ _</span>
+<span style="color: #fa8072;">//                             </span><span style="color: #ff7f24; font-style: italic;">| |\/| / _` | | ' \</span>
+<span style="color: #fa8072;">//                             </span><span style="color: #ff7f24; font-style: italic;">|_|  |_\__,_|_|_||_|</span>
+<span style="color: #fa8072;">//</span>
+<span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">-----------------------------------------------------------------------------</span>
+<span style="color: #63b8ff;">int</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">main</span>()
+{
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Variables</span>
+    <span style="color: #63b8ff;">char</span> <span style="color: #7fffd4;">s_0</span>[] = <span style="color: #ffc1c1;">"0"</span>;
+    <span style="color: #63b8ff;">char</span> <span style="color: #7fffd4;">s_1</span>[] = <span style="color: #ffc1c1;">"1"</span>;
+    <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">fd</span>;
+    <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">num</span> = 0;
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Open GPIO Pin</span>
+    <span style="color: #00ffff;">if</span>( (fd=open(<span style="color: #ffc1c1;">"/sys/devices/virtual/misc/sun4i-gpio/pin/pg9"</span>, O_RDWR)) &lt; 0 )
+    {
+        printf(<span style="color: #ffc1c1;">"ERROR Opening file, Exiting.\n"</span>);
+        <span style="color: #00ffff;">return</span> 1;
+    }
+    <span style="color: #00ffff;">else</span>
+    {
+        printf(<span style="color: #ffc1c1;">"Sucessfully opened file.\n"</span>);
+    }
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Turn LED On</span>
+    <span style="color: #00ffff;">if</span>( write(fd, s_1, strlen(s_1)) &lt; 0 )
+    {
+        printf(<span style="color: #ffc1c1;">"  Error writing s_1, Exiting\n"</span>);
+    }
+    <span style="color: #00ffff;">else</span>
+    {
+        printf(<span style="color: #ffc1c1;">"  LED ON\n"</span>);
+    }
+
+    sleep(2);
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Turn LED Off</span>
+    <span style="color: #00ffff;">if</span>( write(fd, s_0, strlen(s_0)) &lt; 0 )
+    {
+        printf(<span style="color: #ffc1c1;">"  Error writing s_0, Exiting\n"</span>);
+    }
+    <span style="color: #00ffff;">else</span>
+    {
+        printf(<span style="color: #ffc1c1;">"  LED OFF\n"</span>);
+    }
+
+    sleep(2);
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Close file</span>
+    <span style="color: #00ffff;">if</span>( close(fd)&lt;0 )
+    {
+        printf(<span style="color: #ffc1c1;">"ERROR closing file, Exiting.\n"</span>);
+        <span style="color: #00ffff;">return</span> 1;
+    }
+    <span style="color: #00ffff;">else</span>
+    {
+        printf(<span style="color: #ffc1c1;">"Sucessfully closed file.\n"</span>);
+    }
+}
+</pre>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-10-1-3">Links<br/>
+<ul>
+<li><a href="http://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/">A13 Olinuxino Playing with GPIOS</a>
+</li>
+</ul>
+
+
+</li>
+</ul>
+</div>
 </div>
 
 </div>
