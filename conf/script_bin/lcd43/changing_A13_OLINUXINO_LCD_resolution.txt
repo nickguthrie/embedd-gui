@@ -1,0 +1,44 @@
+		Changing A13_OLINUXINO_WIFI LCD resolution in Android
+---------------------------------------------------------------------------------------------------------------------------------------
+
+1. Download android SDK for linux from http://developer.android.com/sdk/index.htm
+Extract it in android_SDK directory for example	
+
+2. Open terminal 1 and type:
+cd android_SDK/android-sdk-linux/platform-tools/
+
+3. Open terminal 2 and type 
+cd android_SDK/android-sdk-linux/platform-tools/
+
+4. Power on A13_OLINUXINO_WIFI board, plug in mini USB cable and wait while USB is recognized. In terminal 1 type:
+
+./adb shell
+
+If evereything is ok
+
+root@android:/#
+
+should appear
+
+unless type:
+
+sudo ./adb kill-server
+sudo ./adb start-server
+and then 
+./adb shell
+ 
+5. In terminal 1 type:
+
+mkdir /sdcard/nanda
+
+mount -t vfat /dev/block/nanda /sdcard/nanda
+
+6. In terminal 2 type:
+
+./adb push sys_config1_480x272.bin /sdcard/nanda/script.bin
+
+note that sys_config1_480x272.bin has to be in the same directory(..android_SDK/android-sdk-linux/platform-tools/)
+
+7. In terminal 1 type:
+reboot
+
