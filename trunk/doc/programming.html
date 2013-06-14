@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Programming"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-06-14T16:45-0400"/>
+<meta name="generated" content="2013-06-14T18:53-0400"/>
 <meta name="author" content="Nick"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -202,54 +202,65 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">QT</a>
+<li><a href="#sec-1">Preparing Programming Environment</a>
 <ul>
-<li><a href="#sec-1-1">Overview </a></li>
-<li><a href="#sec-1-2">Cross Compiling </a>
+<li><a href="#sec-1-1">Main IDE</a>
 <ul>
-<li><a href="#sec-1-2-1">Step 1: Set the Cross-Compiler's Path</a></li>
-<li><a href="#sec-1-2-2">Step 2: Create a Target Specific qmake Specification</a></li>
-<li><a href="#sec-1-2-3">Step 3: Provide Architecture Specific Files</a></li>
-<li><a href="#sec-1-2-4">Step 4: Provide Hardware Drivers</a></li>
-<li><a href="#sec-1-2-5">Step 5: Build the Target Specific Executable</a></li>
-<li><a href="#sec-1-2-6">Then build the executable:</a></li>
-</ul>
-</li>
-<li><a href="#sec-1-3">Links</a></li>
-</ul>
-</li>
-<li><a href="#sec-2">Programming for A13 in Debian </a>
-<ul>
-<li><a href="#sec-2-1">Programming for A13 in debian</a></li>
-<li><a href="#sec-2-2">Cross Compiling</a>
-<ul>
-<li><a href="#sec-2-2-1">Setting up the tool chain</a></li>
-</ul>
-</li>
-<li><a href="#sec-2-3">Programming on the A13 board</a></li>
-</ul>
-</li>
-<li><a href="#sec-3">Debugging</a>
-<ul>
-<li><a href="#sec-3-1">Debugging on embedded using opensource tools (part 1) </a>
-<ul>
-<li><a href="#sec-3-1-1">Overview</a></li>
-<li><a href="#sec-3-1-2">Set up a GCC Cross compiler project in Eclipse</a></li>
+<li><a href="#sec-1-1-1">Install Summary</a></li>
+<li><a href="#sec-1-1-2">Install Qt Summary</a></li>
+<li><a href="#sec-1-1-3">Installing Qt for Embedded Linux</a></li>
+<li><a href="#sec-1-1-4">Cross-Compiling Qt for Embedded Linux Applications</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-4">Building Debian</a>
+<li><a href="#sec-2">QT</a>
 <ul>
-<li><a href="#sec-4-1">Building bootable SD-card with Debian Linux Image for A13-OLinuXino</a>
+<li><a href="#sec-2-1">Overview </a></li>
+<li><a href="#sec-2-2">Cross Compiling </a>
 <ul>
-<li><a href="#sec-4-1-1">Info</a></li>
-<li><a href="#sec-4-1-2">Article</a></li>
+<li><a href="#sec-2-2-1">Step 1: Set the Cross-Compiler's Path</a></li>
+<li><a href="#sec-2-2-2">Step 2: Create a Target Specific qmake Specification</a></li>
+<li><a href="#sec-2-2-3">Step 3: Provide Architecture Specific Files</a></li>
+<li><a href="#sec-2-2-4">Step 4: Provide Hardware Drivers</a></li>
+<li><a href="#sec-2-2-5">Step 5: Build the Target Specific Executable</a></li>
+<li><a href="#sec-2-2-6">Then build the executable:</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-2">Build Bootable SD Card with Debian</a>
+<li><a href="#sec-2-3">Links</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">Programming for A13 in Debian </a>
 <ul>
-<li><a href="#sec-4-2-1">Info</a></li>
-<li><a href="#sec-4-2-2">Article</a></li>
+<li><a href="#sec-3-1">Programming for A13 in debian</a></li>
+<li><a href="#sec-3-2">Cross Compiling</a>
+<ul>
+<li><a href="#sec-3-2-1">Setting up the tool chain</a></li>
+</ul>
+</li>
+<li><a href="#sec-3-3">Programming on the A13 board</a></li>
+</ul>
+</li>
+<li><a href="#sec-4">Debugging</a>
+<ul>
+<li><a href="#sec-4-1">Debugging on embedded using opensource tools (part 1) </a>
+<ul>
+<li><a href="#sec-4-1-1">Overview</a></li>
+<li><a href="#sec-4-1-2">Set up a GCC Cross compiler project in Eclipse</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-5">Building Debian</a>
+<ul>
+<li><a href="#sec-5-1">Building bootable SD-card with Debian Linux Image for A13-OLinuXino</a>
+<ul>
+<li><a href="#sec-5-1-1">Info</a></li>
+<li><a href="#sec-5-1-2">Article</a></li>
+</ul>
+</li>
+<li><a href="#sec-5-2">Build Bootable SD Card with Debian</a>
+<ul>
+<li><a href="#sec-5-2-1">Info</a></li>
+<li><a href="#sec-5-2-2">Article</a></li>
 </ul>
 </li>
 </ul>
@@ -259,31 +270,483 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">QT</h2>
+<h2 id="sec-1">Preparing Programming Environment</h2>
 <div class="outline-text-2" id="text-1">
 
 
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">Overview <sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup></h3>
+<h3 id="sec-1-1">Main IDE</h3>
 <div class="outline-text-3" id="text-1-1">
+
+
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">Install Summary</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<ul>
+<li>Add Files
+
+
+
+<pre class="src src-sh">sudo apt-get install gcc g++ make libncurses5-dev
+</pre>
+
+</li>
+<li>Add repository <sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup>
+<ul>
+<li>Backup List
+
+
+
+<pre class="src src-sh">sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+</pre>
+
+</li>
+<li>Add the following line to /etc/apt/sources.list
+
+
+
+<pre class="example">deb http://www.emdebian.org/debian/ squeeze main
+</pre>
+
+</li>
+<li>Update Packages
+
+
+
+<pre class="src src-sh">sudo apt-get update; sudo apt-get upgrade; 
+</pre>
+
+</li>
+</ul>
+
+</li>
+<li>Install the following packages:
+
+
+
+<pre class="src src-sh">sudo apt-get install linux-libc-dev-armel-cross
+sudo apt-get install libc6-armel-crossb
+sudo apt-get install libc6-dev-armel-cross
+sudo apt-get install binutils-arm-linux-gnueabi
+sudo apt-get install gcc-4.4-arm-linux-gnueabi
+sudo apt-get install g++-4.4-arm-linux-gnueabi
+sudo apt-get install uboot-mkimage
+</pre>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2">Install Qt Summary</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+<ol>
+<li>Install qtcreator
+
+
+
+<pre class="src src-sh">sudo apt-get install qtcreator
+</pre>
+
+</li>
+<li>Download Qt libraries 4.8.4 for embedded Linux (226 MB) from <a href="http://qt-project.org/downloads">http://qt-project.org/downloads</a>.
+</li>
+</ol>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-1-3" class="outline-4">
+<h4 id="sec-1-1-3">Installing Qt for Embedded Linux</h4>
+<div class="outline-text-4" id="text-1-1-3">
+
+<ul>
+<li>This document describes how to install Qt for Embedded Linux in your development environment:
+</li>
+</ul>
+
+<ul>
+<li id="sec-1-1-3-1">Step 1: Unpacking the Archive<br/>
+<ul>
+<li>First uncompress the archive in the preferred location, then unpack it:
+ cd &lt;anywhere&gt;
+
+
+
+<pre class="src src-sh">gunzip qt-everywhere-opensource-src-4.8.4.tar.gz;
+tar xf qt-everywhere-opensource-src-4.8.4.tar;
+</pre>
+
+<ul>
+<li>This document assumes that the archive is unpacked in the following directory:
+
+
+
+<pre class="example">~/qt-everywhere-opensource-src-4.8.4
+</pre>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-3-2">Step 2: Building the Library<br/>
+<ul>
+<li>Before building the Qt for Embedded Linux library, run the ./configure script to configure the library for your development architecture.
+
+
+
+<pre class="src src-sh">./configure
+</pre>
+
+<ul>
+<li>You can list all of the configuration system's options by typing
+
+
+
+<pre class="src src-sh">./configure -embedded -help 
+</pre>
+
+<ul>
+<li>The Configuration Options for Qt page gives a brief overview of these.
+</li>
+<li>Note that by default, Qt for Embedded Linux is configured for installation in the /usr/local/Trolltech/QtEmbedded-4.8.4 directory, but this can be changed by using the -prefix option. Alternatively, the -prefix-install option can be used to specify a "local" installation within the source directory.
+</li>
+<li>The configuration system is also designed to allow you to specify your platform architecture:
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">cd</span>  ~/qt-everywhere-opensource-src-4.8.4
+./configure -embedded [architecture]
+</pre>
+
+<ul>
+<li>In general, all Linux systems which have framebuffer support can use the generic architecture. Other typical architectures are x86, arm and mips.
+</li>
+<li>Note: If you want to build Qt for Embedded Linux for use with a virtual framebuffer, pass the -qvfb option to the configure script.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>To create the library and compile all the demos, examples, tools, and tutorials, type:
+
+
+
+<pre class="src src-sh">make
+</pre>
+
+<ul>
+<li>On some systems the make utility is named differently, e.g. gmake. The configure script tells you which make utility to use.
+</li>
+</ul>
+
+</li>
+<li>If you did not configure Qt for Embedded Linux using the -prefix-install option, you need to install the library, demos, examples, tools, and tutorials in the appropriate place. To do this, type:
+
+
+
+<pre class="src src-sh">su -c <span style="color: #ffc1c1;">"make install"</span>
+</pre>
+
+<ul>
+<li>and enter the root password.
+</li>
+<li>Note: You can use the INSTALL_ROOT environment variable to specify the location of the installed files when invoking make install.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-3-3">Step 3: Adjusting the Environment Variables<br/>
+<ul>
+<li>In order to use Qt for Embedded Linux, the PATH variable must be extended to locate qmake, moc and other Qt for Embedded Linux tools, and the LD_LIBRARY_PATH must be extended for compilers that do not support rpath.
+</li>
+<li>To set the PATH variable, add the following lines to your .profile file if your shell is bash, ksh, zsh or sh:
+
+
+
+<pre class="src src-sh"><span style="color: #7fffd4;">PATH</span>=/usr/local/Trolltech/QtEmbedded-4.8.4/bin:$<span style="color: #7fffd4;">PATH</span>
+<span style="color: #b0c4de;">export</span> PATH
+</pre>
+
+<ul>
+<li>In case your shell is csh or tcsh, add the following line to the .login file instead:
+
+
+
+<pre class="src src-sh">setenv PATH /usr/local/Trolltech/QtEmbedded-4.8.4/bin:$<span style="color: #7fffd4;">PATH</span>   
+</pre>
+
+</li>
+<li>If you use a different shell, please modify your environment variables accordingly.
+</li>
+</ul>
+
+</li>
+<li>For compilers that do not support rpath you must also extend the LD_LIBRARY_PATH environment variable to include /usr/local/Trolltech/QtEmbedded-4.8.4/lib. Note that on Linux with GCC, this step is not needed.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-3-4">Step 4: Building the Virtual Framebuffer<br/>
+<ul>
+<li>For development and debugging, Qt for Embedded Linux provides a virtual framebuffer as well as the option of running Qt for Embedded Linux as a VNC server.
+</li>
+<li>For a description of how to install the virtual framebuffer and how to use the VNC protocol, please consult the documentation at:
+<ul>
+<li>The Virtual Framebuffer
+</li>
+<li>The VNC Protocol and Qt for Embedded Linux
+</li>
+</ul>
+
+</li>
+<li>Note that the virtual framebuffer requires a Qt for X11 installation. See Installing Qt for X11 Platforms for details.
+</li>
+<li>The Linux framebuffer, on the other hand, is enabled by default on all modern Linux distributions.
+<ul>
+<li>For information on older versions, see <a href="http://en.tldp.org/HOWTO/Framebuffer-HOWTO.html">http://en.tldp.org/HOWTO/Framebuffer-HOWTO.html</a>.
+</li>
+</ul>
+
+</li>
+<li>To test that the Linux framebuffer is set up correctly, use the program provided by the Testing the Linux Framebuffer document.
+</li>
+</ul>
+
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-1-1-4" class="outline-4">
+<h4 id="sec-1-1-4">Cross-Compiling Qt for Embedded Linux Applications</h4>
+<div class="outline-text-4" id="text-1-1-4">
+
+<ul>
+<li>Cross-compiling is the process of compiling an application on one machine, producing executable code for a different machine or device. To cross-compile a Qt for Embedded Linux application, use the following approach:
+<ul>
+<li>Note: The cross-compiling procedure has the configuration process in common with the installation procedure; i.e., you might not necessarily have to perform all the mentioned actions depending on your current configuration.
+</li>
+</ul>
+
+</li>
+</ul>
+
+<ul>
+<li id="sec-1-1-4-1">Step 1: Set the Cross-Compiler's Path<br/>
+<ul>
+<li>Specify which cross-compiler to use by setting the PATH environment variable. For example, if the current shell is bash, ksh, zsh or sh:
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">PATH</span>=path/to/cross/compiler:$<span style="color: #7fffd4;">PATH</span>
+</pre>
+
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-4-2">Step 2: Create a Target Specific qmake Specification<br/>
+<ul>
+<li>The qmake tool requires a platform and compiler specific qmake.conf file describing the various default values, to generate the appropriate Makefiles. The standard Qt for Embedded Linux distribution provides such files for several combinations of platforms and compilers. These files are located in the distribution's mkspecs/qws subdirectory.
+</li>
+<li>Each platform has a default specification. Qt for Embedded Linux will use the default specification for the current platform unless told otherwise. To override this behavior, you can use the configure script's -platform option to change the specification for the host platform (where compilation will take place).
+</li>
+<li>The configure script's -xplatform option is used to provide a specification for the target architecture (where the library will be deployed).
+</li>
+<li>For example, to cross-compile an application to run on a device with an ARM architecture, using the GCC toolchain, run the configure script at the command line in the following way:
+
+
+
+<pre class="example">./configure -embedded arm -xplatform qws/linux-arm-g++ &lt;other options&gt; 
+</pre>
+
+<ul>
+<li>If neither of the provided specifications fits your target device, you can create your own. To create a custom qmake.conf file, just copy and customize an already existing file. For example:
+
+
+
+<pre class="src src-sh">cp path/to/QtEmbedded/mkspecs/qws/linux-mips-g++/... path/to/QtEmbedded/mkspecs/qws/linux-myarchitecture-g++/...
+</pre>
+
+<ul>
+<li>Note: When defining a mkspec for a Linux target, the directory must be prefixed with "linux-". We recommend that you copy the entire directory.
+</li>
+<li>Note also that when providing you own qmake specifcation, you must use the configure script's -xplatform option to make Qt for Embedded Linux aware of the custom qmake.conf file.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-4-3">Step 3: Provide Architecture Specific Files<br/>
+<ul>
+<li>Starting with Qt 4, all of Qt's implicitly shared classes can safely be copied across threads like any other value classes, i.e., they are fully reentrant. This is accomplished by implementing reference counting operations using atomic hardware instructions on all the different platforms supported by Qt.
+</li>
+<li>To support a new architecture, it is important to ensure that these platform-specific atomic operations are implemented in a corresponding header file (qatomic_ARCH.h), and that this file is located in Qt's src/corelib/arch directory.
+</li>
+<li>For example, the Intel 80386 implementation is located in
+
+
+
+<pre class="example">src/corelib/arch/qatomic_i386.h.
+</pre>
+
+<ul>
+<li>See the Implementing Atomic Operations documentation for details.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-4-4">Step 4: Provide Hardware Drivers<br/>
+<ul>
+<li>Without the proper mouse and keyboard drivers, you will not be able to give any input to your application when it is installed on the target device. You must also ensure that the appropriate screen driver is present to make the server process able to put the application's widgets on screen.
+</li>
+<li>Qt for Embedded Linux provides several ready-made mouse, keyboard and screen drivers, see the pointer handling, character input and display management documentation for details.
+</li>
+<li>In addition, custom drivers can be added by deriving from the QWSMouseHandler, QWSKeyboardHandler and QScreen classes respectively, and by creating corresponding plugins to make use of Qt's plugin mechanism (dynamically loading the drivers into the server application at runtime). Note that the plugins must be located in a location where Qt will look for plugins, e.g., the standard plugin directory.
+</li>
+<li>See the How to Create Qt Plugins documentation and the Plug &amp; Paint example for details.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-1-1-4-5">Step 5: Build the Target Specific Executable<br/>
+<ul>
+<li>Before building the executable, you must specify the target architecture as well as the target specific hardware drivers by running the configure script:
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> path/to/QtEmbedded
+./configure -embedded &lt;architecture&gt; -qt-kbd-&lt;keyboarddriver&gt;
+         -qt-mouse-&lt;mousedriver&gt; -qt-gfx-&lt;screendriver&gt; 
+</pre>
+
+<ul>
+<li>It is also important to make sure that all the third party libraries that the application and the Qt libraries require, are present in the tool chain.
+</li>
+<li>In particular, if the zlib and jpeg libraries are not available, they must be included by running the configure script with the -L and -I options.
+<ul>
+<li>For example:
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> path/to/QtEmbedded
+./configure  &lt;other options&gt;
+             -L /path/to/libjpeg/libraries -I /path/to/libjpeg/headers     
+</pre>
+
+<ul>
+<li>The JPEG source can be downloaded from <a href="http://www.ijg.org/">http://www.ijg.org/</a>. The Qt for Embedded Linux distribution includes a version of the zlib source that can be compiled into the Qt for Embedded Linux library. If integrators wish to use a later version of the zlib library, it can be downloaded from the <a href="http://www.gzip.org/zlib/">http://www.gzip.org/zlib/</a> website.
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>Then build the executable:
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> path/to/myApplication
+qmake -project
+qmake
+make
+</pre>
+
+</li>
+<li>That's all. Your target specific executable is ready for deployment.
+</li>
+</ul>
+
+<p>See also:
+Qt for Embedded Linux Architecture and Deploying Qt for Embedded Linux Applications.
+</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">QT</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">Overview <sup><a class="footref" name="fnr-.2" href="#fn-.2">2</a></sup></h3>
+<div class="outline-text-3" id="text-2-1">
 
 <p>Qt for Embedded Linux applications write directly to the framebuffer, eliminating the need for the X Window System and saving memory. The Linux framebuffer is enabled by default on all modern Linux distributions. 
 </p></div>
 
 </div>
 
-<div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">Cross Compiling <sup><a class="footref" name="fnr-.2" href="#fn-.2">2</a></sup></h3>
-<div class="outline-text-3" id="text-1-2">
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">Cross Compiling <sup><a class="footref" name="fnr-.3" href="#fn-.3">3</a></sup></h3>
+<div class="outline-text-3" id="text-2-2">
 
 
 </div>
 
-<div id="outline-container-1-2-1" class="outline-4">
-<h4 id="sec-1-2-1">Step 1: Set the Cross-Compiler's Path</h4>
-<div class="outline-text-4" id="text-1-2-1">
+<div id="outline-container-2-2-1" class="outline-4">
+<h4 id="sec-2-2-1">Step 1: Set the Cross-Compiler's Path</h4>
+<div class="outline-text-4" id="text-2-2-1">
 
 <ul>
 <li>Specify which cross-compiler to use by setting the PATH environment variable. For example, if the current shell is bash, ksh, zsh or sh:
@@ -300,9 +763,9 @@ for the JavaScript code in this tag.
 
 </div>
 
-<div id="outline-container-1-2-2" class="outline-4">
-<h4 id="sec-1-2-2">Step 2: Create a Target Specific qmake Specification</h4>
-<div class="outline-text-4" id="text-1-2-2">
+<div id="outline-container-2-2-2" class="outline-4">
+<h4 id="sec-2-2-2">Step 2: Create a Target Specific qmake Specification</h4>
+<div class="outline-text-4" id="text-2-2-2">
 
 <ul>
 <li>The qmake tool requires a platform and compiler specific qmake.conf file describing the various default values, to generate the appropriate Makefiles.
@@ -359,9 +822,9 @@ for the JavaScript code in this tag.
 
 </div>
 
-<div id="outline-container-1-2-3" class="outline-4">
-<h4 id="sec-1-2-3">Step 3: Provide Architecture Specific Files</h4>
-<div class="outline-text-4" id="text-1-2-3">
+<div id="outline-container-2-2-3" class="outline-4">
+<h4 id="sec-2-2-3">Step 3: Provide Architecture Specific Files</h4>
+<div class="outline-text-4" id="text-2-2-3">
 
 <ul>
 <li>Starting with Qt 4, all of Qt's implicitly shared classes can safely be copied across threads like any other value classes, i.e., they are fully reentrant.
@@ -386,9 +849,9 @@ for the JavaScript code in this tag.
 
 </div>
 
-<div id="outline-container-1-2-4" class="outline-4">
-<h4 id="sec-1-2-4">Step 4: Provide Hardware Drivers</h4>
-<div class="outline-text-4" id="text-1-2-4">
+<div id="outline-container-2-2-4" class="outline-4">
+<h4 id="sec-2-2-4">Step 4: Provide Hardware Drivers</h4>
+<div class="outline-text-4" id="text-2-2-4">
 
 <ul>
 <li>Without the proper mouse and keyboard drivers, you will not be able to give any input to your application when it is installed on the target device.
@@ -415,9 +878,9 @@ for the JavaScript code in this tag.
 
 </div>
 
-<div id="outline-container-1-2-5" class="outline-4">
-<h4 id="sec-1-2-5">Step 5: Build the Target Specific Executable</h4>
-<div class="outline-text-4" id="text-1-2-5">
+<div id="outline-container-2-2-5" class="outline-4">
+<h4 id="sec-2-2-5">Step 5: Build the Target Specific Executable</h4>
+<div class="outline-text-4" id="text-2-2-5">
 
 <ul>
 <li>Before building the executable, you must specify the target architecture as well as the target specific hardware drivers by running the configure script:
@@ -460,9 +923,9 @@ for the JavaScript code in this tag.
 
 </div>
 
-<div id="outline-container-1-2-6" class="outline-4">
-<h4 id="sec-1-2-6">Then build the executable:</h4>
-<div class="outline-text-4" id="text-1-2-6">
+<div id="outline-container-2-2-6" class="outline-4">
+<h4 id="sec-2-2-6">Then build the executable:</h4>
+<div class="outline-text-4" id="text-2-2-6">
 
 
 
@@ -484,9 +947,9 @@ make
 
 </div>
 
-<div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Links</h3>
-<div class="outline-text-3" id="text-1-3">
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">Links</h3>
+<div class="outline-text-3" id="text-2-3">
 
 <ul>
 <li><a href="http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html">http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html</a>
@@ -501,16 +964,16 @@ make
 
 </div>
 
-<div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Programming for A13 in Debian <sup><a class="footref" name="fnr-.3" href="#fn-.3">3</a></sup></h2>
-<div class="outline-text-2" id="text-2">
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">Programming for A13 in Debian <sup><a class="footref" name="fnr-.4" href="#fn-.4">4</a></sup></h2>
+<div class="outline-text-2" id="text-3">
 
 
 </div>
 
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1">Programming for A13 in debian</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">Programming for A13 in debian</h3>
+<div class="outline-text-3" id="text-3-1">
 
 <ul>
 <li>There are 2 main methods to create programs for your A13 board.
@@ -530,9 +993,9 @@ make
 
 </div>
 
-<div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2">Cross Compiling</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">Cross Compiling</h3>
+<div class="outline-text-3" id="text-3-2">
 
 <ul>
 <li>Cross compiling is usually performed on another linux machine, it seems the most common for doing this is ubuntu.
@@ -544,9 +1007,9 @@ make
 
 </div>
 
-<div id="outline-container-2-2-1" class="outline-4">
-<h4 id="sec-2-2-1">Setting up the tool chain</h4>
-<div class="outline-text-4" id="text-2-2-1">
+<div id="outline-container-3-2-1" class="outline-4">
+<h4 id="sec-3-2-1">Setting up the tool chain</h4>
+<div class="outline-text-4" id="text-3-2-1">
 
 <ul>
 <li>The following instructions are to be performed on a linux machine which is not the A13 board.
@@ -558,9 +1021,9 @@ make
 </ul>
 
 <ul>
-<li id="sec-2-2-1-1">Instructions<br/>
+<li id="sec-3-2-1-1">Instructions<br/>
 <ul>
-<li id="sec-2-2-1-1-1">Install eclipse<br/>
+<li id="sec-3-2-1-1-1">Install eclipse<br/>
 <ul>
 <li>Eclipse is a GUI which enables easy compilation and debugging when the appropriate tools have been installed.
 </li>
@@ -601,7 +1064,7 @@ make
 </li>
 </ul>
 <ul>
-<li id="sec-2-2-1-1-2">Manual Java runtime install<br/>
+<li id="sec-3-2-1-1-2">Manual Java runtime install<br/>
 <ul>
 <li>As eclipse is written in java the jave runtime is required as well.
 </li>
@@ -688,9 +1151,9 @@ make
 </li>
 </ul>
 <ul>
-<li id="sec-2-2-1-2">Some issues found for some users:<br/>
+<li id="sec-3-2-1-2">Some issues found for some users:<br/>
 <ul>
-<li id="sec-2-2-1-2-1">Issue : After having installed eclipse and the toolchain the path and prefix for the compiler as listed in the example could not be found.<br/>
+<li id="sec-3-2-1-2-1">Issue : After having installed eclipse and the toolchain the path and prefix for the compiler as listed in the example could not be found.<br/>
 <ul>
 <li>Solution : Look for the same prefix in a different path, /usr/bin is likely to hold the files.
 </li>
@@ -700,7 +1163,7 @@ make
 </li>
 </ul>
 <ul>
-<li id="sec-2-2-1-2-2">Issue : Having built the program and copied it to the A13 board it will not run resulting in "permission denied"<br/>
+<li id="sec-3-2-1-2-2">Issue : Having built the program and copied it to the A13 board it will not run resulting in "permission denied"<br/>
 <ul>
 <li>Solution: Check the permissions for the file are set to allow execution by typing #ls -l . if you dont see a lot of x's (3) in the first column its likely your cause. To change the permissions type #chmod ugo+x FileName
 </li>
@@ -710,7 +1173,7 @@ make
 </li>
 </ul>
 <ul>
-<li id="sec-2-2-1-2-3">Issue : executing the file returns "command not found"<br/>
+<li id="sec-3-2-1-2-3">Issue : executing the file returns "command not found"<br/>
 <ul>
 <li>Solution: A library file can not be found this is either /lib/ld-linux.so.3 or /lib/ld-linux-armhf.so.3 . To find the specific one your file is looking for open the executable in a text editor on the first line or 2 you will find the file name its looking for ld-linux.so.3 .
 </li>
@@ -725,9 +1188,9 @@ make
 
 </div>
 
-<div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3">Programming on the A13 board</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-3-3" class="outline-3">
+<h3 id="sec-3-3">Programming on the A13 board</h3>
+<div class="outline-text-3" id="text-3-3">
 
 <ul>
 <li>Below is a way to create a hello world program on your A13 olinuxino board in a suitable folder create your code file by typing
@@ -799,23 +1262,23 @@ exit by pressing <span style="color: #63b8ff;">ctrl</span> <span style="color: #
 
 </div>
 
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Debugging</h2>
-<div class="outline-text-2" id="text-3">
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Debugging</h2>
+<div class="outline-text-2" id="text-4">
 
 
 </div>
 
-<div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1">Debugging on embedded using opensource tools (part 1) <sup><a class="footref" name="fnr-.4" href="#fn-.4">4</a></sup></h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Debugging on embedded using opensource tools (part 1) <sup><a class="footref" name="fnr-.5" href="#fn-.5">5</a></sup></h3>
+<div class="outline-text-3" id="text-4-1">
 
 
 </div>
 
-<div id="outline-container-3-1-1" class="outline-4">
-<h4 id="sec-3-1-1">Overview</h4>
-<div class="outline-text-4" id="text-3-1-1">
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1">Overview</h4>
+<div class="outline-text-4" id="text-4-1-1">
 
 <ul>
 <li>written by brakova on Dec 19 2012 1:39 PM
@@ -864,12 +1327,12 @@ sudo apt-get install uboot-mkimage
 
 </div>
 
-<div id="outline-container-3-1-2" class="outline-4">
-<h4 id="sec-3-1-2">Set up a GCC Cross compiler project in Eclipse</h4>
-<div class="outline-text-4" id="text-3-1-2">
+<div id="outline-container-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2">Set up a GCC Cross compiler project in Eclipse</h4>
+<div class="outline-text-4" id="text-4-1-2">
 
 <ul>
-<li id="sec-3-1-2-1">Open Eclipse and click on File &gt;&gt; New &gt;&gt; C++ Project<br/>
+<li id="sec-4-1-2-1">Open Eclipse and click on File &gt;&gt; New &gt;&gt; C++ Project<br/>
 <img src="./img/cross-compile-blog01.png"  alt="./img/cross-compile-blog01.png" />
 <ul>
 <li>In the Project Type section select the Cross-compile Project. This is how eclipse will know that we don't want to use the standart gcc but another tooolchain(arm-unknown-linux-gnueabi-gcc).
@@ -924,23 +1387,23 @@ sudo apt-get install uboot-mkimage
 
 </div>
 
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">Building Debian</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Building Debian</h2>
+<div class="outline-text-2" id="text-5">
 
 
 </div>
 
-<div id="outline-container-4-1" class="outline-3">
-<h3 id="sec-4-1">Building bootable SD-card with Debian Linux Image for A13-OLinuXino</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1">Building bootable SD-card with Debian Linux Image for A13-OLinuXino</h3>
+<div class="outline-text-3" id="text-5-1">
 
 
 </div>
 
-<div id="outline-container-4-1-1" class="outline-4">
-<h4 id="sec-4-1-1">Info</h4>
-<div class="outline-text-4" id="text-4-1-1">
+<div id="outline-container-5-1-1" class="outline-4">
+<h4 id="sec-5-1-1">Info</h4>
+<div class="outline-text-4" id="text-5-1-1">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="right" /><col class="left" />
@@ -961,12 +1424,12 @@ sudo apt-get install uboot-mkimage
 
 </div>
 
-<div id="outline-container-4-1-2" class="outline-4">
-<h4 id="sec-4-1-2">Article</h4>
-<div class="outline-text-4" id="text-4-1-2">
+<div id="outline-container-5-1-2" class="outline-4">
+<h4 id="sec-5-1-2">Article</h4>
+<div class="outline-text-4" id="text-5-1-2">
 
 <ul>
-<li id="sec-4-1-2-1">Overview<br/>
+<li id="sec-5-1-2-1">Overview<br/>
 <ul>
 <li>We ship A13-OLinuXino-WIFI with pre-loaded Android 4.0.3 image on the NAND flash, so it runs out of the box and you can have access to all millions of applications of Google Play.
 </li>
@@ -979,7 +1442,7 @@ sudo apt-get install uboot-mkimage
 </li>
 </ul>
 <ul>
-<li id="sec-4-1-2-2">1. Setup of the toolchain<br/>
+<li id="sec-5-1-2-2">1. Setup of the toolchain<br/>
 <ul>
 <li>You should make sure you have the tools for building the Linux Kernel and install them if you don’t have them. To install new software you should be with super user rights so do this to make sure you are:
 
@@ -1010,7 +1473,7 @@ sudo apt-get install uboot-mkimage
 </li>
 </ul>
 <ul>
-<li id="sec-4-1-2-3">2. Building Uboot<br/>
+<li id="sec-5-1-2-3">2. Building Uboot<br/>
 <ul>
 <li>Allwinner community uboot is maintained by Henrik Nordström aka hno on #freenode irc channel.
 </li>
@@ -1069,7 +1532,7 @@ sudo apt-get install uboot-mkimage
 </li>
 </ul>
 <ul>
-<li id="sec-4-1-2-4">3. Building the Kernel<br/>
+<li id="sec-5-1-2-4">3. Building the Kernel<br/>
 <ul>
 <li>The Allwinner community Kernel is maintained by Alejandro Mery aka mnemoc on #freenode irc channel.
 </li>
@@ -1159,7 +1622,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm <span style="color: #7fffd4;"
 </li>
 </ul>
 <ul>
-<li id="sec-4-1-2-5">4. Make the SD-card<br/>
+<li id="sec-5-1-2-5">4. Make the SD-card<br/>
 <ul>
 <li>First we have to make the correct card partitions, this is done with fdisk.
 </li>
@@ -1275,7 +1738,7 @@ then write the partititons to the card
 </li>
 </ul>
 <ul>
-<li id="sec-4-1-2-6">5. Debian rootfs<br/>
+<li id="sec-5-1-2-6">5. Debian rootfs<br/>
 <ul>
 <li>Linux Kernel and Uboot are ready, now we have the Linux distribution rootfs, how to build one is long topic, the good thing is that there are many already pre-built so we can just download one and use.
 </li>
@@ -1323,7 +1786,7 @@ umount /mnt
 </li>
 </ul>
 <ul>
-<li id="sec-4-1-2-7">6.  Write Uboot and Kernel you build<br/>
+<li id="sec-5-1-2-7">6.  Write Uboot and Kernel you build<br/>
 <ul>
 <li>mount
 
@@ -1395,16 +1858,16 @@ umount /mnt
 
 </div>
 
-<div id="outline-container-4-2" class="outline-3">
-<h3 id="sec-4-2">Build Bootable SD Card with Debian</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2">Build Bootable SD Card with Debian</h3>
+<div class="outline-text-3" id="text-5-2">
 
 
 </div>
 
-<div id="outline-container-4-2-1" class="outline-4">
-<h4 id="sec-4-2-1">Info</h4>
-<div class="outline-text-4" id="text-4-2-1">
+<div id="outline-container-5-2-1" class="outline-4">
+<h4 id="sec-5-2-1">Info</h4>
+<div class="outline-text-4" id="text-5-2-1">
 
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="right" /><col class="left" />
@@ -1426,12 +1889,12 @@ umount /mnt
 
 </div>
 
-<div id="outline-container-4-2-2" class="outline-4">
-<h4 id="sec-4-2-2">Article</h4>
-<div class="outline-text-4" id="text-4-2-2">
+<div id="outline-container-5-2-2" class="outline-4">
+<h4 id="sec-5-2-2">Article</h4>
+<div class="outline-text-4" id="text-5-2-2">
 
 <ul>
-<li id="sec-4-2-2-1">Overview<br/>
+<li id="sec-5-2-2-1">Overview<br/>
 <ul>
 <li>The A13-OLinuXino-WIFI board ships with pre-loaded Android 4.0.3 image on the NAND flash, so it runs out of the box and you can have access to millions of applications on Google Play.
 </li>
@@ -1447,14 +1910,14 @@ umount /mnt
 </li>
 </ul>
 <ul>
-<li id="sec-4-2-2-2">building bootable sd card with debian linux image for a13 olinuxino<br/>
+<li id="sec-5-2-2-2">building bootable sd card with debian linux image for a13 olinuxino<br/>
 <ul>
 <li>U-boot Sunxi Wiki with detailed info
 </li>
 </ul>
 
 <ul>
-<li id="sec-4-2-2-2-1">Contents<br/>
+<li id="sec-5-2-2-2-1">Contents<br/>
 <ol>
 <li>Tools required
 </li>
@@ -1474,7 +1937,7 @@ umount /mnt
 </li>
 </ul>
 <ul>
-<li id="sec-4-2-2-2-2">Tools required<br/>
+<li id="sec-5-2-2-2-2">Tools required<br/>
 <ul>
 <li>A13-OLinuXino or A13-OLinuXino-WIFI
 </li>
@@ -1499,9 +1962,9 @@ umount /mnt
 </li>
 </ul>
 <ul>
-<li id="sec-4-2-2-2-3">Instructions<br/>
+<li id="sec-5-2-2-2-3">Instructions<br/>
 <ul>
-<li id="sec-4-2-2-2-3-1">Setup of the toolchain<br/>
+<li id="sec-5-2-2-2-3-1">Setup of the toolchain<br/>
 <ul>
 <li>You should make sure you have the tools for building the Linux Kernel and install them if you don’t have them. To install new software you should be with super user rights so do this type in a terminal.
 
@@ -1557,7 +2020,7 @@ umount /mnt
 </li>
 </ul>
 <ul>
-<li id="sec-4-2-2-2-3-2">Building Uboot<br/>
+<li id="sec-5-2-2-2-3-2">Building Uboot<br/>
 <ul>
 <li>The Allwinner community uboot is maintained by Henrik Nordström aka hno on #freenode irc channel.
 </li>
@@ -1610,7 +2073,7 @@ umount /mnt
 </li>
 </ul>
 <ul>
-<li id="sec-4-2-2-2-3-3">Building the Kernel<br/>
+<li id="sec-5-2-2-2-3-3">Building the Kernel<br/>
 <ul>
 <li>The Allwinner community Kernel is maintained by Alejandro Mery aka mnemoc on #freenode irc channel.
 </li>
@@ -1693,7 +2156,7 @@ make ARCH=arm CROSS_COMPILE=arm-linux-gnueabi- INSTALL_MOD_PATH=out modules_inst
 </li>
 </ul>
 <ul>
-<li id="sec-4-2-2-2-3-4">Format and setup the SD-card<br/>
+<li id="sec-5-2-2-2-3-4">Format and setup the SD-card<br/>
 <ul>
 <li>First we have to make the correct card partitions, this is done with fdisk.
 </li>
@@ -1818,7 +2281,7 @@ Device Boot Start End Blocks Id System
 </li>
 </ul>
 <ul>
-<li id="sec-4-2-2-2-3-5">Debian rootfs<br/>
+<li id="sec-5-2-2-2-3-5">Debian rootfs<br/>
 <ul>
 <li>The Linux Kernel and Uboot are ready, now we have the Linux distribution rootfs, how to build one is a long topic, the good thing is that there are many already pre-built so we can just download one and use.
 </li>
@@ -1929,7 +2392,7 @@ umount /mnt
 </li>
 </ul>
 <ul>
-<li id="sec-4-2-2-2-4">Software Links<br/>
+<li id="sec-5-2-2-2-4">Software Links<br/>
 <ul>
 <li><a href="http://linux-sunxi.org/Linux">Linux Sunxi to build latest Kernel yourself</a>
 </li>
@@ -1945,19 +2408,23 @@ umount /mnt
 <div id="footnotes">
 <h2 class="footnotes">Footnotes: </h2>
 <div id="text-footnotes">
-<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html">http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html</a>
+<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="https://help.ubuntu.com/community/Repositories/CommandLine">https://help.ubuntu.com/community/Repositories/CommandLine</a>
 </p>
 
 
-<p class="footnote"><sup><a class="footnum" name="fn-.2" href="#fnr-.2">2</a></sup> <a href="http://qt-project.org/doc/qt-4.8/qt-embedded-crosscompiling.html">http://qt-project.org/doc/qt-4.8/qt-embedded-crosscompiling.html</a>
+<p class="footnote"><sup><a class="footnum" name="fn-.2" href="#fnr-.2">2</a></sup> <a href="http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html">http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html</a>
 </p>
 
 
-<p class="footnote"><sup><a class="footnum" name="fn-.3" href="#fnr-.3">3</a></sup> <a href="https://www.olimex.com/wiki/Programming_for_A13_in_debian#Creating_a_hello_world_program_using_eclipse">https://www.olimex.com/wiki/Programming_for_A13_in_debian#Creating_a_hello_world_program_using_eclipse</a>
+<p class="footnote"><sup><a class="footnum" name="fn-.3" href="#fnr-.3">3</a></sup> <a href="http://qt-project.org/doc/qt-4.8/qt-embedded-crosscompiling.html">http://qt-project.org/doc/qt-4.8/qt-embedded-crosscompiling.html</a>
 </p>
 
 
-<p class="footnote"><sup><a class="footnum" name="fn-.4" href="#fnr-.4">4</a></sup> <a href="http://www.agilart.com/blog/debugging-on-embedded-using-opensource-tools-part-1">http://www.agilart.com/blog/debugging-on-embedded-using-opensource-tools-part-1</a>
+<p class="footnote"><sup><a class="footnum" name="fn-.4" href="#fnr-.4">4</a></sup> <a href="https://www.olimex.com/wiki/Programming_for_A13_in_debian#Creating_a_hello_world_program_using_eclipse">https://www.olimex.com/wiki/Programming_for_A13_in_debian#Creating_a_hello_world_program_using_eclipse</a>
+</p>
+
+
+<p class="footnote"><sup><a class="footnum" name="fn-.5" href="#fnr-.5">5</a></sup> <a href="http://www.agilart.com/blog/debugging-on-embedded-using-opensource-tools-part-1">http://www.agilart.com/blog/debugging-on-embedded-using-opensource-tools-part-1</a>
 </p>
 
 
@@ -1975,7 +2442,7 @@ umount /mnt
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-06-14T16:45-0400</p>
+<p class="date">Date: 2013-06-14T18:53-0400</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 

@@ -13,10 +13,180 @@
 #+LINK_HOME: http://code.google.com/p/embedd-gui/
 #+XSLT:
 
+* Note                                                                          :noexport:
++ /usr/local/Trolltech/Qt-4.8.4
+
+
+* Preparing Programming Environment
+** Main IDE
+*** Install Summary
++ Add Files
+  #+BEGIN_SRC sh
+    sudo apt-get install gcc g++ make libncurses5-dev
+  #+END_SRC
++ Add repository [fn:1]
+  + Backup List
+    #+BEGIN_SRC sh
+    sudo cp /etc/apt/sources.list /etc/apt/sources.list.backup
+    #+END_SRC
+  + Add the following line to /etc/apt/sources.list
+    #+BEGIN_EXAMPLE
+      deb http://www.emdebian.org/debian/ squeeze main
+    #+END_EXAMPLE
+  + Update Packages
+    #+BEGIN_SRC sh
+      sudo apt-get update; sudo apt-get upgrade; 
+    #+END_SRC
++ Install the following packages:
+  #+BEGIN_SRC sh
+    sudo apt-get install linux-libc-dev-armel-cross
+    sudo apt-get install libc6-armel-crossb
+    sudo apt-get install libc6-dev-armel-cross
+    sudo apt-get install binutils-arm-linux-gnueabi
+    sudo apt-get install gcc-4.4-arm-linux-gnueabi
+    sudo apt-get install g++-4.4-arm-linux-gnueabi
+    sudo apt-get install uboot-mkimage
+  #+END_SRC
+*** Install Qt Summary
+1. Install qtcreator
+   #+BEGIN_SRC sh
+     sudo apt-get install qtcreator
+   #+END_SRC
+2. Download Qt libraries 4.8.4 for embedded Linux (226 MB) from http://qt-project.org/downloads.
+
+
+*** Installing Qt for Embedded Linux
++ This document describes how to install Qt for Embedded Linux in your development environment:
+**** Step 1: Unpacking the Archive
++ First uncompress the archive in the preferred location, then unpack it:
+ cd <anywhere>
+  #+BEGIN_SRC sh
+    gunzip qt-everywhere-opensource-src-4.8.4.tar.gz;
+    tar xf qt-everywhere-opensource-src-4.8.4.tar;
+  #+END_SRC
+  + This document assumes that the archive is unpacked in the following directory:
+    #+BEGIN_EXAMPLE
+    ~/qt-everywhere-opensource-src-4.8.4
+    #+END_EXAMPLE
+ 
+**** Step 2: Building the Library
++ Before building the Qt for Embedded Linux library, run the ./configure script to configure the library for your development architecture.
+  #+BEGIN_SRC sh
+  ./configure
+  #+END_SRC
+  + You can list all of the configuration system's options by typing
+    #+BEGIN_SRC sh
+   ./configure -embedded -help 
+    #+END_SRC
+    + The Configuration Options for Qt page gives a brief overview of these.
+    + Note that by default, Qt for Embedded Linux is configured for installation in the /usr/local/Trolltech/QtEmbedded-4.8.4 directory, but this can be changed by using the -prefix option. Alternatively, the -prefix-install option can be used to specify a "local" installation within the source directory.
+    + The configuration system is also designed to allow you to specify your platform architecture:
+      #+BEGIN_SRC sh
+        cd  ~/qt-everywhere-opensource-src-4.8.4
+        ./configure -embedded [architecture]
+      #+END_SRC
+      + In general, all Linux systems which have framebuffer support can use the generic architecture. Other typical architectures are x86, arm and mips.
+      + Note: If you want to build Qt for Embedded Linux for use with a virtual framebuffer, pass the -qvfb option to the configure script.
++ To create the library and compile all the demos, examples, tools, and tutorials, type:
+  #+BEGIN_SRC sh
+      make
+  #+END_SRC
+  + On some systems the make utility is named differently, e.g. gmake. The configure script tells you which make utility to use.
++ If you did not configure Qt for Embedded Linux using the -prefix-install option, you need to install the library, demos, examples, tools, and tutorials in the appropriate place. To do this, type:
+  #+BEGIN_SRC sh
+    su -c "make install"
+  #+END_SRC
+  + and enter the root password.
+  + Note: You can use the INSTALL_ROOT environment variable to specify the location of the installed files when invoking make install.
+**** Step 3: Adjusting the Environment Variables
++ In order to use Qt for Embedded Linux, the PATH variable must be extended to locate qmake, moc and other Qt for Embedded Linux tools, and the LD_LIBRARY_PATH must be extended for compilers that do not support rpath.
++ To set the PATH variable, add the following lines to your .profile file if your shell is bash, ksh, zsh or sh:
+  #+BEGIN_SRC sh
+    PATH=/usr/local/Trolltech/QtEmbedded-4.8.4/bin:$PATH
+    export PATH
+  #+END_SRC
+  + In case your shell is csh or tcsh, add the following line to the .login file instead:
+    #+BEGIN_SRC sh
+      setenv PATH /usr/local/Trolltech/QtEmbedded-4.8.4/bin:$PATH   
+    #+END_SRC
+  + If you use a different shell, please modify your environment variables accordingly.
++ For compilers that do not support rpath you must also extend the LD_LIBRARY_PATH environment variable to include /usr/local/Trolltech/QtEmbedded-4.8.4/lib. Note that on Linux with GCC, this step is not needed.
+**** Step 4: Building the Virtual Framebuffer
++ For development and debugging, Qt for Embedded Linux provides a virtual framebuffer as well as the option of running Qt for Embedded Linux as a VNC server.
++ For a description of how to install the virtual framebuffer and how to use the VNC protocol, please consult the documentation at:
+  + The Virtual Framebuffer
+  + The VNC Protocol and Qt for Embedded Linux
++ Note that the virtual framebuffer requires a Qt for X11 installation. See Installing Qt for X11 Platforms for details.
++ The Linux framebuffer, on the other hand, is enabled by default on all modern Linux distributions.
+  + For information on older versions, see http://en.tldp.org/HOWTO/Framebuffer-HOWTO.html.
++ To test that the Linux framebuffer is set up correctly, use the program provided by the Testing the Linux Framebuffer document.
+
+*** Cross-Compiling Qt for Embedded Linux Applications
++ Cross-compiling is the process of compiling an application on one machine, producing executable code for a different machine or device. To cross-compile a Qt for Embedded Linux application, use the following approach:
+  + Note: The cross-compiling procedure has the configuration process in common with the installation procedure; i.e., you might not necessarily have to perform all the mentioned actions depending on your current configuration.
+**** Step 1: Set the Cross-Compiler's Path
++ Specify which cross-compiler to use by setting the PATH environment variable. For example, if the current shell is bash, ksh, zsh or sh:
+  #+BEGIN_SRC sh
+    export PATH=path/to/cross/compiler:$PATH
+  #+END_SRC
+**** Step 2: Create a Target Specific qmake Specification
++ The qmake tool requires a platform and compiler specific qmake.conf file describing the various default values, to generate the appropriate Makefiles. The standard Qt for Embedded Linux distribution provides such files for several combinations of platforms and compilers. These files are located in the distribution's mkspecs/qws subdirectory.
++ Each platform has a default specification. Qt for Embedded Linux will use the default specification for the current platform unless told otherwise. To override this behavior, you can use the configure script's -platform option to change the specification for the host platform (where compilation will take place).
++ The configure script's -xplatform option is used to provide a specification for the target architecture (where the library will be deployed).
++ For example, to cross-compile an application to run on a device with an ARM architecture, using the GCC toolchain, run the configure script at the command line in the following way:
+  #+BEGIN_EXAMPLE
+    ./configure -embedded arm -xplatform qws/linux-arm-g++ <other options> 
+  #+END_EXAMPLE
+  + If neither of the provided specifications fits your target device, you can create your own. To create a custom qmake.conf file, just copy and customize an already existing file. For example:
+    #+BEGIN_SRC sh
+    cp path/to/QtEmbedded/mkspecs/qws/linux-mips-g++/... path/to/QtEmbedded/mkspecs/qws/linux-myarchitecture-g++/...
+    #+END_SRC
+    + Note: When defining a mkspec for a Linux target, the directory must be prefixed with "linux-". We recommend that you copy the entire directory.
+    + Note also that when providing you own qmake specifcation, you must use the configure script's -xplatform option to make Qt for Embedded Linux aware of the custom qmake.conf file.
+**** Step 3: Provide Architecture Specific Files
++ Starting with Qt 4, all of Qt's implicitly shared classes can safely be copied across threads like any other value classes, i.e., they are fully reentrant. This is accomplished by implementing reference counting operations using atomic hardware instructions on all the different platforms supported by Qt.
++ To support a new architecture, it is important to ensure that these platform-specific atomic operations are implemented in a corresponding header file (qatomic_ARCH.h), and that this file is located in Qt's src/corelib/arch directory.
++ For example, the Intel 80386 implementation is located in
+  #+BEGIN_EXAMPLE
+    src/corelib/arch/qatomic_i386.h.
+  #+END_EXAMPLE
+  + See the Implementing Atomic Operations documentation for details.
+**** Step 4: Provide Hardware Drivers
++ Without the proper mouse and keyboard drivers, you will not be able to give any input to your application when it is installed on the target device. You must also ensure that the appropriate screen driver is present to make the server process able to put the application's widgets on screen.
++ Qt for Embedded Linux provides several ready-made mouse, keyboard and screen drivers, see the pointer handling, character input and display management documentation for details.
++ In addition, custom drivers can be added by deriving from the QWSMouseHandler, QWSKeyboardHandler and QScreen classes respectively, and by creating corresponding plugins to make use of Qt's plugin mechanism (dynamically loading the drivers into the server application at runtime). Note that the plugins must be located in a location where Qt will look for plugins, e.g., the standard plugin directory.
++ See the How to Create Qt Plugins documentation and the Plug & Paint example for details.
+**** Step 5: Build the Target Specific Executable
++ Before building the executable, you must specify the target architecture as well as the target specific hardware drivers by running the configure script:
+  #+BEGIN_SRC sh
+    cd path/to/QtEmbedded
+    ./configure -embedded <architecture> -qt-kbd-<keyboarddriver>
+             -qt-mouse-<mousedriver> -qt-gfx-<screendriver> 
+  #+END_SRC
+  + It is also important to make sure that all the third party libraries that the application and the Qt libraries require, are present in the tool chain.
+  + In particular, if the zlib and jpeg libraries are not available, they must be included by running the configure script with the -L and -I options.
+    + For example:
+      #+BEGIN_SRC sh
+         cd path/to/QtEmbedded
+         ./configure  <other options>
+                      -L /path/to/libjpeg/libraries -I /path/to/libjpeg/headers     
+      #+END_SRC
+      + The JPEG source can be downloaded from http://www.ijg.org/. The Qt for Embedded Linux distribution includes a version of the zlib source that can be compiled into the Qt for Embedded Linux library. If integrators wish to use a later version of the zlib library, it can be downloaded from the http://www.gzip.org/zlib/ website.
++ Then build the executable:
+  #+BEGIN_SRC sh
+    cd path/to/myApplication
+    qmake -project
+    qmake
+    make
+  #+END_SRC
++ That's all. Your target specific executable is ready for deployment.
+See also:
+Qt for Embedded Linux Architecture and Deploying Qt for Embedded Linux Applications.
+
 * QT
-** Overview [fn:1]
+** Overview [fn:2]
 Qt for Embedded Linux applications write directly to the framebuffer, eliminating the need for the X Window System and saving memory. The Linux framebuffer is enabled by default on all modern Linux distributions. 
-** Cross Compiling [fn:2]
+** Cross Compiling [fn:3]
 *** Step 1: Set the Cross-Compiler's Path
 + Specify which cross-compiler to use by setting the PATH environment variable. For example, if the current shell is bash, ksh, zsh or sh:
   #+BEGIN_SRC sh
@@ -679,13 +849,13 @@ Qt for Embedded Linux applications write directly to the framebuffer, eliminatin
 
 * Footnotes
 
-[fn:1] http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html
+[fn:1] https://help.ubuntu.com/community/Repositories/CommandLine
 
-[fn:2] http://qt-project.org/doc/qt-4.8/qt-embedded-crosscompiling.html
+[fn:2] http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html
 
-[fn:3] Google.com
+[fn:3] http://qt-project.org/doc/qt-4.8/qt-embedded-crosscompiling.html
 
-[fn:4]  https://www.olimex.com/wiki/Programming_for_A13_in_debian#Creating_a_hello_world_program_using_eclipse
+[fn:4] https://www.olimex.com/wiki/Programming_for_A13_in_debian#Creating_a_hello_world_program_using_eclipse
 
 [fn:5] http://www.agilart.com/blog/debugging-on-embedded-using-opensource-tools-part-1
 
