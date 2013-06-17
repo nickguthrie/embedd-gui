@@ -1,3 +1,4 @@
+
 #+TITLE:     Programming
 
 #+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:{} -:t f:t *:t <:t
@@ -15,6 +16,22 @@
 
 * Note                                                                          :noexport:
 + /usr/local/Trolltech/Qt-4.8.4
++ https://code.google.com/p/peazip/issues/detail?id=170
++ http://www.cnx-software.com/2012/01/16/installing-emdebian-arm-cross-toolchain-in-debian/
+apt-get install emdebian-archive-keyring
+apt-get update
+
++ http://www.digriz.org.uk/misc
+#+BEGIN_SRC sh
+# if not running 'squeeze' then you need to download http://packages.debian.org/squeeze/libgmp3c2 manually (or using pinning)
+berk:~# wget http://ftp.uk.debian.org/debian/pool/main/g/gmp/libgmp3c2_4.3.2+dfsg-1_amd64.deb
+berk:~# dpkg -i libgmp3c2_4.3.2+dfsg-1_amd64.deb
+#+END_SRC
++ http://stackoverflow.com/questions/14180185/gcc-arm-linux-gnueabi-command-not-found
+
+
+
+
 
 
 * Preparing Programming Environment
