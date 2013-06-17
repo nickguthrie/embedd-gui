@@ -172,6 +172,23 @@ Vital Vio is a privately held biomedical and lighting design startup focused on 
 #+BEGIN_SRC sh
 ssh root@192.168.12.200 -p 22122
 #+END_SRC
+** Connect with SFTP for File Transfer
+#+BEGIN_SRC sh
+sftp -P 22122 root@192.168.12.200
+#+END_SRC
++ Change Local Directory
+  #+BEGIN_SRC sh
+    lcd /local/directory
+  #+END_SRC
++ Get File
+  #+BEGIN_SRC sh
+    get <file>
+  #+END_SRC
++ Send File
+  #+BEGIN_SRC sh 
+    put <file>
+  #+END_SRC
+ 
 * Objectives
 ** DONE Obtain Hardware
 ** DONE Get Debian Running
@@ -441,13 +458,8 @@ echo 0 > /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
 
 **** Links
 + [[http://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/][A13 Olinuxino Playing with GPIOS]]
-
-** TODO Cross Compile a Program
-
-** Build Connector for Screen
-** Small Gui
-*** Installing XFCE
-**** Steps
+** DONE Install XFCE
+*** Steps
 #+BEGIN_SRC sh
 apt-get install --no-install-recommends xorg xfce4 alsa-base alsa-utils;
 apt-get install --no-install-recommends cpufrequtils gamin xdg-utils;
@@ -455,12 +467,12 @@ apt-get install --no-install-recommends desktop-base gnome-icon-theme dmz-cursor
 apt-get install --no-install-recommends xfce4-terminal xfce4-power-manager xfce4-screenshooter;
 startx;
 #+END_SRC
-**** Links
-***** Installing GUI
+*** Links
+**** Installing GUI
 http://lcncolinuxino.blogspot.com/p/installing-gui.html
-****** Overview
+***** Overview
 Optionally if desired, a GUI user interface can be installed. This section describes how to install a small foot print xfce4 user interface.
-****** Steps
+***** Steps
 #+BEGIN_SRC sh
 apt-get install --no-install-recommends xorg xfce4 alsa-base alsa-utils;
 apt-get install --no-install-recommends cpufrequtils gamin xdg-utils;
@@ -471,12 +483,14 @@ apt-get install --no-install-recommends xfburn htop squeeze bzip2 zip unzip unra
 # Finally start the user interface with:
 startx;
 #+END_SRC
-****** Links
+***** Links
 + 
-
 
 *** Consider Qt Razorh
 
+** TODO Configure Cross-Compiling Toolchain
+** TODO Configure QT for Embedded Linux
++ http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux
 ** Configure Debian to Communicate to LCD
 *** Messing with the script file
 **** Installation
