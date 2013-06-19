@@ -248,6 +248,15 @@ scp allows files to be copied to, from, or between different hosts. It uses ssh 
 #+BEGIN_SRC sh
 du -h <path_of_the_dir> | tail -1
 #+END_SRC
+** Sync Files with rsync
+*** Sync a Directory From Host To Device
+/ will not modify host directory /
+#+BEGIN_SRC sh
+rsync -rtvz -e "ssh -p 22122" /home/slayer/Desktop/foo/ root@192.168.12.200:/root/Desktop/foo/
+#+END_SRC
+*** Links
++ http://mike-hostetler.com/blog/2007/12/08/rsync-non-standard-ssh-port/
++ http://www.jveweb.net/en/archives/2010/11/synchronizing-folders-with-rsync.html
 * Objectives
 ** DONE Obtain Hardware
 ** DONE Get Debian Running
@@ -547,7 +556,7 @@ startx;
 
 *** Consider Qt Razorh
 
-** Configure Cross-Compiling Toolchain
+** Configure Cross-Compiling Toolchain                                         :noexport:
 *** http://psas.pdx.edu/DebianCrossCompilerHowto/#index12h3
 + https://launchpadlibrarian.net/135588846/readme.txt
 *** Install Toolchain
@@ -738,7 +747,7 @@ cd /usr/local/tslib
 make
 make install
 #+END_SRC
-** Configure QT for Embedded Linux
+** Configure QT for Embedded Linux                                             :noexport:
 *** Steps
 **** DONE Install QT on Development Platform
 http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
@@ -761,14 +770,21 @@ http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
 **** DONE Install TSLIB on Development Platform
 http://billforums.station51.net/viewtopic.php?f=8&t=15
 #+BEGIN_SRC sh
-cd ~/git
-git clone http://github.com/kergoth/tslib.git tslib/
-cd tslib
+cd ~/src
+git clone https://github.com/kergoth/tslib.git tslib-arm
+cd tslib-arm
 ./autogen.sh
-./configure --host=arm-none-linux-gnueabi --prefix=/usr/local/tslib --enable-static --enable-shared
+./configure --host=arm-linux-gnueabihf --prefix=/usr/local/tslib --enable-static --enable-shared
 make -j5
-sudo make install
+su
+export PATH=$PATH:opt/ext_toolchain/bin/
+make install
 #+END_SRC
++ Make sure to modify qmake.conf file when installing qt-embedded by including:
+  #+BEGIN_EXAMPLE
+    QMAKE_INCDIR  += /usr/local/tslib/include
+    QMAKE_LIBDIR  += /usr/local/tslib/lib
+  #+END_EXAMPLE
 
 **** DONE Install qt-everywhere on Development Platform
 1. Install Source
@@ -946,18 +962,25 @@ http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
 #+BEGIN_SRC sh
 sudo apt-get install qtcreator
 #+END_SRC
-**** TODO Install TSLIB on Development Platform
-***** Steps
+**** DONE Install TSLIB on Development Platform
+http://billforums.station51.net/viewtopic.php?f=8&t=15
 #+BEGIN_SRC sh
-  cd ~/git
-  git clone http://github.com/kergoth/tslib.git tslib/
-  cd tslib
-  ./autogen.sh
-  ./configure --host=arm-none-linux-gnueabi --prefix=/usr/local/tslib --enable-static --enable-shared
-  make -j 5
-  sudo make install
+cd ~/src
+git clone https://github.com/kergoth/tslib.git tslib-arm
+cd tslib-arm
+./autogen.sh
+./configure --host=arm-linux-gnueabihf --prefix=/usr/local/tslib --enable-static --enable-shared
+make -j5
+su
+export PATH=$PATH:opt/ext_toolchain/bin/
+make install
 #+END_SRC
-***** Links
++ Make sure to modify qmake.conf file when installing qt-embedded by including:
+  #+BEGIN_EXAMPLE
+    QMAKE_INCDIR  += /usr/local/tslib/include
+    QMAKE_LIBDIR  += /usr/local/tslib/lib
+  #+END_EXAMPLE
+
 **** TODO Install qt-everywhere on Development Platform
 1. Install Source
    #+BEGIN_SRC sh
@@ -974,23 +997,23 @@ sudo apt-get install qtcreator
      include(../../common/qws.conf)
      
      # modifications to g++.conf
-     QMAKE_CC                = arm-unknown-linux-gnueabi-gcc -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp
-     QMAKE_CXX               = arm-unknown-linux-gnueabi-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp
-     QMAKE_LINK              = arm-unknown-linux-gnueabi-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp
-     QMAKE_LINK_SHLIB        = arm-unknown-linux-gnueabi-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp
+     QMAKE_CC                = arm-linux-gnueabihf-gcc -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
+     QMAKE_CXX               = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
+     QMAKE_LINK              = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
+     QMAKE_LINK_SHLIB        = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
      
      # modifications to linux.conf
-     QMAKE_AR                = arm-unknown-linux-gnueabi-ar cqs
-     QMAKE_OBJCOPY           = arm-unknown-linux-gnueabi-objcopy
-     QMAKE_STRIP             = arm-unknown-linux-gnueabi-strip
-     QMAKE_RANLIB            = arm-unknown-linux-gnueabi-ranlib
+     QMAKE_AR                = arm-linux-gnueabihf-ar cqs
+     QMAKE_OBJCOPY           = arm-linux-gnueabihf-objcopy
+     QMAKE_STRIP             = arm-linux-gnueabihf-strip
+     QMAKE_RANLIB            = arm-linux-gnueabihf-ranlib
      
      load(qt_config)
    #+END_EXAMPLE
 
 3. Configure Qt
    #+BEGIN_SRC sh
-     ./configure -embedded arm -nomake demos -nomake example -xplatform qws/linux-arm-g++ -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -nomake tools -qt-mouse-tslib
+     make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -nomake demos -qt-mouse-tslib -no-webkit
    #+END_SRC
    + Now, this configuration is what I needed. You can drop in or add whatever you want. Some handy options that you may (or may not require) are :
      + Enable touchscreen library support : -qt-mouse-tslib
@@ -1007,6 +1030,12 @@ sudo apt-get install qtcreator
      export PATH=$PATH:/usr/local/arm/4.3.2/bin
      make install
    #+END_SRC
+6. Add qts path
+   
+
+***** Error
++ /opt/ext_toolchain/bin/../lib/gcc/arm-linux-gnueabihf/4.7.3/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lbootstrap
+http://www.qtcentre.org/archive/index.php/t-41850.html
 
 **** TODO Copy Libraries Over to Device
 ***** Overview
@@ -1045,6 +1074,8 @@ So now, its time to put the libs on your mini machine! You may choose to create 
 + https://www.olimex.com/forum/index.php?topic=751.msg3702#msg3702
 + http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
 + https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki
++ [[./doc/Getting%20Started%20with%20Qt.pdf][Getting started with Qt.pdf]]
+  + has working notes for proper installation of tslib.
 ** Configure Debian to Communicate to Touchscreen
 *** Messing with the script file
 **** Installation

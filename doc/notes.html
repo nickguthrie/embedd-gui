@@ -249,6 +249,23 @@ for the JavaScript code in this tag.
 <li><a href="#sec-4-1">Connect to Serial (After configuring rfcomm.conf)</a></li>
 <li><a href="#sec-4-2">Communicate via SSH</a></li>
 <li><a href="#sec-4-3">Connect with SFTP for File Transfer</a></li>
+<li><a href="#sec-4-4">Send Files via SCP</a>
+<ul>
+<li><a href="#sec-4-4-1">Copy the file "foobar.txt" from a remote host to the local host</a></li>
+<li><a href="#sec-4-4-2">Copy the file "foobar.txt" from the local host to a remote host</a></li>
+<li><a href="#sec-4-4-3">Copy the directory "foo" from the local host to a remote host's directory "bar"</a></li>
+<li><a href="#sec-4-4-4">Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"</a></li>
+<li><a href="#sec-4-4-5">Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host</a></li>
+<li><a href="#sec-4-4-6">Copy the file "foobar.txt" from the local host to a remote host using port 2264</a></li>
+<li><a href="#sec-4-4-7">Copy multiple files from the remote host to your current directory on the local host</a></li>
+</ul>
+</li>
+<li><a href="#sec-4-5">Check Remaining Space on Hard Drive</a></li>
+<li><a href="#sec-4-6">Sync Files with rsync</a>
+<ul>
+<li><a href="#sec-4-6-1">Sync a Directory From Host To Device</a></li>
+<li><a href="#sec-4-6-2">Links</a></li>
+</ul></li>
 </ul>
 </li>
 <li><a href="#sec-5">Objectives</a>
@@ -316,18 +333,12 @@ for the JavaScript code in this tag.
 <li><a href="#sec-5-11-3">Consider Qt Razorh</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-12">Configure Cross-Compiling Toolchain</a>
+<li><a href="#sec-5-12">Buildroot - Install ARM Toolchain</a>
 <ul>
-<li><a href="#sec-5-12-1">http://psas.pdx.edu/DebianCrossCompilerHowto/#index12h3</a></li>
-<li><a href="#sec-5-12-2">Install Toolchain</a></li>
-<li><a href="#sec-5-12-3">Install GMP</a></li>
-<li><a href="#sec-5-12-4">Qt Embedded</a></li>
-<li><a href="#sec-5-12-5">GNU Tools for ARM Embedded Processors - Version: 4.7</a></li>
-<li><a href="#sec-5-12-6">qt Configuration</a></li>
-<li><a href="#sec-5-12-7">Install tslib</a></li>
+<li><a href="#sec-5-12-1">Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-13">Configure QT for Embedded Linux</a>
+<li><a href="#sec-5-13">Configure QT for Embedded Linux - Buildroot Version</a>
 <ul>
 <li><a href="#sec-5-13-1">Steps</a></li>
 <li><a href="#sec-5-13-2">Research Links</a></li>
@@ -997,6 +1008,168 @@ for the JavaScript code in this tag.
 </ul>
 
 
+</div>
+
+</div>
+
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4">Send Files via SCP</h3>
+<div class="outline-text-3" id="text-4-4">
+
+<p>Source: <a href="http://www.hypexr.org/linux_scp_help.php">http://www.hypexr.org/linux_scp_help.php</a>
+scp allows files to be copied to, from, or between different hosts. It uses ssh for data transfer and provides the same authentication and same level of security as ssh.
+</p>
+</div>
+
+<div id="outline-container-4-4-1" class="outline-4">
+<h4 id="sec-4-4-1">Copy the file "foobar.txt" from a remote host to the local host</h4>
+<div class="outline-text-4" id="text-4-4-1">
+
+
+
+
+<pre class="src src-sh">scp -P 22122 root@192.168.12.200:foobar.txt /some/local/directory
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4-2" class="outline-4">
+<h4 id="sec-4-4-2">Copy the file "foobar.txt" from the local host to a remote host</h4>
+<div class="outline-text-4" id="text-4-4-2">
+
+
+
+
+<pre class="src src-sh">scp -P 22122 foobar.txt root@192.168.12.200:/some/remote/directory
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4-3" class="outline-4">
+<h4 id="sec-4-4-3">Copy the directory "foo" from the local host to a remote host's directory "bar"</h4>
+<div class="outline-text-4" id="text-4-4-3">
+
+
+
+
+<pre class="src src-sh">scp -P 22122 -r foo root@192.168.12.200:/some/remote/directory/bar
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4-4" class="outline-4">
+<h4 id="sec-4-4-4">Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"</h4>
+<div class="outline-text-4" id="text-4-4-4">
+
+
+
+
+<pre class="src src-sh">scp -P 22122 your_username@rh1.edu:/some/remote/directory/foobar.txt your_username@rh2.edu:/some/remote/directory/
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4-5" class="outline-4">
+<h4 id="sec-4-4-5">Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host</h4>
+<div class="outline-text-4" id="text-4-4-5">
+
+
+
+
+<pre class="src src-sh">scp -P 22122 foo.txt bar.txt root@192.168.12.200:~
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4-6" class="outline-4">
+<h4 id="sec-4-4-6">Copy the file "foobar.txt" from the local host to a remote host using port 2264</h4>
+<div class="outline-text-4" id="text-4-4-6">
+
+
+
+
+<pre class="src src-sh">scp -P 22122 -P 2264 foobar.txt root@192.168.12.200:/some/remote/directory
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4-7" class="outline-4">
+<h4 id="sec-4-4-7">Copy multiple files from the remote host to your current directory on the local host</h4>
+<div class="outline-text-4" id="text-4-4-7">
+
+
+
+
+<pre class="src src-sh">scp -P 22122 root@192.168.12.200:/some/remote/directory/<span style="color: #ffc1c1;">\{</span>a,b,c<span style="color: #ffc1c1;">\}</span> <span style="color: #b0c4de;">.</span>
+scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.txt,bar.txt<span style="color: #ffc1c1;">\}</span> <span style="color: #b0c4de;">.</span>
+</pre>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-5" class="outline-3">
+<h3 id="sec-4-5">Check Remaining Space on Hard Drive</h3>
+<div class="outline-text-3" id="text-4-5">
+
+
+
+
+<pre class="src src-sh">du -h &lt;path_of_the_dir&gt; | tail -1
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-6" class="outline-3">
+<h3 id="sec-4-6">Sync Files with rsync</h3>
+<div class="outline-text-3" id="text-4-6">
+
+
+</div>
+
+<div id="outline-container-4-6-1" class="outline-4">
+<h4 id="sec-4-6-1">Sync a Directory From Host To Device</h4>
+<div class="outline-text-4" id="text-4-6-1">
+
+<p>/ will not modify host directory /
+</p>
+
+
+<pre class="src src-sh">rsync -rtvz -e <span style="color: #ffc1c1;">"ssh -p 22122"</span> /home/slayer/Desktop/foo/ root@192.168.12.200:/root/Desktop/foo/
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-6-2" class="outline-4">
+<h4 id="sec-4-6-2">Links</h4>
+<div class="outline-text-4" id="text-4-6-2">
+
+<ul>
+<li><a href="http://mike-hostetler.com/blog/2007/12/08/rsync-non-standard-ssh-port/">http://mike-hostetler.com/blog/2007/12/08/rsync-non-standard-ssh-port/</a>
+</li>
+<li><a href="http://www.jveweb.net/en/archives/2010/11/synchronizing-folders-with-rsync.html">http://www.jveweb.net/en/archives/2010/11/synchronizing-folders-with-rsync.html</a>
+</li>
+</ul>
+
+</div>
 </div>
 </div>
 
@@ -2022,376 +2195,143 @@ startx;
 </div>
 
 <div id="outline-container-5-12" class="outline-3">
-<h3 id="sec-5-12"><span class="todo TODO">TODO</span> Configure Cross-Compiling Toolchain</h3>
+<h3 id="sec-5-12"><span class="done DONE">DONE</span> Buildroot - Install ARM Toolchain</h3>
 <div class="outline-text-3" id="text-5-12">
+
+<ol>
+<li>Download Buildroot
+
+
+
+<pre class="src src-sh">mkdir bld; <span style="color: #b0c4de;">cd</span> bld
+wget http://buildroot.net/downloads/buildroot-2013.05.tar.gz
+tar -xvf buildroot-2013.05.tar.gz
+<span style="color: #b0c4de;">cd</span> buildroot-2013.05
+</pre>
+
+
+</li>
+<li>Run Menu Config
+
+
+
+<pre class="src src-sh">make menuconfig
+</pre>
+
+<ul>
+<li>Relevant Configurations:
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Target Architecture</td><td class="left">ARM (little endian)</td></tr>
+<tr><td class="left">Target Architecture Variant</td><td class="left">Cortex-A8</td></tr>
+<tr><td class="left">Toolchain</td><td class="left">Sourcery Codebench ARM 2011.09</td></tr>
+</tbody>
+</table>
+
+</li>
+</ul>
+
+</li>
+<li>If you are on a 64-bit system
+
+
+
+<pre class="src src-sh">sudo apt-get install ia32-libs
+</pre>
+
+<ul>
+<li>See Error
+
+</li>
+</ul>
+
+</li>
+<li>Install toolchain binaries
+
+
+
+<pre class="src src-sh">su
+cp -a ext-toolchain /opt/ext_toolchain
+cp /etc/environment /etc/environment.BAK
+</pre>
+
+<ul>
+<li>Append :/opt/ext_toolchain/bin/ to Path
+
+
+
+<pre class="example">PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/ext_toolchain/bin/"
+</pre>
+
+
+</li>
+</ul>
+
+</li>
+<li>Logout and Login or Reboot   
+</li>
+</ol>
+
+
 
 
 </div>
 
 <div id="outline-container-5-12-1" class="outline-4">
-<h4 id="sec-5-12-1"><a href="http://psas.pdx.edu/DebianCrossCompilerHowto/#index12h3">http://psas.pdx.edu/DebianCrossCompilerHowto/#index12h3</a></h4>
+<h4 id="sec-5-12-1">Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"</h4>
 <div class="outline-text-4" id="text-5-12-1">
 
 <ul>
-<li><a href="https://launchpadlibrarian.net/135588846/readme.txt">https://launchpadlibrarian.net/135588846/readme.txt</a>
+<li id="sec-5-12-1-1">Error:<br/>
+<ul>
+<li>error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
 </li>
 </ul>
 
-</div>
+</li>
+</ul>
+<ul>
+<li id="sec-5-12-1-2">Probable Cause<br/>
+<ul>
+<li>Its looking for 32-bit library, which is not installed since I have a 64-bit system
+</li>
+</ul>
 
-</div>
-
-<div id="outline-container-5-12-2" class="outline-4">
-<h4 id="sec-5-12-2">Install Toolchain</h4>
-<div class="outline-text-4" id="text-5-12-2">
-
-<p><a href="https://launchpad.net/gcc-arm-embedded">https://launchpad.net/gcc-arm-embedded</a>
-<a href="https://launchpadlibrarian.net/135588886/How-to-build-toolchain.pdf">https://launchpadlibrarian.net/135588886/How-to-build-toolchain.pdf</a>
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-5-12-3" class="outline-4">
-<h4 id="sec-5-12-3">Install GMP</h4>
-<div class="outline-text-4" id="text-5-12-3">
-
-<p><a href="http://gmplib.org/#DOWNLOAD">http://gmplib.org/#DOWNLOAD</a>
-</p><ul>
-<li>Read INSTALL
+</li>
+</ul>
+<ul>
+<li id="sec-5-12-1-3">Solution<br/>
+<ul>
+<li>Install the 32 bit libraries
+</li>
+</ul>
 
 
 
-<pre class="src src-sh">./configure --enable-cxx
-make
-make check
-su
-make install
+
+<pre class="src src-sh">sudo apt-get install ia32-libs
 </pre>
 
 </li>
 </ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-5-12-4" class="outline-4">
-<h4 id="sec-5-12-4">Qt Embedded</h4>
-<div class="outline-text-4" id="text-5-12-4">
-
 <ul>
-<li><a href="http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/">http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/</a>
-</li>
-<li><a href="http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/">http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/</a>
-</li>
-</ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-5-12-5" class="outline-4">
-<h4 id="sec-5-12-5">GNU Tools for ARM Embedded Processors - Version: 4.7</h4>
-<div class="outline-text-4" id="text-5-12-5">
-
-<p><a href="https://launchpadlibrarian.net/135588846/readme.txt">https://launchpadlibrarian.net/135588846/readme.txt</a>
-</p><ul>
-<li id="sec-5-12-5-1">Installing executables on Linux<br/>
+<li id="sec-5-12-1-4">Links<br/>
 <ul>
-<li>Unpack the tarball to the install directory, like this:
-
-
-
-<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> $<span style="color: #7fffd4;">install_dir</span> &amp;&amp; tar xjf gcc-arm-none-eabi-*-yyyymmdd-linux.tar.bz2
-</pre>
-
-<ul>
-<li>For 64 bit system, 32 bit libc and libncurses are required to run the tools.
-</li>
-</ul>
-
-</li>
-<li>For Ubuntu 10.04/12.04 user, the toolchain can also be installed via Launchpad
-
-
-
-<pre class="example">PPA at https://launchpad.net/~terry.guo/+archive/gcc-arm-embedded.
-</pre>
-
+<li><a href="http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory">http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory</a>
 </li>
 </ul>
 
 </li>
 </ul>
-<ul>
-<li id="sec-5-12-5-2">Invoking GCC<br/>
-<ul>
-<li>On Linux and Mac OS X, either invoke with the complete path like this:
-
-
-
-<pre class="src src-sh">$<span style="color: #7fffd4;">install_dir</span>/gcc-arm-none-eabi-*/bin/arm-none-eabi-gcc
-</pre>
-
-</li>
-<li>Or set path like this:
-
-
-
-<pre class="src src-sh"><span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">PATH</span>=$<span style="color: #7fffd4;">PATH</span>:$<span style="color: #7fffd4;">install_dir</span>/gcc-arm-none-eabi-*/bin
-arm-none-eabi-gcc
-</pre>
-
-</li>
-</ul>
-
-<p>export PATH=$PATH:/home/slayer/toolchain/gcc-arm-none-eabi-4_7-2013q1/bin
-</p></li>
-</ul>
-<ul>
-<li id="sec-5-12-5-3">Architecture options usage<br/>
-<ul>
-<li>This toolchain is built and optimized for Cortex-A/R/M bare metal development.
-</li>
-<li>the following table shows how to invoke GCC/G++ with correct command line options for variants of Cortex-A/R and Cortex-M architectures. 
-</li>
-</ul>
-
-
-
-
-<pre class="example">--------------------------------------------------------------------
-| ARM Core | Command Line Options                       | multilib |
-|----------|--------------------------------------------|----------|
-|Cortex-M0+| -mthumb -mcpu=cortex-m0plus                | armv6-m  |
-|Cortex-M0 | -mthumb -mcpu=cortex-m0                    |          |
-|Cortex-M1 | -mthumb -mcpu=cortex-m1                    |          |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv6-m                     |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M3 | -mthumb -mcpu=cortex-m3                    | armv7-m  |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv7-m                     |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M4 | -mthumb -mcpu=cortex-m4                    | armv7e-m |
-|(No FP)   |--------------------------------------------|          |
-|          | -mthumb -march=armv7e-m                    |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M4 | -mthumb -mcpu=cortex-m4 -mfloat-abi=softfp | armv7e-m |
-|(Soft FP) | -mfpu=fpv4-sp-d16                          | /softfp  |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv7e-m -mfloat-abi=softfp |          |
-|          | -mfpu=fpv4-sp-d16                          |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M4 | -mthumb -mcpu=cortex-m4 -mfloat-abi=hard   | armv7e-m |
-|(Hard FP) | -mfpu=fpv4-sp-d16                          | /fpu     |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv7e-m -mfloat-abi=hard   |          |
-|          | -mfpu=fpv4-sp-d16                          |          |
-|----------|--------------------------------------------|----------|
-|Cortex-R4 | [-mthumb] -march=armv7-r                   | armv7-ar |
-|Cortex-R5 |                                            | /thumb   |
-|(No FP)   |                                            |          |
-|----------|--------------------------------------------|----------|
-|Cortex-R4 | [-mthumb] -march=armv7-r -mfloat-abi=softfp| armv7-ar |
-|Cortex-R5 | -mfpu=vfpv3-d16                            | /thumb   |
-|(Soft FP) |                                            | /softfp  |
-|----------|--------------------------------------------|----------|
-|Cortex-R4 | [-mthumb] -march=armv7-r -mfloat-abi=hard  | armv7-ar |
-|Cortex-R5 | -mfpu=vfpv3-d16                            | /thumb   |
-|(Hard FP) |                                            | /fpu     |
-|----------|--------------------------------------------|----------|
-|Cortex-A* | [-mthumb] -march=armv7-a                   | armv7-ar |
-|(No FP)   |                                            | /thumb   |
-|----------|--------------------------------------------|----------|
-|Cortex-A* | [-mthumb] -march=armv7-a -mfloat-abi=softfp| armv7-ar |
-|(Soft FP) | -mfpu=vfpv3-d16                            | /thumb   |
-|          |                                            | /softfp  |
-|----------|--------------------------------------------|----------|
-|Cortex-A* | [-mthumb] -march=armv7-a -mfloat-abi=hard  | armv7-ar |
-|(Hard FP) | -mfpu=vfpv3-d16                            | /thumb   |
-|          |                                            | /fpu     |
---------------------------------------------------------------------
-</pre>
-
-
-</li>
-</ul>
-<ul>
-<li id="sec-5-12-5-4">C Libraries usage<br/>
-<ul>
-<li>This toolchain is released with two prebuilt C libraries based on newlib: one is the standard newlib and the other is newlib-nano for code size.
-</li>
-<li>To distinguish them, we rename the size optimized libraries as:
-
-
-
-<pre class="example">libc.a --&gt; libc_s.a
-libg.a --&gt; libg_s.a
-</pre>
-
-</li>
-<li>To use newlib-nano, users should provide additional gcc link time option:
-
-
-
-<pre class="example">--specs=nano.specs
-</pre>
-
-<ul>
-<li>Nano.specs also handles two additional gcc libraries: libstdc++_s.a and libsupc++_s.a, which are optimized for code size.
-</li>
-<li>For example:
-
-
-
-<pre class="src src-sh">arm-none-eabi-gcc src.c --specs=nano.specs $(<span style="color: #fa8072;">OTHER_OPTIONS</span>)
-</pre>
-
-</li>
-<li>This option can also work together with other specs options like
-
-
-
-<pre class="example">--specs=rdimon.specs
-</pre>
-
-</li>
-</ul>
-
-</li>
-<li>Please be noticed that &ndash;specs=nano.specs is a linker option. Be sure to include in linker option if compiling and linking are separated.
-</li>
-</ul>
-
-
-<ul>
-<li id="sec-5-12-5-4-1">additional newlib-nano libraries usage<br/>
-
-<p>
-Newlib-nano is different from newlib in addition to the libraries' name.
-Formatted input/output of floating-point number are implemented as weak symbol.
-If you want to use %f, you have to pull in the symbol by explicitly specifying
-"-u" command option.
-</p>
-<p>   
-  -u _scanf_float
-  -u _printf_float
-</p>
-<p>
-e.g. to output a float, the command line is like: 
-$ arm-none-eabi-gcc &ndash;specs=nano.specs -u _printf_float $(OTHER_OPTIONS)
-</p>
-<p>
-For more about the difference and usage, please refer the README.nano in the
-source package.
-</p>
-<p>
-Users can choose to use or not use semihosting by following instructions.
-</p></li>
-</ul>
-<ul>
-<li id="sec-5-12-5-4-2">semihosting<br/>
-You can add -lrdimon in the command line and compile the programs like:
-$ arm-none-eabi-gcc &ndash;specs=rdimon.specs \
-  -Wl,&ndash;start-group -lgcc -lc -lc -lm -lrdimon -Wl,&ndash;end-group $(OTHER_OPTIONS)
-
-</li>
-</ul>
-<ul>
-<li id="sec-5-12-5-4-3">non-semihosting/retarget<br/>
-If you are using retarget, you can add -lnosys in the command line and compile
-the programs like:
-$ arm-none-eabi-gcc \
-  -Wl,&ndash;start-group -lgcc -lc -lc -lm -lnosys -Wl,&ndash;end-group $(OTHER_OPTIONS)
-
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li id="sec-5-12-5-5">Linker scripts &amp; startup code<br/>
-<ul>
-<li>Latest update of linker scripts template and startup code is available on <a href="http://www.arm.com/cmsis">http://www.arm.com/cmsis</a>
-</li>
-</ul>
-
-
-</li>
-</ul>
-<ul>
-<li id="sec-5-12-5-6">Samples<br/>
-<ul>
-<li>Examples of all above usages are available at:
-
-
-
-<pre class="example">install_dir/gcc-arm-none-eabi-*/share/gcc-arm-none-eabi/samples
-</pre>
-
-</li>
-<li>Read readme.txt under it for further information.
-</li>
-</ul>
-
-
-
-</li>
-</ul>
-</div>
-
-</div>
-
-<div id="outline-container-5-12-6" class="outline-4">
-<h4 id="sec-5-12-6">qt Configuration</h4>
-<div class="outline-text-4" id="text-5-12-6">
-
-<p>./configure -embedded arm -xplatform qws/linux-arm-g++ -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -nomake tools -qt-mouse-tslib -qt-kbd-linuxinput
-</p>
-
-</div>
-
-</div>
-
-<div id="outline-container-5-12-7" class="outline-4">
-<h4 id="sec-5-12-7">Install tslib</h4>
-<div class="outline-text-4" id="text-5-12-7">
-
-<p><a href="http://importgeek.wordpress.com/2012/04/09/compiling-qt-and-tslib-for-mini2440-and-run-a-demo-app/">http://importgeek.wordpress.com/2012/04/09/compiling-qt-and-tslib-for-mini2440-and-run-a-demo-app/</a>
-</p>
-
-
-<pre class="src src-sh">sudo apt-get install git-core; <span style="color: #b0c4de;">cd</span> /usr/local
-git clone http://github.com/kergoth/tslib.git
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">PATH</span>=/usr/local/arm/4.3.2/bin:$<span style="color: #7fffd4;">PATH</span>
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">CROSS_COMPILE</span>=arm-none-linux-gnueabi-
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">CC</span>=${<span style="color: #7fffd4;">CROSS_COMPILE</span>}gcc
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">CFLAGS</span>=-march=armv4t
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">AR</span>=${<span style="color: #7fffd4;">CROSS_COMPILE</span>}<span style="color: #ffc1c1;">"ar"</span> 
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">CXX</span>=${<span style="color: #7fffd4;">CROSS_COMPILE</span>}<span style="color: #ffc1c1;">"g++"</span> e
-xport <span style="color: #7fffd4;">AS</span>=${<span style="color: #7fffd4;">CROSS_COMPILE</span>}<span style="color: #ffc1c1;">"as"</span>
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">RANLIB</span>=${<span style="color: #7fffd4;">CROSS_COMPILE</span>}<span style="color: #ffc1c1;">"ranlib"</span>
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">LD</span>=${<span style="color: #7fffd4;">CROSS_COMPILE</span>}<span style="color: #ffc1c1;">"ld"</span>
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">STRIP</span>=${<span style="color: #7fffd4;">CROSS_COMPILE</span>}<span style="color: #ffc1c1;">"strip"</span>
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">ac_cv_func_malloc_0_nonnull</span>=yes
-<span style="color: #b0c4de;">cd</span> /usr/local/tslib
-./autogen-clean.sh
-./autogen.sh
-./configure --host=arm-linux --prefix=/home/tslib --enable-shared=yes --enable-static=yes
-make
-make install
-</pre>
-
 </div>
 </div>
 
 </div>
 
 <div id="outline-container-5-13" class="outline-3">
-<h3 id="sec-5-13"><span class="todo TODO">TODO</span> Configure QT for Embedded Linux</h3>
+<h3 id="sec-5-13"><span class="todo TODO">TODO</span> Configure QT for Embedded Linux - Buildroot Version</h3>
 <div class="outline-text-3" id="text-5-13">
 
 
@@ -2410,56 +2350,42 @@ make install
 <pre class="src src-sh">sudo apt-get install qtcreator
 </pre>
 
-
 </li>
 </ul>
 <ul>
-<li id="sec-5-13-1-2"><span class="done DONE">DONE</span> Install GNU ARM Toolchain<br/>
-<a href="http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/">http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/</a>
-<ol>
-<li>Install binaries
-
-
-
-<pre class="src src-sh">tar -xvf arm-linux-gcc-4.3.2.tgz
-</pre>
-
-</li>
-<li>Add path to BASH (append to .bashrc)
-
-
-
-<pre class="example">PATH=$PATH:/usr/local/arm/4.3.2/bin
-</pre>
-
-</li>
-<li>Logout and Login or Reboot
-</li>
-</ol>
-
-
-</li>
-</ul>
-<ul>
-<li id="sec-5-13-1-3"><span class="done DONE">DONE</span> Install TSLIB on Development Platform<br/>
+<li id="sec-5-13-1-2"><span class="done DONE">DONE</span> Install TSLIB on Development Platform<br/>
 <a href="http://billforums.station51.net/viewtopic.php?f=8&amp;t=15">http://billforums.station51.net/viewtopic.php?f=8&amp;t=15</a>
 
 
 
-<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> ~/git
-git clone http://github.com/kergoth/tslib.git tslib/
-<span style="color: #b0c4de;">cd</span> tslib
+<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> ~/src
+git clone https://github.com/kergoth/tslib.git tslib-arm
+<span style="color: #b0c4de;">cd</span> tslib-arm
 ./autogen.sh
-./configure --host=arm-none-linux-gnueabi --prefix=/usr/local/tslib --enable-static --enable-shared
+./configure --host=arm-linux-gnueabihf --prefix=/usr/local/tslib --enable-static --enable-shared
 make -j5
-sudo make install
+su
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">PATH</span>=$<span style="color: #7fffd4;">PATH</span>:opt/ext_toolchain/bin/
+make install
 </pre>
+
+<ul>
+<li>Make sure to modify qmake.conf file when installing qt-embedded by including:
+
+
+
+<pre class="example">QMAKE_INCDIR  += /usr/local/tslib/include
+QMAKE_LIBDIR  += /usr/local/tslib/lib
+</pre>
+
+</li>
+</ul>
 
 
 </li>
 </ul>
 <ul>
-<li id="sec-5-13-1-4"><span class="done DONE">DONE</span> Install qt-everywhere on Development Platform<br/>
+<li id="sec-5-13-1-3"><span class="todo TODO">TODO</span> Install qt-everywhere on Development Platform<br/>
 <ol>
 <li>Install Source
 
@@ -2476,42 +2402,33 @@ sudo make install
 <pre class="example">#
 # qmake configuration for building with arm-linux-g++
 #
-
-include(../../common/g++.conf)
+include(../../common/gcc-base-unix.conf)
+include(../../common/g++-unix.conf)
 include(../../common/linux.conf)
 include(../../common/qws.conf)
 
 # modifications to g++.conf
-QMAKE_CC                = arm-none-linux-gnueabi-gcc -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv4t -mtune=arm920t -O0 -lts
-QMAKE_CXX               = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv4t -mtune=arm920t -O0 -lts
-QMAKE_LINK              = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv4t -mtune=arm920t -O0 -lts
-QMAKE_LINK_SHLIB        = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv4t -mtune=arm920t -O0 -lts
+QMAKE_CC                = arm-linux-gnueabihf-gcc -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
+QMAKE_CXX               = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
+QMAKE_LINK              = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
+QMAKE_LINK_SHLIB        = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
 
 # modifications to linux.conf
-QMAKE_AR                = arm-none-linux-gnueabi-ar cqs
-QMAKE_OBJCOPY           = arm-none-linux-gnueabi-objcopy
-QMAKE_STRIP             = arm-none-linux-gnueabi-strip
-QMAKE_RANLIB            = arm-none-linux-gnueabi-ranlib
+QMAKE_AR                = arm-linux-gnueabihf-ar cqs
+QMAKE_OBJCOPY           = arm-linux-gnueabihf-objcopy
+QMAKE_STRIP             = arm-linux-gnueabihf-strip
+QMAKE_RANLIB            = arm-linux-gnueabihf-ranlib
 
 load(qt_config)
 </pre>
 
-</li>
-<li>Turn off compiler optimization by making changes in /mkspecs/common/g++-unix.conf. Change the following line to this :
-
-
-
-<pre class="example">QMAKE_CFLAGS_RELEASE  += -O0
-</pre>
 
 </li>
 <li>Configure Qt
 
 
 
-<pre class="src src-sh">configure -embedded arm -xplatform qws/linux-arm-g++ -prefix <span style="color: #ffc1c1;">\</span>
-/usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile <span style="color: #ffc1c1;">\</span>
--optimized-qmake -no-openssl -nomake tools -qt-mouse-tslib
+<pre class="src src-sh">make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -nomake demos -qt-mouse-tslib -no-webkit
 </pre>
 
 <ul>
@@ -2533,7 +2450,7 @@ load(qt_config)
 
 
 
-<pre class="src src-sh">make -j5
+<pre class="src src-sh">make -j 5
 </pre>
 
 <ul>
@@ -2552,20 +2469,34 @@ make install
 </pre>
 
 </li>
+<li>Add qts path
+</li>
 </ol>
 
 
+
+<ul>
+<li id="sec-5-13-1-3-1">Error<br/>
+<ul>
+<li><i>opt/ext_toolchain/bin</i>../lib/gcc/arm-linux-gnueabihf/4.7.3/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lbootstrap
+</li>
+</ul>
+
+<p><a href="http://www.qtcentre.org/archive/index.php/t-41850.html">http://www.qtcentre.org/archive/index.php/t-41850.html</a>
+</p>
+</li>
+</ul>
 </li>
 </ul>
 <ul>
-<li id="sec-5-13-1-5"><span class="todo TODO">TODO</span> Copy Libraries Over to Device<br/>
+<li id="sec-5-13-1-4"><span class="todo TODO">TODO</span> Copy Libraries Over to Device<br/>
 <ul>
-<li id="sec-5-13-1-5-1">Overview<br/>
+<li id="sec-5-13-1-4-1">Overview<br/>
 So now, its time to put the libs on your mini machine! You may choose to create a separate filesystem using busybox too. Elaborate tutorials on that are available on the web. Just Google it up. What I will do is, modify the rootfs that came with my mini and remove all unnecessary stuff from it. Create a dir /usr/local/qt on your mini2440′s stock root filesystem and copy the complete lib directory from step 5 to that location using a USB stick/SD Card or something. Remember to do a df on the mini beforehand to see the free NAND you have got. In case the memory is low, delete some stock data – the small video file, mp3 file and some sample images that are present on it.Also remove unnecessary applications viz konqueror and old qt 2.2.0 libraries from the system.
 </li>
 </ul>
 <ul>
-<li id="sec-5-13-1-5-2">Steps<br/>
+<li id="sec-5-13-1-4-2">Steps<br/>
 <ol>
 <li>Environment Variables
 <ul>
@@ -2616,10 +2547,6 @@ export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </li>
 </ol>
 
-
-
-
-
 </li>
 </ul>
 </li>
@@ -2653,8 +2580,14 @@ export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </li>
 <li><a href="https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki">https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki</a>
 </li>
+<li><a href="./doc/Getting Started with Qt.pdf">Getting started with Qt.pdf</a>
+<ul>
+<li>has working notes for proper installation of tslib.
+</li>
 </ul>
 
+</li>
+</ul>
 
 </div>
 </div>
@@ -3275,7 +3208,6 @@ product_name             ="USB Flash Driver"
 </ul>
 <ul>
 <li id="sec-5-14-2-6"><a href="http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/">http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/</a><br/>
-
 </li>
 </ul>
 </div>
@@ -3286,6 +3218,11 @@ product_name             ="USB Flash Driver"
 <div id="outline-container-5-15" class="outline-3">
 <h3 id="sec-5-15">Successfully Recieve Input from Screen</h3>
 <div class="outline-text-3" id="text-5-15">
+
+<ul>
+<li><a href="http://www.armadeus.com/wiki/index.php?title=Qt/Embedded#Touchscreen_handling">http://www.armadeus.com/wiki/index.php?title=Qt/Embedded#Touchscreen_handling</a>
+</li>
+</ul>
 
 </div>
 
@@ -3432,8 +3369,6 @@ product_name             ="USB Flash Driver"
 <div id="text-footnotes">
 <p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="http://microcontrollershop.com/product_info.php?products_id=5557">http://microcontrollershop.com/product_info.php?products_id=5557</a>
 </p>
-
-
 
 
 </li>
