@@ -252,11 +252,20 @@ du -h <path_of_the_dir> | tail -1
 *** Sync a Directory From Host To Device
 / will not modify host directory /
 #+BEGIN_SRC sh
-rsync -rtvz -e "ssh -p 22122" /home/slayer/Desktop/foo/ root@192.168.12.200:/root/Desktop/foo/
+  rsync -rtvz -e "ssh -p 22122" /home/slayer/Desktop/foo/ root@192.168.12.200:/root/Desktop/foo/
 #+END_SRC
 *** Links
 + http://mike-hostetler.com/blog/2007/12/08/rsync-non-standard-ssh-port/
 + http://www.jveweb.net/en/archives/2010/11/synchronizing-folders-with-rsync.html
+** Building Projects with Qmake
+1. Build Project
+   #+BEGIN_SRC sh
+     /usr/local/bin/qmake project.pro
+     make clean
+     make
+   #+END_SRC
+2. Send files over to device
+3. Run
 * Objectives
 ** DONE Obtain Hardware
 ** DONE Get Debian Running
@@ -555,357 +564,8 @@ startx;
 + 
 
 *** Consider Qt Razorh
-
-** Configure Cross-Compiling Toolchain                                         :noexport:
-*** http://psas.pdx.edu/DebianCrossCompilerHowto/#index12h3
-+ https://launchpadlibrarian.net/135588846/readme.txt
-*** Install Toolchain
-https://launchpad.net/gcc-arm-embedded
-https://launchpadlibrarian.net/135588886/How-to-build-toolchain.pdf
-
-*** Install GMP
-http://gmplib.org/#DOWNLOAD
-+ Read INSTALL
-  #+BEGIN_SRC sh
-    ./configure --enable-cxx
-    make
-    make check
-    su
-    make install
-  #+END_SRC
-
-*** Qt Embedded
-+ http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
-+ http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
-
-*** GNU Tools for ARM Embedded Processors - Version: 4.7
-https://launchpadlibrarian.net/135588846/readme.txt
-**** Installing executables on Linux
-+ Unpack the tarball to the install directory, like this:
-  #+BEGIN_SRC sh
-  cd $install_dir && tar xjf gcc-arm-none-eabi-*-yyyymmdd-linux.tar.bz2
-  #+END_SRC
-  + For 64 bit system, 32 bit libc and libncurses are required to run the tools.
-+ For Ubuntu 10.04/12.04 user, the toolchain can also be installed via Launchpad
-  #+BEGIN_EXAMPLE
-  PPA at https://launchpad.net/~terry.guo/+archive/gcc-arm-embedded.
-  #+END_EXAMPLE
-**** Invoking GCC
-+ On Linux and Mac OS X, either invoke with the complete path like this:
-  #+BEGIN_SRC sh
-    $install_dir/gcc-arm-none-eabi-*/bin/arm-none-eabi-gcc
-  #+END_SRC
-+ Or set path like this:
-  #+BEGIN_SRC sh
-    export PATH=$PATH:$install_dir/gcc-arm-none-eabi-*/bin
-    arm-none-eabi-gcc
-  #+END_SRC
-export PATH=$PATH:/home/slayer/toolchain/gcc-arm-none-eabi-4_7-2013q1/bin
-**** Architecture options usage
-+ This toolchain is built and optimized for Cortex-A/R/M bare metal development.
-+ the following table shows how to invoke GCC/G++ with correct command line options for variants of Cortex-A/R and Cortex-M architectures. 
-#+BEGIN_EXAMPLE
---------------------------------------------------------------------
-| ARM Core | Command Line Options                       | multilib |
-|----------|--------------------------------------------|----------|
-|Cortex-M0+| -mthumb -mcpu=cortex-m0plus                | armv6-m  |
-|Cortex-M0 | -mthumb -mcpu=cortex-m0                    |          |
-|Cortex-M1 | -mthumb -mcpu=cortex-m1                    |          |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv6-m                     |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M3 | -mthumb -mcpu=cortex-m3                    | armv7-m  |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv7-m                     |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M4 | -mthumb -mcpu=cortex-m4                    | armv7e-m |
-|(No FP)   |--------------------------------------------|          |
-|          | -mthumb -march=armv7e-m                    |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M4 | -mthumb -mcpu=cortex-m4 -mfloat-abi=softfp | armv7e-m |
-|(Soft FP) | -mfpu=fpv4-sp-d16                          | /softfp  |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv7e-m -mfloat-abi=softfp |          |
-|          | -mfpu=fpv4-sp-d16                          |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M4 | -mthumb -mcpu=cortex-m4 -mfloat-abi=hard   | armv7e-m |
-|(Hard FP) | -mfpu=fpv4-sp-d16                          | /fpu     |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv7e-m -mfloat-abi=hard   |          |
-|          | -mfpu=fpv4-sp-d16                          |          |
-|----------|--------------------------------------------|----------|
-|Cortex-R4 | [-mthumb] -march=armv7-r                   | armv7-ar |
-|Cortex-R5 |                                            | /thumb   |
-|(No FP)   |                                            |          |
-|----------|--------------------------------------------|----------|
-|Cortex-R4 | [-mthumb] -march=armv7-r -mfloat-abi=softfp| armv7-ar |
-|Cortex-R5 | -mfpu=vfpv3-d16                            | /thumb   |
-|(Soft FP) |                                            | /softfp  |
-|----------|--------------------------------------------|----------|
-|Cortex-R4 | [-mthumb] -march=armv7-r -mfloat-abi=hard  | armv7-ar |
-|Cortex-R5 | -mfpu=vfpv3-d16                            | /thumb   |
-|(Hard FP) |                                            | /fpu     |
-|----------|--------------------------------------------|----------|
-|Cortex-A* | [-mthumb] -march=armv7-a                   | armv7-ar |
-|(No FP)   |                                            | /thumb   |
-|----------|--------------------------------------------|----------|
-|Cortex-A* | [-mthumb] -march=armv7-a -mfloat-abi=softfp| armv7-ar |
-|(Soft FP) | -mfpu=vfpv3-d16                            | /thumb   |
-|          |                                            | /softfp  |
-|----------|--------------------------------------------|----------|
-|Cortex-A* | [-mthumb] -march=armv7-a -mfloat-abi=hard  | armv7-ar |
-|(Hard FP) | -mfpu=vfpv3-d16                            | /thumb   |
-|          |                                            | /fpu     |
---------------------------------------------------------------------
-#+END_EXAMPLE
-
-**** C Libraries usage
-+ This toolchain is released with two prebuilt C libraries based on newlib: one is the standard newlib and the other is newlib-nano for code size.
-+ To distinguish them, we rename the size optimized libraries as:
-  #+BEGIN_EXAMPLE
-  libc.a --> libc_s.a
-  libg.a --> libg_s.a
-  #+END_EXAMPLE  
-+ To use newlib-nano, users should provide additional gcc link time option:
-  #+BEGIN_EXAMPLE
-  --specs=nano.specs
-  #+END_EXAMPLE
-  + Nano.specs also handles two additional gcc libraries: libstdc++_s.a and libsupc++_s.a, which are optimized for code size.
-  + For example:
-    #+BEGIN_SRC sh
-      arm-none-eabi-gcc src.c --specs=nano.specs $(OTHER_OPTIONS)
-    #+END_SRC
-  + This option can also work together with other specs options like
-    #+BEGIN_EXAMPLE
-    --specs=rdimon.specs
-    #+END_EXAMPLE
-+ Please be noticed that --specs=nano.specs is a linker option. Be sure to include in linker option if compiling and linking are separated.
-
-***** additional newlib-nano libraries usage
-
-Newlib-nano is different from newlib in addition to the libraries' name.
-Formatted input/output of floating-point number are implemented as weak symbol.
-If you want to use %f, you have to pull in the symbol by explicitly specifying
-"-u" command option.
-   
-  -u _scanf_float
-  -u _printf_float
-
-e.g. to output a float, the command line is like: 
-$ arm-none-eabi-gcc --specs=nano.specs -u _printf_float $(OTHER_OPTIONS)
-
-For more about the difference and usage, please refer the README.nano in the
-source package.
-
-Users can choose to use or not use semihosting by following instructions.
-***** semihosting
-You can add -lrdimon in the command line and compile the programs like:
-$ arm-none-eabi-gcc --specs=rdimon.specs \
-  -Wl,--start-group -lgcc -lc -lc -lm -lrdimon -Wl,--end-group $(OTHER_OPTIONS)
-
-***** non-semihosting/retarget
-If you are using retarget, you can add -lnosys in the command line and compile
-the programs like:
-$ arm-none-eabi-gcc \
-  -Wl,--start-group -lgcc -lc -lc -lm -lnosys -Wl,--end-group $(OTHER_OPTIONS)
-
-**** Linker scripts & startup code
-+ Latest update of linker scripts template and startup code is available on http://www.arm.com/cmsis
-
-**** Samples
-+ Examples of all above usages are available at:
-  #+BEGIN_EXAMPLE
-    install_dir/gcc-arm-none-eabi-*/share/gcc-arm-none-eabi/samples
-  #+END_EXAMPLE
-+ Read readme.txt under it for further information.
-
-
-*** qt Configuration
-./configure -embedded arm -xplatform qws/linux-arm-g++ -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -nomake tools -qt-mouse-tslib -qt-kbd-linuxinput
-
-
-*** Install tslib
-http://importgeek.wordpress.com/2012/04/09/compiling-qt-and-tslib-for-mini2440-and-run-a-demo-app/
-#+BEGIN_SRC sh
-sudo apt-get install git-core; cd /usr/local
-git clone http://github.com/kergoth/tslib.git
-export PATH=/usr/local/arm/4.3.2/bin:$PATH
-export CROSS_COMPILE=arm-none-linux-gnueabi-
-export CC=${CROSS_COMPILE}gcc
-export CFLAGS=-march=armv4t
-export AR=${CROSS_COMPILE}"ar" 
-export CXX=${CROSS_COMPILE}"g++" e
-xport AS=${CROSS_COMPILE}"as"
-export RANLIB=${CROSS_COMPILE}"ranlib"
-export LD=${CROSS_COMPILE}"ld"
-export STRIP=${CROSS_COMPILE}"strip"
-export ac_cv_func_malloc_0_nonnull=yes
-cd /usr/local/tslib
-./autogen-clean.sh
-./autogen.sh
-./configure --host=arm-linux --prefix=/home/tslib --enable-shared=yes --enable-static=yes
-make
-make install
-#+END_SRC
-** Configure QT for Embedded Linux                                             :noexport:
-*** Steps
-**** DONE Install QT on Development Platform
-http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
-#+BEGIN_SRC sh
-sudo apt-get install qtcreator
-#+END_SRC
-
-**** DONE Install GNU ARM Toolchain
-http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
-1. Install binaries
-   #+BEGIN_SRC sh
-     tar -xvf arm-linux-gcc-4.3.2.tgz
-   #+END_SRC
-2. Add path to BASH (append to .bashrc)
-   #+BEGIN_EXAMPLE
-   PATH=$PATH:/usr/local/arm/4.3.2/bin
-   #+END_EXAMPLE
-3. Logout and Login or Reboot
-   
-**** DONE Install TSLIB on Development Platform
-http://billforums.station51.net/viewtopic.php?f=8&t=15
-#+BEGIN_SRC sh
-cd ~/src
-git clone https://github.com/kergoth/tslib.git tslib-arm
-cd tslib-arm
-./autogen.sh
-./configure --host=arm-linux-gnueabihf --prefix=/usr/local/tslib --enable-static --enable-shared
-make -j5
-su
-export PATH=$PATH:opt/ext_toolchain/bin/
-make install
-#+END_SRC
-+ Make sure to modify qmake.conf file when installing qt-embedded by including:
-  #+BEGIN_EXAMPLE
-    QMAKE_INCDIR  += /usr/local/tslib/include
-    QMAKE_LIBDIR  += /usr/local/tslib/lib
-  #+END_EXAMPLE
-
-**** DONE Install qt-everywhere on Development Platform
-1. Install Source
-   #+BEGIN_SRC sh
-     tar -xvf qt-everywhere-opensource-src-4.6.2.tar.gz /usr/local/qt
-   #+END_SRC
-2. Replace the whole text in mkspecs/qws/linux-arm-g++/qmake.conf by the following:
-   #+BEGIN_EXAMPLE
-     #
-     # qmake configuration for building with arm-linux-g++
-     #
-     
-     include(../../common/g++.conf)
-     include(../../common/linux.conf)
-     include(../../common/qws.conf)
-     
-     # modifications to g++.conf
-     QMAKE_CC                = arm-none-linux-gnueabi-gcc -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_CXX               = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_LINK              = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_LINK_SHLIB        = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     
-     # modifications to linux.conf
-     QMAKE_AR                = arm-none-linux-gnueabi-ar cqs
-     QMAKE_OBJCOPY           = arm-none-linux-gnueabi-objcopy
-     QMAKE_STRIP             = arm-none-linux-gnueabi-strip
-     QMAKE_RANLIB            = arm-none-linux-gnueabi-ranlib
-     
-     load(qt_config)n
-
-   #+END_EXAMPLE
-3. V2
-   #+BEGIN_EXAMPLE
-     #
-     # qmake configuration for building with arm-linux-g++
-     #
-     
-     include(../../common/g++.conf)
-     include(../../common/linux.conf)
-     include(../../common/qws.conf)
-     
-     # modifications to g++.conf
-     QMAKE_CC                = arm-none-linux-gnueabi-gcc -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_CXX               = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_LINK              = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_LINK_SHLIB        = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     
-     # modifications to linux.conf
-     QMAKE_AR                = arm-none-linux-gnueabi-ar cqs
-     QMAKE_OBJCOPY           = arm-none-linux-gnueabi-objcopy
-     QMAKE_STRIP             = arm-none-linux-gnueabi-strip
-     QMAKE_RANLIB            = arm-none-linux-gnueabi-ranlib
-     
-     load(qt_config)
-   #+END_EXAMPLE
-4. Turn off compiler optimization by making changes in /mkspecs/common/g++-unix.conf. Change the following line to this :
-   #+BEGIN_EXAMPLE
-     QMAKE_CFLAGS_RELEASE  += -O0
-   #+END_EXAMPLE
-5. Configure Qt
-   #+BEGIN_SRC sh
-   configure -embedded arm -xplatform qws/linux-arm-g++ -prefix \
-   /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile \
-   -optimized-qmake -no-openssl -nomake tools -qt-mouse-tslib
-   #+END_SRC
-   + Now, this configuration is what I needed. You can drop in or add whatever you want. Some handy options that you may (or may not require) are :
-     + Enable touchscreen library support : -qt-mouse-tslib
-     + Enable USB keyboard support : -qt-kbd-linuxinput
-   + The above options affect the QtGui library so you need to replace only QtGui.so.x.x file on your root filesystem if you are planning to make changes.
-6. Make
-   #+BEGIN_SRC sh
-   make -j5
-   #+END_SRC
-   + Wait for a couple of hours or so and find your cross compiled freshly baked libraries in /usr/local/qt/lib/
-7. Install
-   #+BEGIN_SRC sh
-     su
-     export PATH=$PATH:/usr/local/arm/4.3.2/bin
-     make install
-   #+END_SRC
-
-**** TODO Copy Libraries Over to Device
-***** Overview
-So now, its time to put the libs on your mini machine! You may choose to create a separate filesystem using busybox too. Elaborate tutorials on that are available on the web. Just Google it up. What I will do is, modify the rootfs that came with my mini and remove all unnecessary stuff from it. Create a dir /usr/local/qt on your mini2440′s stock root filesystem and copy the complete lib directory from step 5 to that location using a USB stick/SD Card or something. Remember to do a df on the mini beforehand to see the free NAND you have got. In case the memory is low, delete some stock data – the small video file, mp3 file and some sample images that are present on it.Also remove unnecessary applications viz konqueror and old qt 2.2.0 libraries from the system.
-***** Steps
-1. Environment Variables
-   + To make the mini understand the new Qt libs, we’ll add some variables
-   + On your mini2440, edit /etc/inint.d/rcS and add the following line to it
-     #+BEGIN_EXAMPLE
-       source /etc/qt46profile
-     #+END_EXAMPLE
-2. Now create the /etc/qt46profile file and the following text to it :
-   #+BEGIN_EXAMPLE
-     export LD_LIBRARY_PATH=/usr/local/qt/lib
-     export QTDIR=/usr/local/qt
-     export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event0
-     export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
-   #+END_EXAMPLE
-   + Remember that these variables may change according to your qt libs location and mouse/touchscreen drivers. Go to /dev/input/ and see which file is responsible for which device. For eg. if tslib is configured on your device then the QWS_MOUSE_PROTO  variable will have the value something like
-     #+BEGIN_EXAMPLE
-     QWS_MOUSE_PROTO=Tslib:/dev/input/event1
-     #+END_EXAMPLE
-3. So, you are done at last and have your system ready with Qt 4.6.2 libs. Try running a simple application (viz a Analog Clock from the cross-compiled qt examples at /usr/local/qt/examples/widgets/analogclock/analogclock by giving the -qws option on the mini2440 shell as
-   #+BEGIN_SRC sh
-     ./analogclock -qws
-   #+END_SRC
-4. Thats it! Do tell me if you are able to reach here. In the next two posts I shall be discussing about rapidly developing a GUI application for your mini using Qt Creator and compiling and configuring Tslib for mini2440.
-
-
-*** Research Links
-+ http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux
-+ http://qt-project.org/doc/qt-4.8/qt-embedded-install.html
-+ https://www.olimex.com/forum/index.php?topic=399.0
-  #+BEGIN_EXAMPLE
-    ./configure -xplatform qws/linux-arm-g++ -embedded arm -prefix /usr/qtarm/usr/local/qt-embedded -qt-gfx-linuxfb -qt-gfx-vnc -no-largefile -exceptions -no-accessibility -no-qt3support -no-sse2 -qt-zlib -no-gif -no-libtiff -qt-libpng -no-libmng -qt-libjpeg -openssl -no-nis -no-cups -depths 16 -qt-kbd-linuxinput -nomake demos -nomake examples -qt-mouse-linuxinput -qt-mouse-tslib             
-  #+END_EXAMPLE
-+ https://code.google.com/p/a13-olinuxino/wiki/PageName
-+ https://www.olimex.com/forum/index.php?topic=751.msg3702#msg3702
-+ http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
-+ https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki
 ** DONE Buildroot - Install ARM Toolchain
+*** Steps
 1. Download Buildroot
    #+BEGIN_SRC sh
      mkdir bld; cd bld
@@ -943,19 +603,22 @@ So now, its time to put the libs on your mini machine! You may choose to create 
 5. Logout and Login or Reboot   
 
    
-*** Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"
-**** Error:
+**** Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"
+***** Error:
 + error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
-**** Probable Cause
+***** Probable Cause
 + Its looking for 32-bit library, which is not installed since I have a 64-bit system
-**** Solution
+***** Solution
 + Install the 32 bit libraries
 #+BEGIN_SRC sh
 sudo apt-get install ia32-libs
 #+END_SRC
-**** Links
+***** Links
 + http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory
-** TODO Configure QT for Embedded Linux - Buildroot Version
+*** Links
++ [[./doc/using-buildroot-real-project.pdf][Using buildroot for real projects]]
+  + This is a great presentation that demonstrates how to use buildroot very clearly.
+** DONE Configure QT for Embedded Linux - Buildroot Version
 *** Steps
 **** DONE Install QT on Development Platform
 http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
@@ -997,10 +660,10 @@ make install
      include(../../common/qws.conf)
      
      # modifications to g++.conf
-     QMAKE_CC                = arm-linux-gnueabihf-gcc -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
-     QMAKE_CXX               = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
-     QMAKE_LINK              = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
-     QMAKE_LINK_SHLIB        = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp -lrt
+     QMAKE_CC                = arm-linux-gnueabihf-gcc -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
+     QMAKE_CXX               = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
+     QMAKE_LINK              = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
+     QMAKE_LINK_SHLIB        = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
      
      # modifications to linux.conf
      QMAKE_AR                = arm-linux-gnueabihf-ar cqs
@@ -1008,13 +671,18 @@ make install
      QMAKE_STRIP             = arm-linux-gnueabihf-strip
      QMAKE_RANLIB            = arm-linux-gnueabihf-ranlib
      
+     QMAKE_INCDIR  += /usr/local/tslib/include
+     QMAKE_LIBDIR  += /usr/local/tslib/lib
+     QMAKE_LFLAGS += -Wl,-rpath-link=/usr/local/tslib/lib
+     
      load(qt_config)
    #+END_EXAMPLE
-
 3. Configure Qt
    #+BEGIN_SRC sh
-     make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -nomake demos -qt-mouse-tslib -no-webkit
+   make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license
    #+END_SRC
+   + Need to Add: -qt-mouse-tslib
+
    + Now, this configuration is what I needed. You can drop in or add whatever you want. Some handy options that you may (or may not require) are :
      + Enable touchscreen library support : -qt-mouse-tslib
      + Enable USB keyboard support : -qt-kbd-linuxinput
@@ -1037,17 +705,21 @@ make install
 + /opt/ext_toolchain/bin/../lib/gcc/arm-linux-gnueabihf/4.7.3/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lbootstrap
 http://www.qtcentre.org/archive/index.php/t-41850.html
 
-**** TODO Copy Libraries Over to Device
+**** DONE Copy Libraries Over to Device
 ***** Overview
 So now, its time to put the libs on your mini machine! You may choose to create a separate filesystem using busybox too. Elaborate tutorials on that are available on the web. Just Google it up. What I will do is, modify the rootfs that came with my mini and remove all unnecessary stuff from it. Create a dir /usr/local/qt on your mini2440′s stock root filesystem and copy the complete lib directory from step 5 to that location using a USB stick/SD Card or something. Remember to do a df on the mini beforehand to see the free NAND you have got. In case the memory is low, delete some stock data – the small video file, mp3 file and some sample images that are present on it.Also remove unnecessary applications viz konqueror and old qt 2.2.0 libraries from the system.
 ***** Steps
-1. Environment Variables
+1. Copy qt libraries over
+   #+BEGIN_SRC sh
+   rsync -rtvz -a -e "ssh -p 22122" /usr/local/qt/ root@192.168.12.200:/usr/local/qt/
+   #+END_SRC
+2. Environment Variables
    + To make the mini understand the new Qt libs, we’ll add some variables
    + On your mini2440, edit /etc/inint.d/rcS and add the following line to it
      #+BEGIN_EXAMPLE
        source /etc/qt46profile
      #+END_EXAMPLE
-2. Now create the /etc/qt46profile file and the following text to it :
+3. Now create the /etc/qt46profile file and the following text to it :
    #+BEGIN_EXAMPLE
      export LD_LIBRARY_PATH=/usr/local/qt/lib
      export QTDIR=/usr/local/qt
@@ -1058,11 +730,11 @@ So now, its time to put the libs on your mini machine! You may choose to create 
      #+BEGIN_EXAMPLE
      QWS_MOUSE_PROTO=Tslib:/dev/input/event1
      #+END_EXAMPLE
-3. So, you are done at last and have your system ready with Qt 4.6.2 libs. Try running a simple application (viz a Analog Clock from the cross-compiled qt examples at /usr/local/qt/examples/widgets/analogclock/analogclock by giving the -qws option on the mini2440 shell as
+4. So, you are done at last and have your system ready with Qt 4.6.2 libs. Try running a simple application (viz a Analog Clock from the cross-compiled qt examples at /usr/local/qt/examples/widgets/analogclock/analogclock by giving the -qws option on the mini2440 shell as
    #+BEGIN_SRC sh
      ./analogclock -qws
    #+END_SRC
-4. Thats it! Do tell me if you are able to reach here. In the next two posts I shall be discussing about rapidly developing a GUI application for your mini using Qt Creator and compiling and configuring Tslib for mini2440.
+5. Thats it! Do tell me if you are able to reach here. In the next two posts I shall be discussing about rapidly developing a GUI application for your mini using Qt Creator and compiling and configuring Tslib for mini2440.
 *** Research Links
 + http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux
 + http://qt-project.org/doc/qt-4.8/qt-embedded-install.html
@@ -1345,9 +1017,20 @@ gedit /mnt/sd/script_test.fex
 **** Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][{Link}]]
 
 **** http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/
-** Successfully Recieve Input from Screen
+** Successfully Recieve Touch Input from Screen
 + http://www.armadeus.com/wiki/index.php?title=Qt/Embedded#Touchscreen_handling
-** Output to Screen
+** Output to LCD Screen
+*** MainWindow.cpp
+#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.cpp" src cpp
+*** MainWindow.h
+#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.h" src cpp
+*** moc_mainwindow.cpp
+#+INCLUDE: "../src/testing/qt/hello_qt/moc_mainwindow.cpp" src cpp
+*** ui_mainwindow.h
+#+INCLUDE: "../src/testing/qt/hello_qt/ui_mainwindow.h" src cpp
+*** mainwindow.ui
+#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.ui" src txt
+
 ** Build a Button that does Something on Screen
 * Backups
 ** Backup the SD Card
@@ -1390,7 +1073,356 @@ gedit /mnt/sd/script_test.fex
      #+BEGIN_SRC sh
        gzip -dc /path/to/image.gz | dd of=/dev/sdx
      #+END_SRC
-
 * Scratch Pad                                                                   :noexport:
 + http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
 + export PATH=$PATH:/usr/local/arm/4.3.2/bin
+* Depreciated                                                                   :noexport:
+** Configure QT for Embedded Linux                                             :noexport:
+*** Steps
+**** DONE Install QT on Development Platform
+http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
+#+BEGIN_SRC sh
+sudo apt-get install qtcreator
+#+END_SRC
+
+**** DONE Install GNU ARM Toolchain
+http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
+1. Install binaries
+   #+BEGIN_SRC sh
+     tar -xvf arm-linux-gcc-4.3.2.tgz
+   #+END_SRC
+2. Add path to BASH (append to .bashrc)
+   #+BEGIN_EXAMPLE
+   PATH=$PATH:/usr/local/arm/4.3.2/bin
+   #+END_EXAMPLE
+3. Logout and Login or Reboot
+   
+**** DONE Install TSLIB on Development Platform
+http://billforums.station51.net/viewtopic.php?f=8&t=15
+#+BEGIN_SRC sh
+cd ~/src
+git clone https://github.com/kergoth/tslib.git tslib-arm
+cd tslib-arm
+./autogen.sh
+./configure --host=arm-linux-gnueabihf --prefix=/usr/local/tslib --enable-static --enable-shared
+make -j5
+su
+export PATH=$PATH:opt/ext_toolchain/bin/
+make install
+#+END_SRC
++ Make sure to modify qmake.conf file when installing qt-embedded by including:
+  #+BEGIN_EXAMPLE
+    QMAKE_INCDIR  += /usr/local/tslib/include
+    QMAKE_LIBDIR  += /usr/local/tslib/lib
+  #+END_EXAMPLE
+
+**** DONE Install qt-everywhere on Development Platform
+1. Install Source
+   #+BEGIN_SRC sh
+     tar -xvf qt-everywhere-opensource-src-4.6.2.tar.gz /usr/local/qt
+   #+END_SRC
+2. Replace the whole text in mkspecs/qws/linux-arm-g++/qmake.conf by the following:
+   #+BEGIN_EXAMPLE
+     #
+     # qmake configuration for building with arm-linux-g++
+     #
+     
+     include(../../common/g++.conf)
+     include(../../common/linux.conf)
+     include(../../common/qws.conf)
+     
+     # modifications to g++.conf
+     QMAKE_CC                = arm-none-linux-gnueabi-gcc -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_CXX               = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_LINK              = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_LINK_SHLIB        = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     
+     # modifications to linux.conf
+     QMAKE_AR                = arm-none-linux-gnueabi-ar cqs
+     QMAKE_OBJCOPY           = arm-none-linux-gnueabi-objcopy
+     QMAKE_STRIP             = arm-none-linux-gnueabi-strip
+     QMAKE_RANLIB            = arm-none-linux-gnueabi-ranlib
+     
+     load(qt_config)n
+
+   #+END_EXAMPLE
+3. V2
+   #+BEGIN_EXAMPLE
+     #
+     # qmake configuration for building with arm-linux-g++
+     #
+     
+     include(../../common/g++.conf)
+     include(../../common/linux.conf)
+     include(../../common/qws.conf)
+     
+     # modifications to g++.conf
+     QMAKE_CC                = arm-none-linux-gnueabi-gcc -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_CXX               = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_LINK              = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_LINK_SHLIB        = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     
+     # modifications to linux.conf
+     QMAKE_AR                = arm-none-linux-gnueabi-ar cqs
+     QMAKE_OBJCOPY           = arm-none-linux-gnueabi-objcopy
+     QMAKE_STRIP             = arm-none-linux-gnueabi-strip
+     QMAKE_RANLIB            = arm-none-linux-gnueabi-ranlib
+     
+     load(qt_config)
+   #+END_EXAMPLE
+4. Turn off compiler optimization by making changes in /mkspecs/common/g++-unix.conf. Change the following line to this :
+   #+BEGIN_EXAMPLE
+     QMAKE_CFLAGS_RELEASE  += -O0
+   #+END_EXAMPLE
+5. Configure Qt
+   #+BEGIN_SRC sh
+   configure -embedded arm -xplatform qws/linux-arm-g++ -prefix \
+   /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile \
+   -optimized-qmake -no-openssl -nomake tools -qt-mouse-tslib
+   #+END_SRC
+   + Now, this configuration is what I needed. You can drop in or add whatever you want. Some handy options that you may (or may not require) are :
+     + Enable touchscreen library support : -qt-mouse-tslib
+     + Enable USB keyboard support : -qt-kbd-linuxinput
+   + The above options affect the QtGui library so you need to replace only QtGui.so.x.x file on your root filesystem if you are planning to make changes.
+6. Make
+   #+BEGIN_SRC sh
+   make -j5
+   #+END_SRC
+   + Wait for a couple of hours or so and find your cross compiled freshly baked libraries in /usr/local/qt/lib/
+7. Install
+   #+BEGIN_SRC sh
+     su
+     export PATH=$PATH:/usr/local/arm/4.3.2/bin
+     make install
+   #+END_SRC
+
+**** TODO Copy Libraries Over to Device
+***** Overview
+So now, its time to put the libs on your mini machine! You may choose to create a separate filesystem using busybox too. Elaborate tutorials on that are available on the web. Just Google it up. What I will do is, modify the rootfs that came with my mini and remove all unnecessary stuff from it. Create a dir /usr/local/qt on your mini2440′s stock root filesystem and copy the complete lib directory from step 5 to that location using a USB stick/SD Card or something. Remember to do a df on the mini beforehand to see the free NAND you have got. In case the memory is low, delete some stock data – the small video file, mp3 file and some sample images that are present on it.Also remove unnecessary applications viz konqueror and old qt 2.2.0 libraries from the system.
+***** Steps
+1. Environment Variables
+   + To make the mini understand the new Qt libs, we’ll add some variables
+   + On your mini2440, edit /etc/inint.d/rcS and add the following line to it
+     #+BEGIN_EXAMPLE
+       source /etc/qt46profile
+     #+END_EXAMPLE
+2. Now create the /etc/qt46profile file and the following text to it :
+   #+BEGIN_EXAMPLE
+     export LD_LIBRARY_PATH=/usr/local/qt/lib
+     export QTDIR=/usr/local/qt
+     export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event0
+     export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
+   #+END_EXAMPLE
+   + Remember that these variables may change according to your qt libs location and mouse/touchscreen drivers. Go to /dev/input/ and see which file is responsible for which device. For eg. if tslib is configured on your device then the QWS_MOUSE_PROTO  variable will have the value something like
+     #+BEGIN_EXAMPLE
+     QWS_MOUSE_PROTO=Tslib:/dev/input/event1
+     #+END_EXAMPLE
+3. So, you are done at last and have your system ready with Qt 4.6.2 libs. Try running a simple application (viz a Analog Clock from the cross-compiled qt examples at /usr/local/qt/examples/widgets/analogclock/analogclock by giving the -qws option on the mini2440 shell as
+   #+BEGIN_SRC sh
+     ./analogclock -qws
+   #+END_SRC
+4. Thats it! Do tell me if you are able to reach here. In the next two posts I shall be discussing about rapidly developing a GUI application for your mini using Qt Creator and compiling and configuring Tslib for mini2440.
+
+
+*** Research Links
++ http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux
++ http://qt-project.org/doc/qt-4.8/qt-embedded-install.html
++ https://www.olimex.com/forum/index.php?topic=399.0
+  #+BEGIN_EXAMPLE
+    ./configure -xplatform qws/linux-arm-g++ -embedded arm -prefix /usr/qtarm/usr/local/qt-embedded -qt-gfx-linuxfb -qt-gfx-vnc -no-largefile -exceptions -no-accessibility -no-qt3support -no-sse2 -qt-zlib -no-gif -no-libtiff -qt-libpng -no-libmng -qt-libjpeg -openssl -no-nis -no-cups -depths 16 -qt-kbd-linuxinput -nomake demos -nomake examples -qt-mouse-linuxinput -qt-mouse-tslib             
+  #+END_EXAMPLE
++ https://code.google.com/p/a13-olinuxino/wiki/PageName
++ https://www.olimex.com/forum/index.php?topic=751.msg3702#msg3702
++ http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
++ https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki
+** Configure Cross-Compiling Toolchain                                         :noexport:
+*** http://psas.pdx.edu/DebianCrossCompilerHowto/#index12h3
++ https://launchpadlibrarian.net/135588846/readme.txt
+*** Install Toolchain
+https://launchpad.net/gcc-arm-embedded
+https://launchpadlibrarian.net/135588886/How-to-build-toolchain.pdf
+
+*** Install GMP
+http://gmplib.org/#DOWNLOAD
++ Read INSTALL
+  #+BEGIN_SRC sh
+    ./configure --enable-cxx
+    make
+    make check
+    su
+    make install
+  #+END_SRC
+
+*** Qt Embedded
++ http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
++ http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
+
+*** GNU Tools for ARM Embedded Processors - Version: 4.7
+https://launchpadlibrarian.net/135588846/readme.txt
+**** Installing executables on Linux
++ Unpack the tarball to the install directory, like this:
+  #+BEGIN_SRC sh
+  cd $install_dir && tar xjf gcc-arm-none-eabi-*-yyyymmdd-linux.tar.bz2
+  #+END_SRC
+  + For 64 bit system, 32 bit libc and libncurses are required to run the tools.
++ For Ubuntu 10.04/12.04 user, the toolchain can also be installed via Launchpad
+  #+BEGIN_EXAMPLE
+  PPA at https://launchpad.net/~terry.guo/+archive/gcc-arm-embedded.
+  #+END_EXAMPLE
+**** Invoking GCC
++ On Linux and Mac OS X, either invoke with the complete path like this:
+  #+BEGIN_SRC sh
+    $install_dir/gcc-arm-none-eabi-*/bin/arm-none-eabi-gcc
+  #+END_SRC
++ Or set path like this:
+  #+BEGIN_SRC sh
+    export PATH=$PATH:$install_dir/gcc-arm-none-eabi-*/bin
+    arm-none-eabi-gcc
+  #+END_SRC
+export PATH=$PATH:/home/slayer/toolchain/gcc-arm-none-eabi-4_7-2013q1/bin
+**** Architecture options usage
++ This toolchain is built and optimized for Cortex-A/R/M bare metal development.
++ the following table shows how to invoke GCC/G++ with correct command line options for variants of Cortex-A/R and Cortex-M architectures. 
+#+BEGIN_EXAMPLE
+--------------------------------------------------------------------
+| ARM Core | Command Line Options                       | multilib |
+|----------|--------------------------------------------|----------|
+|Cortex-M0+| -mthumb -mcpu=cortex-m0plus                | armv6-m  |
+|Cortex-M0 | -mthumb -mcpu=cortex-m0                    |          |
+|Cortex-M1 | -mthumb -mcpu=cortex-m1                    |          |
+|          |--------------------------------------------|          |
+|          | -mthumb -march=armv6-m                     |          |
+|----------|--------------------------------------------|----------|
+|Cortex-M3 | -mthumb -mcpu=cortex-m3                    | armv7-m  |
+|          |--------------------------------------------|          |
+|          | -mthumb -march=armv7-m                     |          |
+|----------|--------------------------------------------|----------|
+|Cortex-M4 | -mthumb -mcpu=cortex-m4                    | armv7e-m |
+|(No FP)   |--------------------------------------------|          |
+|          | -mthumb -march=armv7e-m                    |          |
+|----------|--------------------------------------------|----------|
+|Cortex-M4 | -mthumb -mcpu=cortex-m4 -mfloat-abi=softfp | armv7e-m |
+|(Soft FP) | -mfpu=fpv4-sp-d16                          | /softfp  |
+|          |--------------------------------------------|          |
+|          | -mthumb -march=armv7e-m -mfloat-abi=softfp |          |
+|          | -mfpu=fpv4-sp-d16                          |          |
+|----------|--------------------------------------------|----------|
+|Cortex-M4 | -mthumb -mcpu=cortex-m4 -mfloat-abi=hard   | armv7e-m |
+|(Hard FP) | -mfpu=fpv4-sp-d16                          | /fpu     |
+|          |--------------------------------------------|          |
+|          | -mthumb -march=armv7e-m -mfloat-abi=hard   |          |
+|          | -mfpu=fpv4-sp-d16                          |          |
+|----------|--------------------------------------------|----------|
+|Cortex-R4 | [-mthumb] -march=armv7-r                   | armv7-ar |
+|Cortex-R5 |                                            | /thumb   |
+|(No FP)   |                                            |          |
+|----------|--------------------------------------------|----------|
+|Cortex-R4 | [-mthumb] -march=armv7-r -mfloat-abi=softfp| armv7-ar |
+|Cortex-R5 | -mfpu=vfpv3-d16                            | /thumb   |
+|(Soft FP) |                                            | /softfp  |
+|----------|--------------------------------------------|----------|
+|Cortex-R4 | [-mthumb] -march=armv7-r -mfloat-abi=hard  | armv7-ar |
+|Cortex-R5 | -mfpu=vfpv3-d16                            | /thumb   |
+|(Hard FP) |                                            | /fpu     |
+|----------|--------------------------------------------|----------|
+|Cortex-A* | [-mthumb] -march=armv7-a                   | armv7-ar |
+|(No FP)   |                                            | /thumb   |
+|----------|--------------------------------------------|----------|
+|Cortex-A* | [-mthumb] -march=armv7-a -mfloat-abi=softfp| armv7-ar |
+|(Soft FP) | -mfpu=vfpv3-d16                            | /thumb   |
+|          |                                            | /softfp  |
+|----------|--------------------------------------------|----------|
+|Cortex-A* | [-mthumb] -march=armv7-a -mfloat-abi=hard  | armv7-ar |
+|(Hard FP) | -mfpu=vfpv3-d16                            | /thumb   |
+|          |                                            | /fpu     |
+--------------------------------------------------------------------
+#+END_EXAMPLE
+
+**** C Libraries usage
++ This toolchain is released with two prebuilt C libraries based on newlib: one is the standard newlib and the other is newlib-nano for code size.
++ To distinguish them, we rename the size optimized libraries as:
+  #+BEGIN_EXAMPLE
+  libc.a --> libc_s.a
+  libg.a --> libg_s.a
+  #+END_EXAMPLE  
++ To use newlib-nano, users should provide additional gcc link time option:
+  #+BEGIN_EXAMPLE
+  --specs=nano.specs
+  #+END_EXAMPLE
+  + Nano.specs also handles two additional gcc libraries: libstdc++_s.a and libsupc++_s.a, which are optimized for code size.
+  + For example:
+    #+BEGIN_SRC sh
+      arm-none-eabi-gcc src.c --specs=nano.specs $(OTHER_OPTIONS)
+    #+END_SRC
+  + This option can also work together with other specs options like
+    #+BEGIN_EXAMPLE
+    --specs=rdimon.specs
+    #+END_EXAMPLE
++ Please be noticed that --specs=nano.specs is a linker option. Be sure to include in linker option if compiling and linking are separated.
+
+***** additional newlib-nano libraries usage
+
+Newlib-nano is different from newlib in addition to the libraries' name.
+Formatted input/output of floating-point number are implemented as weak symbol.
+If you want to use %f, you have to pull in the symbol by explicitly specifying
+"-u" command option.
+   
+  -u _scanf_float
+  -u _printf_float
+
+e.g. to output a float, the command line is like: 
+$ arm-none-eabi-gcc --specs=nano.specs -u _printf_float $(OTHER_OPTIONS)
+
+For more about the difference and usage, please refer the README.nano in the
+source package.
+
+Users can choose to use or not use semihosting by following instructions.
+***** semihosting
+You can add -lrdimon in the command line and compile the programs like:
+$ arm-none-eabi-gcc --specs=rdimon.specs \
+  -Wl,--start-group -lgcc -lc -lc -lm -lrdimon -Wl,--end-group $(OTHER_OPTIONS)
+
+***** non-semihosting/retarget
+If you are using retarget, you can add -lnosys in the command line and compile
+the programs like:
+$ arm-none-eabi-gcc \
+  -Wl,--start-group -lgcc -lc -lc -lm -lnosys -Wl,--end-group $(OTHER_OPTIONS)
+
+**** Linker scripts & startup code
++ Latest update of linker scripts template and startup code is available on http://www.arm.com/cmsis
+
+**** Samples
++ Examples of all above usages are available at:
+  #+BEGIN_EXAMPLE
+    install_dir/gcc-arm-none-eabi-*/share/gcc-arm-none-eabi/samples
+  #+END_EXAMPLE
++ Read readme.txt under it for further information.
+
+
+*** qt Configuration
+./configure -embedded arm -xplatform qws/linux-arm-g++ -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -nomake tools -qt-mouse-tslib -qt-kbd-linuxinput
+
+
+*** Install tslib
+http://importgeek.wordpress.com/2012/04/09/compiling-qt-and-tslib-for-mini2440-and-run-a-demo-app/
+#+BEGIN_SRC sh
+sudo apt-get install git-core; cd /usr/local
+git clone http://github.com/kergoth/tslib.git
+export PATH=/usr/local/arm/4.3.2/bin:$PATH
+export CROSS_COMPILE=arm-none-linux-gnueabi-
+export CC=${CROSS_COMPILE}gcc
+export CFLAGS=-march=armv4t
+export AR=${CROSS_COMPILE}"ar" 
+export CXX=${CROSS_COMPILE}"g++" e
+xport AS=${CROSS_COMPILE}"as"
+export RANLIB=${CROSS_COMPILE}"ranlib"
+export LD=${CROSS_COMPILE}"ld"
+export STRIP=${CROSS_COMPILE}"strip"
+export ac_cv_func_malloc_0_nonnull=yes
+cd /usr/local/tslib
+./autogen-clean.sh
+./autogen.sh
+./configure --host=arm-linux --prefix=/home/tslib --enable-shared=yes --enable-static=yes
+make
+make install
+#+END_SRC
