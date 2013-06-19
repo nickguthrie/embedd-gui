@@ -211,6 +211,43 @@ sftp -P 22122 root@192.168.12.200
     put <file>
   #+END_SRC
  
+** Send Files via SCP 
+Source: http://www.hypexr.org/linux_scp_help.php
+scp allows files to be copied to, from, or between different hosts. It uses ssh for data transfer and provides the same authentication and same level of security as ssh.
+*** Copy the file "foobar.txt" from a remote host to the local host
+#+BEGIN_SRC sh
+    scp -P 22122 root@192.168.12.200:foobar.txt /some/local/directory
+  #+END_SRC
+*** Copy the file "foobar.txt" from the local host to a remote host
+#+BEGIN_SRC sh
+  scp -P 22122 foobar.txt root@192.168.12.200:/some/remote/directory
+#+END_SRC
+*** Copy the directory "foo" from the local host to a remote host's directory "bar"
+#+BEGIN_SRC sh
+  scp -P 22122 -r foo root@192.168.12.200:/some/remote/directory/bar
+#+END_SRC
+*** Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"
+#+BEGIN_SRC sh
+  scp -P 22122 your_username@rh1.edu:/some/remote/directory/foobar.txt your_username@rh2.edu:/some/remote/directory/
+#+END_SRC
+*** Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host
+#+BEGIN_SRC sh
+  scp -P 22122 foo.txt bar.txt root@192.168.12.200:~
+#+END_SRC
+*** Copy the file "foobar.txt" from the local host to a remote host using port 2264
+#+BEGIN_SRC sh
+  scp -P 22122 -P 2264 foobar.txt root@192.168.12.200:/some/remote/directory
+#+END_SRC
+*** Copy multiple files from the remote host to your current directory on the local host
+#+BEGIN_SRC sh
+  scp -P 22122 root@192.168.12.200:/some/remote/directory/\{a,b,c\} .
+  scp -P 22122 root@192.168.12.200:~/\{foo.txt,bar.txt\} .
+#+END_SRC
+
+** Check Remaining Space on Hard Drive
+#+BEGIN_SRC sh
+du -h <path_of_the_dir> | tail -1
+#+END_SRC
 * Objectives
 ** DONE Obtain Hardware
 ** DONE Get Debian Running
@@ -510,7 +547,7 @@ startx;
 
 *** Consider Qt Razorh
 
-** TODO Configure Cross-Compiling Toolchain
+** Configure Cross-Compiling Toolchain
 *** http://psas.pdx.edu/DebianCrossCompilerHowto/#index12h3
 + https://launchpadlibrarian.net/135588846/readme.txt
 *** Install Toolchain
@@ -701,7 +738,7 @@ cd /usr/local/tslib
 make
 make install
 #+END_SRC
-** TODO Configure QT for Embedded Linux
+** Configure QT for Embedded Linux
 *** Steps
 **** DONE Install QT on Development Platform
 http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
@@ -749,10 +786,35 @@ sudo make install
      include(../../common/qws.conf)
      
      # modifications to g++.conf
-     QMAKE_CC                = arm-none-linux-gnueabi-gcc -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv4t -mtune=arm920t -O0 -lts
-     QMAKE_CXX               = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv4t -mtune=arm920t -O0 -lts
-     QMAKE_LINK              = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv4t -mtune=arm920t -O0 -lts
-     QMAKE_LINK_SHLIB        = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv4t -mtune=arm920t -O0 -lts
+     QMAKE_CC                = arm-none-linux-gnueabi-gcc -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_CXX               = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_LINK              = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_LINK_SHLIB        = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     
+     # modifications to linux.conf
+     QMAKE_AR                = arm-none-linux-gnueabi-ar cqs
+     QMAKE_OBJCOPY           = arm-none-linux-gnueabi-objcopy
+     QMAKE_STRIP             = arm-none-linux-gnueabi-strip
+     QMAKE_RANLIB            = arm-none-linux-gnueabi-ranlib
+     
+     load(qt_config)n
+
+   #+END_EXAMPLE
+3. V2
+   #+BEGIN_EXAMPLE
+     #
+     # qmake configuration for building with arm-linux-g++
+     #
+     
+     include(../../common/g++.conf)
+     include(../../common/linux.conf)
+     include(../../common/qws.conf)
+     
+     # modifications to g++.conf
+     QMAKE_CC                = arm-none-linux-gnueabi-gcc -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_CXX               = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_LINK              = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_LINK_SHLIB        = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
      
      # modifications to linux.conf
      QMAKE_AR                = arm-none-linux-gnueabi-ar cqs
@@ -762,11 +824,11 @@ sudo make install
      
      load(qt_config)
    #+END_EXAMPLE
-3. Turn off compiler optimization by making changes in /mkspecs/common/g++-unix.conf. Change the following line to this :
+4. Turn off compiler optimization by making changes in /mkspecs/common/g++-unix.conf. Change the following line to this :
    #+BEGIN_EXAMPLE
      QMAKE_CFLAGS_RELEASE  += -O0
    #+END_EXAMPLE
-4. Configure Qt
+5. Configure Qt
    #+BEGIN_SRC sh
    configure -embedded arm -xplatform qws/linux-arm-g++ -prefix \
    /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile \
@@ -776,12 +838,12 @@ sudo make install
      + Enable touchscreen library support : -qt-mouse-tslib
      + Enable USB keyboard support : -qt-kbd-linuxinput
    + The above options affect the QtGui library so you need to replace only QtGui.so.x.x file on your root filesystem if you are planning to make changes.
-5. Make
+6. Make
    #+BEGIN_SRC sh
    make -j5
    #+END_SRC
    + Wait for a couple of hours or so and find your cross compiled freshly baked libraries in /usr/local/qt/lib/
-6. Install
+7. Install
    #+BEGIN_SRC sh
      su
      export PATH=$PATH:/usr/local/arm/4.3.2/bin
@@ -816,11 +878,9 @@ So now, its time to put the libs on your mini machine! You may choose to create 
 4. Thats it! Do tell me if you are able to reach here. In the next two posts I shall be discussing about rapidly developing a GUI application for your mini using Qt Creator and compiling and configuring Tslib for mini2440.
 
 
-
-
 *** Research Links
 + http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux
-+  http://qt-project.org/doc/qt-4.8/qt-embedded-install.html
++ http://qt-project.org/doc/qt-4.8/qt-embedded-install.html
 + https://www.olimex.com/forum/index.php?topic=399.0
   #+BEGIN_EXAMPLE
     ./configure -xplatform qws/linux-arm-g++ -embedded arm -prefix /usr/qtarm/usr/local/qt-embedded -qt-gfx-linuxfb -qt-gfx-vnc -no-largefile -exceptions -no-accessibility -no-qt3support -no-sse2 -qt-zlib -no-gif -no-libtiff -qt-libpng -no-libmng -qt-libjpeg -openssl -no-nis -no-cups -depths 16 -qt-kbd-linuxinput -nomake demos -nomake examples -qt-mouse-linuxinput -qt-mouse-tslib             
@@ -829,7 +889,162 @@ So now, its time to put the libs on your mini machine! You may choose to create 
 + https://www.olimex.com/forum/index.php?topic=751.msg3702#msg3702
 + http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
 + https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki
+** DONE Buildroot - Install ARM Toolchain
+1. Download Buildroot
+   #+BEGIN_SRC sh
+     mkdir bld; cd bld
+     wget http://buildroot.net/downloads/buildroot-2013.05.tar.gz
+     tar -xvf buildroot-2013.05.tar.gz
+     cd buildroot-2013.05
+   #+END_SRC
 
+2. Run Menu Config
+   #+BEGIN_SRC sh
+     make menuconfig
+   #+END_SRC
+   + Relevant Configurations:
+     |-----------------------------+--------------------------------|
+     | Target Architecture         | ARM (little endian)            |
+     | Target Architecture Variant | Cortex-A8                      |
+     | Toolchain                   | Sourcery Codebench ARM 2011.09 |
+4. If you are on a 64-bit system
+   #+BEGIN_SRC sh
+     sudo apt-get install ia32-libs
+   #+END_SRC
+   + See Error
+
+3. Install toolchain binaries
+   #+BEGIN_SRC sh
+     su
+     cp -a ext-toolchain /opt/ext_toolchain
+     cp /etc/environment /etc/environment.BAK
+   #+END_SRC
+   + Append :/opt/ext_toolchain/bin/ to Path
+     #+BEGIN_EXAMPLE
+       PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/ext_toolchain/bin/"
+     #+END_EXAMPLE
+
+5. Logout and Login or Reboot   
+
+   
+*** Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"
+**** Error:
++ error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
+**** Probable Cause
++ Its looking for 32-bit library, which is not installed since I have a 64-bit system
+**** Solution
++ Install the 32 bit libraries
+#+BEGIN_SRC sh
+sudo apt-get install ia32-libs
+#+END_SRC
+**** Links
++ http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory
+** TODO Configure QT for Embedded Linux - Buildroot Version
+*** Steps
+**** DONE Install QT on Development Platform
+http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
+#+BEGIN_SRC sh
+sudo apt-get install qtcreator
+#+END_SRC
+**** TODO Install TSLIB on Development Platform
+***** Steps
+#+BEGIN_SRC sh
+  cd ~/git
+  git clone http://github.com/kergoth/tslib.git tslib/
+  cd tslib
+  ./autogen.sh
+  ./configure --host=arm-none-linux-gnueabi --prefix=/usr/local/tslib --enable-static --enable-shared
+  make -j 5
+  sudo make install
+#+END_SRC
+***** Links
+**** TODO Install qt-everywhere on Development Platform
+1. Install Source
+   #+BEGIN_SRC sh
+     tar -xvf qt-everywhere-opensource-src-4.6.2.tar.gz /usr/local/qt
+   #+END_SRC
+2. Replace the whole text in mkspecs/qws/linux-arm-g++/qmake.conf by the following:
+   #+BEGIN_EXAMPLE
+     #
+     # qmake configuration for building with arm-linux-g++
+     #
+     include(../../common/gcc-base-unix.conf)
+     include(../../common/g++-unix.conf)
+     include(../../common/linux.conf)
+     include(../../common/qws.conf)
+     
+     # modifications to g++.conf
+     QMAKE_CC                = arm-unknown-linux-gnueabi-gcc -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp
+     QMAKE_CXX               = arm-unknown-linux-gnueabi-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp
+     QMAKE_LINK              = arm-unknown-linux-gnueabi-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp
+     QMAKE_LINK_SHLIB        = arm-unknown-linux-gnueabi-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -mfloat-abi=softfp
+     
+     # modifications to linux.conf
+     QMAKE_AR                = arm-unknown-linux-gnueabi-ar cqs
+     QMAKE_OBJCOPY           = arm-unknown-linux-gnueabi-objcopy
+     QMAKE_STRIP             = arm-unknown-linux-gnueabi-strip
+     QMAKE_RANLIB            = arm-unknown-linux-gnueabi-ranlib
+     
+     load(qt_config)
+   #+END_EXAMPLE
+
+3. Configure Qt
+   #+BEGIN_SRC sh
+     ./configure -embedded arm -nomake demos -nomake example -xplatform qws/linux-arm-g++ -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -nomake tools -qt-mouse-tslib
+   #+END_SRC
+   + Now, this configuration is what I needed. You can drop in or add whatever you want. Some handy options that you may (or may not require) are :
+     + Enable touchscreen library support : -qt-mouse-tslib
+     + Enable USB keyboard support : -qt-kbd-linuxinput
+   + The above options affect the QtGui library so you need to replace only QtGui.so.x.x file on your root filesystem if you are planning to make changes.
+4. Make
+   #+BEGIN_SRC sh
+   make -j 5
+   #+END_SRC
+   + Wait for a couple of hours or so and find your cross compiled freshly baked libraries in /usr/local/qt/lib/
+5. Install
+   #+BEGIN_SRC sh
+     su
+     export PATH=$PATH:/usr/local/arm/4.3.2/bin
+     make install
+   #+END_SRC
+
+**** TODO Copy Libraries Over to Device
+***** Overview
+So now, its time to put the libs on your mini machine! You may choose to create a separate filesystem using busybox too. Elaborate tutorials on that are available on the web. Just Google it up. What I will do is, modify the rootfs that came with my mini and remove all unnecessary stuff from it. Create a dir /usr/local/qt on your mini2440′s stock root filesystem and copy the complete lib directory from step 5 to that location using a USB stick/SD Card or something. Remember to do a df on the mini beforehand to see the free NAND you have got. In case the memory is low, delete some stock data – the small video file, mp3 file and some sample images that are present on it.Also remove unnecessary applications viz konqueror and old qt 2.2.0 libraries from the system.
+***** Steps
+1. Environment Variables
+   + To make the mini understand the new Qt libs, we’ll add some variables
+   + On your mini2440, edit /etc/inint.d/rcS and add the following line to it
+     #+BEGIN_EXAMPLE
+       source /etc/qt46profile
+     #+END_EXAMPLE
+2. Now create the /etc/qt46profile file and the following text to it :
+   #+BEGIN_EXAMPLE
+     export LD_LIBRARY_PATH=/usr/local/qt/lib
+     export QTDIR=/usr/local/qt
+     export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event0
+     export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
+   #+END_EXAMPLE
+   + Remember that these variables may change according to your qt libs location and mouse/touchscreen drivers. Go to /dev/input/ and see which file is responsible for which device. For eg. if tslib is configured on your device then the QWS_MOUSE_PROTO  variable will have the value something like
+     #+BEGIN_EXAMPLE
+     QWS_MOUSE_PROTO=Tslib:/dev/input/event1
+     #+END_EXAMPLE
+3. So, you are done at last and have your system ready with Qt 4.6.2 libs. Try running a simple application (viz a Analog Clock from the cross-compiled qt examples at /usr/local/qt/examples/widgets/analogclock/analogclock by giving the -qws option on the mini2440 shell as
+   #+BEGIN_SRC sh
+     ./analogclock -qws
+   #+END_SRC
+4. Thats it! Do tell me if you are able to reach here. In the next two posts I shall be discussing about rapidly developing a GUI application for your mini using Qt Creator and compiling and configuring Tslib for mini2440.
+*** Research Links
++ http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux
++ http://qt-project.org/doc/qt-4.8/qt-embedded-install.html
++ https://www.olimex.com/forum/index.php?topic=399.0
+  #+BEGIN_EXAMPLE
+    ./configure -xplatform qws/linux-arm-g++ -embedded arm -prefix /usr/qtarm/usr/local/qt-embedded -qt-gfx-linuxfb -qt-gfx-vnc -no-largefile -exceptions -no-accessibility -no-qt3support -no-sse2 -qt-zlib -no-gif -no-libtiff -qt-libpng -no-libmng -qt-libjpeg -openssl -no-nis -no-cups -depths 16 -qt-kbd-linuxinput -nomake demos -nomake examples -qt-mouse-linuxinput -qt-mouse-tslib             
+  #+END_EXAMPLE
++ https://code.google.com/p/a13-olinuxino/wiki/PageName
++ https://www.olimex.com/forum/index.php?topic=751.msg3702#msg3702
++ http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
++ https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki
 ** Configure Debian to Communicate to Touchscreen
 *** Messing with the script file
 **** Installation
@@ -1099,8 +1314,8 @@ gedit /mnt/sd/script_test.fex
 **** Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][{Link}]]
 
 **** http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/
-
 ** Successfully Recieve Input from Screen
++ http://www.armadeus.com/wiki/index.php?title=Qt/Embedded#Touchscreen_handling
 ** Output to Screen
 ** Build a Button that does Something on Screen
 * Backups
@@ -1145,8 +1360,6 @@ gedit /mnt/sd/script_test.fex
        gzip -dc /path/to/image.gz | dd of=/dev/sdx
      #+END_SRC
 
-
-
-* Scratchpad                                                                    :noexport:
+* Scratch Pad                                                                   :noexport:
 + http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
 + export PATH=$PATH:/usr/local/arm/4.3.2/bin
