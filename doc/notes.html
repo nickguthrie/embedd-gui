@@ -3,9 +3,9 @@
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<title>Embedded GUI Framework</title>
+<title>Embedd GUI</title>
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
-<meta name="title" content="Embedded GUI Framework"/>
+<meta name="title" content="Embedd GUI"/>
 <meta name="generator" content="Org-mode"/>
 <meta name="generated" content="2013-06-04 Tue"/>
 <meta name="author" content="Nick"/>
@@ -192,7 +192,7 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="content">
-<h1 class="title">Embedded GUI Framework</h1>
+<h1 class="title">Embedd GUI</h1>
 
 
 
@@ -235,7 +235,7 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#sec-3-3">4.3" LCD Screen</a></li>
-<li><a href="#sec-3-4">4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen </a>
+<li><a href="#sec-3-4">4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen {link}</a>
 <ul>
 <li><a href="#sec-3-4-1">Overview</a></li>
 <li><a href="#sec-3-4-2">A13-OLinuXino LCD Board Features</a></li>
@@ -258,6 +258,7 @@ for the JavaScript code in this tag.
 <li><a href="#sec-4-4-5">Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host</a></li>
 <li><a href="#sec-4-4-6">Copy the file "foobar.txt" from the local host to a remote host using port 2264</a></li>
 <li><a href="#sec-4-4-7">Copy multiple files from the remote host to your current directory on the local host</a></li>
+<li><a href="#sec-4-4-8">Receive and Entire Directory</a></li>
 </ul>
 </li>
 <li><a href="#sec-4-5">Check Remaining Space on Hard Drive</a></li>
@@ -268,6 +269,11 @@ for the JavaScript code in this tag.
 </ul>
 </li>
 <li><a href="#sec-4-7">Building Projects with Qmake</a></li>
+<li><a href="#sec-4-8">Backups</a>
+<ul>
+<li><a href="#sec-4-8-1">Backup the SD Card</a></li>
+<li><a href="#sec-4-8-2">Backup Images to Web Storage</a></li>
+</ul></li>
 </ul>
 </li>
 <li><a href="#sec-5">Objectives</a>
@@ -347,33 +353,33 @@ for the JavaScript code in this tag.
 <li><a href="#sec-5-13-2">Research Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-14">Configure Debian to Communicate to Touchscreen</a>
+<li><a href="#sec-5-14">Configure Touchscreen Support (tslib)</a>
 <ul>
-<li><a href="#sec-5-14-1">Messing with the script file</a></li>
-<li><a href="#sec-5-14-2">Links</a></li>
+<li><a href="#sec-5-14-1">Problem: All debian images are built for 512 MB of RAM, 256 is all that is available</a></li>
+<li><a href="#sec-5-14-2">Promising Solution</a></li>
+<li><a href="#sec-5-14-3">Actual</a></li>
+<li><a href="#sec-5-14-4">Test Touchscreen</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-15">Successfully Recieve Touch Input from Screen</a></li>
-<li><a href="#sec-5-16">Output to LCD Screen</a>
+<li><a href="#sec-5-15">Configure Debian to Communicate to Touchscreen</a>
 <ul>
-<li><a href="#sec-5-16-1">MainWindow.cpp</a></li>
-<li><a href="#sec-5-16-2">MainWindow.h</a></li>
-<li><a href="#sec-5-16-3">moc_mainwindow.cpp</a></li>
-<li><a href="#sec-5-16-4">ui_mainwindow.h</a></li>
-<li><a href="#sec-5-16-5">mainwindow.ui</a></li>
+<li><a href="#sec-5-15-1">Messing with the script file</a></li>
+<li><a href="#sec-5-15-2">Links</a></li>
+<li><a href="#sec-5-15-3">Error</a></li>
+<li><a href="#sec-5-15-4">Research</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-17">Build a Button that does Something on Screen</a></li>
+<li><a href="#sec-5-16">Successfully Recieve Touch Input from Screen</a></li>
+<li><a href="#sec-5-17">Output to LCD Screen</a>
+<ul>
+<li><a href="#sec-5-17-1">MainWindow.cpp</a></li>
+<li><a href="#sec-5-17-2">MainWindow.h</a></li>
+<li><a href="#sec-5-17-3">moc_mainwindow.cpp</a></li>
+<li><a href="#sec-5-17-4">ui_mainwindow.h</a></li>
+<li><a href="#sec-5-17-5">mainwindow.ui</a></li>
 </ul>
 </li>
-<li><a href="#sec-6">Backups</a>
-<ul>
-<li><a href="#sec-6-1">Backup the SD Card</a>
-<ul>
-<li><a href="#sec-6-1-1">Steps</a></li>
-<li><a href="#sec-6-1-2">Links</a></li>
-</ul>
-</li>
+<li><a href="#sec-5-18">Build a Button that does Something on Screen</a></li>
 </ul>
 </li>
 </ul>
@@ -825,7 +831,7 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-3-4" class="outline-3">
-<h3 id="sec-3-4">4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen <sup><a class="footref" name="fnr-.1" href="#fn-.1">1</a></sup></h3>
+<h3 id="sec-3-4">4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen <a href="http://microcontrollershop.com/product_info.php?products_id=5557">{link}</a></h3>
 <div class="outline-text-3" id="text-3-4">
 
 <p><img src="./img/a13lcd43ts_front.png"  alt="./img/a13lcd43ts_front.png" />     <img src="./img/a13lcd43ts_back.png"  alt="./img/a13lcd43ts_back.png" />
@@ -1129,6 +1135,20 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 
 </div>
+
+</div>
+
+<div id="outline-container-4-4-8" class="outline-4">
+<h4 id="sec-4-4-8">Receive and Entire Directory</h4>
+<div class="outline-text-4" id="text-4-4-8">
+
+
+
+
+<pre class="src src-sh">scp -r root@192.168.12.222:/root/Desktop/src/tslib tslib_v2
+</pre>
+
+</div>
 </div>
 
 </div>
@@ -1206,6 +1226,139 @@ make
 </li>
 </ol>
 
+</div>
+
+</div>
+
+<div id="outline-container-4-8" class="outline-3">
+<h3 id="sec-4-8">Backups</h3>
+<div class="outline-text-3" id="text-4-8">
+
+
+</div>
+
+<div id="outline-container-4-8-1" class="outline-4">
+<h4 id="sec-4-8-1">Backup the SD Card</h4>
+<div class="outline-text-4" id="text-4-8-1">
+
+<ul>
+<li id="sec-4-8-1-1">Steps<br/>
+<ul>
+<li id="sec-4-8-1-1-1">Backup<br/>
+<ol>
+<li>Navigate to backup directoryhttp://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> BAK/
+</pre>
+
+</li>
+<li>connect card to linux, unmounted
+</li>
+<li>copy card contents with dd
+
+
+
+<pre class="src src-sh">sudo dd <span style="color: #7fffd4;">if</span>=/dev/mmcblk0 | gzip &gt; ./debian_configured_v1.image.gz
+</pre>
+
+</li>
+</ol>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-8-1-1-2">Restore<br/>
+<ol>
+<li>insert unmounted card
+</li>
+<li>unzip to card
+
+
+
+<pre class="src src-sh">sudo gzip -dc /path/to/debian_configured_v1.image.gz | dd <span style="color: #7fffd4;">of</span>=/dev/mmcblk0
+</pre>
+
+</li>
+</ol>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-4-8-1-2">Links<br/>
+<ul>
+<li id="sec-4-8-1-2-1">How do I make a Backup of my Rasberry Pi <a href="http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi">{Link}</a><br/>
+<ol>
+<li>Make a full backup of the image
+<ul>
+<li>If you are running linux then you can use the dd command to make a full backup of the image:
+
+
+
+<pre class="src src-sh">dd <span style="color: #7fffd4;">if</span>=/dev/sdx <span style="color: #7fffd4;">of</span>=/path/to/image
+</pre>
+
+</li>
+<li>or for compression:
+
+
+
+<pre class="src src-sh">dd <span style="color: #7fffd4;">if</span>=/dev/sdx | gzip &gt; /path/to/image.gz
+</pre>
+
+</li>
+<li>Where sdx is your SD card.
+</li>
+</ul>
+
+</li>
+<li>To restore the backup you reverse the commands:
+<ul>
+<li>Uncompressed
+
+
+
+<pre class="src src-sh">dd <span style="color: #7fffd4;">if</span>=/path/to/image <span style="color: #7fffd4;">of</span>=/dev/sdx
+</pre>
+
+</li>
+<li>or when compressed:
+
+
+
+<pre class="src src-sh">gzip -dc /path/to/image.gz | dd <span style="color: #7fffd4;">of</span>=/dev/sdx
+</pre>
+
+</li>
+</ul>
+
+</li>
+</ol>
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4-8-2" class="outline-4">
+<h4 id="sec-4-8-2">Backup Images to Web Storage</h4>
+<div class="outline-text-4" id="text-4-8-2">
+
+
+
+
+<pre class="src src-sh">rsync -rtvz /media/Global/Global/BAK/embedd_gui_bin nickguthrie.com:nickguthrie.com/embedd_gui_bin
+</pre>
+
+
+</div>
 </div>
 </div>
 
@@ -2442,7 +2595,9 @@ QMAKE_LIBDIR  += /usr/local/tslib/lib
 </li>
 </ul>
 <ul>
-<li id="sec-5-13-1-3"><span class="todo TODO">TODO</span> Install qt-everywhere on Development Platform<br/>
+<li id="sec-5-13-1-3"><span class="done DONE">DONE</span> Install qt-everywhere on Development Platform<br/>
+<ul>
+<li id="sec-5-13-1-3-1">Steps<br/>
 <ol>
 <li>Install Source
 
@@ -2488,7 +2643,7 @@ load(qt_config)
 
 
 
-<pre class="src src-sh">make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license
+<pre class="src src-sh">make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license -qt-mouse-tslib
 </pre>
 
 <ul>
@@ -2527,7 +2682,7 @@ load(qt_config)
 
 
 <pre class="src src-sh">su
-<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">PATH</span>=$<span style="color: #7fffd4;">PATH</span>:/usr/local/arm/4.3.2/bin
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">PATH</span>=$<span style="color: #7fffd4;">PATH</span>:/usr/local/qt/bin
 make install
 </pre>
 
@@ -2537,17 +2692,17 @@ make install
 </ol>
 
 
-
+</li>
+</ul>
 <ul>
-<li id="sec-5-13-1-3-1">Error<br/>
+<li id="sec-5-13-1-3-2">Errors<br/>
 <ul>
 <li><i>opt/ext_toolchain/bin</i>../lib/gcc/arm-linux-gnueabihf/4.7.3/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lbootstrap
 </li>
 </ul>
 
 <p><a href="http://www.qtcentre.org/archive/index.php/t-41850.html">http://www.qtcentre.org/archive/index.php/t-41850.html</a>
-</p>
-</li>
+</p></li>
 </ul>
 </li>
 </ul>
@@ -2590,7 +2745,7 @@ So now, its time to put the libs on your mini machine! You may choose to create 
 
 <pre class="example">export LD_LIBRARY_PATH=/usr/local/qt/lib
 export QTDIR=/usr/local/qt
-export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event0
+export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event2
 export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </pre>
 
@@ -2599,7 +2754,7 @@ export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 
 
 
-<pre class="example">QWS_MOUSE_PROTO=Tslib:/dev/input/event1
+<pre class="example">QWS_MOUSE_PROTO=tslib:/dev/input/event2
 </pre>
 
 </li>
@@ -2666,18 +2821,583 @@ export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </div>
 
 <div id="outline-container-5-14" class="outline-3">
-<h3 id="sec-5-14">Configure Debian to Communicate to Touchscreen</h3>
+<h3 id="sec-5-14"><span class="todo TODO">TODO</span> Configure Touchscreen Support (tslib)</h3>
 <div class="outline-text-3" id="text-5-14">
 
 
 </div>
 
 <div id="outline-container-5-14-1" class="outline-4">
-<h4 id="sec-5-14-1">Messing with the script file</h4>
+<h4 id="sec-5-14-1">Problem: All debian images are built for 512 MB of RAM, 256 is all that is available</h4>
 <div class="outline-text-4" id="text-5-14-1">
 
 <ul>
-<li id="sec-5-14-1-1">Installation<br/>
+<li id="sec-5-14-1-1">Research<br/>
+<ul>
+<li id="sec-5-14-1-1-1">Xman Conversation <a href="https://www.olimex.com/forum/index.php?topic=617.10;wap2">{Link}</a><br/>
+<ul>
+<li>&lt;xman&gt; hi, What happens if my dram_size = 512 in [dram_para], but my board have only 256MB?
+</li>
+<li>&lt;WarheadsSE&gt; xman: which board ?
+</li>
+<li>&lt;xman&gt; <a href="https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/">https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/</a>
+</li>
+<li>techn_&gt; with 256MB ram you propably need to disable mali, framebuffer and g2d.. memmap hard coded to somewhere 400-500MB
+</li>
+<li>&lt;techn_&gt; <a href="https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.0/arch/arm/mach-sun5i/core.c#L222example">example</a>
+</li>
+<li>xman&gt; 64M and 32M is for what?
+</li>
+<li>techn_&gt; 64M mali, 32M for reserved framebuffer(for mali use)
+</li>
+<li>&hellip;
+</li>
+<li>&lt;WarheadsSE&gt; xman: then you should be enable appropriately adjust the dram para, but you might need an updated uboot that has a 256M SPL
+</li>
+<li>..
+</li>
+<li>&lt;WarheadsSE&gt; the Wifi has an AXP, which the Mirco doesn't.
+</li>
+<li>&lt;WarheadsSE&gt; That's a big difference.
+</li>
+<li>&hellip;
+</li>
+<li>&lt;xman&gt; so, you edit fex, uptade kernel and update u-boot?
+</li>
+<li>&lt;WarheadsSE&gt; yes, fex change, kernel source change, u-boot source change
+</li>
+<li>&lt;WarheadsSE&gt; recompile all.
+</li>
+<li>..
+</li>
+<li>&lt;WarheadsSE&gt; For the moment, they need to use the provided kernel source repository, and the associated uboot.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-1-1-2">Olimex General Conversation <a href="https://www.olimex.com/forum/index.php?topic=707.msg2819;topicseen#msg2819">{Link}</a><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-1-1-3">In Depth Conversation about Recompiling Kernal from Source <a href="https://www.olimex.com/forum/index.php?topic=617.0">{Link}</a><br/>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-1-2">Compile Kernal From Source<br/>
+<ul>
+<li id="sec-5-14-1-2-1">Links<br/>
+<ul>
+<li><a href="https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558">https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558</a>
+
+
+
+<pre class="src src-sh">git clone git://github.com/linux-sunxi/u-boot-sunxi.git
+git clone https://github.com/hehopmajieh/linux-sunxi
+<span style="color: #b0c4de;">cd</span> linux-sunxi
+git checkout origin/sunxi-3.0
+make a13_olinuxino_micro <span style="color: #7fffd4;">CROSS_COMPILE</span>=arm-linux-gnueabi-
+make <span style="color: #7fffd4;">ARCH</span>=arm a13om_defconfig
+make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
+</pre>
+
+</li>
+</ul>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-14-2" class="outline-4">
+<h4 id="sec-5-14-2">Promising Solution</h4>
+<div class="outline-text-4" id="text-5-14-2">
+
+<p><a href="http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html">http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html</a>
+</p><ul>
+<li id="sec-5-14-2-1">OLinuXino A13: touchscreen support in Linux<br/>
+<ul>
+<li id="sec-5-14-2-1-1">Overview<br/>
+<ul>
+<li>One of the first problems we had with OLinuxIno-A13 board is the touchscreen support
+</li>
+<li>The manual was published on the official Olimex blog, but source packages had updated, so old solution didn't give an effect
+</li>
+<li>After some experiments, we solved this problem
+</li>
+<li>Here is a full step-by-step manual how to get the device works well under Debian
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-2-1-2">Required:<br/>
+<ul>
+<li id="sec-5-14-2-1-2-1">installed xorg-dev, xserver-xorg-dev, x11proto-core-dev, git, make, automake:<br/>
+
+
+
+<pre class="src src-sh">aptitude install xorg-dev xserver-xorg-dev x11proto-core-dev git automake make
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-2-1-2-2">tslib sources - get it from Github:<br/>
+
+
+
+<pre class="src src-sh">git clone https://github.com/kergoth/tslib.git
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-2-1-2-3">xf86-input-tslib sources - from Debian Git repository:<br/>
+
+
+
+<pre class="src src-sh">git clone git://git.debian.org/git/collab-maint/xf86-input-tslib
+</pre>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-2-1-3">Now it's time to build this stuff. (All commands are performed as root).<br/>
+<ul>
+<li id="sec-5-14-2-1-3-1">tslib<br/>
+<ul>
+<li id="sec-5-14-2-1-3-1-1">Overview<br/>
+<ul>
+<li>tslib is a library that allows programmer to use data from touchscreens. It is only API, but not a driver for Xorg (there is xf86-input-tslib package for this).
+</li>
+<li>It works well for most of different touchscreens without any changes. But, <span style="text-decoration:underline;">suddenly, Olinuxino's touchscreen is an exception</span>, and we need to <span style="text-decoration:underline;">patch original library</span>.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-2-1-3-1-2">Steps<br/>
+<ol>
+<li>First, download tslib source code and go to its directory: 
+
+
+
+<pre class="src src-sh">git clone http://github.com/kergoth/tslib.git
+<span style="color: #b0c4de;">cd</span> tslib
+</pre>
+
+</li>
+<li>Download and apply the patch using GNU patch utility: 
+
+
+
+<pre class="src src-sh">wget http://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
+patch -p0 &lt; tslib.patch
+</pre>
+
+</li>
+<li>Configure, make and install:
+
+
+
+<pre class="src src-sh">autoreconf -vi; ./configure --prefix=/usr; 
+make; 
+make install
+</pre>
+
+<ul>
+<li>Result: Libraries have been installed in:
+
+
+
+<pre class="example">/usr/lib/ts
+</pre>
+
+</li>
+</ul>
+
+</li>
+<li>Then, let's load a kernel module and check touchscreen:
+
+
+
+<pre class="src src-sh">modprobe sun4i-ts
+dmesg | grep sun4i-ts
+</pre>
+
+<ul>
+<li>If it's all right, there will be some messages in dmesg like this:
+
+
+
+<pre class="example">[    9.010000] sun4i-ts.c: sun4i_ts_init: start ...
+[    9.020000] sun4i-ts: tp_screen_size is 5 inch.
+[    9.030000] sun4i-ts: tp_regidity_level is 5.
+[    9.030000] sun4i-ts: tp_press_threshold_enable is 0.
+[    9.040000] sun4i-ts: rtp_sensitive_level is 15.
+[    9.050000] sun4i-ts: rtp_exchange_x_y_flag is 0.
+[    9.060000] sun4i-ts.c: sun4i_ts_probe: start...
+[    9.080000] input: sun4i-ts as /devices/platform/sun4i-ts/input/input1
+[    9.100000] sun4i-ts.c: sun4i_ts_probe: end
+</pre>
+
+<ul>
+<li>Highlighted 1 there is a number of touchscreen event device.
+</li>
+<li>Later we will get a raw data from device using the path /dev/input/event1 (change higlighted number to your).
+
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>To load this kernel module automatically, add a line into /etc/modules:
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">echo</span> sun4i-ts &gt;&gt; /etc/modules
+</pre>
+
+
+</li>
+<li>Now let's check the touchscreen in use. We need to export some environment variables which contains basic configuration for library. Do not forget to change highlighted number:
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_TSEVENTTYPE</span>=raw
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_CONSOLEDEVICE</span>=none
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_FBDEVICE</span>=/dev/fb0
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_TSDEVICE</span>=/dev/input/event1
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_CALIBFILE</span>=/usr/etc/pointercal
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_CONFFILE</span>=/usr/etc/ts.conf
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_PLUGINDIR</span>=/usr/lib/ts
+</pre>
+
+
+</li>
+<li>Next, configure raw input module of the tslib.
+<ul>
+<li>Open /usr/etc/ts.conf and uncomment the line which contains "module_raw input".
+
+</li>
+</ul>
+
+</li>
+<li>After this, we should make a test. Let's calibrate the touchscreen and try to do something with it.
+
+
+
+<pre class="src src-sh">ts_calibrate
+ts_test
+</pre>
+
+<ul>
+<li>To get out from ts_test, you should press "Quit" button on the screen, or use Ctrl+C in emergency case (if screen is not calibrated or configured successfully).
+</li>
+</ul>
+
+</li>
+<li>To load configuration variables while system is loading, write these lines into /etc/environment file (check highlighted number):
+
+
+
+<pre class="example">TSLIB_TSEVENTTYPE=raw
+TSLIB_CONSOLEDEVICE=none
+TSLIB_FBDEVICE=/dev/fb0
+TSLIB_TSDEVICE=/dev/input/event1
+TSLIB_CALIBFILE=/etc/pointercal
+TSLIB_CONFFILE=/usr/etc/ts.conf
+TSLIB_PLUGINDIR=/usr/lib/ts 
+</pre>
+
+</li>
+</ol>
+
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-2-1-3-2">Now we need to modify and install xf86-input-tslib driver.<br/>
+
+<p>
+xf86-input-tslib
+</p>
+<p>
+xf86-input-tslib allows us to use tslib device like our touchscreen as pointer device. 
+</p>
+<p>
+This driver is old a bit, so while it works with newer Xorg server, it faluts, because xf86InputSetScreen function is removed from Xorg, but driver tries to call it. I had just removed this call from driver's source code and the problem was solved.
+</p>
+<p>
+Download source code, go to its directory: 
+</p>
+
+<p>
+Get and apply required patches (including my solution):
+</p>
+
+<p>
+Configure, make and install:
+</p>
+
+<p>
+Now describe the device as InputClass of Xorg in your xorg.conf (or in /usr/share/X11/xorg.conf.d/20-ts.conf as I did):
+</p>
+<p>
+Section "InputClass"
+    Identifier "Sun4i-Touchscreen"
+    MatchDevicePath "/dev/input/event*"
+    MatchProduct "sun4i-ts"
+    Driver "tslib"
+EndSection
+</p>
+
+<p>
+If you had successfully calibrated and tested the touchscreen, when you start X server by
+</p>
+
+<p>
+the screen should work well. Also it should work when X server is launched by desktop manager (ex. LightDM). 
+</p>
+<p>
+P.S. This solution is tested at Olinuxino A13 with Debian GNU/Linux 7.0 (wheezy). Last commit of tslib was 158ee49, version of xf86-input-tslib was 0.0.6.
+Автор: webconn на 10:10 
+Отправить по электронной почте
+Написать об этом в блоге
+Опубликовать в Twitter
+Опубликовать в Facebook
+</p>
+<p>
+Ярлыки: ARM, Debian, English, HowTo, Linux, Olinuxino, touchscreen
+</p></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-14-3" class="outline-4">
+<h4 id="sec-5-14-3">Actual</h4>
+<div class="outline-text-4" id="text-5-14-3">
+
+<ul>
+<li id="sec-5-14-3-1">Steps<br/>
+<ol>
+<li>Install make and automake
+
+
+
+<pre class="src src-sh">apt-get install
+</pre>
+
+</li>
+<li>Download tslib source code and go to its directory: 
+
+
+
+<pre class="src src-sh">git clone https://github.com/kergoth/tslib.git
+<span style="color: #b0c4de;">cd</span> tslib
+</pre>
+
+</li>
+<li>Download and apply the patch using GNU patch utility: 
+
+
+
+<pre class="src src-sh"><span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch</span>
+<span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">patch -p0 &lt; tslib.patch   </span>
+</pre>
+
+</li>
+<li>Configure, make and install:
+
+
+
+<pre class="src src-sh">autoreconf -vi
+./configure --prefix=/usr
+make
+make install
+</pre>
+
+</li>
+<li>Then, let's load a kernel module and check touchscreen:
+
+
+
+<pre class="src src-sh">modprobe sun4i-ts
+dmesg | grep sun4i-ts
+</pre>
+
+<ul>
+<li>Result
+
+
+
+<pre class="example">[12951.630000] sun4i-ts.c: sun4i_ts_init: start ...
+[12951.640000] sun4i-ts: tp_screen_size is 5 inch.
+[12951.650000] sun4i-ts: tp_regidity_level is 5.
+[12951.660000] sun4i-ts: tp_press_threshold_enable is 0.
+[12951.670000] sun4i-ts: rtp_sensitive_level is 15.
+[12951.670000] sun4i-ts: rtp_exchange_x_y_flag is 0.
+[12951.690000] sun4i-ts.c: sun4i_ts_probe: start...
+[12951.710000] input: sun4i-ts as /devices/platform/sun4i-ts/input/input4
+[12951.730000] sun4i-ts.c: sun4i_ts_probe: end
+</pre>
+
+</li>
+</ul>
+
+</li>
+<li>To load this kernel module automatically, add a line into /etc/modules:
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">echo</span> sun4i-ts &gt;&gt; /etc/modules
+</pre>
+
+</li>
+<li>Export Some Variables
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_TSEVENTTYPE</span>=raw
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_CONSOLEDEVICE</span>=none
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_FBDEVICE</span>=/dev/fb0
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_TSDEVICE</span>=/dev/input/event4
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_CALIBFILE</span>=/usr/etc/pointercal
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_CONFFILE</span>=/usr/etc/ts.conf
+<span style="color: #b0c4de;">export</span> <span style="color: #7fffd4;">TSLIB_PLUGINDIR</span>=/usr/lib/tsg
+</pre>
+
+</li>
+<li>Next, configure raw input module of the tslib.
+<ul>
+<li>Open /usr/etc/ts.conf and uncomment the line which contains "module_raw input".
+</li>
+</ul>
+
+</li>
+<li>To load configuration variables while system is loading, write these lines into /etc/environment file (check highlighted number):
+
+
+
+<pre class="example">TSLIB_TSEVENTTYPE=raw
+TSLIB_CONSOLEDEVICE=none
+TSLIB_FBDEVICE=/dev/fb0
+TSLIB_TSDEVICE=/dev/input/event3
+TSLIB_CALIBFILE=/etc/pointercal
+TSLIB_CONFFILE=/usr/etc/ts.conf
+TSLIB_PLUGINDIR=/usr/lib/ts 
+</pre>
+
+</li>
+</ol>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-3-2">Errors<br/>
+<ul>
+<li id="sec-5-14-3-2-1"><span class="done DONE">DONE</span> undefined macro: AC_DISABLE_STATIC<br/>
+<ul>
+<li id="sec-5-14-3-2-1-1">Error Caused<br/>
+<ul>
+<li>while attempting to do "autoreconf -vi" when building tslib
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-3-2-1-2">Error Message<br/>
+
+
+
+<pre class="example">configure.ac:24: error: possibly undefined macro: AC_DISABLE_STATIC
+      If this token and others are legitimate, please use m4_pattern_allow.
+      See the Autoconf documentation.
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-3-2-1-3">Solution<br/>
+
+
+
+<pre class="src src-sh">apt-get install libtool
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-14-3-2-1-4">Links<br/>
+<ul>
+<li><a href="http://www.friendlyarm.net/forum/topic/621">http://www.friendlyarm.net/forum/topic/621</a>
+</li>
+</ul>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-14-4" class="outline-4">
+<h4 id="sec-5-14-4">Test Touchscreen</h4>
+<div class="outline-text-4" id="text-5-14-4">
+
+
+
+
+<pre class="src src-sh">cat /dev/input/event3 | hexdump
+</pre>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5-15" class="outline-3">
+<h3 id="sec-5-15">Configure Debian to Communicate to Touchscreen</h3>
+<div class="outline-text-3" id="text-5-15">
+
+
+</div>
+
+<div id="outline-container-5-15-1" class="outline-4">
+<h4 id="sec-5-15-1">Messing with the script file</h4>
+<div class="outline-text-4" id="text-5-15-1">
+
+<ul>
+<li id="sec-5-15-1-1">Installation<br/>
 <ol>
 <li>Extract A13 tar file
 
@@ -2710,9 +3430,9 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-1-2">Usage<br/>
+<li id="sec-5-15-1-2">General Usage<br/>
 <ul>
-<li id="sec-5-14-1-2-1">Using bin2fex<br/>
+<li id="sec-5-15-1-2-1">Using bin2fex<br/>
 <ul>
 <li>First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
 
@@ -2734,7 +3454,7 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-1-2-2">Using fex2bin<br/>
+<li id="sec-5-15-1-2-2">Using fex2bin<br/>
 <ul>
 <li>To convert back, it's simply the reverse:
 
@@ -2757,30 +3477,704 @@ make -k
 </ul>
 </li>
 </ul>
+<ul>
+<li id="sec-5-15-1-3">Configuring Tourchscreen<br/>
+<ul>
+<li id="sec-5-15-1-3-1">Steps<br/>
+<ol>
+<li>Took script_GPIO_LCD_800x480.fex and converted changed y value of 480 to 272 and x value of 800 to 480.
+</li>
+<li>Convert the .fex to a .bin using fex2bin
+
+
+
+<pre class="src src-sh">~/src/fex2bin_bin_fex_tools/fex2bin small_lcd.fex small_lcd.bin
+</pre>
+
+</li>
+<li>Copy onto device
+
+
+
+<pre class="src src-sh">cp small_lcd.bin /media/mmckblk0/script.bin
+</pre>
+
+</li>
+</ol>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-15-1-3-2">Source Code<br/>
+
+
+
+<pre class="src src-txt">[product]
+version = <span style="color: #ffc1c1;">"1.0"</span>
+machine = <span style="color: #ffc1c1;">"A13-EVB-V1.0"</span>
+
+[target]
+boot_clock = 1008
+dcdc2_vol = 1400
+dcdc3_vol = 1200
+ldo2_vol = 3000
+ldo3_vol = 3300
+ldo4_vol = 3300
+pll4_freq = 960
+pll6_freq = 720
+
+[card_boot]
+logical_start = 40960
+sprite_gpio0 = <span style="color: #ffc1c1;">""</span>
+
+[card_boot0_para]
+card_ctrl = 0
+card_high_speed = 1
+card_line = 4
+sdc_d1 = port:PF00&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+sdc_d0 = port:PF01&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+sdc_clk = port:PF02&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+sdc_cmd = port:PF03&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+sdc_d3 = port:PF04&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+sdc_d2 = port:PF05&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+
+[twi_para]
+twi_port = 0
+twi_scl = port:PB00&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+twi_sda = port:PB01&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+
+[uart_para]
+uart_debug_port = 1
+uart_debug_tx = port:PG03&lt;4&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+uart_debug_rx = port:PG04&lt;4&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+
+[jtag_para]
+jtag_enable = 0
+jtag_ms = port:PF00&lt;4&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+jtag_ck = port:PF05&lt;4&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+jtag_do = port:PF03&lt;4&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+jtag_di = port:PF01&lt;4&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+
+[dram_para]
+dram_baseaddr = 0x40000000
+dram_clk = 408
+dram_type = 3
+dram_rank_num = 1
+dram_chip_density = 2048
+dram_io_width = 8
+dram_bus_width = 16
+dram_cas = 9
+dram_zq = 0x7b
+dram_odt_en = 0
+dram_size = 256
+dram_tpr0 = 0x42d899b7
+dram_tpr1 = 0xa090
+dram_tpr2 = 0x22a00
+dram_tpr3 = 0x0
+dram_tpr4 = 0x0
+dram_tpr5 = 0x0
+dram_emr1 = 0x0
+dram_emr2 = 0x10
+dram_emr3 = 0x0
+
+[nand_para]
+nand_used = 0
+nand_we = port:PC00&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_ale = port:PC01&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_cle = port:PC02&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_ce1 = port:PC03&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_ce0 = port:PC04&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_nre = port:PC05&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_rb0 = port:PC06&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_rb1 = port:PC07&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_d0 = port:PC08&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_d1 = port:PC09&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_d2 = port:PC10&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_d3 = port:PC11&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_d4 = port:PC12&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_d5 = port:PC13&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_d6 = port:PC14&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_d7 = port:PC15&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+nand_wp = <span style="color: #ffc1c1;">""</span>
+nand_ce2 = <span style="color: #ffc1c1;">""</span>
+nand_ce3 = <span style="color: #ffc1c1;">""</span>
+nand_ce4 = <span style="color: #ffc1c1;">""</span>
+nand_ce5 = <span style="color: #ffc1c1;">""</span>
+nand_ce6 = <span style="color: #ffc1c1;">""</span>
+nand_ce7 = <span style="color: #ffc1c1;">""</span>
+nand_spi = <span style="color: #ffc1c1;">""</span>
+nand_ndqs = port:PC19&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+
+[mali_para]
+mali_used = 0
+mali_clkdiv = 0
+
+[twi0_para]
+twi0_used = 1
+twi0_scl = port:PB00&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+twi0_sda = port:PB01&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+
+[twi1_para]
+twi1_used = 1
+twi1_scl = port:PB15&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+twi1_sda = port:PB16&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+
+[twi2_para]
+twi2_used = 1
+twi2_scl = port:PB17&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+twi2_sda = port:PB18&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+
+[uart_para0]
+uart_used = 0
+uart_port = 0
+uart_type = 2
+uart_tx = port:PB19&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+uart_rx = port:PB20&lt;2&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+
+[uart_para1]
+uart_used = 1
+uart_port = 1
+uart_type = 2
+uart_tx = port:PG03&lt;4&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+uart_rx = port:PG04&lt;4&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+
+[spi1_para]
+spi_used = 0
+spi_cs0 = port:PG09&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+spi_cs1 = port:PG13&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+spi_sclk = port:PG10&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+spi_mosi = port:PG11&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+spi_miso = port:PG12&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+
+[spi2_para]
+spi_used = 0
+spi_cs0 = port:PE00&lt;4&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+spi_sclk = port:PE01&lt;4&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+spi_mosi = port:PB02&lt;4&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+spi_miso = port:PB03&lt;4&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+
+[rtp_para]
+rtp_used = 1
+rtp_screen_size = 5
+rtp_regidity_level = 5
+rtp_press_threshold_enable = 0
+rtp_press_threshold = 0x1f40
+rtp_sensitive_level = 0xf
+rtp_exchange_x_y_flag = 0
+
+[ctp_para]
+ctp_used = 0
+ctp_name = <span style="color: #ffc1c1;">"ft5x_ts"</span>
+ctp_twi_id = 2
+ctp_twi_addr = 0x70
+ctp_screen_max_x = 480
+ctp_screen_max_y = 272
+ctp_revert_x_flag = 0
+ctp_revert_y_flag = 0
+ctp_exchange_x_y_flag = 0
+ctp_int_port = port:PH21&lt;6&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+ctp_wakeup = port:PB13&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;1&gt;
+ctp_io_port = port:PH21&lt;0&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+
+[tkey_para]
+tkey_used = 0
+tkey_name = <span style="color: #ffc1c1;">"hv_keypad"</span>
+tkey_twi_id = 2
+tkey_twi_addr = 0x62
+tkey_int = <span style="color: #ffc1c1;">""</span>
+
+[motor_para]
+motor_used = 0
+motor_shake = <span style="color: #ffc1c1;">""</span>
+
+[disp_init]
+disp_init_enable = 1
+disp_mode = 0
+screen0_output_type = 1
+screen0_output_mode = 5
+screen1_output_type = 1
+screen1_output_mode = 5
+fb0_framebuffer_num = 2
+fb0_format = 9
+fb0_pixel_sequence = 2
+fb0_scaler_mode_enable = 0
+fb1_framebuffer_num = 2
+fb1_format = 9
+fb1_pixel_sequence = 2
+fb1_scaler_mode_enable = 0
+
+[lcd0_para]
+lcd_used = 1
+lcd_x = 480
+lcd_y = 272
+lcd_dclk_freq = 33
+lcd_pwm_not_used = 0
+lcd_pwm_ch = 0
+lcd_pwm_freq = 10000
+lcd_pwm_pol = 0
+lcd_if = 0
+lcd_hbp = 46
+lcd_ht = 1055
+lcd_vbp = 23
+lcd_vt = 1050
+lcd_hv_if = 0
+lcd_hv_smode = 0
+lcd_hv_s888_if = 0
+lcd_hv_syuv_if = 0
+lcd_hv_vspw = 1
+lcd_hv_hspw = 30
+lcd_lvds_ch = 0
+lcd_lvds_mode = 0
+lcd_lvds_bitwidth = 0
+lcd_lvds_io_cross = 0
+lcd_cpu_if = 0
+lcd_frm = 1
+lcd_io_cfg0 = 268435456
+lcd_gamma_correction_en = 0
+lcd_gamma_tbl_0 = 0x0
+lcd_gamma_tbl_1 = 0x10101
+lcd_gamma_tbl_255 = 0xffffff
+lcd_bl_en_used = 1
+lcd_bl_en = port:power1&lt;1&gt;&lt;0&gt;&lt;default&gt;&lt;1&gt;
+lcd_power_used = 1
+lcd_power = port:power0&lt;1&gt;&lt;0&gt;&lt;default&gt;&lt;1&gt;
+lcd_pwm_used = 1
+;lcd_pwm = port:PB02&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcd_gpio_0 = <span style="color: #ffc1c1;">""</span>
+lcd_gpio_1 = <span style="color: #ffc1c1;">""</span>
+lcd_gpio_2 = <span style="color: #ffc1c1;">""</span>
+lcd_gpio_3 = <span style="color: #ffc1c1;">""</span>
+lcdd0 = port:PD00&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd1 = port:PD01&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd2 = port:PD02&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd3 = port:PD03&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd4 = port:PD04&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd5 = port:PD05&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd6 = port:PD06&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd7 = port:PD07&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd8 = port:PD08&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd9 = port:PD09&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd10 = port:PD10&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd11 = port:PD11&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd12 = port:PD12&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd13 = port:PD13&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd14 = port:PD14&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd15 = port:PD15&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd16 = port:PD16&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd17 = port:PD17&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd18 = port:PD18&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd19 = port:PD19&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd20 = port:PD20&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd21 = port:PD21&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd22 = port:PD22&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdd23 = port:PD23&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdclk = port:PD24&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdde = port:PD25&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdhsync = port:PD26&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+lcdvsync = port:PD27&lt;2&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+
+[tv_out_dac_para]
+dac_used = 1
+dac0_src = 0
+
+[hdmi_para]
+hdmi_used = 0
+
+[csi0_para]
+csi_used = 1
+csi_mode = 0
+csi_dev_qty = 1
+csi_stby_mode = 1
+csi_mname = <span style="color: #ffc1c1;">"gc0308"</span>
+csi_twi_id = 2
+csi_twi_addr = 0x42
+csi_if = 0
+csi_vflip = 0
+csi_hflip = 1
+csi_iovdd = <span style="color: #ffc1c1;">""</span>
+csi_avdd = <span style="color: #ffc1c1;">""</span>
+csi_dvdd = <span style="color: #ffc1c1;">""</span>
+csi_flash_pol = 1
+csi_mname_b = <span style="color: #ffc1c1;">""</span>
+csi_twi_id_b = 1
+csi_twi_addr_b = 0x78
+csi_if_b = 0
+csi_vflip_b = 1
+csi_hflip_b = 0
+csi_iovdd_b = <span style="color: #ffc1c1;">""</span>
+csi_avdd_b = <span style="color: #ffc1c1;">""</span>
+csi_dvdd_b = <span style="color: #ffc1c1;">""</span>
+csi_flash_pol_b = 1
+csi_pck = port:PE00&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_ck = port:PE01&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_hsync = port:PE02&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_vsync = port:PE03&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_d0 = port:PE04&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_d1 = port:PE05&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_d2 = port:PE06&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_d3 = port:PE07&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_d4 = port:PE08&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_d5 = port:PE09&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_d6 = port:PE10&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_d7 = port:PE11&lt;3&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+csi_reset = port:power3&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;0&gt;
+csi_power_en = <span style="color: #ffc1c1;">""</span>
+csi_stby = port:PB10&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;1&gt;
+csi_flash = <span style="color: #ffc1c1;">""</span>
+csi_af_en = <span style="color: #ffc1c1;">""</span>
+csi_reset_b = <span style="color: #ffc1c1;">""</span>
+csi_power_en_b = <span style="color: #ffc1c1;">""</span>
+csi_stby_b = <span style="color: #ffc1c1;">""</span>
+csi_flash_b = <span style="color: #ffc1c1;">""</span>
+csi_af_en_b = <span style="color: #ffc1c1;">""</span>
+
+[csi1_para]
+csi_used = 0
+csi_mode = 0
+csi_dev_qty = 1
+csi_stby_mode = 1
+csi_mname = <span style="color: #ffc1c1;">""</span>
+csi_twi_id = 1
+csi_twi_addr = 0xba
+csi_if = 0
+csi_vflip = 0
+csi_hflip = 0
+csi_iovdd = <span style="color: #ffc1c1;">""</span>
+csi_avdd = <span style="color: #ffc1c1;">""</span>
+csi_dvdd = <span style="color: #ffc1c1;">""</span>
+csi_flash_pol = 1
+csi_mname_b = <span style="color: #ffc1c1;">""</span>
+csi_twi_id_b = 1
+csi_twi_addr_b = 0x78
+csi_if_b = 0
+csi_vflip_b = 1
+csi_hflip_b = 0
+csi_iovdd_b = <span style="color: #ffc1c1;">""</span>
+csi_avdd_b = <span style="color: #ffc1c1;">""</span>
+csi_dvdd_b = <span style="color: #ffc1c1;">""</span>
+csi_flash_pol_b = 1
+csi_reset = <span style="color: #ffc1c1;">""</span>
+csi_power_en = <span style="color: #ffc1c1;">""</span>
+csi_stby = <span style="color: #ffc1c1;">""</span>
+csi_flash = <span style="color: #ffc1c1;">""</span>
+csi_af_en = <span style="color: #ffc1c1;">""</span>
+csi_reset_b = <span style="color: #ffc1c1;">""</span>
+csi_power_en_b = <span style="color: #ffc1c1;">""</span>
+csi_stby_b = <span style="color: #ffc1c1;">""</span>
+csi_flash_b = <span style="color: #ffc1c1;">""</span>
+csi_af_en_b = <span style="color: #ffc1c1;">""</span>
+
+[mmc0_para]
+sdc_used = 1
+sdc_detmode = 1
+bus_width = 4
+sdc_d1 = port:PF00&lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_d0 = port:PF01&lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_clk = port:PF02&lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_cmd = port:PF03&lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_d3 = port:PF04&lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_d2 = port:PF05&lt;2&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_det = port:PG00&lt;0&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+sdc_use_wp = 0
+sdc_wp = <span style="color: #ffc1c1;">""</span>
+
+[mmc1_para]
+sdc_used = 0
+sdc_detmode = <span style="color: #ffc1c1;">""</span>
+bus_width = <span style="color: #ffc1c1;">""</span>
+sdc_cmd = <span style="color: #ffc1c1;">""</span>
+sdc_clk = <span style="color: #ffc1c1;">""</span>
+sdc_d0 = <span style="color: #ffc1c1;">""</span>
+sdc_d1 = <span style="color: #ffc1c1;">""</span>
+sdc_d2 = <span style="color: #ffc1c1;">""</span>
+sdc_d3 = <span style="color: #ffc1c1;">""</span>
+sdc_det = <span style="color: #ffc1c1;">""</span>
+sdc_use_wp = <span style="color: #ffc1c1;">""</span>
+sdc_wp = <span style="color: #ffc1c1;">""</span>
+
+[mmc2_para]
+sdc_used = 0
+sdc_detmode = 3
+bus_width = 4
+sdc_cmd = port:PE08&lt;4&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_clk = port:PE09&lt;4&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_d0 = port:PE04&lt;4&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_d1 = port:PE05&lt;4&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_d2 = port:PE06&lt;4&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_d3 = port:PE07&lt;4&gt;&lt;1&gt;&lt;2&gt;&lt;default&gt;
+sdc_det = <span style="color: #ffc1c1;">""</span>
+sdc_use_wp = 0
+sdc_wp = <span style="color: #ffc1c1;">""</span>
+
+[ms_para]
+ms_used = 0
+ms_bs = <span style="color: #ffc1c1;">""</span>
+ms_clk = <span style="color: #ffc1c1;">""</span>
+ms_d0 = <span style="color: #ffc1c1;">""</span>
+ms_d1 = <span style="color: #ffc1c1;">""</span>
+ms_d2 = <span style="color: #ffc1c1;">""</span>
+ms_d3 = <span style="color: #ffc1c1;">""</span>
+ms_det = <span style="color: #ffc1c1;">""</span>
+
+[keypad_para]
+kp_used = 0
+kp_in_size = <span style="color: #ffc1c1;">""</span>
+kp_out_size = <span style="color: #ffc1c1;">""</span>
+kp_in0 = <span style="color: #ffc1c1;">""</span>
+kp_in1 = <span style="color: #ffc1c1;">""</span>
+kp_in2 = <span style="color: #ffc1c1;">""</span>
+kp_in3 = <span style="color: #ffc1c1;">""</span>
+kp_in4 = <span style="color: #ffc1c1;">""</span>
+kp_in5 = <span style="color: #ffc1c1;">""</span>
+kp_in6 = <span style="color: #ffc1c1;">""</span>
+kp_in7 = <span style="color: #ffc1c1;">""</span>
+kp_out0 = <span style="color: #ffc1c1;">""</span>
+kp_out1 = <span style="color: #ffc1c1;">""</span>
+kp_out2 = <span style="color: #ffc1c1;">""</span>
+kp_out3 = <span style="color: #ffc1c1;">""</span>
+kp_out4 = <span style="color: #ffc1c1;">""</span>
+kp_out5 = <span style="color: #ffc1c1;">""</span>
+kp_out6 = <span style="color: #ffc1c1;">""</span>
+kp_out7 = <span style="color: #ffc1c1;">""</span>
+
+[usbc0]
+usb_used = 1
+usb_port_type = 2
+usb_detect_type = 1
+usb_id_gpio = port:PG02&lt;0&gt;&lt;1&gt;&lt;default&gt;&lt;default&gt;
+usb_det_vbus_gpio = port:PG01&lt;0&gt;&lt;0&gt;&lt;default&gt;&lt;default&gt;
+usb_drv_vbus_gpio = port:PG12&lt;1&gt;&lt;0&gt;&lt;default&gt;&lt;0&gt;
+usb_host_init_state = 0
+
+[usbc1]
+usb_used = 1
+usb_port_type = 1
+usb_detect_type = 0
+usb_id_gpio = <span style="color: #ffc1c1;">""</span>
+usb_det_vbus_gpio = <span style="color: #ffc1c1;">""</span>
+usb_drv_vbus_gpio = port:PG11&lt;1&gt;&lt;0&gt;&lt;default&gt;&lt;0&gt;
+usb_host_init_state = 1
+
+[usb_feature]
+vendor_id = 6353
+mass_storage_id = 1
+adb_id = 2
+manufacturer_name = <span style="color: #ffc1c1;">"USB Developer"</span>
+product_name = <span style="color: #ffc1c1;">"Android"</span>
+serial_number = <span style="color: #ffc1c1;">"20080411"</span>
+
+[msc_feature]
+vendor_name = <span style="color: #ffc1c1;">"USB 2.0"</span>
+product_name = <span style="color: #ffc1c1;">"USB Flash Driver"</span>
+release = 100
+luns = 3
+
+[gsensor_para]
+gsensor_used = 0
+gsensor_name = <span style="color: #ffc1c1;">"bma222"</span>
+gsensor_twi_id = 1
+gsensor_twi_addr = 0x18
+gsensor_int1 = <span style="color: #ffc1c1;">""</span>
+gsensor_int2 = <span style="color: #ffc1c1;">""</span>
+
+[gps_para]
+gps_used = 0
+gps_spi_id = <span style="color: #ffc1c1;">""</span>
+gps_spi_cs_num = <span style="color: #ffc1c1;">""</span>
+gps_lradc = <span style="color: #ffc1c1;">""</span>
+gps_clk = <span style="color: #ffc1c1;">""</span>
+gps_sign = <span style="color: #ffc1c1;">""</span>
+gps_mag = <span style="color: #ffc1c1;">""</span>
+gps_vcc_en = <span style="color: #ffc1c1;">""</span>
+gps_osc_en = <span style="color: #ffc1c1;">""</span>
+gps_rx_en = <span style="color: #ffc1c1;">""</span>
+
+[sdio_wifi_para]
+sdio_wifi_used = 0
+sdio_wifi_sdc_id = <span style="color: #ffc1c1;">""</span>
+sdio_wifi_mod_sel = <span style="color: #ffc1c1;">""</span>
+
+[usb_wifi_para]
+usb_wifi_used = 1
+usb_wifi_usbc_num = 1
+
+[3g_para]
+3g_used = 0
+3g_name = <span style="color: #ffc1c1;">""</span>
+3g_usbc_num = <span style="color: #ffc1c1;">""</span>
+3g_on_off = <span style="color: #ffc1c1;">""</span>
+3g_reset = <span style="color: #ffc1c1;">""</span>
+3g_poweron = <span style="color: #ffc1c1;">""</span>
+3g_wakeup_out = <span style="color: #ffc1c1;">""</span>
+3g_wakeup_in = <span style="color: #ffc1c1;">""</span>
+
+[gy_para]
+gy_used = 0
+gy_twi_id = 1
+gy_twi_addr = 0
+gy_int1 = <span style="color: #ffc1c1;">""</span>
+gy_int2 = <span style="color: #ffc1c1;">""</span>
+
+[ls_para]
+ls_used = 1
+ls_name = <span style="color: #ffc1c1;">"ltr501als"</span>
+ls_twi_id = 1
+ls_twi_addr = <span style="color: #ffc1c1;">""</span>
+ls_int = <span style="color: #ffc1c1;">""</span>
+
+[compass_para]
+compass_used = 0
+compass_twi_id = <span style="color: #ffc1c1;">""</span>
+compass_twi_addr = <span style="color: #ffc1c1;">""</span>
+compass_int = <span style="color: #ffc1c1;">""</span>
+
+[bt_para]
+bt_used = 0
+bt_uart_id = <span style="color: #ffc1c1;">""</span>
+bt_mod_type = <span style="color: #ffc1c1;">""</span>
+
+[i2s_para]
+i2s_used = 0
+i2s_channel = <span style="color: #ffc1c1;">""</span>
+i2s_mclk = <span style="color: #ffc1c1;">""</span>
+i2s_bclk = <span style="color: #ffc1c1;">""</span>
+i2s_lrclk = <span style="color: #ffc1c1;">""</span>
+i2s_dout0 = <span style="color: #ffc1c1;">""</span>
+i2s_dout1 = <span style="color: #ffc1c1;">""</span>
+i2s_dout2 = <span style="color: #ffc1c1;">""</span>
+i2s_dout3 = <span style="color: #ffc1c1;">""</span>
+i2s_din = <span style="color: #ffc1c1;">""</span>
+
+[spdif_para]
+spdif_used = 0
+spdif_mclk = <span style="color: #ffc1c1;">""</span>
+spdif_dout = <span style="color: #ffc1c1;">""</span>
+spdif_din = <span style="color: #ffc1c1;">""</span>
+
+[audio_para]
+audio_used = 1
+audio_pa_ctrl = port:PG10&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;0&gt;
+
+[ir_para]
+ir_used = 0
+ir0_rx = port:PB04&lt;2&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+
+[rtc_para]
+rtc_used = 1
+rtc_name = <span style="color: #ffc1c1;">"pcf8563"</span>
+rtc_twi_id = 1
+rtc_twi_addr = 81
+
+[pmu_para]
+pmu_used = 1
+pmu_twi_addr = 52
+pmu_twi_id = 0
+pmu_irq_id = 0
+pmu_battery_rdc = 200
+pmu_battery_cap = 2600
+pmu_init_chgcur = 300
+pmu_earlysuspend_chgcur = 600
+pmu_suspend_chgcur = 1000
+pmu_resume_chgcur = 300
+pmu_shutdown_chgcur = 1000
+pmu_init_chgvol = 4200
+pmu_init_chgend_rate = 15
+pmu_init_chg_enabled = 1
+pmu_init_adc_freq = 100
+pmu_init_adc_freqc = 100
+pmu_init_chg_pretime = 50
+pmu_init_chg_csttime = 720
+pmu_bat_para1 = 0
+pmu_bat_para2 = 0
+pmu_bat_para3 = 1
+pmu_bat_para4 = 5
+pmu_bat_para5 = 7
+pmu_bat_para6 = 13
+pmu_bat_para7 = 16
+pmu_bat_para8 = 26
+pmu_bat_para9 = 36
+pmu_bat_para10 = 46
+pmu_bat_para11 = 53
+pmu_bat_para12 = 61
+pmu_bat_para13 = 73
+pmu_bat_para14 = 84
+pmu_bat_para15 = 92
+pmu_bat_para16 = 100
+pmu_usbvol = 4000
+pmu_usbcur = 0
+pmu_usbvol_pc = 4000
+pmu_usbcur_pc = 0
+pmu_pwroff_vol = 3300
+pmu_pwron_vol = 2900
+pmu_pekoff_time = 6000
+pmu_pekoff_en = 1
+pmu_peklong_time = 1500
+pmu_pekon_time = 1000
+pmu_pwrok_time = 64
+pmu_pwrnoe_time = 2000
+pmu_intotp_en = 1
+pmu_used2 = 0
+pmu_adpdet = <span style="color: #ffc1c1;">""</span>
+pmu_init_chgcur2 = 400
+pmu_earlysuspend_chgcur2 = 600
+pmu_suspend_chgcur2 = 1200
+pmu_resume_chgcur2 = 400
+pmu_shutdown_chgcur2 = 1200
+pmu_suspendpwroff_vol = 3500
+pmu_batdeten = 1
+
+[recovery_key]
+key_min = 4
+key_max = 6
+
+[gpio_para]
+gpio_used = 1
+gpio_num = 15
+gpio_pin_1 = port:PB03&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_2 = port:PB04&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_3 = port:PB10&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;1&gt;
+gpio_pin_4 = port:PE04&lt;0&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_5 = port:PE05&lt;0&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_6 = port:PE06&lt;0&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_7 = port:PE07&lt;0&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_8 = port:PE08&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_9 = port:PE09&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_10 = port:PE10&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_11 = port:PE11&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_12 = port:PG09&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_13 = port:PG10&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_14 = port:PG11&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;default&gt;
+gpio_pin_15 = port:PB02&lt;1&gt;&lt;default&gt;&lt;default&gt;&lt;0&gt;
+
+</pre>
+
+</li>
+</ul>
+</li>
+</ul>
 </div>
 
 </div>
 
-<div id="outline-container-5-14-2" class="outline-4">
-<h4 id="sec-5-14-2">Links</h4>
-<div class="outline-text-4" id="text-5-14-2">
+<div id="outline-container-5-15-2" class="outline-4">
+<h4 id="sec-5-15-2">Links</h4>
+<div class="outline-text-4" id="text-5-15-2">
 
 <ul>
-<li id="sec-5-14-2-1">Configuration of hardware in the debian image <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
+<li id="sec-5-15-2-1">Configuration of hardware in the debian image <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
 <ul>
-<li id="sec-5-14-2-1-1">Tools<br/>
+<li id="sec-5-15-2-1-1">Tools<br/>
 <ul>
-<li id="sec-5-14-2-1-1-1">Script file<br/>
+<li id="sec-5-15-2-1-1-1">Script file<br/>
 <ul>
 <li>The script.bin is a text file with very important configuration parameters like port GPIO assignments, DDR memory parameters, Video resolution etc, by changing these parameters in the script.bin you can configure your Linux without need to re-compile your kernel again and again this is smart way Allwinner provides for tweaking A13 Linux Kernel
 </li>
 </ul>
 
-
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-1-1-2">fex<br/>
+<li id="sec-5-15-2-1-1-2">fex<br/>
 <ul>
 <li>The fex tool will convert a script.bin file to a text file and back again.
 </li>
@@ -2792,7 +4186,7 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-1-1-3">Tools and script files<br/>
+<li id="sec-5-15-2-1-1-3">Tools and script files<br/>
 <ul>
 <li>A13 script bin and fex tool
 </li>
@@ -2812,20 +4206,19 @@ make -k
 </ul>
 
 
-
 </li>
 </ul>
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-1-2">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480<br/>
+<li id="sec-5-15-2-1-2">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480<br/>
 <ul>
 <li>The default SD card setup is made with settings for VGA 800x600. If you want to switch between VGA 800x600 and LCD800x480 mode then you have to replace the existing script.bin file from the first SD card partitition (note that this partition is FAT - so you can replace the file under Windows or Linux) with the script.bin file from script_GPIO_VGA directory (if you want to change to VGA800x600 mode) or from script_GPIO_LCD_800x480 directory (if you want to change to LCD800x600 mode).
 </li>
 </ul>
 
 <ul>
-<li id="sec-5-14-2-1-2-1">Establish WIFI connection<br/>
+<li id="sec-5-15-2-1-2-1">Establish WIFI connection<br/>
 <ol>
 <li>plug in MOD-WIFI-RTL8188 if the board is not A13-OLinuXino-WIFI
 
@@ -2929,7 +4322,7 @@ reboot A13-OLinuXino board
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-1-2-2">Establish ethernet connection using USB-ETHERNET adapter recommended supported adapter USB-ETHERNET-AX88772B<br/>
+<li id="sec-5-15-2-1-2-2">Establish ethernet connection using USB-ETHERNET adapter recommended supported adapter USB-ETHERNET-AX88772B<br/>
 <ol>
 <li>plug in USB-ETHERNET-AX88772B adapter
 </li>
@@ -3034,7 +4427,7 @@ reboot A13-OLinuXino board
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-1-2-3">GPIO changing<br/>
+<li id="sec-5-15-2-1-2-3">GPIO changing<br/>
 <ol>
 <li>lsmod
 
@@ -3070,7 +4463,7 @@ reboot A13-OLinuXino board
 
 
 <ul>
-<li id="sec-5-14-2-1-2-3-1">Changing A13 GPIO direction<br/>
+<li id="sec-5-15-2-1-2-3-1">Changing A13 GPIO direction<br/>
 <ol>
 <li>extract fex2bin_bin2fex_tools on linux machine
 
@@ -3089,7 +4482,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-1-2-3-2">GPIOs are defined in the end.<br/>
+<li id="sec-5-15-2-1-2-3-2">GPIOs are defined in the end.<br/>
 <ul>
 <li>where
 
@@ -3123,9 +4516,9 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-2">fex2bin and bin2fex - script.bin <a href="http://www.imajeenyus.com/computer/20130301_android_tablet/android/fex2bin_etc.html">{Link}</a><br/>
+<li id="sec-5-15-2-2">fex2bin and bin2fex - script.bin <a href="http://www.imajeenyus.com/computer/20130301_android_tablet/android/fex2bin_etc.html">{Link}</a><br/>
 <ul>
-<li id="sec-5-14-2-2-1">Overview<br/>
+<li id="sec-5-15-2-2-1">Overview<br/>
 <ul>
 <li>During the boot process, the processor reads a file called script.bin, located in the bootloader (nanda) partition. This file contains all of the processor configuration details (such as pin functions, voltages, clock frequencies, memory configuration etc) and is essential to the correct operation of the tablet. The purpose of this file should be distinguished from that of build.prop, located in /system/build.prop. The latter is a configuration for Android, once it's started. script.bin is configuration for the processor.
 </li>
@@ -3159,7 +4552,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-2-2">Installation<br/>
+<li id="sec-5-15-2-2-2">Installation<br/>
 <ul>
 <li>To get the tools, go to the git repository at <a href="https://github.com/linux-sunxi/sunxi-tools/">https://github.com/linux-sunxi/sunxi-tools/</a> and download the ZIP file (called sunxi-tools-master.zip). Extract this, and place the folder on the Desktop of your Linux machine. Open a terminal, cd to the folder, then run
 
@@ -3180,7 +4573,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-2-3">Using bin2fex<br/>
+<li id="sec-5-15-2-2-3">Using bin2fex<br/>
 <ul>
 <li>First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
 
@@ -3201,7 +4594,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-2-4">Using fex2bin<br/>
+<li id="sec-5-15-2-2-4">Using fex2bin<br/>
 <ul>
 <li>To convert back, it's simply the reverse:
 
@@ -3222,7 +4615,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-2-5">Using fex2bin on the COMMON_SYS_CONFIG100000 LiveSuit file<br/>
+<li id="sec-5-15-2-2-5">Using fex2bin on the COMMON_SYS_CONFIG100000 LiveSuit file<br/>
 <ul>
 <li>You can use fex2bin to convert the COMMON_SYS_CONFIG100000 file from the unpacked LiveSuit image into a script.bin file. However, I initially got an error saying "E: CONFIG:696: invalid character at 27" or similar (which means line 696, character 27). Looking at the file, it turned out there were quotes missing at a certain point. Here's the original part of the file:
 
@@ -3250,7 +4643,7 @@ product_name             ="USB Flash Driver"
 </li>
 </ul>
 <ul>
-<li id="sec-5-14-2-2-6">Which version ends up on the tablet?<br/>
+<li id="sec-5-15-2-2-6">Which version ends up on the tablet?<br/>
 <ul>
 <li>If you're eagle-eyed, you may notice something at this point. In the unpacked LiveSuit files, there are essentially two copies of script.bin. One is the human-readable COMMON_SYS_CONFIG100000 file, the other is the script.bin located within the RFSFAT16_BOOTLOADER_00000 image file. The two copies are identical (if you use fex2bin/bin2fex to convert between them, and remember the quotation marks). So, which one actually ends up on the tablet?
 </li>
@@ -3259,26 +4652,84 @@ product_name             ="USB Flash Driver"
 </ul>
 
 
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-5-15-2-3">imx233-olinuxino-with-lcd-4-3-and-touchscreen <a href="http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/">{Link}</a><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-5-15-2-4">Product Info <a href="http://microcontrollershop.com/product_info.php?products_id=5557">{Link}</a><br/>
+</li>
+</ul>
+<ul>
+<li id="sec-5-15-2-5">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-15-2-6"><a href="http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/">http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/</a><br/>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-15-2-7">(As of 1 March 2013, the current Debian build for this MICRO version does not yet support a touch panel.)<br/>
+<ul>
+<li><a href="http://184.172.168.133-static.reverse.softlayer.com/product_info.php?cPath=&amp;products_id=5414">http://184.172.168.133-static.reverse.softlayer.com/product_info.php?cPath=&amp;products_id=5414</a>
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-5-15-3" class="outline-4">
+<h4 id="sec-5-15-3">Error</h4>
+<div class="outline-text-4" id="text-5-15-3">
+
+<ul>
+<li id="sec-5-15-3-1">INIT: cannot execute "/sbin/getty"<br/>
+<ul>
+<li id="sec-5-15-3-1-1">Description<br/>
+<ul>
+<li>During boot, serial connaction outputs error:
+
+
+
+<pre class="example">INIT: cannot execute "/sbin/getty"
+</pre>
+
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-5-15-3-1-2">Probable Cause<br/>
+<ul>
+<li>The util-linux is not installed
+</li>
+</ul>
 
 </li>
 </ul>
 </li>
 </ul>
-<ul>
-<li id="sec-5-14-2-3">imx233-olinuxino-with-lcd-4-3-and-touchscreen <a href="http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/">{Link}</a><br/>
-</li>
-</ul>
-<ul>
-<li id="sec-5-14-2-4">Product Info <a href="http://microcontrollershop.com/product_info.php?products_id=5557">{Link}</a><br/>
-</li>
-</ul>
-<ul>
-<li id="sec-5-14-2-5">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
+</div>
 
-</li>
-</ul>
+</div>
+
+<div id="outline-container-5-15-4" class="outline-4">
+<h4 id="sec-5-15-4">Research</h4>
+<div class="outline-text-4" id="text-5-15-4">
+
 <ul>
-<li id="sec-5-14-2-6"><a href="http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/">http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/</a><br/>
+<li id="sec-5-15-4-1"><a href="https://www.olimex.com/forum/index.php?topic=753.0"> How to make 7" LCD Screen working on the A13Micro with Debian or Custom distrib?</a><br/>
+
 </li>
 </ul>
 </div>
@@ -3286,9 +4737,9 @@ product_name             ="USB Flash Driver"
 
 </div>
 
-<div id="outline-container-5-15" class="outline-3">
-<h3 id="sec-5-15">Successfully Recieve Touch Input from Screen</h3>
-<div class="outline-text-3" id="text-5-15">
+<div id="outline-container-5-16" class="outline-3">
+<h3 id="sec-5-16">Successfully Recieve Touch Input from Screen</h3>
+<div class="outline-text-3" id="text-5-16">
 
 <ul>
 <li><a href="http://www.armadeus.com/wiki/index.php?title=Qt/Embedded#Touchscreen_handling">http://www.armadeus.com/wiki/index.php?title=Qt/Embedded#Touchscreen_handling</a>
@@ -3299,16 +4750,16 @@ product_name             ="USB Flash Driver"
 
 </div>
 
-<div id="outline-container-5-16" class="outline-3">
-<h3 id="sec-5-16">Output to LCD Screen</h3>
-<div class="outline-text-3" id="text-5-16">
+<div id="outline-container-5-17" class="outline-3">
+<h3 id="sec-5-17">Output to LCD Screen</h3>
+<div class="outline-text-3" id="text-5-17">
 
 
 </div>
 
-<div id="outline-container-5-16-1" class="outline-4">
-<h4 id="sec-5-16-1">MainWindow.cpp</h4>
-<div class="outline-text-4" id="text-5-16-1">
+<div id="outline-container-5-17-1" class="outline-4">
+<h4 id="sec-5-17-1">MainWindow.cpp</h4>
+<div class="outline-text-4" id="text-5-17-1">
 
 
 
@@ -3339,9 +4790,9 @@ product_name             ="USB Flash Driver"
 
 </div>
 
-<div id="outline-container-5-16-2" class="outline-4">
-<h4 id="sec-5-16-2">MainWindow.h</h4>
-<div class="outline-text-4" id="text-5-16-2">
+<div id="outline-container-5-17-2" class="outline-4">
+<h4 id="sec-5-17-2">MainWindow.h</h4>
+<div class="outline-text-4" id="text-5-17-2">
 
 
 
@@ -3377,9 +4828,9 @@ product_name             ="USB Flash Driver"
 
 </div>
 
-<div id="outline-container-5-16-3" class="outline-4">
-<h4 id="sec-5-16-3">moc_mainwindow.cpp</h4>
-<div class="outline-text-4" id="text-5-16-3">
+<div id="outline-container-5-17-3" class="outline-4">
+<h4 id="sec-5-17-3">moc_mainwindow.cpp</h4>
+<div class="outline-text-4" id="text-5-17-3">
 
 
 
@@ -3387,26 +4838,47 @@ product_name             ="USB Flash Driver"
 <pre class="src src-cpp"><span style="color: #fa8072;">/****************************************************************************</span>
 <span style="color: #ff7f24; font-style: italic;">** Meta object code from reading C++ file 'mainwindow.h'</span>
 <span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** Created: Wed Jun 19 17:06:54 2013</span>
-<span style="color: #ff7f24; font-style: italic;">**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)</span>
+<span style="color: #ff7f24; font-style: italic;">** Created by: The Qt Meta Object Compiler version 67 (Qt 5.0.1)</span>
 <span style="color: #ff7f24; font-style: italic;">**</span>
 <span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost!</span>
 <span style="color: #ff7f24; font-style: italic;">*****************************************************************************/</span>
 
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtCore/qbytearray.h&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtCore/qmetatype.h&gt;</span>
 <span style="color: #6495ed; font-style: italic;">#if</span> !<span style="color: #6495ed; font-style: italic;">defined</span>(Q_MOC_OUTPUT_REVISION)
 <span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"The header file 'mainwindow.h' doesn't include &lt;QObject&gt;."</span>
-<span style="color: #6495ed; font-style: italic;">#elif</span> Q_MOC_OUTPUT_REVISION != 63
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"This file was generated using the moc from 4.8.4. It"</span>
+<span style="color: #6495ed; font-style: italic;">#elif</span> Q_MOC_OUTPUT_REVISION != 67
+<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"This file was generated using the moc from 5.0.1. It"</span>
 <span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"cannot be used with the include files from this version of Qt."</span>
 <span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"(The moc has changed too much.)"</span>
 <span style="color: #6495ed; font-style: italic;">#endif</span>
 
 QT_BEGIN_MOC_NAMESPACE
+<span style="color: #00ffff;">struct</span> <span style="color: #63b8ff;">qt_meta_stringdata_MainWindow_t</span> {
+    <span style="color: #63b8ff;">QByteArrayData</span> <span style="color: #7fffd4;">data</span>[3];
+    <span style="color: #63b8ff;">char</span> <span style="color: #7fffd4;">stringdata</span>[32];
+};
+<span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">QT_MOC_LITERAL</span>(<span style="color: #7fffd4;">idx</span>, <span style="color: #7fffd4;">ofs</span>, <span style="color: #7fffd4;">len</span>) \
+    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
+    offsetof(qt_meta_stringdata_MainWindow_t, stringdata) + ofs \
+        - idx * <span style="color: #00ffff;">sizeof</span>(QByteArrayData) \
+ORG-LIST-END-MARKER
+    )
+<span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">qt_meta_stringdata_MainWindow_t</span> <span style="color: #7fffd4;">qt_meta_stringdata_MainWindow</span> = {
+    {
+QT_MOC_LITERAL(0, 0, 10),
+QT_MOC_LITERAL(1, 11, 18),
+QT_MOC_LITERAL(2, 30, 0)
+    },
+    <span style="color: #ffc1c1;">"MainWindow\0buttonClickHandler\0\0"</span>
+};
+<span style="color: #6495ed; font-style: italic;">#undef</span> QT_MOC_LITERAL
+
 <span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">uint</span> <span style="color: #7fffd4;">qt_meta_data_MainWindow</span>[] = {
 
  <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">content:</span>
-       6,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">revision</span>
+       7,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">revision</span>
        0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classname</span>
        0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classinfo</span>
        1,   14, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">methods</span>
@@ -3416,20 +4888,18 @@ QT_BEGIN_MOC_NAMESPACE
        0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">flags</span>
        0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">signalCount</span>
 
- <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">slots: signature, parameters, type, tag, flags</span>
-      12,   11,   11,   11, 0x0a,
+ <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">slots: name, argc, parameters, tag, flags</span>
+       1,    0,   19,    2, 0x0a,
+
+ <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">slots: parameters</span>
+    <span style="color: #8470ff; font-weight: bold;">QMetaType</span>::Void,
 
        0        <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">eod</span>
-};
-
-<span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">char</span> <span style="color: #7fffd4;">qt_meta_stringdata_MainWindow</span>[] = {
-    <span style="color: #ffc1c1;">"MainWindow\0\0buttonClickHandler()\0"</span>
 };
 
 <span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_static_metacall</span>(<span style="color: #63b8ff;">QObject</span> *<span style="color: #7fffd4;">_o</span>, <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">Call</span> <span style="color: #7fffd4;">_c</span>, <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">_id</span>, <span style="color: #63b8ff;">void</span> **<span style="color: #7fffd4;">_a</span>)
 {
     <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::InvokeMetaMethod) {
-        Q_ASSERT(staticMetaObject.cast(_o));
         MainWindow *_t = <span style="color: #00ffff;">static_cast</span>&lt;MainWindow *&gt;(_o);
         <span style="color: #00ffff;">switch</span> (_id) {
         <span style="color: #00ffff;">case</span> 0: _t-&gt;buttonClickHandler(); <span style="color: #00ffff;">break</span>;
@@ -3439,28 +4909,21 @@ QT_BEGIN_MOC_NAMESPACE
     <span style="color: #63b8ff;">Q_UNUSED</span>(<span style="color: #7fffd4;">_a</span>);
 }
 
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObjectExtraData</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #7fffd4;">staticMetaObjectExtraData</span> = {
-    0,  qt_static_metacall 
-};
-
 <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #7fffd4;">staticMetaObject</span> = {
-    { &amp;<span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::staticMetaObject, qt_meta_stringdata_MainWindow,
-      qt_meta_data_MainWindow, &amp;staticMetaObjectExtraData }
+    { &amp;<span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::staticMetaObject, qt_meta_stringdata_MainWindow.data,
+      qt_meta_data_MainWindow,  qt_static_metacall, 0, 0}
 };
 
-<span style="color: #6495ed; font-style: italic;">#ifdef</span> Q_NO_DATA_RELOCATION
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> &amp;<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">getStaticMetaObject</span>() { <span style="color: #00ffff;">return</span> staticMetaObject; }
-<span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">Q_NO_DATA_RELOCATION</span>
 
 <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> *<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">metaObject</span>() <span style="color: #00ffff;">const</span>
 {
-    <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;metaObject ? <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;metaObject : &amp;staticMetaObject;
+    <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;metaObject ? <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;dynamicMetaObject() : &amp;staticMetaObject;
 }
 
 <span style="color: #63b8ff;">void</span> *<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_metacast</span>(<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">char</span> *<span style="color: #7fffd4;">_clname</span>)
 {
     <span style="color: #00ffff;">if</span> (!_clname) <span style="color: #00ffff;">return</span> 0;
-    <span style="color: #00ffff;">if</span> (!strcmp(_clname, qt_meta_stringdata_MainWindow))
+    <span style="color: #00ffff;">if</span> (!strcmp(_clname, qt_meta_stringdata_MainWindow.stringdata))
         <span style="color: #00ffff;">return</span> <span style="color: #00ffff;">static_cast</span>&lt;<span style="color: #63b8ff;">void</span>*&gt;(<span style="color: #00ffff;">const_cast</span>&lt; MainWindow*&gt;(<span style="color: #00ffff;">this</span>));
     <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::qt_metacast(_clname);
 }
@@ -3474,6 +4937,10 @@ QT_BEGIN_MOC_NAMESPACE
         <span style="color: #00ffff;">if</span> (_id &lt; 1)
             qt_static_metacall(<span style="color: #00ffff;">this</span>, _c, _id, _a);
         _id -= 1;
+    } <span style="color: #00ffff;">else</span> <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::RegisterMethodArgumentMetaType) {
+        <span style="color: #00ffff;">if</span> (_id &lt; 1)
+            *<span style="color: #00ffff;">reinterpret_cast</span>&lt;<span style="color: #63b8ff;">int</span>*&gt;(_a[0]) = -1;
+        _id -= 1;
     }
     <span style="color: #00ffff;">return</span> _id;
 }
@@ -3484,9 +4951,9 @@ QT_END_MOC_NAMESPACE
 
 </div>
 
-<div id="outline-container-5-16-4" class="outline-4">
-<h4 id="sec-5-16-4">ui_mainwindow.h</h4>
-<div class="outline-text-4" id="text-5-16-4">
+<div id="outline-container-5-17-4" class="outline-4">
+<h4 id="sec-5-17-4">ui_mainwindow.h</h4>
+<div class="outline-text-4" id="text-5-17-4">
 
 
 
@@ -3494,8 +4961,7 @@ QT_END_MOC_NAMESPACE
 <pre class="src src-cpp"><span style="color: #fa8072;">/********************************************************************************</span>
 <span style="color: #ff7f24; font-style: italic;">** Form generated from reading UI file 'mainwindow.ui'</span>
 <span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** Created: Wed Jun 19 17:06:53 2013</span>
-<span style="color: #ff7f24; font-style: italic;">**      by: Qt User Interface Compiler version 4.8.4</span>
+<span style="color: #ff7f24; font-style: italic;">** Created by: Qt User Interface Compiler version 5.0.1</span>
 <span style="color: #ff7f24; font-style: italic;">**</span>
 <span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost when recompiling UI file!</span>
 <span style="color: #ff7f24; font-style: italic;">********************************************************************************/</span>
@@ -3504,18 +4970,18 @@ QT_END_MOC_NAMESPACE
 <span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #7fffd4;">UI_MAINWINDOW_H</span>
 
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtCore/QVariant&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QAction&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QApplication&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QButtonGroup&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QHeaderView&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QLabel&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QLineEdit&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QMainWindow&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QMenuBar&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QPushButton&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QStatusBar&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QToolBar&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QWidget&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QAction&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QApplication&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QButtonGroup&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QHeaderView&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QLabel&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QLineEdit&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QMainWindow&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QMenuBar&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QPushButton&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QStatusBar&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QToolBar&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QWidget&gt;</span>
 
 QT_BEGIN_NAMESPACE
 
@@ -3533,29 +4999,29 @@ QT_BEGIN_NAMESPACE
     <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">setupUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
     {
         <span style="color: #00ffff;">if</span> (MainWindow-&gt;objectName().isEmpty())
-            MainWindow-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"MainWindow"</span>));
+            MainWindow-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"MainWindow"</span>));
         MainWindow-&gt;resize(524, 300);
         centralWidget = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>(MainWindow);
-        centralWidget-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"centralWidget"</span>));
+        centralWidget-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"centralWidget"</span>));
         pushButton = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(centralWidget);
-        pushButton-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pushButton"</span>));
+        pushButton-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"pushButton"</span>));
         pushButton-&gt;setGeometry(QRect(20, 110, 93, 27));
         label = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(centralWidget);
-        label-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label"</span>));
+        label-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"label"</span>));
         label-&gt;setGeometry(QRect(20, 40, 62, 17));
         lineEdit = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLineEdit</span>(centralWidget);
-        lineEdit-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lineEdit"</span>));
+        lineEdit-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"lineEdit"</span>));
         lineEdit-&gt;setGeometry(QRect(20, 70, 113, 27));
         MainWindow-&gt;setCentralWidget(centralWidget);
         menuBar = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QMenuBar</span>(MainWindow);
-        menuBar-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"menuBar"</span>));
+        menuBar-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"menuBar"</span>));
         menuBar-&gt;setGeometry(QRect(0, 0, 524, 25));
         MainWindow-&gt;setMenuBar(menuBar);
         mainToolBar = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QToolBar</span>(MainWindow);
-        mainToolBar-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"mainToolBar"</span>));
+        mainToolBar-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"mainToolBar"</span>));
         MainWindow-&gt;addToolBar(<span style="color: #8470ff; font-weight: bold;">Qt</span>::TopToolBarArea, mainToolBar);
         statusBar = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QStatusBar</span>(MainWindow);
-        statusBar-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"statusBar"</span>));
+        statusBar-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"statusBar"</span>));
         MainWindow-&gt;setStatusBar(statusBar);
 
         <span style="color: #63b8ff;">retranslateUi</span>(<span style="color: #7fffd4;">MainWindow</span>);
@@ -3566,9 +5032,9 @@ QT_BEGIN_NAMESPACE
 
     <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">retranslateUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
     {
-        MainWindow-&gt;setWindowTitle(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"MainWindow"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        pushButton-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"PushButton"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        label-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"TextLabel"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        MainWindow-&gt;setWindowTitle(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"MainWindow"</span>, 0));
+        pushButton-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"PushButton"</span>, 0));
+        label-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"TextLabel"</span>, 0));
     } <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">retranslateUi</span>
 
 };
@@ -3586,9 +5052,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-5-16-5" class="outline-4">
-<h4 id="sec-5-16-5">mainwindow.ui</h4>
-<div class="outline-text-4" id="text-5-16-5">
+<div id="outline-container-5-17-5" class="outline-4">
+<h4 id="sec-5-17-5">mainwindow.ui</h4>
+<div class="outline-text-4" id="text-5-17-5">
 
 
 
@@ -3698,145 +5164,11 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-5-17" class="outline-3">
-<h3 id="sec-5-17">Build a Button that does Something on Screen</h3>
-<div class="outline-text-3" id="text-5-17">
+<div id="outline-container-5-18" class="outline-3">
+<h3 id="sec-5-18">Build a Button that does Something on Screen</h3>
+<div class="outline-text-3" id="text-5-18">
 
 </div>
-</div>
-
-</div>
-
-<div id="outline-container-6" class="outline-2">
-<h2 id="sec-6">Backups</h2>
-<div class="outline-text-2" id="text-6">
-
-
-</div>
-
-<div id="outline-container-6-1" class="outline-3">
-<h3 id="sec-6-1">Backup the SD Card</h3>
-<div class="outline-text-3" id="text-6-1">
-
-
-</div>
-
-<div id="outline-container-6-1-1" class="outline-4">
-<h4 id="sec-6-1-1">Steps</h4>
-<div class="outline-text-4" id="text-6-1-1">
-
-<ul>
-<li id="sec-6-1-1-1">Backup<br/>
-<ol>
-<li>Navigate to backup directoryhttp://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi
-
-
-
-<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> BAK/
-</pre>
-
-</li>
-<li>connect card to linux, unmounted
-</li>
-<li>copy card contents with dd
-
-
-
-<pre class="src src-sh">sudo dd <span style="color: #7fffd4;">if</span>=/dev/mmcblk0 | gzip &gt; ./debian_configured_v1.image.gz
-</pre>
-
-</li>
-</ol>
-
-</li>
-</ul>
-<ul>
-<li id="sec-6-1-1-2">Restore<br/>
-<ol>
-<li>insert unmounted card
-</li>
-<li>unzip to card
-
-
-
-<pre class="src src-sh">sudo gzip -dc /path/to/debian_configured_v1.image.gz | dd <span style="color: #7fffd4;">of</span>=/dev/mmcblk0
-</pre>
-
-</li>
-</ol>
-
-
-</li>
-</ul>
-</div>
-
-</div>
-
-<div id="outline-container-6-1-2" class="outline-4">
-<h4 id="sec-6-1-2">Links</h4>
-<div class="outline-text-4" id="text-6-1-2">
-
-<ul>
-<li id="sec-6-1-2-1">How do I make a Backup of my Rasberry Pi <a href="http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi">{Link}</a><br/>
-<ol>
-<li>Make a full backup of the image
-<ul>
-<li>If you are running linux then you can use the dd command to make a full backup of the image:
-
-
-
-<pre class="src src-sh">dd <span style="color: #7fffd4;">if</span>=/dev/sdx <span style="color: #7fffd4;">of</span>=/path/to/image
-</pre>
-
-</li>
-<li>or for compression:
-
-
-
-<pre class="src src-sh">dd <span style="color: #7fffd4;">if</span>=/dev/sdx | gzip &gt; /path/to/image.gz
-</pre>
-
-</li>
-<li>Where sdx is your SD card.
-</li>
-</ul>
-
-</li>
-<li>To restore the backup you reverse the commands:
-<ul>
-<li>Uncompressed
-
-
-
-<pre class="src src-sh">dd <span style="color: #7fffd4;">if</span>=/path/to/image <span style="color: #7fffd4;">of</span>=/dev/sdx
-</pre>
-
-</li>
-<li>or when compressed:
-
-
-
-<pre class="src src-sh">gzip -dc /path/to/image.gz | dd <span style="color: #7fffd4;">of</span>=/dev/sdx
-</pre>
-
-</li>
-</ul>
-
-</li>
-</ol>
-
-
-<div id="footnotes">
-<h2 class="footnotes">Footnotes: </h2>
-<div id="text-footnotes">
-<p class="footnote"><sup><a class="footnum" name="fn-.1" href="#fnr-.1">1</a></sup> <a href="http://microcontrollershop.com/product_info.php?products_id=5557">http://microcontrollershop.com/product_info.php?products_id=5557</a>
-</p></li>
-</ul>
-</div>
-</div>
-</div>
-</div>
-
 </div>
 </div>
 </div>
