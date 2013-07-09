@@ -1,4 +1,4 @@
-#+TITLE:     Embedded GUI Framework
+#+TITLE:     Embedd GUI
 #+DATE:      2013-06-04 Tue
 
 #+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:{} -:t f:t *:t <:t
@@ -149,7 +149,7 @@ Vital Vio is a privately held biomedical and lighting design startup focused on 
 + Place of Origin: Guangdong, China (Mainland)
 + Brand Name: BYD
 
-** 4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen [fn:: http://microcontrollershop.com/product_info.php?products_id=5557]
+** 4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen [[http://microcontrollershop.com/product_info.php?products_id%3D5557][{link}]]
 [[./img/a13lcd43ts_front.png]]     [[./img/a13lcd43ts_back.png]]
 *** Overview
 + This is a 4.3-inch LCD with a resistive touch screen and an interface board that has been tested to work with A13 OLinuXino boards.
@@ -244,6 +244,10 @@ scp allows files to be copied to, from, or between different hosts. It uses ssh 
   scp -P 22122 root@192.168.12.200:~/\{foo.txt,bar.txt\} .
 #+END_SRC
 
+*** Receive and Entire Directory
+#+BEGIN_SRC sh
+  scp -r root@192.168.12.222:/root/Desktop/src/tslib tslib_v2
+#+END_SRC
 ** Check Remaining Space on Hard Drive
 #+BEGIN_SRC sh
 du -h <path_of_the_dir> | tail -1
@@ -266,6 +270,52 @@ du -h <path_of_the_dir> | tail -1
    #+END_SRC
 2. Send files over to device
 3. Run
+** Backups
+*** Backup the SD Card
+**** Steps
+***** Backup
+1. Navigate to backup directoryhttp://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi
+   #+BEGIN_SRC sh
+     cd BAK/
+   #+END_SRC
+2. connect card to linux, unmounted
+3. copy card contents with dd
+   #+BEGIN_SRC sh
+   sudo dd if=/dev/mmcblk0 | gzip > ./debian_configured_v1.image.gz
+   #+END_SRC
+***** Restore
+1. insert unmounted card
+2. unzip to card
+   #+BEGIN_SRC sh
+   sudo gzip -dc /path/to/debian_configured_v1.image.gz | dd of=/dev/mmcblk0
+   #+END_SRC
+
+**** Links
+***** How do I make a Backup of my Rasberry Pi [[http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi][{Link}]]
+1. Make a full backup of the image
+   + If you are running linux then you can use the dd command to make a full backup of the image:
+     #+BEGIN_SRC sh
+       dd if=/dev/sdx of=/path/to/image
+     #+END_SRC
+   + or for compression:
+     #+BEGIN_SRC sh
+       dd if=/dev/sdx | gzip > /path/to/image.gz
+     #+END_SRC
+   + Where sdx is your SD card.
+2. To restore the backup you reverse the commands:
+   + Uncompressed
+     #+BEGIN_SRC sh
+       dd if=/path/to/image of=/dev/sdx
+     #+END_SRC
+   + or when compressed:
+     #+BEGIN_SRC sh
+       gzip -dc /path/to/image.gz | dd of=/dev/sdx
+     #+END_SRC
+*** Backup Images to Web Storage
+#+BEGIN_SRC sh
+  rsync -rtvz /media/Global/Global/BAK/embedd_gui_bin nickguthrie.com:nickguthrie.com/embedd_gui_bin
+#+END_SRC
+
 * Objectives
 ** DONE Obtain Hardware
 ** DONE Get Debian Running
@@ -644,7 +694,8 @@ make install
     QMAKE_LIBDIR  += /usr/local/tslib/lib
   #+END_EXAMPLE
 
-**** TODO Install qt-everywhere on Development Platform
+**** DONE Install qt-everywhere on Development Platform
+***** Steps
 1. Install Source
    #+BEGIN_SRC sh
      tar -xvf qt-everywhere-opensource-src-4.6.2.tar.gz /usr/local/qt
@@ -679,7 +730,7 @@ make install
    #+END_EXAMPLE
 3. Configure Qt
    #+BEGIN_SRC sh
-   make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license
+   make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license -qt-mouse-tslib
    #+END_SRC
    + Need to Add: -qt-mouse-tslib
 
@@ -695,23 +746,21 @@ make install
 5. Install
    #+BEGIN_SRC sh
      su
-     export PATH=$PATH:/usr/local/arm/4.3.2/bin
+     export PATH=$PATH:/usr/local/qt/bin
      make install
    #+END_SRC
 6. Add qts path
-   
 
-***** Error
+***** Errors
 + /opt/ext_toolchain/bin/../lib/gcc/arm-linux-gnueabihf/4.7.3/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lbootstrap
 http://www.qtcentre.org/archive/index.php/t-41850.html
-
 **** DONE Copy Libraries Over to Device
 ***** Overview
 So now, its time to put the libs on your mini machine! You may choose to create a separate filesystem using busybox too. Elaborate tutorials on that are available on the web. Just Google it up. What I will do is, modify the rootfs that came with my mini and remove all unnecessary stuff from it. Create a dir /usr/local/qt on your mini2440′s stock root filesystem and copy the complete lib directory from step 5 to that location using a USB stick/SD Card or something. Remember to do a df on the mini beforehand to see the free NAND you have got. In case the memory is low, delete some stock data – the small video file, mp3 file and some sample images that are present on it.Also remove unnecessary applications viz konqueror and old qt 2.2.0 libraries from the system.
 ***** Steps
 1. Copy qt libraries over
    #+BEGIN_SRC sh
-   rsync -rtvz -a -e "ssh -p 22122" /usr/local/qt/ root@192.168.12.200:/usr/local/qt/
+     rsync -rtvz -a -e "ssh -p 22122" /usr/local/qt/ root@192.168.12.200:/usr/local/qt/
    #+END_SRC
 2. Environment Variables
    + To make the mini understand the new Qt libs, we’ll add some variables
@@ -723,12 +772,12 @@ So now, its time to put the libs on your mini machine! You may choose to create 
    #+BEGIN_EXAMPLE
      export LD_LIBRARY_PATH=/usr/local/qt/lib
      export QTDIR=/usr/local/qt
-     export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event0
+     export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event2
      export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
    #+END_EXAMPLE
    + Remember that these variables may change according to your qt libs location and mouse/touchscreen drivers. Go to /dev/input/ and see which file is responsible for which device. For eg. if tslib is configured on your device then the QWS_MOUSE_PROTO  variable will have the value something like
      #+BEGIN_EXAMPLE
-     QWS_MOUSE_PROTO=Tslib:/dev/input/event1
+       QWS_MOUSE_PROTO=tslib:/dev/input/event2
      #+END_EXAMPLE
 4. So, you are done at last and have your system ready with Qt 4.6.2 libs. Try running a simple application (viz a Analog Clock from the cross-compiled qt examples at /usr/local/qt/examples/widgets/analogclock/analogclock by giving the -qws option on the mini2440 shell as
    #+BEGIN_SRC sh
@@ -748,6 +797,286 @@ So now, its time to put the libs on your mini machine! You may choose to create 
 + https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki
 + [[./doc/Getting%20Started%20with%20Qt.pdf][Getting started with Qt.pdf]]
   + has working notes for proper installation of tslib.
+** TODO Configure Touchscreen Support (tslib)
+*** Problem: All debian images are built for 512 MB of RAM, 256 is all that is available
+**** Research
+***** Xman Conversation [[https://www.olimex.com/forum/index.php?topic%3D617.10%3Bwap2][{Link}]]
++ <xman> hi, What happens if my dram_size = 512 in [dram_para], but my board have only 256MB?
++ <WarheadsSE> xman: which board ?
++ <xman> https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/
++ techn_> with 256MB ram you propably need to disable mali, framebuffer and g2d.. memmap hard coded to somewhere 400-500MB
++ <techn_> [[https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.0/arch/arm/mach-sun5i/core.c#L222example][example]]
++ xman> 64M and 32M is for what?
++ techn_> 64M mali, 32M for reserved framebuffer(for mali use)
++ ...
++ <WarheadsSE> xman: then you should be enable appropriately adjust the dram para, but you might need an updated uboot that has a 256M SPL
++ ..
++ <WarheadsSE> the Wifi has an AXP, which the Mirco doesn't.
++ <WarheadsSE> That's a big difference.
++ ...
++ <xman> so, you edit fex, uptade kernel and update u-boot?
++ <WarheadsSE> yes, fex change, kernel source change, u-boot source change
++ <WarheadsSE> recompile all.
++ ..
++ <WarheadsSE> For the moment, they need to use the provided kernel source repository, and the associated uboot.
+***** Olimex General Conversation [[https://www.olimex.com/forum/index.php?topic%3D707.msg2819%3Btopicseen#msg2819][{Link}]]
+***** In Depth Conversation about Recompiling Kernal from Source [[https://www.olimex.com/forum/index.php?topic%3D617.0][{Link}]]
+**** Compile Kernal From Source
+***** Links
++ https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558
+  #+BEGIN_SRC sh
+    git clone git://github.com/linux-sunxi/u-boot-sunxi.git
+    git clone https://github.com/hehopmajieh/linux-sunxi
+    cd linux-sunxi
+    git checkout origin/sunxi-3.0
+    make a13_olinuxino_micro CROSS_COMPILE=arm-linux-gnueabi-
+    make ARCH=arm a13om_defconfig
+    make ARCH=arm menuconfig
+  #+END_SRC
+
+*** Promising Solution
+http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html
+**** OLinuXino A13: touchscreen support in Linux
+***** Overview
++ One of the first problems we had with OLinuxIno-A13 board is the touchscreen support
++ The manual was published on the official Olimex blog, but source packages had updated, so old solution didn't give an effect
++ After some experiments, we solved this problem
++ Here is a full step-by-step manual how to get the device works well under Debian
+***** Required:
+****** installed xorg-dev, xserver-xorg-dev, x11proto-core-dev, git, make, automake: 
+#+BEGIN_SRC sh 
+  aptitude install xorg-dev xserver-xorg-dev x11proto-core-dev git automake make
+#+END_SRC
+****** tslib sources - get it from Github:
+#+BEGIN_SRC sh
+  git clone https://github.com/kergoth/tslib.git
+#+END_SRC
+****** xf86-input-tslib sources - from Debian Git repository:
+#+BEGIN_SRC sh
+git clone git://git.debian.org/git/collab-maint/xf86-input-tslib
+#+END_SRC
+***** Now it's time to build this stuff. (All commands are performed as root).
+****** tslib
+******* Overview
++ tslib is a library that allows programmer to use data from touchscreens. It is only API, but not a driver for Xorg (there is xf86-input-tslib package for this).
++ It works well for most of different touchscreens without any changes. But, _suddenly, Olinuxino's touchscreen is an exception_, and we need to _patch original library_.
+******* Steps
+1. First, download tslib source code and go to its directory: 
+   #+BEGIN_SRC sh
+     git clone http://github.com/kergoth/tslib.git
+     cd tslib
+   #+END_SRC
+2. Download and apply the patch using GNU patch utility: 
+   #+BEGIN_SRC sh
+     wget http://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
+     patch -p0 < tslib.patch
+   #+END_SRC
+3. Configure, make and install:
+   #+BEGIN_SRC sh
+     autoreconf -vi; ./configure --prefix=/usr; 
+     make; 
+     make install
+   #+END_SRC
+   + Result: Libraries have been installed in:
+     #+BEGIN_EXAMPLE
+       /usr/lib/ts
+     #+END_EXAMPLE
+4. Then, let's load a kernel module and check touchscreen:
+   #+BEGIN_SRC sh
+     modprobe sun4i-ts
+     dmesg | grep sun4i-ts
+   #+END_SRC
+   + If it's all right, there will be some messages in dmesg like this:
+     #+BEGIN_EXAMPLE
+       [    9.010000] sun4i-ts.c: sun4i_ts_init: start ...
+       [    9.020000] sun4i-ts: tp_screen_size is 5 inch.
+       [    9.030000] sun4i-ts: tp_regidity_level is 5.
+       [    9.030000] sun4i-ts: tp_press_threshold_enable is 0.
+       [    9.040000] sun4i-ts: rtp_sensitive_level is 15.
+       [    9.050000] sun4i-ts: rtp_exchange_x_y_flag is 0.
+       [    9.060000] sun4i-ts.c: sun4i_ts_probe: start...
+       [    9.080000] input: sun4i-ts as /devices/platform/sun4i-ts/input/input1
+       [    9.100000] sun4i-ts.c: sun4i_ts_probe: end
+     #+END_EXAMPLE
+     + Highlighted 1 there is a number of touchscreen event device.
+     + Later we will get a raw data from device using the path /dev/input/event1 (change higlighted number to your).
+
+5. To load this kernel module automatically, add a line into /etc/modules:
+   #+BEGIN_SRC sh
+     echo sun4i-ts >> /etc/modules
+   #+END_SRC
+
+6. Now let's check the touchscreen in use. We need to export some environment variables which contains basic configuration for library. Do not forget to change highlighted number:
+   #+BEGIN_SRC sh
+     export TSLIB_TSEVENTTYPE=raw
+     export TSLIB_CONSOLEDEVICE=none
+     export TSLIB_FBDEVICE=/dev/fb0
+     export TSLIB_TSDEVICE=/dev/input/event1
+     export TSLIB_CALIBFILE=/usr/etc/pointercal
+     export TSLIB_CONFFILE=/usr/etc/ts.conf
+     export TSLIB_PLUGINDIR=/usr/lib/ts
+   #+END_SRC
+
+7. Next, configure raw input module of the tslib.
+   + Open /usr/etc/ts.conf and uncomment the line which contains "module_raw input".
+
+8. After this, we should make a test. Let's calibrate the touchscreen and try to do something with it.
+   #+BEGIN_SRC sh
+     ts_calibrate
+     ts_test
+   #+END_SRC
+   + To get out from ts_test, you should press "Quit" button on the screen, or use Ctrl+C in emergency case (if screen is not calibrated or configured successfully).
+9. To load configuration variables while system is loading, write these lines into /etc/environment file (check highlighted number):
+   #+BEGIN_EXAMPLE
+     TSLIB_TSEVENTTYPE=raw
+     TSLIB_CONSOLEDEVICE=none
+     TSLIB_FBDEVICE=/dev/fb0
+     TSLIB_TSDEVICE=/dev/input/event1
+     TSLIB_CALIBFILE=/etc/pointercal
+     TSLIB_CONFFILE=/usr/etc/ts.conf
+     TSLIB_PLUGINDIR=/usr/lib/ts 
+   #+END_EXAMPLE
+  
+
+
+****** Now we need to modify and install xf86-input-tslib driver.
+
+xf86-input-tslib
+
+xf86-input-tslib allows us to use tslib device like our touchscreen as pointer device. 
+
+This driver is old a bit, so while it works with newer Xorg server, it faluts, because xf86InputSetScreen function is removed from Xorg, but driver tries to call it. I had just removed this call from driver's source code and the problem was solved.
+
+Download source code, go to its directory: 
+
+# git clone git://git.debian.org/git/collab-maint/xf86-input-tslib
+# cd xf86-input-tslib
+
+Get and apply required patches (including my solution):
+
+# wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/1-xf86tslib-sigfault.patch https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/xf86-input-tslib-port-ABI-12-r48.patch https://github.com/webconn/OLINUXINO/blob/master/SOFTWARE/A13/TOUCHSCREEN/xf86tslib-xorg-update.patch
+# patch -p0 < 1-xf86tslib-sigfault.patch
+# patch -p0 < xf86-input-tslib-port-ABI-12-r48.patch
+# patch -p0 < xf86tslib-xorg-update.patch
+
+Configure, make and install:
+
+# ./configure --prefix=/usr
+# make
+# make install
+
+Now describe the device as InputClass of Xorg in your xorg.conf (or in /usr/share/X11/xorg.conf.d/20-ts.conf as I did):
+
+Section "InputClass"
+    Identifier "Sun4i-Touchscreen"
+    MatchDevicePath "/dev/input/event*"
+    MatchProduct "sun4i-ts"
+    Driver "tslib"
+EndSection
+
+
+If you had successfully calibrated and tested the touchscreen, when you start X server by
+
+# startx
+
+the screen should work well. Also it should work when X server is launched by desktop manager (ex. LightDM). 
+
+P.S. This solution is tested at Olinuxino A13 with Debian GNU/Linux 7.0 (wheezy). Last commit of tslib was 158ee49, version of xf86-input-tslib was 0.0.6.
+Автор: webconn на 10:10 
+Отправить по электронной почте
+Написать об этом в блоге
+Опубликовать в Twitter
+Опубликовать в Facebook
+
+Ярлыки: ARM, Debian, English, HowTo, Linux, Olinuxino, touchscreen
+*** Actual
+**** Steps
+1. Install make and automake
+   #+BEGIN_SRC sh
+     apt-get install
+   #+END_SRC
+2. Download tslib source code and go to its directory: 
+   #+BEGIN_SRC sh
+     git clone https://github.com/kergoth/tslib.git
+     cd tslib
+   #+END_SRC
+3. Download and apply the patch using GNU patch utility: 
+   #+BEGIN_SRC sh
+     # wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
+     # patch -p0 < tslib.patch   
+   #+END_SRC
+4. Configure, make and install:
+   #+BEGIN_SRC sh
+     autoreconf -vi
+     ./configure --prefix=/usr
+     make
+     make install
+   #+END_SRC
+5. Then, let's load a kernel module and check touchscreen:
+   #+BEGIN_SRC sh
+     modprobe sun4i-ts
+     dmesg | grep sun4i-ts
+   #+END_SRC
+   + Result
+     #+BEGIN_EXAMPLE
+       [12951.630000] sun4i-ts.c: sun4i_ts_init: start ...
+       [12951.640000] sun4i-ts: tp_screen_size is 5 inch.
+       [12951.650000] sun4i-ts: tp_regidity_level is 5.
+       [12951.660000] sun4i-ts: tp_press_threshold_enable is 0.
+       [12951.670000] sun4i-ts: rtp_sensitive_level is 15.
+       [12951.670000] sun4i-ts: rtp_exchange_x_y_flag is 0.
+       [12951.690000] sun4i-ts.c: sun4i_ts_probe: start...
+       [12951.710000] input: sun4i-ts as /devices/platform/sun4i-ts/input/input4
+       [12951.730000] sun4i-ts.c: sun4i_ts_probe: end
+     #+END_EXAMPLE
+6. To load this kernel module automatically, add a line into /etc/modules:
+   #+BEGIN_SRC sh
+     echo sun4i-ts >> /etc/modules
+   #+END_SRC
+7. Export Some Variables
+   #+BEGIN_SRC sh
+     export TSLIB_TSEVENTTYPE=raw
+     export TSLIB_CONSOLEDEVICE=none
+     export TSLIB_FBDEVICE=/dev/fb0
+     export TSLIB_TSDEVICE=/dev/input/event4
+     export TSLIB_CALIBFILE=/usr/etc/pointercal
+     export TSLIB_CONFFILE=/usr/etc/ts.conf
+     export TSLIB_PLUGINDIR=/usr/lib/tsg
+   #+END_SRC
+8. Next, configure raw input module of the tslib.
+   + Open /usr/etc/ts.conf and uncomment the line which contains "module_raw input".
+9. To load configuration variables while system is loading, write these lines into /etc/environment file (check highlighted number):
+   #+BEGIN_EXAMPLE
+     TSLIB_TSEVENTTYPE=raw
+     TSLIB_CONSOLEDEVICE=none
+     TSLIB_FBDEVICE=/dev/fb0
+     TSLIB_TSDEVICE=/dev/input/event3
+     TSLIB_CALIBFILE=/etc/pointercal
+     TSLIB_CONFFILE=/usr/etc/ts.conf
+     TSLIB_PLUGINDIR=/usr/lib/ts 
+   #+END_EXAMPLE
+
+**** Errors
+***** DONE undefined macro: AC_DISABLE_STATIC
+****** Error Caused
++ while attempting to do "autoreconf -vi" when building tslib
+****** Error Message
+#+BEGIN_EXAMPLE
+configure.ac:24: error: possibly undefined macro: AC_DISABLE_STATIC
+      If this token and others are legitimate, please use m4_pattern_allow.
+      See the Autoconf documentation.
+#+END_EXAMPLE
+****** Solution
+#+BEGIN_SRC sh
+apt-get install libtool
+#+END_SRC
+****** Links
++ http://www.friendlyarm.net/forum/topic/621
+
+*** Test Touchscreen
+#+BEGIN_SRC sh
+ cat /dev/input/event3 | hexdump
+#+END_SRC
 ** Configure Debian to Communicate to Touchscreen
 *** Messing with the script file
 **** Installation
@@ -765,7 +1094,7 @@ So now, its time to put the libs on your mini machine! You may choose to create 
      make clean
      make -k
    #+END_SRC
-**** Usage
+**** General Usage
 ***** Using bin2fex
 + First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
   #+BEGIN_SRC sh
@@ -782,12 +1111,24 @@ So now, its time to put the libs on your mini machine! You may choose to create 
   #+END_SRC
   + This can then be placed back on the bootloader partition (remember to also overwrite script0.bin).
 
+**** Configuring Tourchscreen
+***** Steps
+1. Took script_GPIO_LCD_800x480.fex and converted changed y value of 480 to 272 and x value of 800 to 480.
+2. Convert the .fex to a .bin using fex2bin
+   #+BEGIN_SRC sh
+     ~/src/fex2bin_bin_fex_tools/fex2bin small_lcd.fex small_lcd.bin
+   #+END_SRC
+3. Copy onto device
+   #+BEGIN_SRC sh
+     cp small_lcd.bin /media/mmckblk0/script.bin
+   #+END_SRC
+***** Source Code
+#+INCLUDE: "../conf/script_bin/custom_lcd/small_lcd.fex" src txt
 *** Links
 **** Configuration of hardware in the debian image [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][{Link}]]
 ***** Tools
 ****** Script file
 + The script.bin is a text file with very important configuration parameters like port GPIO assignments, DDR memory parameters, Video resolution etc, by changing these parameters in the script.bin you can configure your Linux without need to re-compile your kernel again and again this is smart way Allwinner provides for tweaking A13 Linux Kernel
-
 ****** fex
 + The fex tool will convert a script.bin file to a text file and back again.
 + This allows the easy modification of the settings that are in the script.bin file
@@ -799,7 +1140,6 @@ So now, its time to put the libs on your mini machine! You may choose to create 
   + fex2bin_bin_fex_tools.tar.gz :: tools fex2bin and bin2fex for converting the *.bin script file to *.fex(text file)
   + script_GPIO_VGA :: script with VGA800x600settings
   + script_GPIO_LCD_800x480 :: script with LCD800x480settings
-
 
 ***** Changing A13-OLinuxino settings to VGA800x600 or LCD800x480
 + The default SD card setup is made with settings for VGA 800x600. If you want to switch between VGA 800x600 and LCD800x480 mode then you have to replace the existing script.bin file from the first SD card partitition (note that this partition is FAT - so you can replace the file under Windows or Linux) with the script.bin file from script_GPIO_VGA directory (if you want to change to VGA800x600 mode) or from script_GPIO_LCD_800x480 directory (if you want to change to LCD800x600 mode).
@@ -1011,12 +1351,26 @@ gedit /mnt/sd/script_test.fex
 + If you're eagle-eyed, you may notice something at this point. In the unpacked LiveSuit files, there are essentially two copies of script.bin. One is the human-readable COMMON_SYS_CONFIG100000 file, the other is the script.bin located within the RFSFAT16_BOOTLOADER_00000 image file. The two copies are identical (if you use fex2bin/bin2fex to convert between them, and remember the quotation marks). So, which one actually ends up on the tablet?
 + I made a slight modification to one, then the other, packing and burning a complete LiveSuit image each time, and determined that it's the script.bin inside RFSFAT16_BOOTLOADER_00000 which ends up on the tablet (hardly surprising, since RFSFAT16_BOOTLOADER_00000 is a byte-for-byte copy of the nanda tablet partition). To be on the safe side, I would still ensure that COMMON_SYS_CONFIG100000 is identical to the script.bin file - maybe LiveSuit uses COMMON_SYS_CONFIG100000 for its own initial configuration, or something.
 
-
 **** imx233-olinuxino-with-lcd-4-3-and-touchscreen [[http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/][{Link}]]
 **** Product Info [[http://microcontrollershop.com/product_info.php?products_id%3D5557][{Link}]]
 **** Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][{Link}]]
 
 **** http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/
+
+**** (As of 1 March 2013, the current Debian build for this MICRO version does not yet support a touch panel.)
++ http://184.172.168.133-static.reverse.softlayer.com/product_info.php?cPath=&products_id=5414
+*** Error
+**** INIT: cannot execute "/sbin/getty"
+***** Description
++ During boot, serial connaction outputs error:
+  #+BEGIN_EXAMPLE
+  INIT: cannot execute "/sbin/getty"
+  #+END_EXAMPLE
+***** Probable Cause
++ The util-linux is not installed
+*** Research
+**** [[https://www.olimex.com/forum/index.php?topic%3D753.0][ How to make 7" LCD Screen working on the A13Micro with Debian or Custom distrib?]]
+
 ** Successfully Recieve Touch Input from Screen
 + http://www.armadeus.com/wiki/index.php?title=Qt/Embedded#Touchscreen_handling
 ** Output to LCD Screen
@@ -1032,47 +1386,6 @@ gedit /mnt/sd/script_test.fex
 #+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.ui" src txt
 
 ** Build a Button that does Something on Screen
-* Backups
-** Backup the SD Card
-*** Steps
-**** Backup
-1. Navigate to backup directoryhttp://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi
-   #+BEGIN_SRC sh
-     cd BAK/
-   #+END_SRC
-2. connect card to linux, unmounted
-3. copy card contents with dd
-   #+BEGIN_SRC sh
-   sudo dd if=/dev/mmcblk0 | gzip > ./debian_configured_v1.image.gz
-   #+END_SRC
-**** Restore
-1. insert unmounted card
-2. unzip to card
-   #+BEGIN_SRC sh
-   sudo gzip -dc /path/to/debian_configured_v1.image.gz | dd of=/dev/mmcblk0
-   #+END_SRC
-
-*** Links
-**** How do I make a Backup of my Rasberry Pi [[http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi][{Link}]]
-1. Make a full backup of the image
-   + If you are running linux then you can use the dd command to make a full backup of the image:
-     #+BEGIN_SRC sh
-       dd if=/dev/sdx of=/path/to/image
-     #+END_SRC
-   + or for compression:
-     #+BEGIN_SRC sh
-       dd if=/dev/sdx | gzip > /path/to/image.gz
-     #+END_SRC
-   + Where sdx is your SD card.
-2. To restore the backup you reverse the commands:
-   + Uncompressed
-     #+BEGIN_SRC sh
-       dd if=/path/to/image of=/dev/sdx
-     #+END_SRC
-   + or when compressed:
-     #+BEGIN_SRC sh
-       gzip -dc /path/to/image.gz | dd of=/dev/sdx
-     #+END_SRC
 * Scratch Pad                                                                   :noexport:
 + http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
 + export PATH=$PATH:/usr/local/arm/4.3.2/bin
