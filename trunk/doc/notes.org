@@ -1,7 +1,7 @@
+
 #+TITLE:     Embedd GUI
 #+DATE:      2013-06-04 Tue
-
-#+OPTIONS:   H:3 num:nil toc:nil \n:nil @:t ::t |:t ^:{} -:t f:t *:t <:t
+#+OPTIONS:   H:3 num:nil toc:t \n:nil @:t ::t |:t ^:{} -:t f:t *:t <:t
 #+OPTIONS:   TeX:t LaTeX:t skip:nil d:nil todo:t pri:nil tags:not-in-toc
 #+INFOJS_OPT: view:overview toc:nil ltoc:t mouse:underline buttons:0 path:http://orgmode.org/org-info.js
 #+OPTIONS: LaTeX:dvipng
@@ -14,14 +14,475 @@
 #+LINK_HOME: http://code.google.com/p/embedd-gui/
 #+XSLT:
 
-* Overview
-** Embedded GUI Framework
+* GNU Free Documentation License
+This documentation is written under the GNU Free Documentation License.
+Source code for this documentation can be found [[http://code.google.com/p/embedd-gui/][here]].
+
+- Nick Guthrie
+
+
+#+BEGIN_EXAMPLE
+                GNU Free Documentation License
+                 Version 1.3, 3 November 2008
+
+ Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
+     <http://fsf.org/>
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+0. PREAMBLE
+
+The purpose of this License is to make a manual, textbook, or other
+functional and useful document "free" in the sense of freedom: to
+assure everyone the effective freedom to copy and redistribute it,
+with or without modifying it, either commercially or noncommercially.
+Secondarily, this License preserves for the author and publisher a way
+to get credit for their work, while not being considered responsible
+for modifications made by others.
+
+This License is a kind of "copyleft", which means that derivative
+works of the document must themselves be free in the same sense.  It
+complements the GNU General Public License, which is a copyleft
+license designed for free software.
+
+We have designed this License in order to use it for manuals for free
+software, because free software needs free documentation: a free
+program should come with manuals providing the same freedoms that the
+software does.  But this License is not limited to software manuals;
+it can be used for any textual work, regardless of subject matter or
+whether it is published as a printed book.  We recommend this License
+principally for works whose purpose is instruction or reference.
+
+
+1. APPLICABILITY AND DEFINITIONS
+
+This License applies to any manual or other work, in any medium, that
+contains a notice placed by the copyright holder saying it can be
+distributed under the terms of this License.  Such a notice grants a
+world-wide, royalty-free license, unlimited in duration, to use that
+work under the conditions stated herein.  The "Document", below,
+refers to any such manual or work.  Any member of the public is a
+licensee, and is addressed as "you".  You accept the license if you
+copy, modify or distribute the work in a way requiring permission
+under copyright law.
+
+A "Modified Version" of the Document means any work containing the
+Document or a portion of it, either copied verbatim, or with
+modifications and/or translated into another language.
+
+A "Secondary Section" is a named appendix or a front-matter section of
+the Document that deals exclusively with the relationship of the
+publishers or authors of the Document to the Document's overall
+subject (or to related matters) and contains nothing that could fall
+directly within that overall subject.  (Thus, if the Document is in
+part a textbook of mathematics, a Secondary Section may not explain
+any mathematics.)  The relationship could be a matter of historical
+connection with the subject or with related matters, or of legal,
+commercial, philosophical, ethical or political position regarding
+them.
+
+The "Invariant Sections" are certain Secondary Sections whose titles
+are designated, as being those of Invariant Sections, in the notice
+that says that the Document is released under this License.  If a
+section does not fit the above definition of Secondary then it is not
+allowed to be designated as Invariant.  The Document may contain zero
+Invariant Sections.  If the Document does not identify any Invariant
+Sections then there are none.
+
+The "Cover Texts" are certain short passages of text that are listed,
+as Front-Cover Texts or Back-Cover Texts, in the notice that says that
+the Document is released under this License.  A Front-Cover Text may
+be at most 5 words, and a Back-Cover Text may be at most 25 words.
+
+A "Transparent" copy of the Document means a machine-readable copy,
+represented in a format whose specification is available to the
+general public, that is suitable for revising the document
+straightforwardly with generic text editors or (for images composed of
+pixels) generic paint programs or (for drawings) some widely available
+drawing editor, and that is suitable for input to text formatters or
+for automatic translation to a variety of formats suitable for input
+to text formatters.  A copy made in an otherwise Transparent file
+format whose markup, or absence of markup, has been arranged to thwart
+or discourage subsequent modification by readers is not Transparent.
+An image format is not Transparent if used for any substantial amount
+of text.  A copy that is not "Transparent" is called "Opaque".
+
+Examples of suitable formats for Transparent copies include plain
+ASCII without markup, Texinfo input format, LaTeX input format, SGML
+or XML using a publicly available DTD, and standard-conforming simple
+HTML, PostScript or PDF designed for human modification.  Examples of
+transparent image formats include PNG, XCF and JPG.  Opaque formats
+include proprietary formats that can be read and edited only by
+proprietary word processors, SGML or XML for which the DTD and/or
+processing tools are not generally available, and the
+machine-generated HTML, PostScript or PDF produced by some word
+processors for output purposes only.
+
+The "Title Page" means, for a printed book, the title page itself,
+plus such following pages as are needed to hold, legibly, the material
+this License requires to appear in the title page.  For works in
+formats which do not have any title page as such, "Title Page" means
+the text near the most prominent appearance of the work's title,
+preceding the beginning of the body of the text.
+
+The "publisher" means any person or entity that distributes copies of
+the Document to the public.
+
+A section "Entitled XYZ" means a named subunit of the Document whose
+title either is precisely XYZ or contains XYZ in parentheses following
+text that translates XYZ in another language.  (Here XYZ stands for a
+specific section name mentioned below, such as "Acknowledgements",
+"Dedications", "Endorsements", or "History".)  To "Preserve the Title"
+of such a section when you modify the Document means that it remains a
+section "Entitled XYZ" according to this definition.
+
+The Document may include Warranty Disclaimers next to the notice which
+states that this License applies to the Document.  These Warranty
+Disclaimers are considered to be included by reference in this
+License, but only as regards disclaiming warranties: any other
+implication that these Warranty Disclaimers may have is void and has
+no effect on the meaning of this License.
+
+2. VERBATIM COPYING
+
+You may copy and distribute the Document in any medium, either
+commercially or noncommercially, provided that this License, the
+copyright notices, and the license notice saying this License applies
+to the Document are reproduced in all copies, and that you add no
+other conditions whatsoever to those of this License.  You may not use
+technical measures to obstruct or control the reading or further
+copying of the copies you make or distribute.  However, you may accept
+compensation in exchange for copies.  If you distribute a large enough
+number of copies you must also follow the conditions in section 3.
+
+You may also lend copies, under the same conditions stated above, and
+you may publicly display copies.
+
+
+3. COPYING IN QUANTITY
+
+If you publish printed copies (or copies in media that commonly have
+printed covers) of the Document, numbering more than 100, and the
+Document's license notice requires Cover Texts, you must enclose the
+copies in covers that carry, clearly and legibly, all these Cover
+Texts: Front-Cover Texts on the front cover, and Back-Cover Texts on
+the back cover.  Both covers must also clearly and legibly identify
+you as the publisher of these copies.  The front cover must present
+the full title with all words of the title equally prominent and
+visible.  You may add other material on the covers in addition.
+Copying with changes limited to the covers, as long as they preserve
+the title of the Document and satisfy these conditions, can be treated
+as verbatim copying in other respects.
+
+If the required texts for either cover are too voluminous to fit
+legibly, you should put the first ones listed (as many as fit
+reasonably) on the actual cover, and continue the rest onto adjacent
+pages.
+
+If you publish or distribute Opaque copies of the Document numbering
+more than 100, you must either include a machine-readable Transparent
+copy along with each Opaque copy, or state in or with each Opaque copy
+a computer-network location from which the general network-using
+public has access to download using public-standard network protocols
+a complete Transparent copy of the Document, free of added material.
+If you use the latter option, you must take reasonably prudent steps,
+when you begin distribution of Opaque copies in quantity, to ensure
+that this Transparent copy will remain thus accessible at the stated
+location until at least one year after the last time you distribute an
+Opaque copy (directly or through your agents or retailers) of that
+edition to the public.
+
+It is requested, but not required, that you contact the authors of the
+Document well before redistributing any large number of copies, to
+give them a chance to provide you with an updated version of the
+Document.
+
+
+4. MODIFICATIONS
+
+You may copy and distribute a Modified Version of the Document under
+the conditions of sections 2 and 3 above, provided that you release
+the Modified Version under precisely this License, with the Modified
+Version filling the role of the Document, thus licensing distribution
+and modification of the Modified Version to whoever possesses a copy
+of it.  In addition, you must do these things in the Modified Version:
+
+A. Use in the Title Page (and on the covers, if any) a title distinct
+   from that of the Document, and from those of previous versions
+   (which should, if there were any, be listed in the History section
+   of the Document).  You may use the same title as a previous version
+   if the original publisher of that version gives permission.
+B. List on the Title Page, as authors, one or more persons or entities
+   responsible for authorship of the modifications in the Modified
+   Version, together with at least five of the principal authors of the
+   Document (all of its principal authors, if it has fewer than five),
+   unless they release you from this requirement.
+C. State on the Title page the name of the publisher of the
+   Modified Version, as the publisher.
+D. Preserve all the copyright notices of the Document.
+E. Add an appropriate copyright notice for your modifications
+   adjacent to the other copyright notices.
+F. Include, immediately after the copyright notices, a license notice
+   giving the public permission to use the Modified Version under the
+   terms of this License, in the form shown in the Addendum below.
+G. Preserve in that license notice the full lists of Invariant Sections
+   and required Cover Texts given in the Document's license notice.
+H. Include an unaltered copy of this License.
+I. Preserve the section Entitled "History", Preserve its Title, and add
+   to it an item stating at least the title, year, new authors, and
+   publisher of the Modified Version as given on the Title Page.  If
+   there is no section Entitled "History" in the Document, create one
+   stating the title, year, authors, and publisher of the Document as
+   given on its Title Page, then add an item describing the Modified
+   Version as stated in the previous sentence.
+J. Preserve the network location, if any, given in the Document for
+   public access to a Transparent copy of the Document, and likewise
+   the network locations given in the Document for previous versions
+   it was based on.  These may be placed in the "History" section.
+   You may omit a network location for a work that was published at
+   least four years before the Document itself, or if the original
+   publisher of the version it refers to gives permission.
+K. For any section Entitled "Acknowledgements" or "Dedications",
+   Preserve the Title of the section, and preserve in the section all
+   the substance and tone of each of the contributor acknowledgements
+   and/or dedications given therein.
+L. Preserve all the Invariant Sections of the Document,
+   unaltered in their text and in their titles.  Section numbers
+   or the equivalent are not considered part of the section titles.
+M. Delete any section Entitled "Endorsements".  Such a section
+   may not be included in the Modified Version.
+N. Do not retitle any existing section to be Entitled "Endorsements"
+   or to conflict in title with any Invariant Section.
+O. Preserve any Warranty Disclaimers.
+
+If the Modified Version includes new front-matter sections or
+appendices that qualify as Secondary Sections and contain no material
+copied from the Document, you may at your option designate some or all
+of these sections as invariant.  To do this, add their titles to the
+list of Invariant Sections in the Modified Version's license notice.
+These titles must be distinct from any other section titles.
+
+You may add a section Entitled "Endorsements", provided it contains
+nothing but endorsements of your Modified Version by various
+parties--for example, statements of peer review or that the text has
+been approved by an organization as the authoritative definition of a
+standard.
+
+You may add a passage of up to five words as a Front-Cover Text, and a
+passage of up to 25 words as a Back-Cover Text, to the end of the list
+of Cover Texts in the Modified Version.  Only one passage of
+Front-Cover Text and one of Back-Cover Text may be added by (or
+through arrangements made by) any one entity.  If the Document already
+includes a cover text for the same cover, previously added by you or
+by arrangement made by the same entity you are acting on behalf of,
+you may not add another; but you may replace the old one, on explicit
+permission from the previous publisher that added the old one.
+
+The author(s) and publisher(s) of the Document do not by this License
+give permission to use their names for publicity for or to assert or
+imply endorsement of any Modified Version.
+
+
+5. COMBINING DOCUMENTS
+
+You may combine the Document with other documents released under this
+License, under the terms defined in section 4 above for modified
+versions, provided that you include in the combination all of the
+Invariant Sections of all of the original documents, unmodified, and
+list them all as Invariant Sections of your combined work in its
+license notice, and that you preserve all their Warranty Disclaimers.
+
+The combined work need only contain one copy of this License, and
+multiple identical Invariant Sections may be replaced with a single
+copy.  If there are multiple Invariant Sections with the same name but
+different contents, make the title of each such section unique by
+adding at the end of it, in parentheses, the name of the original
+author or publisher of that section if known, or else a unique number.
+Make the same adjustment to the section titles in the list of
+Invariant Sections in the license notice of the combined work.
+
+In the combination, you must combine any sections Entitled "History"
+in the various original documents, forming one section Entitled
+"History"; likewise combine any sections Entitled "Acknowledgements",
+and any sections Entitled "Dedications".  You must delete all sections
+Entitled "Endorsements".
+
+
+6. COLLECTIONS OF DOCUMENTS
+
+You may make a collection consisting of the Document and other
+documents released under this License, and replace the individual
+copies of this License in the various documents with a single copy
+that is included in the collection, provided that you follow the rules
+of this License for verbatim copying of each of the documents in all
+other respects.
+
+You may extract a single document from such a collection, and
+distribute it individually under this License, provided you insert a
+copy of this License into the extracted document, and follow this
+License in all other respects regarding verbatim copying of that
+document.
+
+
+7. AGGREGATION WITH INDEPENDENT WORKS
+
+A compilation of the Document or its derivatives with other separate
+and independent documents or works, in or on a volume of a storage or
+distribution medium, is called an "aggregate" if the copyright
+resulting from the compilation is not used to limit the legal rights
+of the compilation's users beyond what the individual works permit.
+When the Document is included in an aggregate, this License does not
+apply to the other works in the aggregate which are not themselves
+derivative works of the Document.
+
+If the Cover Text requirement of section 3 is applicable to these
+copies of the Document, then if the Document is less than one half of
+the entire aggregate, the Document's Cover Texts may be placed on
+covers that bracket the Document within the aggregate, or the
+electronic equivalent of covers if the Document is in electronic form.
+Otherwise they must appear on printed covers that bracket the whole
+aggregate.
+
+
+8. TRANSLATION
+
+Translation is considered a kind of modification, so you may
+distribute translations of the Document under the terms of section 4.
+Replacing Invariant Sections with translations requires special
+permission from their copyright holders, but you may include
+translations of some or all Invariant Sections in addition to the
+original versions of these Invariant Sections.  You may include a
+translation of this License, and all the license notices in the
+Document, and any Warranty Disclaimers, provided that you also include
+the original English version of this License and the original versions
+of those notices and disclaimers.  In case of a disagreement between
+the translation and the original version of this License or a notice
+or disclaimer, the original version will prevail.
+
+If a section in the Document is Entitled "Acknowledgements",
+"Dedications", or "History", the requirement (section 4) to Preserve
+its Title (section 1) will typically require changing the actual
+title.
+
+
+9. TERMINATION
+
+You may not copy, modify, sublicense, or distribute the Document
+except as expressly provided under this License.  Any attempt
+otherwise to copy, modify, sublicense, or distribute it is void, and
+will automatically terminate your rights under this License.
+
+However, if you cease all violation of this License, then your license
+from a particular copyright holder is reinstated (a) provisionally,
+unless and until the copyright holder explicitly and finally
+terminates your license, and (b) permanently, if the copyright holder
+fails to notify you of the violation by some reasonable means prior to
+60 days after the cessation.
+
+Moreover, your license from a particular copyright holder is
+reinstated permanently if the copyright holder notifies you of the
+violation by some reasonable means, this is the first time you have
+received notice of violation of this License (for any work) from that
+copyright holder, and you cure the violation prior to 30 days after
+your receipt of the notice.
+
+Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License.  If your rights have been terminated and not permanently
+reinstated, receipt of a copy of some or all of the same material does
+not give you any rights to use it.
+
+
+10. FUTURE REVISIONS OF THIS LICENSE
+
+The Free Software Foundation may publish new, revised versions of the
+GNU Free Documentation License from time to time.  Such new versions
+will be similar in spirit to the present version, but may differ in
+detail to address new problems or concerns.  See
+http://www.gnu.org/copyleft/.
+
+Each version of the License is given a distinguishing version number.
+If the Document specifies that a particular numbered version of this
+License "or any later version" applies to it, you have the option of
+following the terms and conditions either of that specified version or
+of any later version that has been published (not as a draft) by the
+Free Software Foundation.  If the Document does not specify a version
+number of this License, you may choose any version ever published (not
+as a draft) by the Free Software Foundation.  If the Document
+specifies that a proxy can decide which future versions of this
+License can be used, that proxy's public statement of acceptance of a
+version permanently authorizes you to choose that version for the
+Document.
+
+11. RELICENSING
+
+"Massive Multiauthor Collaboration Site" (or "MMC Site") means any
+World Wide Web server that publishes copyrightable works and also
+provides prominent facilities for anybody to edit those works.  A
+public wiki that anybody can edit is an example of such a server.  A
+"Massive Multiauthor Collaboration" (or "MMC") contained in the site
+means any set of copyrightable works thus published on the MMC site.
+
+"CC-BY-SA" means the Creative Commons Attribution-Share Alike 3.0
+license published by Creative Commons Corporation, a not-for-profit
+corporation with a principal place of business in San Francisco,
+California, as well as future copyleft versions of that license
+published by that same organization.
+
+"Incorporate" means to publish or republish a Document, in whole or in
+part, as part of another Document.
+
+An MMC is "eligible for relicensing" if it is licensed under this
+License, and if all works that were first published under this License
+somewhere other than this MMC, and subsequently incorporated in whole or
+in part into the MMC, (1) had no cover texts or invariant sections, and
+(2) were thus incorporated prior to November 1, 2008.
+
+The operator of an MMC Site may republish an MMC contained in the site
+under CC-BY-SA on the same site at any time before August 1, 2009,
+provided the MMC is eligible for relicensing.
+
+
+ADDENDUM: How to use this License for your documents
+
+To use this License in a document you have written, include a copy of
+the License in the document and put the following copyright and
+license notices just after the title page:
+
+    Copyright (c)  YEAR  YOUR NAME.
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3
+    or any later version published by the Free Software Foundation;
+    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+    A copy of the license is included in the section entitled "GNU
+    Free Documentation License".
+
+If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
+replace the "with...Texts." line with this:
+
+    with the Invariant Sections being LIST THEIR TITLES, with the
+    Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
+
+If you have Invariant Sections without Cover Texts, or some other
+combination of the three, merge those two alternatives to suit the
+situation.
+
+If your document contains nontrivial examples of program code, we
+recommend releasing these examples in parallel under your choice of
+free software license, such as the GNU General Public License,
+to permit their use in free software.
+#+END_EXAMPLE
+* TODO Overview                                                                 :noexport:
+** Embedded Graphical User Interfaces
 *** Background:
 We live in a world surrounded by computers - from our (arguably excessive) coffee  machines to our cell phones and cars, microcomputers play an integral role in our everyday lives. With the cost of electronics rapidly decreasing, and touchscreens becoming commonplace even on low cost consumer products, a unique need has arisen for a unified way of creating user interfaces on embedded devices.
 *** Why we need it:
-It is easy for small companies and hobbyists to prototype microcontroller based products, such as environmental sensors and other equipment. However, user interface design is generally left at basic pushbuttons and potentiometers, with at most a simple text display on a serial LCD. The barrier to entry into high end touchscreen interfaces is high: it often involves more development/work than the device itself, and there exist few unified solutions for multi-processor and display targeted builds. The few solutions that do exist are prohibitively expensive: For example, a license of Segger EmWin costs $12,300... per target architecture/CPU! The Embedded GUI Framework aims to be a “drop in” interface for embedded developers to rapidly incorporate touchscreens into projects.
+It is easy for small companies and hobbyists to prototype microcontroller based products, such as environmental sensors and other equipment. However, user interface design is generally left at basic pushbuttons and potentiometers, with at most a simple text display on a serial LCD. The barrier to entry into high end touchscreen interfaces is high: it often involves more development/work than the device itself, and there exist few unified solutions for multi-processor and display targeted builds. The few solutions that do exist are prohibitively expensive: For example, a license of Segger EmWin costs $12,300... per target architecture/CPU! Embedd GUI aims to be a “drop in” interface for embedded developers to rapidly incorporate touchscreens into projects.
 *** How/Technologies:
-The Embedded GUI Framework will be built in C to allow use with the vast majority of embedded toolchains in use. All hardware specific code will be isolated into header files, with preprocessor directives to allow targeted builds for different architectures. As a testing platform, TI Stellaris ARM M4 microprocessors will be used, driving a low cost 480 x 272px TFT touchscreen via a 24 bit parallel interface (the most common interface for LCD drivers).
+The Embedded GUI Framework will be built in C/C++ using Qt Embedded.
+
+
+ to allow use with the vast majority of embedded toolchains in use. All hardware specific code will be isolated into header files, with preprocessor directives to allow targeted builds for different architectures. As a testing platform, TI Stellaris ARM M4 microprocessors will be used, driving a low cost 480 x 272px TFT touchscreen via a 24 bit parallel interface (the most common interface for LCD drivers).
 *** Features:
 **** Controls/Widgets
 + Pushbutton
@@ -35,12 +496,8 @@ The Embedded GUI Framework will be built in C to allow use with the vast majorit
 
 ** Vital Vio LLC:
 Vital Vio is a privately held biomedical and lighting design startup focused on manipulating light to address real world problems by developing innovative methods of delivery. Through precise combination and control of visible light, Vital Vio products utilize light for more than just illumination. Vital Vio units currently focus on the benefits of passive decontamination for human health aspects and environmental safety from microorganisms. This RCOS project will be under the guidance of Vital Vio, and supported in part (office space, some additional benefits) by Vital Vio LLC. The scope of the Embedded GUI Framework does not include any Vital Vio specific features, and is useful to a variety of other applications involving touchscreen interfaces. Vital Vio’s involvement in the project offers a unique and valuable opportunity for an open source project from RCOS to be immediately incorporated into a production product.
-* License Information
-+ [[http://opensource.org/licenses/BSD-2-Clause][BSD 2 Clause]]
-+ [[http://opensource.org/licenses/BSD-3-Clause][BSD 3 Clause]]
-
 * Hardware
-** A13-OLinuXino-MICRO
+** A13-OLinuXino-MICRO (No Touchscreen Support)
 [[./img/A13-OLinuXino-MICRO-2.png]]
 *** Features
 + A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
@@ -115,14 +572,58 @@ Vital Vio is a privately held biomedical and lighting design startup focused on 
     cat /proc/cpuinfo
   #+END_SRC
 
-** Wireless Dongle
+** A13-OlinuXino
+[[./img/A13-OLinuXino-01.png]]
+*** Overview
+A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-ITX form. It uses the very first Cortex A8 processor available in eLQFP176 package, produced by Allwinner Technology Inc A13.
+
+*** FEATURES
++ A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
++ 512 MB RAM (2 x 256Mbit x 8)
++ 6-16VDC input power supply, noise immune design
++ 3 + 1 USB hosts, 3 available for users, 1 leads to onboard pinout
++ 1 USB OTG which can power the board
++ SD-card connector for booting optional Linux image
++ VGA video output
++ Battery option and connector
++ LCD signals available on connector so you still can use LCD if you diasble VGA/HDMI
++ Microphone input
++ 4 Mount holes
++ RTC PCF8536 on board for real time clock and alarms
++ 5 Keys on board for android navigation
++ UEXT connectorfor connecting addtional UEXT modules like Zigbee, Bluetooth, Relays, etc
++ GPIO connector with 68/74 pins and these signals:
++ 17 for adding NAND flash;
++ 22 for connecting LCDs;
++ 20+4 including 8 GPIOs which can be input, output, interrupt sources;
++ 3x I2C;
++ 2x UARTs;
++ SDIO2 for connectinf SDcards and modules;
++ 5 system pins: +5V, +3.3V, GND, RESET, NMI
++ Dimensions: 120 x 120 mm (4.7x4.7'')
++ Optional low-cost 7" LCD with touchscreen
+*** Links
++ https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/
+**** DOCUMENTS
++ [[https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-OLINUXINO.pdf][User's manual]]
++ [[https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-Brief.pdf][A13-processor brief and datasheet]]
+**** HARDWARE
++ [[https://github.com/OLIMEX/OLINUXINO][GitHub OLINUXINO Project]]
+**** SOFTWARE
++ [[https://github.com/OLIMEX/OLINUXINO][GitHub OLINUXINO Project]]
++ [[http://linux-sunxi.org/][A1x Linux]]
+**** COMMUNITY
++ [[https://www.olimex.com/forum][OLinuXino forum]] for discussion and community support
++ [[http://webchat.freenode.net/?channels%3Dolimex][Freenode #olimex irc channel]] for OLinuXino development discussions
+
+** USB Wireless LAN Module
 [[./img/modwifirtl8188.png]]
 *** Overview
 + The MOD-WIFI-RTL8188 is a USB WiFi module that is supported by the [[http://microcontrollershop.com/product_info.php?products_id%3D5412&osCsid%3De1d38e51b568a17c2fe8bc8c2679dcda][A13-OLinuXino]] and [[http://microcontrollershop.com/product_info.php?products_id%3D5414&osCsid%3De1d38e51b568a17c2fe8bc8c2679dcda][A13-OLinuXino-MICRO]] boards.
 + It uses the same WiFi board that comes as standard on the [[http://microcontrollershop.com/product_info.php?products_id%3D5314&osCsid%3De1d38e51b568a17c2fe8bc8c2679dcda][A13-OLinuXino-WIFI]].
 + The WM-294 WiFi board on this module contains the popular RealTek RTL8188CUS single-chip Wireless LAN adapter. There are drivers available for Windows, Linux/Android and Mac, so you aren't limited only to using this module on an A13-OLinuXino board.
 
-*** USB Wireless LAN Module Features
+*** Features
 + Has WM-294 module with RTL8188CUS, IEEE 802.11b/g/n
 + Operates in 2.4 GHz frequency bands
 + 1x1 MIMO technology improves effective throughput and range over existing 802.11 b/g products
@@ -136,13 +637,13 @@ Vital Vio is a privately held biomedical and lighting design startup focused on 
 + 4 test pads for easy tracking of the supply, d-, d+, and GND
 + PCB: FR-4, 1.00 mm (0.039"), solder mask, silkscreen component print
 + Dimensions: 65.15 × 20.38 mm (2.56 × 0.80")
-*** USB Wireless LAN Module Resources
+*** Resources
 + [[./doc/module_WM294_spec.pdf][CC&C Technologies WM-294 Datasheet]]
 + [[MOD-WiFi_RTL8188.pdf][MOD-WIFI-RTL8188 Schematic]]
 
 **** Links
 + http://microcontrollershop.com/product_info.php?products_id=5555
-** 4.3" LCD Screen
+** 4.3" LCD Screen                                                             :noexport:
 + FPC4034006
 + tl-c430ve display
 + 4.3" FPC4304006 MP4 MP5 GPS lcd display panel
@@ -207,47 +708,50 @@ sftp -P 22122 root@192.168.12.200
     get <file>
   #+END_SRC
 + Send File
-  #+BEGIN_SRC sh 
+  #+BEGIN_SRC sh
     put <file>
   #+END_SRC
- 
-** Send Files via SCP 
-Source: http://www.hypexr.org/linux_scp_help.php
+
+** Send Files via SCP
+*** Overview
 scp allows files to be copied to, from, or between different hosts. It uses ssh for data transfer and provides the same authentication and same level of security as ssh.
-*** Copy the file "foobar.txt" from a remote host to the local host
+*** Examples
+**** Copy the file "foobar.txt" from a remote host to the local host
 #+BEGIN_SRC sh
     scp -P 22122 root@192.168.12.200:foobar.txt /some/local/directory
   #+END_SRC
-*** Copy the file "foobar.txt" from the local host to a remote host
+**** Copy the file "foobar.txt" from the local host to a remote host
 #+BEGIN_SRC sh
   scp -P 22122 foobar.txt root@192.168.12.200:/some/remote/directory
 #+END_SRC
-*** Copy the directory "foo" from the local host to a remote host's directory "bar"
+**** Copy the directory "foo" from the local host to a remote host's directory "bar"
 #+BEGIN_SRC sh
   scp -P 22122 -r foo root@192.168.12.200:/some/remote/directory/bar
 #+END_SRC
-*** Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"
+**** Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"
 #+BEGIN_SRC sh
   scp -P 22122 your_username@rh1.edu:/some/remote/directory/foobar.txt your_username@rh2.edu:/some/remote/directory/
 #+END_SRC
-*** Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host
+**** Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host
 #+BEGIN_SRC sh
   scp -P 22122 foo.txt bar.txt root@192.168.12.200:~
 #+END_SRC
-*** Copy the file "foobar.txt" from the local host to a remote host using port 2264
+**** Copy the file "foobar.txt" from the local host to a remote host using port 2264
 #+BEGIN_SRC sh
   scp -P 22122 -P 2264 foobar.txt root@192.168.12.200:/some/remote/directory
 #+END_SRC
-*** Copy multiple files from the remote host to your current directory on the local host
+**** Copy multiple files from the remote host to your current directory on the local host
 #+BEGIN_SRC sh
   scp -P 22122 root@192.168.12.200:/some/remote/directory/\{a,b,c\} .
   scp -P 22122 root@192.168.12.200:~/\{foo.txt,bar.txt\} .
 #+END_SRC
 
-*** Receive and Entire Directory
+**** Receive and Entire Directory
 #+BEGIN_SRC sh
   scp -r root@192.168.12.222:/root/Desktop/src/tslib tslib_v2
 #+END_SRC
+*** Links
++ http://www.hypexr.org/linux_scp_help.php
 ** Check Remaining Space on Hard Drive
 #+BEGIN_SRC sh
 du -h <path_of_the_dir> | tail -1
@@ -268,12 +772,10 @@ du -h <path_of_the_dir> | tail -1
      make clean
      make
    #+END_SRC
-2. Send files over to device
-3. Run
+2. Send binary files over to device (either with rsync, scp, or sftp)
+3. Run program
 ** Backups
 *** Backup the SD Card
-**** Steps
-***** Backup
 1. Navigate to backup directoryhttp://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi
    #+BEGIN_SRC sh
      cd BAK/
@@ -283,15 +785,18 @@ du -h <path_of_the_dir> | tail -1
    #+BEGIN_SRC sh
    sudo dd if=/dev/mmcblk0 | gzip > ./debian_configured_v1.image.gz
    #+END_SRC
-***** Restore
+*** Restore the SD Card
 1. insert unmounted card
 2. unzip to card
    #+BEGIN_SRC sh
    sudo gzip -dc /path/to/debian_configured_v1.image.gz | dd of=/dev/mmcblk0
    #+END_SRC
-
-**** Links
-***** How do I make a Backup of my Rasberry Pi [[http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi][{Link}]]
+*** Backup Data to Web Storage
+#+BEGIN_SRC sh
+  rsync -rtvz /media/Global/Global/BAK/embedd_gui_bin nickguthrie.com:nickguthrie.com/embedd_gui_bin
+#+END_SRC
+*** Links
+**** How do I make a Backup of my Rasberry Pi [[http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi][{Link}]]
 1. Make a full backup of the image
    + If you are running linux then you can use the dd command to make a full backup of the image:
      #+BEGIN_SRC sh
@@ -311,776 +816,62 @@ du -h <path_of_the_dir> | tail -1
      #+BEGIN_SRC sh
        gzip -dc /path/to/image.gz | dd of=/dev/sdx
      #+END_SRC
-*** Backup Images to Web Storage
-#+BEGIN_SRC sh
-  rsync -rtvz /media/Global/Global/BAK/embedd_gui_bin nickguthrie.com:nickguthrie.com/embedd_gui_bin
-#+END_SRC
 
-* Objectives
-** DONE Obtain Hardware
-** DONE Get Debian Running
+* HOWTO
+** Obtain Hardware
+The hardware used in this guide:
++ [[A13-OlinuXino]]
++ [[USB Wireless LAN Module]]
+** Copy Debian Image to SD Card
 *** Overview
-+ I am installing a Debian Image found here: https://www.olimex.com/wiki/A13-OLinuXino-MICRO
-  + Debian Image Includes:
-    + GPIO support
-    + I2C 100kHz WIFI RTL8188CU Ethernet AX88772B
-    + No X and No TouchScreen support for LCDs
++ I am installing a Debian Image found [[https://www.olimex.com/wiki/Prebuilt_SD_card_images_running_debian][here]].
+  + Specifically:
+    [[https://docs.google.com/file/d/0B-bAEPML8fwlLTU4UlZaMFdpODQ/edit?usp%3Dsharing][A13 Debian 2GB card image without XFCE4 with GCC, GPIO, WIFI, WTHERNET, UVC, Python, OpenCV]]
 *** Steps
 1. Download Debian Image
 2. Unrar Debian Image
    #+BEGIN_SRC sh
-   unrar e A13_Micro_Debian_1GHz_GPIO_100kHz_I2C_WIFI_USB_LAN_without_X_and_touch_first_release.rar;
+   unrar e A13_debian_WIFI_GCC_GPIO_IN_OUT_AUTO_load_withoutX_I2C_100KHz_UVC_Python_OpenCV_fifth_release.rar
    #+END_SRC
-3. Format SD Card as ext3 (using gparted)
-4. Copy img file to card
+3. Copy img file to card
    #+BEGIN_SRC sh
    dd bs=4M oflag=sync if=A13_Micro_Debian_1GHz_GPIO_100kHz_I2C_WIFI_USB_LAN_without_X_and_touch_first_release.img of=/dev/mmcblk0
    #+END_SRC
-
+   + WARNING: will overwrite everything on card
 *** Links
 + http://www.cnx-software.com/2012/12/21/olimex-a13-olinuxino-micro-development-board-unboxing-and-review/
 + https://www.olimex.com/wiki/Prebuilt_SD_card_images_running_debian
-
-** DONE Set Up Wireless In Debian
+** Configure Touchscreen (script.bin)
+*** Overview
++ The script.bin will determine what display can be used.
++ There are different configurations for different displays when you use Linux because the dot pitch is different.
 *** Steps
-**** Determine Wireless Device
-#+BEGIN_SRC sh
-dmesg
-#+END_SRC
-+ Found as wlan3
-
-**** Configure /etc/network/interfaces as Root
-#+BEGIN_EXAMPLE
-  auto wlan3
-  iface wlan3 inet dhcp
-      wpa-ssid TVCOG
-      wpa-psk COGpass1
-#+END_EXAMPLE
-
-**** Restart the Networking Service
-#+BEGIN_SRC sh
-  service networking restart
-#+END_SRC
-
-**** Test the Network
-#+BEGIN_SRC sh
-  ifconfig
-  ping google.com
-#+END_SRC
+1. Create LCD script directory
+   #+BEGIN_SRC sh
+     mkdir scripts;
+     cd scripts;
+   #+END_SRC
+2. Download [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][VGA_LCD_scripts_A13.zip]]
+3. Extract the folders
+   #+BEGIN_EXAMPLE
+     unzip VGA_LCD_scripts_A13.zip
+   #+END_EXAMPLE
+4. Mount 17 MB Fat32 Partition to Computer
+5. Backup script.bin on device
+   #+BEGIN_SRC sh
+     cd /media/mmcblk0
+     cp script.bin script.bin.BAK
+   #+END_SRC
+6. Copy correct script.bin to Device
+   #+BEGIN_SRC sh
+     cp scripts/script_GPIO_LCD_480x272/script.bin /media/mmcblk0
+   #+END_SRC
 
 *** Links
-+ [[http://blog.tplus1.com/blog/2008/06/13/how-to-connect-to-a-wireless-network-from-the-ubuntu-command-line/][How to connect to a wireless network from the ubuntu command line]]
-+ [[http://www.cyberciti.biz/faq/debian-linux-wpa-wpa2-wireless-wifi-networking/][debian linux wpa wpa2 wireless wifi networking]]
-** DONE Communicate to Bluetooth
-*** Connecting
++ [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][Olimex.com Wiki: Configuration of hardware in the Debian Image]]
+** Modifying the script.bin file (Optional)
 *** Installation
-**** Connect to Linvar
-Passphrase: 1234
-
-**** Edit /etc/bluetooth/rfcomm.conf file
-#+BEGIN_EXAMPLE
-#
-# RFCOMM configuration file.
-#
-
-rfcomm0 {
-	# Automatically bind the device at startup
-	bind no;
-
-	# Bluetooth address of the device
-	device 00:12:03:27:71:07;
-
-	# RFCOMM channel for the connection
-	channel	1;
-
-	# Description of the connection
-	comment "Example Bluetooth device";
-}
-#+END_EXAMPLE
-
-**** Restart Bluetooth
-#+BEGIN_SRC sh
-service bluetooth restart
-#+END_SRC
-
-**** Determine the Hardware Address
-The hardware address should be replaced with that of your phone. If you don't know the hardware address of your phone yet, you can get it by running:
-# hcitool scan
-
-**** Bind the Address
-#+BEGIN_SRC sh
-sudo rfcomm bind 0 00:12:03:27:71:07
-#+END_SRC
-*** Links
-+ [[http://www.thinkwiki.org/wiki/How_to_setup_Bluetooth][How to setup Bluetooth]]
-** DONE Get Serial Over Linux
-*** Installation
-**** Determine hardware a
-**** Modify /etc/bluetooth/rfcomm.conf as Root
-#+BEGIN_EXAMPLE
-rfcomm2 {
-	# Automatically bind the device at startup
-	bind no;
-
-	# Bluetooth address of the device
-	device 00:12:03:27:71:07;
-
-	# RFCOMM channel for the connection
-	channel	1;
-
-	# Description of the connection
-	comment "Olimex";
-}
-#+END_EXAMPLE
-**** Restart Bluetooth
-#+BEGIN_SRC sh
-  sudo service bluetooth restart
-#+END_SRC
-
-*** Connecting
-1. Initialize Connection
-   #+BEGIN_SRC sh
-     sudo rfcomm connect rfcomm2
-   #+END_SRC
-2. Connect with Screen
-   #+BEGIN_SRC sh
-   screen /dev/rfcomm2 115200
-   #+END_SRC
-3. Login
-*** Links
-+ [[http://www.cyberciti.biz/hardware/5-linux-unix-commands-for-connecting-to-the-serial-console/][5 linux unix commands for connecting to the serial console]]
-+ [[http://www.heatxsink.com/entry/how-to-pair-a-bluetooth-device-from-command-line-on-linux][how to pair a bluetooth device from command line on linux]]
-** DONE Install Programs
-*** Steps
-**** Update Packages
-#+BEGIN_SRC sh
-apt-get update; apt-get upgrade; apt-get dist-upgrade
-#+END_SRC
-
-**** Install Packages
-#+BEGIN_SRC sh
-apt-get install aptitude
-apt-get install emacs
-apt-get install build-essentials
-apt-get install pkg-config
-#+END_SRC
-
-** DONE Configure SSH to start on Boot
-*** Steps
-**** Install ssh server
-#+BEGIN_SRC sh
-apt-get install openssh-server
-#+END_SRC
-**** Create or modify the /etc/init.d/sshd init script as follows:
-#+BEGIN_SRC sh
-    #! /bin/sh
-    #
-    # start/stop the secure shell daemon
-
-    case "$1" in
-    'start')
-
-    	# Start the ssh daemon
-    	if [ -x /usr/sbin/sshd ]; then
-    		echo "starting SSHD daemon"
-    		/usr/sbin/sshd &
-    	fi
-    	;;
-
-    'stop')
-    	# Stop the ssh daemon
-    	/usr/bin/pkill -x sshd
-    	;;
-    *)
-    	echo "usage: /etc/init.d/sshd {start|stop}"
-    ;;
-#+END_SRC
-**** Check that /etc/rc3.d/S89sshd exists (or any sshd startup script exists) and is a soft link to /etc/init.d/sshd.
-+ If not, create it using the following command:
-  #+BEGIN_SRC sh
-      ln -s /etc/init.d/sshd /etc/rc3.d/S89sshd
-  #+END_SRC
-**** Determine that ssh is running
-#+BEGIN_SRC sh
-  service ssh status
-#+END_SRC
-**** Determine Port Open
-#+BEGIN_SRC sh
-  netstat -tlpn
-#+END_SRC
-+ Port is: 22122
-
-**** Determine IP Address to connect to
-#+BEGIN_SRC sh
-  ifconfig
-#+END_SRC
-
-**** Connect to ssh
-#+BEGIN_SRC sh
-  ssh root@192.168.12.128 -p 22122
-#+END_SRC
-*** Debugging
-**** Check ports being listened on
-#+BEGIN_SRC sh
-netstat -an | grep "LISTEN"
-#+END_SRC
-*** Links
-+ [[http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic%3D%252Fcom.ibm.tnpm.doc%252Finstall%252Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html][Configure Open SSH Server to start up on system boot]]
-+ [[http://raspberrypi.stackexchange.com/questions/4709/ssh-connection-refused-on-raspberry-pi-cannot-find-why][ssh connection refused on raspberry pi cannot find why]]
-** DONE Configure Static IP Address
-*** Steps
-**** Determine Information
-     #+begin_src sh
-       ifconfig
-     #+end_src
-       + Find:
-	 + address
-	 + netmask
-	 + gateway
-	 + DNS Servers
-**** Modify /etc/network/interfaces as Root
-     #+begin_example
-       auto wlan3
-       iface wlan3 inet static
-          wpa-ssid TVCOG
-          wpa-psk COGpass1
-          address 192.168.12.200
-          netmask 255.255.255.0
-          gateway 192.168.12.1
-     #+end_example
-**** Modify /etc/resolv.conf as Root
-     #+begin_example
-     domain techvalleycenterofgravity.com
-     search techvalleycenterofgravity.com
-     nameserver 64.22.32.8
-     nameserver 64.22.32.9
-     #+end_example
-**** Restart Networking as Root
-     #+begin_src sh
-       /etc/init.d/networking restart
-     #+end_src
-**** Test Results
-     #+begin_src sh
-       ifconfig
-       ping google.com
-     #+end_src
-*** Links
-    + [[http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu][Linux Basics set a Static IP on Ubuntu]]
-** DONE Hello World Program
-*** Source Code
-#+INCLUDE: "../src/testing/hello_world.cpp" src cpp
-** DONE Toggle A LED
-*** Toggle a LED
-**** Using the Commandline
-***** Turn it On
-#+BEGIN_SRC sh
-echo 1 > /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
-#+END_SRC
-***** Turn it Off
-#+BEGIN_SRC sh
-echo 0 > /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
-#+END_SRC
-**** Using C Code
-#+INCLUDE: "../src/testing/gpio.c" src c
-
-**** Links
-+ [[http://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/][A13 Olinuxino Playing with GPIOS]]
-** DONE Install XFCE
-*** Steps
-#+BEGIN_SRC sh
-apt-get install --no-install-recommends xorg xfce4 alsa-base alsa-utils;
-apt-get install --no-install-recommends cpufrequtils gamin xdg-utils;
-apt-get install --no-install-recommends desktop-base gnome-icon-theme dmz-cursor-theme;
-apt-get install --no-install-recommends xfce4-terminal xfce4-power-manager xfce4-screenshooter;
-startx;
-#+END_SRC
-*** Links
-**** Installing GUI
-http://lcncolinuxino.blogspot.com/p/installing-gui.html
-***** Overview
-Optionally if desired, a GUI user interface can be installed. This section describes how to install a small foot print xfce4 user interface.
-***** Steps
-#+BEGIN_SRC sh
-apt-get install --no-install-recommends xorg xfce4 alsa-base alsa-utils;
-apt-get install --no-install-recommends cpufrequtils gamin xdg-utils;
-apt-get install --no-install-recommends desktop-base gnome-icon-theme dmz-cursor-theme;
-apt-get install --no-install-recommends xfce4-terminal xfce4-power-manager xfce4-screenshooter;
-apt-get install --no-install-recommends thunar-archive-plugin thunar-media-tags-plugin;
-apt-get install --no-install-recommends xfburn htop squeeze bzip2 zip unzip unrar-free;
-# Finally start the user interface with:
-startx;
-#+END_SRC
-***** Links
-+ 
-
-*** Consider Qt Razorh
-** DONE Buildroot - Install ARM Toolchain
-*** Steps
-1. Download Buildroot
-   #+BEGIN_SRC sh
-     mkdir bld; cd bld
-     wget http://buildroot.net/downloads/buildroot-2013.05.tar.gz
-     tar -xvf buildroot-2013.05.tar.gz
-     cd buildroot-2013.05
-   #+END_SRC
-
-2. Run Menu Config
-   #+BEGIN_SRC sh
-     make menuconfig
-   #+END_SRC
-   + Relevant Configurations:
-     |-----------------------------+--------------------------------|
-     | Target Architecture         | ARM (little endian)            |
-     | Target Architecture Variant | Cortex-A8                      |
-     | Toolchain                   | Sourcery Codebench ARM 2011.09 |
-4. If you are on a 64-bit system
-   #+BEGIN_SRC sh
-     sudo apt-get install ia32-libs
-   #+END_SRC
-   + See Error
-
-3. Install toolchain binaries
-   #+BEGIN_SRC sh
-     su
-     cp -a ext-toolchain /opt/ext_toolchain
-     cp /etc/environment /etc/environment.BAK
-   #+END_SRC
-   + Append :/opt/ext_toolchain/bin/ to Path
-     #+BEGIN_EXAMPLE
-       PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/ext_toolchain/bin/"
-     #+END_EXAMPLE
-
-5. Logout and Login or Reboot   
-
-   
-**** Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"
-***** Error:
-+ error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
-***** Probable Cause
-+ Its looking for 32-bit library, which is not installed since I have a 64-bit system
-***** Solution
-+ Install the 32 bit libraries
-#+BEGIN_SRC sh
-sudo apt-get install ia32-libs
-#+END_SRC
-***** Links
-+ http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory
-*** Links
-+ [[./doc/using-buildroot-real-project.pdf][Using buildroot for real projects]]
-  + This is a great presentation that demonstrates how to use buildroot very clearly.
-** DONE Configure QT for Embedded Linux - Buildroot Version
-*** Steps
-**** DONE Install QT on Development Platform
-http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
-#+BEGIN_SRC sh
-sudo apt-get install qtcreator
-#+END_SRC
-**** DONE Install TSLIB on Development Platform
-http://billforums.station51.net/viewtopic.php?f=8&t=15
-#+BEGIN_SRC sh
-cd ~/src
-git clone https://github.com/kergoth/tslib.git tslib-arm
-cd tslib-arm
-./autogen.sh
-./configure --host=arm-linux-gnueabihf --prefix=/usr/local/tslib --enable-static --enable-shared
-make -j5
-su
-export PATH=$PATH:opt/ext_toolchain/bin/
-make install
-#+END_SRC
-+ Make sure to modify qmake.conf file when installing qt-embedded by including:
-  #+BEGIN_EXAMPLE
-    QMAKE_INCDIR  += /usr/local/tslib/include
-    QMAKE_LIBDIR  += /usr/local/tslib/lib
-  #+END_EXAMPLE
-
-**** DONE Install qt-everywhere on Development Platform
-***** Steps
-1. Install Source
-   #+BEGIN_SRC sh
-     tar -xvf qt-everywhere-opensource-src-4.6.2.tar.gz /usr/local/qt
-   #+END_SRC
-2. Replace the whole text in mkspecs/qws/linux-arm-g++/qmake.conf by the following:
-   #+BEGIN_EXAMPLE
-     #
-     # qmake configuration for building with arm-linux-g++
-     #
-     include(../../common/gcc-base-unix.conf)
-     include(../../common/g++-unix.conf)
-     include(../../common/linux.conf)
-     include(../../common/qws.conf)
-     
-     # modifications to g++.conf
-     QMAKE_CC                = arm-linux-gnueabihf-gcc -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
-     QMAKE_CXX               = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
-     QMAKE_LINK              = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
-     QMAKE_LINK_SHLIB        = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
-     
-     # modifications to linux.conf
-     QMAKE_AR                = arm-linux-gnueabihf-ar cqs
-     QMAKE_OBJCOPY           = arm-linux-gnueabihf-objcopy
-     QMAKE_STRIP             = arm-linux-gnueabihf-strip
-     QMAKE_RANLIB            = arm-linux-gnueabihf-ranlib
-     
-     QMAKE_INCDIR  += /usr/local/tslib/include
-     QMAKE_LIBDIR  += /usr/local/tslib/lib
-     QMAKE_LFLAGS += -Wl,-rpath-link=/usr/local/tslib/lib
-     
-     load(qt_config)
-   #+END_EXAMPLE
-3. Configure Qt
-   #+BEGIN_SRC sh
-   make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license -qt-mouse-tslib
-   #+END_SRC
-   + Need to Add: -qt-mouse-tslib
-
-   + Now, this configuration is what I needed. You can drop in or add whatever you want. Some handy options that you may (or may not require) are :
-     + Enable touchscreen library support : -qt-mouse-tslib
-     + Enable USB keyboard support : -qt-kbd-linuxinput
-   + The above options affect the QtGui library so you need to replace only QtGui.so.x.x file on your root filesystem if you are planning to make changes.
-4. Make
-   #+BEGIN_SRC sh
-   make -j 5
-   #+END_SRC
-   + Wait for a couple of hours or so and find your cross compiled freshly baked libraries in /usr/local/qt/lib/
-5. Install
-   #+BEGIN_SRC sh
-     su
-     export PATH=$PATH:/usr/local/qt/bin
-     make install
-   #+END_SRC
-6. Add qts path
-
-***** Errors
-+ /opt/ext_toolchain/bin/../lib/gcc/arm-linux-gnueabihf/4.7.3/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lbootstrap
-http://www.qtcentre.org/archive/index.php/t-41850.html
-**** DONE Copy Libraries Over to Device
-***** Overview
-So now, its time to put the libs on your mini machine! You may choose to create a separate filesystem using busybox too. Elaborate tutorials on that are available on the web. Just Google it up. What I will do is, modify the rootfs that came with my mini and remove all unnecessary stuff from it. Create a dir /usr/local/qt on your mini2440′s stock root filesystem and copy the complete lib directory from step 5 to that location using a USB stick/SD Card or something. Remember to do a df on the mini beforehand to see the free NAND you have got. In case the memory is low, delete some stock data – the small video file, mp3 file and some sample images that are present on it.Also remove unnecessary applications viz konqueror and old qt 2.2.0 libraries from the system.
-***** Steps
-1. Copy qt libraries over
-   #+BEGIN_SRC sh
-     rsync -rtvz -a -e "ssh -p 22122" /usr/local/qt/ root@192.168.12.200:/usr/local/qt/
-   #+END_SRC
-2. Environment Variables
-   + To make the mini understand the new Qt libs, we’ll add some variables
-   + On your mini2440, edit /etc/inint.d/rcS and add the following line to it
-     #+BEGIN_EXAMPLE
-       source /etc/qt46profile
-     #+END_EXAMPLE
-3. Now create the /etc/qt46profile file and the following text to it :
-   #+BEGIN_EXAMPLE
-     export LD_LIBRARY_PATH=/usr/local/qt/lib
-     export QTDIR=/usr/local/qt
-     export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event2
-     export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
-   #+END_EXAMPLE
-   + Remember that these variables may change according to your qt libs location and mouse/touchscreen drivers. Go to /dev/input/ and see which file is responsible for which device. For eg. if tslib is configured on your device then the QWS_MOUSE_PROTO  variable will have the value something like
-     #+BEGIN_EXAMPLE
-       QWS_MOUSE_PROTO=tslib:/dev/input/event2
-     #+END_EXAMPLE
-4. So, you are done at last and have your system ready with Qt 4.6.2 libs. Try running a simple application (viz a Analog Clock from the cross-compiled qt examples at /usr/local/qt/examples/widgets/analogclock/analogclock by giving the -qws option on the mini2440 shell as
-   #+BEGIN_SRC sh
-     ./analogclock -qws
-   #+END_SRC
-5. Thats it! Do tell me if you are able to reach here. In the next two posts I shall be discussing about rapidly developing a GUI application for your mini using Qt Creator and compiling and configuring Tslib for mini2440.
-*** Research Links
-+ http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux
-+ http://qt-project.org/doc/qt-4.8/qt-embedded-install.html
-+ https://www.olimex.com/forum/index.php?topic=399.0
-  #+BEGIN_EXAMPLE
-    ./configure -xplatform qws/linux-arm-g++ -embedded arm -prefix /usr/qtarm/usr/local/qt-embedded -qt-gfx-linuxfb -qt-gfx-vnc -no-largefile -exceptions -no-accessibility -no-qt3support -no-sse2 -qt-zlib -no-gif -no-libtiff -qt-libpng -no-libmng -qt-libjpeg -openssl -no-nis -no-cups -depths 16 -qt-kbd-linuxinput -nomake demos -nomake examples -qt-mouse-linuxinput -qt-mouse-tslib             
-  #+END_EXAMPLE
-+ https://code.google.com/p/a13-olinuxino/wiki/PageName
-+ https://www.olimex.com/forum/index.php?topic=751.msg3702#msg3702
-+ http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
-+ https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki
-+ [[./doc/Getting%20Started%20with%20Qt.pdf][Getting started with Qt.pdf]]
-  + has working notes for proper installation of tslib.
-** TODO Configure Touchscreen Support (tslib)
-*** Problem: All debian images are built for 512 MB of RAM, 256 is all that is available
-**** Research
-***** Xman Conversation [[https://www.olimex.com/forum/index.php?topic%3D617.10%3Bwap2][{Link}]]
-+ <xman> hi, What happens if my dram_size = 512 in [dram_para], but my board have only 256MB?
-+ <WarheadsSE> xman: which board ?
-+ <xman> https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/
-+ techn_> with 256MB ram you propably need to disable mali, framebuffer and g2d.. memmap hard coded to somewhere 400-500MB
-+ <techn_> [[https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.0/arch/arm/mach-sun5i/core.c#L222example][example]]
-+ xman> 64M and 32M is for what?
-+ techn_> 64M mali, 32M for reserved framebuffer(for mali use)
-+ ...
-+ <WarheadsSE> xman: then you should be enable appropriately adjust the dram para, but you might need an updated uboot that has a 256M SPL
-+ ..
-+ <WarheadsSE> the Wifi has an AXP, which the Mirco doesn't.
-+ <WarheadsSE> That's a big difference.
-+ ...
-+ <xman> so, you edit fex, uptade kernel and update u-boot?
-+ <WarheadsSE> yes, fex change, kernel source change, u-boot source change
-+ <WarheadsSE> recompile all.
-+ ..
-+ <WarheadsSE> For the moment, they need to use the provided kernel source repository, and the associated uboot.
-***** Olimex General Conversation [[https://www.olimex.com/forum/index.php?topic%3D707.msg2819%3Btopicseen#msg2819][{Link}]]
-***** In Depth Conversation about Recompiling Kernal from Source [[https://www.olimex.com/forum/index.php?topic%3D617.0][{Link}]]
-**** Compile Kernal From Source
-***** Links
-+ https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558
-  #+BEGIN_SRC sh
-    git clone git://github.com/linux-sunxi/u-boot-sunxi.git
-    git clone https://github.com/hehopmajieh/linux-sunxi
-    cd linux-sunxi
-    git checkout origin/sunxi-3.0
-    make a13_olinuxino_micro CROSS_COMPILE=arm-linux-gnueabi-
-    make ARCH=arm a13om_defconfig
-    make ARCH=arm menuconfig
-  #+END_SRC
-
-*** Promising Solution
-http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html
-**** OLinuXino A13: touchscreen support in Linux
-***** Overview
-+ One of the first problems we had with OLinuxIno-A13 board is the touchscreen support
-+ The manual was published on the official Olimex blog, but source packages had updated, so old solution didn't give an effect
-+ After some experiments, we solved this problem
-+ Here is a full step-by-step manual how to get the device works well under Debian
-***** Required:
-****** installed xorg-dev, xserver-xorg-dev, x11proto-core-dev, git, make, automake: 
-#+BEGIN_SRC sh 
-  aptitude install xorg-dev xserver-xorg-dev x11proto-core-dev git automake make
-#+END_SRC
-****** tslib sources - get it from Github:
-#+BEGIN_SRC sh
-  git clone https://github.com/kergoth/tslib.git
-#+END_SRC
-****** xf86-input-tslib sources - from Debian Git repository:
-#+BEGIN_SRC sh
-git clone git://git.debian.org/git/collab-maint/xf86-input-tslib
-#+END_SRC
-***** Now it's time to build this stuff. (All commands are performed as root).
-****** tslib
-******* Overview
-+ tslib is a library that allows programmer to use data from touchscreens. It is only API, but not a driver for Xorg (there is xf86-input-tslib package for this).
-+ It works well for most of different touchscreens without any changes. But, _suddenly, Olinuxino's touchscreen is an exception_, and we need to _patch original library_.
-******* Steps
-1. First, download tslib source code and go to its directory: 
-   #+BEGIN_SRC sh
-     git clone http://github.com/kergoth/tslib.git
-     cd tslib
-   #+END_SRC
-2. Download and apply the patch using GNU patch utility: 
-   #+BEGIN_SRC sh
-     wget http://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
-     patch -p0 < tslib.patch
-   #+END_SRC
-3. Configure, make and install:
-   #+BEGIN_SRC sh
-     autoreconf -vi; ./configure --prefix=/usr; 
-     make; 
-     make install
-   #+END_SRC
-   + Result: Libraries have been installed in:
-     #+BEGIN_EXAMPLE
-       /usr/lib/ts
-     #+END_EXAMPLE
-4. Then, let's load a kernel module and check touchscreen:
-   #+BEGIN_SRC sh
-     modprobe sun4i-ts
-     dmesg | grep sun4i-ts
-   #+END_SRC
-   + If it's all right, there will be some messages in dmesg like this:
-     #+BEGIN_EXAMPLE
-       [    9.010000] sun4i-ts.c: sun4i_ts_init: start ...
-       [    9.020000] sun4i-ts: tp_screen_size is 5 inch.
-       [    9.030000] sun4i-ts: tp_regidity_level is 5.
-       [    9.030000] sun4i-ts: tp_press_threshold_enable is 0.
-       [    9.040000] sun4i-ts: rtp_sensitive_level is 15.
-       [    9.050000] sun4i-ts: rtp_exchange_x_y_flag is 0.
-       [    9.060000] sun4i-ts.c: sun4i_ts_probe: start...
-       [    9.080000] input: sun4i-ts as /devices/platform/sun4i-ts/input/input1
-       [    9.100000] sun4i-ts.c: sun4i_ts_probe: end
-     #+END_EXAMPLE
-     + Highlighted 1 there is a number of touchscreen event device.
-     + Later we will get a raw data from device using the path /dev/input/event1 (change higlighted number to your).
-
-5. To load this kernel module automatically, add a line into /etc/modules:
-   #+BEGIN_SRC sh
-     echo sun4i-ts >> /etc/modules
-   #+END_SRC
-
-6. Now let's check the touchscreen in use. We need to export some environment variables which contains basic configuration for library. Do not forget to change highlighted number:
-   #+BEGIN_SRC sh
-     export TSLIB_TSEVENTTYPE=raw
-     export TSLIB_CONSOLEDEVICE=none
-     export TSLIB_FBDEVICE=/dev/fb0
-     export TSLIB_TSDEVICE=/dev/input/event1
-     export TSLIB_CALIBFILE=/usr/etc/pointercal
-     export TSLIB_CONFFILE=/usr/etc/ts.conf
-     export TSLIB_PLUGINDIR=/usr/lib/ts
-   #+END_SRC
-
-7. Next, configure raw input module of the tslib.
-   + Open /usr/etc/ts.conf and uncomment the line which contains "module_raw input".
-
-8. After this, we should make a test. Let's calibrate the touchscreen and try to do something with it.
-   #+BEGIN_SRC sh
-     ts_calibrate
-     ts_test
-   #+END_SRC
-   + To get out from ts_test, you should press "Quit" button on the screen, or use Ctrl+C in emergency case (if screen is not calibrated or configured successfully).
-9. To load configuration variables while system is loading, write these lines into /etc/environment file (check highlighted number):
-   #+BEGIN_EXAMPLE
-     TSLIB_TSEVENTTYPE=raw
-     TSLIB_CONSOLEDEVICE=none
-     TSLIB_FBDEVICE=/dev/fb0
-     TSLIB_TSDEVICE=/dev/input/event1
-     TSLIB_CALIBFILE=/etc/pointercal
-     TSLIB_CONFFILE=/usr/etc/ts.conf
-     TSLIB_PLUGINDIR=/usr/lib/ts 
-   #+END_EXAMPLE
-  
-
-
-****** Now we need to modify and install xf86-input-tslib driver.
-
-xf86-input-tslib
-
-xf86-input-tslib allows us to use tslib device like our touchscreen as pointer device. 
-
-This driver is old a bit, so while it works with newer Xorg server, it faluts, because xf86InputSetScreen function is removed from Xorg, but driver tries to call it. I had just removed this call from driver's source code and the problem was solved.
-
-Download source code, go to its directory: 
-
-# git clone git://git.debian.org/git/collab-maint/xf86-input-tslib
-# cd xf86-input-tslib
-
-Get and apply required patches (including my solution):
-
-# wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/1-xf86tslib-sigfault.patch https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/xf86-input-tslib-port-ABI-12-r48.patch https://github.com/webconn/OLINUXINO/blob/master/SOFTWARE/A13/TOUCHSCREEN/xf86tslib-xorg-update.patch
-# patch -p0 < 1-xf86tslib-sigfault.patch
-# patch -p0 < xf86-input-tslib-port-ABI-12-r48.patch
-# patch -p0 < xf86tslib-xorg-update.patch
-
-Configure, make and install:
-
-# ./configure --prefix=/usr
-# make
-# make install
-
-Now describe the device as InputClass of Xorg in your xorg.conf (or in /usr/share/X11/xorg.conf.d/20-ts.conf as I did):
-
-Section "InputClass"
-    Identifier "Sun4i-Touchscreen"
-    MatchDevicePath "/dev/input/event*"
-    MatchProduct "sun4i-ts"
-    Driver "tslib"
-EndSection
-
-
-If you had successfully calibrated and tested the touchscreen, when you start X server by
-
-# startx
-
-the screen should work well. Also it should work when X server is launched by desktop manager (ex. LightDM). 
-
-P.S. This solution is tested at Olinuxino A13 with Debian GNU/Linux 7.0 (wheezy). Last commit of tslib was 158ee49, version of xf86-input-tslib was 0.0.6.
-Автор: webconn на 10:10 
-Отправить по электронной почте
-Написать об этом в блоге
-Опубликовать в Twitter
-Опубликовать в Facebook
-
-Ярлыки: ARM, Debian, English, HowTo, Linux, Olinuxino, touchscreen
-*** Actual
-**** Steps
-1. Install make and automake
-   #+BEGIN_SRC sh
-     apt-get install
-   #+END_SRC
-2. Download tslib source code and go to its directory: 
-   #+BEGIN_SRC sh
-     git clone https://github.com/kergoth/tslib.git
-     cd tslib
-   #+END_SRC
-3. Download and apply the patch using GNU patch utility: 
-   #+BEGIN_SRC sh
-     # wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
-     # patch -p0 < tslib.patch   
-   #+END_SRC
-4. Configure, make and install:
-   #+BEGIN_SRC sh
-     autoreconf -vi
-     ./configure --prefix=/usr
-     make
-     make install
-   #+END_SRC
-5. Then, let's load a kernel module and check touchscreen:
-   #+BEGIN_SRC sh
-     modprobe sun4i-ts
-     dmesg | grep sun4i-ts
-   #+END_SRC
-   + Result
-     #+BEGIN_EXAMPLE
-       [12951.630000] sun4i-ts.c: sun4i_ts_init: start ...
-       [12951.640000] sun4i-ts: tp_screen_size is 5 inch.
-       [12951.650000] sun4i-ts: tp_regidity_level is 5.
-       [12951.660000] sun4i-ts: tp_press_threshold_enable is 0.
-       [12951.670000] sun4i-ts: rtp_sensitive_level is 15.
-       [12951.670000] sun4i-ts: rtp_exchange_x_y_flag is 0.
-       [12951.690000] sun4i-ts.c: sun4i_ts_probe: start...
-       [12951.710000] input: sun4i-ts as /devices/platform/sun4i-ts/input/input4
-       [12951.730000] sun4i-ts.c: sun4i_ts_probe: end
-     #+END_EXAMPLE
-6. To load this kernel module automatically, add a line into /etc/modules:
-   #+BEGIN_SRC sh
-     echo sun4i-ts >> /etc/modules
-   #+END_SRC
-7. Export Some Variables
-   #+BEGIN_SRC sh
-     export TSLIB_TSEVENTTYPE=raw
-     export TSLIB_CONSOLEDEVICE=none
-     export TSLIB_FBDEVICE=/dev/fb0
-     export TSLIB_TSDEVICE=/dev/input/event4
-     export TSLIB_CALIBFILE=/usr/etc/pointercal
-     export TSLIB_CONFFILE=/usr/etc/ts.conf
-     export TSLIB_PLUGINDIR=/usr/lib/tsg
-   #+END_SRC
-8. Next, configure raw input module of the tslib.
-   + Open /usr/etc/ts.conf and uncomment the line which contains "module_raw input".
-9. To load configuration variables while system is loading, write these lines into /etc/environment file (check highlighted number):
-   #+BEGIN_EXAMPLE
-     TSLIB_TSEVENTTYPE=raw
-     TSLIB_CONSOLEDEVICE=none
-     TSLIB_FBDEVICE=/dev/fb0
-     TSLIB_TSDEVICE=/dev/input/event3
-     TSLIB_CALIBFILE=/etc/pointercal
-     TSLIB_CONFFILE=/usr/etc/ts.conf
-     TSLIB_PLUGINDIR=/usr/lib/ts 
-   #+END_EXAMPLE
-
-**** Errors
-***** DONE undefined macro: AC_DISABLE_STATIC
-****** Error Caused
-+ while attempting to do "autoreconf -vi" when building tslib
-****** Error Message
-#+BEGIN_EXAMPLE
-configure.ac:24: error: possibly undefined macro: AC_DISABLE_STATIC
-      If this token and others are legitimate, please use m4_pattern_allow.
-      See the Autoconf documentation.
-#+END_EXAMPLE
-****** Solution
-#+BEGIN_SRC sh
-apt-get install libtool
-#+END_SRC
-****** Links
-+ http://www.friendlyarm.net/forum/topic/621
-
-*** Test Touchscreen
-#+BEGIN_SRC sh
- cat /dev/input/event3 | hexdump
-#+END_SRC
-** Configure Debian to Communicate to Touchscreen
-*** Messing with the script file
-**** Installation
-1. Extract A13 tar file
+1. extract A13 tar file
    #+BEGIN_SRC sh
      cd bin/
      tar -zxvf fex2bin_bin_fex_tools.tar.gz
@@ -1094,8 +885,8 @@ apt-get install libtool
      make clean
      make -k
    #+END_SRC
-**** General Usage
-***** Using bin2fex
+*** General Usage
+**** Using bin2fex
 + First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
   #+BEGIN_SRC sh
     # ./bin2fex script.bin script.fex
@@ -1103,7 +894,7 @@ apt-get install libtool
   #+END_SRC
   + This converts the script.bin file into script.fex. Here's the output produced - script.fex.
 
-***** Using fex2bin
+**** Using fex2bin
 + To convert back, it's simply the reverse:
   #+BEGIN_SRC sh
     # ./fex2bin script.fex script.bin
@@ -1111,19 +902,6 @@ apt-get install libtool
   #+END_SRC
   + This can then be placed back on the bootloader partition (remember to also overwrite script0.bin).
 
-**** Configuring Tourchscreen
-***** Steps
-1. Took script_GPIO_LCD_800x480.fex and converted changed y value of 480 to 272 and x value of 800 to 480.
-2. Convert the .fex to a .bin using fex2bin
-   #+BEGIN_SRC sh
-     ~/src/fex2bin_bin_fex_tools/fex2bin small_lcd.fex small_lcd.bin
-   #+END_SRC
-3. Copy onto device
-   #+BEGIN_SRC sh
-     cp small_lcd.bin /media/mmckblk0/script.bin
-   #+END_SRC
-***** Source Code
-#+INCLUDE: "../conf/script_bin/custom_lcd/small_lcd.fex" src txt
 *** Links
 **** Configuration of hardware in the debian image [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][{Link}]]
 ***** Tools
@@ -1359,6 +1137,7 @@ gedit /mnt/sd/script_test.fex
 
 **** (As of 1 March 2013, the current Debian build for this MICRO version does not yet support a touch panel.)
 + http://184.172.168.133-static.reverse.softlayer.com/product_info.php?cPath=&products_id=5414
+**** [[https://www.olimex.com/forum/index.php?topic%3D753.0][How to make 7" LCD Screen working on the A13Micro with Debian or Custom distrib?]]
 *** Error
 **** INIT: cannot execute "/sbin/getty"
 ***** Description
@@ -1368,54 +1147,590 @@ gedit /mnt/sd/script_test.fex
   #+END_EXAMPLE
 ***** Probable Cause
 + The util-linux is not installed
-*** Research
-**** [[https://www.olimex.com/forum/index.php?topic%3D753.0][ How to make 7" LCD Screen working on the A13Micro with Debian or Custom distrib?]]
+** Configure Basic Debian
+*** Set Up Wireless In Debian
+**** Steps
+***** Determine Wireless Device
+#+BEGIN_SRC sh
+dmesg
+#+END_SRC
++ Found as wlan3
 
-** Successfully Recieve Touch Input from Screen
-+ http://www.armadeus.com/wiki/index.php?title=Qt/Embedded#Touchscreen_handling
-** Output to LCD Screen
-*** MainWindow.cpp
-#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.cpp" src cpp
-*** MainWindow.h
-#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.h" src cpp
-*** moc_mainwindow.cpp
-#+INCLUDE: "../src/testing/qt/hello_qt/moc_mainwindow.cpp" src cpp
-*** ui_mainwindow.h
-#+INCLUDE: "../src/testing/qt/hello_qt/ui_mainwindow.h" src cpp
-*** mainwindow.ui
-#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.ui" src txt
+***** Configure /etc/network/interfaces as Root
+#+BEGIN_EXAMPLE
+  auto wlan3
+  iface wlan3 inet dhcp
+      wpa-ssid TVCOG
+      wpa-psk COGpass1
+#+END_EXAMPLE
 
-** Build a Button that does Something on Screen
-* Scratch Pad                                                                   :noexport:
-+ http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
-+ export PATH=$PATH:/usr/local/arm/4.3.2/bin
-* Depreciated                                                                   :noexport:
-** Configure QT for Embedded Linux                                             :noexport:
+***** Restart the Networking Service
+#+BEGIN_SRC sh
+  service networking restart
+#+END_SRC
+
+***** Test the Network
+#+BEGIN_SRC sh
+  ifconfig
+  ping google.com
+#+END_SRC
+
+**** Links
++ [[http://blog.tplus1.com/blog/2008/06/13/how-to-connect-to-a-wireless-network-from-the-ubuntu-command-line/][How to connect to a wireless network from the ubuntu command line]]
++ [[http://www.cyberciti.biz/faq/debian-linux-wpa-wpa2-wireless-wifi-networking/][debian linux wpa wpa2 wireless wifi networking]]
+*** Properly Set Date
+**** Steps
+#+BEGIN_SRC sh
+  date --set="10 JUL 2013 12:27:00"
+#+END_SRC
+**** Links
++ http://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/
+*** TODO Properly Set Keyboard Locale
+**** Steps
+#+BEGIN_SRC sh
+  sudo dpkg-reconfigure keyboard-configuration
+#+END_SRC
+**** Links
++ [[http://askubuntu.com/questions/155424/changing-keyboard-layout-in-ubuntu-12-04-server-command-line-interface][AskUbuntu.com: Changing keyboard layout in ubuntu 12.04 server command-line interface]]
+*** Install Programs
+**** Steps
+***** Update Packages
+#+BEGIN_SRC sh
+apt-get update; apt-get upgrade; apt-get dist-upgrade
+#+END_SRC
+
+***** Install Packages
+#+BEGIN_SRC sh
+apt-get install aptitude
+apt-get install emacs
+apt-get install build-essentials
+apt-get install pkg-config
+#+END_SRC
+*** Configure SSH to start on Boot
+**** Steps
+***** Install ssh server
+#+BEGIN_SRC sh
+apt-get install openssh-server
+#+END_SRC
+***** Create or modify the /etc/init.d/sshd init script as follows:
+#+BEGIN_SRC sh
+    #! /bin/sh
+    #
+    # start/stop the secure shell daemon
+
+    case "$1" in
+    'start')
+
+    	# Start the ssh daemon
+    	if [ -x /usr/sbin/sshd ]; then
+    		echo "starting SSHD daemon"
+    		/usr/sbin/sshd &
+    	fi
+    	;;
+
+    'stop')
+    	# Stop the ssh daemon
+    	/usr/bin/pkill -x sshd
+    	;;
+    *)
+    	echo "usage: /etc/init.d/sshd {start|stop}"
+    ;;
+#+END_SRC
+***** Check that /etc/rc3.d/S89sshd exists (or any sshd startup script exists) and is a soft link to /etc/init.d/sshd.
++ If not, create it using the following command:
+  #+BEGIN_SRC sh
+      ln -s /etc/init.d/sshd /etc/rc3.d/S89sshd
+  #+END_SRC
+***** Determine that ssh is running
+#+BEGIN_SRC sh
+  service ssh status
+#+END_SRC
+***** Determine Port Open
+#+BEGIN_SRC sh
+  netstat -tlpn
+#+END_SRC
++ Port is: 22122
+
+***** Determine IP Address to connect to
+#+BEGIN_SRC sh
+  ifconfig
+#+END_SRC
+
+***** Connect to ssh
+#+BEGIN_SRC sh
+  ssh root@192.168.12.128 -p 22122
+#+END_SRC
+**** Debugging
+***** Check ports being listened on
+#+BEGIN_SRC sh
+netstat -an | grep "LISTEN"
+#+END_SRC
+**** Links
++ [[http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic%3D%252Fcom.ibm.tnpm.doc%252Finstall%252Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html][Configure Open SSH Server to start up on system boot]]
++ [[http://raspberrypi.stackexchange.com/questions/4709/ssh-connection-refused-on-raspberry-pi-cannot-find-why][ssh connection refused on raspberry pi cannot find why]]
+*** Configure Static IP Address
+**** Steps
+***** Determine Information
+     #+begin_src sh
+       ifconfig
+     #+end_src
+       + Find:
+	 + address
+	 + netmask
+	 + gateway
+	 + DNS Servers
+***** Modify /etc/network/interfaces as Root
+#+begin_example
+  auto wlan3
+  iface wlan3 inet static
+     wpa-ssid TVCOG
+     wpa-psk COGpass1
+     address 192.168.12.222
+     netmask 255.255.255.0
+     gateway 192.168.12.1
+#+end_example
+***** Modify /etc/resolv.conf as Root
+     #+begin_example
+     domain techvalleycenterofgravity.com
+     search techvalleycenterofgravity.com
+     nameserver 64.22.32.8
+     nameserver 64.22.32.9
+     #+end_example
+***** Restart Networking as Root
+     #+begin_src sh
+       /etc/init.d/networking restart
+     #+end_src
+***** Test Results
+     #+begin_src sh
+       ifconfig
+       ping google.com
+     #+end_src
+**** Links
+    + [[http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu][Linux Basics set a Static IP on Ubuntu]]
+*** Install XFCE (Optional)
+**** Steps
+#+BEGIN_SRC sh
+apt-get install --no-install-recommends xorg xfce4 alsa-base alsa-utils;
+apt-get install --no-install-recommends cpufrequtils gamin xdg-utils;
+apt-get install --no-install-recommends desktop-base gnome-icon-theme dmz-cursor-theme;
+apt-get install --no-install-recommends xfce4-terminal xfce4-power-manager xfce4-screenshooter;
+startx;
+#+END_SRC
+**** Links
+***** Installing GUI
+http://lcncolinuxino.blogspot.com/p/installing-gui.html
+****** Overview
+Optionally if desired, a GUI user interface can be installed. This section describes how to install a small foot print xfce4 user interface.
+****** Steps
+#+BEGIN_SRC sh
+apt-get install --no-install-recommends xorg xfce4 alsa-base alsa-utils;
+apt-get install --no-install-recommends cpufrequtils gamin xdg-utils;
+apt-get install --no-install-recommends desktop-base gnome-icon-theme dmz-cursor-theme;
+apt-get install --no-install-recommends xfce4-terminal xfce4-power-manager xfce4-screenshooter;
+apt-get install --no-install-recommends thunar-archive-plugin thunar-media-tags-plugin;
+apt-get install --no-install-recommends xfburn htop squeeze bzip2 zip unzip unrar-free;
+# Finally start the user interface with:
+startx;
+#+END_SRC
+****** Links
++
+
+**** Consider Qt Razorh
+** Serial Communicate with Board with Bluetooth Module Add-On
+*** Communicate to Bluetooth
+**** Connecting
+**** Installation
+***** Connect to Linvar
+Passphrase: 1234
+
+***** Edit /etc/bluetooth/rfcomm.conf file
+#+BEGIN_EXAMPLE
+#
+# RFCOMM configuration file.
+#
+
+rfcomm0 {
+	# Automatically bind the device at startup
+	bind no;
+
+	# Bluetooth address of the device
+	device 00:12:03:27:71:07;
+
+	# RFCOMM channel for the connection
+	channel	1;
+
+	# Description of the connection
+	comment "Example Bluetooth device";
+}
+#+END_EXAMPLE
+
+***** Restart Bluetooth
+#+BEGIN_SRC sh
+service bluetooth restart
+#+END_SRC
+
+***** Determine the Hardware Address
+The hardware address should be replaced with that of your phone. If you don't know the hardware address of your phone yet, you can get it by running:
+# hcitool scan
+
+***** Bind the Address
+#+BEGIN_SRC sh
+sudo rfcomm bind 0 00:12:03:27:71:07
+#+END_SRC
+**** Links
++ [[http://www.thinkwiki.org/wiki/How_to_setup_Bluetooth][How to setup Bluetooth]]
+*** Get Serial Over Linux
+**** Installation
+***** Determine hardware a
+***** Modify /etc/bluetooth/rfcomm.conf as Root
+#+BEGIN_EXAMPLE
+rfcomm2 {
+	# Automatically bind the device at startup
+	bind no;
+
+	# Bluetooth address of the device
+	device 00:12:03:27:71:07;
+
+	# RFCOMM channel for the connection
+	channel	1;
+
+	# Description of the connection
+	comment "Olimex";
+}
+#+END_EXAMPLE
+***** Restart Bluetooth
+#+BEGIN_SRC sh
+  sudo service bluetooth restart
+#+END_SRC
+
+**** Connecting
+1. Initialize Connection
+   #+BEGIN_SRC sh
+     sudo rfcomm connect rfcomm2
+   #+END_SRC
+2. Connect with Screen
+   #+BEGIN_SRC sh
+   screen /dev/rfcomm2 115200
+   #+END_SRC
+3. Login
+**** Links
++ [[http://www.cyberciti.biz/hardware/5-linux-unix-commands-for-connecting-to-the-serial-console/][5 linux unix commands for connecting to the serial console]]
++ [[http://www.heatxsink.com/entry/how-to-pair-a-bluetooth-device-from-command-line-on-linux][how to pair a bluetooth device from command line on linux]]
+** Buildroot - Install ARM Toolchain
 *** Steps
-**** DONE Install QT on Development Platform
+1. Download Buildroot
+   #+BEGIN_SRC sh
+     mkdir bld; cd bld
+     wget http://buildroot.net/downloads/buildroot-2013.05.tar.gz
+     tar -xvf buildroot-2013.05.tar.gz
+     cd buildroot-2013.05
+   #+END_SRC
+
+2. Run Menu Config
+   #+BEGIN_SRC sh
+     make menuconfig
+   #+END_SRC
+   + Relevant Configurations:
+     |-----------------------------+--------------------------------|
+     | Target Architecture         | ARM (little endian)            |
+     | Target Architecture Variant | Cortex-A8                      |
+     | Toolchain                   | Sourcery Codebench ARM 2011.09 |
+4. If you are on a 64-bit system
+   #+BEGIN_SRC sh
+     sudo apt-get install ia32-libs
+   #+END_SRC
+   + See Error
+
+3. Install toolchain binaries
+   #+BEGIN_SRC sh
+     su
+     cp -a ext-toolchain /opt/ext_toolchain
+     cp /etc/environment /etc/environment.BAK
+   #+END_SRC
+   + Append :/opt/ext_toolchain/bin/ to Path
+     #+BEGIN_EXAMPLE
+       PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/ext_toolchain/bin/"
+     #+END_EXAMPLE
+
+5. Logout and Login or Reboot
+
+
+**** Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"
+***** Error:
++ error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
+***** Probable Cause
++ Its looking for 32-bit library, which is not installed since I have a 64-bit system
+***** Solution
++ Install the 32 bit libraries
+#+BEGIN_SRC sh
+sudo apt-get install ia32-libs
+#+END_SRC
+***** Links
++ http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory
+*** Links
++ [[./doc/using-buildroot-real-project.pdf][Using buildroot for real projects]]
+  + This is a great presentation that demonstrates how to use buildroot very clearly.
+** Configure tslib on Device
+*** OLinuXino A13: touchscreen support in Linux                               :noexport:
+**** Required:
+***** installed xorg-dev, xserver-xorg-dev, x11proto-core-dev, git, make, automake:
+#+BEGIN_SRC sh
+  aptitude install xorg-dev xserver-xorg-dev x11proto-core-dev git automake make
+#+END_SRC
+***** tslib sources - get it from Github:
+#+BEGIN_SRC sh
+  git clone https://github.com/kergoth/tslib.git
+#+END_SRC
+***** xf86-input-tslib sources - from Debian Git repository:
+#+BEGIN_SRC sh
+git clone git://git.debian.org/git/collab-maint/xf86-input-tslib
+#+END_SRC
+**** Now it's time to build this stuff. (All commands are performed as root).
+***** tslib
+****** Overview
++ tslib is a library that allows programmer to use data from touchscreens. It is only API, but not a driver for Xorg (there is xf86-input-tslib package for this).
++ It works well for most of different touchscreens without any changes. But, _suddenly, Olinuxino's touchscreen is an exception_, and we need to _patch original library_.
+****** Steps
+1. First, download tslib source code and go to its directory:
+   #+BEGIN_SRC sh
+     git clone http://github.com/kergoth/tslib.git
+     cd tslib
+   #+END_SRC
+2. Download and apply the patch using GNU patch utility:
+   #+BEGIN_SRC sh
+     wget http://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
+     patch -p0 < tslib.patch
+   #+END_SRC
+3. Configure, make and install:
+   #+BEGIN_SRC sh
+     autoreconf -vi; ./configure --prefix=/usr;
+     make;
+     make install
+   #+END_SRC
+   + Result: Libraries have been installed in:
+     #+BEGIN_EXAMPLE
+       /usr/lib/ts
+     #+END_EXAMPLE
+4. Then, let's load a kernel module and check touchscreen:
+   #+BEGIN_SRC sh
+     modprobe sun4i-ts
+     dmesg | grep sun4i-ts
+   #+END_SRC
+   + If it's all right, there will be some messages in dmesg like this:
+     #+BEGIN_EXAMPLE
+       [    9.010000] sun4i-ts.c: sun4i_ts_init: start ...
+       [    9.020000] sun4i-ts: tp_screen_size is 5 inch.
+       [    9.030000] sun4i-ts: tp_regidity_level is 5.
+       [    9.030000] sun4i-ts: tp_press_threshold_enable is 0.
+       [    9.040000] sun4i-ts: rtp_sensitive_level is 15.
+       [    9.050000] sun4i-ts: rtp_exchange_x_y_flag is 0.
+       [    9.060000] sun4i-ts.c: sun4i_ts_probe: start...
+       [    9.080000] input: sun4i-ts as /devices/platform/sun4i-ts/input/input1
+       [    9.100000] sun4i-ts.c: sun4i_ts_probe: end
+     #+END_EXAMPLE
+     + Highlighted 1 there is a number of touchscreen event device.
+     + Later we will get a raw data from device using the path /dev/input/event1 (change higlighted number to your).
+
+5. To load this kernel module automatically, add a line into /etc/modules:
+   #+BEGIN_SRC sh
+     echo sun4i-ts >> /etc/modules
+   #+END_SRC
+
+6. Now let's check the touchscreen in use. We need to export some environment variables which contains basic configuration for library. Do not forget to change highlighted number:
+   #+BEGIN_SRC sh
+     export TSLIB_TSEVENTTYPE=raw
+     export TSLIB_CONSOLEDEVICE=none
+     export TSLIB_FBDEVICE=/dev/fb0
+     export TSLIB_TSDEVICE=/dev/input/event1
+     export TSLIB_CALIBFILE=/usr/etc/pointercal
+     export TSLIB_CONFFILE=/usr/etc/ts.conf
+     export TSLIB_PLUGINDIR=/usr/lib/ts
+   #+END_SRC
+
+7. Next, configure raw input module of the tslib.
+   + Open /usr/etc/ts.conf and uncomment the line which contains "module_raw input".
+
+8. After this, we should make a test. Let's calibrate the touchscreen and try to do something with it.
+   #+BEGIN_SRC sh
+     ts_calibrate
+     ts_test
+   #+END_SRC
+   + To get out from ts_test, you should press "Quit" button on the screen, or use Ctrl+C in emergency case (if screen is not calibrated or configured successfully).
+9. To load configuration variables while system is loading, write these lines into /etc/environment file (check highlighted number):
+   #+BEGIN_EXAMPLE
+     TSLIB_TSEVENTTYPE=raw
+     TSLIB_CONSOLEDEVICE=none
+     TSLIB_FBDEVICE=/dev/fb0
+     TSLIB_TSDEVICE=/dev/input/event1
+     TSLIB_CALIBFILE=/etc/pointercal
+     TSLIB_CONFFILE=/usr/etc/ts.conf
+     TSLIB_PLUGINDIR=/usr/lib/ts
+   #+END_EXAMPLE
+
+
+
+***** Now we need to modify and install xf86-input-tslib driver.
+
+xf86-input-tslib
+
+xf86-input-tslib allows us to use tslib device like our touchscreen as pointer device.
+
+This driver is old a bit, so while it works with newer Xorg server, it faluts, because xf86InputSetScreen function is removed from Xorg, but driver tries to call it. I had just removed this call from driver's source code and the problem was solved.
+
+Download source code, go to its directory:
+
+# git clone git://git.debian.org/git/collab-maint/xf86-input-tslib
+# cd xf86-input-tslib
+
+Get and apply required patches (including my solution):
+
+# wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/1-xf86tslib-sigfault.patch https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/xf86-input-tslib-port-ABI-12-r48.patch https://github.com/webconn/OLINUXINO/blob/master/SOFTWARE/A13/TOUCHSCREEN/xf86tslib-xorg-update.patch
+# patch -p0 < 1-xf86tslib-sigfault.patch
+# patch -p0 < xf86-input-tslib-port-ABI-12-r48.patch
+# patch -p0 < xf86tslib-xorg-update.patch
+
+Configure, make and install:
+
+# ./configure --prefix=/usr
+# make
+# make install
+
+Now describe the device as InputClass of Xorg in your xorg.conf (or in /usr/share/X11/xorg.conf.d/20-ts.conf as I did):
+
+Section "InputClass"
+    Identifier "Sun4i-Touchscreen"
+    MatchDevicePath "/dev/input/event*"
+    MatchProduct "sun4i-ts"
+    Driver "tslib"
+EndSection
+
+
+If you had successfully calibrated and tested the touchscreen, when you start X server by
+
+# startx
+
+the screen should work well. Also it should work when X server is launched by desktop manager (ex. LightDM).
+
+P.S. This solution is tested at Olinuxino A13 with Debian GNU/Linux 7.0 (wheezy). Last commit of tslib was 158ee49, version of xf86-input-tslib was 0.0.6.
+Автор: webconn на 10:10
+Отправить по электронной почте
+Написать об этом в блоге
+Опубликовать в Twitter
+Опубликовать в Facebook
+
+Ярлыки: ARM, Debian, English, HowTo, Linux, Olinuxino, touchscreen
+*** Overview
+#+BEGIN_EXAMPLE
+  One of the first problems we had with OLinuxIno-A13 board is the touchscreen support.
+  The manual was published on the official Olimex blog, but source packages had updated, so old solution didn't give an effect.
+  After some experiments, we solved this problem.
+  Here is a full step-by-step manual how to get the device works well under Debian
+#+END_EXAMPLE
+  - [[http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html][Dimrobotics]]
+*** Steps
+1. Install make and automake
+   #+BEGIN_SRC sh
+     apt-get install make automake
+   #+END_SRC
+2. Download tslib source code and go to its directory:
+   #+BEGIN_SRC sh
+     git clone https://github.com/kergoth/tslib.git
+     cd tslib
+   #+END_SRC
+3. Download and apply the patch using GNU patch utility:
+   #+BEGIN_SRC sh
+     wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
+     patch -p0 < tslib.patch
+   #+END_SRC
+4. Configure, make and install:
+   #+BEGIN_SRC sh
+     autoreconf -vi
+     ./configure --prefix=/usr
+     make
+     make install
+   #+END_SRC
+5. Then, let's load a kernel module and check touchscreen:
+   #+BEGIN_SRC sh
+     modprobe sun4i-ts
+     dmesg | grep sun4i-ts
+   #+END_SRC
+   + Result
+     #+BEGIN_EXAMPLE
+       [12951.630000] sun4i-ts.c: sun4i_ts_init: start ...
+       [12951.640000] sun4i-ts: tp_screen_size is 5 inch.
+       [12951.650000] sun4i-ts: tp_regidity_level is 5.
+       [12951.660000] sun4i-ts: tp_press_threshold_enable is 0.
+       [12951.670000] sun4i-ts: rtp_sensitive_level is 15.
+       [12951.670000] sun4i-ts: rtp_exchange_x_y_flag is 0.
+       [12951.690000] sun4i-ts.c: sun4i_ts_probe: start...
+       [12951.710000] input: sun4i-ts as /devices/platform/sun4i-ts/input/input4
+       [12951.730000] sun4i-ts.c: sun4i_ts_probe: end
+     #+END_EXAMPLE
+6. To load this kernel module automatically, add a line into /etc/modules:
+   #+BEGIN_SRC sh
+     echo sun4i-ts >> /etc/modules
+   #+END_SRC
+7. Export Some Variables
+   #+BEGIN_SRC sh
+     export TSLIB_TSEVENTTYPE=raw
+     export TSLIB_CONSOLEDEVICE=none
+     export TSLIB_FBDEVICE=/dev/fb0
+     export TSLIB_TSDEVICE=/dev/input/event4
+     export TSLIB_CALIBFILE=/usr/etc/pointercal
+     export TSLIB_CONFFILE=/usr/etc/ts.conf
+     export TSLIB_PLUGINDIR=/usr/lib/tsg
+   #+END_SRC
+8. Next, configure raw input module of the tslib.
+   + Open /usr/etc/ts.conf and uncomment the line which contains "module_raw input".
+9. To load configuration variables while system is loading, write these lines into /etc/environment file (check highlighted number):
+   #+BEGIN_EXAMPLE
+     TSLIB_TSEVENTTYPE=raw
+     TSLIB_CONSOLEDEVICE=none
+     TSLIB_FBDEVICE=/dev/fb0
+     TSLIB_TSDEVICE=/dev/input/event3
+     TSLIB_CALIBFILE=/etc/pointercal
+     TSLIB_CONFFILE=/usr/etc/ts.conf
+     TSLIB_PLUGINDIR=/usr/lib/ts
+   #+END_EXAMPLE
+*** Errors
+**** undefined macro: AC_DISABLE_STATIC
+***** Error Caused
++ while attempting to do "autoreconf -vi" when building tslib
+***** Error Message
+#+BEGIN_EXAMPLE
+configure.ac:24: error: possibly undefined macro: AC_DISABLE_STATIC
+      If this token and others are legitimate, please use m4_pattern_allow.
+      See the Autoconf documentation.
+#+END_EXAMPLE
+***** Solution
+#+BEGIN_SRC sh
+apt-get install libtool
+#+END_SRC
+***** Links
++ http://www.friendlyarm.net/forum/topic/621
+*** Test tslib Input Received from Touchscreen
+#+BEGIN_SRC sh
+ cat /dev/input/event3 | hexdump
+#+END_SRC
+*** Links
++ http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html
++ http://www.armadeus.com/wiki/index.php?title=Qt/Embedded#Touchscreen_handling
+** Configure QT for Embedded Linux
+*** Steps
+**** Install QT on Development Platform
 http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
 #+BEGIN_SRC sh
 sudo apt-get install qtcreator
 #+END_SRC
-
-**** DONE Install GNU ARM Toolchain
-http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
-1. Install binaries
-   #+BEGIN_SRC sh
-     tar -xvf arm-linux-gcc-4.3.2.tgz
-   #+END_SRC
-2. Add path to BASH (append to .bashrc)
-   #+BEGIN_EXAMPLE
-   PATH=$PATH:/usr/local/arm/4.3.2/bin
-   #+END_EXAMPLE
-3. Logout and Login or Reboot
-   
-**** DONE Install TSLIB on Development Platform
+**** Install TSLIB on Development Platform
 http://billforums.station51.net/viewtopic.php?f=8&t=15
 #+BEGIN_SRC sh
 cd ~/src
-git clone https://github.com/kergoth/tslib.git tslib-arm
-cd tslib-arm
+git clone https://github.com/kergoth/tslib.git tslib
+cd tslib
+# custom patch for Olinuxino
+wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
+     patch -p0 < tslib.patch
 ./autogen.sh
 ./configure --host=arm-linux-gnueabihf --prefix=/usr/local/tslib --enable-static --enable-shared
 make -j5
@@ -1429,7 +1744,8 @@ make install
     QMAKE_LIBDIR  += /usr/local/tslib/lib
   #+END_EXAMPLE
 
-**** DONE Install qt-everywhere on Development Platform
+**** Install qt-everywhere on Development Platform
+***** Steps
 1. Install Source
    #+BEGIN_SRC sh
      tar -xvf qt-everywhere-opensource-src-4.6.2.tar.gz /usr/local/qt
@@ -1439,303 +1755,170 @@ make install
      #
      # qmake configuration for building with arm-linux-g++
      #
-     
-     include(../../common/g++.conf)
+     include(../../common/gcc-base-unix.conf)
+     include(../../common/g++-unix.conf)
      include(../../common/linux.conf)
      include(../../common/qws.conf)
      
      # modifications to g++.conf
-     QMAKE_CC                = arm-none-linux-gnueabi-gcc -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_CXX               = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_LINK              = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_LINK_SHLIB        = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
+     QMAKE_CC                = arm-linux-gnueabihf-gcc -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
+     QMAKE_CXX               = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
+     QMAKE_LINK              = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
+     QMAKE_LINK_SHLIB        = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
      
      # modifications to linux.conf
-     QMAKE_AR                = arm-none-linux-gnueabi-ar cqs
-     QMAKE_OBJCOPY           = arm-none-linux-gnueabi-objcopy
-     QMAKE_STRIP             = arm-none-linux-gnueabi-strip
-     QMAKE_RANLIB            = arm-none-linux-gnueabi-ranlib
+     QMAKE_AR                = arm-linux-gnueabihf-ar cqs
+     QMAKE_OBJCOPY           = arm-linux-gnueabihf-objcopy
+     QMAKE_STRIP             = arm-linux-gnueabihf-strip
+     QMAKE_RANLIB            = arm-linux-gnueabihf-ranlib
      
-     load(qt_config)n
-
-   #+END_EXAMPLE
-3. V2
-   #+BEGIN_EXAMPLE
-     #
-     # qmake configuration for building with arm-linux-g++
-     #
-     
-     include(../../common/g++.conf)
-     include(../../common/linux.conf)
-     include(../../common/qws.conf)
-     
-     # modifications to g++.conf
-     QMAKE_CC                = arm-none-linux-gnueabi-gcc -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_CXX               = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_LINK              = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     QMAKE_LINK_SHLIB        = arm-none-linux-gnueabi-g++ -msoft-float -D_GCC_FLOAT_NOT_NEEDED -march=armv7a -mtune=cortex-a8 -O0 -lts
-     
-     # modifications to linux.conf
-     QMAKE_AR                = arm-none-linux-gnueabi-ar cqs
-     QMAKE_OBJCOPY           = arm-none-linux-gnueabi-objcopy
-     QMAKE_STRIP             = arm-none-linux-gnueabi-strip
-     QMAKE_RANLIB            = arm-none-linux-gnueabi-ranlib
+     # tslib
+     QMAKE_INCDIR  += /usr/local/tslib/include
+     QMAKE_LIBDIR  += /usr/local/tslib/lib
+     QMAKE_LFLAGS += -Wl,-rpath-link=/usr/local/tslib/lib
      
      load(qt_config)
+     
    #+END_EXAMPLE
-4. Turn off compiler optimization by making changes in /mkspecs/common/g++-unix.conf. Change the following line to this :
-   #+BEGIN_EXAMPLE
-     QMAKE_CFLAGS_RELEASE  += -O0
-   #+END_EXAMPLE
-5. Configure Qt
+3. Configure Qt
    #+BEGIN_SRC sh
-   configure -embedded arm -xplatform qws/linux-arm-g++ -prefix \
-   /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile \
-   -optimized-qmake -no-openssl -nomake tools -qt-mouse-tslib
+     make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license -qt-mouse-tslib
    #+END_SRC
-   + Now, this configuration is what I needed. You can drop in or add whatever you want. Some handy options that you may (or may not require) are :
+   + Some optional arguments depending on your requirements
      + Enable touchscreen library support : -qt-mouse-tslib
      + Enable USB keyboard support : -qt-kbd-linuxinput
    + The above options affect the QtGui library so you need to replace only QtGui.so.x.x file on your root filesystem if you are planning to make changes.
-6. Make
+4. Make
    #+BEGIN_SRC sh
-   make -j5
+     make -j 5
+     sudo make install
    #+END_SRC
-   + Wait for a couple of hours or so and find your cross compiled freshly baked libraries in /usr/local/qt/lib/
-7. Install
+   + Wait for a couple of hours to compile libraries
+5. Install
    #+BEGIN_SRC sh
-     su
-     export PATH=$PATH:/usr/local/arm/4.3.2/bin
+     su -p
      make install
    #+END_SRC
-
-**** TODO Copy Libraries Over to Device
-***** Overview
-So now, its time to put the libs on your mini machine! You may choose to create a separate filesystem using busybox too. Elaborate tutorials on that are available on the web. Just Google it up. What I will do is, modify the rootfs that came with my mini and remove all unnecessary stuff from it. Create a dir /usr/local/qt on your mini2440′s stock root filesystem and copy the complete lib directory from step 5 to that location using a USB stick/SD Card or something. Remember to do a df on the mini beforehand to see the free NAND you have got. In case the memory is low, delete some stock data – the small video file, mp3 file and some sample images that are present on it.Also remove unnecessary applications viz konqueror and old qt 2.2.0 libraries from the system.
+   + libraries will be installed in /usr/local/qt/lib/
+***** Errors
++ /opt/ext_toolchain/bin/../lib/gcc/arm-linux-gnueabihf/4.7.3/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lbootstrap
+http://www.qtcentre.org/archive/index.php/t-41850.html
+**** Copy Libraries Over to Device
 ***** Steps
-1. Environment Variables
-   + To make the mini understand the new Qt libs, we’ll add some variables
-   + On your mini2440, edit /etc/inint.d/rcS and add the following line to it
-     #+BEGIN_EXAMPLE
-       source /etc/qt46profile
-     #+END_EXAMPLE
-2. Now create the /etc/qt46profile file and the following text to it :
-   #+BEGIN_EXAMPLE
-     export LD_LIBRARY_PATH=/usr/local/qt/lib
-     export QTDIR=/usr/local/qt
-     export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event0
-     export QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
-   #+END_EXAMPLE
-   + Remember that these variables may change according to your qt libs location and mouse/touchscreen drivers. Go to /dev/input/ and see which file is responsible for which device. For eg. if tslib is configured on your device then the QWS_MOUSE_PROTO  variable will have the value something like
-     #+BEGIN_EXAMPLE
-     QWS_MOUSE_PROTO=Tslib:/dev/input/event1
-     #+END_EXAMPLE
-3. So, you are done at last and have your system ready with Qt 4.6.2 libs. Try running a simple application (viz a Analog Clock from the cross-compiled qt examples at /usr/local/qt/examples/widgets/analogclock/analogclock by giving the -qws option on the mini2440 shell as
+1. Copy qt libraries to device.
    #+BEGIN_SRC sh
-     ./analogclock -qws
+     rsync -rtvz -a -e "ssh -p 22122" /usr/local/qt/ root@192.168.12.200:/usr/local/qt/
    #+END_SRC
-4. Thats it! Do tell me if you are able to reach here. In the next two posts I shall be discussing about rapidly developing a GUI application for your mini using Qt Creator and compiling and configuring Tslib for mini2440.
-
-
-*** Research Links
+2. Add some environment variables to by adding the following lines to /etc/environment.
+   #+BEGIN_EXAMPLE
+     LD_LIBRARY_PATH=/usr/local/qt/lib
+     QTDIR=/usr/local/qt
+     QWS_MOUSE_PROTO=tslib:/dev/input/event2
+     QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
+   #+END_EXAMPLE
+   + To add mouse support you could have a line such as:
+     #+BEGIN_EXAMPLE
+     export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event2
+     #+END_EXAMPLE
+3. Try running a sample application.  You should have demos installed at /usr/local/qt/demos/embedded/
+   + Try running styledemo:
+     #+BEGIN_SRC sh
+       cd /usr/local/qt/demos/embedded/
+       ./styledemo/styledemo -qws
+     #+END_SRC
+   + Or fluidlauncher
+     #+BEGIN_SRC sh
+       cd /usr/local/qt/demos/embedded/
+       ./fluidlauncher/fluidlauncher -qws
+     #+END_SRC
+***** Warning
++ /dev/input/event# may change depending on the ordering and number of USB inputs you have plugged in.
++ Booting with a mouse and a keyboard plugged in will result in a different event # for touchscreen than without.
++ To check what different events are, trying inputting data with the mouse/keyboard/touchscreen and seeing which outputs data
+  #+BEGIN_SRC sh
+    cat /dev/input/event1 | hexdump
+  #+END_SRC
+*** Links
 + http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux
 + http://qt-project.org/doc/qt-4.8/qt-embedded-install.html
 + https://www.olimex.com/forum/index.php?topic=399.0
   #+BEGIN_EXAMPLE
-    ./configure -xplatform qws/linux-arm-g++ -embedded arm -prefix /usr/qtarm/usr/local/qt-embedded -qt-gfx-linuxfb -qt-gfx-vnc -no-largefile -exceptions -no-accessibility -no-qt3support -no-sse2 -qt-zlib -no-gif -no-libtiff -qt-libpng -no-libmng -qt-libjpeg -openssl -no-nis -no-cups -depths 16 -qt-kbd-linuxinput -nomake demos -nomake examples -qt-mouse-linuxinput -qt-mouse-tslib             
+    ./configure -xplatform qws/linux-arm-g++ -embedded arm -prefix /usr/qtarm/usr/local/qt-embedded -qt-gfx-linuxfb -qt-gfx-vnc -no-largefile -exceptions -no-accessibility -no-qt3support -no-sse2 -qt-zlib -no-gif -no-libtiff -qt-libpng -no-libmng -qt-libjpeg -openssl -no-nis -no-cups -depths 16 -qt-kbd-linuxinput -nomake demos -nomake examples -qt-mouse-linuxinput -qt-mouse-tslib
   #+END_EXAMPLE
 + https://code.google.com/p/a13-olinuxino/wiki/PageName
 + https://www.olimex.com/forum/index.php?topic=751.msg3702#msg3702
 + http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
 + https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki
-** Configure Cross-Compiling Toolchain                                         :noexport:
-*** http://psas.pdx.edu/DebianCrossCompilerHowto/#index12h3
-+ https://launchpadlibrarian.net/135588846/readme.txt
-*** Install Toolchain
-https://launchpad.net/gcc-arm-embedded
-https://launchpadlibrarian.net/135588886/How-to-build-toolchain.pdf
++ [[./doc/Getting%20Started%20with%20Qt.pdf][Getting started with Qt.pdf]]
+  + has working notes for proper installation of tslib.
+* Simple Sample Programs
+** Basic Output to LCD Screen
+*** MainWindow.cpp
+#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.cpp" src cpp
+*** MainWindow.h
+#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.h" src cpp
+*** moc_mainwindow.cpp
+#+INCLUDE: "../src/testing/qt/hello_qt/moc_mainwindow.cpp" src cpp
+*** ui_mainwindow.h
+#+INCLUDE: "../src/testing/qt/hello_qt/ui_mainwindow.h" src cpp
+*** mainwindow.ui
+#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.ui" src txt
 
-*** Install GMP
-http://gmplib.org/#DOWNLOAD
-+ Read INSTALL
-  #+BEGIN_SRC sh
-    ./configure --enable-cxx
-    make
-    make check
-    su
-    make install
-  #+END_SRC
-
-*** Qt Embedded
-+ http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
-+ http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
-
-*** GNU Tools for ARM Embedded Processors - Version: 4.7
-https://launchpadlibrarian.net/135588846/readme.txt
-**** Installing executables on Linux
-+ Unpack the tarball to the install directory, like this:
-  #+BEGIN_SRC sh
-  cd $install_dir && tar xjf gcc-arm-none-eabi-*-yyyymmdd-linux.tar.bz2
-  #+END_SRC
-  + For 64 bit system, 32 bit libc and libncurses are required to run the tools.
-+ For Ubuntu 10.04/12.04 user, the toolchain can also be installed via Launchpad
-  #+BEGIN_EXAMPLE
-  PPA at https://launchpad.net/~terry.guo/+archive/gcc-arm-embedded.
-  #+END_EXAMPLE
-**** Invoking GCC
-+ On Linux and Mac OS X, either invoke with the complete path like this:
-  #+BEGIN_SRC sh
-    $install_dir/gcc-arm-none-eabi-*/bin/arm-none-eabi-gcc
-  #+END_SRC
-+ Or set path like this:
-  #+BEGIN_SRC sh
-    export PATH=$PATH:$install_dir/gcc-arm-none-eabi-*/bin
-    arm-none-eabi-gcc
-  #+END_SRC
-export PATH=$PATH:/home/slayer/toolchain/gcc-arm-none-eabi-4_7-2013q1/bin
-**** Architecture options usage
-+ This toolchain is built and optimized for Cortex-A/R/M bare metal development.
-+ the following table shows how to invoke GCC/G++ with correct command line options for variants of Cortex-A/R and Cortex-M architectures. 
-#+BEGIN_EXAMPLE
---------------------------------------------------------------------
-| ARM Core | Command Line Options                       | multilib |
-|----------|--------------------------------------------|----------|
-|Cortex-M0+| -mthumb -mcpu=cortex-m0plus                | armv6-m  |
-|Cortex-M0 | -mthumb -mcpu=cortex-m0                    |          |
-|Cortex-M1 | -mthumb -mcpu=cortex-m1                    |          |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv6-m                     |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M3 | -mthumb -mcpu=cortex-m3                    | armv7-m  |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv7-m                     |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M4 | -mthumb -mcpu=cortex-m4                    | armv7e-m |
-|(No FP)   |--------------------------------------------|          |
-|          | -mthumb -march=armv7e-m                    |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M4 | -mthumb -mcpu=cortex-m4 -mfloat-abi=softfp | armv7e-m |
-|(Soft FP) | -mfpu=fpv4-sp-d16                          | /softfp  |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv7e-m -mfloat-abi=softfp |          |
-|          | -mfpu=fpv4-sp-d16                          |          |
-|----------|--------------------------------------------|----------|
-|Cortex-M4 | -mthumb -mcpu=cortex-m4 -mfloat-abi=hard   | armv7e-m |
-|(Hard FP) | -mfpu=fpv4-sp-d16                          | /fpu     |
-|          |--------------------------------------------|          |
-|          | -mthumb -march=armv7e-m -mfloat-abi=hard   |          |
-|          | -mfpu=fpv4-sp-d16                          |          |
-|----------|--------------------------------------------|----------|
-|Cortex-R4 | [-mthumb] -march=armv7-r                   | armv7-ar |
-|Cortex-R5 |                                            | /thumb   |
-|(No FP)   |                                            |          |
-|----------|--------------------------------------------|----------|
-|Cortex-R4 | [-mthumb] -march=armv7-r -mfloat-abi=softfp| armv7-ar |
-|Cortex-R5 | -mfpu=vfpv3-d16                            | /thumb   |
-|(Soft FP) |                                            | /softfp  |
-|----------|--------------------------------------------|----------|
-|Cortex-R4 | [-mthumb] -march=armv7-r -mfloat-abi=hard  | armv7-ar |
-|Cortex-R5 | -mfpu=vfpv3-d16                            | /thumb   |
-|(Hard FP) |                                            | /fpu     |
-|----------|--------------------------------------------|----------|
-|Cortex-A* | [-mthumb] -march=armv7-a                   | armv7-ar |
-|(No FP)   |                                            | /thumb   |
-|----------|--------------------------------------------|----------|
-|Cortex-A* | [-mthumb] -march=armv7-a -mfloat-abi=softfp| armv7-ar |
-|(Soft FP) | -mfpu=vfpv3-d16                            | /thumb   |
-|          |                                            | /softfp  |
-|----------|--------------------------------------------|----------|
-|Cortex-A* | [-mthumb] -march=armv7-a -mfloat-abi=hard  | armv7-ar |
-|(Hard FP) | -mfpu=vfpv3-d16                            | /thumb   |
-|          |                                            | /fpu     |
---------------------------------------------------------------------
-#+END_EXAMPLE
-
-**** C Libraries usage
-+ This toolchain is released with two prebuilt C libraries based on newlib: one is the standard newlib and the other is newlib-nano for code size.
-+ To distinguish them, we rename the size optimized libraries as:
-  #+BEGIN_EXAMPLE
-  libc.a --> libc_s.a
-  libg.a --> libg_s.a
-  #+END_EXAMPLE  
-+ To use newlib-nano, users should provide additional gcc link time option:
-  #+BEGIN_EXAMPLE
-  --specs=nano.specs
-  #+END_EXAMPLE
-  + Nano.specs also handles two additional gcc libraries: libstdc++_s.a and libsupc++_s.a, which are optimized for code size.
-  + For example:
-    #+BEGIN_SRC sh
-      arm-none-eabi-gcc src.c --specs=nano.specs $(OTHER_OPTIONS)
-    #+END_SRC
-  + This option can also work together with other specs options like
-    #+BEGIN_EXAMPLE
-    --specs=rdimon.specs
-    #+END_EXAMPLE
-+ Please be noticed that --specs=nano.specs is a linker option. Be sure to include in linker option if compiling and linking are separated.
-
-***** additional newlib-nano libraries usage
-
-Newlib-nano is different from newlib in addition to the libraries' name.
-Formatted input/output of floating-point number are implemented as weak symbol.
-If you want to use %f, you have to pull in the symbol by explicitly specifying
-"-u" command option.
-   
-  -u _scanf_float
-  -u _printf_float
-
-e.g. to output a float, the command line is like: 
-$ arm-none-eabi-gcc --specs=nano.specs -u _printf_float $(OTHER_OPTIONS)
-
-For more about the difference and usage, please refer the README.nano in the
-source package.
-
-Users can choose to use or not use semihosting by following instructions.
-***** semihosting
-You can add -lrdimon in the command line and compile the programs like:
-$ arm-none-eabi-gcc --specs=rdimon.specs \
-  -Wl,--start-group -lgcc -lc -lc -lm -lrdimon -Wl,--end-group $(OTHER_OPTIONS)
-
-***** non-semihosting/retarget
-If you are using retarget, you can add -lnosys in the command line and compile
-the programs like:
-$ arm-none-eabi-gcc \
-  -Wl,--start-group -lgcc -lc -lc -lm -lnosys -Wl,--end-group $(OTHER_OPTIONS)
-
-**** Linker scripts & startup code
-+ Latest update of linker scripts template and startup code is available on http://www.arm.com/cmsis
-
-**** Samples
-+ Examples of all above usages are available at:
-  #+BEGIN_EXAMPLE
-    install_dir/gcc-arm-none-eabi-*/share/gcc-arm-none-eabi/samples
-  #+END_EXAMPLE
-+ Read readme.txt under it for further information.
-
-
-*** qt Configuration
-./configure -embedded arm -xplatform qws/linux-arm-g++ -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -nomake tools -qt-mouse-tslib -qt-kbd-linuxinput
-
-
-*** Install tslib
-http://importgeek.wordpress.com/2012/04/09/compiling-qt-and-tslib-for-mini2440-and-run-a-demo-app/
+** Build a Button that does Something on Screen
+** Hello World Program
+*** Source Code
+#+INCLUDE: "../src/testing/hello_world.cpp" src cpp
+** Toggle A LED (A13-Olimex-Micro)
+*** Toggle a LED
+**** Using the Commandline
+***** Turn it On
 #+BEGIN_SRC sh
-sudo apt-get install git-core; cd /usr/local
-git clone http://github.com/kergoth/tslib.git
-export PATH=/usr/local/arm/4.3.2/bin:$PATH
-export CROSS_COMPILE=arm-none-linux-gnueabi-
-export CC=${CROSS_COMPILE}gcc
-export CFLAGS=-march=armv4t
-export AR=${CROSS_COMPILE}"ar" 
-export CXX=${CROSS_COMPILE}"g++" e
-xport AS=${CROSS_COMPILE}"as"
-export RANLIB=${CROSS_COMPILE}"ranlib"
-export LD=${CROSS_COMPILE}"ld"
-export STRIP=${CROSS_COMPILE}"strip"
-export ac_cv_func_malloc_0_nonnull=yes
-cd /usr/local/tslib
-./autogen-clean.sh
-./autogen.sh
-./configure --host=arm-linux --prefix=/home/tslib --enable-shared=yes --enable-static=yes
-make
-make install
+echo 1 > /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
 #+END_SRC
+***** Turn it Off
+#+BEGIN_SRC sh
+echo 0 > /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
+#+END_SRC
+**** Using C Code
+#+INCLUDE: "../src/testing/gpio.c" src c
+
+**** Links
++ [[http://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/][A13 Olinuxino Playing with GPIOS]]
+* Some Notes
+** Problem with the A13 Micro: All debian images are built for 512 MB of RAM, 256 is all that is available
+*** Research
+**** Xman Conversation [[https://www.olimex.com/forum/index.php?topic%3D617.10%3Bwap2][{Link}]]
++ <xman> hi, What happens if my dram_size = 512 in [dram_para], but my board have only 256MB?
++ <WarheadsSE> xman: which board ?
++ <xman> https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/
++ techn_> with 256MB ram you propably need to disable mali, framebuffer and g2d.. memmap hard coded to somewhere 400-500MB
++ <techn_> [[https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.0/arch/arm/mach-sun5i/core.c#L222example][example]]
++ xman> 64M and 32M is for what?
++ techn_> 64M mali, 32M for reserved framebuffer(for mali use)
++ ...
++ <WarheadsSE> xman: then you should be enable appropriately adjust the dram para, but you might need an updated uboot that has a 256M SPL
++ ..
++ <WarheadsSE> the Wifi has an AXP, which the Mirco doesn't.
++ <WarheadsSE> That's a big difference.
++ ...
++ <xman> so, you edit fex, uptade kernel and update u-boot?
++ <WarheadsSE> yes, fex change, kernel source change, u-boot source change
++ <WarheadsSE> recompile all.
++ ..
++ <WarheadsSE> For the moment, they need to use the provided kernel source repository, and the associated uboot.
+**** Olimex General Conversation [[https://www.olimex.com/forum/index.php?topic%3D707.msg2819%3Btopicseen#msg2819][{Link}]]
+**** In Depth Conversation about Recompiling Kernal from Source [[https://www.olimex.com/forum/index.php?topic%3D617.0][{Link}]]
+*** Compile Kernal From Source
+**** Links
++ https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558
+  #+BEGIN_SRC sh
+    git clone git://github.com/linux-sunxi/u-boot-sunxi.git
+    git clone https://github.com/hehopmajieh/linux-sunxi
+    cd linux-sunxi
+    git checkout origin/sunxi-3.0
+    make a13_olinuxino_micro CROSS_COMPILE=arm-linux-gnueabi-
+    make ARCH=arm a13om_defconfig
+    make ARCH=arm menuconfig
+  #+END_SRC
+
+* TODO About the Author                                                         :noexport:
