@@ -202,163 +202,153 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">GNU Free Documentation License</a></li>
-<li><a href="#sec-2">Hardware</a>
+<li><a href="#sec-1">Overview</a>
 <ul>
-<li><a href="#sec-2-1">A13-OLinuXino-MICRO (No Touchscreen Support)</a>
-<ul>
-<li><a href="#sec-2-1-1">Features</a></li>
-<li><a href="#sec-2-1-2">FAQ</a></li>
-<li><a href="#sec-2-1-3">Documentation</a></li>
-<li><a href="#sec-2-1-4">Links</a></li>
-<li><a href="#sec-2-1-5">Extrated CPU Info:</a></li>
+<li><a href="#sec-1-1">A note from the Author</a></li>
+<li><a href="#sec-1-2">Primary Objective</a></li>
+<li><a href="#sec-1-3">Background</a></li>
+<li><a href="#sec-1-4">Why we need it</a></li>
+<li><a href="#sec-1-5">How/Technologies - Qt Embedded</a></li>
 </ul>
 </li>
-<li><a href="#sec-2-2">A13-OlinuXino</a>
+<li><a href="#sec-2">GNU Free Documentation License</a></li>
+<li><a href="#sec-3">RCOS Presentations and Multimedia</a>
 <ul>
-<li><a href="#sec-2-2-1">Overview</a></li>
-<li><a href="#sec-2-2-2">FEATURES</a></li>
-<li><a href="#sec-2-2-3">Links</a></li>
+<li><a href="#sec-3-1">RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI</a></li>
+<li><a href="#sec-3-2">RCOS Summer 2013 - Initial Presentation</a></li>
 </ul>
 </li>
-<li><a href="#sec-2-3">USB Wireless LAN Module</a>
+<li><a href="#sec-4">Hardware</a>
 <ul>
-<li><a href="#sec-2-3-1">Overview</a></li>
-<li><a href="#sec-2-3-2">Features</a></li>
-<li><a href="#sec-2-3-3">Resources</a></li>
+<li><a href="#sec-4-1">Actual</a>
+<ul>
+<li><a href="#sec-4-1-1">A13-OlinuXino</a></li>
+<li><a href="#sec-4-1-2">USB Wireless LAN Module</a></li>
+<li><a href="#sec-4-1-3">4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen</a></li>
+<li><a href="#sec-4-1-4">JY-MCU Bluetooth Board V1.02</a></li>
 </ul>
 </li>
-<li><a href="#sec-2-4">4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen {link}</a>
+<li><a href="#sec-4-2">Testing</a>
 <ul>
-<li><a href="#sec-2-4-1">Overview</a></li>
-<li><a href="#sec-2-4-2">A13-OLinuXino LCD Board Features</a></li>
-<li><a href="#sec-2-4-3">Interface Board View</a></li>
-<li><a href="#sec-2-4-4">A13-OLinuXino LCD Board Resources</a></li>
+<li><a href="#sec-4-2-1">A13-OLinuXino-MICRO (No Touchscreen Support)</a></li>
+<li><a href="#sec-4-2-2">4.3" LCD Screen</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-3">Quick Reference</a>
+<li><a href="#sec-5">Quick Reference</a>
 <ul>
-<li><a href="#sec-3-1">Connect to Serial (After configuring rfcomm.conf)</a></li>
-<li><a href="#sec-3-2">Communicate via SSH</a></li>
-<li><a href="#sec-3-3">Connect with SFTP for File Transfer</a></li>
-<li><a href="#sec-3-4">Send Files via SCP</a>
+<li><a href="#sec-5-1">Connect to Serial via Bluetooth</a></li>
+<li><a href="#sec-5-2">Communicate via SSH</a></li>
+<li><a href="#sec-5-3">Connect with SFTP for File Transfer</a></li>
+<li><a href="#sec-5-4">Send Files via SCP</a>
 <ul>
-<li><a href="#sec-3-4-1">Overview</a></li>
-<li><a href="#sec-3-4-2">Examples</a></li>
-<li><a href="#sec-3-4-3">Links</a></li>
+<li><a href="#sec-5-4-1">Overview</a></li>
+<li><a href="#sec-5-4-2">Examples</a></li>
+<li><a href="#sec-5-4-3">Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-3-5">Check Remaining Space on Hard Drive</a></li>
-<li><a href="#sec-3-6">Sync Files with rsync</a>
+<li><a href="#sec-5-5">Check Remaining Space on Hard Drive</a></li>
+<li><a href="#sec-5-6">Sync Files with rsync</a>
 <ul>
-<li><a href="#sec-3-6-1">Sync a Directory From Host To Device</a></li>
-<li><a href="#sec-3-6-2">Links</a></li>
+<li><a href="#sec-5-6-1">Sync a Directory From Host To Device</a></li>
+<li><a href="#sec-5-6-2">Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-3-7">Building Projects with Qmake</a></li>
-<li><a href="#sec-3-8">Backups</a>
+<li><a href="#sec-5-7">Building Projects with Qmake</a></li>
+<li><a href="#sec-5-8">Backups</a>
 <ul>
-<li><a href="#sec-3-8-1">Backup the SD Card</a></li>
-<li><a href="#sec-3-8-2">Restore the SD Card</a></li>
-<li><a href="#sec-3-8-3">Backup Data to Web Storage</a></li>
-<li><a href="#sec-3-8-4">Links</a></li>
+<li><a href="#sec-5-8-1">Backup the SD Card</a></li>
+<li><a href="#sec-5-8-2">Restore the SD Card</a></li>
+<li><a href="#sec-5-8-3">Backup Data to Web Storage</a></li>
+<li><a href="#sec-5-8-4">Links</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-4">HOWTO</a>
+<li><a href="#sec-6">HOWTO</a>
 <ul>
-<li><a href="#sec-4-1">Obtain Hardware</a></li>
-<li><a href="#sec-4-2">Copy Debian Image to SD Card</a>
+<li><a href="#sec-6-1">Obtain Hardware</a></li>
+<li><a href="#sec-6-2">Copy Debian Image to SD Card</a>
 <ul>
-<li><a href="#sec-4-2-1">Overview</a></li>
-<li><a href="#sec-4-2-2">Steps</a></li>
-<li><a href="#sec-4-2-3">Links</a></li>
+<li><a href="#sec-6-2-1">Overview</a></li>
+<li><a href="#sec-6-2-2">Steps</a></li>
+<li><a href="#sec-6-2-3">Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-3">Configure Touchscreen (script.bin)</a>
+<li><a href="#sec-6-3">Configure Touchscreen (script.bin)</a>
 <ul>
-<li><a href="#sec-4-3-1">Overview</a></li>
-<li><a href="#sec-4-3-2">Steps</a></li>
-<li><a href="#sec-4-3-3">Links</a></li>
+<li><a href="#sec-6-3-1">Overview</a></li>
+<li><a href="#sec-6-3-2">Steps</a></li>
+<li><a href="#sec-6-3-3">Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-4">Modifying the script.bin file (Optional)</a>
+<li><a href="#sec-6-4">Modifying the script.bin file (Optional)</a>
 <ul>
-<li><a href="#sec-4-4-1">Installation</a></li>
-<li><a href="#sec-4-4-2">General Usage</a></li>
-<li><a href="#sec-4-4-3">Links</a></li>
-<li><a href="#sec-4-4-4">Error</a></li>
+<li><a href="#sec-6-4-1">Overview</a></li>
+<li><a href="#sec-6-4-2">Installation</a></li>
+<li><a href="#sec-6-4-3">General Usage</a></li>
+<li><a href="#sec-6-4-4">Errors</a></li>
+<li><a href="#sec-6-4-5">Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-5">Configure Basic Debian</a>
+<li><a href="#sec-6-5">Configure Debian</a>
 <ul>
-<li><a href="#sec-4-5-1">Set Up Wireless In Debian</a></li>
-<li><a href="#sec-4-5-2">Properly Set Date</a></li>
-<li><a href="#sec-4-5-3">Properly Set Keyboard Locale</a></li>
-<li><a href="#sec-4-5-4">Install Programs</a></li>
-<li><a href="#sec-4-5-5">Configure SSH to start on Boot</a></li>
-<li><a href="#sec-4-5-6">Configure Static IP Address</a></li>
-<li><a href="#sec-4-5-7">Install XFCE (Optional)</a></li>
+<li><a href="#sec-6-5-1">Configure Wireless (Dynamic IP Address)</a></li>
+<li><a href="#sec-6-5-2">Configure Static IP Address</a></li>
+<li><a href="#sec-6-5-3">Set Date</a></li>
+<li><a href="#sec-6-5-4">Set Keyboard Locale</a></li>
+<li><a href="#sec-6-5-5">Install Programs</a></li>
+<li><a href="#sec-6-5-6">Configure SSH to start on Boot</a></li>
+<li><a href="#sec-6-5-7">Install XFCE (Optional)</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-6">Serial Communicate with Board with Bluetooth Module Add-On</a>
+<li><a href="#sec-6-6">Configure Serial Communication with Bluetooth Module</a>
 <ul>
-<li><a href="#sec-4-6-1">Communicate to Bluetooth</a></li>
-<li><a href="#sec-4-6-2">Get Serial Over Linux</a></li>
+<li><a href="#sec-6-6-1">Communicate to Bluetooth</a></li>
+<li><a href="#sec-6-6-2">Get Serial Over Linux</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-7">Buildroot - Install ARM Toolchain</a>
+<li><a href="#sec-6-7">Install ARM Toolchain with Buildroot</a>
 <ul>
-<li><a href="#sec-4-7-1">Steps</a></li>
-<li><a href="#sec-4-7-2">Links</a></li>
+<li><a href="#sec-6-7-1">Steps</a></li>
+<li><a href="#sec-6-7-2">Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-8">Configure tslib on Device</a>
+<li><a href="#sec-6-8">Configure tslib on Device</a>
 <ul>
-<li><a href="#sec-4-8-1">Overview</a></li>
-<li><a href="#sec-4-8-2">Steps</a></li>
-<li><a href="#sec-4-8-3">Errors</a></li>
-<li><a href="#sec-4-8-4">Test tslib Input Received from Touchscreen</a></li>
-<li><a href="#sec-4-8-5">Links</a></li>
+<li><a href="#sec-6-8-1">Overview</a></li>
+<li><a href="#sec-6-8-2">Steps</a></li>
+<li><a href="#sec-6-8-3">Errors</a></li>
+<li><a href="#sec-6-8-4">Test tslib Input Received from Touchscreen</a></li>
+<li><a href="#sec-6-8-5">Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-9">Configure QT for Embedded Linux</a>
+<li><a href="#sec-6-9">Configure QT for Embedded Linux</a>
 <ul>
-<li><a href="#sec-4-9-1">Steps</a></li>
-<li><a href="#sec-4-9-2">Links</a></li>
+<li><a href="#sec-6-9-1">Steps</a></li>
+<li><a href="#sec-6-9-2">Links</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-5">Simple Sample Programs</a>
+<li><a href="#sec-7">Simple Sample Programs</a>
 <ul>
-<li><a href="#sec-5-1">Basic Output to LCD Screen</a>
+<li><a href="#sec-7-1">Basic Output to LCD Screen</a>
 <ul>
-<li><a href="#sec-5-1-1">MainWindow.cpp</a></li>
-<li><a href="#sec-5-1-2">MainWindow.h</a></li>
-<li><a href="#sec-5-1-3">moc_mainwindow.cpp</a></li>
-<li><a href="#sec-5-1-4">ui_mainwindow.h</a></li>
-<li><a href="#sec-5-1-5">mainwindow.ui</a></li>
+<li><a href="#sec-7-1-1">MainWindow.cpp</a></li>
+<li><a href="#sec-7-1-2">MainWindow.h</a></li>
+<li><a href="#sec-7-1-3">moc_mainwindow.cpp</a></li>
+<li><a href="#sec-7-1-4">ui_mainwindow.h</a></li>
+<li><a href="#sec-7-1-5">mainwindow.ui</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-2">Build a Button that does Something on Screen</a></li>
-<li><a href="#sec-5-3">Hello World Program</a>
+<li><a href="#sec-7-2">Build a Button that does Something on Screen</a></li>
+<li><a href="#sec-7-3">Hello World Program</a>
 <ul>
-<li><a href="#sec-5-3-1">Source Code</a></li>
+<li><a href="#sec-7-3-1">Source Code</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-4">Toggle A LED (A13-Olimex-Micro)</a>
+<li><a href="#sec-7-4">Toggle A LED (A13-Olimex-Micro)</a>
 <ul>
-<li><a href="#sec-5-4-1">Toggle a LED</a></li>
-</ul></li>
-</ul>
-</li>
-<li><a href="#sec-6">Some Notes</a>
-<ul>
-<li><a href="#sec-6-1">Problem with the A13 Micro: All debian images are built for 512 MB of RAM, 256 is all that is available</a>
-<ul>
-<li><a href="#sec-6-1-1">Research</a></li>
-<li><a href="#sec-6-1-2">Compile Kernal From Source</a></li>
+<li><a href="#sec-7-4-1">Toggle a LED</a></li>
 </ul>
 </li>
 </ul>
@@ -368,496 +358,560 @@ for the JavaScript code in this tag.
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">GNU Free Documentation License</h2>
+<h2 id="sec-1">Overview</h2>
 <div class="outline-text-2" id="text-1">
 
-<p>This documentation is written under the GNU Free Documentation License.
-Source code for this documentation can be found <a href="http://code.google.com/p/embedd-gui/">here</a>.
-</p>
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">A note from the Author</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>This documentation is written under the <a href="#sec-2">GNU Free Documentation License</a>. Source code for this documentation can be found <a href="http://code.google.com/p/embedd-gui/">here</a>. The Project page can be found <a href="http://rcos.rpi.edu/projects/embedd-gui/">here</a>. This project would not be possible without funding from the <a href="http://rcos.rpi.edu/">Rensselaer Center for Open Source</a>.
+</p><ul>
+<li>I would like to extend a special thanks to:
 <ul>
-<li>Nick Guthrie
+<li><a href="http://rcos.rpi.edu/donor/">Sean O' Sullivan</a>
+</li>
+<li><a href="http://www.cs.rpi.edu/~goldsd/index.php">Professor Goldschmidt, Ph.D</a>
+</li>
+<li><a href="http://www.cs.rpi.edu/~moorthy/">Professor Krishnamoorthy, Ph.D</a>
+</li>
+<li>RCOS Members for their continued support
+</li>
+</ul>
+
 </li>
 </ul>
 
 
-
-
-
-
-<pre class="example">                GNU Free Documentation License
-                 Version 1.3, 3 November 2008
-
- Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
-     &lt;http://fsf.org/&gt;
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
-
-0. PREAMBLE
-
-The purpose of this License is to make a manual, textbook, or other
-functional and useful document "free" in the sense of freedom: to
-assure everyone the effective freedom to copy and redistribute it,
-with or without modifying it, either commercially or noncommercially.
-Secondarily, this License preserves for the author and publisher a way
-to get credit for their work, while not being considered responsible
-for modifications made by others.
-
-This License is a kind of "copyleft", which means that derivative
-works of the document must themselves be free in the same sense.  It
-complements the GNU General Public License, which is a copyleft
-license designed for free software.
-
-We have designed this License in order to use it for manuals for free
-software, because free software needs free documentation: a free
-program should come with manuals providing the same freedoms that the
-software does.  But this License is not limited to software manuals;
-it can be used for any textual work, regardless of subject matter or
-whether it is published as a printed book.  We recommend this License
-principally for works whose purpose is instruction or reference.
-
-
-1. APPLICABILITY AND DEFINITIONS
-
-This License applies to any manual or other work, in any medium, that
-contains a notice placed by the copyright holder saying it can be
-distributed under the terms of this License.  Such a notice grants a
-world-wide, royalty-free license, unlimited in duration, to use that
-work under the conditions stated herein.  The "Document", below,
-refers to any such manual or work.  Any member of the public is a
-licensee, and is addressed as "you".  You accept the license if you
-copy, modify or distribute the work in a way requiring permission
-under copyright law.
-
-A "Modified Version" of the Document means any work containing the
-Document or a portion of it, either copied verbatim, or with
-modifications and/or translated into another language.
-
-A "Secondary Section" is a named appendix or a front-matter section of
-the Document that deals exclusively with the relationship of the
-publishers or authors of the Document to the Document's overall
-subject (or to related matters) and contains nothing that could fall
-directly within that overall subject.  (Thus, if the Document is in
-part a textbook of mathematics, a Secondary Section may not explain
-any mathematics.)  The relationship could be a matter of historical
-connection with the subject or with related matters, or of legal,
-commercial, philosophical, ethical or political position regarding
-them.
-
-The "Invariant Sections" are certain Secondary Sections whose titles
-are designated, as being those of Invariant Sections, in the notice
-that says that the Document is released under this License.  If a
-section does not fit the above definition of Secondary then it is not
-allowed to be designated as Invariant.  The Document may contain zero
-Invariant Sections.  If the Document does not identify any Invariant
-Sections then there are none.
-
-The "Cover Texts" are certain short passages of text that are listed,
-as Front-Cover Texts or Back-Cover Texts, in the notice that says that
-the Document is released under this License.  A Front-Cover Text may
-be at most 5 words, and a Back-Cover Text may be at most 25 words.
-
-A "Transparent" copy of the Document means a machine-readable copy,
-represented in a format whose specification is available to the
-general public, that is suitable for revising the document
-straightforwardly with generic text editors or (for images composed of
-pixels) generic paint programs or (for drawings) some widely available
-drawing editor, and that is suitable for input to text formatters or
-for automatic translation to a variety of formats suitable for input
-to text formatters.  A copy made in an otherwise Transparent file
-format whose markup, or absence of markup, has been arranged to thwart
-or discourage subsequent modification by readers is not Transparent.
-An image format is not Transparent if used for any substantial amount
-of text.  A copy that is not "Transparent" is called "Opaque".
-
-Examples of suitable formats for Transparent copies include plain
-ASCII without markup, Texinfo input format, LaTeX input format, SGML
-or XML using a publicly available DTD, and standard-conforming simple
-HTML, PostScript or PDF designed for human modification.  Examples of
-transparent image formats include PNG, XCF and JPG.  Opaque formats
-include proprietary formats that can be read and edited only by
-proprietary word processors, SGML or XML for which the DTD and/or
-processing tools are not generally available, and the
-machine-generated HTML, PostScript or PDF produced by some word
-processors for output purposes only.
-
-The "Title Page" means, for a printed book, the title page itself,
-plus such following pages as are needed to hold, legibly, the material
-this License requires to appear in the title page.  For works in
-formats which do not have any title page as such, "Title Page" means
-the text near the most prominent appearance of the work's title,
-preceding the beginning of the body of the text.
-
-The "publisher" means any person or entity that distributes copies of
-the Document to the public.
-
-A section "Entitled XYZ" means a named subunit of the Document whose
-title either is precisely XYZ or contains XYZ in parentheses following
-text that translates XYZ in another language.  (Here XYZ stands for a
-specific section name mentioned below, such as "Acknowledgements",
-"Dedications", "Endorsements", or "History".)  To "Preserve the Title"
-of such a section when you modify the Document means that it remains a
-section "Entitled XYZ" according to this definition.
-
-The Document may include Warranty Disclaimers next to the notice which
-states that this License applies to the Document.  These Warranty
-Disclaimers are considered to be included by reference in this
-License, but only as regards disclaiming warranties: any other
-implication that these Warranty Disclaimers may have is void and has
-no effect on the meaning of this License.
-
-2. VERBATIM COPYING
-
-You may copy and distribute the Document in any medium, either
-commercially or noncommercially, provided that this License, the
-copyright notices, and the license notice saying this License applies
-to the Document are reproduced in all copies, and that you add no
-other conditions whatsoever to those of this License.  You may not use
-technical measures to obstruct or control the reading or further
-copying of the copies you make or distribute.  However, you may accept
-compensation in exchange for copies.  If you distribute a large enough
-number of copies you must also follow the conditions in section 3.
-
-You may also lend copies, under the same conditions stated above, and
-you may publicly display copies.
-
-
-3. COPYING IN QUANTITY
-
-If you publish printed copies (or copies in media that commonly have
-printed covers) of the Document, numbering more than 100, and the
-Document's license notice requires Cover Texts, you must enclose the
-copies in covers that carry, clearly and legibly, all these Cover
-Texts: Front-Cover Texts on the front cover, and Back-Cover Texts on
-the back cover.  Both covers must also clearly and legibly identify
-you as the publisher of these copies.  The front cover must present
-the full title with all words of the title equally prominent and
-visible.  You may add other material on the covers in addition.
-Copying with changes limited to the covers, as long as they preserve
-the title of the Document and satisfy these conditions, can be treated
-as verbatim copying in other respects.
-
-If the required texts for either cover are too voluminous to fit
-legibly, you should put the first ones listed (as many as fit
-reasonably) on the actual cover, and continue the rest onto adjacent
-pages.
-
-If you publish or distribute Opaque copies of the Document numbering
-more than 100, you must either include a machine-readable Transparent
-copy along with each Opaque copy, or state in or with each Opaque copy
-a computer-network location from which the general network-using
-public has access to download using public-standard network protocols
-a complete Transparent copy of the Document, free of added material.
-If you use the latter option, you must take reasonably prudent steps,
-when you begin distribution of Opaque copies in quantity, to ensure
-that this Transparent copy will remain thus accessible at the stated
-location until at least one year after the last time you distribute an
-Opaque copy (directly or through your agents or retailers) of that
-edition to the public.
-
-It is requested, but not required, that you contact the authors of the
-Document well before redistributing any large number of copies, to
-give them a chance to provide you with an updated version of the
-Document.
-
-
-4. MODIFICATIONS
-
-You may copy and distribute a Modified Version of the Document under
-the conditions of sections 2 and 3 above, provided that you release
-the Modified Version under precisely this License, with the Modified
-Version filling the role of the Document, thus licensing distribution
-and modification of the Modified Version to whoever possesses a copy
-of it.  In addition, you must do these things in the Modified Version:
-
-A. Use in the Title Page (and on the covers, if any) a title distinct
-   from that of the Document, and from those of previous versions
-   (which should, if there were any, be listed in the History section
-   of the Document).  You may use the same title as a previous version
-   if the original publisher of that version gives permission.
-B. List on the Title Page, as authors, one or more persons or entities
-   responsible for authorship of the modifications in the Modified
-   Version, together with at least five of the principal authors of the
-   Document (all of its principal authors, if it has fewer than five),
-   unless they release you from this requirement.
-C. State on the Title page the name of the publisher of the
-   Modified Version, as the publisher.
-D. Preserve all the copyright notices of the Document.
-E. Add an appropriate copyright notice for your modifications
-   adjacent to the other copyright notices.
-F. Include, immediately after the copyright notices, a license notice
-   giving the public permission to use the Modified Version under the
-   terms of this License, in the form shown in the Addendum below.
-G. Preserve in that license notice the full lists of Invariant Sections
-   and required Cover Texts given in the Document's license notice.
-H. Include an unaltered copy of this License.
-I. Preserve the section Entitled "History", Preserve its Title, and add
-   to it an item stating at least the title, year, new authors, and
-   publisher of the Modified Version as given on the Title Page.  If
-   there is no section Entitled "History" in the Document, create one
-   stating the title, year, authors, and publisher of the Document as
-   given on its Title Page, then add an item describing the Modified
-   Version as stated in the previous sentence.
-J. Preserve the network location, if any, given in the Document for
-   public access to a Transparent copy of the Document, and likewise
-   the network locations given in the Document for previous versions
-   it was based on.  These may be placed in the "History" section.
-   You may omit a network location for a work that was published at
-   least four years before the Document itself, or if the original
-   publisher of the version it refers to gives permission.
-K. For any section Entitled "Acknowledgements" or "Dedications",
-   Preserve the Title of the section, and preserve in the section all
-   the substance and tone of each of the contributor acknowledgements
-   and/or dedications given therein.
-L. Preserve all the Invariant Sections of the Document,
-   unaltered in their text and in their titles.  Section numbers
-   or the equivalent are not considered part of the section titles.
-M. Delete any section Entitled "Endorsements".  Such a section
-   may not be included in the Modified Version.
-N. Do not retitle any existing section to be Entitled "Endorsements"
-   or to conflict in title with any Invariant Section.
-O. Preserve any Warranty Disclaimers.
-
-If the Modified Version includes new front-matter sections or
-appendices that qualify as Secondary Sections and contain no material
-copied from the Document, you may at your option designate some or all
-of these sections as invariant.  To do this, add their titles to the
-list of Invariant Sections in the Modified Version's license notice.
-These titles must be distinct from any other section titles.
-
-You may add a section Entitled "Endorsements", provided it contains
-nothing but endorsements of your Modified Version by various
-parties--for example, statements of peer review or that the text has
-been approved by an organization as the authoritative definition of a
-standard.
-
-You may add a passage of up to five words as a Front-Cover Text, and a
-passage of up to 25 words as a Back-Cover Text, to the end of the list
-of Cover Texts in the Modified Version.  Only one passage of
-Front-Cover Text and one of Back-Cover Text may be added by (or
-through arrangements made by) any one entity.  If the Document already
-includes a cover text for the same cover, previously added by you or
-by arrangement made by the same entity you are acting on behalf of,
-you may not add another; but you may replace the old one, on explicit
-permission from the previous publisher that added the old one.
-
-The author(s) and publisher(s) of the Document do not by this License
-give permission to use their names for publicity for or to assert or
-imply endorsement of any Modified Version.
-
-
-5. COMBINING DOCUMENTS
-
-You may combine the Document with other documents released under this
-License, under the terms defined in section 4 above for modified
-versions, provided that you include in the combination all of the
-Invariant Sections of all of the original documents, unmodified, and
-list them all as Invariant Sections of your combined work in its
-license notice, and that you preserve all their Warranty Disclaimers.
-
-The combined work need only contain one copy of this License, and
-multiple identical Invariant Sections may be replaced with a single
-copy.  If there are multiple Invariant Sections with the same name but
-different contents, make the title of each such section unique by
-adding at the end of it, in parentheses, the name of the original
-author or publisher of that section if known, or else a unique number.
-Make the same adjustment to the section titles in the list of
-Invariant Sections in the license notice of the combined work.
-
-In the combination, you must combine any sections Entitled "History"
-in the various original documents, forming one section Entitled
-"History"; likewise combine any sections Entitled "Acknowledgements",
-and any sections Entitled "Dedications".  You must delete all sections
-Entitled "Endorsements".
-
-
-6. COLLECTIONS OF DOCUMENTS
-
-You may make a collection consisting of the Document and other
-documents released under this License, and replace the individual
-copies of this License in the various documents with a single copy
-that is included in the collection, provided that you follow the rules
-of this License for verbatim copying of each of the documents in all
-other respects.
-
-You may extract a single document from such a collection, and
-distribute it individually under this License, provided you insert a
-copy of this License into the extracted document, and follow this
-License in all other respects regarding verbatim copying of that
-document.
-
-
-7. AGGREGATION WITH INDEPENDENT WORKS
-
-A compilation of the Document or its derivatives with other separate
-and independent documents or works, in or on a volume of a storage or
-distribution medium, is called an "aggregate" if the copyright
-resulting from the compilation is not used to limit the legal rights
-of the compilation's users beyond what the individual works permit.
-When the Document is included in an aggregate, this License does not
-apply to the other works in the aggregate which are not themselves
-derivative works of the Document.
-
-If the Cover Text requirement of section 3 is applicable to these
-copies of the Document, then if the Document is less than one half of
-the entire aggregate, the Document's Cover Texts may be placed on
-covers that bracket the Document within the aggregate, or the
-electronic equivalent of covers if the Document is in electronic form.
-Otherwise they must appear on printed covers that bracket the whole
-aggregate.
-
-
-8. TRANSLATION
-
-Translation is considered a kind of modification, so you may
-distribute translations of the Document under the terms of section 4.
-Replacing Invariant Sections with translations requires special
-permission from their copyright holders, but you may include
-translations of some or all Invariant Sections in addition to the
-original versions of these Invariant Sections.  You may include a
-translation of this License, and all the license notices in the
-Document, and any Warranty Disclaimers, provided that you also include
-the original English version of this License and the original versions
-of those notices and disclaimers.  In case of a disagreement between
-the translation and the original version of this License or a notice
-or disclaimer, the original version will prevail.
-
-If a section in the Document is Entitled "Acknowledgements",
-"Dedications", or "History", the requirement (section 4) to Preserve
-its Title (section 1) will typically require changing the actual
-title.
-
-
-9. TERMINATION
-
-You may not copy, modify, sublicense, or distribute the Document
-except as expressly provided under this License.  Any attempt
-otherwise to copy, modify, sublicense, or distribute it is void, and
-will automatically terminate your rights under this License.
-
-However, if you cease all violation of this License, then your license
-from a particular copyright holder is reinstated (a) provisionally,
-unless and until the copyright holder explicitly and finally
-terminates your license, and (b) permanently, if the copyright holder
-fails to notify you of the violation by some reasonable means prior to
-60 days after the cessation.
-
-Moreover, your license from a particular copyright holder is
-reinstated permanently if the copyright holder notifies you of the
-violation by some reasonable means, this is the first time you have
-received notice of violation of this License (for any work) from that
-copyright holder, and you cure the violation prior to 30 days after
-your receipt of the notice.
-
-Termination of your rights under this section does not terminate the
-licenses of parties who have received copies or rights from you under
-this License.  If your rights have been terminated and not permanently
-reinstated, receipt of a copy of some or all of the same material does
-not give you any rights to use it.
-
-
-10. FUTURE REVISIONS OF THIS LICENSE
-
-The Free Software Foundation may publish new, revised versions of the
-GNU Free Documentation License from time to time.  Such new versions
-will be similar in spirit to the present version, but may differ in
-detail to address new problems or concerns.  See
-http://www.gnu.org/copyleft/.
-
-Each version of the License is given a distinguishing version number.
-If the Document specifies that a particular numbered version of this
-License "or any later version" applies to it, you have the option of
-following the terms and conditions either of that specified version or
-of any later version that has been published (not as a draft) by the
-Free Software Foundation.  If the Document does not specify a version
-number of this License, you may choose any version ever published (not
-as a draft) by the Free Software Foundation.  If the Document
-specifies that a proxy can decide which future versions of this
-License can be used, that proxy's public statement of acceptance of a
-version permanently authorizes you to choose that version for the
-Document.
-
-11. RELICENSING
-
-"Massive Multiauthor Collaboration Site" (or "MMC Site") means any
-World Wide Web server that publishes copyrightable works and also
-provides prominent facilities for anybody to edit those works.  A
-public wiki that anybody can edit is an example of such a server.  A
-"Massive Multiauthor Collaboration" (or "MMC") contained in the site
-means any set of copyrightable works thus published on the MMC site.
-
-"CC-BY-SA" means the Creative Commons Attribution-Share Alike 3.0
-license published by Creative Commons Corporation, a not-for-profit
-corporation with a principal place of business in San Francisco,
-California, as well as future copyleft versions of that license
-published by that same organization.
-
-"Incorporate" means to publish or republish a Document, in whole or in
-part, as part of another Document.
-
-An MMC is "eligible for relicensing" if it is licensed under this
-License, and if all works that were first published under this License
-somewhere other than this MMC, and subsequently incorporated in whole or
-in part into the MMC, (1) had no cover texts or invariant sections, and
-(2) were thus incorporated prior to November 1, 2008.
-
-The operator of an MMC Site may republish an MMC contained in the site
-under CC-BY-SA on the same site at any time before August 1, 2009,
-provided the MMC is eligible for relicensing.
-
-
-ADDENDUM: How to use this License for your documents
-
-To use this License in a document you have written, include a copy of
-the License in the document and put the following copyright and
-license notices just after the title page:
-
-    Copyright (c)  YEAR  YOUR NAME.
-    Permission is granted to copy, distribute and/or modify this document
-    under the terms of the GNU Free Documentation License, Version 1.3
-    or any later version published by the Free Software Foundation;
-    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-    A copy of the license is included in the section entitled "GNU
-    Free Documentation License".
-
-If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
-replace the "with...Texts." line with this:
-
-    with the Invariant Sections being LIST THEIR TITLES, with the
-    Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
-
-If you have Invariant Sections without Cover Texts, or some other
-combination of the three, merge those two alternatives to suit the
-situation.
-
-If your document contains nontrivial examples of program code, we
-recommend releasing these examples in parallel under your choice of
-free software license, such as the GNU General Public License,
-to permit their use in free software.
-</pre>
-
+<p>
+Happy Hacking! :)
+</p>
+<p>
+Nick Guthrie
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">Primary Objective</h3>
+<div class="outline-text-3" id="text-1-2">
+
+<ul>
+<li>The goal of this project is to give users the ability to install Qt Embedded on an open source hardware system to allow for cheap, fast prototyping of graphical user interfaces.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">Background</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>We live in a world surrounded by computers - from our (arguably excessive) coffee  machines to our cell phones and cars, microcomputers play an integral role in our everyday lives. With the cost of electronics rapidly decreasing, and touchscreens becoming commonplace even on low cost consumer products, a unique need has arisen for a unified way of creating user interfaces on embedded devices.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">Why we need it</h3>
+<div class="outline-text-3" id="text-1-4">
+
+<p>It is easy for small companies and hobbyists to prototype microcontroller based products, such as environmental sensors and other equipment. However, user interface design is generally left at basic pushbuttons and potentiometers, with at most a simple text display on a serial LCD. The barrier to entry into high end touchscreen interfaces is high: it often involves more development/work than the device itself, and there exist few unified solutions for multi-processor and display targeted builds. The few solutions that do exist are prohibitively expensive: For example, a license of Segger EmWin costs $12,300&hellip; per target architecture/CPU! Embedd GUI aims to be a “drop in” interface for embedded developers to rapidly incorporate touchscreens into projects.
+</p></div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5">How/Technologies - Qt Embedded</h3>
+<div class="outline-text-3" id="text-1-5">
+
+<p><img src="./img/qt-embedded-linux-architecture.png"  alt="./img/qt-embedded-linux-architecture.png" />
+</p><ul>
+<li>"Qt for Embedded Linux is a C++ framework for GUI and application development for embedded devices."
+</li>
+<li>"Qt for Embedded Linux applications write directly to the framebuffer, eliminating the need for the X Window System and saving memory."
+</li>
+<li>Qt Embedded allows us to run graphical interfaces without the heavy weight of running an entire graphical desktop.
+</li>
+<li>Features
+<ul>
+<li>Pointer Handling
+</li>
+<li>Character Input
+</li>
+<li>Display Management
+</li>
+<li>Hardware Accelerated Graphics
+</li>
+<li>Fonts
+</li>
+</ul>
+
+</li>
+<li>Links
+<ul>
+<li><a href="http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html">http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html</a>
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
 </div>
 
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">Hardware</h2>
+<h2 id="sec-2">GNU Free Documentation License</h2>
 <div class="outline-text-2" id="text-2">
 
+<p>CANNOT INCLUDE FILE ./license.txt
+</p></div>
 
 </div>
 
-<div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1">A13-OLinuXino-MICRO (No Touchscreen Support)</h3>
-<div class="outline-text-3" id="text-2-1">
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">RCOS Presentations and Multimedia</h2>
+<div class="outline-text-2" id="text-3">
+
+
+</div>
+
+<div id="outline-container-3-1" class="outline-3">
+<h3 id="sec-3-1">RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI</h3>
+<div class="outline-text-3" id="text-3-1">
+
+<ul>
+<li><a href="http://youtu.be/aGBMwWWGzmk">Video</a>
+</li>
+<li><a href="./doc/OSSEG2.pdf">Presentation Slides</a>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-3-2" class="outline-3">
+<h3 id="sec-3-2">RCOS Summer 2013 - Initial Presentation</h3>
+<div class="outline-text-3" id="text-3-2">
+
+<ul>
+<li><a href="./doc/OSSEG1.pdf">Presentation Slides</a>
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4" class="outline-2">
+<h2 id="sec-4">Hardware</h2>
+<div class="outline-text-2" id="text-4">
+
+
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1">Actual</h3>
+<div class="outline-text-3" id="text-4-1">
+
+
+</div>
+
+<div id="outline-container-4-1-1" class="outline-4">
+<h4 id="sec-4-1-1">A13-OlinuXino</h4>
+<div class="outline-text-4" id="text-4-1-1">
+
+<p><img src="./img/A13-OLinuXino-01.png"  alt="./img/A13-OLinuXino-01.png" />
+</p><ul>
+<li id="sec-4-1-1-1">Overview<br/>
+A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-ITX form. It uses the very first Cortex A8 processor available in eLQFP176 package, produced by Allwinner Technology Inc A13.
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-1-2">Features<br/>
+<ul>
+<li>A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
+</li>
+<li>512 MB RAM (2 x 256Mbit x 8)
+</li>
+<li>6-16VDC input power supply, noise immune design
+</li>
+<li>3 + 1 USB hosts, 3 available for users, 1 leads to onboard pinout
+</li>
+<li>1 USB OTG which can power the board
+</li>
+<li>SD-card connector for booting optional Linux image
+</li>
+<li>VGA video output
+</li>
+<li>Battery option and connector
+</li>
+<li>LCD signals available on connector so you still can use LCD if you diasble VGA/HDMI
+</li>
+<li>Microphone input
+</li>
+<li>4 Mount holes
+</li>
+<li>RTC PCF8536 on board for real time clock and alarms
+</li>
+<li>5 Keys on board for android navigation
+</li>
+<li>UEXT connectorfor connecting addtional UEXT modules like Zigbee, Bluetooth, Relays, etc
+</li>
+<li>GPIO connector with 68/74 pins and these signals:
+</li>
+<li>17 for adding NAND flash;
+</li>
+<li>22 for connecting LCDs;
+</li>
+<li>20+4 including 8 GPIOs which can be input, output, interrupt sources;
+</li>
+<li>3x I2C;
+</li>
+<li>2x UARTs;
+</li>
+<li>SDIO2 for connectinf SDcards and modules;
+</li>
+<li>5 system pins: +5V, +3.3V, GND, RESET, NMI
+</li>
+<li>Dimensions: 120 x 120 mm (4.7x4.7'')
+</li>
+<li>Optional low-cost 7" LCD with touchscreen
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-1-3">Links<br/>
+<ul>
+<li id="sec-4-1-1-3-1">Retailers<br/>
+<ul>
+<li><a href="https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/">Olimex</a>
+</li>
+<li><a href="http://microcontrollershop.com/product_info.php?products_id=5412">microcontrollershop.com</a>
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-1-3-2">Datasheets<br/>
+<ul>
+<li><a href="https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-OLINUXINO.pdf">User Manual</a>
+</li>
+<li><a href="https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-Brief.pdf">A13-processor brief and datasheet</a>
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-1-3-3">Hardware<br/>
+<ul>
+<li><a href="https://github.com/OLIMEX/OLINUXINO">GitHub OLINUXINO Project</a>
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-1-3-4">Software<br/>
+<ul>
+<li><a href="https://github.com/OLIMEX/OLINUXINO">GitHub OLINUXINO Project</a>
+</li>
+<li><a href="http://linux-sunxi.org/">A1x Linux</a>
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-1-3-5">Community<br/>
+<ul>
+<li><a href="https://www.olimex.com/forum">OLinuXino forum</a> for discussion and community support
+</li>
+<li><a href="http://webchat.freenode.net/?channels=olimex">Freenode #olimex irc channel</a> for OLinuXino development discussions
+</li>
+</ul>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4-1-2" class="outline-4">
+<h4 id="sec-4-1-2">USB Wireless LAN Module</h4>
+<div class="outline-text-4" id="text-4-1-2">
+
+<p><img src="./img/modwifirtl8188.png"  alt="./img/modwifirtl8188.png" />
+</p><ul>
+<li id="sec-4-1-2-1">Overview<br/>
+<ul>
+<li>The MOD-WIFI-RTL8188 is a USB WiFi module that is supported by the <a href="http://microcontrollershop.com/product_info.php?products_id=5412&amp;osCsid=e1d38e51b568a17c2fe8bc8c2679dcda">A13-OLinuXino</a> and <a href="http://microcontrollershop.com/product_info.php?products_id=5414&amp;osCsid=e1d38e51b568a17c2fe8bc8c2679dcda">A13-OLinuXino-MICRO</a> boards.
+</li>
+<li>It uses the same WiFi board that comes as standard on the <a href="http://microcontrollershop.com/product_info.php?products_id=5314&amp;osCsid=e1d38e51b568a17c2fe8bc8c2679dcda">A13-OLinuXino-WIFI</a>.
+</li>
+<li>The WM-294 WiFi board on this module contains the popular RealTek RTL8188CUS single-chip Wireless LAN adapter. There are drivers available for Windows, Linux/Android and Mac, so you aren't limited only to using this module on an A13-OLinuXino board.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-2-2">Features<br/>
+<ul>
+<li>Has WM-294 module with RTL8188CUS, IEEE 802.11b/g/n
+</li>
+<li>Operates in 2.4 GHz frequency bands
+</li>
+<li>1x1 MIMO technology improves effective throughput and range over existing 802.11 b/g products
+</li>
+<li>Data rates up to 150Mbps
+</li>
+<li>802.11e-compatible bursting and i standards
+</li>
+<li>BPSK, QPSK, 16 QAM, 64 QAM modulation schemes
+</li>
+<li>WEP, TKIP, AES, WPA, and WPA2 hardware encryption schemes
+</li>
+<li>Standard USB type A connector
+</li>
+<li>On-board antenna
+</li>
+<li>5V/3.3V operation modes via SMD jumper (5V by default)
+</li>
+<li>4 test pads for easy tracking of the supply, d-, d+, and GND
+</li>
+<li>PCB: FR-4, 1.00 mm (0.039"), solder mask, silkscreen component print
+</li>
+<li>Dimensions: 65.15 × 20.38 mm (2.56 × 0.80")
+</li>
+</ul>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-2-3">Links<br/>
+<ul>
+<li id="sec-4-1-2-3-1">Retailers<br/>
+<ul>
+<li><a href="http://microcontrollershop.com/product_info.php?products_id=5555">MicroControllerShop.com</a>
+</li>
+<li><a href="https://www.olimex.com/Products/Modules/Ethernet/MOD-WIFI-RTL8188/">Olimex</a>
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-2-3-2">Datasheets<br/>
+<ul>
+<li><a href="./doc/module_WM294_spec.pdf">CC&amp;C Technologies WM-294 Datasheet</a>
+</li>
+<li><a href="#MOD-WiFi_RTL8188.pdf">MOD-WIFI-RTL8188 Schematic</a>
+</li>
+</ul>
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4-1-3" class="outline-4">
+<h4 id="sec-4-1-3">4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen</h4>
+<div class="outline-text-4" id="text-4-1-3">
+
+<p><img src="./img/a13lcd43ts_front.png"  alt="./img/a13lcd43ts_front.png" />     <img src="./img/a13lcd43ts_back.png"  alt="./img/a13lcd43ts_back.png" />
+</p><ul>
+<li id="sec-4-1-3-1">Overview<br/>
+<ul>
+<li>This is a 4.3-inch LCD with a resistive touch screen and an interface board that has been tested to work with A13 OLinuXino boards.
+</li>
+<li>It connects to your A13 OLinuXino board by a 2×20-pin connector.
+</li>
+<li>The display board and the OLinuXino board both have male box headers, so you will need a 40-pin IDC ribbon cable which is sold separately.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-3-2">Features<br/>
+<ul>
+<li id="sec-4-1-3-2-1">TFT Panel<br/>
+<ul>
+<li>Bo Lymin BT043DCNNHHp$ 4.3-inch (480×272) a-Si color TFT-LCD with white LED / CCFL backlight
+</li>
+<li>262K colors
+</li>
+<li>Anti-glare surface
+</li>
+<li>Resistive touchscreen panel
+</li>
+<li>40-pin connector for connection to A13-OLinuXino boards
+</li>
+<li>3.3V single power input with built-in power supply circuit
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-3-2-2">LCD Controller<br/>
+<ul>
+<li>MCU interface: 8/9/16/18-bit 80/68 series MCU interface
+</li>
+<li>Display RAM size: 640×240×3×6 bits, e.g. 320×240 two-frame buffer with 262K colors
+</li>
+<li>Arbitrary display memory start position selection
+</li>
+<li>8-bit / 16-bit interface: supports 65K (R5G6B5) / 262K (R6G6B6) color data format
+</li>
+<li>9-bit / 18-bit interface: supports 262K (R6G6B6) color data format
+</li>
+</ul>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-3-3">Interface Board View<br/>
+<ul>
+<li>Note: The A13-OLinuXino boards come with an Android image set up for using a VGA display.
+</li>
+<li>To use this LCD, you'll need to upload a new image with the appropriate settings.
+</li>
+<li>A ready-made image (as well as the default VGA image so you can switch back) is available on the A13 OLinuXino Wiki Page (they are intended for 7-inch displays, so be sure also to get the <a href="https://docs.google.com/file/d/0B-bAEPML8fwlcHFOcUxtQ1N5RDQ/edit">A13-LCD43 script</a>, which adjusts the resolution for this display size).
+</li>
+</ul>
+
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-3-4">Links<br/>
+<ul>
+<li id="sec-4-1-3-4-1">Retailers<br/>
+<ul>
+<li><a href="http://microcontrollershop.com/product_info.php?products_id=5557">microcontrollershop.com</a>
+</li>
+<li><a href="https://www.olimex.com/Products/OLinuXino/A13/A13-LCD43TS/">Olimex</a>
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-3-4-2">Datasheets<br/>
+<ul>
+<li><a href="http://microcontrollershop.com/download/BT043DCN.pdf?osCsid=2fe0acf3ed565f2850d0f350a0b3647d">Download Datasheet</a>
+</li>
+<li><a href="http://microcontrollershop.com/download/A13-LCD4_3.pdf?osCsid=2fe0acf3ed565f2850d0f350a0b3647d">Download Schematic</a>
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-3-4-3">Demonstrations<br/>
+<ul>
+<li><a href="http://microcontrollershop.com/redirect.php?action=url&amp;goto=http://www.youtube.com/watch?v=d2lFHBMhQ64&amp;osCsid=2fe0acf3ed565f2850d0f350a0b3647d">Video of the Multitouch Feature</a>
+</li>
+</ul>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-4-1-4" class="outline-4">
+<h4 id="sec-4-1-4">JY-MCU Bluetooth Board V1.02</h4>
+<div class="outline-text-4" id="text-4-1-4">
+
+<p><img src="./img/jy-mcu_bt_board_v102.jpg"  alt="./img/jy-mcu_bt_board_v102.jpg" />
+</p><ul>
+<li id="sec-4-1-4-1">Specifications<br/>
+<img src="./img/jy-mcu_bt_board_v102_specs.jpg"  alt="./img/jy-mcu_bt_board_v102_specs.jpg" />
+<ul>
+<li>This shield have extract the VCC、GND、TXD、RXD of the bluetooth.
+<ul>
+<li>(TXD、RXD are both 3.3V)
+</li>
+</ul>
+
+</li>
+<li>This shield has LED indication light.
+</li>
+<li>Input Voltage ： 3.3V-6V
+</li>
+<li>Size : 15.5mm*39.8mm
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-4-1-4-2">Features<br/>
+<ul>
+<li>This module power supply input is 3.6 ~ 6V, please be careful that it should be not more than 7V.
+</li>
+<li>compatible with master mode、slave mode and both master-slave mode
+</li>
+<li>This module include key interface and state interface compared with Smart Bluetooth Module Baseboard.
+</li>
+<li>The key interface on the baseboard is the master mode button and can be controlled by high level from external MCU, then this module will search again automatically.
+</li>
+<li>The STATE interface on the baseboard is interface for LED STATE output feet, when bluetooth module don't not connected with other device and then output pulse, when bluetooth module connected with other device and then output high level, and the MCU will judge the state, then this module will search again automatically.
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">Testing</h3>
+<div class="outline-text-3" id="text-4-2">
+
+
+</div>
+
+<div id="outline-container-4-2-1" class="outline-4">
+<h4 id="sec-4-2-1">A13-OLinuXino-MICRO (No Touchscreen Support)</h4>
+<div class="outline-text-4" id="text-4-2-1">
 
 <p><img src="./img/A13-OLinuXino-MICRO-2.png"  alt="./img/A13-OLinuXino-MICRO-2.png" />
-</p>
-</div>
-
-<div id="outline-container-2-1-1" class="outline-4">
-<h4 id="sec-2-1-1">Features</h4>
-<div class="outline-text-4" id="text-2-1-1">
-
+</p><ul>
+<li id="sec-4-2-1-1">Features<br/>
 <ul>
 <li>A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
 </li>
@@ -911,16 +965,12 @@ to permit their use in free software.
 </ul>
 
 
-</div>
-
-</div>
-
-<div id="outline-container-2-1-2" class="outline-4">
-<h4 id="sec-2-1-2">FAQ</h4>
-<div class="outline-text-4" id="text-2-1-2">
-
+</li>
+</ul>
 <ul>
-<li id="sec-2-1-2-1">There is only 1 USB host on the board, how can I connect simultaneously my USB mouse and USB keyboard?<br/>
+<li id="sec-4-2-1-2">FAQ<br/>
+<ul>
+<li id="sec-4-2-1-2-1">There is only 1 USB host on the board, how can I connect simultaneously my USB mouse and USB keyboard?<br/>
 <ul>
 <li>You should use external USB hub.
 </li>
@@ -929,7 +979,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-2-1-2-2">What software is available for the board?<br/>
+<li id="sec-4-2-1-2-2">What software is available for the board?<br/>
 <ul>
 <li>The software development changes very rapidly. So far we have reports for number of Linux distributions working properly with the MICRO, please visit the WIKI and the GitHub     pages of A13-OLinuXino-MICRO to find suitable distributions;additionally you might want to check on the forum for additional help
 </li>
@@ -938,7 +988,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-2-1-2-3">I bought A13-LCD7-TS but when I connect it to the A13-OLinuXino-MICRO I receive no image on the display. What do I do wrong?<br/>
+<li id="sec-4-2-1-2-3">I bought A13-LCD7-TS but when I connect it to the A13-OLinuXino-MICRO I receive no image on the display. What do I do wrong?<br/>
 <ul>
 <li>The default A13-OLinuXino-MICRO image is set for a VGA display and resolution. To use LCD with A13-OLinuXino-MICRO you need to upload new image with the appropriate settings.
 </li>
@@ -949,7 +999,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-2-1-2-4">What is the operating temperature range of A13-OLinuXino?<br/>
+<li id="sec-4-2-1-2-4">What is the operating temperature range of A13-OLinuXino?<br/>
 <ul>
 <li>The board works in the commercial temeprature range 0+70C
 </li>
@@ -958,7 +1008,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-2-1-2-5">Where can I find the Android image for the A13-OLinuXino-MICRO?<br/>
+<li id="sec-4-2-1-2-5">Where can I find the Android image for the A13-OLinuXino-MICRO?<br/>
 <ul>
 <li>At the moment we haven't tested Android booting from SD card. Android from SD card is currently not officially supported. However note that there are people reporting success getting it to run - head to the Olimex forums for more recent info.
 </li>
@@ -966,14 +1016,10 @@ to permit their use in free software.
 
 </li>
 </ul>
-</div>
-
-</div>
-
-<div id="outline-container-2-1-3" class="outline-4">
-<h4 id="sec-2-1-3">Documentation</h4>
-<div class="outline-text-4" id="text-2-1-3">
-
+</li>
+</ul>
+<ul>
+<li id="sec-4-2-1-3">Documentation<br/>
 <ul>
 <li><a href="./doc/A13-OLINUXINO-MICRO.pdf">A13-OLinuXino-MICRO User Manual</a>
 </li>
@@ -982,16 +1028,12 @@ to permit their use in free software.
 </ul>
 
 
-</div>
-
-</div>
-
-<div id="outline-container-2-1-4" class="outline-4">
-<h4 id="sec-2-1-4">Links</h4>
-<div class="outline-text-4" id="text-2-1-4">
-
+</li>
+</ul>
 <ul>
-<li id="sec-2-1-4-1">General<br/>
+<li id="sec-4-2-1-4">Links<br/>
+<ul>
+<li id="sec-4-2-1-4-1">General<br/>
 <ul>
 <li><a href="https://github.com/OLIMEX/OLINUXINO">https://github.com/OLIMEX/OLINUXINO</a>
 </li>
@@ -1006,7 +1048,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-2-1-4-2">Software Sources<br/>
+<li id="sec-4-2-1-4-2">Software Sources<br/>
 <ul>
 <li><a href="https://www.olimex.com/wiki/A13-OLinuXino-MICRO">https://www.olimex.com/wiki/A13-OLinuXino-MICRO</a>
 <ul>
@@ -1021,15 +1063,10 @@ to permit their use in free software.
 
 </li>
 </ul>
-</div>
-
-</div>
-
-<div id="outline-container-2-1-5" class="outline-4">
-<h4 id="sec-2-1-5">Extrated CPU Info:</h4>
-<div class="outline-text-4" id="text-2-1-5">
-
-
+</li>
+</ul>
+<ul>
+<li id="sec-4-2-1-5">Extrated CPU Info<br/>
 <table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
 <colgroup><col class="left" /><col class="left" />
 </colgroup>
@@ -1063,354 +1100,142 @@ to permit their use in free software.
 </li>
 </ul>
 
-
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2">A13-OlinuXino</h3>
-<div class="outline-text-3" id="text-2-2">
-
-<p><img src="./img/A13-OLinuXino-01.png"  alt="./img/A13-OLinuXino-01.png" />
-</p>
-</div>
-
-<div id="outline-container-2-2-1" class="outline-4">
-<h4 id="sec-2-2-1">Overview</h4>
-<div class="outline-text-4" id="text-2-2-1">
-
-<p>A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-ITX form. It uses the very first Cortex A8 processor available in eLQFP176 package, produced by Allwinner Technology Inc A13.
-</p>
-</div>
-
-</div>
-
-<div id="outline-container-2-2-2" class="outline-4">
-<h4 id="sec-2-2-2">FEATURES</h4>
-<div class="outline-text-4" id="text-2-2-2">
-
-<ul>
-<li>A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
-</li>
-<li>512 MB RAM (2 x 256Mbit x 8)
-</li>
-<li>6-16VDC input power supply, noise immune design
-</li>
-<li>3 + 1 USB hosts, 3 available for users, 1 leads to onboard pinout
-</li>
-<li>1 USB OTG which can power the board
-</li>
-<li>SD-card connector for booting optional Linux image
-</li>
-<li>VGA video output
-</li>
-<li>Battery option and connector
-</li>
-<li>LCD signals available on connector so you still can use LCD if you diasble VGA/HDMI
-</li>
-<li>Microphone input
-</li>
-<li>4 Mount holes
-</li>
-<li>RTC PCF8536 on board for real time clock and alarms
-</li>
-<li>5 Keys on board for android navigation
-</li>
-<li>UEXT connectorfor connecting addtional UEXT modules like Zigbee, Bluetooth, Relays, etc
-</li>
-<li>GPIO connector with 68/74 pins and these signals:
-</li>
-<li>17 for adding NAND flash;
-</li>
-<li>22 for connecting LCDs;
-</li>
-<li>20+4 including 8 GPIOs which can be input, output, interrupt sources;
-</li>
-<li>3x I2C;
-</li>
-<li>2x UARTs;
-</li>
-<li>SDIO2 for connectinf SDcards and modules;
-</li>
-<li>5 system pins: +5V, +3.3V, GND, RESET, NMI
-</li>
-<li>Dimensions: 120 x 120 mm (4.7x4.7'')
-</li>
-<li>Optional low-cost 7" LCD with touchscreen
 </li>
 </ul>
-
-</div>
-
-</div>
-
-<div id="outline-container-2-2-3" class="outline-4">
-<h4 id="sec-2-2-3">Links</h4>
-<div class="outline-text-4" id="text-2-2-3">
-
 <ul>
-<li><a href="https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/">https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/</a>
-</li>
-</ul>
-
+<li id="sec-4-2-1-6">Research on Touchscreen Support<br/>
 <ul>
-<li id="sec-2-2-3-1">DOCUMENTS<br/>
+<li id="sec-4-2-1-6-1">Problem Overview<br/>
 <ul>
-<li><a href="https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-OLINUXINO.pdf">User's manual</a>
-</li>
-<li><a href="https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-Brief.pdf">A13-processor brief and datasheet</a>
+<li>Problem with the A13 Micro: All debian images are built for 512 MB of RAM, 256 is all that is available
 </li>
 </ul>
 
 </li>
 </ul>
 <ul>
-<li id="sec-2-2-3-2">HARDWARE<br/>
+<li id="sec-4-2-1-6-2">Research<br/>
 <ul>
-<li><a href="https://github.com/OLIMEX/OLINUXINO">GitHub OLINUXINO Project</a>
-</li>
-</ul>
-
-</li>
-</ul>
+<li id="sec-4-2-1-6-2-1">Xman Conversation <a href="https://www.olimex.com/forum/index.php?topic=617.10;wap2">{Link}</a><br/>
 <ul>
-<li id="sec-2-2-3-3">SOFTWARE<br/>
-<ul>
-<li><a href="https://github.com/OLIMEX/OLINUXINO">GitHub OLINUXINO Project</a>
+<li>&lt;xman&gt; hi, What happens if my dram_size = 512 in [dram_para], but my board have only 256MB?
 </li>
-<li><a href="http://linux-sunxi.org/">A1x Linux</a>
+<li>&lt;WarheadsSE&gt; xman: which board ?
 </li>
-</ul>
-
+<li>&lt;xman&gt; <a href="https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/">https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/</a>
 </li>
-</ul>
-<ul>
-<li id="sec-2-2-3-4">COMMUNITY<br/>
-<ul>
-<li><a href="https://www.olimex.com/forum">OLinuXino forum</a> for discussion and community support
+<li>techn_&gt; with 256MB ram you propably need to disable mali, framebuffer and g2d.. memmap hard coded to somewhere 400-500MB
 </li>
-<li><a href="http://webchat.freenode.net/?channels=olimex">Freenode #olimex irc channel</a> for OLinuXino development discussions
+<li>&lt;techn_&gt; <a href="https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.0/arch/arm/mach-sun5i/core.c#L222example">example</a>
 </li>
-</ul>
-
-
+<li>xman&gt; 64M and 32M is for what?
 </li>
-</ul>
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3">USB Wireless LAN Module</h3>
-<div class="outline-text-3" id="text-2-3">
-
-<p><img src="./img/modwifirtl8188.png"  alt="./img/modwifirtl8188.png" />
-</p>
-</div>
-
-<div id="outline-container-2-3-1" class="outline-4">
-<h4 id="sec-2-3-1">Overview</h4>
-<div class="outline-text-4" id="text-2-3-1">
-
-<ul>
-<li>The MOD-WIFI-RTL8188 is a USB WiFi module that is supported by the <a href="http://microcontrollershop.com/product_info.php?products_id=5412&amp;osCsid=e1d38e51b568a17c2fe8bc8c2679dcda">A13-OLinuXino</a> and <a href="http://microcontrollershop.com/product_info.php?products_id=5414&amp;osCsid=e1d38e51b568a17c2fe8bc8c2679dcda">A13-OLinuXino-MICRO</a> boards.
+<li>techn_&gt; 64M mali, 32M for reserved framebuffer(for mali use)
 </li>
-<li>It uses the same WiFi board that comes as standard on the <a href="http://microcontrollershop.com/product_info.php?products_id=5314&amp;osCsid=e1d38e51b568a17c2fe8bc8c2679dcda">A13-OLinuXino-WIFI</a>.
+<li>&hellip;
 </li>
-<li>The WM-294 WiFi board on this module contains the popular RealTek RTL8188CUS single-chip Wireless LAN adapter. There are drivers available for Windows, Linux/Android and Mac, so you aren't limited only to using this module on an A13-OLinuXino board.
+<li>&lt;WarheadsSE&gt; xman: then you should be enable appropriately adjust the dram para, but you might need an updated uboot that has a 256M SPL
 </li>
-</ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2-3-2" class="outline-4">
-<h4 id="sec-2-3-2">Features</h4>
-<div class="outline-text-4" id="text-2-3-2">
-
-<ul>
-<li>Has WM-294 module with RTL8188CUS, IEEE 802.11b/g/n
+<li>..
 </li>
-<li>Operates in 2.4 GHz frequency bands
+<li>&lt;WarheadsSE&gt; the Wifi has an AXP, which the Mirco doesn't.
 </li>
-<li>1x1 MIMO technology improves effective throughput and range over existing 802.11 b/g products
+<li>&lt;WarheadsSE&gt; That's a big difference.
 </li>
-<li>Data rates up to 150Mbps
+<li>&hellip;
 </li>
-<li>802.11e-compatible bursting and i standards
+<li>&lt;xman&gt; so, you edit fex, uptade kernel and update u-boot?
 </li>
-<li>BPSK, QPSK, 16 QAM, 64 QAM modulation schemes
+<li>&lt;WarheadsSE&gt; yes, fex change, kernel source change, u-boot source change
 </li>
-<li>WEP, TKIP, AES, WPA, and WPA2 hardware encryption schemes
+<li>&lt;WarheadsSE&gt; recompile all.
 </li>
-<li>Standard USB type A connector
+<li>..
 </li>
-<li>On-board antenna
-</li>
-<li>5V/3.3V operation modes via SMD jumper (5V by default)
-</li>
-<li>4 test pads for easy tracking of the supply, d-, d+, and GND
-</li>
-<li>PCB: FR-4, 1.00 mm (0.039"), solder mask, silkscreen component print
-</li>
-<li>Dimensions: 65.15 × 20.38 mm (2.56 × 0.80")
-</li>
-</ul>
-
-</div>
-
-</div>
-
-<div id="outline-container-2-3-3" class="outline-4">
-<h4 id="sec-2-3-3">Resources</h4>
-<div class="outline-text-4" id="text-2-3-3">
-
-<ul>
-<li><a href="./doc/module_WM294_spec.pdf">CC&amp;C Technologies WM-294 Datasheet</a>
-</li>
-<li><a href="#MOD-WiFi_RTL8188.pdf">MOD-WIFI-RTL8188 Schematic</a>
-</li>
-</ul>
-
-
-<ul>
-<li id="sec-2-3-3-1">Links<br/>
-<ul>
-<li><a href="http://microcontrollershop.com/product_info.php?products_id=5555">http://microcontrollershop.com/product_info.php?products_id=5555</a>
-</li>
-</ul>
-
-</li>
-</ul>
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-2-4" class="outline-3">
-<h3 id="sec-2-4">4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen <a href="http://microcontrollershop.com/product_info.php?products_id=5557">{link}</a></h3>
-<div class="outline-text-3" id="text-2-4">
-
-<p><img src="./img/a13lcd43ts_front.png"  alt="./img/a13lcd43ts_front.png" />     <img src="./img/a13lcd43ts_back.png"  alt="./img/a13lcd43ts_back.png" />
-</p>
-</div>
-
-<div id="outline-container-2-4-1" class="outline-4">
-<h4 id="sec-2-4-1">Overview</h4>
-<div class="outline-text-4" id="text-2-4-1">
-
-<ul>
-<li>This is a 4.3-inch LCD with a resistive touch screen and an interface board that has been tested to work with A13 OLinuXino boards.
-</li>
-<li>It connects to your A13 OLinuXino board by a 2×20-pin connector.
-</li>
-<li>The display board and the OLinuXino board both have male box headers, so you will need a 40-pin IDC ribbon cable which is sold separately.
-</li>
-</ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2-4-2" class="outline-4">
-<h4 id="sec-2-4-2">A13-OLinuXino LCD Board Features</h4>
-<div class="outline-text-4" id="text-2-4-2">
-
-<ul>
-<li id="sec-2-4-2-1">TFT Panel:<br/>
-<ul>
-<li>Bo Lymin BT043DCNNHHp$ 4.3-inch (480×272) a-Si color TFT-LCD with white LED / CCFL backlight
-</li>
-<li>262K colors
-</li>
-<li>Anti-glare surface
-</li>
-<li>Resistive touchscreen panel
-</li>
-<li>40-pin connector for connection to A13-OLinuXino boards
-</li>
-<li>3.3V single power input with built-in power supply circuit
+<li>&lt;WarheadsSE&gt; For the moment, they need to use the provided kernel source repository, and the associated uboot.
 </li>
 </ul>
 
 </li>
 </ul>
 <ul>
-<li id="sec-2-4-2-2">LCD Controller:<br/>
+<li id="sec-4-2-1-6-2-2">Olimex General Conversation <a href="https://www.olimex.com/forum/index.php?topic=707.msg2819;topicseen#msg2819">{Link}</a><br/>
+</li>
+</ul>
 <ul>
-<li>MCU interface: 8/9/16/18-bit 80/68 series MCU interface
+<li id="sec-4-2-1-6-2-3">In Depth Conversation about Recompiling Kernal from Source <a href="https://www.olimex.com/forum/index.php?topic=617.0">{Link}</a><br/>
 </li>
-<li>Display RAM size: 640×240×3×6 bits, e.g. 320×240 two-frame buffer with 262K colors
+</ul>
 </li>
-<li>Arbitrary display memory start position selection
-</li>
-<li>8-bit / 16-bit interface: supports 65K (R5G6B5) / 262K (R6G6B6) color data format
-</li>
-<li>9-bit / 18-bit interface: supports 262K (R6G6B6) color data format
+</ul>
+<ul>
+<li id="sec-4-2-1-6-3">Compile Kernal From Source<br/>
+<ul>
+<li id="sec-4-2-1-6-3-1">Links<br/>
+<ul>
+<li><a href="https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558">https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558</a>
+
+
+
+<pre class="src src-sh">git clone git://github.com/linux-sunxi/u-boot-sunxi.git
+git clone https://github.com/hehopmajieh/linux-sunxi
+<span style="color: #b0c4de;">cd</span> linux-sunxi
+git checkout origin/sunxi-3.0
+make a13_olinuxino_micro <span style="color: #7fffd4;">CROSS_COMPILE</span>=arm-linux-gnueabi-
+make <span style="color: #7fffd4;">ARCH</span>=arm a13om_defconfig
+make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
+</pre>
+
 </li>
 </ul>
 
+</li>
+</ul>
+</li>
+</ul>
 </li>
 </ul>
 </div>
 
 </div>
 
-<div id="outline-container-2-4-3" class="outline-4">
-<h4 id="sec-2-4-3">Interface Board View</h4>
-<div class="outline-text-4" id="text-2-4-3">
+<div id="outline-container-4-2-2" class="outline-4">
+<h4 id="sec-4-2-2">4.3" LCD Screen</h4>
+<div class="outline-text-4" id="text-4-2-2">
 
 <ul>
-<li>Note: The A13-OLinuXino boards come with an Android image set up for using a VGA display.
+<li>FPC4034006
 </li>
-<li>To use this LCD, you'll need to upload a new image with the appropriate settings.
+<li>tl-c430ve display
 </li>
-<li>A ready-made image (as well as the default VGA image so you can switch back) is available on the A13 OLinuXino Wiki Page (they are intended for 7-inch displays, so be sure also to get the <a href="https://docs.google.com/file/d/0B-bAEPML8fwlcHFOcUxtQ1N5RDQ/edit">A13-LCD43 script</a>, which adjusts the resolution for this display size).
+<li>4.3" FPC4304006 MP4 MP5 GPS lcd display panel
 </li>
-</ul>
-
-
-</div>
-
-</div>
-
-<div id="outline-container-2-4-4" class="outline-4">
-<h4 id="sec-2-4-4">A13-OLinuXino LCD Board Resources</h4>
-<div class="outline-text-4" id="text-2-4-4">
-
-<ul>
-<li><a href="http://microcontrollershop.com/download/BT043DCN.pdf?osCsid=2fe0acf3ed565f2850d0f350a0b3647d">Download BT043DCNNHHp$ LCD Datasheet</a>
+<li>Place of Origin: Guangdong, China (Mainland)
 </li>
-<li><a href="http://microcontrollershop.com/download/A13-LCD4_3.pdf?osCsid=2fe0acf3ed565f2850d0f350a0b3647d">Download A13-LCD4.3 Schematic</a>
-</li>
-<li><a href="http://microcontrollershop.com/redirect.php?action=url&amp;goto=http://www.youtube.com/watch?v=d2lFHBMhQ64&amp;osCsid=2fe0acf3ed565f2850d0f350a0b3647d">View a video of the multitouch feature</a>
+<li>Brand Name: BYD
 </li>
 </ul>
 
-</div>
-</div>
-</div>
 
 </div>
-
-<div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Quick Reference</h2>
-<div class="outline-text-2" id="text-3">
-
+</div>
+</div>
 
 </div>
 
-<div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1">Connect to Serial (After configuring rfcomm.conf)</h3>
-<div class="outline-text-3" id="text-3-1">
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5">Quick Reference</h2>
+<div class="outline-text-2" id="text-5">
 
-<ol>
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1">Connect to Serial via Bluetooth</h3>
+<div class="outline-text-3" id="text-5-1">
+
+<p>Prerequisite: configure <a href="#Serial-Communicate-with-Board-with-Bluetooth-Module-Add-On">rfcomm.conf</a>
+</p><ol>
 <li>Initialize Connection
 
 
@@ -1435,9 +1260,9 @@ to permit their use in free software.
 
 </div>
 
-<div id="outline-container-3-2" class="outline-3">
-<h3 id="sec-3-2">Communicate via SSH</h3>
-<div class="outline-text-3" id="text-3-2">
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2">Communicate via SSH</h3>
+<div class="outline-text-3" id="text-5-2">
 
 
 
@@ -1449,9 +1274,9 @@ to permit their use in free software.
 
 </div>
 
-<div id="outline-container-3-3" class="outline-3">
-<h3 id="sec-3-3">Connect with SFTP for File Transfer</h3>
-<div class="outline-text-3" id="text-3-3">
+<div id="outline-container-5-3" class="outline-3">
+<h3 id="sec-5-3">Connect with SFTP for File Transfer</h3>
+<div class="outline-text-3" id="text-5-3">
 
 
 
@@ -1491,28 +1316,28 @@ to permit their use in free software.
 
 </div>
 
-<div id="outline-container-3-4" class="outline-3">
-<h3 id="sec-3-4">Send Files via SCP</h3>
-<div class="outline-text-3" id="text-3-4">
+<div id="outline-container-5-4" class="outline-3">
+<h3 id="sec-5-4">Send Files via SCP</h3>
+<div class="outline-text-3" id="text-5-4">
 
 
 </div>
 
-<div id="outline-container-3-4-1" class="outline-4">
-<h4 id="sec-3-4-1">Overview</h4>
-<div class="outline-text-4" id="text-3-4-1">
+<div id="outline-container-5-4-1" class="outline-4">
+<h4 id="sec-5-4-1">Overview</h4>
+<div class="outline-text-4" id="text-5-4-1">
 
 <p>scp allows files to be copied to, from, or between different hosts. It uses ssh for data transfer and provides the same authentication and same level of security as ssh.
 </p></div>
 
 </div>
 
-<div id="outline-container-3-4-2" class="outline-4">
-<h4 id="sec-3-4-2">Examples</h4>
-<div class="outline-text-4" id="text-3-4-2">
+<div id="outline-container-5-4-2" class="outline-4">
+<h4 id="sec-5-4-2">Examples</h4>
+<div class="outline-text-4" id="text-5-4-2">
 
 <ul>
-<li id="sec-3-4-2-1">Copy the file "foobar.txt" from a remote host to the local host<br/>
+<li id="sec-5-4-2-1">Copy the file "foobar.txt" from a remote host to the local host<br/>
 
 
 
@@ -1522,7 +1347,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-3-4-2-2">Copy the file "foobar.txt" from the local host to a remote host<br/>
+<li id="sec-5-4-2-2">Copy the file "foobar.txt" from the local host to a remote host<br/>
 
 
 
@@ -1532,7 +1357,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-3-4-2-3">Copy the directory "foo" from the local host to a remote host's directory "bar"<br/>
+<li id="sec-5-4-2-3">Copy the directory "foo" from the local host to a remote host's directory "bar"<br/>
 
 
 
@@ -1542,7 +1367,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-3-4-2-4">Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"<br/>
+<li id="sec-5-4-2-4">Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"<br/>
 
 
 
@@ -1552,7 +1377,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-3-4-2-5">Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host<br/>
+<li id="sec-5-4-2-5">Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host<br/>
 
 
 
@@ -1562,7 +1387,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-3-4-2-6">Copy the file "foobar.txt" from the local host to a remote host using port 2264<br/>
+<li id="sec-5-4-2-6">Copy the file "foobar.txt" from the local host to a remote host using port 2264<br/>
 
 
 
@@ -1572,7 +1397,7 @@ to permit their use in free software.
 </li>
 </ul>
 <ul>
-<li id="sec-3-4-2-7">Copy multiple files from the remote host to your current directory on the local host<br/>
+<li id="sec-5-4-2-7">Copy multiple files from the remote host to your current directory on the local host<br/>
 
 
 
@@ -1584,7 +1409,7 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 </li>
 </ul>
 <ul>
-<li id="sec-3-4-2-8">Receive and Entire Directory<br/>
+<li id="sec-5-4-2-8">Receive and Entire Directory<br/>
 
 
 
@@ -1597,9 +1422,9 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 </div>
 
-<div id="outline-container-3-4-3" class="outline-4">
-<h4 id="sec-3-4-3">Links</h4>
-<div class="outline-text-4" id="text-3-4-3">
+<div id="outline-container-5-4-3" class="outline-4">
+<h4 id="sec-5-4-3">Links</h4>
+<div class="outline-text-4" id="text-5-4-3">
 
 <ul>
 <li><a href="http://www.hypexr.org/linux_scp_help.php">http://www.hypexr.org/linux_scp_help.php</a>
@@ -1611,9 +1436,9 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 </div>
 
-<div id="outline-container-3-5" class="outline-3">
-<h3 id="sec-3-5">Check Remaining Space on Hard Drive</h3>
-<div class="outline-text-3" id="text-3-5">
+<div id="outline-container-5-5" class="outline-3">
+<h3 id="sec-5-5">Check Remaining Space on Hard Drive</h3>
+<div class="outline-text-3" id="text-5-5">
 
 
 
@@ -1625,16 +1450,16 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 </div>
 
-<div id="outline-container-3-6" class="outline-3">
-<h3 id="sec-3-6">Sync Files with rsync</h3>
-<div class="outline-text-3" id="text-3-6">
+<div id="outline-container-5-6" class="outline-3">
+<h3 id="sec-5-6">Sync Files with rsync</h3>
+<div class="outline-text-3" id="text-5-6">
 
 
 </div>
 
-<div id="outline-container-3-6-1" class="outline-4">
-<h4 id="sec-3-6-1">Sync a Directory From Host To Device</h4>
-<div class="outline-text-4" id="text-3-6-1">
+<div id="outline-container-5-6-1" class="outline-4">
+<h4 id="sec-5-6-1">Sync a Directory From Host To Device</h4>
+<div class="outline-text-4" id="text-5-6-1">
 
 <p>/ will not modify host directory /
 </p>
@@ -1647,9 +1472,9 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 </div>
 
-<div id="outline-container-3-6-2" class="outline-4">
-<h4 id="sec-3-6-2">Links</h4>
-<div class="outline-text-4" id="text-3-6-2">
+<div id="outline-container-5-6-2" class="outline-4">
+<h4 id="sec-5-6-2">Links</h4>
+<div class="outline-text-4" id="text-5-6-2">
 
 <ul>
 <li><a href="http://mike-hostetler.com/blog/2007/12/08/rsync-non-standard-ssh-port/">http://mike-hostetler.com/blog/2007/12/08/rsync-non-standard-ssh-port/</a>
@@ -1663,9 +1488,9 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 </div>
 
-<div id="outline-container-3-7" class="outline-3">
-<h3 id="sec-3-7">Building Projects with Qmake</h3>
-<div class="outline-text-3" id="text-3-7">
+<div id="outline-container-5-7" class="outline-3">
+<h3 id="sec-5-7">Building Projects with Qmake</h3>
+<div class="outline-text-3" id="text-5-7">
 
 <ol>
 <li>Build Project
@@ -1688,16 +1513,16 @@ make
 
 </div>
 
-<div id="outline-container-3-8" class="outline-3">
-<h3 id="sec-3-8">Backups</h3>
-<div class="outline-text-3" id="text-3-8">
+<div id="outline-container-5-8" class="outline-3">
+<h3 id="sec-5-8">Backups</h3>
+<div class="outline-text-3" id="text-5-8">
 
 
 </div>
 
-<div id="outline-container-3-8-1" class="outline-4">
-<h4 id="sec-3-8-1">Backup the SD Card</h4>
-<div class="outline-text-4" id="text-3-8-1">
+<div id="outline-container-5-8-1" class="outline-4">
+<h4 id="sec-5-8-1">Backup the SD Card</h4>
+<div class="outline-text-4" id="text-5-8-1">
 
 <ol>
 <li>Navigate to backup directoryhttp://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi
@@ -1724,9 +1549,9 @@ make
 
 </div>
 
-<div id="outline-container-3-8-2" class="outline-4">
-<h4 id="sec-3-8-2">Restore the SD Card</h4>
-<div class="outline-text-4" id="text-3-8-2">
+<div id="outline-container-5-8-2" class="outline-4">
+<h4 id="sec-5-8-2">Restore the SD Card</h4>
+<div class="outline-text-4" id="text-5-8-2">
 
 <ol>
 <li>insert unmounted card
@@ -1745,26 +1570,26 @@ make
 
 </div>
 
-<div id="outline-container-3-8-3" class="outline-4">
-<h4 id="sec-3-8-3">Backup Data to Web Storage</h4>
-<div class="outline-text-4" id="text-3-8-3">
+<div id="outline-container-5-8-3" class="outline-4">
+<h4 id="sec-5-8-3">Backup Data to Web Storage</h4>
+<div class="outline-text-4" id="text-5-8-3">
 
 
 
 
-<pre class="src src-sh">rsync -rtvz /media/Global/Global/BAK/embedd_gui_bin nickguthrie.com:nickguthrie.com/embedd_gui_bin
+<pre class="src src-sh">rsync -rtvz --progress /media/Global/Global/BAK/embedd_gui/bin nickguthrie.com:nickguthrie.com/embedd_gui/bin
 </pre>
 
 </div>
 
 </div>
 
-<div id="outline-container-3-8-4" class="outline-4">
-<h4 id="sec-3-8-4">Links</h4>
-<div class="outline-text-4" id="text-3-8-4">
+<div id="outline-container-5-8-4" class="outline-4">
+<h4 id="sec-5-8-4">Links</h4>
+<div class="outline-text-4" id="text-5-8-4">
 
 <ul>
-<li id="sec-3-8-4-1">How do I make a Backup of my Rasberry Pi <a href="http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi">{Link}</a><br/>
+<li id="sec-5-8-4-1">How do I make a Backup of my Rasberry Pi <a href="http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi">{Link}</a><br/>
 <ol>
 <li>Make a full backup of the image
 <ul>
@@ -1812,7 +1637,6 @@ make
 </li>
 </ol>
 
-
 </li>
 </ul>
 </div>
@@ -1821,22 +1645,22 @@ make
 
 </div>
 
-<div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">HOWTO</h2>
-<div class="outline-text-2" id="text-4">
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6">HOWTO</h2>
+<div class="outline-text-2" id="text-6">
 
 
 </div>
 
-<div id="outline-container-4-1" class="outline-3">
-<h3 id="sec-4-1">Obtain Hardware</h3>
-<div class="outline-text-3" id="text-4-1">
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1">Obtain Hardware</h3>
+<div class="outline-text-3" id="text-6-1">
 
 <p>The hardware used in this guide:
 </p><ul>
-<li><a href="#sec-2-2">A13-OlinuXino</a>
+<li><a href="#sec-4-1-1">A13-OlinuXino</a>
 </li>
-<li><a href="#sec-2-3">USB Wireless LAN Module</a>
+<li><a href="#sec-4-1-2">USB Wireless LAN Module</a>
 </li>
 </ul>
 
@@ -1844,16 +1668,16 @@ make
 
 </div>
 
-<div id="outline-container-4-2" class="outline-3">
-<h3 id="sec-4-2">Copy Debian Image to SD Card</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-6-2" class="outline-3">
+<h3 id="sec-6-2">Copy Debian Image to SD Card</h3>
+<div class="outline-text-3" id="text-6-2">
 
 
 </div>
 
-<div id="outline-container-4-2-1" class="outline-4">
-<h4 id="sec-4-2-1">Overview</h4>
-<div class="outline-text-4" id="text-4-2-1">
+<div id="outline-container-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1">Overview</h4>
+<div class="outline-text-4" id="text-6-2-1">
 
 <ul>
 <li>I am installing a Debian Image found <a href="https://www.olimex.com/wiki/Prebuilt_SD_card_images_running_debian">here</a>.
@@ -1870,9 +1694,9 @@ make
 
 </div>
 
-<div id="outline-container-4-2-2" class="outline-4">
-<h4 id="sec-4-2-2">Steps</h4>
-<div class="outline-text-4" id="text-4-2-2">
+<div id="outline-container-6-2-2" class="outline-4">
+<h4 id="sec-6-2-2">Steps</h4>
+<div class="outline-text-4" id="text-6-2-2">
 
 <ol>
 <li>Download Debian Image
@@ -1904,9 +1728,9 @@ make
 
 </div>
 
-<div id="outline-container-4-2-3" class="outline-4">
-<h4 id="sec-4-2-3">Links</h4>
-<div class="outline-text-4" id="text-4-2-3">
+<div id="outline-container-6-2-3" class="outline-4">
+<h4 id="sec-6-2-3">Links</h4>
+<div class="outline-text-4" id="text-6-2-3">
 
 <ul>
 <li><a href="http://www.cnx-software.com/2012/12/21/olimex-a13-olinuxino-micro-development-board-unboxing-and-review/">http://www.cnx-software.com/2012/12/21/olimex-a13-olinuxino-micro-development-board-unboxing-and-review/</a>
@@ -1920,16 +1744,16 @@ make
 
 </div>
 
-<div id="outline-container-4-3" class="outline-3">
-<h3 id="sec-4-3">Configure Touchscreen (script.bin)</h3>
-<div class="outline-text-3" id="text-4-3">
+<div id="outline-container-6-3" class="outline-3">
+<h3 id="sec-6-3">Configure Touchscreen (script.bin)</h3>
+<div class="outline-text-3" id="text-6-3">
 
 
 </div>
 
-<div id="outline-container-4-3-1" class="outline-4">
-<h4 id="sec-4-3-1">Overview</h4>
-<div class="outline-text-4" id="text-4-3-1">
+<div id="outline-container-6-3-1" class="outline-4">
+<h4 id="sec-6-3-1">Overview</h4>
+<div class="outline-text-4" id="text-6-3-1">
 
 <ul>
 <li>The script.bin will determine what display can be used.
@@ -1942,9 +1766,9 @@ make
 
 </div>
 
-<div id="outline-container-4-3-2" class="outline-4">
-<h4 id="sec-4-3-2">Steps</h4>
-<div class="outline-text-4" id="text-4-3-2">
+<div id="outline-container-6-3-2" class="outline-4">
+<h4 id="sec-6-3-2">Steps</h4>
+<div class="outline-text-4" id="text-6-3-2">
 
 <ol>
 <li>Create LCD script directory
@@ -1992,9 +1816,9 @@ cp script.bin script.bin.BAK
 
 </div>
 
-<div id="outline-container-4-3-3" class="outline-4">
-<h4 id="sec-4-3-3">Links</h4>
-<div class="outline-text-4" id="text-4-3-3">
+<div id="outline-container-6-3-3" class="outline-4">
+<h4 id="sec-6-3-3">Links</h4>
+<div class="outline-text-4" id="text-6-3-3">
 
 <ul>
 <li><a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">Olimex.com Wiki: Configuration of hardware in the Debian Image</a>
@@ -2006,16 +1830,29 @@ cp script.bin script.bin.BAK
 
 </div>
 
-<div id="outline-container-4-4" class="outline-3">
-<h3 id="sec-4-4">Modifying the script.bin file (Optional)</h3>
-<div class="outline-text-3" id="text-4-4">
+<div id="outline-container-6-4" class="outline-3">
+<h3 id="sec-6-4">Modifying the script.bin file (Optional)</h3>
+<div class="outline-text-3" id="text-6-4">
 
 
 </div>
 
-<div id="outline-container-4-4-1" class="outline-4">
-<h4 id="sec-4-4-1">Installation</h4>
-<div class="outline-text-4" id="text-4-4-1">
+<div id="outline-container-6-4-1" class="outline-4">
+<h4 id="sec-6-4-1">Overview</h4>
+<div class="outline-text-4" id="text-6-4-1">
+
+<ul>
+<li>The bin2fex and fex2bin program supplied by Olimex can be used to convert the script.bin binary file to a readable/editable text file, which can then be modified and converted back into a script.bin binary file.
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-6-4-2" class="outline-4">
+<h4 id="sec-6-4-2">Installation</h4>
+<div class="outline-text-4" id="text-6-4-2">
 
 <ol>
 <li>extract A13 tar file
@@ -2050,12 +1887,12 @@ make -k
 
 </div>
 
-<div id="outline-container-4-4-2" class="outline-4">
-<h4 id="sec-4-4-2">General Usage</h4>
-<div class="outline-text-4" id="text-4-4-2">
+<div id="outline-container-6-4-3" class="outline-4">
+<h4 id="sec-6-4-3">General Usage</h4>
+<div class="outline-text-4" id="text-6-4-3">
 
 <ul>
-<li id="sec-4-4-2-1">Using bin2fex<br/>
+<li id="sec-6-4-3-1">Using bin2fex<br/>
 <ul>
 <li>First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
 
@@ -2077,7 +1914,7 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-2-2">Using fex2bin<br/>
+<li id="sec-6-4-3-2">Using fex2bin<br/>
 <ul>
 <li>To convert back, it's simply the reverse:
 
@@ -2095,23 +1932,59 @@ make -k
 </li>
 </ul>
 
-
 </li>
 </ul>
 </div>
 
 </div>
 
-<div id="outline-container-4-4-3" class="outline-4">
-<h4 id="sec-4-4-3">Links</h4>
-<div class="outline-text-4" id="text-4-4-3">
+<div id="outline-container-6-4-4" class="outline-4">
+<h4 id="sec-6-4-4">Errors</h4>
+<div class="outline-text-4" id="text-6-4-4">
 
 <ul>
-<li id="sec-4-4-3-1">Configuration of hardware in the debian image <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
+<li id="sec-6-4-4-1">INIT: cannot execute "/sbin/getty"<br/>
 <ul>
-<li id="sec-4-4-3-1-1">Tools<br/>
+<li id="sec-6-4-4-1-1">Description<br/>
 <ul>
-<li id="sec-4-4-3-1-1-1">Script file<br/>
+<li>During boot, serial connaction outputs error:
+
+
+
+<pre class="example">INIT: cannot execute "/sbin/getty"
+</pre>
+
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-4-4-1-2">Probable Cause<br/>
+<ul>
+<li>The util-linux is not installed
+</li>
+</ul>
+
+
+</li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-4-5" class="outline-4">
+<h4 id="sec-6-4-5">Links</h4>
+<div class="outline-text-4" id="text-6-4-5">
+
+<ul>
+<li id="sec-6-4-5-1">Configuration of hardware in the debian image <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
+<ul>
+<li id="sec-6-4-5-1-1">Tools<br/>
+<ul>
+<li id="sec-6-4-5-1-1-1">Script file<br/>
 <ul>
 <li>The script.bin is a text file with very important configuration parameters like port GPIO assignments, DDR memory parameters, Video resolution etc, by changing these parameters in the script.bin you can configure your Linux without need to re-compile your kernel again and again this is smart way Allwinner provides for tweaking A13 Linux Kernel
 </li>
@@ -2120,7 +1993,7 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-1-1-2">fex<br/>
+<li id="sec-6-4-5-1-1-2">fex<br/>
 <ul>
 <li>The fex tool will convert a script.bin file to a text file and back again.
 </li>
@@ -2132,7 +2005,7 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-1-1-3">Tools and script files<br/>
+<li id="sec-6-4-5-1-1-3">Tools and script files<br/>
 <ul>
 <li>A13 script bin and fex tool
 </li>
@@ -2157,14 +2030,14 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-1-2">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480<br/>
+<li id="sec-6-4-5-1-2">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480<br/>
 <ul>
 <li>The default SD card setup is made with settings for VGA 800x600. If you want to switch between VGA 800x600 and LCD800x480 mode then you have to replace the existing script.bin file from the first SD card partitition (note that this partition is FAT - so you can replace the file under Windows or Linux) with the script.bin file from script_GPIO_VGA directory (if you want to change to VGA800x600 mode) or from script_GPIO_LCD_800x480 directory (if you want to change to LCD800x600 mode).
 </li>
 </ul>
 
 <ul>
-<li id="sec-4-4-3-1-2-1">Establish WIFI connection<br/>
+<li id="sec-6-4-5-1-2-1">Establish WIFI connection<br/>
 <ol>
 <li>plug in MOD-WIFI-RTL8188 if the board is not A13-OLinuXino-WIFI
 
@@ -2268,7 +2141,7 @@ reboot A13-OLinuXino board
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-1-2-2">Establish ethernet connection using USB-ETHERNET adapter recommended supported adapter USB-ETHERNET-AX88772B<br/>
+<li id="sec-6-4-5-1-2-2">Establish ethernet connection using USB-ETHERNET adapter recommended supported adapter USB-ETHERNET-AX88772B<br/>
 <ol>
 <li>plug in USB-ETHERNET-AX88772B adapter
 </li>
@@ -2373,7 +2246,7 @@ reboot A13-OLinuXino board
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-1-2-3">GPIO changing<br/>
+<li id="sec-6-4-5-1-2-3">GPIO changing<br/>
 <ol>
 <li>lsmod
 
@@ -2409,7 +2282,7 @@ reboot A13-OLinuXino board
 
 
 <ul>
-<li id="sec-4-4-3-1-2-3-1">Changing A13 GPIO direction<br/>
+<li id="sec-6-4-5-1-2-3-1">Changing A13 GPIO direction<br/>
 <ol>
 <li>extract fex2bin_bin2fex_tools on linux machine
 
@@ -2428,7 +2301,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-1-2-3-2">GPIOs are defined in the end.<br/>
+<li id="sec-6-4-5-1-2-3-2">GPIOs are defined in the end.<br/>
 <ul>
 <li>where
 
@@ -2462,9 +2335,9 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-2">fex2bin and bin2fex - script.bin <a href="http://www.imajeenyus.com/computer/20130301_android_tablet/android/fex2bin_etc.html">{Link}</a><br/>
+<li id="sec-6-4-5-2">fex2bin and bin2fex - script.bin <a href="http://www.imajeenyus.com/computer/20130301_android_tablet/android/fex2bin_etc.html">{Link}</a><br/>
 <ul>
-<li id="sec-4-4-3-2-1">Overview<br/>
+<li id="sec-6-4-5-2-1">Overview<br/>
 <ul>
 <li>During the boot process, the processor reads a file called script.bin, located in the bootloader (nanda) partition. This file contains all of the processor configuration details (such as pin functions, voltages, clock frequencies, memory configuration etc) and is essential to the correct operation of the tablet. The purpose of this file should be distinguished from that of build.prop, located in /system/build.prop. The latter is a configuration for Android, once it's started. script.bin is configuration for the processor.
 </li>
@@ -2498,7 +2371,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-2-2">Installation<br/>
+<li id="sec-6-4-5-2-2">Installation<br/>
 <ul>
 <li>To get the tools, go to the git repository at <a href="https://github.com/linux-sunxi/sunxi-tools/">https://github.com/linux-sunxi/sunxi-tools/</a> and download the ZIP file (called sunxi-tools-master.zip). Extract this, and place the folder on the Desktop of your Linux machine. Open a terminal, cd to the folder, then run
 
@@ -2519,7 +2392,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-2-3">Using bin2fex<br/>
+<li id="sec-6-4-5-2-3">Using bin2fex<br/>
 <ul>
 <li>First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
 
@@ -2540,7 +2413,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-2-4">Using fex2bin<br/>
+<li id="sec-6-4-5-2-4">Using fex2bin<br/>
 <ul>
 <li>To convert back, it's simply the reverse:
 
@@ -2561,7 +2434,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-2-5">Using fex2bin on the COMMON_SYS_CONFIG100000 LiveSuit file<br/>
+<li id="sec-6-4-5-2-5">Using fex2bin on the COMMON_SYS_CONFIG100000 LiveSuit file<br/>
 <ul>
 <li>You can use fex2bin to convert the COMMON_SYS_CONFIG100000 file from the unpacked LiveSuit image into a script.bin file. However, I initially got an error saying "E: CONFIG:696: invalid character at 27" or similar (which means line 696, character 27). Looking at the file, it turned out there were quotes missing at a certain point. Here's the original part of the file:
 
@@ -2589,7 +2462,7 @@ product_name             ="USB Flash Driver"
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-2-6">Which version ends up on the tablet?<br/>
+<li id="sec-6-4-5-2-6">Which version ends up on the tablet?<br/>
 <ul>
 <li>If you're eagle-eyed, you may notice something at this point. In the unpacked LiveSuit files, there are essentially two copies of script.bin. One is the human-readable COMMON_SYS_CONFIG100000 file, the other is the script.bin located within the RFSFAT16_BOOTLOADER_00000 image file. The two copies are identical (if you use fex2bin/bin2fex to convert between them, and remember the quotation marks). So, which one actually ends up on the tablet?
 </li>
@@ -2603,25 +2476,25 @@ product_name             ="USB Flash Driver"
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-3">imx233-olinuxino-with-lcd-4-3-and-touchscreen <a href="http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/">{Link}</a><br/>
+<li id="sec-6-4-5-3">imx233-olinuxino-with-lcd-4-3-and-touchscreen <a href="http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/">{Link}</a><br/>
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-4">Product Info <a href="http://microcontrollershop.com/product_info.php?products_id=5557">{Link}</a><br/>
+<li id="sec-6-4-5-4">Product Info <a href="http://microcontrollershop.com/product_info.php?products_id=5557">{Link}</a><br/>
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-5">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
+<li id="sec-6-4-5-5">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
 
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-6"><a href="http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/">http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/</a><br/>
+<li id="sec-6-4-5-6"><a href="http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/">http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/</a><br/>
 
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-7">(As of 1 March 2013, the current Debian build for this MICRO version does not yet support a touch panel.)<br/>
+<li id="sec-6-4-5-7">(As of 1 March 2013, the current Debian build for this MICRO version does not yet support a touch panel.)<br/>
 <ul>
 <li><a href="http://184.172.168.133-static.reverse.softlayer.com/product_info.php?cPath=&amp;products_id=5414">http://184.172.168.133-static.reverse.softlayer.com/product_info.php?cPath=&amp;products_id=5414</a>
 </li>
@@ -2630,43 +2503,7 @@ product_name             ="USB Flash Driver"
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-3-8"><a href="https://www.olimex.com/forum/index.php?topic=753.0">How to make 7" LCD Screen working on the A13Micro with Debian or Custom distrib?</a><br/>
-</li>
-</ul>
-</div>
-
-</div>
-
-<div id="outline-container-4-4-4" class="outline-4">
-<h4 id="sec-4-4-4">Error</h4>
-<div class="outline-text-4" id="text-4-4-4">
-
-<ul>
-<li id="sec-4-4-4-1">INIT: cannot execute "/sbin/getty"<br/>
-<ul>
-<li id="sec-4-4-4-1-1">Description<br/>
-<ul>
-<li>During boot, serial connaction outputs error:
-
-
-
-<pre class="example">INIT: cannot execute "/sbin/getty"
-</pre>
-
-</li>
-</ul>
-
-</li>
-</ul>
-<ul>
-<li id="sec-4-4-4-1-2">Probable Cause<br/>
-<ul>
-<li>The util-linux is not installed
-</li>
-</ul>
-
-</li>
-</ul>
+<li id="sec-6-4-5-8"><a href="https://www.olimex.com/forum/index.php?topic=753.0">How to make 7" LCD Screen working on the A13Micro with Debian or Custom distrib?</a><br/>
 </li>
 </ul>
 </div>
@@ -2674,21 +2511,21 @@ product_name             ="USB Flash Driver"
 
 </div>
 
-<div id="outline-container-4-5" class="outline-3">
-<h3 id="sec-4-5">Configure Basic Debian</h3>
-<div class="outline-text-3" id="text-4-5">
+<div id="outline-container-6-5" class="outline-3">
+<h3 id="sec-6-5">Configure Debian</h3>
+<div class="outline-text-3" id="text-6-5">
 
 
 </div>
 
-<div id="outline-container-4-5-1" class="outline-4">
-<h4 id="sec-4-5-1">Set Up Wireless In Debian</h4>
-<div class="outline-text-4" id="text-4-5-1">
+<div id="outline-container-6-5-1" class="outline-4">
+<h4 id="sec-6-5-1">Configure Wireless (Dynamic IP Address)</h4>
+<div class="outline-text-4" id="text-6-5-1">
 
 <ul>
-<li id="sec-4-5-1-1">Steps<br/>
+<li id="sec-6-5-1-1">Steps<br/>
 <ul>
-<li id="sec-4-5-1-1-1">Determine Wireless Device<br/>
+<li id="sec-6-5-1-1-1">Determine Wireless Device<br/>
 
 
 
@@ -2704,7 +2541,7 @@ product_name             ="USB Flash Driver"
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-1-1-2">Configure /etc/network/interfaces as Root<br/>
+<li id="sec-6-5-1-1-2">Configure /etc/network/interfaces as Root<br/>
 
 
 
@@ -2718,7 +2555,7 @@ iface wlan3 inet dhcp
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-1-1-3">Restart the Networking Service<br/>
+<li id="sec-6-5-1-1-3">Restart the Networking Service<br/>
 
 
 
@@ -2729,7 +2566,7 @@ iface wlan3 inet dhcp
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-1-1-4">Test the Network<br/>
+<li id="sec-6-5-1-1-4">Test the Network<br/>
 
 
 
@@ -2743,7 +2580,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-1-2">Links<br/>
+<li id="sec-6-5-1-2">Links<br/>
 <ul>
 <li><a href="http://blog.tplus1.com/blog/2008/06/13/how-to-connect-to-a-wireless-network-from-the-ubuntu-command-line/">How to connect to a wireless network from the ubuntu command line</a>
 </li>
@@ -2757,12 +2594,109 @@ ping google.com
 
 </div>
 
-<div id="outline-container-4-5-2" class="outline-4">
-<h4 id="sec-4-5-2">Properly Set Date</h4>
-<div class="outline-text-4" id="text-4-5-2">
+<div id="outline-container-6-5-2" class="outline-4">
+<h4 id="sec-6-5-2">Configure Static IP Address</h4>
+<div class="outline-text-4" id="text-6-5-2">
 
 <ul>
-<li id="sec-4-5-2-1">Steps<br/>
+<li id="sec-6-5-2-1">Steps<br/>
+<ul>
+<li id="sec-6-5-2-1-1">Determine Information<br/>
+
+
+
+<pre class="src src-sh">ifconfig
+</pre>
+
+<ul>
+<li>Find:
+<ul>
+<li>address
+</li>
+<li>netmask
+</li>
+<li>gateway
+</li>
+<li>DNS Servers
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-2-1-2">Modify /etc/network/interfaces as Root<br/>
+
+
+
+<pre class="example">auto wlan3
+iface wlan3 inet static
+   wpa-ssid TVCOG
+   wpa-psk COGpass1
+   address 192.168.12.222
+   netmask 255.255.255.0
+   gateway 192.168.12.1
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-2-1-3">Modify /etc/resolv.conf as Root<br/>
+
+
+
+<pre class="example">domain techvalleycenterofgravity.com
+search techvalleycenterofgravity.com
+nameserver 64.22.32.8
+nameserver 64.22.32.9
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-2-1-4">Restart Networking as Root<br/>
+
+
+
+<pre class="src src-sh">/etc/init.d/networking restart
+</pre>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-2-1-5">Test Results<br/>
+
+
+
+<pre class="src src-sh">ifconfig
+ping google.com
+</pre>
+
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-2-2">Links<br/>
+<ul>
+<li><a href="http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu">Linux Basics set a Static IP on Ubuntu</a>
+</li>
+</ul>
+
+</li>
+</ul>
+</div>
+
+</div>
+
+<div id="outline-container-6-5-3" class="outline-4">
+<h4 id="sec-6-5-3">Set Date</h4>
+<div class="outline-text-4" id="text-6-5-3">
+
+<ul>
+<li id="sec-6-5-3-1">Steps<br/>
 
 
 
@@ -2772,7 +2706,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-2-2">Links<br/>
+<li id="sec-6-5-3-2">Links<br/>
 <ul>
 <li><a href="http://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/">http://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/</a>
 </li>
@@ -2784,12 +2718,25 @@ ping google.com
 
 </div>
 
-<div id="outline-container-4-5-3" class="outline-4">
-<h4 id="sec-4-5-3"><span class="todo TODO">TODO</span> Properly Set Keyboard Locale</h4>
-<div class="outline-text-4" id="text-4-5-3">
+<div id="outline-container-6-5-4" class="outline-4">
+<h4 id="sec-6-5-4">Set Keyboard Locale</h4>
+<div class="outline-text-4" id="text-6-5-4">
 
 <ul>
-<li id="sec-4-5-3-1">Steps<br/>
+<li id="sec-6-5-4-1">Overview<br/>
+<ul>
+<li>My keyboard layout was set to UK, which meant I typed things like &not; instead of ~ and &pound; instead of #.
+</li>
+<li>This can easily be remidied from the commandline.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-4-2">Steps<br/>
+<ol>
+<li>Modify the keyboard locale
 
 
 
@@ -2797,9 +2744,20 @@ ping google.com
 </pre>
 
 </li>
+<li>reboot
+
+
+
+<pre class="src src-sh">reboot -h now
+</pre>
+
+</li>
+</ol>
+
+</li>
 </ul>
 <ul>
-<li id="sec-4-5-3-2">Links<br/>
+<li id="sec-6-5-4-3">Links<br/>
 <ul>
 <li><a href="http://askubuntu.com/questions/155424/changing-keyboard-layout-in-ubuntu-12-04-server-command-line-interface">AskUbuntu.com: Changing keyboard layout in ubuntu 12.04 server command-line interface</a>
 </li>
@@ -2811,50 +2769,50 @@ ping google.com
 
 </div>
 
-<div id="outline-container-4-5-4" class="outline-4">
-<h4 id="sec-4-5-4">Install Programs</h4>
-<div class="outline-text-4" id="text-4-5-4">
+<div id="outline-container-6-5-5" class="outline-4">
+<h4 id="sec-6-5-5">Install Programs</h4>
+<div class="outline-text-4" id="text-6-5-5">
 
 <ul>
-<li id="sec-4-5-4-1">Steps<br/>
-<ul>
-<li id="sec-4-5-4-1-1">Update Packages<br/>
+<li id="sec-6-5-5-1">Steps<br/>
+<ol>
+<li>update packages 
 
 
 
 <pre class="src src-sh">apt-get update; apt-get upgrade; apt-get dist-upgrade
 </pre>
 
-
 </li>
-</ul>
-<ul>
-<li id="sec-4-5-4-1-2">Install Packages<br/>
+<li>install packages
 
 
 
-<pre class="src src-sh">apt-get install aptitude
-apt-get install emacs
-apt-get install build-essentials
-apt-get install pkg-config
+<pre class="src src-sh">apt-get install aptitude emacs build-essentials pkg-config
 </pre>
 
+<ul>
+<li>emacs is obviously "optional" but is the preferred text-editor of choice for <a href="http://xkcd.com/378/">real programmers</a> ;)
 </li>
 </ul>
+
+</li>
+</ol>
+
 </li>
 </ul>
 </div>
 
 </div>
 
-<div id="outline-container-4-5-5" class="outline-4">
-<h4 id="sec-4-5-5">Configure SSH to start on Boot</h4>
-<div class="outline-text-4" id="text-4-5-5">
+<div id="outline-container-6-5-6" class="outline-4">
+<h4 id="sec-6-5-6">Configure SSH to start on Boot</h4>
+<div class="outline-text-4" id="text-6-5-6">
 
 <ul>
-<li id="sec-4-5-5-1">Steps<br/>
+<li id="sec-6-5-6-1">Steps<br/>
 <ul>
-<li id="sec-4-5-5-1-1">Install ssh server<br/>
+<li id="sec-6-5-6-1-1">Install ssh server<br/>
 
 
 
@@ -2864,7 +2822,7 @@ apt-get install pkg-config
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-5-1-2">Create or modify the /etc/init.d/sshd init script as follows:<br/>
+<li id="sec-6-5-6-1-2">Create or modify the /etc/init.d/sshd init script as follows:<br/>
 
 
 
@@ -2894,7 +2852,7 @@ apt-get install pkg-config
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-5-1-3">Check that /etc/rc3.d/S89sshd exists (or any sshd startup script exists) and is a soft link to /etc/init.d/sshd.<br/>
+<li id="sec-6-5-6-1-3">Check that /etc/rc3.d/S89sshd exists (or any sshd startup script exists) and is a soft link to /etc/init.d/sshd.<br/>
 <ul>
 <li>If not, create it using the following command:
 
@@ -2909,7 +2867,7 @@ apt-get install pkg-config
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-5-1-4">Determine that ssh is running<br/>
+<li id="sec-6-5-6-1-4">Determine that ssh is running<br/>
 
 
 
@@ -2919,7 +2877,7 @@ apt-get install pkg-config
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-5-1-5">Determine Port Open<br/>
+<li id="sec-6-5-6-1-5">Determine Port Open<br/>
 
 
 
@@ -2935,7 +2893,7 @@ apt-get install pkg-config
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-5-1-6">Determine IP Address to connect to<br/>
+<li id="sec-6-5-6-1-6">Determine IP Address to connect to<br/>
 
 
 
@@ -2946,7 +2904,7 @@ apt-get install pkg-config
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-5-1-7">Connect to ssh<br/>
+<li id="sec-6-5-6-1-7">Connect to ssh<br/>
 
 
 
@@ -2958,9 +2916,9 @@ apt-get install pkg-config
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-5-2">Debugging<br/>
+<li id="sec-6-5-6-2">Debugging<br/>
 <ul>
-<li id="sec-4-5-5-2-1">Check ports being listened on<br/>
+<li>Check ports being listened on
 
 
 
@@ -2969,111 +2927,15 @@ apt-get install pkg-config
 
 </li>
 </ul>
-</li>
-</ul>
-<ul>
-<li id="sec-4-5-5-3">Links<br/>
-<ul>
-<li><a href="http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic=%2Fcom.ibm.tnpm.doc%2Finstall%2Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html">Configure Open SSH Server to start up on system boot</a>
-</li>
-<li><a href="http://raspberrypi.stackexchange.com/questions/4709/ssh-connection-refused-on-raspberry-pi-cannot-find-why">ssh connection refused on raspberry pi cannot find why</a>
-</li>
-</ul>
-
-</li>
-</ul>
-</div>
-
-</div>
-
-<div id="outline-container-4-5-6" class="outline-4">
-<h4 id="sec-4-5-6">Configure Static IP Address</h4>
-<div class="outline-text-4" id="text-4-5-6">
-
-<ul>
-<li id="sec-4-5-6-1">Steps<br/>
-<ul>
-<li id="sec-4-5-6-1-1">Determine Information<br/>
-
-
-
-<pre class="src src-sh">ifconfig
-</pre>
-
-<ul>
-<li>Find:
-<ul>
-<li>address
-</li>
-<li>netmask
-</li>
-<li>gateway
-</li>
-<li>DNS Servers
-</li>
-</ul>
-
-</li>
-</ul>
 
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-6-1-2">Modify /etc/network/interfaces as Root<br/>
-
-
-
-<pre class="example">auto wlan3
-iface wlan3 inet static
-   wpa-ssid TVCOG
-   wpa-psk COGpass1
-   address 192.168.12.222
-   netmask 255.255.255.0
-   gateway 192.168.12.1
-</pre>
-
-</li>
-</ul>
+<li id="sec-6-5-6-3">Links<br/>
 <ul>
-<li id="sec-4-5-6-1-3">Modify /etc/resolv.conf as Root<br/>
-
-
-
-<pre class="example">domain techvalleycenterofgravity.com
-search techvalleycenterofgravity.com
-nameserver 64.22.32.8
-nameserver 64.22.32.9
-</pre>
-
+<li><a href="http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic=%2Fcom.ibm.tnpm.doc%2Finstall%2Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html">Configure Open SSH Server To Start Up On System Boot</a>
 </li>
-</ul>
-<ul>
-<li id="sec-4-5-6-1-4">Restart Networking as Root<br/>
-
-
-
-<pre class="src src-sh">/etc/init.d/networking restart
-</pre>
-
-</li>
-</ul>
-<ul>
-<li id="sec-4-5-6-1-5">Test Results<br/>
-
-
-
-<pre class="src src-sh">ifconfig
-ping google.com
-</pre>
-
-</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li id="sec-4-5-6-2">Links<br/>
-<ul>
-<li><a href="http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu">Linux Basics set a Static IP on Ubuntu</a>
+<li><a href="http://raspberrypi.stackexchange.com/questions/4709/ssh-connection-refused-on-raspberry-pi-cannot-find-why">SSH Connection Refused On Raspberry Pi Cannot Find Why</a>
 </li>
 </ul>
 
@@ -3083,12 +2945,21 @@ ping google.com
 
 </div>
 
-<div id="outline-container-4-5-7" class="outline-4">
-<h4 id="sec-4-5-7">Install XFCE (Optional)</h4>
-<div class="outline-text-4" id="text-4-5-7">
+<div id="outline-container-6-5-7" class="outline-4">
+<h4 id="sec-6-5-7">Install XFCE (Optional)</h4>
+<div class="outline-text-4" id="text-6-5-7">
 
 <ul>
-<li id="sec-4-5-7-1">Steps<br/>
+<li id="sec-6-5-7-1">Overview<br/>
+<ul>
+<li>Most of this guide is dedicated to setting up this micro-controller to run QT Embedded, which allows the use of graphical programs without runnng a graphical desktop (XFCE).  That being said it is possible to install one, I haven't worked on getting touchscreen support working with it, but Olimex has posted a few tutorials and it does work fine with a mouse.
+</li>
+</ul>
+
+</li>
+</ul>
+<ul>
+<li id="sec-6-5-7-2">Steps<br/>
 
 
 
@@ -3102,17 +2973,17 @@ startx;
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-7-2">Links<br/>
+<li id="sec-6-5-7-3">Links<br/>
 <ul>
-<li id="sec-4-5-7-2-1">Installing GUI<br/>
+<li id="sec-6-5-7-3-1">Installing GUI<br/>
 <a href="http://lcncolinuxino.blogspot.com/p/installing-gui.html">http://lcncolinuxino.blogspot.com/p/installing-gui.html</a>
 <ul>
-<li id="sec-4-5-7-2-1-1">Overview<br/>
+<li id="sec-6-5-7-3-1-1">Overview<br/>
 Optionally if desired, a GUI user interface can be installed. This section describes how to install a small foot print xfce4 user interface.
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-7-2-1-2">Steps<br/>
+<li id="sec-6-5-7-3-1-2">Steps<br/>
 
 
 
@@ -3129,7 +3000,7 @@ startx;
 </li>
 </ul>
 <ul>
-<li id="sec-4-5-7-2-1-3">Links<br/>
+<li id="sec-6-5-7-3-1-3">Links<br/>
 <ul>
 <li>
 </li>
@@ -3142,40 +3013,36 @@ startx;
 </ul>
 </li>
 </ul>
-<ul>
-<li id="sec-4-5-7-3">Consider Qt Razorh<br/>
-</li>
-</ul>
 </div>
 </div>
 
 </div>
 
-<div id="outline-container-4-6" class="outline-3">
-<h3 id="sec-4-6">Serial Communicate with Board with Bluetooth Module Add-On</h3>
-<div class="outline-text-3" id="text-4-6">
+<div id="outline-container-6-6" class="outline-3">
+<h3 id="sec-6-6">Configure Serial Communication with Bluetooth Module</h3>
+<div class="outline-text-3" id="text-6-6">
 
 
 </div>
 
-<div id="outline-container-4-6-1" class="outline-4">
-<h4 id="sec-4-6-1">Communicate to Bluetooth</h4>
-<div class="outline-text-4" id="text-4-6-1">
+<div id="outline-container-6-6-1" class="outline-4">
+<h4 id="sec-6-6-1">Communicate to Bluetooth</h4>
+<div class="outline-text-4" id="text-6-6-1">
 
 <ul>
-<li id="sec-4-6-1-1">Connecting<br/>
+<li id="sec-6-6-1-1">Connecting<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-4-6-1-2">Installation<br/>
+<li id="sec-6-6-1-2">Installation<br/>
 <ul>
-<li id="sec-4-6-1-2-1">Connect to Linvar<br/>
+<li id="sec-6-6-1-2-1">Connect to Linvar<br/>
 Passphrase: 1234
 
 </li>
 </ul>
 <ul>
-<li id="sec-4-6-1-2-2">Edit /etc/bluetooth/rfcomm.conf file<br/>
+<li id="sec-6-6-1-2-2"><a name="rfcomm" id="rfcomm"></a>Configure /etc/bluetooth/rfcomm.conf<br/>
 
 
 
@@ -3202,7 +3069,7 @@ rfcomm0 {
 </li>
 </ul>
 <ul>
-<li id="sec-4-6-1-2-3">Restart Bluetooth<br/>
+<li id="sec-6-6-1-2-3">Restart Bluetooth<br/>
 
 
 
@@ -3213,13 +3080,13 @@ rfcomm0 {
 </li>
 </ul>
 <ul>
-<li id="sec-4-6-1-2-4">Determine the Hardware Address<br/>
+<li id="sec-6-6-1-2-4">Determine the Hardware Address<br/>
 The hardware address should be replaced with that of your phone. If you don't know the hardware address of your phone yet, you can get it by running:
 
 </li>
 </ul>
 <ul>
-<li id="sec-4-6-1-2-5">Bind the Address<br/>
+<li id="sec-6-6-1-2-5">Bind the Address<br/>
 
 
 
@@ -3231,7 +3098,7 @@ The hardware address should be replaced with that of your phone. If you don't kn
 </li>
 </ul>
 <ul>
-<li id="sec-4-6-1-3">Links<br/>
+<li id="sec-6-6-1-3">Links<br/>
 <ul>
 <li><a href="http://www.thinkwiki.org/wiki/How_to_setup_Bluetooth">How to setup Bluetooth</a>
 </li>
@@ -3243,18 +3110,18 @@ The hardware address should be replaced with that of your phone. If you don't kn
 
 </div>
 
-<div id="outline-container-4-6-2" class="outline-4">
-<h4 id="sec-4-6-2">Get Serial Over Linux</h4>
-<div class="outline-text-4" id="text-4-6-2">
+<div id="outline-container-6-6-2" class="outline-4">
+<h4 id="sec-6-6-2">Get Serial Over Linux</h4>
+<div class="outline-text-4" id="text-6-6-2">
 
 <ul>
-<li id="sec-4-6-2-1">Installation<br/>
+<li id="sec-6-6-2-1">Installation<br/>
 <ul>
-<li id="sec-4-6-2-1-1">Determine hardware a<br/>
+<li id="sec-6-6-2-1-1">Determine hardware a<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-4-6-2-1-2">Modify /etc/bluetooth/rfcomm.conf as Root<br/>
+<li id="sec-6-6-2-1-2">Modify /etc/bluetooth/rfcomm.conf as Root<br/>
 
 
 
@@ -3276,7 +3143,7 @@ The hardware address should be replaced with that of your phone. If you don't kn
 </li>
 </ul>
 <ul>
-<li id="sec-4-6-2-1-3">Restart Bluetooth<br/>
+<li id="sec-6-6-2-1-3">Restart Bluetooth<br/>
 
 
 
@@ -3289,7 +3156,7 @@ The hardware address should be replaced with that of your phone. If you don't kn
 </li>
 </ul>
 <ul>
-<li id="sec-4-6-2-2">Connecting<br/>
+<li id="sec-6-6-2-2">Connecting<br/>
 <ol>
 <li>Initialize Connection
 
@@ -3314,7 +3181,7 @@ The hardware address should be replaced with that of your phone. If you don't kn
 </li>
 </ul>
 <ul>
-<li id="sec-4-6-2-3">Links<br/>
+<li id="sec-6-6-2-3">Links<br/>
 <ul>
 <li><a href="http://www.cyberciti.biz/hardware/5-linux-unix-commands-for-connecting-to-the-serial-console/">5 linux unix commands for connecting to the serial console</a>
 </li>
@@ -3329,16 +3196,16 @@ The hardware address should be replaced with that of your phone. If you don't kn
 
 </div>
 
-<div id="outline-container-4-7" class="outline-3">
-<h3 id="sec-4-7">Buildroot - Install ARM Toolchain</h3>
-<div class="outline-text-3" id="text-4-7">
+<div id="outline-container-6-7" class="outline-3">
+<h3 id="sec-6-7">Install ARM Toolchain with Buildroot</h3>
+<div class="outline-text-3" id="text-6-7">
 
 
 </div>
 
-<div id="outline-container-4-7-1" class="outline-4">
-<h4 id="sec-4-7-1">Steps</h4>
-<div class="outline-text-4" id="text-4-7-1">
+<div id="outline-container-6-7-1" class="outline-4">
+<h4 id="sec-6-7-1">Steps</h4>
+<div class="outline-text-4" id="text-6-7-1">
 
 <ol>
 <li>Download Buildroot
@@ -3419,9 +3286,9 @@ cp /etc/environment /etc/environment.BAK
 
 
 <ul>
-<li id="sec-4-7-1-1">Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"<br/>
+<li id="sec-6-7-1-1">Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"<br/>
 <ul>
-<li id="sec-4-7-1-1-1">Error:<br/>
+<li id="sec-6-7-1-1-1">Error:<br/>
 <ul>
 <li>error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
 </li>
@@ -3430,7 +3297,7 @@ cp /etc/environment /etc/environment.BAK
 </li>
 </ul>
 <ul>
-<li id="sec-4-7-1-1-2">Probable Cause<br/>
+<li id="sec-6-7-1-1-2">Probable Cause<br/>
 <ul>
 <li>Its looking for 32-bit library, which is not installed since I have a 64-bit system
 </li>
@@ -3439,7 +3306,7 @@ cp /etc/environment /etc/environment.BAK
 </li>
 </ul>
 <ul>
-<li id="sec-4-7-1-1-3">Solution<br/>
+<li id="sec-6-7-1-1-3">Solution<br/>
 <ul>
 <li>Install the 32 bit libraries
 </li>
@@ -3454,7 +3321,7 @@ cp /etc/environment /etc/environment.BAK
 </li>
 </ul>
 <ul>
-<li id="sec-4-7-1-1-4">Links<br/>
+<li id="sec-6-7-1-1-4">Links<br/>
 <ul>
 <li><a href="http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory">http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory</a>
 </li>
@@ -3468,9 +3335,9 @@ cp /etc/environment /etc/environment.BAK
 
 </div>
 
-<div id="outline-container-4-7-2" class="outline-4">
-<h4 id="sec-4-7-2">Links</h4>
-<div class="outline-text-4" id="text-4-7-2">
+<div id="outline-container-6-7-2" class="outline-4">
+<h4 id="sec-6-7-2">Links</h4>
+<div class="outline-text-4" id="text-6-7-2">
 
 <ul>
 <li><a href="./doc/using-buildroot-real-project.pdf">Using buildroot for real projects</a>
@@ -3487,16 +3354,16 @@ cp /etc/environment /etc/environment.BAK
 
 </div>
 
-<div id="outline-container-4-8" class="outline-3">
-<h3 id="sec-4-8">Configure tslib on Device</h3>
-<div class="outline-text-3" id="text-4-8">
+<div id="outline-container-6-8" class="outline-3">
+<h3 id="sec-6-8">Configure tslib on Device</h3>
+<div class="outline-text-3" id="text-6-8">
 
 
 </div>
 
-<div id="outline-container-4-8-1" class="outline-4">
-<h4 id="sec-4-8-1">Overview</h4>
-<div class="outline-text-4" id="text-4-8-1">
+<div id="outline-container-6-8-1" class="outline-4">
+<h4 id="sec-6-8-1">Overview</h4>
+<div class="outline-text-4" id="text-6-8-1">
 
 
 
@@ -3516,9 +3383,9 @@ Here is a full step-by-step manual how to get the device works well under Debian
 
 </div>
 
-<div id="outline-container-4-8-2" class="outline-4">
-<h4 id="sec-4-8-2">Steps</h4>
-<div class="outline-text-4" id="text-4-8-2">
+<div id="outline-container-6-8-2" class="outline-4">
+<h4 id="sec-6-8-2">Steps</h4>
+<div class="outline-text-4" id="text-6-8-2">
 
 <ol>
 <li>Install make and automake
@@ -3635,14 +3502,14 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 
 </div>
 
-<div id="outline-container-4-8-3" class="outline-4">
-<h4 id="sec-4-8-3">Errors</h4>
-<div class="outline-text-4" id="text-4-8-3">
+<div id="outline-container-6-8-3" class="outline-4">
+<h4 id="sec-6-8-3">Errors</h4>
+<div class="outline-text-4" id="text-6-8-3">
 
 <ul>
-<li id="sec-4-8-3-1">undefined macro: AC_DISABLE_STATIC<br/>
+<li id="sec-6-8-3-1">undefined macro: AC_DISABLE_STATIC<br/>
 <ul>
-<li id="sec-4-8-3-1-1">Error Caused<br/>
+<li id="sec-6-8-3-1-1">Error Caused<br/>
 <ul>
 <li>while attempting to do "autoreconf -vi" when building tslib
 </li>
@@ -3651,7 +3518,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </li>
 </ul>
 <ul>
-<li id="sec-4-8-3-1-2">Error Message<br/>
+<li id="sec-6-8-3-1-2">Error Message<br/>
 
 
 
@@ -3663,7 +3530,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </li>
 </ul>
 <ul>
-<li id="sec-4-8-3-1-3">Solution<br/>
+<li id="sec-6-8-3-1-3">Solution<br/>
 
 
 
@@ -3673,7 +3540,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </li>
 </ul>
 <ul>
-<li id="sec-4-8-3-1-4">Links<br/>
+<li id="sec-6-8-3-1-4">Links<br/>
 <ul>
 <li><a href="http://www.friendlyarm.net/forum/topic/621">http://www.friendlyarm.net/forum/topic/621</a>
 </li>
@@ -3687,9 +3554,9 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 
 </div>
 
-<div id="outline-container-4-8-4" class="outline-4">
-<h4 id="sec-4-8-4">Test tslib Input Received from Touchscreen</h4>
-<div class="outline-text-4" id="text-4-8-4">
+<div id="outline-container-6-8-4" class="outline-4">
+<h4 id="sec-6-8-4">Test tslib Input Received from Touchscreen</h4>
+<div class="outline-text-4" id="text-6-8-4">
 
 
 
@@ -3701,9 +3568,9 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 
 </div>
 
-<div id="outline-container-4-8-5" class="outline-4">
-<h4 id="sec-4-8-5">Links</h4>
-<div class="outline-text-4" id="text-4-8-5">
+<div id="outline-container-6-8-5" class="outline-4">
+<h4 id="sec-6-8-5">Links</h4>
+<div class="outline-text-4" id="text-6-8-5">
 
 <ul>
 <li><a href="http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html">http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html</a>
@@ -3717,19 +3584,19 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 
 </div>
 
-<div id="outline-container-4-9" class="outline-3">
-<h3 id="sec-4-9">Configure QT for Embedded Linux</h3>
-<div class="outline-text-3" id="text-4-9">
+<div id="outline-container-6-9" class="outline-3">
+<h3 id="sec-6-9">Configure QT for Embedded Linux</h3>
+<div class="outline-text-3" id="text-6-9">
 
 
 </div>
 
-<div id="outline-container-4-9-1" class="outline-4">
-<h4 id="sec-4-9-1">Steps</h4>
-<div class="outline-text-4" id="text-4-9-1">
+<div id="outline-container-6-9-1" class="outline-4">
+<h4 id="sec-6-9-1">Steps</h4>
+<div class="outline-text-4" id="text-6-9-1">
 
 <ul>
-<li id="sec-4-9-1-1">Install QT on Development Platform<br/>
+<li id="sec-6-9-1-1">Install QT on Development Platform<br/>
 <a href="http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/">http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/</a>
 
 
@@ -3740,7 +3607,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </li>
 </ul>
 <ul>
-<li id="sec-4-9-1-2">Install TSLIB on Development Platform<br/>
+<li id="sec-6-9-1-2">Install TSLIB on Development Platform<br/>
 <a href="http://billforums.station51.net/viewtopic.php?f=8&amp;t=15">http://billforums.station51.net/viewtopic.php?f=8&amp;t=15</a>
 
 
@@ -3775,9 +3642,9 @@ QMAKE_LIBDIR  += /usr/local/tslib/lib
 </li>
 </ul>
 <ul>
-<li id="sec-4-9-1-3">Install qt-everywhere on Development Platform<br/>
+<li id="sec-6-9-1-3">Install qt-everywhere on Development Platform<br/>
 <ul>
-<li id="sec-4-9-1-3-1">Steps<br/>
+<li id="sec-6-9-1-3-1">Steps<br/>
 <ol>
 <li>Install Source
 
@@ -3825,7 +3692,7 @@ load(qt_config)
 
 
 
-<pre class="src src-sh">make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license -qt-mouse-tslib
+<pre class="src src-sh">make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license -qt-mouse-tslibg
 </pre>
 
 <ul>
@@ -3876,7 +3743,7 @@ make install
 </li>
 </ul>
 <ul>
-<li id="sec-4-9-1-3-2">Errors<br/>
+<li id="sec-6-9-1-3-2">Errors<br/>
 <ul>
 <li><i>opt/ext_toolchain/bin</i>../lib/gcc/arm-linux-gnueabihf/4.7.3/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lbootstrap
 </li>
@@ -3888,9 +3755,9 @@ make install
 </li>
 </ul>
 <ul>
-<li id="sec-4-9-1-4">Copy Libraries Over to Device<br/>
+<li id="sec-6-9-1-4">Copy Libraries Over to Device<br/>
 <ul>
-<li id="sec-4-9-1-4-1">Steps<br/>
+<li id="sec-6-9-1-4-1">Steps<br/>
 <ol>
 <li>Copy qt libraries to device.
 
@@ -3950,7 +3817,7 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </li>
 </ul>
 <ul>
-<li id="sec-4-9-1-4-2">Warning<br/>
+<li id="sec-6-9-1-4-2">Warning<br/>
 <ul>
 <li>/dev/input/event# may change depending on the ordering and number of USB inputs you have plugged in.
 </li>
@@ -3974,9 +3841,9 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 
 </div>
 
-<div id="outline-container-4-9-2" class="outline-4">
-<h4 id="sec-4-9-2">Links</h4>
-<div class="outline-text-4" id="text-4-9-2">
+<div id="outline-container-6-9-2" class="outline-4">
+<h4 id="sec-6-9-2">Links</h4>
+<div class="outline-text-4" id="text-6-9-2">
 
 <ul>
 <li><a href="http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux">http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux</a>
@@ -4014,29 +3881,31 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 
 </div>
 
-<div id="outline-container-5" class="outline-2">
-<h2 id="sec-5">Simple Sample Programs</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7">Simple Sample Programs</h2>
+<div class="outline-text-2" id="text-7">
 
 
 </div>
 
-<div id="outline-container-5-1" class="outline-3">
-<h3 id="sec-5-1">Basic Output to LCD Screen</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1">Basic Output to LCD Screen</h3>
+<div class="outline-text-3" id="text-7-1">
 
 
 </div>
 
-<div id="outline-container-5-1-1" class="outline-4">
-<h4 id="sec-5-1-1">MainWindow.cpp</h4>
-<div class="outline-text-4" id="text-5-1-1">
+<div id="outline-container-7-1-1" class="outline-4">
+<h4 id="sec-7-1-1">MainWindow.cpp</h4>
+<div class="outline-text-4" id="text-7-1-1">
 
 
 
 
 <pre class="src src-cpp"><span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"ui_mainwindow.h"</span>
+
+
 
 <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">MainWindow</span>(<span style="color: #63b8ff;">QWidget</span> *<span style="color: #7fffd4;">parent</span>) :
     QMainWindow(parent),
@@ -4061,9 +3930,9 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 
 </div>
 
-<div id="outline-container-5-1-2" class="outline-4">
-<h4 id="sec-5-1-2">MainWindow.h</h4>
-<div class="outline-text-4" id="text-5-1-2">
+<div id="outline-container-7-1-2" class="outline-4">
+<h4 id="sec-7-1-2">MainWindow.h</h4>
+<div class="outline-text-4" id="text-7-1-2">
 
 
 
@@ -4099,9 +3968,9 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 
 </div>
 
-<div id="outline-container-5-1-3" class="outline-4">
-<h4 id="sec-5-1-3">moc_mainwindow.cpp</h4>
-<div class="outline-text-4" id="text-5-1-3">
+<div id="outline-container-7-1-3" class="outline-4">
+<h4 id="sec-7-1-3">moc_mainwindow.cpp</h4>
+<div class="outline-text-4" id="text-7-1-3">
 
 
 
@@ -4222,9 +4091,9 @@ QT_END_MOC_NAMESPACE
 
 </div>
 
-<div id="outline-container-5-1-4" class="outline-4">
-<h4 id="sec-5-1-4">ui_mainwindow.h</h4>
-<div class="outline-text-4" id="text-5-1-4">
+<div id="outline-container-7-1-4" class="outline-4">
+<h4 id="sec-7-1-4">ui_mainwindow.h</h4>
+<div class="outline-text-4" id="text-7-1-4">
 
 
 
@@ -4323,9 +4192,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-5-1-5" class="outline-4">
-<h4 id="sec-5-1-5">mainwindow.ui</h4>
-<div class="outline-text-4" id="text-5-1-5">
+<div id="outline-container-7-1-5" class="outline-4">
+<h4 id="sec-7-1-5">mainwindow.ui</h4>
+<div class="outline-text-4" id="text-7-1-5">
 
 
 
@@ -4435,24 +4304,24 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-5-2" class="outline-3">
-<h3 id="sec-5-2">Build a Button that does Something on Screen</h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-7-2" class="outline-3">
+<h3 id="sec-7-2">Build a Button that does Something on Screen</h3>
+<div class="outline-text-3" id="text-7-2">
 
 </div>
 
 </div>
 
-<div id="outline-container-5-3" class="outline-3">
-<h3 id="sec-5-3">Hello World Program</h3>
-<div class="outline-text-3" id="text-5-3">
+<div id="outline-container-7-3" class="outline-3">
+<h3 id="sec-7-3">Hello World Program</h3>
+<div class="outline-text-3" id="text-7-3">
 
 
 </div>
 
-<div id="outline-container-5-3-1" class="outline-4">
-<h4 id="sec-5-3-1">Source Code</h4>
-<div class="outline-text-4" id="text-5-3-1">
+<div id="outline-container-7-3-1" class="outline-4">
+<h4 id="sec-7-3-1">Source Code</h4>
+<div class="outline-text-4" id="text-7-3-1">
 
 
 
@@ -4563,21 +4432,21 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-5-4" class="outline-3">
-<h3 id="sec-5-4">Toggle A LED (A13-Olimex-Micro)</h3>
-<div class="outline-text-3" id="text-5-4">
+<div id="outline-container-7-4" class="outline-3">
+<h3 id="sec-7-4">Toggle A LED (A13-Olimex-Micro)</h3>
+<div class="outline-text-3" id="text-7-4">
 
 
 </div>
 
-<div id="outline-container-5-4-1" class="outline-4">
-<h4 id="sec-5-4-1">Toggle a LED</h4>
-<div class="outline-text-4" id="text-5-4-1">
+<div id="outline-container-7-4-1" class="outline-4">
+<h4 id="sec-7-4-1">Toggle a LED</h4>
+<div class="outline-text-4" id="text-7-4-1">
 
 <ul>
-<li id="sec-5-4-1-1">Using the Commandline<br/>
+<li id="sec-7-4-1-1">Using the Commandline<br/>
 <ul>
-<li id="sec-5-4-1-1-1">Turn it On<br/>
+<li id="sec-7-4-1-1-1">Turn it On<br/>
 
 
 
@@ -4587,7 +4456,7 @@ QT_END_NAMESPACE
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-1-1-2">Turn it Off<br/>
+<li id="sec-7-4-1-1-2">Turn it Off<br/>
 
 
 
@@ -4599,7 +4468,7 @@ QT_END_NAMESPACE
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-1-2">Using C Code<br/>
+<li id="sec-7-4-1-2">Using C Code<br/>
 
 
 
@@ -4711,115 +4580,12 @@ QT_END_NAMESPACE
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-1-3">Links<br/>
+<li id="sec-7-4-1-3">Links<br/>
 <ul>
 <li><a href="http://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/">A13 Olinuxino Playing with GPIOS</a>
 </li>
 </ul>
 
-</li>
-</ul>
-</div>
-</div>
-</div>
-
-</div>
-
-<div id="outline-container-6" class="outline-2">
-<h2 id="sec-6">Some Notes</h2>
-<div class="outline-text-2" id="text-6">
-
-
-</div>
-
-<div id="outline-container-6-1" class="outline-3">
-<h3 id="sec-6-1">Problem with the A13 Micro: All debian images are built for 512 MB of RAM, 256 is all that is available</h3>
-<div class="outline-text-3" id="text-6-1">
-
-
-</div>
-
-<div id="outline-container-6-1-1" class="outline-4">
-<h4 id="sec-6-1-1">Research</h4>
-<div class="outline-text-4" id="text-6-1-1">
-
-<ul>
-<li id="sec-6-1-1-1">Xman Conversation <a href="https://www.olimex.com/forum/index.php?topic=617.10;wap2">{Link}</a><br/>
-<ul>
-<li>&lt;xman&gt; hi, What happens if my dram_size = 512 in [dram_para], but my board have only 256MB?
-</li>
-<li>&lt;WarheadsSE&gt; xman: which board ?
-</li>
-<li>&lt;xman&gt; <a href="https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/">https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/</a>
-</li>
-<li>techn_&gt; with 256MB ram you propably need to disable mali, framebuffer and g2d.. memmap hard coded to somewhere 400-500MB
-</li>
-<li>&lt;techn_&gt; <a href="https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.0/arch/arm/mach-sun5i/core.c#L222example">example</a>
-</li>
-<li>xman&gt; 64M and 32M is for what?
-</li>
-<li>techn_&gt; 64M mali, 32M for reserved framebuffer(for mali use)
-</li>
-<li>&hellip;
-</li>
-<li>&lt;WarheadsSE&gt; xman: then you should be enable appropriately adjust the dram para, but you might need an updated uboot that has a 256M SPL
-</li>
-<li>..
-</li>
-<li>&lt;WarheadsSE&gt; the Wifi has an AXP, which the Mirco doesn't.
-</li>
-<li>&lt;WarheadsSE&gt; That's a big difference.
-</li>
-<li>&hellip;
-</li>
-<li>&lt;xman&gt; so, you edit fex, uptade kernel and update u-boot?
-</li>
-<li>&lt;WarheadsSE&gt; yes, fex change, kernel source change, u-boot source change
-</li>
-<li>&lt;WarheadsSE&gt; recompile all.
-</li>
-<li>..
-</li>
-<li>&lt;WarheadsSE&gt; For the moment, they need to use the provided kernel source repository, and the associated uboot.
-</li>
-</ul>
-
-</li>
-</ul>
-<ul>
-<li id="sec-6-1-1-2">Olimex General Conversation <a href="https://www.olimex.com/forum/index.php?topic=707.msg2819;topicseen#msg2819">{Link}</a><br/>
-</li>
-</ul>
-<ul>
-<li id="sec-6-1-1-3">In Depth Conversation about Recompiling Kernal from Source <a href="https://www.olimex.com/forum/index.php?topic=617.0">{Link}</a><br/>
-</li>
-</ul>
-</div>
-
-</div>
-
-<div id="outline-container-6-1-2" class="outline-4">
-<h4 id="sec-6-1-2">Compile Kernal From Source</h4>
-<div class="outline-text-4" id="text-6-1-2">
-
-<ul>
-<li id="sec-6-1-2-1">Links<br/>
-<ul>
-<li><a href="https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558">https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558</a>
-
-
-
-<pre class="src src-sh">git clone git://github.com/linux-sunxi/u-boot-sunxi.git
-git clone https://github.com/hehopmajieh/linux-sunxi
-<span style="color: #b0c4de;">cd</span> linux-sunxi
-git checkout origin/sunxi-3.0
-make a13_olinuxino_micro <span style="color: #7fffd4;">CROSS_COMPILE</span>=arm-linux-gnueabi-
-make <span style="color: #7fffd4;">ARCH</span>=arm a13om_defconfig
-make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
-</pre>
-
-</li>
-</ul>
 
 
 </li>
