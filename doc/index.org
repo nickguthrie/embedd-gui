@@ -53,6 +53,8 @@ It is easy for small companies and hobbyists to prototype microcontroller based 
 ** RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI
 + [[http://youtu.be/aGBMwWWGzmk][Video]]
 + [[./doc/OSSEG2.pdf][Presentation Slides]]
+** A13-OLinuXino-MICRO Qt Embedded Fluidlauncher
++ [[http://youtu.be/rqEB2OLgkCY][Video]]
 ** RCOS Summer 2013 - Initial Presentation
 + [[./doc/OSSEG1.pdf][Presentation Slides]]
 * Hardware
