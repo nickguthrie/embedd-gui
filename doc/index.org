@@ -16,11 +16,13 @@
 
 * Overview
 ** A note from the Author
-This documentation is written under the [[GNU%20Free%20Documentation%20License][GNU Free Documentation License]]. Source code for this documentation can be found [[http://code.google.com/p/embedd-gui/][here]]. The Project page can be found [[http://rcos.rpi.edu/projects/embedd-gui/][here]]. This project would not be possible without funding from the [[http://rcos.rpi.edu/][Rensselaer Center for Open Source]].
+This documentation is written under the [[GNU%20Free%20Documentation%20License][GNU Free Documentation License]]. The source code repository for this project can be found [[http://code.google.com/p/embedd-gui/][here]]. This documentation is viewable as a [[./index.pdf][pdf]] and in its original [[./index.org][org-mode]] format. The RCOS Observatory Project page can be found [[http://rcos.rpi.edu/projects/embedd-gui/][here]]. This project would not be possible without funding from the [[http://rcos.rpi.edu/][Rensselaer Center for Open Source]].
 + I would like to extend a special thanks to:
   + [[http://rcos.rpi.edu/donor/][Sean O' Sullivan]]
   + [[http://www.cs.rpi.edu/~goldsd/index.php][Professor Goldschmidt, Ph.D]]
   + [[http://www.cs.rpi.edu/~moorthy/][Professor Krishnamoorthy, Ph.D]]
+  + Timothy Cantwell
+  + Jorel Lalicki
   + RCOS Members for their continued support
 
 Happy Hacking! :)
