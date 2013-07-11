@@ -14,5 +14,5 @@
 
 #+TEXT: View documentation as: | [[./index.html][INFO.js]] | [[./index.pdf][pdf]] | [[./full.html][Single HTML]] | [[http://nickguthrie.com/embedd_gui/doc/index.org][Org-Mode]] | . 
 #+TEXT: This documentation is written under the [[GNU%20Free%20Documentation%20License][GNU Free Documentation License]]. \\
-#+TEXT: Project Links: | [[http://code.google.com/p/embedd-gui/][SVN Repository]] | [[http://rcos.rpi.edu/projects/embedd-gui/][RCOS Observatory]] | \\
+#+TEXT: Project Links: | [[http://code.google.com/p/embedd-gui/][SVN Repository]] | [[http://rcos.rpi.edu/projects/embedd-gui/][RCOS Observatory]] | [[http://nickguthrie.com/embedd_gui/bin/A13-OlinuXino/][Prebuilt Debian Images]] | [[https://www.olimex.com/forum/index.php?topic%3D1595.0][Olimex Forum Post]] | \\
 
