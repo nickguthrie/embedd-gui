@@ -14,570 +14,55 @@
 #+LINK_HOME: http://code.google.com/p/embedd-gui/
 #+XSLT:
 
-* GNU Free Documentation License
-This documentation is written under the GNU Free Documentation License.
-Source code for this documentation can be found [[http://code.google.com/p/embedd-gui/][here]].
-
-- Nick Guthrie
-
-
-#+BEGIN_EXAMPLE
-                GNU Free Documentation License
-                 Version 1.3, 3 November 2008
-
- Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
-     <http://fsf.org/>
- Everyone is permitted to copy and distribute verbatim copies
- of this license document, but changing it is not allowed.
-
-0. PREAMBLE
-
-The purpose of this License is to make a manual, textbook, or other
-functional and useful document "free" in the sense of freedom: to
-assure everyone the effective freedom to copy and redistribute it,
-with or without modifying it, either commercially or noncommercially.
-Secondarily, this License preserves for the author and publisher a way
-to get credit for their work, while not being considered responsible
-for modifications made by others.
-
-This License is a kind of "copyleft", which means that derivative
-works of the document must themselves be free in the same sense.  It
-complements the GNU General Public License, which is a copyleft
-license designed for free software.
-
-We have designed this License in order to use it for manuals for free
-software, because free software needs free documentation: a free
-program should come with manuals providing the same freedoms that the
-software does.  But this License is not limited to software manuals;
-it can be used for any textual work, regardless of subject matter or
-whether it is published as a printed book.  We recommend this License
-principally for works whose purpose is instruction or reference.
-
-
-1. APPLICABILITY AND DEFINITIONS
-
-This License applies to any manual or other work, in any medium, that
-contains a notice placed by the copyright holder saying it can be
-distributed under the terms of this License.  Such a notice grants a
-world-wide, royalty-free license, unlimited in duration, to use that
-work under the conditions stated herein.  The "Document", below,
-refers to any such manual or work.  Any member of the public is a
-licensee, and is addressed as "you".  You accept the license if you
-copy, modify or distribute the work in a way requiring permission
-under copyright law.
-
-A "Modified Version" of the Document means any work containing the
-Document or a portion of it, either copied verbatim, or with
-modifications and/or translated into another language.
-
-A "Secondary Section" is a named appendix or a front-matter section of
-the Document that deals exclusively with the relationship of the
-publishers or authors of the Document to the Document's overall
-subject (or to related matters) and contains nothing that could fall
-directly within that overall subject.  (Thus, if the Document is in
-part a textbook of mathematics, a Secondary Section may not explain
-any mathematics.)  The relationship could be a matter of historical
-connection with the subject or with related matters, or of legal,
-commercial, philosophical, ethical or political position regarding
-them.
-
-The "Invariant Sections" are certain Secondary Sections whose titles
-are designated, as being those of Invariant Sections, in the notice
-that says that the Document is released under this License.  If a
-section does not fit the above definition of Secondary then it is not
-allowed to be designated as Invariant.  The Document may contain zero
-Invariant Sections.  If the Document does not identify any Invariant
-Sections then there are none.
-
-The "Cover Texts" are certain short passages of text that are listed,
-as Front-Cover Texts or Back-Cover Texts, in the notice that says that
-the Document is released under this License.  A Front-Cover Text may
-be at most 5 words, and a Back-Cover Text may be at most 25 words.
-
-A "Transparent" copy of the Document means a machine-readable copy,
-represented in a format whose specification is available to the
-general public, that is suitable for revising the document
-straightforwardly with generic text editors or (for images composed of
-pixels) generic paint programs or (for drawings) some widely available
-drawing editor, and that is suitable for input to text formatters or
-for automatic translation to a variety of formats suitable for input
-to text formatters.  A copy made in an otherwise Transparent file
-format whose markup, or absence of markup, has been arranged to thwart
-or discourage subsequent modification by readers is not Transparent.
-An image format is not Transparent if used for any substantial amount
-of text.  A copy that is not "Transparent" is called "Opaque".
-
-Examples of suitable formats for Transparent copies include plain
-ASCII without markup, Texinfo input format, LaTeX input format, SGML
-or XML using a publicly available DTD, and standard-conforming simple
-HTML, PostScript or PDF designed for human modification.  Examples of
-transparent image formats include PNG, XCF and JPG.  Opaque formats
-include proprietary formats that can be read and edited only by
-proprietary word processors, SGML or XML for which the DTD and/or
-processing tools are not generally available, and the
-machine-generated HTML, PostScript or PDF produced by some word
-processors for output purposes only.
-
-The "Title Page" means, for a printed book, the title page itself,
-plus such following pages as are needed to hold, legibly, the material
-this License requires to appear in the title page.  For works in
-formats which do not have any title page as such, "Title Page" means
-the text near the most prominent appearance of the work's title,
-preceding the beginning of the body of the text.
-
-The "publisher" means any person or entity that distributes copies of
-the Document to the public.
-
-A section "Entitled XYZ" means a named subunit of the Document whose
-title either is precisely XYZ or contains XYZ in parentheses following
-text that translates XYZ in another language.  (Here XYZ stands for a
-specific section name mentioned below, such as "Acknowledgements",
-"Dedications", "Endorsements", or "History".)  To "Preserve the Title"
-of such a section when you modify the Document means that it remains a
-section "Entitled XYZ" according to this definition.
-
-The Document may include Warranty Disclaimers next to the notice which
-states that this License applies to the Document.  These Warranty
-Disclaimers are considered to be included by reference in this
-License, but only as regards disclaiming warranties: any other
-implication that these Warranty Disclaimers may have is void and has
-no effect on the meaning of this License.
-
-2. VERBATIM COPYING
-
-You may copy and distribute the Document in any medium, either
-commercially or noncommercially, provided that this License, the
-copyright notices, and the license notice saying this License applies
-to the Document are reproduced in all copies, and that you add no
-other conditions whatsoever to those of this License.  You may not use
-technical measures to obstruct or control the reading or further
-copying of the copies you make or distribute.  However, you may accept
-compensation in exchange for copies.  If you distribute a large enough
-number of copies you must also follow the conditions in section 3.
-
-You may also lend copies, under the same conditions stated above, and
-you may publicly display copies.
-
-
-3. COPYING IN QUANTITY
-
-If you publish printed copies (or copies in media that commonly have
-printed covers) of the Document, numbering more than 100, and the
-Document's license notice requires Cover Texts, you must enclose the
-copies in covers that carry, clearly and legibly, all these Cover
-Texts: Front-Cover Texts on the front cover, and Back-Cover Texts on
-the back cover.  Both covers must also clearly and legibly identify
-you as the publisher of these copies.  The front cover must present
-the full title with all words of the title equally prominent and
-visible.  You may add other material on the covers in addition.
-Copying with changes limited to the covers, as long as they preserve
-the title of the Document and satisfy these conditions, can be treated
-as verbatim copying in other respects.
-
-If the required texts for either cover are too voluminous to fit
-legibly, you should put the first ones listed (as many as fit
-reasonably) on the actual cover, and continue the rest onto adjacent
-pages.
-
-If you publish or distribute Opaque copies of the Document numbering
-more than 100, you must either include a machine-readable Transparent
-copy along with each Opaque copy, or state in or with each Opaque copy
-a computer-network location from which the general network-using
-public has access to download using public-standard network protocols
-a complete Transparent copy of the Document, free of added material.
-If you use the latter option, you must take reasonably prudent steps,
-when you begin distribution of Opaque copies in quantity, to ensure
-that this Transparent copy will remain thus accessible at the stated
-location until at least one year after the last time you distribute an
-Opaque copy (directly or through your agents or retailers) of that
-edition to the public.
-
-It is requested, but not required, that you contact the authors of the
-Document well before redistributing any large number of copies, to
-give them a chance to provide you with an updated version of the
-Document.
-
-
-4. MODIFICATIONS
-
-You may copy and distribute a Modified Version of the Document under
-the conditions of sections 2 and 3 above, provided that you release
-the Modified Version under precisely this License, with the Modified
-Version filling the role of the Document, thus licensing distribution
-and modification of the Modified Version to whoever possesses a copy
-of it.  In addition, you must do these things in the Modified Version:
-
-A. Use in the Title Page (and on the covers, if any) a title distinct
-   from that of the Document, and from those of previous versions
-   (which should, if there were any, be listed in the History section
-   of the Document).  You may use the same title as a previous version
-   if the original publisher of that version gives permission.
-B. List on the Title Page, as authors, one or more persons or entities
-   responsible for authorship of the modifications in the Modified
-   Version, together with at least five of the principal authors of the
-   Document (all of its principal authors, if it has fewer than five),
-   unless they release you from this requirement.
-C. State on the Title page the name of the publisher of the
-   Modified Version, as the publisher.
-D. Preserve all the copyright notices of the Document.
-E. Add an appropriate copyright notice for your modifications
-   adjacent to the other copyright notices.
-F. Include, immediately after the copyright notices, a license notice
-   giving the public permission to use the Modified Version under the
-   terms of this License, in the form shown in the Addendum below.
-G. Preserve in that license notice the full lists of Invariant Sections
-   and required Cover Texts given in the Document's license notice.
-H. Include an unaltered copy of this License.
-I. Preserve the section Entitled "History", Preserve its Title, and add
-   to it an item stating at least the title, year, new authors, and
-   publisher of the Modified Version as given on the Title Page.  If
-   there is no section Entitled "History" in the Document, create one
-   stating the title, year, authors, and publisher of the Document as
-   given on its Title Page, then add an item describing the Modified
-   Version as stated in the previous sentence.
-J. Preserve the network location, if any, given in the Document for
-   public access to a Transparent copy of the Document, and likewise
-   the network locations given in the Document for previous versions
-   it was based on.  These may be placed in the "History" section.
-   You may omit a network location for a work that was published at
-   least four years before the Document itself, or if the original
-   publisher of the version it refers to gives permission.
-K. For any section Entitled "Acknowledgements" or "Dedications",
-   Preserve the Title of the section, and preserve in the section all
-   the substance and tone of each of the contributor acknowledgements
-   and/or dedications given therein.
-L. Preserve all the Invariant Sections of the Document,
-   unaltered in their text and in their titles.  Section numbers
-   or the equivalent are not considered part of the section titles.
-M. Delete any section Entitled "Endorsements".  Such a section
-   may not be included in the Modified Version.
-N. Do not retitle any existing section to be Entitled "Endorsements"
-   or to conflict in title with any Invariant Section.
-O. Preserve any Warranty Disclaimers.
-
-If the Modified Version includes new front-matter sections or
-appendices that qualify as Secondary Sections and contain no material
-copied from the Document, you may at your option designate some or all
-of these sections as invariant.  To do this, add their titles to the
-list of Invariant Sections in the Modified Version's license notice.
-These titles must be distinct from any other section titles.
-
-You may add a section Entitled "Endorsements", provided it contains
-nothing but endorsements of your Modified Version by various
-parties--for example, statements of peer review or that the text has
-been approved by an organization as the authoritative definition of a
-standard.
-
-You may add a passage of up to five words as a Front-Cover Text, and a
-passage of up to 25 words as a Back-Cover Text, to the end of the list
-of Cover Texts in the Modified Version.  Only one passage of
-Front-Cover Text and one of Back-Cover Text may be added by (or
-through arrangements made by) any one entity.  If the Document already
-includes a cover text for the same cover, previously added by you or
-by arrangement made by the same entity you are acting on behalf of,
-you may not add another; but you may replace the old one, on explicit
-permission from the previous publisher that added the old one.
-
-The author(s) and publisher(s) of the Document do not by this License
-give permission to use their names for publicity for or to assert or
-imply endorsement of any Modified Version.
-
-
-5. COMBINING DOCUMENTS
-
-You may combine the Document with other documents released under this
-License, under the terms defined in section 4 above for modified
-versions, provided that you include in the combination all of the
-Invariant Sections of all of the original documents, unmodified, and
-list them all as Invariant Sections of your combined work in its
-license notice, and that you preserve all their Warranty Disclaimers.
-
-The combined work need only contain one copy of this License, and
-multiple identical Invariant Sections may be replaced with a single
-copy.  If there are multiple Invariant Sections with the same name but
-different contents, make the title of each such section unique by
-adding at the end of it, in parentheses, the name of the original
-author or publisher of that section if known, or else a unique number.
-Make the same adjustment to the section titles in the list of
-Invariant Sections in the license notice of the combined work.
-
-In the combination, you must combine any sections Entitled "History"
-in the various original documents, forming one section Entitled
-"History"; likewise combine any sections Entitled "Acknowledgements",
-and any sections Entitled "Dedications".  You must delete all sections
-Entitled "Endorsements".
-
-
-6. COLLECTIONS OF DOCUMENTS
-
-You may make a collection consisting of the Document and other
-documents released under this License, and replace the individual
-copies of this License in the various documents with a single copy
-that is included in the collection, provided that you follow the rules
-of this License for verbatim copying of each of the documents in all
-other respects.
-
-You may extract a single document from such a collection, and
-distribute it individually under this License, provided you insert a
-copy of this License into the extracted document, and follow this
-License in all other respects regarding verbatim copying of that
-document.
-
-
-7. AGGREGATION WITH INDEPENDENT WORKS
-
-A compilation of the Document or its derivatives with other separate
-and independent documents or works, in or on a volume of a storage or
-distribution medium, is called an "aggregate" if the copyright
-resulting from the compilation is not used to limit the legal rights
-of the compilation's users beyond what the individual works permit.
-When the Document is included in an aggregate, this License does not
-apply to the other works in the aggregate which are not themselves
-derivative works of the Document.
-
-If the Cover Text requirement of section 3 is applicable to these
-copies of the Document, then if the Document is less than one half of
-the entire aggregate, the Document's Cover Texts may be placed on
-covers that bracket the Document within the aggregate, or the
-electronic equivalent of covers if the Document is in electronic form.
-Otherwise they must appear on printed covers that bracket the whole
-aggregate.
-
-
-8. TRANSLATION
-
-Translation is considered a kind of modification, so you may
-distribute translations of the Document under the terms of section 4.
-Replacing Invariant Sections with translations requires special
-permission from their copyright holders, but you may include
-translations of some or all Invariant Sections in addition to the
-original versions of these Invariant Sections.  You may include a
-translation of this License, and all the license notices in the
-Document, and any Warranty Disclaimers, provided that you also include
-the original English version of this License and the original versions
-of those notices and disclaimers.  In case of a disagreement between
-the translation and the original version of this License or a notice
-or disclaimer, the original version will prevail.
-
-If a section in the Document is Entitled "Acknowledgements",
-"Dedications", or "History", the requirement (section 4) to Preserve
-its Title (section 1) will typically require changing the actual
-title.
-
-
-9. TERMINATION
-
-You may not copy, modify, sublicense, or distribute the Document
-except as expressly provided under this License.  Any attempt
-otherwise to copy, modify, sublicense, or distribute it is void, and
-will automatically terminate your rights under this License.
-
-However, if you cease all violation of this License, then your license
-from a particular copyright holder is reinstated (a) provisionally,
-unless and until the copyright holder explicitly and finally
-terminates your license, and (b) permanently, if the copyright holder
-fails to notify you of the violation by some reasonable means prior to
-60 days after the cessation.
-
-Moreover, your license from a particular copyright holder is
-reinstated permanently if the copyright holder notifies you of the
-violation by some reasonable means, this is the first time you have
-received notice of violation of this License (for any work) from that
-copyright holder, and you cure the violation prior to 30 days after
-your receipt of the notice.
-
-Termination of your rights under this section does not terminate the
-licenses of parties who have received copies or rights from you under
-this License.  If your rights have been terminated and not permanently
-reinstated, receipt of a copy of some or all of the same material does
-not give you any rights to use it.
-
-
-10. FUTURE REVISIONS OF THIS LICENSE
-
-The Free Software Foundation may publish new, revised versions of the
-GNU Free Documentation License from time to time.  Such new versions
-will be similar in spirit to the present version, but may differ in
-detail to address new problems or concerns.  See
-http://www.gnu.org/copyleft/.
-
-Each version of the License is given a distinguishing version number.
-If the Document specifies that a particular numbered version of this
-License "or any later version" applies to it, you have the option of
-following the terms and conditions either of that specified version or
-of any later version that has been published (not as a draft) by the
-Free Software Foundation.  If the Document does not specify a version
-number of this License, you may choose any version ever published (not
-as a draft) by the Free Software Foundation.  If the Document
-specifies that a proxy can decide which future versions of this
-License can be used, that proxy's public statement of acceptance of a
-version permanently authorizes you to choose that version for the
-Document.
-
-11. RELICENSING
-
-"Massive Multiauthor Collaboration Site" (or "MMC Site") means any
-World Wide Web server that publishes copyrightable works and also
-provides prominent facilities for anybody to edit those works.  A
-public wiki that anybody can edit is an example of such a server.  A
-"Massive Multiauthor Collaboration" (or "MMC") contained in the site
-means any set of copyrightable works thus published on the MMC site.
-
-"CC-BY-SA" means the Creative Commons Attribution-Share Alike 3.0
-license published by Creative Commons Corporation, a not-for-profit
-corporation with a principal place of business in San Francisco,
-California, as well as future copyleft versions of that license
-published by that same organization.
-
-"Incorporate" means to publish or republish a Document, in whole or in
-part, as part of another Document.
-
-An MMC is "eligible for relicensing" if it is licensed under this
-License, and if all works that were first published under this License
-somewhere other than this MMC, and subsequently incorporated in whole or
-in part into the MMC, (1) had no cover texts or invariant sections, and
-(2) were thus incorporated prior to November 1, 2008.
-
-The operator of an MMC Site may republish an MMC contained in the site
-under CC-BY-SA on the same site at any time before August 1, 2009,
-provided the MMC is eligible for relicensing.
-
-
-ADDENDUM: How to use this License for your documents
-
-To use this License in a document you have written, include a copy of
-the License in the document and put the following copyright and
-license notices just after the title page:
-
-    Copyright (c)  YEAR  YOUR NAME.
-    Permission is granted to copy, distribute and/or modify this document
-    under the terms of the GNU Free Documentation License, Version 1.3
-    or any later version published by the Free Software Foundation;
-    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
-    A copy of the license is included in the section entitled "GNU
-    Free Documentation License".
-
-If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
-replace the "with...Texts." line with this:
-
-    with the Invariant Sections being LIST THEIR TITLES, with the
-    Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
-
-If you have Invariant Sections without Cover Texts, or some other
-combination of the three, merge those two alternatives to suit the
-situation.
-
-If your document contains nontrivial examples of program code, we
-recommend releasing these examples in parallel under your choice of
-free software license, such as the GNU General Public License,
-to permit their use in free software.
-#+END_EXAMPLE
-* TODO Overview                                                                 :noexport:
-** Embedded Graphical User Interfaces
-*** Background:
+* Overview
+** A note from the Author
+This documentation is written under the [[GNU%20Free%20Documentation%20License][GNU Free Documentation License]]. Source code for this documentation can be found [[http://code.google.com/p/embedd-gui/][here]]. The Project page can be found [[http://rcos.rpi.edu/projects/embedd-gui/][here]]. This project would not be possible without funding from the [[http://rcos.rpi.edu/][Rensselaer Center for Open Source]].
++ I would like to extend a special thanks to:
+  + [[http://rcos.rpi.edu/donor/][Sean O' Sullivan]]
+  + [[http://www.cs.rpi.edu/~goldsd/index.php][Professor Goldschmidt, Ph.D]]
+  + [[http://www.cs.rpi.edu/~moorthy/][Professor Krishnamoorthy, Ph.D]]
+  + RCOS Members for their continued support
+
+Happy Hacking! :)
+
+Nick Guthrie
+
+** Primary Objective
++ The goal of this project is to give users the ability to install Qt Embedded on an open source hardware system to allow for cheap, fast prototyping of graphical user interfaces.
+** Background
 We live in a world surrounded by computers - from our (arguably excessive) coffee  machines to our cell phones and cars, microcomputers play an integral role in our everyday lives. With the cost of electronics rapidly decreasing, and touchscreens becoming commonplace even on low cost consumer products, a unique need has arisen for a unified way of creating user interfaces on embedded devices.
-*** Why we need it:
+** Why we need it
 It is easy for small companies and hobbyists to prototype microcontroller based products, such as environmental sensors and other equipment. However, user interface design is generally left at basic pushbuttons and potentiometers, with at most a simple text display on a serial LCD. The barrier to entry into high end touchscreen interfaces is high: it often involves more development/work than the device itself, and there exist few unified solutions for multi-processor and display targeted builds. The few solutions that do exist are prohibitively expensive: For example, a license of Segger EmWin costs $12,300... per target architecture/CPU! Embedd GUI aims to be a “drop in” interface for embedded developers to rapidly incorporate touchscreens into projects.
-*** How/Technologies:
-The Embedded GUI Framework will be built in C/C++ using Qt Embedded.
+** How/Technologies - Qt Embedded
+[[./img/qt-embedded-linux-architecture.png]]
++ "Qt for Embedded Linux is a C++ framework for GUI and application development for embedded devices."
++ "Qt for Embedded Linux applications write directly to the framebuffer, eliminating the need for the X Window System and saving memory."
++ Qt Embedded allows us to run graphical interfaces without the heavy weight of running an entire graphical desktop.
++ Features
+  + Pointer Handling
+  + Character Input
+  + Display Management
+  + Hardware Accelerated Graphics
+  + Fonts
++ Links
+  + http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html
 
-
- to allow use with the vast majority of embedded toolchains in use. All hardware specific code will be isolated into header files, with preprocessor directives to allow targeted builds for different architectures. As a testing platform, TI Stellaris ARM M4 microprocessors will be used, driving a low cost 480 x 272px TFT touchscreen via a 24 bit parallel interface (the most common interface for LCD drivers).
-*** Features:
-**** Controls/Widgets
-+ Pushbutton
-+ Slider/Fader
-+ Label/Text control
-+ Tabs/groups for controls
-+ Events
-  + Touchscreen ‘coordinates’
-  + Button events (‘callback’ / function pointer)
-  + Encapsulated hardware specific code (to allow easy addition of new architectures/display drivers)
-
-** Vital Vio LLC:
-Vital Vio is a privately held biomedical and lighting design startup focused on manipulating light to address real world problems by developing innovative methods of delivery. Through precise combination and control of visible light, Vital Vio products utilize light for more than just illumination. Vital Vio units currently focus on the benefits of passive decontamination for human health aspects and environmental safety from microorganisms. This RCOS project will be under the guidance of Vital Vio, and supported in part (office space, some additional benefits) by Vital Vio LLC. The scope of the Embedded GUI Framework does not include any Vital Vio specific features, and is useful to a variety of other applications involving touchscreen interfaces. Vital Vio’s involvement in the project offers a unique and valuable opportunity for an open source project from RCOS to be immediately incorporated into a production product.
+* GNU Free Documentation License
+#+INCLUDE: "./license.txt" src txt
+* RCOS Presentations and Multimedia
+** RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI
++ [[http://youtu.be/aGBMwWWGzmk][Video]]
++ [[./doc/OSSEG2.pdf][Presentation Slides]]
+** RCOS Summer 2013 - Initial Presentation
++ [[./doc/OSSEG1.pdf][Presentation Slides]]
 * Hardware
-** A13-OLinuXino-MICRO (No Touchscreen Support)
-[[./img/A13-OLinuXino-MICRO-2.png]]
-*** Features
-+ A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
-+ 256 MB RAM (128Mbit x 16)
-+ 5VDC input power supply with own ICs, noise immune design
-+ 1 USB host
-+ 1 USB OTG which can power the board
-+ SD-card connector for booting the Linux image
-+ VGA video output
-+ LCD signals available on connector so you still can use LCD if you diasble VGA/HDMI
-+ Audio output
-+ Microphone input pads (no connector)
-+ 1 User key
-+ 4 Mount holes
-+ UEXT connectorfor connecting addtional UEXT modules like Zigbee, Bluetooth, Relays, etc
-+ GPIO connector with 68/74 pins and these signals:
-  + 17 for adding NAND flash;
-  + 22 for connecting LCDs;
-  + 20+4 including 8 GPIOs which can be input, output, interrupt sources;
-  + 3x I2C;
-  + 2x UARTs;
-  + SDIO2 for connectinf SDcards and modules;
-  + 5 system pins: +5V, +3.3V, GND, RESET, NMI
-+ Dimensions: 100 x 85 mm (3.950x3.350'')
-+ Optional low-cost 7" LCD with touchscreen
-
-*** FAQ
-**** There is only 1 USB host on the board, how can I connect simultaneously my USB mouse and USB keyboard?
-+ You should use external USB hub.
-**** What software is available for the board?
-+ The software development changes very rapidly. So far we have reports for number of Linux distributions working properly with the MICRO, please visit the WIKI and the GitHub     pages of A13-OLinuXino-MICRO to find suitable distributions;additionally you might want to check on the forum for additional help
-**** I bought A13-LCD7-TS but when I connect it to the A13-OLinuXino-MICRO I receive no image on the display. What do I do wrong?
-+ The default A13-OLinuXino-MICRO image is set for a VGA display and resolution. To use LCD with A13-OLinuXino-MICRO you need to upload new image with the appropriate settings.
-+ The download links for the images may be found in the wiki article for A13-OLinuXino.
-**** What is the operating temperature range of A13-OLinuXino?
-+ The board works in the commercial temeprature range 0+70C
-**** Where can I find the Android image for the A13-OLinuXino-MICRO?
-+ At the moment we haven't tested Android booting from SD card. Android from SD card is currently not officially supported. However note that there are people reporting success getting it to run - head to the Olimex forums for more recent info.
-*** Documentation
-+ [[./doc/A13-OLINUXINO-MICRO.pdf][A13-OLinuXino-MICRO User Manual]]
-+ [[./doc/A13-Brief.pdf][ManyCore Lite SoC for Android 4.0 PAD]]
-
-*** Links
-**** General
-+ https://github.com/OLIMEX/OLINUXINO
-+ https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/
-+ http://linux-sunxi.org/Main_Page - for discussion and community support
-+ https://www.olimex.com/forum/ - for OLinuXino development discussions
-**** Software Sources
-+ https://www.olimex.com/wiki/A13-OLinuXino-MICRO
-  + https://docs.google.com/file/d/0B-bAEPML8fwlTWFweEZGM0hmMkE/edit
-+ https://www.olimex.com/wiki/A13-OLinuXino
-*** Extrated CPU Info:
-
-| / | <l>              | <l>                                         |
-|---+------------------+---------------------------------------------|
-|   | Processor        | ARMv7 Processor rev 2 (v7l)                 |
-|   | BogoMIPS         | 1001.88                                     |
-|   | Features         | swp half thumb fastmult vfp edsp neon vfpv3 |
-|   | CPU implementer  | 0x41                                        |
-|   | CPU architecture | 7                                           |
-|   | CPU variant      | 0x3                                         |
-|   | CPU part         | 0xc08                                       |
-|   | CPU revision     | 2                                           |
-|---+------------------+---------------------------------------------|
-|   | Hardware         | sun5i                                       |
-|   | Revision         | 0000                                        |
-|   | Serial           | 0000000000000000                            |
-|---+------------------+---------------------------------------------|
-+ Derived From:
-  #+BEGIN_SRC sh
-    cat /proc/cpuinfo
-  #+END_SRC
-
-** A13-OlinuXino
+** Actual
+*** A13-OlinuXino
 [[./img/A13-OLinuXino-01.png]]
-*** Overview
+**** Overview
 A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-ITX form. It uses the very first Cortex A8 processor available in eLQFP176 package, produced by Allwinner Technology Inc A13.
 
-*** FEATURES
+**** Features
 + A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
 + 512 MB RAM (2 x 256Mbit x 8)
 + 6-16VDC input power supply, noise immune design
@@ -602,28 +87,29 @@ A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-I
 + 5 system pins: +5V, +3.3V, GND, RESET, NMI
 + Dimensions: 120 x 120 mm (4.7x4.7'')
 + Optional low-cost 7" LCD with touchscreen
-*** Links
-+ https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/
-**** DOCUMENTS
-+ [[https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-OLINUXINO.pdf][User's manual]]
+**** Links
+***** Retailers
++ [[https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/][Olimex]]
++ [[http://microcontrollershop.com/product_info.php?products_id%3D5412][microcontrollershop.com]]
+***** Datasheets
++ [[https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-OLINUXINO.pdf][User Manual]]
 + [[https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-Brief.pdf][A13-processor brief and datasheet]]
-**** HARDWARE
+***** Hardware
 + [[https://github.com/OLIMEX/OLINUXINO][GitHub OLINUXINO Project]]
-**** SOFTWARE
+***** Software
 + [[https://github.com/OLIMEX/OLINUXINO][GitHub OLINUXINO Project]]
 + [[http://linux-sunxi.org/][A1x Linux]]
-**** COMMUNITY
+***** Community
 + [[https://www.olimex.com/forum][OLinuXino forum]] for discussion and community support
 + [[http://webchat.freenode.net/?channels%3Dolimex][Freenode #olimex irc channel]] for OLinuXino development discussions
 
-** USB Wireless LAN Module
+*** USB Wireless LAN Module
 [[./img/modwifirtl8188.png]]
-*** Overview
+**** Overview
 + The MOD-WIFI-RTL8188 is a USB WiFi module that is supported by the [[http://microcontrollershop.com/product_info.php?products_id%3D5412&osCsid%3De1d38e51b568a17c2fe8bc8c2679dcda][A13-OLinuXino]] and [[http://microcontrollershop.com/product_info.php?products_id%3D5414&osCsid%3De1d38e51b568a17c2fe8bc8c2679dcda][A13-OLinuXino-MICRO]] boards.
 + It uses the same WiFi board that comes as standard on the [[http://microcontrollershop.com/product_info.php?products_id%3D5314&osCsid%3De1d38e51b568a17c2fe8bc8c2679dcda][A13-OLinuXino-WIFI]].
 + The WM-294 WiFi board on this module contains the popular RealTek RTL8188CUS single-chip Wireless LAN adapter. There are drivers available for Windows, Linux/Android and Mac, so you aren't limited only to using this module on an A13-OLinuXino board.
-
-*** Features
+**** Features
 + Has WM-294 module with RTL8188CUS, IEEE 802.11b/g/n
 + Operates in 2.4 GHz frequency bands
 + 1x1 MIMO technology improves effective throughput and range over existing 802.11 b/g products
@@ -637,51 +123,185 @@ A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-I
 + 4 test pads for easy tracking of the supply, d-, d+, and GND
 + PCB: FR-4, 1.00 mm (0.039"), solder mask, silkscreen component print
 + Dimensions: 65.15 × 20.38 mm (2.56 × 0.80")
-*** Resources
-+ [[./doc/module_WM294_spec.pdf][CC&C Technologies WM-294 Datasheet]]
-+ [[MOD-WiFi_RTL8188.pdf][MOD-WIFI-RTL8188 Schematic]]
 
 **** Links
-+ http://microcontrollershop.com/product_info.php?products_id=5555
-** 4.3" LCD Screen                                                             :noexport:
-+ FPC4034006
-+ tl-c430ve display
-+ 4.3" FPC4304006 MP4 MP5 GPS lcd display panel
-+ Place of Origin: Guangdong, China (Mainland)
-+ Brand Name: BYD
-
-** 4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen [[http://microcontrollershop.com/product_info.php?products_id%3D5557][{link}]]
+***** Retailers
++ [[http://microcontrollershop.com/product_info.php?products_id%3D5555][MicroControllerShop.com]]
++ [[https://www.olimex.com/Products/Modules/Ethernet/MOD-WIFI-RTL8188/][Olimex]]
+***** Datasheets
++ [[./doc/module_WM294_spec.pdf][CC&C Technologies WM-294 Datasheet]]
++ [[MOD-WiFi_RTL8188.pdf][MOD-WIFI-RTL8188 Schematic]]
+*** 4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen
 [[./img/a13lcd43ts_front.png]]     [[./img/a13lcd43ts_back.png]]
-*** Overview
+**** Overview
 + This is a 4.3-inch LCD with a resistive touch screen and an interface board that has been tested to work with A13 OLinuXino boards.
 + It connects to your A13 OLinuXino board by a 2×20-pin connector.
 + The display board and the OLinuXino board both have male box headers, so you will need a 40-pin IDC ribbon cable which is sold separately.
-
-*** A13-OLinuXino LCD Board Features
-**** TFT Panel:
+**** Features
+***** TFT Panel
 + Bo Lymin BT043DCNNHHp$ 4.3-inch (480×272) a-Si color TFT-LCD with white LED / CCFL backlight
 + 262K colors
 + Anti-glare surface
 + Resistive touchscreen panel
 + 40-pin connector for connection to A13-OLinuXino boards
 + 3.3V single power input with built-in power supply circuit
-**** LCD Controller:
+***** LCD Controller
 + MCU interface: 8/9/16/18-bit 80/68 series MCU interface
 + Display RAM size: 640×240×3×6 bits, e.g. 320×240 two-frame buffer with 262K colors
 + Arbitrary display memory start position selection
 + 8-bit / 16-bit interface: supports 65K (R5G6B5) / 262K (R6G6B6) color data format
 + 9-bit / 18-bit interface: supports 262K (R6G6B6) color data format
-*** Interface Board View
+**** Interface Board View
 + Note: The A13-OLinuXino boards come with an Android image set up for using a VGA display.
 + To use this LCD, you'll need to upload a new image with the appropriate settings.
 + A ready-made image (as well as the default VGA image so you can switch back) is available on the A13 OLinuXino Wiki Page (they are intended for 7-inch displays, so be sure also to get the [[https://docs.google.com/file/d/0B-bAEPML8fwlcHFOcUxtQ1N5RDQ/edit][A13-LCD43 script]], which adjusts the resolution for this display size).
 
-*** A13-OLinuXino LCD Board Resources
-+ [[http://microcontrollershop.com/download/BT043DCN.pdf?osCsid%3D2fe0acf3ed565f2850d0f350a0b3647d][Download BT043DCNNHHp$ LCD Datasheet]]
-+ [[http://microcontrollershop.com/download/A13-LCD4_3.pdf?osCsid%3D2fe0acf3ed565f2850d0f350a0b3647d][Download A13-LCD4.3 Schematic]]
-+ [[http://microcontrollershop.com/redirect.php?action%3Durl&goto%3Dhttp://www.youtube.com/watch?v%3Dd2lFHBMhQ64&osCsid%3D2fe0acf3ed565f2850d0f350a0b3647d][View a video of the multitouch feature]]
+**** Links
+***** Retailers
++ [[http://microcontrollershop.com/product_info.php?products_id%3D5557][microcontrollershop.com]]
++ [[https://www.olimex.com/Products/OLinuXino/A13/A13-LCD43TS/][Olimex]]
+***** Datasheets
++ [[http://microcontrollershop.com/download/BT043DCN.pdf?osCsid%3D2fe0acf3ed565f2850d0f350a0b3647d][Download Datasheet]]
++ [[http://microcontrollershop.com/download/A13-LCD4_3.pdf?osCsid%3D2fe0acf3ed565f2850d0f350a0b3647d][Download Schematic]]
+***** Demonstrations
++ [[http://microcontrollershop.com/redirect.php?action%3Durl&goto%3Dhttp://www.youtube.com/watch?v%3Dd2lFHBMhQ64&osCsid%3D2fe0acf3ed565f2850d0f350a0b3647d][Video of the Multitouch Feature]]
+
+*** JY-MCU Bluetooth Board V1.02
+[[./img/jy-mcu_bt_board_v102.jpg]]
+**** Specifications
+[[./img/jy-mcu_bt_board_v102_specs.jpg]]
++ This shield have extract the VCC、GND、TXD、RXD of the bluetooth.
+  + (TXD、RXD are both 3.3V)
++ This shield has LED indication light.
++ Input Voltage ： 3.3V-6V
++ Size : 15.5mm*39.8mm
+**** Features
++ This module power supply input is 3.6 ~ 6V, please be careful that it should be not more than 7V.
++ compatible with master mode、slave mode and both master-slave mode
++ This module include key interface and state interface compared with Smart Bluetooth Module Baseboard.
++ The key interface on the baseboard is the master mode button and can be controlled by high level from external MCU, then this module will search again automatically.
++ The STATE interface on the baseboard is interface for LED STATE output feet, when bluetooth module don't not connected with other device and then output pulse, when bluetooth module connected with other device and then output high level, and the MCU will judge the state, then this module will search again automatically.
+** Testing
+*** A13-OLinuXino-MICRO (No Touchscreen Support)
+[[./img/A13-OLinuXino-MICRO-2.png]]
+**** Features
++ A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
++ 256 MB RAM (128Mbit x 16)
++ 5VDC input power supply with own ICs, noise immune design
++ 1 USB host
++ 1 USB OTG which can power the board
++ SD-card connector for booting the Linux image
++ VGA video output
++ LCD signals available on connector so you still can use LCD if you diasble VGA/HDMI
++ Audio output
++ Microphone input pads (no connector)
++ 1 User key
++ 4 Mount holes
++ UEXT connectorfor connecting addtional UEXT modules like Zigbee, Bluetooth, Relays, etc
++ GPIO connector with 68/74 pins and these signals:
+  + 17 for adding NAND flash;
+  + 22 for connecting LCDs;
+  + 20+4 including 8 GPIOs which can be input, output, interrupt sources;
+  + 3x I2C;
+  + 2x UARTs;
+  + SDIO2 for connectinf SDcards and modules;
+  + 5 system pins: +5V, +3.3V, GND, RESET, NMI
++ Dimensions: 100 x 85 mm (3.950x3.350'')
++ Optional low-cost 7" LCD with touchscreen
+
+**** FAQ
+***** There is only 1 USB host on the board, how can I connect simultaneously my USB mouse and USB keyboard?
++ You should use external USB hub.
+***** What software is available for the board?
++ The software development changes very rapidly. So far we have reports for number of Linux distributions working properly with the MICRO, please visit the WIKI and the GitHub     pages of A13-OLinuXino-MICRO to find suitable distributions;additionally you might want to check on the forum for additional help
+***** I bought A13-LCD7-TS but when I connect it to the A13-OLinuXino-MICRO I receive no image on the display. What do I do wrong?
++ The default A13-OLinuXino-MICRO image is set for a VGA display and resolution. To use LCD with A13-OLinuXino-MICRO you need to upload new image with the appropriate settings.
++ The download links for the images may be found in the wiki article for A13-OLinuXino.
+***** What is the operating temperature range of A13-OLinuXino?
++ The board works in the commercial temeprature range 0+70C
+***** Where can I find the Android image for the A13-OLinuXino-MICRO?
++ At the moment we haven't tested Android booting from SD card. Android from SD card is currently not officially supported. However note that there are people reporting success getting it to run - head to the Olimex forums for more recent info.
+**** Documentation
++ [[./doc/A13-OLINUXINO-MICRO.pdf][A13-OLinuXino-MICRO User Manual]]
++ [[./doc/A13-Brief.pdf][ManyCore Lite SoC for Android 4.0 PAD]]
+
+**** Links
+***** General
++ https://github.com/OLIMEX/OLINUXINO
++ https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/
++ http://linux-sunxi.org/Main_Page - for discussion and community support
++ https://www.olimex.com/forum/ - for OLinuXino development discussions
+***** Software Sources
++ https://www.olimex.com/wiki/A13-OLinuXino-MICRO
+  + https://docs.google.com/file/d/0B-bAEPML8fwlTWFweEZGM0hmMkE/edit
++ https://www.olimex.com/wiki/A13-OLinuXino
+**** Extrated CPU Info
+| / | <l>              | <l>                                         |
+|---+------------------+---------------------------------------------|
+|   | Processor        | ARMv7 Processor rev 2 (v7l)                 |
+|   | BogoMIPS         | 1001.88                                     |
+|   | Features         | swp half thumb fastmult vfp edsp neon vfpv3 |
+|   | CPU implementer  | 0x41                                        |
+|   | CPU architecture | 7                                           |
+|   | CPU variant      | 0x3                                         |
+|   | CPU part         | 0xc08                                       |
+|   | CPU revision     | 2                                           |
+|---+------------------+---------------------------------------------|
+|   | Hardware         | sun5i                                       |
+|   | Revision         | 0000                                        |
+|   | Serial           | 0000000000000000                            |
+|---+------------------+---------------------------------------------|
++ Derived From:
+  #+BEGIN_SRC sh
+    cat /proc/cpuinfo
+  #+END_SRC
+**** Research on Touchscreen Support
+***** Problem Overview
++ Problem with the A13 Micro: All debian images are built for 512 MB of RAM, 256 is all that is available
+***** Research
+****** Xman Conversation [[https://www.olimex.com/forum/index.php?topic%3D617.10%3Bwap2][{Link}]]
++ <xman> hi, What happens if my dram_size = 512 in [dram_para], but my board have only 256MB?
++ <WarheadsSE> xman: which board ?
++ <xman> https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/
++ techn_> with 256MB ram you propably need to disable mali, framebuffer and g2d.. memmap hard coded to somewhere 400-500MB
++ <techn_> [[https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.0/arch/arm/mach-sun5i/core.c#L222example][example]]
++ xman> 64M and 32M is for what?
++ techn_> 64M mali, 32M for reserved framebuffer(for mali use)
++ ...
++ <WarheadsSE> xman: then you should be enable appropriately adjust the dram para, but you might need an updated uboot that has a 256M SPL
++ ..
++ <WarheadsSE> the Wifi has an AXP, which the Mirco doesn't.
++ <WarheadsSE> That's a big difference.
++ ...
++ <xman> so, you edit fex, uptade kernel and update u-boot?
++ <WarheadsSE> yes, fex change, kernel source change, u-boot source change
++ <WarheadsSE> recompile all.
++ ..
++ <WarheadsSE> For the moment, they need to use the provided kernel source repository, and the associated uboot.
+****** Olimex General Conversation [[https://www.olimex.com/forum/index.php?topic%3D707.msg2819%3Btopicseen#msg2819][{Link}]]
+****** In Depth Conversation about Recompiling Kernal from Source [[https://www.olimex.com/forum/index.php?topic%3D617.0][{Link}]]
+***** Compile Kernal From Source
+****** Links
++ https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558
+  #+BEGIN_SRC sh
+    git clone git://github.com/linux-sunxi/u-boot-sunxi.git
+    git clone https://github.com/hehopmajieh/linux-sunxi
+    cd linux-sunxi
+    git checkout origin/sunxi-3.0
+    make a13_olinuxino_micro CROSS_COMPILE=arm-linux-gnueabi-
+    make ARCH=arm a13om_defconfig
+    make ARCH=arm menuconfig
+  #+END_SRC
+*** 4.3" LCD Screen
++ FPC4034006
++ tl-c430ve display
++ 4.3" FPC4304006 MP4 MP5 GPS lcd display panel
++ Place of Origin: Guangdong, China (Mainland)
++ Brand Name: BYD
+
 * Quick Reference
-** Connect to Serial (After configuring rfcomm.conf)
+** Connect to Serial via Bluetooth
+Prerequisite: configure [[Serial%20Communicate%20with%20Board%20with%20Bluetooth%20Module%20Add-On][rfcomm.conf]]
 1. Initialize Connection
    #+BEGIN_SRC sh
      sudo rfcomm connect rfcomm2
@@ -793,7 +413,7 @@ du -h <path_of_the_dir> | tail -1
    #+END_SRC
 *** Backup Data to Web Storage
 #+BEGIN_SRC sh
-  rsync -rtvz /media/Global/Global/BAK/embedd_gui_bin nickguthrie.com:nickguthrie.com/embedd_gui_bin
+  rsync -rtvz --progress /media/Global/Global/BAK/embedd_gui/bin nickguthrie.com:nickguthrie.com/embedd_gui/bin
 #+END_SRC
 *** Links
 **** How do I make a Backup of my Rasberry Pi [[http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi][{Link}]]
@@ -816,7 +436,6 @@ du -h <path_of_the_dir> | tail -1
      #+BEGIN_SRC sh
        gzip -dc /path/to/image.gz | dd of=/dev/sdx
      #+END_SRC
-
 * HOWTO
 ** Obtain Hardware
 The hardware used in this guide:
@@ -870,6 +489,8 @@ The hardware used in this guide:
 *** Links
 + [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][Olimex.com Wiki: Configuration of hardware in the Debian Image]]
 ** Modifying the script.bin file (Optional)
+*** Overview
++ The bin2fex and fex2bin program supplied by Olimex can be used to convert the script.bin binary file to a readable/editable text file, which can then be modified and converted back into a script.bin binary file.
 *** Installation
 1. extract A13 tar file
    #+BEGIN_SRC sh
@@ -901,6 +522,15 @@ The hardware used in this guide:
     ../bin/A13_script_files/fex2bin_bin_fex_tools/fex2bin script.fex script.bin
   #+END_SRC
   + This can then be placed back on the bootloader partition (remember to also overwrite script0.bin).
+*** Errors
+**** INIT: cannot execute "/sbin/getty"
+***** Description
++ During boot, serial connaction outputs error:
+  #+BEGIN_EXAMPLE
+  INIT: cannot execute "/sbin/getty"
+  #+END_EXAMPLE
+***** Probable Cause
++ The util-linux is not installed
 
 *** Links
 **** Configuration of hardware in the debian image [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][{Link}]]
@@ -1138,17 +768,8 @@ gedit /mnt/sd/script_test.fex
 **** (As of 1 March 2013, the current Debian build for this MICRO version does not yet support a touch panel.)
 + http://184.172.168.133-static.reverse.softlayer.com/product_info.php?cPath=&products_id=5414
 **** [[https://www.olimex.com/forum/index.php?topic%3D753.0][How to make 7" LCD Screen working on the A13Micro with Debian or Custom distrib?]]
-*** Error
-**** INIT: cannot execute "/sbin/getty"
-***** Description
-+ During boot, serial connaction outputs error:
-  #+BEGIN_EXAMPLE
-  INIT: cannot execute "/sbin/getty"
-  #+END_EXAMPLE
-***** Probable Cause
-+ The util-linux is not installed
-** Configure Basic Debian
-*** Set Up Wireless In Debian
+** Configure Debian
+*** Configure Wireless (Dynamic IP Address)
 **** Steps
 ***** Determine Wireless Device
 #+BEGIN_SRC sh
@@ -1178,34 +799,78 @@ dmesg
 **** Links
 + [[http://blog.tplus1.com/blog/2008/06/13/how-to-connect-to-a-wireless-network-from-the-ubuntu-command-line/][How to connect to a wireless network from the ubuntu command line]]
 + [[http://www.cyberciti.biz/faq/debian-linux-wpa-wpa2-wireless-wifi-networking/][debian linux wpa wpa2 wireless wifi networking]]
-*** Properly Set Date
+*** Configure Static IP Address
+**** Steps
+***** Determine Information
+     #+begin_src sh
+       ifconfig
+     #+end_src
+       + Find:
+	 + address
+	 + netmask
+	 + gateway
+	 + DNS Servers
+***** Modify /etc/network/interfaces as Root
+#+begin_example
+  auto wlan3
+  iface wlan3 inet static
+     wpa-ssid TVCOG
+     wpa-psk COGpass1
+     address 192.168.12.222
+     netmask 255.255.255.0
+     gateway 192.168.12.1
+#+end_example
+***** Modify /etc/resolv.conf as Root
+     #+begin_example
+     domain techvalleycenterofgravity.com
+     search techvalleycenterofgravity.com
+     nameserver 64.22.32.8
+     nameserver 64.22.32.9
+     #+end_example
+***** Restart Networking as Root
+     #+begin_src sh
+       /etc/init.d/networking restart
+     #+end_src
+***** Test Results
+     #+begin_src sh
+       ifconfig
+       ping google.com
+     #+end_src
+**** Links
+    + [[http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu][Linux Basics set a Static IP on Ubuntu]]
+*** Set Date
 **** Steps
 #+BEGIN_SRC sh
   date --set="10 JUL 2013 12:27:00"
 #+END_SRC
 **** Links
 + http://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/
-*** TODO Properly Set Keyboard Locale
+*** Set Keyboard Locale
+**** Overview
++ My keyboard layout was set to UK, which meant I typed things like \not instead of ~ and \pound instead of #.
++ This can easily be remidied from the commandline.
 **** Steps
-#+BEGIN_SRC sh
-  sudo dpkg-reconfigure keyboard-configuration
-#+END_SRC
+1. Modify the keyboard locale
+   #+BEGIN_SRC sh
+     sudo dpkg-reconfigure keyboard-configuration
+   #+END_SRC
+2. reboot
+   #+BEGIN_SRC sh
+     reboot -h now
+   #+END_SRC
 **** Links
 + [[http://askubuntu.com/questions/155424/changing-keyboard-layout-in-ubuntu-12-04-server-command-line-interface][AskUbuntu.com: Changing keyboard layout in ubuntu 12.04 server command-line interface]]
 *** Install Programs
 **** Steps
-***** Update Packages
-#+BEGIN_SRC sh
-apt-get update; apt-get upgrade; apt-get dist-upgrade
-#+END_SRC
-
-***** Install Packages
-#+BEGIN_SRC sh
-apt-get install aptitude
-apt-get install emacs
-apt-get install build-essentials
-apt-get install pkg-config
-#+END_SRC
+1. update packages 
+   #+BEGIN_SRC sh
+     apt-get update; apt-get upgrade; apt-get dist-upgrade
+   #+END_SRC
+2. install packages
+   #+BEGIN_SRC sh
+     apt-get install aptitude emacs build-essentials pkg-config
+   #+END_SRC
+   + emacs is obviously "optional" but is the preferred text-editor of choice for [[http://xkcd.com/378/][real programmers]] ;)
 *** Configure SSH to start on Boot
 **** Steps
 ***** Install ssh server
@@ -1261,53 +926,16 @@ apt-get install openssh-server
   ssh root@192.168.12.128 -p 22122
 #+END_SRC
 **** Debugging
-***** Check ports being listened on
-#+BEGIN_SRC sh
-netstat -an | grep "LISTEN"
-#+END_SRC
++ Check ports being listened on
+  #+BEGIN_SRC sh
+    netstat -an | grep "LISTEN"
+  #+END_SRC
 **** Links
-+ [[http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic%3D%252Fcom.ibm.tnpm.doc%252Finstall%252Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html][Configure Open SSH Server to start up on system boot]]
-+ [[http://raspberrypi.stackexchange.com/questions/4709/ssh-connection-refused-on-raspberry-pi-cannot-find-why][ssh connection refused on raspberry pi cannot find why]]
-*** Configure Static IP Address
-**** Steps
-***** Determine Information
-     #+begin_src sh
-       ifconfig
-     #+end_src
-       + Find:
-	 + address
-	 + netmask
-	 + gateway
-	 + DNS Servers
-***** Modify /etc/network/interfaces as Root
-#+begin_example
-  auto wlan3
-  iface wlan3 inet static
-     wpa-ssid TVCOG
-     wpa-psk COGpass1
-     address 192.168.12.222
-     netmask 255.255.255.0
-     gateway 192.168.12.1
-#+end_example
-***** Modify /etc/resolv.conf as Root
-     #+begin_example
-     domain techvalleycenterofgravity.com
-     search techvalleycenterofgravity.com
-     nameserver 64.22.32.8
-     nameserver 64.22.32.9
-     #+end_example
-***** Restart Networking as Root
-     #+begin_src sh
-       /etc/init.d/networking restart
-     #+end_src
-***** Test Results
-     #+begin_src sh
-       ifconfig
-       ping google.com
-     #+end_src
-**** Links
-    + [[http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu][Linux Basics set a Static IP on Ubuntu]]
++ [[http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic%3D%252Fcom.ibm.tnpm.doc%252Finstall%252Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html][Configure Open SSH Server To Start Up On System Boot]]
++ [[http://raspberrypi.stackexchange.com/questions/4709/ssh-connection-refused-on-raspberry-pi-cannot-find-why][SSH Connection Refused On Raspberry Pi Cannot Find Why]]
 *** Install XFCE (Optional)
+**** Overview
++ Most of this guide is dedicated to setting up this micro-controller to run QT Embedded, which allows the use of graphical programs without runnng a graphical desktop (XFCE).  That being said it is possible to install one, I haven't worked on getting touchscreen support working with it, but Olimex has posted a few tutorials and it does work fine with a mouse.
 **** Steps
 #+BEGIN_SRC sh
 apt-get install --no-install-recommends xorg xfce4 alsa-base alsa-utils;
@@ -1335,15 +963,15 @@ startx;
 ****** Links
 +
 
-**** Consider Qt Razorh
-** Serial Communicate with Board with Bluetooth Module Add-On
+** Configure Serial Communication with Bluetooth Module
 *** Communicate to Bluetooth
 **** Connecting
 **** Installation
 ***** Connect to Linvar
 Passphrase: 1234
 
-***** Edit /etc/bluetooth/rfcomm.conf file
+***** Configure /etc/bluetooth/rfcomm.conf
+# <<rfcomm>>
 #+BEGIN_EXAMPLE
 #
 # RFCOMM configuration file.
@@ -1416,7 +1044,7 @@ rfcomm2 {
 **** Links
 + [[http://www.cyberciti.biz/hardware/5-linux-unix-commands-for-connecting-to-the-serial-console/][5 linux unix commands for connecting to the serial console]]
 + [[http://www.heatxsink.com/entry/how-to-pair-a-bluetooth-device-from-command-line-on-linux][how to pair a bluetooth device from command line on linux]]
-** Buildroot - Install ARM Toolchain
+** Install ARM Toolchain with Buildroot
 *** Steps
 1. Download Buildroot
    #+BEGIN_SRC sh
@@ -1782,7 +1410,7 @@ make install
    #+END_EXAMPLE
 3. Configure Qt
    #+BEGIN_SRC sh
-     make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license -qt-mouse-tslib
+     make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license -qt-mouse-tslibg
    #+END_SRC
    + Some optional arguments depending on your requirements
      + Enable touchscreen library support : -qt-mouse-tslib
@@ -1884,41 +1512,5 @@ echo 0 > /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
 
 **** Links
 + [[http://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/][A13 Olinuxino Playing with GPIOS]]
-* Some Notes
-** Problem with the A13 Micro: All debian images are built for 512 MB of RAM, 256 is all that is available
-*** Research
-**** Xman Conversation [[https://www.olimex.com/forum/index.php?topic%3D617.10%3Bwap2][{Link}]]
-+ <xman> hi, What happens if my dram_size = 512 in [dram_para], but my board have only 256MB?
-+ <WarheadsSE> xman: which board ?
-+ <xman> https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/
-+ techn_> with 256MB ram you propably need to disable mali, framebuffer and g2d.. memmap hard coded to somewhere 400-500MB
-+ <techn_> [[https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.0/arch/arm/mach-sun5i/core.c#L222example][example]]
-+ xman> 64M and 32M is for what?
-+ techn_> 64M mali, 32M for reserved framebuffer(for mali use)
-+ ...
-+ <WarheadsSE> xman: then you should be enable appropriately adjust the dram para, but you might need an updated uboot that has a 256M SPL
-+ ..
-+ <WarheadsSE> the Wifi has an AXP, which the Mirco doesn't.
-+ <WarheadsSE> That's a big difference.
-+ ...
-+ <xman> so, you edit fex, uptade kernel and update u-boot?
-+ <WarheadsSE> yes, fex change, kernel source change, u-boot source change
-+ <WarheadsSE> recompile all.
-+ ..
-+ <WarheadsSE> For the moment, they need to use the provided kernel source repository, and the associated uboot.
-**** Olimex General Conversation [[https://www.olimex.com/forum/index.php?topic%3D707.msg2819%3Btopicseen#msg2819][{Link}]]
-**** In Depth Conversation about Recompiling Kernal from Source [[https://www.olimex.com/forum/index.php?topic%3D617.0][{Link}]]
-*** Compile Kernal From Source
-**** Links
-+ https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558
-  #+BEGIN_SRC sh
-    git clone git://github.com/linux-sunxi/u-boot-sunxi.git
-    git clone https://github.com/hehopmajieh/linux-sunxi
-    cd linux-sunxi
-    git checkout origin/sunxi-3.0
-    make a13_olinuxino_micro CROSS_COMPILE=arm-linux-gnueabi-
-    make ARCH=arm a13om_defconfig
-    make ARCH=arm menuconfig
-  #+END_SRC
 
-* TODO About the Author                                                         :noexport:
+
