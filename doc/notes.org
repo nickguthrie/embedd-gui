@@ -1503,6 +1503,21 @@ http://www.qtcentre.org/archive/index.php/t-41850.html
 + [[./doc/Getting%20Started%20with%20Qt.pdf][Getting started with Qt.pdf]]
   + has working notes for proper installation of tslib.
 * Simple Sample Programs
+** Burgler
+*** Source
+**** MainWindow.cpp
+#+INCLUDE: "../src/testing/Burgler/mainwindow.cpp" src cpp
+**** MainWindow.h
+#+INCLUDE: "../src/testing/Burgler/mainwindow.h" src cpp
+**** moc_mainwindow.cpp
+#+INCLUDE: "../src/testing/Burgler/moc_mainwindow.cpp" src cpp
+**** ui_mainwindow.h
+#+INCLUDE: "../src/testing/Burgler/ui_mainwindow.h" src cpp
+**** mainwindow.ui
+#+INCLUDE: "../src/testing/Burgler/mainwindow.ui" src txt
+*** Notes
++ [[http://stackoverflow.com/questions/1675992/how-do-i-set-a-background-color-for-the-whole-window-of-a-qt-application][Change the background color of the qt application]]
+
 ** Basic Output to LCD Screen
 *** MainWindow.cpp
 #+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.cpp" src cpp
@@ -1514,8 +1529,6 @@ http://www.qtcentre.org/archive/index.php/t-41850.html
 #+INCLUDE: "../src/testing/qt/hello_qt/ui_mainwindow.h" src cpp
 *** mainwindow.ui
 #+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.ui" src txt
-
-** Build a Button that does Something on Screen
 ** Hello World Program
 *** Source Code
 #+INCLUDE: "../src/testing/hello_world.cpp" src cpp
