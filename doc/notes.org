@@ -1,0 +1,1541 @@
+
+#+TITLE:     Embedd GUI
+
+* Overview
+** A note from the Author
+This documentation is written under the [[GNU%20Free%20Documentation%20License][GNU Free Documentation License]]. The SVN repository with the source code for this project can be found [[http://code.google.com/p/embedd-gui/][here]]. This documentation is viewable as an [[./index.html][html info file]], a [[./full.html][single html file]], a [[./index.pdf][pdf]], and in its original [[http://nickguthrie.com/embedd_gui/doc/index.org][org-mode]] format. This project would not be possible without funding from the [[http://rcos.rpi.edu/][Rensselaer Center for Open Source]].  The RCOS Observatory Project page can be found [[http://rcos.rpi.edu/projects/embedd-gui/][here]]. \\
+\\
+I would like to extend a special thanks to:
++ [[http://rcos.rpi.edu/donor/][Sean O' Sullivan]]
++ [[http://www.cs.rpi.edu/~goldsd/index.php][Professor Goldschmidt, Ph.D]]
++ [[http://www.cs.rpi.edu/~moorthy/][Professor Krishnamoorthy, Ph.D]]
++ Timothy Cantwell
++ Jorel Lalicki
++ RCOS Members for their continued support
+\\
+Happy Hacking! :) \\
+
+Nick Guthrie \\
+
+** License
+#+BEGIN_EXAMPLE
+  Copyright (c)  2013  Nicholas Guthrie.
+  Permission is granted to copy, distribute and/or modify this document
+  under the terms of the GNU Free Documentation License, Version 1.3
+  or any later version published by the Free Software Foundation;
+  with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+  A copy of the license is included in the section entitled "GNU
+  Free Documentation License".
+#+END_EXAMPLE
+
+** Primary Objective
++ The goal of this project is to give users the ability to install Qt Embedded on an open source hardware system to allow for cheap, fast prototyping of graphical user interfaces.
+** Background
+We live in a world surrounded by computers - from our (arguably excessive) coffee  machines to our cell phones and cars, microcomputers play an integral role in our everyday lives. With the cost of electronics rapidly decreasing, and touchscreens becoming commonplace even on low cost consumer products, a unique need has arisen for a unified way of creating user interfaces on embedded devices.
+** Why we need it
+It is easy for small companies and hobbyists to prototype microcontroller based products, such as environmental sensors and other equipment. However, user interface design is generally left at basic pushbuttons and potentiometers, with at most a simple text display on a serial LCD. The barrier to entry into high end touchscreen interfaces is high: it often involves more development/work than the device itself, and there exist few unified solutions for multi-processor and display targeted builds. The few solutions that do exist are prohibitively expensive: For example, a license of Segger EmWin costs $12,300... per target architecture/CPU! Embedd GUI aims to be a “drop in” interface for embedded developers to rapidly incorporate touchscreens into projects.
+** How/Technologies - Qt Embedded
+[[./img/qt-embedded-linux-architecture.png]]
++ "Qt for Embedded Linux is a C++ framework for GUI and application development for embedded devices."
++ "Qt for Embedded Linux applications write directly to the framebuffer, eliminating the need for the X Window System and saving memory."
++ Qt Embedded allows us to run graphical interfaces without the heavy weight of running an entire graphical desktop.
++ Features
+  + Pointer Handling
+  + Character Input
+  + Display Management
+  + Hardware Accelerated Graphics
+  + Fonts
++ Links
+  + http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html
+* RCOS Presentations and Multimedia
+** A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo
++ [[http://youtu.be/v-ndT9fh3e0][Video]]
+  Here is a demonstration of Qt Embedded touchscreen running the raycasting demo and the styledemo.
+** RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI
++ [[http://youtu.be/aGBMwWWGzmk][Video]]
++ [[./doc/OSSEG2.pdf][Presentation Slides]]
+** A13-OLinuXino-MICRO Qt Embedded Fluidlauncher Video
++ [[http://youtu.be/rqEB2OLgkCY][Video]]
+** RCOS Summer 2013 - Initial Presentation
++ [[./doc/OSSEG1.pdf][Presentation Slides]]
+* Hardware
+** Actual
+*** A13-OlinuXino
+[[./img/A13-OLinuXino-01.png]]
+**** Overview
+A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-ITX form. It uses the very first Cortex A8 processor available in eLQFP176 package, produced by Allwinner Technology Inc A13.
+
+**** Features
++ A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
++ 512 MB RAM (2 x 256Mbit x 8)
++ 6-16VDC input power supply, noise immune design
++ 3 + 1 USB hosts, 3 available for users, 1 leads to onboard pinout
++ 1 USB OTG which can power the board
++ SD-card connector for booting optional Linux image
++ VGA video output
++ Battery option and connector
++ LCD signals available on connector so you still can use LCD if you diasble VGA/HDMI
++ Microphone input
++ 4 Mount holes
++ RTC PCF8536 on board for real time clock and alarms
++ 5 Keys on board for android navigation
++ UEXT connectorfor connecting addtional UEXT modules like Zigbee, Bluetooth, Relays, etc
++ GPIO connector with 68/74 pins and these signals:
++ 17 for adding NAND flash;
++ 22 for connecting LCDs;
++ 20+4 including 8 GPIOs which can be input, output, interrupt sources;
++ 3x I2C;
++ 2x UARTs;
++ SDIO2 for connectinf SDcards and modules;
++ 5 system pins: +5V, +3.3V, GND, RESET, NMI
++ Dimensions: 120 x 120 mm (4.7x4.7'')
++ Optional low-cost 7" LCD with touchscreen
+**** Links
+***** Retailers
++ [[https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/][Olimex]]
++ [[http://microcontrollershop.com/product_info.php?products_id%3D5412][microcontrollershop.com]]
+***** Datasheets
++ [[https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-OLINUXINO.pdf][User Manual]]
++ [[https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino/resources/A13-Brief.pdf][A13-processor brief and datasheet]]
+***** Hardware
++ [[https://github.com/OLIMEX/OLINUXINO][GitHub OLINUXINO Project]]
+***** Software
++ [[https://github.com/OLIMEX/OLINUXINO][GitHub OLINUXINO Project]]
++ [[http://linux-sunxi.org/][A1x Linux]]
+***** Community
++ [[https://www.olimex.com/forum][OLinuXino forum]] for discussion and community support
++ [[http://webchat.freenode.net/?channels%3Dolimex][Freenode #olimex irc channel]] for OLinuXino development discussions
+
+**** Extracted CPU Info
+| / | <l>              | <l>                                         |
+|   | Processor        | ARMv7 Processor rev 2 (v7l)                 |
+|   | BogoMIPS         | 1001.88                                     |
+|   | Features         | swp half thumb fastmult vfp edsp neon vfpv3 |
+|   | CPU implementer  | 0x41                                        |
+|   | CPU architecture | 7                                           |
+|   | CPU variant      | 0x3                                         |
+|   | CPU part         | 0xc08                                       |
+|   | CPU revision     | 2                                           |
+|---+------------------+---------------------------------------------|
+|   | Hardware         | sun5i                                       |
+|   | Revision         | 0000                                        |
+|   | Serial           | 0000000000000000                            |
+|---+------------------+---------------------------------------------|
++ Derived From:
+  #+BEGIN_SRC sh
+    cat /proc/cpuinfo
+  #+END_SRC
+
+*** USB Wireless LAN Module
+[[./img/modwifirtl8188.png]]
+**** Overview
++ The MOD-WIFI-RTL8188 is a USB WiFi module that is supported by the [[http://microcontrollershop.com/product_info.php?products_id%3D5412&osCsid%3De1d38e51b568a17c2fe8bc8c2679dcda][A13-OLinuXino]] and [[http://microcontrollershop.com/product_info.php?products_id%3D5414&osCsid%3De1d38e51b568a17c2fe8bc8c2679dcda][A13-OLinuXino-MICRO]] boards.
++ It uses the same WiFi board that comes as standard on the [[http://microcontrollershop.com/product_info.php?products_id%3D5314&osCsid%3De1d38e51b568a17c2fe8bc8c2679dcda][A13-OLinuXino-WIFI]].
++ The WM-294 WiFi board on this module contains the popular RealTek RTL8188CUS single-chip Wireless LAN adapter. There are drivers available for Windows, Linux/Android and Mac, so you aren't limited only to using this module on an A13-OLinuXino board.
+**** Features
++ Has WM-294 module with RTL8188CUS, IEEE 802.11b/g/n
++ Operates in 2.4 GHz frequency bands
++ 1x1 MIMO technology improves effective throughput and range over existing 802.11 b/g products
++ Data rates up to 150Mbps
++ 802.11e-compatible bursting and i standards
++ BPSK, QPSK, 16 QAM, 64 QAM modulation schemes
++ WEP, TKIP, AES, WPA, and WPA2 hardware encryption schemes
++ Standard USB type A connector
++ On-board antenna
++ 5V/3.3V operation modes via SMD jumper (5V by default)
++ 4 test pads for easy tracking of the supply, d-, d+, and GND
++ PCB: FR-4, 1.00 mm (0.039"), solder mask, silkscreen component print
++ Dimensions: 65.15 × 20.38 mm (2.56 × 0.80")
+
+**** Links
+***** Retailers
++ [[http://microcontrollershop.com/product_info.php?products_id%3D5555][MicroControllerShop.com]]
++ [[https://www.olimex.com/Products/Modules/Ethernet/MOD-WIFI-RTL8188/][Olimex]]
+***** Datasheets
++ [[./doc/module_WM294_spec.pdf][CC&C Technologies WM-294 Datasheet]]
++ [[MOD-WiFi_RTL8188.pdf][MOD-WIFI-RTL8188 Schematic]]
+*** 4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen
+[[./img/a13lcd43ts_front.png]]     [[./img/a13lcd43ts_back.png]]
+**** Overview
++ This is a 4.3-inch LCD with a resistive touch screen and an interface board that has been tested to work with A13 OLinuXino boards.
++ It connects to your A13 OLinuXino board by a 2×20-pin connector.
++ The display board and the OLinuXino board both have male box headers, so you will need a 40-pin IDC ribbon cable which is sold separately.
+**** Features
+***** TFT Panel
++ Bo Lymin BT043DCNNHHp$ 4.3-inch (480×272) a-Si color TFT-LCD with white LED / CCFL backlight
++ 262K colors
++ Anti-glare surface
++ Resistive touchscreen panel
++ 40-pin connector for connection to A13-OLinuXino boards
++ 3.3V single power input with built-in power supply circuit
+***** LCD Controller
++ MCU interface: 8/9/16/18-bit 80/68 series MCU interface
++ Display RAM size: 640×240×3×6 bits, e.g. 320×240 two-frame buffer with 262K colors
++ Arbitrary display memory start position selection
++ 8-bit / 16-bit interface: supports 65K (R5G6B5) / 262K (R6G6B6) color data format
++ 9-bit / 18-bit interface: supports 262K (R6G6B6) color data format
+**** Interface Board View
++ Note: The A13-OLinuXino boards come with an Android image set up for using a VGA display.
++ To use this LCD, you'll need to upload a new image with the appropriate settings.
++ A ready-made image (as well as the default VGA image so you can switch back) is available on the A13 OLinuXino Wiki Page (they are intended for 7-inch displays, so be sure also to get the [[https://docs.google.com/file/d/0B-bAEPML8fwlcHFOcUxtQ1N5RDQ/edit][A13-LCD43 script]], which adjusts the resolution for this display size).
+
+**** Links
+***** Retailers
++ [[http://microcontrollershop.com/product_info.php?products_id%3D5557][microcontrollershop.com]]
++ [[https://www.olimex.com/Products/OLinuXino/A13/A13-LCD43TS/][Olimex]]
+***** Datasheets
++ [[http://microcontrollershop.com/download/BT043DCN.pdf?osCsid%3D2fe0acf3ed565f2850d0f350a0b3647d][Download Datasheet]]
++ [[http://microcontrollershop.com/download/A13-LCD4_3.pdf?osCsid%3D2fe0acf3ed565f2850d0f350a0b3647d][Download Schematic]]
+***** Demonstrations
++ [[http://microcontrollershop.com/redirect.php?action%3Durl&goto%3Dhttp://www.youtube.com/watch?v%3Dd2lFHBMhQ64&osCsid%3D2fe0acf3ed565f2850d0f350a0b3647d][Video of the Multitouch Feature]]
+
+*** JY-MCU Bluetooth Board V1.02
+[[./img/jy-mcu_bt_board_v102.jpg]]
+**** Specifications
+[[./img/jy-mcu_bt_board_v102_specs.jpg]]
++ This shield have extract the VCC、GND、TXD、RXD of the bluetooth.
+  + (TXD、RXD are both 3.3V)
++ This shield has LED indication light.
++ Input Voltage ： 3.3V-6V
++ Size : 15.5mm*39.8mm
+**** Features
++ This module power supply input is 3.6 ~ 6V, please be careful that it should be not more than 7V.
++ compatible with master mode、slave mode and both master-slave mode
++ This module include key interface and state interface compared with Smart Bluetooth Module Baseboard.
++ The key interface on the baseboard is the master mode button and can be controlled by high level from external MCU, then this module will search again automatically.
++ The STATE interface on the baseboard is interface for LED STATE output feet, when bluetooth module don't not connected with other device and then output pulse, when bluetooth module connected with other device and then output high level, and the MCU will judge the state, then this module will search again automatically.
+** Testing
+*** A13-OLinuXino-MICRO (No Touchscreen Support)
+[[./img/A13-OLinuXino-MICRO-2.png]]
+**** Features
++ A13 Cortex A8 processor at 1GHz, 3D Mali400 GPU
++ 256 MB RAM (128Mbit x 16)
++ 5VDC input power supply with own ICs, noise immune design
++ 1 USB host
++ 1 USB OTG which can power the board
++ SD-card connector for booting the Linux image
++ VGA video output
++ LCD signals available on connector so you still can use LCD if you diasble VGA/HDMI
++ Audio output
++ Microphone input pads (no connector)
++ 1 User key
++ 4 Mount holes
++ UEXT connectorfor connecting addtional UEXT modules like Zigbee, Bluetooth, Relays, etc
++ GPIO connector with 68/74 pins and these signals:
+  + 17 for adding NAND flash;
+  + 22 for connecting LCDs;
+  + 20+4 including 8 GPIOs which can be input, output, interrupt sources;
+  + 3x I2C;
+  + 2x UARTs;
+  + SDIO2 for connectinf SDcards and modules;
+  + 5 system pins: +5V, +3.3V, GND, RESET, NMI
++ Dimensions: 100 x 85 mm (3.950x3.350'')
++ Optional low-cost 7" LCD with touchscreen
+
+**** FAQ
+***** There is only 1 USB host on the board, how can I connect simultaneously my USB mouse and USB keyboard?
++ You should use external USB hub.
+***** What software is available for the board?
++ The software development changes very rapidly. So far we have reports for number of Linux distributions working properly with the MICRO, please visit the WIKI and the GitHub     pages of A13-OLinuXino-MICRO to find suitable distributions;additionally you might want to check on the forum for additional help
+***** I bought A13-LCD7-TS but when I connect it to the A13-OLinuXino-MICRO I receive no image on the display. What do I do wrong?
++ The default A13-OLinuXino-MICRO image is set for a VGA display and resolution. To use LCD with A13-OLinuXino-MICRO you need to upload new image with the appropriate settings.
++ The download links for the images may be found in the wiki article for A13-OLinuXino.
+***** What is the operating temperature range of A13-OLinuXino?
++ The board works in the commercial temeprature range 0+70C
+***** Where can I find the Android image for the A13-OLinuXino-MICRO?
++ At the moment we haven't tested Android booting from SD card. Android from SD card is currently not officially supported. However note that there are people reporting success getting it to run - head to the Olimex forums for more recent info.
+**** Documentation
++ [[./doc/A13-OLINUXINO-MICRO.pdf][A13-OLinuXino-MICRO User Manual]]
++ [[./doc/A13-Brief.pdf][ManyCore Lite SoC for Android 4.0 PAD]]
+
+**** Links
+***** General
++ https://github.com/OLIMEX/OLINUXINO
++ https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/
++ http://linux-sunxi.org/Main_Page - for discussion and community support
++ https://www.olimex.com/forum/ - for OLinuXino development discussions
+***** Software Sources
++ https://www.olimex.com/wiki/A13-OLinuXino-MICRO
+  + https://docs.google.com/file/d/0B-bAEPML8fwlTWFweEZGM0hmMkE/edit
++ https://www.olimex.com/wiki/A13-OLinuXino
+**** Extrated CPU Info
+| / | <l>              | <l>                                         |
+|---+------------------+---------------------------------------------|
+|   | Processor        | ARMv7 Processor rev 2 (v7l)                 |
+|   | BogoMIPS         | 1001.88                                     |
+|   | Features         | swp half thumb fastmult vfp edsp neon vfpv3 |
+|   | CPU implementer  | 0x41                                        |
+|   | CPU architecture | 7                                           |
+|   | CPU variant      | 0x3                                         |
+|   | CPU part         | 0xc08                                       |
+|   | CPU revision     | 2                                           |
+|---+------------------+---------------------------------------------|
+|   | Hardware         | sun5i                                       |
+|   | Revision         | 0000                                        |
+|   | Serial           | 0000000000000000                            |
+|---+------------------+---------------------------------------------|
++ Derived From:
+  #+BEGIN_SRC sh
+    cat /proc/cpuinfo
+  #+END_SRC
+**** Research on Touchscreen Support
+***** Problem Overview
++ Problem with the A13 Micro: All debian images are built for 512 MB of RAM, 256 is all that is available
+***** Research
+****** Xman Conversation [[https://www.olimex.com/forum/index.php?topic%3D617.10%3Bwap2][{Link}]]
++ <xman> hi, What happens if my dram_size = 512 in [dram_para], but my board have only 256MB?
++ <WarheadsSE> xman: which board ?
++ <xman> https://www.olimex.com/Products/OLinuXino/A13/A13-OLinuXino-MICRO/
++ techn_> with 256MB ram you propably need to disable mali, framebuffer and g2d.. memmap hard coded to somewhere 400-500MB
++ <techn_> [[https://github.com/linux-sunxi/linux-sunxi/blob/sunxi-3.0/arch/arm/mach-sun5i/core.c#L222example][example]]
++ xman> 64M and 32M is for what?
++ techn_> 64M mali, 32M for reserved framebuffer(for mali use)
++ ...
++ <WarheadsSE> xman: then you should be enable appropriately adjust the dram para, but you might need an updated uboot that has a 256M SPL
++ ..
++ <WarheadsSE> the Wifi has an AXP, which the Mirco doesn't.
++ <WarheadsSE> That's a big difference.
++ ...
++ <xman> so, you edit fex, uptade kernel and update u-boot?
++ <WarheadsSE> yes, fex change, kernel source change, u-boot source change
++ <WarheadsSE> recompile all.
++ ..
++ <WarheadsSE> For the moment, they need to use the provided kernel source repository, and the associated uboot.
+****** Olimex General Conversation [[https://www.olimex.com/forum/index.php?topic%3D707.msg2819%3Btopicseen#msg2819][{Link}]]
+****** In Depth Conversation about Recompiling Kernal from Source [[https://www.olimex.com/forum/index.php?topic%3D617.0][{Link}]]
+***** Compile Kernal From Source
+****** Links
++ https://www.olimex.com/forum/index.php?topic=747.msg3558#msg3558
+  #+BEGIN_SRC sh
+    git clone git://github.com/linux-sunxi/u-boot-sunxi.git
+    git clone https://github.com/hehopmajieh/linux-sunxi
+    cd linux-sunxi
+    git checkout origin/sunxi-3.0
+    make a13_olinuxino_micro CROSS_COMPILE=arm-linux-gnueabi-
+    make ARCH=arm a13om_defconfig
+    make ARCH=arm menuconfig
+  #+END_SRC
+*** 4.3" LCD Screen
++ FPC4034006
++ tl-c430ve display
++ 4.3" FPC4304006 MP4 MP5 GPS lcd display panel
++ Place of Origin: Guangdong, China (Mainland)
++ Brand Name: BYD
+
+* Quick Reference
+** Connect to Serial via Bluetooth
+Prerequisite: configure [[Serial%20Communicate%20with%20Board%20with%20Bluetooth%20Module%20Add-On][rfcomm.conf]]
+1. Initialize Connection
+   #+BEGIN_SRC sh
+     sudo rfcomm connect rfcomm2
+   #+END_SRC
+2. Connect with Screen
+   #+BEGIN_SRC sh
+     sudo screen /dev/rfcomm2 115200
+   #+END_SRC
+3. Login
+** Communicate via SSH
+#+BEGIN_SRC sh
+ssh root@192.168.12.200 -p 22122
+#+END_SRC
+** Connect with SFTP for File Transfer
+#+BEGIN_SRC sh
+sftp -P 22122 root@192.168.12.200
+#+END_SRC
++ Change Local Directory
+  #+BEGIN_SRC sh
+    lcd /local/directory
+  #+END_SRC
++ Get File
+  #+BEGIN_SRC sh
+    get <file>
+  #+END_SRC
++ Send File
+  #+BEGIN_SRC sh
+    put <file>
+  #+END_SRC
+
+** Send Files via SCP
+*** Overview
+scp allows files to be copied to, from, or between different hosts. It uses ssh for data transfer and provides the same authentication and same level of security as ssh.
+*** Examples
+**** Copy the file "foobar.txt" from a remote host to the local host
+#+BEGIN_SRC sh
+    scp -P 22122 root@192.168.12.200:foobar.txt /some/local/directory
+  #+END_SRC
+**** Copy the file "foobar.txt" from the local host to a remote host
+#+BEGIN_SRC sh
+  scp -P 22122 foobar.txt root@192.168.12.200:/some/remote/directory
+#+END_SRC
+**** Copy the directory "foo" from the local host to a remote host's directory "bar"
+#+BEGIN_SRC sh
+  scp -P 22122 -r foo root@192.168.12.200:/some/remote/directory/bar
+#+END_SRC
+**** Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"
+#+BEGIN_SRC sh
+  scp -P 22122 your_username@rh1.edu:/some/remote/directory/foobar.txt your_username@rh2.edu:/some/remote/directory/
+#+END_SRC
+**** Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host
+#+BEGIN_SRC sh
+  scp -P 22122 foo.txt bar.txt root@192.168.12.200:~
+#+END_SRC
+**** Copy the file "foobar.txt" from the local host to a remote host using port 2264
+#+BEGIN_SRC sh
+  scp -P 22122 -P 2264 foobar.txt root@192.168.12.200:/some/remote/directory
+#+END_SRC
+**** Copy multiple files from the remote host to your current directory on the local host
+#+BEGIN_SRC sh
+  scp -P 22122 root@192.168.12.200:/some/remote/directory/\{a,b,c\} .
+  scp -P 22122 root@192.168.12.200:~/\{foo.txt,bar.txt\} .
+#+END_SRC
+
+**** Receive and Entire Directory
+#+BEGIN_SRC sh
+  scp -r root@192.168.12.222:/root/Desktop/src/tslib tslib_v2
+#+END_SRC
+*** Links
++ http://www.hypexr.org/linux_scp_help.php
+** Check Remaining Space on Hard Drive
+#+BEGIN_SRC sh
+du -h <path_of_the_dir> | tail -1
+#+END_SRC
+** Sync Files with rsync
+*** Sync a Directory From Host To Device
+/ will not modify host directory /
+#+BEGIN_SRC sh
+  rsync -rtvz -e "ssh -p 22122" /home/slayer/Desktop/foo/ root@192.168.12.200:/root/Desktop/foo/
+#+END_SRC
+*** Links
++ http://mike-hostetler.com/blog/2007/12/08/rsync-non-standard-ssh-port/
++ http://www.jveweb.net/en/archives/2010/11/synchronizing-folders-with-rsync.html
+** Building Projects with Qmake
+1. Build Project
+   #+BEGIN_SRC sh
+     /usr/local/bin/qmake project.pro
+     make clean
+     make
+   #+END_SRC
+2. Send binary files over to device (either with rsync, scp, or sftp)
+3. Run program
+** Backups
+*** Backup the SD Card
+1. Navigate to backup directoryhttp://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi
+   #+BEGIN_SRC sh
+     cd BAK/
+   #+END_SRC
+2. connect card to linux, unmounted
+3. copy card contents with dd
+   #+BEGIN_SRC sh
+   sudo dd if=/dev/mmcblk0 | gzip > ./debian_configured_v1.image.gz
+   #+END_SRC
+*** Restore the SD Card
+1. insert unmounted card
+2. unzip to card
+   #+BEGIN_SRC sh
+   sudo gzip -dc /path/to/debian_configured_v1.image.gz | dd of=/dev/mmcblk0
+   #+END_SRC
+*** Backup Data to Web Storage
+#+BEGIN_SRC sh
+  rsync -rtvz --progress /media/Global/Global/BAK/embedd_gui/bin nickguthrie.com:nickguthrie.com/embedd_gui/bin
+#+END_SRC
+*** Links
+**** How do I make a Backup of my Rasberry Pi [[http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi][{Link}]]
+1. Make a full backup of the image
+   + If you are running linux then you can use the dd command to make a full backup of the image:
+     #+BEGIN_SRC sh
+       dd if=/dev/sdx of=/path/to/image
+     #+END_SRC
+   + or for compression:
+     #+BEGIN_SRC sh
+       dd if=/dev/sdx | gzip > /path/to/image.gz
+     #+END_SRC
+   + Where sdx is your SD card.
+2. To restore the backup you reverse the commands:
+   + Uncompressed
+     #+BEGIN_SRC sh
+       dd if=/path/to/image of=/dev/sdx
+     #+END_SRC
+   + or when compressed:
+     #+BEGIN_SRC sh
+       gzip -dc /path/to/image.gz | dd of=/dev/sdx
+     #+END_SRC
+* HOWTO
+** Obtain Hardware
+The hardware used in this guide:
++ [[A13-OlinuXino]]
++ [[USB Wireless LAN Module]]
+** Copy Debian Image to SD Card
+*** Overview
++ I am installing a Debian Image found [[https://www.olimex.com/wiki/Prebuilt_SD_card_images_running_debian][here]].
+  + Specifically:
+    [[https://docs.google.com/file/d/0B-bAEPML8fwlLTU4UlZaMFdpODQ/edit?usp%3Dsharing][A13 Debian 2GB card image without XFCE4 with GCC, GPIO, WIFI, WTHERNET, UVC, Python, OpenCV]]
+*** Steps
+1. Download Debian Image
+2. Unrar Debian Image
+   #+BEGIN_SRC sh
+   unrar e A13_debian_WIFI_GCC_GPIO_IN_OUT_AUTO_load_withoutX_I2C_100KHz_UVC_Python_OpenCV_fifth_release.rar
+   #+END_SRC
+3. Copy img file to card
+   #+BEGIN_SRC sh
+   dd bs=4M oflag=sync if=A13_Micro_Debian_1GHz_GPIO_100kHz_I2C_WIFI_USB_LAN_without_X_and_touch_first_release.img of=/dev/mmcblk0
+   #+END_SRC
+   + WARNING: will overwrite everything on card
+*** Links
++ http://www.cnx-software.com/2012/12/21/olimex-a13-olinuxino-micro-development-board-unboxing-and-review/
++ https://www.olimex.com/wiki/Prebuilt_SD_card_images_running_debian
+** Configure Touchscreen (script.bin)
+*** Overview
++ The script.bin will determine what display can be used.
++ There are different configurations for different displays when you use Linux because the dot pitch is different.
+*** Steps
+1. Create LCD script directory
+   #+BEGIN_SRC sh
+     mkdir scripts;
+     cd scripts;
+   #+END_SRC
+2. Download [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][VGA_LCD_scripts_A13.zip]]
+3. Extract the folders
+   #+BEGIN_EXAMPLE
+     unzip VGA_LCD_scripts_A13.zip
+   #+END_EXAMPLE
+4. Mount 17 MB Fat32 Partition to Computer
+5. Backup script.bin on device
+   #+BEGIN_SRC sh
+     cd /media/mmcblk0
+     cp script.bin script.bin.BAK
+   #+END_SRC
+6. Copy correct script.bin to Device
+   #+BEGIN_SRC sh
+     cp scripts/script_GPIO_LCD_480x272/script.bin /media/mmcblk0
+   #+END_SRC
+
+*** Links
++ [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][Olimex.com Wiki: Configuration of hardware in the Debian Image]]
+** Modifying the script.bin file (Optional)
+*** Overview
++ The bin2fex and fex2bin program supplied by Olimex can be used to convert the script.bin binary file to a readable/editable text file, which can then be modified and converted back into a script.bin binary file.
+*** Installation
+1. extract A13 tar file
+   #+BEGIN_SRC sh
+     cd bin/
+     tar -zxvf fex2bin_bin_fex_tools.tar.gz
+   #+END_SRC
+2. install libusb
+   #+BEGIN_SRC sh
+   sudo apt-get install libusb-1.0-0-dev
+   #+END_SRC
+3. Build Files
+   #+BEGIN_SRC sh
+     make clean
+     make -k
+   #+END_SRC
+*** General Usage
+**** Using bin2fex
++ First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
+  #+BEGIN_SRC sh
+    # ./bin2fex script.bin script.fex
+    ../bin/A13_script_files/fex2bin_bin_fex_tools/bin2fex script.bin script.fex
+  #+END_SRC
+  + This converts the script.bin file into script.fex. Here's the output produced - script.fex.
+
+**** Using fex2bin
++ To convert back, it's simply the reverse:
+  #+BEGIN_SRC sh
+    # ./fex2bin script.fex script.bin
+    ../bin/A13_script_files/fex2bin_bin_fex_tools/fex2bin script.fex script.bin
+  #+END_SRC
+  + This can then be placed back on the bootloader partition (remember to also overwrite script0.bin).
+*** Errors
+**** INIT: cannot execute "/sbin/getty"
+***** Description
++ During boot, serial connaction outputs error:
+  #+BEGIN_EXAMPLE
+  INIT: cannot execute "/sbin/getty"
+  #+END_EXAMPLE
+***** Probable Cause
++ The util-linux is not installed
+
+*** Links
+**** Configuration of hardware in the debian image [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][{Link}]]
+***** Tools
+****** Script file
++ The script.bin is a text file with very important configuration parameters like port GPIO assignments, DDR memory parameters, Video resolution etc, by changing these parameters in the script.bin you can configure your Linux without need to re-compile your kernel again and again this is smart way Allwinner provides for tweaking A13 Linux Kernel
+****** fex
++ The fex tool will convert a script.bin file to a text file and back again.
++ This allows the easy modification of the settings that are in the script.bin file
+
+****** Tools and script files
++ A13 script bin and fex tool
++ The directory A13_script_files contains:
+  + script.bin :: the default script with VGA800x600settings
+  + fex2bin_bin_fex_tools.tar.gz :: tools fex2bin and bin2fex for converting the *.bin script file to *.fex(text file)
+  + script_GPIO_VGA :: script with VGA800x600settings
+  + script_GPIO_LCD_800x480 :: script with LCD800x480settings
+
+***** Changing A13-OLinuxino settings to VGA800x600 or LCD800x480
++ The default SD card setup is made with settings for VGA 800x600. If you want to switch between VGA 800x600 and LCD800x480 mode then you have to replace the existing script.bin file from the first SD card partitition (note that this partition is FAT - so you can replace the file under Windows or Linux) with the script.bin file from script_GPIO_VGA directory (if you want to change to VGA800x600 mode) or from script_GPIO_LCD_800x480 directory (if you want to change to LCD800x600 mode).
+****** Establish WIFI connection
+1. plug in MOD-WIFI-RTL8188 if the board is not A13-OLinuXino-WIFI
+   #+begin_src sh
+   type ifconfig -a
+   #+end_src
+   + Output
+     #+begin_example
+       lo Link encap:Local Loopback
+
+                inet addr:127.0.0.1  Mask:255.0.0.0
+                UP LOOPBACK RUNNING  MTU:16436  Metric:1
+                RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:0
+                RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+       tunl0 Link encap:IPIP Tunnel HWaddr
+
+                NOARP  MTU:1480  Metric:1
+                RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:0
+                RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+       wlan2 Link encap:Ethernet HWaddr 48:02:2a:eb:21:1c
+
+                inet addr:192.168.0.229  Bcast:192.168.0.255  Mask:255.255.255.0
+                UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+                RX packets:166 errors:0 dropped:726 overruns:0 frame:0
+                TX packets:7 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:1000
+                RX bytes:31361 (30.6 KiB)  TX bytes:1248 (1.2 KiB)
+     #+end_example
+     + and look at your wlan number. In this case we have wlan2
+2. open the file /etc/network/interfaces- for example using vi tool
+   #+begin_src sh
+   vi /etc/network/interfaces
+   #+end_src
+   + and change
+     #+begin_example
+       auto wlan2
+       iface wlan2 inet dhcp
+       wpa-ssid YourSSIDname
+       wpa-psk YourWPAkey
+       reboot A13-OLinuXino board
+
+
+     #+end_example
+   + Chek your connection
+     #+begin_src sh
+       ifconfig -a
+     #+end_src
+     + if everything is ok you should see something as:
+       #+begin_example
+       wlan1 Link encap:Ethernet HWaddr 48:02:2a:eb:21:1c
+
+         inet addr:192.168.0.229  Bcast:192.168.0.255  Mask:255.255.255.0
+         UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+         RX packets:166 errors:0 dropped:726 overruns:0 frame:0
+         TX packets:7 errors:0 dropped:0 overruns:0 carrier:0
+         collisions:0 txqueuelen:1000
+         RX bytes:31361 (30.6 KiB)  TX bytes:1248 (1.2 KiB)
+       #+end_example
+****** Establish ethernet connection using USB-ETHERNET adapter recommended supported adapter USB-ETHERNET-AX88772B
+1. plug in USB-ETHERNET-AX88772B adapter
+2. type
+   #+begin_src sh
+   ifconfig -a
+   #+end_src
+   + you should see something like this
+     #+begin_example
+       eth1 Link encap:Ethernet HWaddr 00:80:80:9a:4a:63
+
+                inet addr:192.168.0.113  Bcast:192.168.0.255  Mask:255.255.255.0
+                UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+                RX packets:58 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:4 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:1000
+                RX bytes:7852 (7.6 KiB)  TX bytes:510 (510.0 B)
+       lo Link encap:Local Loopback
+
+                inet addr:127.0.0.1  Mask:255.0.0.0
+                UP LOOPBACK RUNNING  MTU:16436  Metric:1
+                RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:0
+                RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+       tunl0 Link encap:IPIP Tunnel HWaddr
+
+                NOARP  MTU:1480  Metric:1
+                RX packets:0 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:0 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:0
+                RX bytes:0 (0.0 B)  TX bytes:0 (0.0 B)
+     #+end_example
+	 + look at your eth number. In this case we have eth1
+3. open the file /etc/network/interfaces- for example using vi tool
+   #+begin_src sh
+   vi /etc/network/interfaces
+   #+end_src
+   + and change the following rows
+     #+begin_example
+       auto eth1
+       iface eth1 inet dhcp
+       where eth1 is the interface number
+       reboot A13-OLinuXino board
+     #+end_example
+   + or type ifup eth1
+4. Check your connection
+   #+begin_src sh
+   ifconfig -a
+   #+end_src
+   + if everything is ok you should see something as:
+     #+begin_example
+       eth1 Link encap:Ethernet HWaddr 00:80:80:9a:4a:63
+
+                inet addr:192.168.0.113  Bcast:192.168.0.255  Mask:255.255.255.0
+                UP BROADCAST RUNNING MULTICAST  MTU:1500  Metric:1
+                RX packets:725 errors:0 dropped:0 overruns:0 frame:0
+                TX packets:10 errors:0 dropped:0 overruns:0 carrier:0
+                collisions:0 txqueuelen:1000
+                RX bytes:77056 (75.2 KiB)  TX bytes:1686 (1.6 KiB)
+     #+end_example
+****** GPIO changing
+1. lsmod
+   #+begin_src sh
+   type lsmod
+   #+end_src
+   + if sun4i-gpio is present - OK
+   + unless type modprobe sun4i-gpio
+2. go to /sys/devices/virtual/misc/sun4i-gpio/pins and type ls
+   + list of supported pins will be shown
+   + example for port reading:
+     #+begin_src sh
+     cat pe4 read PortE4 the result should be 0 or 1 example for port writing: echo 1 > pg9 - turn on LED
+     #+end_src
+
+******* Changing A13 GPIO direction
+1. extract fex2bin_bin2fex_tools on linux machine
+   #+begin_src sh
+   sudo su
+   cd fex2bin_bin2fex_tools directory
+   mount /dev/sdx1 /mnt/sd # mount first partitition on SD card
+   ./bin2fex /mnt/sd/script.bin > /mnt/sd/script_test.fex # convert bin file to fex
+gedit /mnt/sd/script_test.fex
+   #+end_src
+******* GPIOs are defined in the end.
++ where
+  #+begin_example
+  Pxx<mode><pull><drive><data> mode 0-7, 0=input, 1=ouput, 2-7 I/O function pull 0=none, 1=up, 2=down drive 0-3, I/O drive level data - data output - logical 0 or 1
+  #+end_example
++ for example: if you want to change GPIO direction then change first parameter after port name
+  #+begin_example
+  gpio_pin_8 = port:PE08<0><default><default><default>make PE8 input gpio_pin_8 = port:PE08<1><default><default><default>make PE8 output
+  #+end_example
++ save and exit
++ ./fex2bin /mnt/sd/script_test.fex > /mnt/sd/script.bin- convert fex to bin
+
+**** fex2bin and bin2fex - script.bin [[http://www.imajeenyus.com/computer/20130301_android_tablet/android/fex2bin_etc.html][{Link}]]
+***** Overview
++ During the boot process, the processor reads a file called script.bin, located in the bootloader (nanda) partition. This file contains all of the processor configuration details (such as pin functions, voltages, clock frequencies, memory configuration etc) and is essential to the correct operation of the tablet. The purpose of this file should be distinguished from that of build.prop, located in /system/build.prop. The latter is a configuration for Android, once it's started. script.bin is configuration for the processor.
++ Note that there is also a file in the bootloader partition called script0.bin - this is a backup and must be identical to script.bin.
++ For more information on the boot process and the function of script.bin, have a look at these links:
+  + http://rhombus-tech.net/allwinner_a10/a10_boot_process/
+  + http://elinux.org/Hack_A10_devices
+  + http://www.cnx-software.com/2012/05/06/editing-allwinner-a10-board-configuration-files-script-bin/
+  + http://linux-sunxi.org/Sunxi-tools
+  + The second link above shows a really neat trick where the pins normally intended for interfacing with the SD card are remapped to a UART port, so you can get a serial port by connecting to the SD card slot!
++ The script.bin file is actually the binary equivalent of the COMMON_SYS_CONFIG100000 file found in the unpacked Livesuit image. The human-readable version is called a "FEX" file, since that's the extension used by some conversion programs. There are a couple of tools available which can convert between the binary and FEX formats, and these are described below. This - http://linux-sunxi.org/Fex_Guide - is a description of the sections in the FEX file.
+  + (There is an online version of these tools available at https://www.miniand.com/tools/fexc, but I couldn't get it to work.)
+
+***** Installation
++ To get the tools, go to the git repository at https://github.com/linux-sunxi/sunxi-tools/ and download the ZIP file (called sunxi-tools-master.zip). Extract this, and place the folder on the Desktop of your Linux machine. Open a terminal, cd to the folder, then run
+  #+BEGIN_SRC sh
+    sudo apt-get install libusb-1.0-0-dev
+  #+END_SRC
+  + (this installs libusb, which is required for compilation). Then type make which should compile the files. This creates two programs (actually it creates a lot more, but these are the only two we're interested in) called bin2fex and fex2bin.
+
+***** Using bin2fex
++ First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
+  #+BEGIN_SRC sh
+    sunxi-tools-master/bin2fex script.bin script.fex
+  #+END_SRC
+  + This converts the script.bin file into script.fex. Here's the output produced - script.fex.
+
+***** Using fex2bin
++ To convert back, it's simply the reverse:
+  #+BEGIN_SRC sh
+    sunxi-tools-master/fex2bin script.fex script.bin
+  #+END_SRC
+  + This can then be placed back on the bootloader partition (remember to also overwrite script0.bin).
+
+***** Using fex2bin on the COMMON_SYS_CONFIG100000 LiveSuit file
++ You can use fex2bin to convert the COMMON_SYS_CONFIG100000 file from the unpacked LiveSuit image into a script.bin file. However, I initially got an error saying "E: CONFIG:696: invalid character at 27" or similar (which means line 696, character 27). Looking at the file, it turned out there were quotes missing at a certain point. Here's the original part of the file:
+  #+BEGIN_EXAMPLE
+    [msc_feature]
+    vendor_name              =USB 2.0
+    product_name             =USB Flash Driver
+    To get it to convert properly, I put quotes as follows:
+
+    [msc_feature]
+    vendor_name              ="USB 2.0"
+    product_name             ="USB Flash Driver"
+  #+END_EXAMPLE
+  + I'm not sure why quotes were missed out here, since they're present everywhere else.
+
+***** Which version ends up on the tablet?
++ If you're eagle-eyed, you may notice something at this point. In the unpacked LiveSuit files, there are essentially two copies of script.bin. One is the human-readable COMMON_SYS_CONFIG100000 file, the other is the script.bin located within the RFSFAT16_BOOTLOADER_00000 image file. The two copies are identical (if you use fex2bin/bin2fex to convert between them, and remember the quotation marks). So, which one actually ends up on the tablet?
++ I made a slight modification to one, then the other, packing and burning a complete LiveSuit image each time, and determined that it's the script.bin inside RFSFAT16_BOOTLOADER_00000 which ends up on the tablet (hardly surprising, since RFSFAT16_BOOTLOADER_00000 is a byte-for-byte copy of the nanda tablet partition). To be on the safe side, I would still ensure that COMMON_SYS_CONFIG100000 is identical to the script.bin file - maybe LiveSuit uses COMMON_SYS_CONFIG100000 for its own initial configuration, or something.
+
+**** imx233-olinuxino-with-lcd-4-3-and-touchscreen [[http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/][{Link}]]
+**** Product Info [[http://microcontrollershop.com/product_info.php?products_id%3D5557][{Link}]]
+**** Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 [[https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image][{Link}]]
+
+**** http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/
+
+**** (As of 1 March 2013, the current Debian build for this MICRO version does not yet support a touch panel.)
++ http://184.172.168.133-static.reverse.softlayer.com/product_info.php?cPath=&products_id=5414
+**** [[https://www.olimex.com/forum/index.php?topic%3D753.0][How to make 7" LCD Screen working on the A13Micro with Debian or Custom distrib?]]
+** Configure Debian
+*** Configure Wireless (Dynamic IP Address)
+**** Steps
+***** Determine Wireless Device
+#+BEGIN_SRC sh
+dmesg
+#+END_SRC
++ Found as wlan3
+
+***** Configure /etc/network/interfaces as Root
+#+BEGIN_EXAMPLE
+  auto wlan3
+  iface wlan3 inet dhcp
+      wpa-ssid TVCOG
+      wpa-psk COGpass1
+#+END_EXAMPLE
+
+***** Restart the Networking Service
+#+BEGIN_SRC sh
+  service networking restart
+#+END_SRC
+
+***** Test the Network
+#+BEGIN_SRC sh
+  ifconfig
+  ping google.com
+#+END_SRC
+
+**** Links
++ [[http://blog.tplus1.com/blog/2008/06/13/how-to-connect-to-a-wireless-network-from-the-ubuntu-command-line/][How to connect to a wireless network from the ubuntu command line]]
++ [[http://www.cyberciti.biz/faq/debian-linux-wpa-wpa2-wireless-wifi-networking/][debian linux wpa wpa2 wireless wifi networking]]
+*** Configure Static IP Address
+**** Steps
+***** Determine Information
+     #+begin_src sh
+       ifconfig
+     #+end_src
+       + Find:
+	 + address
+	 + netmask
+	 + gateway
+	 + DNS Servers
+***** Modify /etc/network/interfaces as Root
+#+begin_example
+  auto wlan3
+  iface wlan3 inet static
+     wpa-ssid TVCOG
+     wpa-psk COGpass1
+     address 192.168.12.222
+     netmask 255.255.255.0
+     gateway 192.168.12.1
+#+end_example
+***** Modify /etc/resolv.conf as Root
+     #+begin_example
+     domain techvalleycenterofgravity.com
+     search techvalleycenterofgravity.com
+     nameserver 64.22.32.8
+     nameserver 64.22.32.9
+     #+end_example
+***** Restart Networking as Root
+     #+begin_src sh
+       /etc/init.d/networking restart
+     #+end_src
+***** Test Results
+     #+begin_src sh
+       ifconfig
+       ping google.com
+     #+end_src
+**** Links
+    + [[http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu][Linux Basics set a Static IP on Ubuntu]]
+*** Set Date
+**** Steps
+#+BEGIN_SRC sh
+  date --set="10 JUL 2013 12:27:00"
+#+END_SRC
+**** Links
++ http://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/
+*** Set Keyboard Locale
+**** Overview
++ My keyboard layout was set to UK, which meant I typed things like \not instead of ~ and \pound instead of #.
++ This can easily be remidied from the commandline.
+**** Steps
+1. Modify the keyboard locale
+   #+BEGIN_SRC sh
+     sudo dpkg-reconfigure keyboard-configuration
+   #+END_SRC
+2. reboot
+   #+BEGIN_SRC sh
+     reboot -h now
+   #+END_SRC
+**** Links
++ [[http://askubuntu.com/questions/155424/changing-keyboard-layout-in-ubuntu-12-04-server-command-line-interface][AskUbuntu.com: Changing keyboard layout in ubuntu 12.04 server command-line interface]]
+*** Install Programs
+**** Steps
+1. update packages 
+   #+BEGIN_SRC sh
+     apt-get update; apt-get upgrade; apt-get dist-upgrade
+   #+END_SRC
+2. install packages
+   #+BEGIN_SRC sh
+     apt-get install aptitude emacs build-essentials pkg-config
+   #+END_SRC
+   + emacs is obviously "optional" but is the preferred text-editor of choice for [[http://xkcd.com/378/][real programmers]] ;)
+*** Configure SSH to start on Boot
+**** Steps
+***** Install ssh server
+#+BEGIN_SRC sh
+apt-get install openssh-server
+#+END_SRC
+***** Create or modify the /etc/init.d/sshd init script as follows:
+#+BEGIN_SRC sh
+    #! /bin/sh
+    #
+    # start/stop the secure shell daemon
+
+    case "$1" in
+    'start')
+
+    	# Start the ssh daemon
+    	if [ -x /usr/sbin/sshd ]; then
+    		echo "starting SSHD daemon"
+    		/usr/sbin/sshd &
+    	fi
+    	;;
+
+    'stop')
+    	# Stop the ssh daemon
+    	/usr/bin/pkill -x sshd
+    	;;
+    *)
+    	echo "usage: /etc/init.d/sshd {start|stop}"
+    ;;
+#+END_SRC
+***** Check that /etc/rc3.d/S89sshd exists (or any sshd startup script exists) and is a soft link to /etc/init.d/sshd.
++ If not, create it using the following command:
+  #+BEGIN_SRC sh
+      ln -s /etc/init.d/sshd /etc/rc3.d/S89sshd
+  #+END_SRC
+***** Determine that ssh is running
+#+BEGIN_SRC sh
+  service ssh status
+#+END_SRC
+***** Determine Port Open
+#+BEGIN_SRC sh
+  netstat -tlpn
+#+END_SRC
++ Port is: 22122
+
+***** Determine IP Address to connect to
+#+BEGIN_SRC sh
+  ifconfig
+#+END_SRC
+
+***** Connect to ssh
+#+BEGIN_SRC sh
+  ssh root@192.168.12.128 -p 22122
+#+END_SRC
+**** Debugging
++ Check ports being listened on
+  #+BEGIN_SRC sh
+    netstat -an | grep "LISTEN"
+  #+END_SRC
+**** Links
++ [[http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic%3D%252Fcom.ibm.tnpm.doc%252Finstall%252Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html][Configure Open SSH Server To Start Up On System Boot]]
++ [[http://raspberrypi.stackexchange.com/questions/4709/ssh-connection-refused-on-raspberry-pi-cannot-find-why][SSH Connection Refused On Raspberry Pi Cannot Find Why]]
+*** Install XFCE (Optional)
+**** Overview
++ Most of this guide is dedicated to setting up this micro-controller to run QT Embedded, which allows the use of graphical programs without runnng a graphical desktop (XFCE).  That being said it is possible to install one, I haven't worked on getting touchscreen support working with it, but Olimex has posted a few tutorials and it does work fine with a mouse.
+**** Steps
+#+BEGIN_SRC sh
+apt-get install --no-install-recommends xorg xfce4 alsa-base alsa-utils;
+apt-get install --no-install-recommends cpufrequtils gamin xdg-utils;
+apt-get install --no-install-recommends desktop-base gnome-icon-theme dmz-cursor-theme;
+apt-get install --no-install-recommends xfce4-terminal xfce4-power-manager xfce4-screenshooter;
+startx;
+#+END_SRC
+**** Links
+***** Installing GUI
+http://lcncolinuxino.blogspot.com/p/installing-gui.html
+****** Overview
+Optionally if desired, a GUI user interface can be installed. This section describes how to install a small foot print xfce4 user interface.
+****** Steps
+#+BEGIN_SRC sh
+apt-get install --no-install-recommends xorg xfce4 alsa-base alsa-utils;
+apt-get install --no-install-recommends cpufrequtils gamin xdg-utils;
+apt-get install --no-install-recommends desktop-base gnome-icon-theme dmz-cursor-theme;
+apt-get install --no-install-recommends xfce4-terminal xfce4-power-manager xfce4-screenshooter;
+apt-get install --no-install-recommends thunar-archive-plugin thunar-media-tags-plugin;
+apt-get install --no-install-recommends xfburn htop squeeze bzip2 zip unzip unrar-free;
+# Finally start the user interface with:
+startx;
+#+END_SRC
+****** Links
++
+
+** Configure Serial Communication with Bluetooth Module
+*** Communicate to Bluetooth
+**** Connecting
+**** Installation
+***** Connect to Linvar
+Passphrase: 1234
+
+***** Configure /etc/bluetooth/rfcomm.conf
+# <<rfcomm>>
+#+BEGIN_EXAMPLE
+#
+# RFCOMM configuration file.
+#
+
+rfcomm0 {
+	# Automatically bind the device at startup
+	bind no;
+
+	# Bluetooth address of the device
+	device 00:12:03:27:71:07;
+
+	# RFCOMM channel for the connection
+	channel	1;
+
+	# Description of the connection
+	comment "Example Bluetooth device";
+}
+#+END_EXAMPLE
+
+***** Restart Bluetooth
+#+BEGIN_SRC sh
+service bluetooth restart
+#+END_SRC
+
+***** Determine the Hardware Address
+The hardware address should be replaced with that of your phone. If you don't know the hardware address of your phone yet, you can get it by running:
+# hcitool scan
+
+***** Bind the Address
+#+BEGIN_SRC sh
+sudo rfcomm bind 0 00:12:03:27:71:07
+#+END_SRC
+**** Links
++ [[http://www.thinkwiki.org/wiki/How_to_setup_Bluetooth][How to setup Bluetooth]]
+*** Get Serial Over Linux
+**** Installation
+***** Determine hardware a
+***** Modify /etc/bluetooth/rfcomm.conf as Root
+#+BEGIN_EXAMPLE
+rfcomm2 {
+	# Automatically bind the device at startup
+	bind no;
+
+	# Bluetooth address of the device
+	device 00:12:03:27:71:07;
+
+	# RFCOMM channel for the connection
+	channel	1;
+
+	# Description of the connection
+	comment "Olimex";
+}
+#+END_EXAMPLE
+***** Restart Bluetooth
+#+BEGIN_SRC sh
+  sudo service bluetooth restart
+#+END_SRC
+
+**** Connecting
+1. Initialize Connection
+   #+BEGIN_SRC sh
+     sudo rfcomm connect rfcomm2
+   #+END_SRC
+2. Connect with Screen
+   #+BEGIN_SRC sh
+   screen /dev/rfcomm2 115200
+   #+END_SRC
+3. Login
+**** Links
++ [[http://www.cyberciti.biz/hardware/5-linux-unix-commands-for-connecting-to-the-serial-console/][5 linux unix commands for connecting to the serial console]]
++ [[http://www.heatxsink.com/entry/how-to-pair-a-bluetooth-device-from-command-line-on-linux][how to pair a bluetooth device from command line on linux]]
+** Install ARM Toolchain with Buildroot
+*** Steps
+1. Download Buildroot
+   #+BEGIN_SRC sh
+     mkdir bld; cd bld
+     wget http://buildroot.net/downloads/buildroot-2013.05.tar.gz
+     tar -xvf buildroot-2013.05.tar.gz
+     cd buildroot-2013.05
+   #+END_SRC
+
+2. Run Menu Config
+   #+BEGIN_SRC sh
+     make menuconfig
+   #+END_SRC
+   + Relevant Configurations:
+     |-----------------------------+--------------------------------|
+     | Target Architecture         | ARM (little endian)            |
+     | Target Architecture Variant | Cortex-A8                      |
+     | Toolchain                   | Sourcery Codebench ARM 2011.09 |
+4. If you are on a 64-bit system
+   #+BEGIN_SRC sh
+     sudo apt-get install ia32-libs
+   #+END_SRC
+   + See Error
+
+3. Install toolchain binaries
+   #+BEGIN_SRC sh
+     su
+     cp -a ext-toolchain /opt/ext_toolchain
+     cp /etc/environment /etc/environment.BAK
+   #+END_SRC
+   + Append :/opt/ext_toolchain/bin/ to Path
+     #+BEGIN_EXAMPLE
+       PATH="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/opt/ext_toolchain/bin/"
+     #+END_EXAMPLE
+
+5. Logout and Login or Reboot
+
+
+**** Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"
+***** Error:
++ error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
+***** Probable Cause
++ Its looking for 32-bit library, which is not installed since I have a 64-bit system
+***** Solution
++ Install the 32 bit libraries
+#+BEGIN_SRC sh
+sudo apt-get install ia32-libs
+#+END_SRC
+***** Links
++ http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory
+*** Links
++ [[./doc/using-buildroot-real-project.pdf][Using buildroot for real projects]]
+  + This is a great presentation that demonstrates how to use buildroot very clearly.
+** Configure tslib on Device
+*** OLinuXino A13: touchscreen support in Linux                               :noexport:
+**** Required:
+***** installed xorg-dev, xserver-xorg-dev, x11proto-core-dev, git, make, automake:
+#+BEGIN_SRC sh
+  aptitude install xorg-dev xserver-xorg-dev x11proto-core-dev git automake make
+#+END_SRC
+***** tslib sources - get it from Github:
+#+BEGIN_SRC sh
+  git clone https://github.com/kergoth/tslib.git
+#+END_SRC
+***** xf86-input-tslib sources - from Debian Git repository:
+#+BEGIN_SRC sh
+git clone git://git.debian.org/git/collab-maint/xf86-input-tslib
+#+END_SRC
+**** Now it's time to build this stuff. (All commands are performed as root).
+***** tslib
+****** Overview
++ tslib is a library that allows programmer to use data from touchscreens. It is only API, but not a driver for Xorg (there is xf86-input-tslib package for this).
++ It works well for most of different touchscreens without any changes. But, _suddenly, Olinuxino's touchscreen is an exception_, and we need to _patch original library_.
+****** Steps
+1. First, download tslib source code and go to its directory:
+   #+BEGIN_SRC sh
+     git clone http://github.com/kergoth/tslib.git
+     cd tslib
+   #+END_SRC
+2. Download and apply the patch using GNU patch utility:
+   #+BEGIN_SRC sh
+     wget http://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
+     patch -p0 < tslib.patch
+   #+END_SRC
+3. Configure, make and install:
+   #+BEGIN_SRC sh
+     autoreconf -vi; ./configure --prefix=/usr;
+     make;
+     make install
+   #+END_SRC
+   + Result: Libraries have been installed in:
+     #+BEGIN_EXAMPLE
+       /usr/lib/ts
+     #+END_EXAMPLE
+4. Then, let's load a kernel module and check touchscreen:
+   #+BEGIN_SRC sh
+     modprobe sun4i-ts
+     dmesg | grep sun4i-ts
+   #+END_SRC
+   + If it's all right, there will be some messages in dmesg like this:
+     #+BEGIN_EXAMPLE
+       [    9.010000] sun4i-ts.c: sun4i_ts_init: start ...
+       [    9.020000] sun4i-ts: tp_screen_size is 5 inch.
+       [    9.030000] sun4i-ts: tp_regidity_level is 5.
+       [    9.030000] sun4i-ts: tp_press_threshold_enable is 0.
+       [    9.040000] sun4i-ts: rtp_sensitive_level is 15.
+       [    9.050000] sun4i-ts: rtp_exchange_x_y_flag is 0.
+       [    9.060000] sun4i-ts.c: sun4i_ts_probe: start...
+       [    9.080000] input: sun4i-ts as /devices/platform/sun4i-ts/input/input1
+       [    9.100000] sun4i-ts.c: sun4i_ts_probe: end
+     #+END_EXAMPLE
+     + Highlighted 1 there is a number of touchscreen event device.
+     + Later we will get a raw data from device using the path /dev/input/event1 (change higlighted number to your).
+
+5. To load this kernel module automatically, add a line into /etc/modules:
+   #+BEGIN_SRC sh
+     echo sun4i-ts >> /etc/modules
+   #+END_SRC
+
+6. Now let's check the touchscreen in use. We need to export some environment variables which contains basic configuration for library. Do not forget to change highlighted number:
+   #+BEGIN_SRC sh
+     export TSLIB_TSEVENTTYPE=raw
+     export TSLIB_CONSOLEDEVICE=none
+     export TSLIB_FBDEVICE=/dev/fb0
+     export TSLIB_TSDEVICE=/dev/input/event1
+     export TSLIB_CALIBFILE=/usr/etc/pointercal
+     export TSLIB_CONFFILE=/usr/etc/ts.conf
+     export TSLIB_PLUGINDIR=/usr/lib/ts
+   #+END_SRC
+
+7. Next, configure raw input module of the tslib.
+   + Open /usr/etc/ts.conf and uncomment the line which contains "module_raw input".
+
+8. After this, we should make a test. Let's calibrate the touchscreen and try to do something with it.
+   #+BEGIN_SRC sh
+     ts_calibrate
+     ts_test
+   #+END_SRC
+   + To get out from ts_test, you should press "Quit" button on the screen, or use Ctrl+C in emergency case (if screen is not calibrated or configured successfully).
+9. To load configuration variables while system is loading, write these lines into /etc/environment file (check highlighted number):
+   #+BEGIN_EXAMPLE
+     TSLIB_TSEVENTTYPE=raw
+     TSLIB_CONSOLEDEVICE=none
+     TSLIB_FBDEVICE=/dev/fb0
+     TSLIB_TSDEVICE=/dev/input/event1
+     TSLIB_CALIBFILE=/etc/pointercal
+     TSLIB_CONFFILE=/usr/etc/ts.conf
+     TSLIB_PLUGINDIR=/usr/lib/ts
+   #+END_EXAMPLE
+
+
+
+***** Now we need to modify and install xf86-input-tslib driver.
+
+xf86-input-tslib
+
+xf86-input-tslib allows us to use tslib device like our touchscreen as pointer device.
+
+This driver is old a bit, so while it works with newer Xorg server, it faluts, because xf86InputSetScreen function is removed from Xorg, but driver tries to call it. I had just removed this call from driver's source code and the problem was solved.
+
+Download source code, go to its directory:
+
+# git clone git://git.debian.org/git/collab-maint/xf86-input-tslib
+# cd xf86-input-tslib
+
+Get and apply required patches (including my solution):
+
+# wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/1-xf86tslib-sigfault.patch https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/xf86-input-tslib-port-ABI-12-r48.patch https://github.com/webconn/OLINUXINO/blob/master/SOFTWARE/A13/TOUCHSCREEN/xf86tslib-xorg-update.patch
+# patch -p0 < 1-xf86tslib-sigfault.patch
+# patch -p0 < xf86-input-tslib-port-ABI-12-r48.patch
+# patch -p0 < xf86tslib-xorg-update.patch
+
+Configure, make and install:
+
+# ./configure --prefix=/usr
+# make
+# make install
+
+Now describe the device as InputClass of Xorg in your xorg.conf (or in /usr/share/X11/xorg.conf.d/20-ts.conf as I did):
+
+Section "InputClass"
+    Identifier "Sun4i-Touchscreen"
+    MatchDevicePath "/dev/input/event*"
+    MatchProduct "sun4i-ts"
+    Driver "tslib"
+EndSection
+
+
+If you had successfully calibrated and tested the touchscreen, when you start X server by
+
+# startx
+
+the screen should work well. Also it should work when X server is launched by desktop manager (ex. LightDM).
+
+P.S. This solution is tested at Olinuxino A13 with Debian GNU/Linux 7.0 (wheezy). Last commit of tslib was 158ee49, version of xf86-input-tslib was 0.0.6.
+Автор: webconn на 10:10
+Отправить по электронной почте
+Написать об этом в блоге
+Опубликовать в Twitter
+Опубликовать в Facebook
+
+Ярлыки: ARM, Debian, English, HowTo, Linux, Olinuxino, touchscreen
+*** Overview
+#+BEGIN_EXAMPLE
+  One of the first problems we had with OLinuxIno-A13 board is the touchscreen support.
+  The manual was published on the official Olimex blog, but source packages had updated, so old solution didn't give an effect.
+  After some experiments, we solved this problem.
+  Here is a full step-by-step manual how to get the device works well under Debian
+#+END_EXAMPLE
+  - [[http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html][Dimrobotics]]
+*** Steps
+1. Install make and automake
+   #+BEGIN_SRC sh
+     apt-get install make automake
+   #+END_SRC
+2. Download tslib source code and go to its directory:
+   #+BEGIN_SRC sh
+     git clone https://github.com/kergoth/tslib.git
+     cd tslib
+   #+END_SRC
+3. Download and apply the patch using GNU patch utility:
+   #+BEGIN_SRC sh
+     wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
+     patch -p0 < tslib.patch
+   #+END_SRC
+4. Configure, make and install:
+   #+BEGIN_SRC sh
+     autoreconf -vi
+     ./configure --prefix=/usr
+     make
+     make install
+   #+END_SRC
+5. Then, let's load a kernel module and check touchscreen:
+   #+BEGIN_SRC sh
+     modprobe sun4i-ts
+     dmesg | grep sun4i-ts
+   #+END_SRC
+   + Result
+     #+BEGIN_EXAMPLE
+       [12951.630000] sun4i-ts.c: sun4i_ts_init: start ...
+       [12951.640000] sun4i-ts: tp_screen_size is 5 inch.
+       [12951.650000] sun4i-ts: tp_regidity_level is 5.
+       [12951.660000] sun4i-ts: tp_press_threshold_enable is 0.
+       [12951.670000] sun4i-ts: rtp_sensitive_level is 15.
+       [12951.670000] sun4i-ts: rtp_exchange_x_y_flag is 0.
+       [12951.690000] sun4i-ts.c: sun4i_ts_probe: start...
+       [12951.710000] input: sun4i-ts as /devices/platform/sun4i-ts/input/input4
+       [12951.730000] sun4i-ts.c: sun4i_ts_probe: end
+     #+END_EXAMPLE
+6. To load this kernel module automatically, add a line into /etc/modules:
+   #+BEGIN_SRC sh
+     echo sun4i-ts >> /etc/modules
+   #+END_SRC
+7. Export Some Variables
+   #+BEGIN_SRC sh
+     export TSLIB_TSEVENTTYPE=raw
+     export TSLIB_CONSOLEDEVICE=none
+     export TSLIB_FBDEVICE=/dev/fb0
+     export TSLIB_TSDEVICE=/dev/input/event4
+     export TSLIB_CALIBFILE=/usr/etc/pointercal
+     export TSLIB_CONFFILE=/usr/etc/ts.conf
+     export TSLIB_PLUGINDIR=/usr/lib/tsg
+   #+END_SRC
+8. Next, configure raw input module of the tslib.
+   + Open /usr/etc/ts.conf and uncomment the line which contains "module_raw input".
+9. To load configuration variables while system is loading, write these lines into /etc/environment file (check highlighted number):
+   #+BEGIN_EXAMPLE
+     TSLIB_TSEVENTTYPE=raw
+     TSLIB_CONSOLEDEVICE=none
+     TSLIB_FBDEVICE=/dev/fb0
+     TSLIB_TSDEVICE=/dev/input/event3
+     TSLIB_CALIBFILE=/etc/pointercal
+     TSLIB_CONFFILE=/usr/etc/ts.conf
+     TSLIB_PLUGINDIR=/usr/lib/ts
+   #+END_EXAMPLE
+*** Errors
+**** undefined macro: AC_DISABLE_STATIC
+***** Error Caused
++ while attempting to do "autoreconf -vi" when building tslib
+***** Error Message
+#+BEGIN_EXAMPLE
+configure.ac:24: error: possibly undefined macro: AC_DISABLE_STATIC
+      If this token and others are legitimate, please use m4_pattern_allow.
+      See the Autoconf documentation.
+#+END_EXAMPLE
+***** Solution
+#+BEGIN_SRC sh
+apt-get install libtool
+#+END_SRC
+***** Links
++ http://www.friendlyarm.net/forum/topic/621
+*** Test tslib Input Received from Touchscreen
+#+BEGIN_SRC sh
+ cat /dev/input/event3 | hexdump
+#+END_SRC
+*** Links
++ http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html
++ http://www.armadeus.com/wiki/index.php?title=Qt/Embedded#Touchscreen_handling
+** Configure QT for Embedded Linux
+*** Steps
+**** Install QT on Development Platform
+http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/
+#+BEGIN_SRC sh
+sudo apt-get install qtcreator
+#+END_SRC
+**** Install TSLIB on Development Platform
+http://billforums.station51.net/viewtopic.php?f=8&t=15
+#+BEGIN_SRC sh
+cd ~/src
+git clone https://github.com/kergoth/tslib.git tslib
+cd tslib
+# custom patch for Olinuxino
+wget https://raw.github.com/webconn/OLINUXINO/master/SOFTWARE/A13/TOUCHSCREEN/tslib.patch
+     patch -p0 < tslib.patch
+./autogen.sh
+./configure --host=arm-linux-gnueabihf --prefix=/usr/local/tslib --enable-static --enable-shared
+make -j5
+su
+export PATH=$PATH:opt/ext_toolchain/bin/
+make install
+#+END_SRC
++ Make sure to modify qmake.conf file when installing qt-embedded by including:
+  #+BEGIN_EXAMPLE
+    QMAKE_INCDIR  += /usr/local/tslib/include
+    QMAKE_LIBDIR  += /usr/local/tslib/lib
+  #+END_EXAMPLE
+
+**** Install qt-everywhere on Development Platform
+***** Steps
+1. Install Source
+   #+BEGIN_SRC sh
+     tar -xvf qt-everywhere-opensource-src-4.6.2.tar.gz /usr/local/qt
+   #+END_SRC
+2. Replace the whole text in mkspecs/qws/linux-arm-g++/qmake.conf by the following:
+   #+BEGIN_EXAMPLE
+     #
+     # qmake configuration for building with arm-linux-g++
+     #
+     include(../../common/gcc-base-unix.conf)
+     include(../../common/g++-unix.conf)
+     include(../../common/linux.conf)
+     include(../../common/qws.conf)
+     
+     # modifications to g++.conf
+     QMAKE_CC                = arm-linux-gnueabihf-gcc -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
+     QMAKE_CXX               = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
+     QMAKE_LINK              = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
+     QMAKE_LINK_SHLIB        = arm-linux-gnueabihf-g++ -mcpu=cortex-a8 -mtune=cortex-a8 -O0 -mfpu=neon -lrt
+     
+     # modifications to linux.conf
+     QMAKE_AR                = arm-linux-gnueabihf-ar cqs
+     QMAKE_OBJCOPY           = arm-linux-gnueabihf-objcopy
+     QMAKE_STRIP             = arm-linux-gnueabihf-strip
+     QMAKE_RANLIB            = arm-linux-gnueabihf-ranlib
+     
+     # tslib
+     QMAKE_INCDIR  += /usr/local/tslib/include
+     QMAKE_LIBDIR  += /usr/local/tslib/lib
+     QMAKE_LFLAGS += -Wl,-rpath-link=/usr/local/tslib/lib
+     
+     load(qt_config)
+     
+   #+END_EXAMPLE
+3. Configure Qt
+   #+BEGIN_SRC sh
+     make clean; ./configure -embedded arm -prefix /usr/local/qt -little-endian -no-qt3support -no-cups -no-largefile -optimized-qmake -no-openssl -xplatform qws/linux-arm-g++ -nomake tools -nomake examples -no-webkit -opensource -confirm-license -qt-mouse-tslib
+   #+END_SRC
+   + Some optional arguments depending on your requirements
+     + Enable touchscreen library support : -qt-mouse-tslib
+     + Enable USB keyboard support : -qt-kbd-linuxinput
+   + The above options affect the QtGui library so you need to replace only QtGui.so.x.x file on your root filesystem if you are planning to make changes.
+4. Make
+   #+BEGIN_SRC sh
+     make -j 5
+     sudo make install
+   #+END_SRC
+   + Wait for a couple of hours to compile libraries
+5. Install
+   #+BEGIN_SRC sh
+     su -p
+     make install
+   #+END_SRC
+   + libraries will be installed in /usr/local/qt/lib/
+***** Errors
++ /opt/ext_toolchain/bin/../lib/gcc/arm-linux-gnueabihf/4.7.3/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lbootstrap
+http://www.qtcentre.org/archive/index.php/t-41850.html
+**** Copy Libraries Over to Device
+***** Steps
+1. Copy qt libraries to device.
+   #+BEGIN_SRC sh
+     rsync -rtvz -a -e "ssh -p 22122" /usr/local/qt/ root@192.168.12.200:/usr/local/qt/
+   #+END_SRC
+2. Add some environment variables to by adding the following lines to /etc/environment.
+   #+BEGIN_EXAMPLE
+     LD_LIBRARY_PATH=/usr/local/qt/lib
+     QTDIR=/usr/local/qt
+     QWS_MOUSE_PROTO=tslib:/dev/input/event2
+     QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
+   #+END_EXAMPLE
+   + To add mouse support you could have a line such as:
+     #+BEGIN_EXAMPLE
+     export QWS_MOUSE_PROTO=IntelliMouse:/dev/input/event2
+     #+END_EXAMPLE
+3. Try running a sample application.  You should have demos installed at /usr/local/qt/demos/embedded/
+   + Try running styledemo:
+     #+BEGIN_SRC sh
+       cd /usr/local/qt/demos/embedded/
+       ./styledemo/styledemo -qws
+     #+END_SRC
+   + Or fluidlauncher
+     #+BEGIN_SRC sh
+       cd /usr/local/qt/demos/embedded/
+       ./fluidlauncher/fluidlauncher -qws
+     #+END_SRC
+***** Warning
++ /dev/input/event# may change depending on the ordering and number of USB inputs you have plugged in.
++ Booting with a mouse and a keyboard plugged in will result in a different event # for touchscreen than without.
++ To check what different events are, trying inputting data with the mouse/keyboard/touchscreen and seeing which outputs data
+  #+BEGIN_SRC sh
+    cat /dev/input/event1 | hexdump
+  #+END_SRC
+*** Links
++ http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux
++ http://qt-project.org/doc/qt-4.8/qt-embedded-install.html
++ https://www.olimex.com/forum/index.php?topic=399.0
+  #+BEGIN_EXAMPLE
+    ./configure -xplatform qws/linux-arm-g++ -embedded arm -prefix /usr/qtarm/usr/local/qt-embedded -qt-gfx-linuxfb -qt-gfx-vnc -no-largefile -exceptions -no-accessibility -no-qt3support -no-sse2 -qt-zlib -no-gif -no-libtiff -qt-libpng -no-libmng -qt-libjpeg -openssl -no-nis -no-cups -depths 16 -qt-kbd-linuxinput -nomake demos -nomake examples -qt-mouse-linuxinput -qt-mouse-tslib
+  #+END_EXAMPLE
++ https://code.google.com/p/a13-olinuxino/wiki/PageName
++ https://www.olimex.com/forum/index.php?topic=751.msg3702#msg3702
++ http://suchakra.wordpress.com/2011/05/30/developing-qt-apps/
++ https://code.google.com/p/a13-olinuxino/source/browse/CrossNG.wiki?repo=wiki
++ [[./doc/Getting%20Started%20with%20Qt.pdf][Getting started with Qt.pdf]]
+  + has working notes for proper installation of tslib.
+* Simple Sample Programs
+** Basic Output to LCD Screen
+*** MainWindow.cpp
+#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.cpp" src cpp
+*** MainWindow.h
+#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.h" src cpp
+*** moc_mainwindow.cpp
+#+INCLUDE: "../src/testing/qt/hello_qt/moc_mainwindow.cpp" src cpp
+*** ui_mainwindow.h
+#+INCLUDE: "../src/testing/qt/hello_qt/ui_mainwindow.h" src cpp
+*** mainwindow.ui
+#+INCLUDE: "../src/testing/qt/hello_qt/mainwindow.ui" src txt
+
+** Build a Button that does Something on Screen
+** Hello World Program
+*** Source Code
+#+INCLUDE: "../src/testing/hello_world.cpp" src cpp
+** Toggle A LED (A13-Olimex-Micro)
+*** Using the Commandline
+**** Turn it On
+#+BEGIN_SRC sh
+echo 1 > /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
+#+END_SRC
+**** Turn it Off
+#+BEGIN_SRC sh
+echo 0 > /sys/devices/virtual/misc/sun4i-gpio/pin/pg9
+#+END_SRC
+*** Using C Code
+#+INCLUDE: "../src/testing/gpio.c" src c
+
+*** Links
++ [[http://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/][A13 Olinuxino Playing with GPIOS]]
+
+* GNU Free Documentation License
+#+INCLUDE: "./license.txt" src txt
+
+
