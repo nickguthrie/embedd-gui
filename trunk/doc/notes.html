@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="iso-8859-1"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
                "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
 <title>Embedd GUI</title>
-<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Embedd GUI"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-06-04 Tue"/>
+<meta name="generated" content="2013-07-15T13:37-0400"/>
 <meta name="author" content="Nick"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -60,78 +60,6 @@
                                  font-weight:bold; }
   /*]]>*/-->
 </style>
-<link rel="stylesheet" type="text/css" href="./nmg.css" />
-<script type="text/javascript" src="http://orgmode.org/org-info.js">
-/**
- *
- * @source: http://orgmode.org/org-info.js
- *
- * @licstart  The following is the entire license notice for the
- *  JavaScript code in http://orgmode.org/org-info.js.
- *
- * Copyright (C) 2012  Sebastian Rose
- *
- *
- * The JavaScript code in this tag is free software: you can
- * redistribute it and/or modify it under the terms of the GNU
- * General Public License (GNU GPL) as published by the Free Software
- * Foundation, either version 3 of the License, or (at your option)
- * any later version.  The code is distributed WITHOUT ANY WARRANTY;
- * without even the implied warranty of MERCHANTABILITY or FITNESS
- * FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
- *
- * As additional permission under GNU GPL version 3 section 7, you
- * may distribute non-source (e.g., minimized or compacted) forms of
- * that code without the copy of the GNU GPL normally required by
- * section 4, provided you include this license notice and a URL
- * through which recipients can access the Corresponding Source.
- *
- * @licend  The above is the entire license notice
- * for the JavaScript code in http://orgmode.org/org-info.js.
- *
- */
-</script>
-
-<script type="text/javascript">
-
-/*
-@licstart  The following is the entire license notice for the
-JavaScript code in this tag.
-
-Copyright (C) 2012  Free Software Foundation, Inc.
-
-The JavaScript code in this tag is free software: you can
-redistribute it and/or modify it under the terms of the GNU
-General Public License (GNU GPL) as published by the Free Software
-Foundation, either version 3 of the License, or (at your option)
-any later version.  The code is distributed WITHOUT ANY WARRANTY;
-without even the implied warranty of MERCHANTABILITY or FITNESS
-FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
-
-As additional permission under GNU GPL version 3 section 7, you
-may distribute non-source (e.g., minimized or compacted) forms of
-that code without the copy of the GNU GPL normally required by
-section 4, provided you include this license notice and a URL
-through which recipients can access the Corresponding Source.
-
-
-@licend  The above is the entire license notice
-for the JavaScript code in this tag.
-*/
-
-<!--/*--><![CDATA[/*><!--*/
-org_html_manager.set("TOC_DEPTH", "3");
-org_html_manager.set("LINK_HOME", "http://code.google.com/p/embedd-gui/");
-org_html_manager.set("LINK_UP", "");
-org_html_manager.set("LOCAL_TOC", "1");
-org_html_manager.set("VIEW_BUTTONS", "0");
-org_html_manager.set("MOUSE_HINT", "underline");
-org_html_manager.set("FIXED_TOC", "0");
-org_html_manager.set("TOC", "0");
-org_html_manager.set("VIEW", "overview");
-org_html_manager.setup();  // activate after the parameters are set
-/*]]>*///-->
-</script>
 <script type="text/javascript">
 /*
 @licstart  The following is the entire license notice for the
@@ -181,11 +109,6 @@ for the JavaScript code in this tag.
 
 </head>
 <body>
-<div id="org-div-home-and-up" style="text-align:right;font-size:70%;white-space:nowrap;">
- <a accesskey="h" href="http://code.google.com/p/embedd-gui/"> UP </a>
- |
- <a accesskey="H" href="http://code.google.com/p/embedd-gui/"> HOME </a>
-</div>
 
 <div id="preamble">
 
@@ -194,183 +117,180 @@ for the JavaScript code in this tag.
 <div id="content">
 <h1 class="title">Embedd GUI</h1>
 
-<p>View documentation as: | <a href="./index.html">INFO.js</a> | <a href="./index.pdf">pdf</a> | <a href="./full.html">Single HTML</a> | <a href="http://nickguthrie.com/embedd_gui/doc/index.org">Org-Mode</a> | . 
-This documentation is written under the <a href="#sec-7">GNU Free Documentation License</a>. <br/>
-Project Links: | <a href="http://code.google.com/p/embedd-gui/">SVN Repository</a> | <a href="http://rcos.rpi.edu/projects/embedd-gui/">RCOS Observatory</a> | <a href="http://nickguthrie.com/embedd_gui/bin/A13-OlinuXino/">Prebuilt Debian Images</a> | <a href="https://www.olimex.com/forum/index.php?topic=1595.0">Olimex Forum Post</a> | <br/>
-</p>
+
 
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#sec-1">Overview</a>
+<li><a href="#sec-1">1 Overview</a>
 <ul>
-<li><a href="#sec-1-1">A note from the Author</a></li>
-<li><a href="#sec-1-2">License</a></li>
-<li><a href="#sec-1-3">Primary Objective</a></li>
-<li><a href="#sec-1-4">Background</a></li>
-<li><a href="#sec-1-5">Why we need it</a></li>
-<li><a href="#sec-1-6">How/Technologies - Qt Embedded</a></li>
+<li><a href="#sec-1-1">1.1 A note from the Author</a></li>
+<li><a href="#sec-1-2">1.2 License</a></li>
+<li><a href="#sec-1-3">1.3 Primary Objective</a></li>
+<li><a href="#sec-1-4">1.4 Background</a></li>
+<li><a href="#sec-1-5">1.5 Why we need it</a></li>
+<li><a href="#sec-1-6">1.6 How/Technologies - Qt Embedded</a></li>
 </ul>
 </li>
-<li><a href="#sec-2">RCOS Presentations and Multimedia</a>
+<li><a href="#sec-2">2 RCOS Presentations and Multimedia</a>
 <ul>
-<li><a href="#sec-2-1">A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo</a></li>
-<li><a href="#sec-2-2">RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI</a></li>
-<li><a href="#sec-2-3">A13-OLinuXino-MICRO Qt Embedded Fluidlauncher Video</a></li>
-<li><a href="#sec-2-4">RCOS Summer 2013 - Initial Presentation</a></li>
+<li><a href="#sec-2-1">2.1 A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo</a></li>
+<li><a href="#sec-2-2">2.2 RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI</a></li>
+<li><a href="#sec-2-3">2.3 A13-OLinuXino-MICRO Qt Embedded Fluidlauncher Video</a></li>
+<li><a href="#sec-2-4">2.4 RCOS Summer 2013 - Initial Presentation</a></li>
 </ul>
 </li>
-<li><a href="#sec-3">Hardware</a>
+<li><a href="#sec-3">3 Hardware</a>
 <ul>
-<li><a href="#sec-3-1">Actual</a>
+<li><a href="#sec-3-1">3.1 Actual</a>
 <ul>
-<li><a href="#sec-3-1-1">A13-OlinuXino</a></li>
-<li><a href="#sec-3-1-2">USB Wireless LAN Module</a></li>
-<li><a href="#sec-3-1-3">4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen</a></li>
-<li><a href="#sec-3-1-4">JY-MCU Bluetooth Board V1.02</a></li>
+<li><a href="#sec-3-1-1">3.1.1 A13-OlinuXino</a></li>
+<li><a href="#sec-3-1-2">3.1.2 USB Wireless LAN Module</a></li>
+<li><a href="#sec-3-1-3">3.1.3 4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen</a></li>
+<li><a href="#sec-3-1-4">3.1.4 JY-MCU Bluetooth Board V1.02</a></li>
 </ul>
 </li>
-<li><a href="#sec-3-2">Testing</a>
+<li><a href="#sec-3-2">3.2 Testing</a>
 <ul>
-<li><a href="#sec-3-2-1">A13-OLinuXino-MICRO (No Touchscreen Support)</a></li>
-<li><a href="#sec-3-2-2">4.3" LCD Screen</a></li>
+<li><a href="#sec-3-2-1">3.2.1 A13-OLinuXino-MICRO (No Touchscreen Support)</a></li>
+<li><a href="#sec-3-2-2">3.2.2 4.3" LCD Screen</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-4">Quick Reference</a>
+<li><a href="#sec-4">4 Quick Reference</a>
 <ul>
-<li><a href="#sec-4-1">Connect to Serial via Bluetooth</a></li>
-<li><a href="#sec-4-2">Communicate via SSH</a></li>
-<li><a href="#sec-4-3">Connect with SFTP for File Transfer</a></li>
-<li><a href="#sec-4-4">Send Files via SCP</a>
+<li><a href="#sec-4-1">4.1 Connect to Serial via Bluetooth</a></li>
+<li><a href="#sec-4-2">4.2 Communicate via SSH</a></li>
+<li><a href="#sec-4-3">4.3 Connect with SFTP for File Transfer</a></li>
+<li><a href="#sec-4-4">4.4 Send Files via SCP</a>
 <ul>
-<li><a href="#sec-4-4-1">Overview</a></li>
-<li><a href="#sec-4-4-2">Examples</a></li>
-<li><a href="#sec-4-4-3">Links</a></li>
+<li><a href="#sec-4-4-1">4.4.1 Overview</a></li>
+<li><a href="#sec-4-4-2">4.4.2 Examples</a></li>
+<li><a href="#sec-4-4-3">4.4.3 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-5">Check Remaining Space on Hard Drive</a></li>
-<li><a href="#sec-4-6">Sync Files with rsync</a>
+<li><a href="#sec-4-5">4.5 Check Remaining Space on Hard Drive</a></li>
+<li><a href="#sec-4-6">4.6 Sync Files with rsync</a>
 <ul>
-<li><a href="#sec-4-6-1">Sync a Directory From Host To Device</a></li>
-<li><a href="#sec-4-6-2">Links</a></li>
+<li><a href="#sec-4-6-1">4.6.1 Sync a Directory From Host To Device</a></li>
+<li><a href="#sec-4-6-2">4.6.2 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-7">Building Projects with Qmake</a></li>
-<li><a href="#sec-4-8">Backups</a>
+<li><a href="#sec-4-7">4.7 Building Projects with Qmake</a></li>
+<li><a href="#sec-4-8">4.8 Backups</a>
 <ul>
-<li><a href="#sec-4-8-1">Backup the SD Card</a></li>
-<li><a href="#sec-4-8-2">Restore the SD Card</a></li>
-<li><a href="#sec-4-8-3">Backup Data to Web Storage</a></li>
-<li><a href="#sec-4-8-4">Links</a></li>
+<li><a href="#sec-4-8-1">4.8.1 Backup the SD Card</a></li>
+<li><a href="#sec-4-8-2">4.8.2 Restore the SD Card</a></li>
+<li><a href="#sec-4-8-3">4.8.3 Backup Data to Web Storage</a></li>
+<li><a href="#sec-4-8-4">4.8.4 Links</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-5">HOWTO</a>
+<li><a href="#sec-5">5 HOWTO</a>
 <ul>
-<li><a href="#sec-5-1">Obtain Hardware</a></li>
-<li><a href="#sec-5-2">Copy Debian Image to SD Card</a>
+<li><a href="#sec-5-1">5.1 Obtain Hardware</a></li>
+<li><a href="#sec-5-2">5.2 Copy Debian Image to SD Card</a>
 <ul>
-<li><a href="#sec-5-2-1">Overview</a></li>
-<li><a href="#sec-5-2-2">Steps</a></li>
-<li><a href="#sec-5-2-3">Links</a></li>
+<li><a href="#sec-5-2-1">5.2.1 Overview</a></li>
+<li><a href="#sec-5-2-2">5.2.2 Steps</a></li>
+<li><a href="#sec-5-2-3">5.2.3 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-3">Configure Touchscreen (script.bin)</a>
+<li><a href="#sec-5-3">5.3 Configure Touchscreen (script.bin)</a>
 <ul>
-<li><a href="#sec-5-3-1">Overview</a></li>
-<li><a href="#sec-5-3-2">Steps</a></li>
-<li><a href="#sec-5-3-3">Links</a></li>
+<li><a href="#sec-5-3-1">5.3.1 Overview</a></li>
+<li><a href="#sec-5-3-2">5.3.2 Steps</a></li>
+<li><a href="#sec-5-3-3">5.3.3 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-4">Modifying the script.bin file (Optional)</a>
+<li><a href="#sec-5-4">5.4 Modifying the script.bin file (Optional)</a>
 <ul>
-<li><a href="#sec-5-4-1">Overview</a></li>
-<li><a href="#sec-5-4-2">Installation</a></li>
-<li><a href="#sec-5-4-3">General Usage</a></li>
-<li><a href="#sec-5-4-4">Errors</a></li>
-<li><a href="#sec-5-4-5">Links</a></li>
+<li><a href="#sec-5-4-1">5.4.1 Overview</a></li>
+<li><a href="#sec-5-4-2">5.4.2 Installation</a></li>
+<li><a href="#sec-5-4-3">5.4.3 General Usage</a></li>
+<li><a href="#sec-5-4-4">5.4.4 Errors</a></li>
+<li><a href="#sec-5-4-5">5.4.5 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-5">Configure Debian</a>
+<li><a href="#sec-5-5">5.5 Configure Debian</a>
 <ul>
-<li><a href="#sec-5-5-1">Configure Wireless (Dynamic IP Address)</a></li>
-<li><a href="#sec-5-5-2">Configure Static IP Address</a></li>
-<li><a href="#sec-5-5-3">Set Date</a></li>
-<li><a href="#sec-5-5-4">Set Keyboard Locale</a></li>
-<li><a href="#sec-5-5-5">Install Programs</a></li>
-<li><a href="#sec-5-5-6">Configure SSH to start on Boot</a></li>
-<li><a href="#sec-5-5-7">Install XFCE (Optional)</a></li>
+<li><a href="#sec-5-5-1">5.5.1 Configure Wireless (Dynamic IP Address)</a></li>
+<li><a href="#sec-5-5-2">5.5.2 Configure Static IP Address</a></li>
+<li><a href="#sec-5-5-3">5.5.3 Set Date</a></li>
+<li><a href="#sec-5-5-4">5.5.4 Set Keyboard Locale</a></li>
+<li><a href="#sec-5-5-5">5.5.5 Install Programs</a></li>
+<li><a href="#sec-5-5-6">5.5.6 Configure SSH to start on Boot</a></li>
+<li><a href="#sec-5-5-7">5.5.7 Install XFCE (Optional)</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-6">Configure Serial Communication with Bluetooth Module</a>
+<li><a href="#sec-5-6">5.6 Configure Serial Communication with Bluetooth Module</a>
 <ul>
-<li><a href="#sec-5-6-1">Communicate to Bluetooth</a></li>
-<li><a href="#sec-5-6-2">Get Serial Over Linux</a></li>
+<li><a href="#sec-5-6-1">5.6.1 Communicate to Bluetooth</a></li>
+<li><a href="#sec-5-6-2">5.6.2 Get Serial Over Linux</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-7">Install ARM Toolchain with Buildroot</a>
+<li><a href="#sec-5-7">5.7 Install ARM Toolchain with Buildroot</a>
 <ul>
-<li><a href="#sec-5-7-1">Steps</a></li>
-<li><a href="#sec-5-7-2">Links</a></li>
+<li><a href="#sec-5-7-1">5.7.1 Steps</a></li>
+<li><a href="#sec-5-7-2">5.7.2 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-8">Configure tslib on Device</a>
+<li><a href="#sec-5-8">5.8 Configure tslib on Device</a>
 <ul>
-<li><a href="#sec-5-8-1">Overview</a></li>
-<li><a href="#sec-5-8-2">Steps</a></li>
-<li><a href="#sec-5-8-3">Errors</a></li>
-<li><a href="#sec-5-8-4">Test tslib Input Received from Touchscreen</a></li>
-<li><a href="#sec-5-8-5">Links</a></li>
+<li><a href="#sec-5-8-1">5.8.1 Overview</a></li>
+<li><a href="#sec-5-8-2">5.8.2 Steps</a></li>
+<li><a href="#sec-5-8-3">5.8.3 Errors</a></li>
+<li><a href="#sec-5-8-4">5.8.4 Test tslib Input Received from Touchscreen</a></li>
+<li><a href="#sec-5-8-5">5.8.5 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-9">Configure QT for Embedded Linux</a>
+<li><a href="#sec-5-9">5.9 Configure QT for Embedded Linux</a>
 <ul>
-<li><a href="#sec-5-9-1">Steps</a></li>
-<li><a href="#sec-5-9-2">Links</a></li>
+<li><a href="#sec-5-9-1">5.9.1 Steps</a></li>
+<li><a href="#sec-5-9-2">5.9.2 Links</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-6">Simple Sample Programs</a>
+<li><a href="#sec-6">6 Simple Sample Programs</a>
 <ul>
-<li><a href="#sec-6-1">Basic Output to LCD Screen</a>
+<li><a href="#sec-6-1">6.1 Basic Output to LCD Screen</a>
 <ul>
-<li><a href="#sec-6-1-1">MainWindow.cpp</a></li>
-<li><a href="#sec-6-1-2">MainWindow.h</a></li>
-<li><a href="#sec-6-1-3">moc_mainwindow.cpp</a></li>
-<li><a href="#sec-6-1-4">ui_mainwindow.h</a></li>
-<li><a href="#sec-6-1-5">mainwindow.ui</a></li>
+<li><a href="#sec-6-1-1">6.1.1 MainWindow.cpp</a></li>
+<li><a href="#sec-6-1-2">6.1.2 MainWindow.h</a></li>
+<li><a href="#sec-6-1-3">6.1.3 moc_mainwindow.cpp</a></li>
+<li><a href="#sec-6-1-4">6.1.4 ui_mainwindow.h</a></li>
+<li><a href="#sec-6-1-5">6.1.5 mainwindow.ui</a></li>
 </ul>
 </li>
-<li><a href="#sec-6-2">Build a Button that does Something on Screen</a></li>
-<li><a href="#sec-6-3">Hello World Program</a>
+<li><a href="#sec-6-2">6.2 Build a Button that does Something on Screen</a></li>
+<li><a href="#sec-6-3">6.3 Hello World Program</a>
 <ul>
-<li><a href="#sec-6-3-1">Source Code</a></li>
+<li><a href="#sec-6-3-1">6.3.1 Source Code</a></li>
 </ul>
 </li>
-<li><a href="#sec-6-4">Toggle A LED (A13-Olimex-Micro)</a>
+<li><a href="#sec-6-4">6.4 Toggle A LED (A13-Olimex-Micro)</a>
 <ul>
-<li><a href="#sec-6-4-1">Using the Commandline</a></li>
-<li><a href="#sec-6-4-2">Using C Code</a></li>
-<li><a href="#sec-6-4-3">Links</a></li>
+<li><a href="#sec-6-4-1">6.4.1 Using the Commandline</a></li>
+<li><a href="#sec-6-4-2">6.4.2 Using C Code</a></li>
+<li><a href="#sec-6-4-3">6.4.3 Links</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-7">GNU Free Documentation License</a></li>
+<li><a href="#sec-7">7 GNU Free Documentation License</a></li>
 </ul>
 </div>
 </div>
 
 <div id="outline-container-1" class="outline-2">
-<h2 id="sec-1">Overview</h2>
+<h2 id="sec-1"><span class="section-number-2">1</span> Overview</h2>
 <div class="outline-text-2" id="text-1">
 
 
 </div>
 
 <div id="outline-container-1-1" class="outline-3">
-<h3 id="sec-1-1">A note from the Author</h3>
+<h3 id="sec-1-1"><span class="section-number-3">1.1</span> A note from the Author</h3>
 <div class="outline-text-3" id="text-1-1">
 
 <p>This documentation is written under the <a href="#sec-7">GNU Free Documentation License</a>. The SVN repository with the source code for this project can be found <a href="http://code.google.com/p/embedd-gui/">here</a>. This documentation is viewable as an <a href="./index.html">html info file</a>, a <a href="./full.html">single html file</a>, a <a href="./index.pdf">pdf</a>, and in its original <a href="http://nickguthrie.com/embedd_gui/doc/index.org">org-mode</a> format. This project would not be possible without funding from the <a href="http://rcos.rpi.edu/">Rensselaer Center for Open Source</a>.  The RCOS Observatory Project page can be found <a href="http://rcos.rpi.edu/projects/embedd-gui/">here</a>. <br/>
@@ -402,7 +322,7 @@ Nick Guthrie <br/>
 </div>
 
 <div id="outline-container-1-2" class="outline-3">
-<h3 id="sec-1-2">License</h3>
+<h3 id="sec-1-2"><span class="section-number-3">1.2</span> License</h3>
 <div class="outline-text-3" id="text-1-2">
 
 
@@ -423,7 +343,7 @@ Free Documentation License".
 </div>
 
 <div id="outline-container-1-3" class="outline-3">
-<h3 id="sec-1-3">Primary Objective</h3>
+<h3 id="sec-1-3"><span class="section-number-3">1.3</span> Primary Objective</h3>
 <div class="outline-text-3" id="text-1-3">
 
 <ul>
@@ -436,7 +356,7 @@ Free Documentation License".
 </div>
 
 <div id="outline-container-1-4" class="outline-3">
-<h3 id="sec-1-4">Background</h3>
+<h3 id="sec-1-4"><span class="section-number-3">1.4</span> Background</h3>
 <div class="outline-text-3" id="text-1-4">
 
 <p>We live in a world surrounded by computers - from our (arguably excessive) coffee  machines to our cell phones and cars, microcomputers play an integral role in our everyday lives. With the cost of electronics rapidly decreasing, and touchscreens becoming commonplace even on low cost consumer products, a unique need has arisen for a unified way of creating user interfaces on embedded devices.
@@ -445,7 +365,7 @@ Free Documentation License".
 </div>
 
 <div id="outline-container-1-5" class="outline-3">
-<h3 id="sec-1-5">Why we need it</h3>
+<h3 id="sec-1-5"><span class="section-number-3">1.5</span> Why we need it</h3>
 <div class="outline-text-3" id="text-1-5">
 
 <p>It is easy for small companies and hobbyists to prototype microcontroller based products, such as environmental sensors and other equipment. However, user interface design is generally left at basic pushbuttons and potentiometers, with at most a simple text display on a serial LCD. The barrier to entry into high end touchscreen interfaces is high: it often involves more development/work than the device itself, and there exist few unified solutions for multi-processor and display targeted builds. The few solutions that do exist are prohibitively expensive: For example, a license of Segger EmWin costs $12,300&hellip; per target architecture/CPU! Embedd GUI aims to be a “drop in” interface for embedded developers to rapidly incorporate touchscreens into projects.
@@ -454,7 +374,7 @@ Free Documentation License".
 </div>
 
 <div id="outline-container-1-6" class="outline-3">
-<h3 id="sec-1-6">How/Technologies - Qt Embedded</h3>
+<h3 id="sec-1-6"><span class="section-number-3">1.6</span> How/Technologies - Qt Embedded</h3>
 <div class="outline-text-3" id="text-1-6">
 
 <p><img src="./img/qt-embedded-linux-architecture.png"  alt="./img/qt-embedded-linux-architecture.png" />
@@ -495,14 +415,14 @@ Free Documentation License".
 </div>
 
 <div id="outline-container-2" class="outline-2">
-<h2 id="sec-2">RCOS Presentations and Multimedia</h2>
+<h2 id="sec-2"><span class="section-number-2">2</span> RCOS Presentations and Multimedia</h2>
 <div class="outline-text-2" id="text-2">
 
 
 </div>
 
 <div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1">A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo</h3>
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo</h3>
 <div class="outline-text-3" id="text-2-1">
 
 <ul>
@@ -516,7 +436,7 @@ Free Documentation License".
 </div>
 
 <div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2">RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI</h3>
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI</h3>
 <div class="outline-text-3" id="text-2-2">
 
 <ul>
@@ -531,7 +451,7 @@ Free Documentation License".
 </div>
 
 <div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3">A13-OLinuXino-MICRO Qt Embedded Fluidlauncher Video</h3>
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> A13-OLinuXino-MICRO Qt Embedded Fluidlauncher Video</h3>
 <div class="outline-text-3" id="text-2-3">
 
 <ul>
@@ -544,7 +464,7 @@ Free Documentation License".
 </div>
 
 <div id="outline-container-2-4" class="outline-3">
-<h3 id="sec-2-4">RCOS Summer 2013 - Initial Presentation</h3>
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> RCOS Summer 2013 - Initial Presentation</h3>
 <div class="outline-text-3" id="text-2-4">
 
 <ul>
@@ -558,21 +478,21 @@ Free Documentation License".
 </div>
 
 <div id="outline-container-3" class="outline-2">
-<h2 id="sec-3">Hardware</h2>
+<h2 id="sec-3"><span class="section-number-2">3</span> Hardware</h2>
 <div class="outline-text-2" id="text-3">
 
 
 </div>
 
 <div id="outline-container-3-1" class="outline-3">
-<h3 id="sec-3-1">Actual</h3>
+<h3 id="sec-3-1"><span class="section-number-3">3.1</span> Actual</h3>
 <div class="outline-text-3" id="text-3-1">
 
 
 </div>
 
 <div id="outline-container-3-1-1" class="outline-4">
-<h4 id="sec-3-1-1">A13-OlinuXino</h4>
+<h4 id="sec-3-1-1"><span class="section-number-4">3.1.1</span> A13-OlinuXino</h4>
 <div class="outline-text-4" id="text-3-1-1">
 
 <p><img src="./img/A13-OLinuXino-01.png"  alt="./img/A13-OLinuXino-01.png" />
@@ -736,7 +656,7 @@ A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-I
 </div>
 
 <div id="outline-container-3-1-2" class="outline-4">
-<h4 id="sec-3-1-2">USB Wireless LAN Module</h4>
+<h4 id="sec-3-1-2"><span class="section-number-4">3.1.2</span> USB Wireless LAN Module</h4>
 <div class="outline-text-4" id="text-3-1-2">
 
 <p><img src="./img/modwifirtl8188.png"  alt="./img/modwifirtl8188.png" />
@@ -818,7 +738,7 @@ A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-I
 </div>
 
 <div id="outline-container-3-1-3" class="outline-4">
-<h4 id="sec-3-1-3">4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen</h4>
+<h4 id="sec-3-1-3"><span class="section-number-4">3.1.3</span> 4.3-inch LCD for A13 OLinuXino, 480x272, with Touch Screen</h4>
 <div class="outline-text-4" id="text-3-1-3">
 
 <p><img src="./img/a13lcd43ts_front.png"  alt="./img/a13lcd43ts_front.png" />     <img src="./img/a13lcd43ts_back.png"  alt="./img/a13lcd43ts_back.png" />
@@ -930,7 +850,7 @@ A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-I
 </div>
 
 <div id="outline-container-3-1-4" class="outline-4">
-<h4 id="sec-3-1-4">JY-MCU Bluetooth Board V1.02</h4>
+<h4 id="sec-3-1-4"><span class="section-number-4">3.1.4</span> JY-MCU Bluetooth Board V1.02</h4>
 <div class="outline-text-4" id="text-3-1-4">
 
 <p><img src="./img/jy-mcu_bt_board_v102.jpg"  alt="./img/jy-mcu_bt_board_v102.jpg" />
@@ -978,14 +898,14 @@ A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-I
 </div>
 
 <div id="outline-container-3-2" class="outline-3">
-<h3 id="sec-3-2">Testing</h3>
+<h3 id="sec-3-2"><span class="section-number-3">3.2</span> Testing</h3>
 <div class="outline-text-3" id="text-3-2">
 
 
 </div>
 
 <div id="outline-container-3-2-1" class="outline-4">
-<h4 id="sec-3-2-1">A13-OLinuXino-MICRO (No Touchscreen Support)</h4>
+<h4 id="sec-3-2-1"><span class="section-number-4">3.2.1</span> A13-OLinuXino-MICRO (No Touchscreen Support)</h4>
 <div class="outline-text-4" id="text-3-2-1">
 
 <p><img src="./img/A13-OLinuXino-MICRO-2.png"  alt="./img/A13-OLinuXino-MICRO-2.png" />
@@ -1279,7 +1199,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </div>
 
 <div id="outline-container-3-2-2" class="outline-4">
-<h4 id="sec-3-2-2">4.3" LCD Screen</h4>
+<h4 id="sec-3-2-2"><span class="section-number-4">3.2.2</span> 4.3" LCD Screen</h4>
 <div class="outline-text-4" id="text-3-2-2">
 
 <ul>
@@ -1303,14 +1223,14 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </div>
 
 <div id="outline-container-4" class="outline-2">
-<h2 id="sec-4">Quick Reference</h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> Quick Reference</h2>
 <div class="outline-text-2" id="text-4">
 
 
 </div>
 
 <div id="outline-container-4-1" class="outline-3">
-<h3 id="sec-4-1">Connect to Serial via Bluetooth</h3>
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Connect to Serial via Bluetooth</h3>
 <div class="outline-text-3" id="text-4-1">
 
 <p>Prerequisite: configure <a href="#Serial-Communicate-with-Board-with-Bluetooth-Module-Add-On">rfcomm.conf</a>
@@ -1340,7 +1260,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </div>
 
 <div id="outline-container-4-2" class="outline-3">
-<h3 id="sec-4-2">Communicate via SSH</h3>
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Communicate via SSH</h3>
 <div class="outline-text-3" id="text-4-2">
 
 
@@ -1354,7 +1274,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </div>
 
 <div id="outline-container-4-3" class="outline-3">
-<h3 id="sec-4-3">Connect with SFTP for File Transfer</h3>
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Connect with SFTP for File Transfer</h3>
 <div class="outline-text-3" id="text-4-3">
 
 
@@ -1396,14 +1316,14 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </div>
 
 <div id="outline-container-4-4" class="outline-3">
-<h3 id="sec-4-4">Send Files via SCP</h3>
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> Send Files via SCP</h3>
 <div class="outline-text-3" id="text-4-4">
 
 
 </div>
 
 <div id="outline-container-4-4-1" class="outline-4">
-<h4 id="sec-4-4-1">Overview</h4>
+<h4 id="sec-4-4-1"><span class="section-number-4">4.4.1</span> Overview</h4>
 <div class="outline-text-4" id="text-4-4-1">
 
 <p>scp allows files to be copied to, from, or between different hosts. It uses ssh for data transfer and provides the same authentication and same level of security as ssh.
@@ -1412,7 +1332,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </div>
 
 <div id="outline-container-4-4-2" class="outline-4">
-<h4 id="sec-4-4-2">Examples</h4>
+<h4 id="sec-4-4-2"><span class="section-number-4">4.4.2</span> Examples</h4>
 <div class="outline-text-4" id="text-4-4-2">
 
 <ul>
@@ -1502,7 +1422,7 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 </div>
 
 <div id="outline-container-4-4-3" class="outline-4">
-<h4 id="sec-4-4-3">Links</h4>
+<h4 id="sec-4-4-3"><span class="section-number-4">4.4.3</span> Links</h4>
 <div class="outline-text-4" id="text-4-4-3">
 
 <ul>
@@ -1516,7 +1436,7 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 </div>
 
 <div id="outline-container-4-5" class="outline-3">
-<h3 id="sec-4-5">Check Remaining Space on Hard Drive</h3>
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> Check Remaining Space on Hard Drive</h3>
 <div class="outline-text-3" id="text-4-5">
 
 
@@ -1530,14 +1450,14 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 </div>
 
 <div id="outline-container-4-6" class="outline-3">
-<h3 id="sec-4-6">Sync Files with rsync</h3>
+<h3 id="sec-4-6"><span class="section-number-3">4.6</span> Sync Files with rsync</h3>
 <div class="outline-text-3" id="text-4-6">
 
 
 </div>
 
 <div id="outline-container-4-6-1" class="outline-4">
-<h4 id="sec-4-6-1">Sync a Directory From Host To Device</h4>
+<h4 id="sec-4-6-1"><span class="section-number-4">4.6.1</span> Sync a Directory From Host To Device</h4>
 <div class="outline-text-4" id="text-4-6-1">
 
 <p>/ will not modify host directory /
@@ -1552,7 +1472,7 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 </div>
 
 <div id="outline-container-4-6-2" class="outline-4">
-<h4 id="sec-4-6-2">Links</h4>
+<h4 id="sec-4-6-2"><span class="section-number-4">4.6.2</span> Links</h4>
 <div class="outline-text-4" id="text-4-6-2">
 
 <ul>
@@ -1568,7 +1488,7 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 </div>
 
 <div id="outline-container-4-7" class="outline-3">
-<h3 id="sec-4-7">Building Projects with Qmake</h3>
+<h3 id="sec-4-7"><span class="section-number-3">4.7</span> Building Projects with Qmake</h3>
 <div class="outline-text-3" id="text-4-7">
 
 <ol>
@@ -1593,14 +1513,14 @@ make
 </div>
 
 <div id="outline-container-4-8" class="outline-3">
-<h3 id="sec-4-8">Backups</h3>
+<h3 id="sec-4-8"><span class="section-number-3">4.8</span> Backups</h3>
 <div class="outline-text-3" id="text-4-8">
 
 
 </div>
 
 <div id="outline-container-4-8-1" class="outline-4">
-<h4 id="sec-4-8-1">Backup the SD Card</h4>
+<h4 id="sec-4-8-1"><span class="section-number-4">4.8.1</span> Backup the SD Card</h4>
 <div class="outline-text-4" id="text-4-8-1">
 
 <ol>
@@ -1629,7 +1549,7 @@ make
 </div>
 
 <div id="outline-container-4-8-2" class="outline-4">
-<h4 id="sec-4-8-2">Restore the SD Card</h4>
+<h4 id="sec-4-8-2"><span class="section-number-4">4.8.2</span> Restore the SD Card</h4>
 <div class="outline-text-4" id="text-4-8-2">
 
 <ol>
@@ -1650,7 +1570,7 @@ make
 </div>
 
 <div id="outline-container-4-8-3" class="outline-4">
-<h4 id="sec-4-8-3">Backup Data to Web Storage</h4>
+<h4 id="sec-4-8-3"><span class="section-number-4">4.8.3</span> Backup Data to Web Storage</h4>
 <div class="outline-text-4" id="text-4-8-3">
 
 
@@ -1664,7 +1584,7 @@ make
 </div>
 
 <div id="outline-container-4-8-4" class="outline-4">
-<h4 id="sec-4-8-4">Links</h4>
+<h4 id="sec-4-8-4"><span class="section-number-4">4.8.4</span> Links</h4>
 <div class="outline-text-4" id="text-4-8-4">
 
 <ul>
@@ -1725,14 +1645,14 @@ make
 </div>
 
 <div id="outline-container-5" class="outline-2">
-<h2 id="sec-5">HOWTO</h2>
+<h2 id="sec-5"><span class="section-number-2">5</span> HOWTO</h2>
 <div class="outline-text-2" id="text-5">
 
 
 </div>
 
 <div id="outline-container-5-1" class="outline-3">
-<h3 id="sec-5-1">Obtain Hardware</h3>
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Obtain Hardware</h3>
 <div class="outline-text-3" id="text-5-1">
 
 <p>The hardware used in this guide:
@@ -1748,14 +1668,14 @@ make
 </div>
 
 <div id="outline-container-5-2" class="outline-3">
-<h3 id="sec-5-2">Copy Debian Image to SD Card</h3>
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Copy Debian Image to SD Card</h3>
 <div class="outline-text-3" id="text-5-2">
 
 
 </div>
 
 <div id="outline-container-5-2-1" class="outline-4">
-<h4 id="sec-5-2-1">Overview</h4>
+<h4 id="sec-5-2-1"><span class="section-number-4">5.2.1</span> Overview</h4>
 <div class="outline-text-4" id="text-5-2-1">
 
 <ul>
@@ -1774,7 +1694,7 @@ make
 </div>
 
 <div id="outline-container-5-2-2" class="outline-4">
-<h4 id="sec-5-2-2">Steps</h4>
+<h4 id="sec-5-2-2"><span class="section-number-4">5.2.2</span> Steps</h4>
 <div class="outline-text-4" id="text-5-2-2">
 
 <ol>
@@ -1808,7 +1728,7 @@ make
 </div>
 
 <div id="outline-container-5-2-3" class="outline-4">
-<h4 id="sec-5-2-3">Links</h4>
+<h4 id="sec-5-2-3"><span class="section-number-4">5.2.3</span> Links</h4>
 <div class="outline-text-4" id="text-5-2-3">
 
 <ul>
@@ -1824,14 +1744,14 @@ make
 </div>
 
 <div id="outline-container-5-3" class="outline-3">
-<h3 id="sec-5-3">Configure Touchscreen (script.bin)</h3>
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Configure Touchscreen (script.bin)</h3>
 <div class="outline-text-3" id="text-5-3">
 
 
 </div>
 
 <div id="outline-container-5-3-1" class="outline-4">
-<h4 id="sec-5-3-1">Overview</h4>
+<h4 id="sec-5-3-1"><span class="section-number-4">5.3.1</span> Overview</h4>
 <div class="outline-text-4" id="text-5-3-1">
 
 <ul>
@@ -1846,7 +1766,7 @@ make
 </div>
 
 <div id="outline-container-5-3-2" class="outline-4">
-<h4 id="sec-5-3-2">Steps</h4>
+<h4 id="sec-5-3-2"><span class="section-number-4">5.3.2</span> Steps</h4>
 <div class="outline-text-4" id="text-5-3-2">
 
 <ol>
@@ -1896,7 +1816,7 @@ cp script.bin script.bin.BAK
 </div>
 
 <div id="outline-container-5-3-3" class="outline-4">
-<h4 id="sec-5-3-3">Links</h4>
+<h4 id="sec-5-3-3"><span class="section-number-4">5.3.3</span> Links</h4>
 <div class="outline-text-4" id="text-5-3-3">
 
 <ul>
@@ -1910,14 +1830,14 @@ cp script.bin script.bin.BAK
 </div>
 
 <div id="outline-container-5-4" class="outline-3">
-<h3 id="sec-5-4">Modifying the script.bin file (Optional)</h3>
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Modifying the script.bin file (Optional)</h3>
 <div class="outline-text-3" id="text-5-4">
 
 
 </div>
 
 <div id="outline-container-5-4-1" class="outline-4">
-<h4 id="sec-5-4-1">Overview</h4>
+<h4 id="sec-5-4-1"><span class="section-number-4">5.4.1</span> Overview</h4>
 <div class="outline-text-4" id="text-5-4-1">
 
 <ul>
@@ -1930,7 +1850,7 @@ cp script.bin script.bin.BAK
 </div>
 
 <div id="outline-container-5-4-2" class="outline-4">
-<h4 id="sec-5-4-2">Installation</h4>
+<h4 id="sec-5-4-2"><span class="section-number-4">5.4.2</span> Installation</h4>
 <div class="outline-text-4" id="text-5-4-2">
 
 <ol>
@@ -1967,7 +1887,7 @@ make -k
 </div>
 
 <div id="outline-container-5-4-3" class="outline-4">
-<h4 id="sec-5-4-3">General Usage</h4>
+<h4 id="sec-5-4-3"><span class="section-number-4">5.4.3</span> General Usage</h4>
 <div class="outline-text-4" id="text-5-4-3">
 
 <ul>
@@ -2018,7 +1938,7 @@ make -k
 </div>
 
 <div id="outline-container-5-4-4" class="outline-4">
-<h4 id="sec-5-4-4">Errors</h4>
+<h4 id="sec-5-4-4"><span class="section-number-4">5.4.4</span> Errors</h4>
 <div class="outline-text-4" id="text-5-4-4">
 
 <ul>
@@ -2055,7 +1975,7 @@ make -k
 </div>
 
 <div id="outline-container-5-4-5" class="outline-4">
-<h4 id="sec-5-4-5">Links</h4>
+<h4 id="sec-5-4-5"><span class="section-number-4">5.4.5</span> Links</h4>
 <div class="outline-text-4" id="text-5-4-5">
 
 <ul>
@@ -2591,14 +2511,14 @@ product_name             ="USB Flash Driver"
 </div>
 
 <div id="outline-container-5-5" class="outline-3">
-<h3 id="sec-5-5">Configure Debian</h3>
+<h3 id="sec-5-5"><span class="section-number-3">5.5</span> Configure Debian</h3>
 <div class="outline-text-3" id="text-5-5">
 
 
 </div>
 
 <div id="outline-container-5-5-1" class="outline-4">
-<h4 id="sec-5-5-1">Configure Wireless (Dynamic IP Address)</h4>
+<h4 id="sec-5-5-1"><span class="section-number-4">5.5.1</span> Configure Wireless (Dynamic IP Address)</h4>
 <div class="outline-text-4" id="text-5-5-1">
 
 <ul>
@@ -2674,7 +2594,7 @@ ping google.com
 </div>
 
 <div id="outline-container-5-5-2" class="outline-4">
-<h4 id="sec-5-5-2">Configure Static IP Address</h4>
+<h4 id="sec-5-5-2"><span class="section-number-4">5.5.2</span> Configure Static IP Address</h4>
 <div class="outline-text-4" id="text-5-5-2">
 
 <ul>
@@ -2771,7 +2691,7 @@ ping google.com
 </div>
 
 <div id="outline-container-5-5-3" class="outline-4">
-<h4 id="sec-5-5-3">Set Date</h4>
+<h4 id="sec-5-5-3"><span class="section-number-4">5.5.3</span> Set Date</h4>
 <div class="outline-text-4" id="text-5-5-3">
 
 <ul>
@@ -2798,7 +2718,7 @@ ping google.com
 </div>
 
 <div id="outline-container-5-5-4" class="outline-4">
-<h4 id="sec-5-5-4">Set Keyboard Locale</h4>
+<h4 id="sec-5-5-4"><span class="section-number-4">5.5.4</span> Set Keyboard Locale</h4>
 <div class="outline-text-4" id="text-5-5-4">
 
 <ul>
@@ -2849,7 +2769,7 @@ ping google.com
 </div>
 
 <div id="outline-container-5-5-5" class="outline-4">
-<h4 id="sec-5-5-5">Install Programs</h4>
+<h4 id="sec-5-5-5"><span class="section-number-4">5.5.5</span> Install Programs</h4>
 <div class="outline-text-4" id="text-5-5-5">
 
 <ul>
@@ -2885,7 +2805,7 @@ ping google.com
 </div>
 
 <div id="outline-container-5-5-6" class="outline-4">
-<h4 id="sec-5-5-6">Configure SSH to start on Boot</h4>
+<h4 id="sec-5-5-6"><span class="section-number-4">5.5.6</span> Configure SSH to start on Boot</h4>
 <div class="outline-text-4" id="text-5-5-6">
 
 <ul>
@@ -3025,7 +2945,7 @@ ping google.com
 </div>
 
 <div id="outline-container-5-5-7" class="outline-4">
-<h4 id="sec-5-5-7">Install XFCE (Optional)</h4>
+<h4 id="sec-5-5-7"><span class="section-number-4">5.5.7</span> Install XFCE (Optional)</h4>
 <div class="outline-text-4" id="text-5-5-7">
 
 <ul>
@@ -3098,14 +3018,14 @@ startx;
 </div>
 
 <div id="outline-container-5-6" class="outline-3">
-<h3 id="sec-5-6">Configure Serial Communication with Bluetooth Module</h3>
+<h3 id="sec-5-6"><span class="section-number-3">5.6</span> Configure Serial Communication with Bluetooth Module</h3>
 <div class="outline-text-3" id="text-5-6">
 
 
 </div>
 
 <div id="outline-container-5-6-1" class="outline-4">
-<h4 id="sec-5-6-1">Communicate to Bluetooth</h4>
+<h4 id="sec-5-6-1"><span class="section-number-4">5.6.1</span> Communicate to Bluetooth</h4>
 <div class="outline-text-4" id="text-5-6-1">
 
 <ul>
@@ -3190,7 +3110,7 @@ The hardware address should be replaced with that of your phone. If you don't kn
 </div>
 
 <div id="outline-container-5-6-2" class="outline-4">
-<h4 id="sec-5-6-2">Get Serial Over Linux</h4>
+<h4 id="sec-5-6-2"><span class="section-number-4">5.6.2</span> Get Serial Over Linux</h4>
 <div class="outline-text-4" id="text-5-6-2">
 
 <ul>
@@ -3276,14 +3196,14 @@ The hardware address should be replaced with that of your phone. If you don't kn
 </div>
 
 <div id="outline-container-5-7" class="outline-3">
-<h3 id="sec-5-7">Install ARM Toolchain with Buildroot</h3>
+<h3 id="sec-5-7"><span class="section-number-3">5.7</span> Install ARM Toolchain with Buildroot</h3>
 <div class="outline-text-3" id="text-5-7">
 
 
 </div>
 
 <div id="outline-container-5-7-1" class="outline-4">
-<h4 id="sec-5-7-1">Steps</h4>
+<h4 id="sec-5-7-1"><span class="section-number-4">5.7.1</span> Steps</h4>
 <div class="outline-text-4" id="text-5-7-1">
 
 <ol>
@@ -3415,7 +3335,7 @@ cp /etc/environment /etc/environment.BAK
 </div>
 
 <div id="outline-container-5-7-2" class="outline-4">
-<h4 id="sec-5-7-2">Links</h4>
+<h4 id="sec-5-7-2"><span class="section-number-4">5.7.2</span> Links</h4>
 <div class="outline-text-4" id="text-5-7-2">
 
 <ul>
@@ -3434,14 +3354,14 @@ cp /etc/environment /etc/environment.BAK
 </div>
 
 <div id="outline-container-5-8" class="outline-3">
-<h3 id="sec-5-8">Configure tslib on Device</h3>
+<h3 id="sec-5-8"><span class="section-number-3">5.8</span> Configure tslib on Device</h3>
 <div class="outline-text-3" id="text-5-8">
 
 
 </div>
 
 <div id="outline-container-5-8-1" class="outline-4">
-<h4 id="sec-5-8-1">Overview</h4>
+<h4 id="sec-5-8-1"><span class="section-number-4">5.8.1</span> Overview</h4>
 <div class="outline-text-4" id="text-5-8-1">
 
 
@@ -3463,7 +3383,7 @@ Here is a full step-by-step manual how to get the device works well under Debian
 </div>
 
 <div id="outline-container-5-8-2" class="outline-4">
-<h4 id="sec-5-8-2">Steps</h4>
+<h4 id="sec-5-8-2"><span class="section-number-4">5.8.2</span> Steps</h4>
 <div class="outline-text-4" id="text-5-8-2">
 
 <ol>
@@ -3582,7 +3502,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </div>
 
 <div id="outline-container-5-8-3" class="outline-4">
-<h4 id="sec-5-8-3">Errors</h4>
+<h4 id="sec-5-8-3"><span class="section-number-4">5.8.3</span> Errors</h4>
 <div class="outline-text-4" id="text-5-8-3">
 
 <ul>
@@ -3634,7 +3554,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </div>
 
 <div id="outline-container-5-8-4" class="outline-4">
-<h4 id="sec-5-8-4">Test tslib Input Received from Touchscreen</h4>
+<h4 id="sec-5-8-4"><span class="section-number-4">5.8.4</span> Test tslib Input Received from Touchscreen</h4>
 <div class="outline-text-4" id="text-5-8-4">
 
 
@@ -3648,7 +3568,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </div>
 
 <div id="outline-container-5-8-5" class="outline-4">
-<h4 id="sec-5-8-5">Links</h4>
+<h4 id="sec-5-8-5"><span class="section-number-4">5.8.5</span> Links</h4>
 <div class="outline-text-4" id="text-5-8-5">
 
 <ul>
@@ -3664,14 +3584,14 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </div>
 
 <div id="outline-container-5-9" class="outline-3">
-<h3 id="sec-5-9">Configure QT for Embedded Linux</h3>
+<h3 id="sec-5-9"><span class="section-number-3">5.9</span> Configure QT for Embedded Linux</h3>
 <div class="outline-text-3" id="text-5-9">
 
 
 </div>
 
 <div id="outline-container-5-9-1" class="outline-4">
-<h4 id="sec-5-9-1">Steps</h4>
+<h4 id="sec-5-9-1"><span class="section-number-4">5.9.1</span> Steps</h4>
 <div class="outline-text-4" id="text-5-9-1">
 
 <ul>
@@ -3921,7 +3841,7 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </div>
 
 <div id="outline-container-5-9-2" class="outline-4">
-<h4 id="sec-5-9-2">Links</h4>
+<h4 id="sec-5-9-2"><span class="section-number-4">5.9.2</span> Links</h4>
 <div class="outline-text-4" id="text-5-9-2">
 
 <ul>
@@ -3961,21 +3881,21 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </div>
 
 <div id="outline-container-6" class="outline-2">
-<h2 id="sec-6">Simple Sample Programs</h2>
+<h2 id="sec-6"><span class="section-number-2">6</span> Simple Sample Programs</h2>
 <div class="outline-text-2" id="text-6">
 
 
 </div>
 
 <div id="outline-container-6-1" class="outline-3">
-<h3 id="sec-6-1">Basic Output to LCD Screen</h3>
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Basic Output to LCD Screen</h3>
 <div class="outline-text-3" id="text-6-1">
 
 
 </div>
 
 <div id="outline-container-6-1-1" class="outline-4">
-<h4 id="sec-6-1-1">MainWindow.cpp</h4>
+<h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span> MainWindow.cpp</h4>
 <div class="outline-text-4" id="text-6-1-1">
 
 
@@ -4010,7 +3930,7 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </div>
 
 <div id="outline-container-6-1-2" class="outline-4">
-<h4 id="sec-6-1-2">MainWindow.h</h4>
+<h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span> MainWindow.h</h4>
 <div class="outline-text-4" id="text-6-1-2">
 
 
@@ -4048,7 +3968,7 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </div>
 
 <div id="outline-container-6-1-3" class="outline-4">
-<h4 id="sec-6-1-3">moc_mainwindow.cpp</h4>
+<h4 id="sec-6-1-3"><span class="section-number-4">6.1.3</span> moc_mainwindow.cpp</h4>
 <div class="outline-text-4" id="text-6-1-3">
 
 
@@ -4171,7 +4091,7 @@ QT_END_MOC_NAMESPACE
 </div>
 
 <div id="outline-container-6-1-4" class="outline-4">
-<h4 id="sec-6-1-4">ui_mainwindow.h</h4>
+<h4 id="sec-6-1-4"><span class="section-number-4">6.1.4</span> ui_mainwindow.h</h4>
 <div class="outline-text-4" id="text-6-1-4">
 
 
@@ -4272,7 +4192,7 @@ QT_END_NAMESPACE
 </div>
 
 <div id="outline-container-6-1-5" class="outline-4">
-<h4 id="sec-6-1-5">mainwindow.ui</h4>
+<h4 id="sec-6-1-5"><span class="section-number-4">6.1.5</span> mainwindow.ui</h4>
 <div class="outline-text-4" id="text-6-1-5">
 
 
@@ -4384,7 +4304,7 @@ QT_END_NAMESPACE
 </div>
 
 <div id="outline-container-6-2" class="outline-3">
-<h3 id="sec-6-2">Build a Button that does Something on Screen</h3>
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Build a Button that does Something on Screen</h3>
 <div class="outline-text-3" id="text-6-2">
 
 </div>
@@ -4392,14 +4312,14 @@ QT_END_NAMESPACE
 </div>
 
 <div id="outline-container-6-3" class="outline-3">
-<h3 id="sec-6-3">Hello World Program</h3>
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> Hello World Program</h3>
 <div class="outline-text-3" id="text-6-3">
 
 
 </div>
 
 <div id="outline-container-6-3-1" class="outline-4">
-<h4 id="sec-6-3-1">Source Code</h4>
+<h4 id="sec-6-3-1"><span class="section-number-4">6.3.1</span> Source Code</h4>
 <div class="outline-text-4" id="text-6-3-1">
 
 
@@ -4512,14 +4432,14 @@ QT_END_NAMESPACE
 </div>
 
 <div id="outline-container-6-4" class="outline-3">
-<h3 id="sec-6-4">Toggle A LED (A13-Olimex-Micro)</h3>
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> Toggle A LED (A13-Olimex-Micro)</h3>
 <div class="outline-text-3" id="text-6-4">
 
 
 </div>
 
 <div id="outline-container-6-4-1" class="outline-4">
-<h4 id="sec-6-4-1">Using the Commandline</h4>
+<h4 id="sec-6-4-1"><span class="section-number-4">6.4.1</span> Using the Commandline</h4>
 <div class="outline-text-4" id="text-6-4-1">
 
 <ul>
@@ -4547,7 +4467,7 @@ QT_END_NAMESPACE
 </div>
 
 <div id="outline-container-6-4-2" class="outline-4">
-<h4 id="sec-6-4-2">Using C Code</h4>
+<h4 id="sec-6-4-2"><span class="section-number-4">6.4.2</span> Using C Code</h4>
 <div class="outline-text-4" id="text-6-4-2">
 
 
@@ -4663,7 +4583,7 @@ QT_END_NAMESPACE
 </div>
 
 <div id="outline-container-6-4-3" class="outline-4">
-<h4 id="sec-6-4-3">Links</h4>
+<h4 id="sec-6-4-3"><span class="section-number-4">6.4.3</span> Links</h4>
 <div class="outline-text-4" id="text-6-4-3">
 
 <ul>
@@ -4679,7 +4599,7 @@ QT_END_NAMESPACE
 </div>
 
 <div id="outline-container-7" class="outline-2">
-<h2 id="sec-7">GNU Free Documentation License</h2>
+<h2 id="sec-7"><span class="section-number-2">7</span> GNU Free Documentation License</h2>
 <div class="outline-text-2" id="text-7">
 
 
@@ -5138,13 +5058,12 @@ to permit their use in free software.
 
 
 
-
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-06-04 Tue</p>
+<p class="date">Date: 2013-07-15T13:37-0400</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
