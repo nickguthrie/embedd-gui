@@ -1,5 +1,11 @@
 <RCC>
-    <qresource prefix="/new/prefix1">
+    <qresource prefix="/">
         <file>rcos.png</file>
+        <file>img/gpl_logo_small.png</file>
+        <file>img/gpl_logo_sideways.png</file>
+        <file>img/gpl_logo_sideways_colored.png</file>
+        <file>img/rcos.png</file>
+        <file>img/gpl_logo_sideways_blue.png</file>
+        <file>img/gpl_logo_sideways_red.png</file>
     </qresource>
 </RCC>

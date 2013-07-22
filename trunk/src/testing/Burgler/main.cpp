@@ -13,10 +13,6 @@ int main(int argc, char *argv[])
     pal.setColor(QPalette::Window, Qt::black);
     a.setPalette(pal);
 
-    QLabel label("<img src='./rcos.png' />");
-    label.show();
-
-
 
 #ifdef Q_WS_QWS
     QWSServer::setCursorVisible( false );

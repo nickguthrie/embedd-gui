@@ -21,6 +21,12 @@ private slots:
 
     void on_pb_down_pressed();
 
+    //void on_hslider_01_sliderMoved(int position);
+
+    //void on_hslider_01_sliderPressed();
+
+    //void on_hslider_02_actionTriggered(int action);
+
 private:
     Ui::MainWindow *ui;
 };
