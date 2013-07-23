@@ -2,6 +2,8 @@
 #include "channel.h"
 #include "ui_mainwindow.h"
 
+#include <QTimer>
+
 
 #define INCRAMENT 10
 #define NUM_CHAN 5
@@ -47,6 +49,17 @@ MainWindow::MainWindow(QWidget *parent) :
 	cholder[i].set_value(i+50);
 	UpdateLCD();
     }
+
+
+    ////////////////////////////////////////
+    // Button Incramenting
+    ////////////////////////////////////////
+    number = 0;
+    timerTimeout = 0;
+    timer = new QTimer(this);
+    connect(timer, SIGNAL(timeout()), this, SLOT(doIncrement()));
+    connect(ui->pb_value_incrament, SIGNAL(pressed()), this, SLOT(buttonPressed()));
+    connect(ui->pb_value_incrament, SIGNAL(released()), this, SLOT(buttonReleased()));
 
     
 
@@ -185,10 +198,10 @@ void MainWindow::on_pb_value_decrament_clicked()
 
 void MainWindow::on_pb_value_incrament_clicked()
 {
-    int val = cholder[mode].get_value();
-    val++;
-    cholder[mode].set_value(val);
-    UpdateLCD();
+    // int val = cholder[mode].get_value();
+    // val++;
+    // cholder[mode].set_value(val);
+    // UpdateLCD();
 }
 
 void MainWindow::on_pb_value_half_clicked()
@@ -203,5 +216,32 @@ void MainWindow::on_channelSlider_valueChanged(int value)
 {
     int val = ui->channelSlider->value();
     cholder[mode].set_value(val);
+    UpdateLCD();
+}
+
+void MainWindow::on_pb_value_incrament_pressed()
+{
+    timerTimeout = 2000;
+    doIncrement();
+}
+
+void MainWindow::buttonPressed()
+{
+    timerTimeout = 2000;
+    doIncrement();
+}
+ 
+void MainWindow::buttonReleased()
+{
+    timer->stop();
+}
+
+void MainWindow::doIncrement()
+{
+    cholder[mode].incrament();
+    //ui->label->setText(QString("Value: %1").arg(number));
+    if(timerTimeout > 50)
+        timerTimeout = timerTimeout / 2;
+    timer->start(timerTimeout);
     UpdateLCD();
 }

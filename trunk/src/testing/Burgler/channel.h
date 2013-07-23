@@ -42,6 +42,8 @@ public:
     //////////////////////////////
     void set_value( int size );
     void set_size( int min_size, int max_size );
+    void incrament();
+    void decrament();
 };
 /* //////////////////////////////////////////////////////////////////////////////// */
 /* /\** */

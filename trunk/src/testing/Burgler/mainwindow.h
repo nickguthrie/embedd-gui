@@ -36,8 +36,21 @@ private slots:
     void on_pb_value_half_clicked();
     void on_channelSlider_valueChanged(int value);
 
+    void on_pb_value_incrament_pressed();
+
+protected slots:
+    void buttonPressed();
+    void buttonReleased();
+    void doIncrement();
+ 
+
 private:
     Ui::MainWindow *ui;
+
+    // Button Incramenter
+    QTimer *timer;
+    int timerTimeout;
+    int number;
 };
 
 #endif // MAINWINDOW_H
