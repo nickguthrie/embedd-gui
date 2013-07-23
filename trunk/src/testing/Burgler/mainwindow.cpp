@@ -48,6 +48,8 @@ MainWindow::MainWindow(QWidget *parent) :
 	UpdateLCD();
     }
 
+    
+
     //ui->lcd_0->display(55);
     //ui->lcd_2->display(cholder[2].get_value());
     
@@ -103,6 +105,11 @@ void MainWindow::ModeButton( int num )
 
 void MainWindow::UpdateLCD()
 {
+    // Update Slider
+    ui->channelSlider->setRange(cholder[mode].get_min(), cholder[mode].get_max());
+    ui->channelSlider->setValue(cholder[mode].get_value());
+
+    // Update LCD Screens
     switch (mode)
     {
     case 0:
@@ -126,31 +133,31 @@ void MainWindow::UpdateLCD()
     }    
 }
 
-void MainWindow::on_cbutton_0_pressed()
+void MainWindow::on_cbutton_0_clicked()
 {
     mode = 0;
     ui->mode_label->setText("Channel 0");
 }
 
-void MainWindow::on_cbutton_1_pressed()
+void MainWindow::on_cbutton_1_clicked()
 {
     mode = 1;
     ui->mode_label->setText("Channel 1");
 }
 
-void MainWindow::on_cbutton_2_pressed()
+void MainWindow::on_cbutton_2_clicked()
 {
     mode = 2;
     ui->mode_label->setText("Channel 2");
 }
 
-void MainWindow::on_cbutton_3_pressed()
+void MainWindow::on_cbutton_3_clicked()
 {
     mode = 3;
     ui->mode_label->setText("Channel 3");
 }
 
-void MainWindow::on_cbutton_4_pressed()
+void MainWindow::on_cbutton_4_clicked()
 {
     mode = 4;
     ui->mode_label->setText("Channel 4");
@@ -180,6 +187,21 @@ void MainWindow::on_pb_value_incrament_clicked()
 {
     int val = cholder[mode].get_value();
     val++;
+    cholder[mode].set_value(val);
+    UpdateLCD();
+}
+
+void MainWindow::on_pb_value_half_clicked()
+{
+    int val = (cholder[mode].get_max()
+	       - cholder[mode].get_min()) / 2;
+    cholder[mode].set_value(val);
+    UpdateLCD();
+}
+
+void MainWindow::on_channelSlider_valueChanged(int value)
+{
+    int val = ui->channelSlider->value();
     cholder[mode].set_value(val);
     UpdateLCD();
 }
