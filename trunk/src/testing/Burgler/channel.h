@@ -1,5 +1,8 @@
 #ifndef CHANNEL_H
 #define CHANNEL_H
+
+#include <string>
+
 ////////////////////////////////////////////////////////////////////////////////
 /**
  *  @class channel
@@ -30,6 +33,9 @@ public:
     // Accessors
     //////////////////////////////
     int get_value () const;
+    int get_max () const;
+    int get_min () const;
+    std::string get_svalue () const;
     
     //////////////////////////////
     // Mutators

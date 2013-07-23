@@ -2,10 +2,15 @@
 #include "channel.h"
 #include "ui_mainwindow.h"
 
+
 #define INCRAMENT 10
 #define NUM_CHAN 5
 
+#include <string>
+
 int PUSHED;
+int mode;
+channel * cholder;
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -14,9 +19,9 @@ MainWindow::MainWindow(QWidget *parent) :
     PUSHED = 0;
     ui->setupUi(this); 
     
-    ////////////////////
-    // Sliders
-    ////////////////////
+    ////////////////////////////////////////
+    // Sliders - Connect sliders to LCD
+    ////////////////////////////////////////
     /*connect(ui->verticalSlider,SIGNAL(valueChanged(int)),
       ui->progressBar,SLOT(setValue(int))); */
     connect(ui->hslider_01, SIGNAL(valueChanged(int)),
@@ -30,20 +35,25 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->hslider_05, SIGNAL(valueChanged(int)),
 	    ui->lcd_05, SLOT(display(int)));
 
-    ////////////////////
+    ////////////////////////////////////////
     // Channels
-    ////////////////////
-    int mode;
-    channel * cholder = new channel[NUM_CHAN];
-
+    ////////////////////////////////////////
+    cholder = new channel[NUM_CHAN];
 
     // Testing
     for( int i=0; i<NUM_CHAN; i++ )
     {
-	cholder[i].set_value(i+5);
+	mode = i;
+	cholder[i].set_value(i+50);
+	UpdateLCD();
     }
 
-    ui->cbutton_01->setText("Foo");
+    //ui->lcd_0->display(55);
+    //ui->lcd_2->display(cholder[2].get_value());
+    
+    //ui->cbutton_01->setText("Foo");
+    //std::string foo = cholder[2].get_svalue();
+    //ui->cbutton_02->setText( foo );
     //cholder.get_channel(0)->get_value);
 }
 
@@ -52,21 +62,21 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_pb_up_pressed()
-{
+//void MainWindow::on_pb_up_pressed()
+//{
     /*ui->pb_up->setText("Pushed");
     if(PUSHED < 100)
 	PUSHED += INCRAMENT;
     ui->progressBar->setValue(PUSHED);
     */
-}
+//}
 
-void MainWindow::on_pb_down_pressed()
-{
+//void MainWindow::on_pb_down_pressed()
+//{
     /*if(PUSHED >= INCRAMENT)
 	PUSHED -= INCRAMENT;
 	ui->progressBar->setValue(PUSHED);*/
-}
+//}
 
 /*void MainWindow::on_hslider_01_sliderMoved(int position)
 {
@@ -83,3 +93,93 @@ void MainWindow::on_hslider_02_actionTriggered(int action)
     
 }
 */
+
+void MainWindow::ModeButton( int num )
+{
+    mode = num;
+    UpdateLCD();
+    //ui->mode_label->setText("foo");
+}
+
+void MainWindow::UpdateLCD()
+{
+    switch (mode)
+    {
+    case 0:
+	ui->lcd_0->display(cholder[0].get_value());
+	break;
+    case 1:
+	ui->lcd_1->display(cholder[1].get_value());
+	break;
+    case 2:
+	ui->lcd_2->display(cholder[2].get_value());
+	break;
+    case 3:
+	ui->lcd_3->display(cholder[3].get_value());
+	break;
+    case 4:
+	ui->lcd_4->display(cholder[4].get_value());
+	break;
+    default:
+	// ERROR
+	break;
+    }    
+}
+
+void MainWindow::on_cbutton_0_pressed()
+{
+    mode = 0;
+    ui->mode_label->setText("Channel 0");
+}
+
+void MainWindow::on_cbutton_1_pressed()
+{
+    mode = 1;
+    ui->mode_label->setText("Channel 1");
+}
+
+void MainWindow::on_cbutton_2_pressed()
+{
+    mode = 2;
+    ui->mode_label->setText("Channel 2");
+}
+
+void MainWindow::on_cbutton_3_pressed()
+{
+    mode = 3;
+    ui->mode_label->setText("Channel 3");
+}
+
+void MainWindow::on_cbutton_4_pressed()
+{
+    mode = 4;
+    ui->mode_label->setText("Channel 4");
+}
+
+void MainWindow::on_pb_value_off_clicked()
+{
+    cholder[mode].set_value(0);
+    UpdateLCD();
+}
+
+void MainWindow::on_pb_value_full_clicked()
+{
+    cholder[mode].set_value(cholder[mode].get_max());
+    UpdateLCD();
+}
+
+void MainWindow::on_pb_value_decrament_clicked()
+{
+    int val = cholder[mode].get_value();
+    val--;
+    cholder[mode].set_value(val);
+    UpdateLCD();
+}
+
+void MainWindow::on_pb_value_incrament_clicked()
+{
+    int val = cholder[mode].get_value();
+    val++;
+    cholder[mode].set_value(val);
+    UpdateLCD();
+}

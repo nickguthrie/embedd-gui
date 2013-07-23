@@ -312,18 +312,18 @@ color: rgb(134, 213, 101);</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QPushButton" name="cbutton_01">
+      <widget class="QPushButton" name="cbutton_0">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>0</y>
-         <width>80</width>
+         <width>100</width>
          <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>80</width>
+         <width>100</width>
          <height>40</height>
         </size>
        </property>
@@ -337,21 +337,21 @@ color: rgb(134, 213, 101);</string>
         <string notr="true">background-color: rgb(255, 0, 0);</string>
        </property>
        <property name="text">
-        <string>0</string>
+        <string>channel 0</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="cbutton_02">
+      <widget class="QPushButton" name="cbutton_1">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>40</y>
-         <width>80</width>
+         <width>100</width>
          <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>80</width>
+         <width>100</width>
          <height>40</height>
         </size>
        </property>
@@ -365,21 +365,21 @@ color: rgb(134, 213, 101);</string>
         <string notr="true">background-color: rgb(255, 170, 0);</string>
        </property>
        <property name="text">
-        <string>0</string>
+        <string>channel 1</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="cbutton_03">
+      <widget class="QPushButton" name="cbutton_2">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>80</y>
-         <width>80</width>
+         <width>100</width>
          <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>80</width>
+         <width>100</width>
          <height>40</height>
         </size>
        </property>
@@ -393,21 +393,21 @@ color: rgb(134, 213, 101);</string>
         <string notr="true">background-color: rgb(85, 255, 0);</string>
        </property>
        <property name="text">
-        <string>0</string>
+        <string>channel 2</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="cbutton_04">
+      <widget class="QPushButton" name="cbutton_3">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>120</y>
-         <width>80</width>
+         <width>100</width>
          <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>80</width>
+         <width>100</width>
          <height>40</height>
         </size>
        </property>
@@ -421,21 +421,21 @@ color: rgb(134, 213, 101);</string>
         <string notr="true">background-color: rgb(0, 170, 255);</string>
        </property>
        <property name="text">
-        <string>0</string>
+        <string>channel 3</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="cbutton_05">
+      <widget class="QPushButton" name="cbutton_4">
        <property name="geometry">
         <rect>
          <x>0</x>
          <y>160</y>
-         <width>80</width>
+         <width>100</width>
          <height>40</height>
         </rect>
        </property>
        <property name="minimumSize">
         <size>
-         <width>80</width>
+         <width>100</width>
          <height>40</height>
         </size>
        </property>
@@ -449,91 +449,91 @@ color: rgb(134, 213, 101);</string>
         <string notr="true">background-color: rgb(85, 85, 255);</string>
        </property>
        <property name="text">
-        <string>0</string>
+        <string>channel 4</string>
        </property>
       </widget>
-      <widget class="QLabel" name="label_2">
+      <widget class="QLCDNumber" name="lcd_0">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>100</x>
          <y>0</y>
-         <width>91</width>
-         <height>31</height>
+         <width>80</width>
+         <height>40</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>40</height>
+        </size>
        </property>
       </widget>
-      <widget class="QLabel" name="label_3">
+      <widget class="QLCDNumber" name="lcd_1">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>100</x>
          <y>40</y>
-         <width>91</width>
-         <height>31</height>
+         <width>80</width>
+         <height>40</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>40</height>
+        </size>
        </property>
       </widget>
-      <widget class="QLabel" name="label_4">
+      <widget class="QLCDNumber" name="lcd_2">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>100</x>
          <y>80</y>
-         <width>91</width>
-         <height>31</height>
+         <width>80</width>
+         <height>40</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>40</height>
+        </size>
        </property>
       </widget>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLCDNumber" name="lcd_3">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>100</x>
          <y>120</y>
-         <width>91</width>
-         <height>31</height>
+         <width>80</width>
+         <height>40</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>40</height>
+        </size>
        </property>
       </widget>
-      <widget class="QLabel" name="label_6">
+      <widget class="QLCDNumber" name="lcd_4">
        <property name="geometry">
         <rect>
-         <x>90</x>
+         <x>100</x>
          <y>160</y>
-         <width>91</width>
-         <height>31</height>
+         <width>80</width>
+         <height>40</height>
         </rect>
        </property>
-       <property name="styleSheet">
-        <string notr="true">color: rgb(255, 255, 255);</string>
-       </property>
-       <property name="text">
-        <string>TextLabel</string>
+       <property name="minimumSize">
+        <size>
+         <width>80</width>
+         <height>40</height>
+        </size>
        </property>
       </widget>
      </widget>
-     <widget class="QPushButton" name="pb_up_2">
+     <widget class="QPushButton" name="pb_value_full">
       <property name="geometry">
        <rect>
         <x>300</x>
@@ -561,7 +561,7 @@ color: rgb(134, 213, 101);</string>
        <string>Full</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pb_up_3">
+     <widget class="QPushButton" name="pb_value_off">
       <property name="geometry">
        <rect>
         <x>200</x>
@@ -589,7 +589,7 @@ color: rgb(134, 213, 101);</string>
        <string>Off</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pb_up_4">
+     <widget class="QPushButton" name="pb_value_decrament">
       <property name="geometry">
        <rect>
         <x>200</x>
@@ -617,7 +617,7 @@ color: rgb(134, 213, 101);</string>
        <string>-</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pb_up_5">
+     <widget class="QPushButton" name="pb_value_incrament">
       <property name="geometry">
        <rect>
         <x>300</x>
@@ -661,14 +661,23 @@ color: rgb(134, 213, 101);</string>
        <enum>Qt::Horizontal</enum>
       </property>
      </widget>
-     <widget class="QLabel" name="label_7">
+     <widget class="QLabel" name="mode_label">
       <property name="geometry">
        <rect>
         <x>200</x>
-        <y>20</y>
+        <y>10</y>
         <width>201</width>
-        <height>17</height>
+        <height>31</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Abyssinica SIL</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>TextLabel</string>
