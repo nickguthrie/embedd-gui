@@ -1,7 +1,9 @@
 #include "mainwindow.h"
+#include "channel.h"
 #include "ui_mainwindow.h"
 
 #define INCRAMENT 10
+#define NUM_CHAN 5
 
 int PUSHED;
 
@@ -10,10 +12,11 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     PUSHED = 0;
-    ui->setupUi(this);
- 
+    ui->setupUi(this); 
     
+    ////////////////////
     // Sliders
+    ////////////////////
     /*connect(ui->verticalSlider,SIGNAL(valueChanged(int)),
       ui->progressBar,SLOT(setValue(int))); */
     connect(ui->hslider_01, SIGNAL(valueChanged(int)),
@@ -26,6 +29,22 @@ MainWindow::MainWindow(QWidget *parent) :
 	    ui->lcd_04, SLOT(display(int)));
     connect(ui->hslider_05, SIGNAL(valueChanged(int)),
 	    ui->lcd_05, SLOT(display(int)));
+
+    ////////////////////
+    // Channels
+    ////////////////////
+    int mode;
+    channel * cholder = new channel[NUM_CHAN];
+
+
+    // Testing
+    for( int i=0; i<NUM_CHAN; i++ )
+    {
+	cholder[i].set_value(i+5);
+    }
+
+    ui->cbutton_01->setText("Foo");
+    //cholder.get_channel(0)->get_value);
 }
 
 MainWindow::~MainWindow()

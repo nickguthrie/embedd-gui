@@ -312,7 +312,7 @@ color: rgb(134, 213, 101);</string>
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="cbutton_01">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -340,7 +340,7 @@ color: rgb(134, 213, 101);</string>
         <string>0</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_2">
+      <widget class="QPushButton" name="cbutton_02">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -368,7 +368,7 @@ color: rgb(134, 213, 101);</string>
         <string>0</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_3">
+      <widget class="QPushButton" name="cbutton_03">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -396,7 +396,7 @@ color: rgb(134, 213, 101);</string>
         <string>0</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_4">
+      <widget class="QPushButton" name="cbutton_04">
        <property name="geometry">
         <rect>
          <x>0</x>
@@ -424,7 +424,7 @@ color: rgb(134, 213, 101);</string>
         <string>0</string>
        </property>
       </widget>
-      <widget class="QPushButton" name="pushButton_5">
+      <widget class="QPushButton" name="cbutton_05">
        <property name="geometry">
         <rect>
          <x>0</x>
