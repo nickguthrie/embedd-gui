@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////////
 /**
  *  @file channel.cpp
- *  @brief 
+ *  @brief
  *
  *  DETAILED DESCRIPTION
  *  
@@ -26,7 +26,7 @@
 using namespace std;            /* to not need std:: on all io */  
 //Strings
 #include <string>             /* to use strings */
-//#include <sstream>            /* use strings like cout */
+#include <sstream>            /* use strings like cout */
 //#include <cstdlib>            /* for atoi */
 //#include <cctype>             /* for atoi */
 //#include <vector>
@@ -80,8 +80,8 @@ channel::channel( int min_size, int max_size)
 ////////////////////////////////////////////////////////////////////////////////
 void channel::set_value( int size )
 {
-    if( size < max && size > min )
-	value = size;
+    //if( size < max && size > min )
+    value = size;
 }
 ////////////////////////////////////////////////////////////////////////////////
 /**
@@ -111,6 +111,43 @@ void channel::set_size( int min_size, int max_size )
 int channel::get_value () const
 {
     return value;
+}
+////////////////////////////////////////////////////////////////////////////////
+/**
+ *  @brief Returns the maximum allowed value for a chanel
+ *  @return The max allowed value.
+ */
+////////////////////////////////////////////////////////////////////////////////
+int channel::get_max () const
+{
+    return max;
+}
+////////////////////////////////////////////////////////////////////////////////
+/**
+ *  @brief Returns the maximum allowed value for a chanel
+ *  @return The max allowed value.
+ */
+////////////////////////////////////////////////////////////////////////////////
+int channel::get_min () const
+{
+    return min;
+}
+////////////////////////////////////////////////////////////////////////////////
+/**
+ *  @brief 
+ *  @warning 
+ *  @param[in] 
+ *  @return
+ */
+////////////////////////////////////////////////////////////////////////////////
+std::string channel::get_svalue () const
+{
+    string result;           // string which will contain the result
+    ostringstream convert;   // stream used for the conversion
+    convert << value;        // insert the txt representation of 'value' in the
+			     // characters in the stream
+    result = convert.str();  // set 'Result' to the contents of the stream
+    return result;
 }
 
 
