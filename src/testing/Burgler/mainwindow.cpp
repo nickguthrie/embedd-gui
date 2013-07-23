@@ -57,9 +57,14 @@ MainWindow::MainWindow(QWidget *parent) :
     number = 0;
     timerTimeout = 0;
     timer = new QTimer(this);
+
+    // Incrament Button Connections
     connect(timer, SIGNAL(timeout()), this, SLOT(doIncrement()));
     connect(ui->pb_value_incrament, SIGNAL(pressed()), this, SLOT(buttonPressed()));
     connect(ui->pb_value_incrament, SIGNAL(released()), this, SLOT(buttonReleased()));
+    connect(ui->pb_value_decrament, SIGNAL(pressed()), this, SLOT(buttonPressed()));
+    connect(ui->pb_value_decrament, SIGNAL(released()), this, SLOT(buttonReleased()));
+
 
     
 
@@ -190,14 +195,16 @@ void MainWindow::on_pb_value_full_clicked()
 
 void MainWindow::on_pb_value_decrament_clicked()
 {
-    int val = cholder[mode].get_value();
-    val--;
-    cholder[mode].set_value(val);
-    UpdateLCD();
+    //incrament = true;
+    // int val = cholder[mode].get_value();
+    // val--;
+    // cholder[mode].set_value(val);
+    // UpdateLCD();
 }
 
 void MainWindow::on_pb_value_incrament_clicked()
 {
+    //incrament = false;
     // int val = cholder[mode].get_value();
     // val++;
     // cholder[mode].set_value(val);
@@ -221,8 +228,17 @@ void MainWindow::on_channelSlider_valueChanged(int value)
 
 void MainWindow::on_pb_value_incrament_pressed()
 {
+    incrament = true;
     timerTimeout = 2000;
     doIncrement();
+}
+
+void MainWindow::on_pb_value_decrament_pressed()
+{
+    incrament = false;
+    timerTimeout = 2000;
+    doIncrement();
+
 }
 
 void MainWindow::buttonPressed()
@@ -238,10 +254,23 @@ void MainWindow::buttonReleased()
 
 void MainWindow::doIncrement()
 {
-    cholder[mode].incrament();
+    if( incrament )
+	cholder[mode].incrament();
+    else
+	cholder[mode].decrament();
     //ui->label->setText(QString("Value: %1").arg(number));
     if(timerTimeout > 50)
         timerTimeout = timerTimeout / 2;
     timer->start(timerTimeout);
     UpdateLCD();
 }
+
+// void MainWindow::doDecrement()
+// {
+//     cholder[mode].decrament();
+//     if(timerTimeout > 50)
+//         timerTimeout = timerTimeout / 2;
+//     timer->start(timerTimeout);
+//     UpdateLCD();
+// }
+

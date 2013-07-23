@@ -38,6 +38,8 @@ private slots:
 
     void on_pb_value_incrament_pressed();
 
+    void on_pb_value_decrament_pressed();
+
 protected slots:
     void buttonPressed();
     void buttonReleased();
@@ -51,6 +53,7 @@ private:
     QTimer *timer;
     int timerTimeout;
     int number;
+    bool incrament;
 };
 
 #endif // MAINWINDOW_H
