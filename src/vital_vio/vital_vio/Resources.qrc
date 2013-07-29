@@ -2,5 +2,6 @@
     <qresource prefix="/">
         <file>img/vv_icon.png</file>
         <file>img/vv_logo_full.png</file>
+        <file>img/vv_text.png</file>
     </qresource>
 </RCC>
