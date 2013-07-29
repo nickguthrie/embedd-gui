@@ -89,7 +89,7 @@ void MainWindow::DeleteButtonHide()
     
 }
 
-void MainWindow::on_fooButton_clicked()
+void MainWindow::on_offButton_clicked()
 {
     this->deleteButton->setVisible(true);
 }
