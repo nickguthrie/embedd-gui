@@ -19,7 +19,7 @@ public:
 private slots:
     void DeleteButtonInit();
     void DeleteButtonHide();
-    void on_fooButton_clicked();
+    void on_offButton_clicked();
 
 private:
     Ui::MainWindow *ui;
