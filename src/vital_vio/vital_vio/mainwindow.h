@@ -23,10 +23,11 @@ class MainWindow : public QMainWindow
     void DeleteButtonHide();
     void on_offButton_clicked();
 
+    //void on_label_3_linkActivated();
+
 private:
     Ui::MainWindow *ui;
     QPushButton *deleteButton;
-
 };
 
 
