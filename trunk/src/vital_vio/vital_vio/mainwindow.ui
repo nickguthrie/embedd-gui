@@ -39,7 +39,7 @@
      </size>
     </property>
     <property name="focusPolicy">
-     <enum>Qt::TabFocus</enum>
+     <enum>Qt::NoFocus</enum>
     </property>
     <property name="styleSheet">
      <string notr="true">background-color: rgb(51, 51, 51);</string>
@@ -51,7 +51,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="iconSize">
      <size>
@@ -92,7 +92,8 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(155, 42, 132);</string>
+       <string notr="true">background-color: rgb(155, 42, 132);
+color: rgb(255, 255, 255);</string>
       </property>
       <property name="text">
        <string>Clean</string>
@@ -148,8 +149,8 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(13, 103, 182);</string>
+       <string notr="true">background-color: rgb(13, 103, 182);
+color: rgb(0, 0, 0);</string>
       </property>
       <property name="text">
        <string>Off</string>
@@ -265,7 +266,7 @@ background-color: rgb(255, 0, 127);</string>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: qlineargradient(spread:pad, x1:0, y1:1, x2:0, y2:0, stop:0 rgba(0, 0, 0, 255), stop:0.05 rgba(14, 8, 73, 255), stop:0.36 rgba(28, 17, 145, 255), stop:0.6 rgba(126, 14, 81, 255), stop:0.75 rgba(234, 11, 11, 255), stop:0.79 rgba(244, 70, 5, 255), stop:0.86 rgba(255, 136, 0, 255), stop:0.935 rgba(239, 236, 55, 255));</string>
+       <string notr="true">background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, fx:0.5, fy:0.5, stop:0 rgba(13, 103, 182), stop:0.497326 rgba(13, 103, 182), stop:1 rgba(13, 103, 182));</string>
       </property>
       <property name="maximum">
        <number>1000</number>
@@ -281,6 +282,9 @@ background-color: rgb(255, 0, 127);</string>
       </property>
       <property name="orientation">
        <enum>Qt::Vertical</enum>
+      </property>
+      <property name="invertedAppearance">
+       <bool>false</bool>
       </property>
       <property name="invertedControls">
        <bool>false</bool>
@@ -349,10 +353,10 @@ background-color: rgb(255, 0, 127);</string>
        <number>360</number>
       </property>
       <property name="singleStep">
-       <number>30</number>
+       <number>1</number>
       </property>
       <property name="pageStep">
-       <number>30</number>
+       <number>1</number>
       </property>
       <property name="tracking">
        <bool>true</bool>
@@ -364,7 +368,7 @@ background-color: rgb(255, 0, 127);</string>
        <double>15.000000000000000</double>
       </property>
       <property name="notchesVisible">
-       <bool>true</bool>
+       <bool>false</bool>
       </property>
      </widget>
     </widget>

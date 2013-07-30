@@ -12,6 +12,8 @@ namespace Ui {
 
 class MainWindow : public QMainWindow
 {
+    
+
     Q_OBJECT
     
 	public:
@@ -44,7 +46,10 @@ class MyProxyStyle : public QProxyStyle
 		(QProxyStyle::pixelMetric(metric,option,widget));
         }
     }
+    
 };
+
+
 
 
 #endif // MAINWINDOW_H
