@@ -45,7 +45,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <property name="iconSize">
      <size>
@@ -86,7 +86,7 @@
        </font>
       </property>
       <property name="styleSheet">
-       <string notr="true">background-color: rgb(13, 103, 182);</string>
+       <string notr="true"/>
       </property>
       <property name="text">
        <string>Off</string>

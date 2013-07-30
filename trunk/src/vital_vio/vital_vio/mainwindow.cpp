@@ -67,9 +67,9 @@ MainWindow::~MainWindow()
 void MainWindow::DeleteButtonInit()
 {
     this->deleteButton = new QPushButton(this);
-    this->deleteButton->setMinimumWidth(500);
-    this->deleteButton->setMinimumHeight(300);
-    this->deleteButton->setStyleSheet("background-color: rgb(0, 0, 0);");
+    //this->deleteButton->setStyleSheet("background-color: rgb(90, 90, 90);border-color: rgb(170, 0, 0);");
+                                       
+    this->deleteButton->setMinimumSize(280,172);
     connect(deleteButton, SIGNAL(clicked()), this, SLOT(DeleteButtonHide()));
 }
 ////////////////////////////////////////////////////////////////////////////////
@@ -80,7 +80,6 @@ void MainWindow::DeleteButtonInit()
 void MainWindow::DeleteButtonHide()
 {
     this->deleteButton->setVisible(false);
-
 }
 ////////////////////////////////////////////////////////////////////////////////
 /**
