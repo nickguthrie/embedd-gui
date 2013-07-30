@@ -1,15 +1,15 @@
 ////////////////////////////////////////////////////////////////////////////////
 /**
  *  @file mainwindow.cpp
- *  @brief 
+ *  @brief A basic Vital Vio Controller.
  *
  *  Detailed Description
- *  
+ *
  *  @title Vital Vio
  *  @author Nicholas Guthrie
- *  @web http//nickguthrie.com
+ *  @web http//nickguthrie.com/embedd_gui/doc/
  *  @created July 29, 2013
- * 
+ *
  */
 ////////////////////////////////////////////////////////////////////////////////
 /**
@@ -28,24 +28,20 @@
  */
 ////////////////////////////////////////////////////////////////////////////////
 //------------------------------------------------------------------ :Libraries:
-//                      _    _ _                 _        
+//                      _    _ _                 _
 //                     | |  (_) |__ _ _ __ _ _ _(_)___ ___
 //                     | |__| | '_ \ '_/ _` | '_| / -_|_-<
 //                     |____|_|_.__/_| \__,_|_| |_\___/__/
-//                                                        
+//
 // -----------------------------------------------------------------------------
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QPushButton>
-//--------------------------------------------------------------------- :Global:
-//                            ___ _     _          _ 
-//                           / __| |___| |__  __ _| |
-//                          | (_ | / _ \ '_ \/ _` | |
-//                           \___|_\___/_.__/\__,_|_|
-//                                                   
-// -----------------------------------------------------------------------------
-
-
+////////////////////////////////////////////////////////////////////////////////
+/**
+ *  @brief Sets up the Main Interface.
+ */
+////////////////////////////////////////////////////////////////////////////////
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -53,8 +49,6 @@ MainWindow::MainWindow(QWidget *parent) :
     // Set up User Interface
     ui->setupUi(this);
     this->DeleteButtonInit();
-
-    //QPushButton *deleteButton = new QPushButton(this);
 }
 ////////////////////////////////////////////////////////////////////////////////
 /**
@@ -86,9 +80,13 @@ void MainWindow::DeleteButtonInit()
 void MainWindow::DeleteButtonHide()
 {
     this->deleteButton->setVisible(false);
-    
-}
 
+}
+////////////////////////////////////////////////////////////////////////////////
+/**
+ *  @brief Makes the screen go blank (turns the lights off).
+ */
+////////////////////////////////////////////////////////////////////////////////
 void MainWindow::on_offButton_clicked()
 {
     this->deleteButton->setVisible(true);
