@@ -90,3 +90,8 @@ void MainWindow::on_offButton_clicked()
 {
     this->deleteButton->setVisible(true);
 }
+
+// void MainWindow::on_label_3_linkActivated()
+// {
+//     ui->tabWidget->setCurrentIndex(0);
+// }
