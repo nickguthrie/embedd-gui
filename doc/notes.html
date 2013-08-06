@@ -7,7 +7,7 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Embedd GUI"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-07-15T17:44-0400"/>
+<meta name="generated" content="2013-08-06T15:29-0400"/>
 <meta name="author" content="Nick"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
@@ -118,7 +118,6 @@ for the JavaScript code in this tag.
 <h1 class="title">Embedd GUI</h1>
 
 
-
 <div id="table-of-contents">
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
@@ -135,10 +134,11 @@ for the JavaScript code in this tag.
 </li>
 <li><a href="#sec-2">2 RCOS Presentations and Multimedia</a>
 <ul>
-<li><a href="#sec-2-1">2.1 A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo</a></li>
-<li><a href="#sec-2-2">2.2 RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI</a></li>
-<li><a href="#sec-2-3">2.3 A13-OLinuXino-MICRO Qt Embedded Fluidlauncher Video</a></li>
-<li><a href="#sec-2-4">2.4 RCOS Summer 2013 - Initial Presentation</a></li>
+<li><a href="#sec-2-1">2.1 RCOS Summer 2013 - Final Presentation</a></li>
+<li><a href="#sec-2-2">2.2 A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo</a></li>
+<li><a href="#sec-2-3">2.3 RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI</a></li>
+<li><a href="#sec-2-4">2.4 A13-OLinuXino-MICRO Qt Embedded Fluidlauncher Video</a></li>
+<li><a href="#sec-2-5">2.5 RCOS Summer 2013 - Initial Presentation</a></li>
 </ul>
 </li>
 <li><a href="#sec-3">3 Hardware</a>
@@ -158,131 +158,141 @@ for the JavaScript code in this tag.
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-4">4 Quick Reference</a>
+<li><a href="#sec-4">4 Getting Started</a>
 <ul>
-<li><a href="#sec-4-1">4.1 Connect to Serial via Bluetooth</a></li>
-<li><a href="#sec-4-2">4.2 Communicate via SSH</a></li>
-<li><a href="#sec-4-3">4.3 Connect with SFTP for File Transfer</a></li>
-<li><a href="#sec-4-4">4.4 Send Files via SCP</a>
-<ul>
-<li><a href="#sec-4-4-1">4.4.1 Overview</a></li>
-<li><a href="#sec-4-4-2">4.4.2 Examples</a></li>
-<li><a href="#sec-4-4-3">4.4.3 Links</a></li>
+<li><a href="#sec-4-1">4.1 Getting the Development Environment Set Up</a></li>
+<li><a href="#sec-4-2">4.2 Compiling Programs</a></li>
+<li><a href="#sec-4-3">4.3 Sending Programs over to the Device</a></li>
+<li><a href="#sec-4-4">4.4 Running a Program</a></li>
+<li><a href="#sec-4-5">4.5 Calibrating the Toucscreen</a></li>
+<li><a href="#sec-4-6">4.6 Contributing to the Documentation</a></li>
 </ul>
 </li>
-<li><a href="#sec-4-5">4.5 Check Remaining Space on Hard Drive</a></li>
-<li><a href="#sec-4-6">4.6 Sync Files with rsync</a>
+<li><a href="#sec-5">5 Quick Reference</a>
 <ul>
-<li><a href="#sec-4-6-1">4.6.1 Sync a Directory From Host To Device</a></li>
-<li><a href="#sec-4-6-2">4.6.2 Links</a></li>
-</ul>
-</li>
-<li><a href="#sec-4-7">4.7 Building Projects with Qmake</a></li>
-<li><a href="#sec-4-8">4.8 Backups</a>
-<ul>
-<li><a href="#sec-4-8-1">4.8.1 Backup the SD Card</a></li>
-<li><a href="#sec-4-8-2">4.8.2 Restore the SD Card</a></li>
-<li><a href="#sec-4-8-3">4.8.3 Backup Data to Web Storage</a></li>
-<li><a href="#sec-4-8-4">4.8.4 Links</a></li>
-</ul></li>
-</ul>
-</li>
-<li><a href="#sec-5">5 HOWTO</a>
-<ul>
-<li><a href="#sec-5-1">5.1 Obtain Hardware</a></li>
-<li><a href="#sec-5-2">5.2 Copy Debian Image to SD Card</a>
-<ul>
-<li><a href="#sec-5-2-1">5.2.1 Overview</a></li>
-<li><a href="#sec-5-2-2">5.2.2 Steps</a></li>
-<li><a href="#sec-5-2-3">5.2.3 Links</a></li>
-</ul>
-</li>
-<li><a href="#sec-5-3">5.3 Configure Touchscreen (script.bin)</a>
-<ul>
-<li><a href="#sec-5-3-1">5.3.1 Overview</a></li>
-<li><a href="#sec-5-3-2">5.3.2 Steps</a></li>
-<li><a href="#sec-5-3-3">5.3.3 Links</a></li>
-</ul>
-</li>
-<li><a href="#sec-5-4">5.4 Modifying the script.bin file (Optional)</a>
+<li><a href="#sec-5-1">5.1 Connect to Serial via Bluetooth</a></li>
+<li><a href="#sec-5-2">5.2 Communicate via SSH</a></li>
+<li><a href="#sec-5-3">5.3 Connect with SFTP for File Transfer</a></li>
+<li><a href="#sec-5-4">5.4 Send Files via SCP</a>
 <ul>
 <li><a href="#sec-5-4-1">5.4.1 Overview</a></li>
-<li><a href="#sec-5-4-2">5.4.2 Installation</a></li>
-<li><a href="#sec-5-4-3">5.4.3 General Usage</a></li>
-<li><a href="#sec-5-4-4">5.4.4 Errors</a></li>
-<li><a href="#sec-5-4-5">5.4.5 Links</a></li>
+<li><a href="#sec-5-4-2">5.4.2 Examples</a></li>
+<li><a href="#sec-5-4-3">5.4.3 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-5">5.5 Configure Debian</a>
+<li><a href="#sec-5-5">5.5 Check Remaining Space on Hard Drive</a></li>
+<li><a href="#sec-5-6">5.6 Sync Files with rsync</a>
 <ul>
-<li><a href="#sec-5-5-1">5.5.1 Configure Wireless (Dynamic IP Address)</a></li>
-<li><a href="#sec-5-5-2">5.5.2 Configure Static IP Address</a></li>
-<li><a href="#sec-5-5-3">5.5.3 Set Date</a></li>
-<li><a href="#sec-5-5-4">5.5.4 Set Keyboard Locale</a></li>
-<li><a href="#sec-5-5-5">5.5.5 Install Programs</a></li>
-<li><a href="#sec-5-5-6">5.5.6 Configure SSH to start on Boot</a></li>
-<li><a href="#sec-5-5-7">5.5.7 Install XFCE (Optional)</a></li>
+<li><a href="#sec-5-6-1">5.6.1 Sync a Directory From Host To Device</a></li>
+<li><a href="#sec-5-6-2">5.6.2 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-5-6">5.6 Configure Serial Communication with Bluetooth Module</a>
+<li><a href="#sec-5-7">5.7 Building Projects with Qmake</a></li>
+<li><a href="#sec-5-8">5.8 Backups</a>
 <ul>
-<li><a href="#sec-5-6-1">5.6.1 Communicate to Bluetooth</a></li>
-<li><a href="#sec-5-6-2">5.6.2 Get Serial Over Linux</a></li>
-</ul>
-</li>
-<li><a href="#sec-5-7">5.7 Install ARM Toolchain with Buildroot</a>
-<ul>
-<li><a href="#sec-5-7-1">5.7.1 Steps</a></li>
-<li><a href="#sec-5-7-2">5.7.2 Links</a></li>
-</ul>
-</li>
-<li><a href="#sec-5-8">5.8 Configure tslib on Device</a>
-<ul>
-<li><a href="#sec-5-8-1">5.8.1 Overview</a></li>
-<li><a href="#sec-5-8-2">5.8.2 Steps</a></li>
-<li><a href="#sec-5-8-3">5.8.3 Errors</a></li>
-<li><a href="#sec-5-8-4">5.8.4 Test tslib Input Received from Touchscreen</a></li>
-<li><a href="#sec-5-8-5">5.8.5 Links</a></li>
-</ul>
-</li>
-<li><a href="#sec-5-9">5.9 Configure QT for Embedded Linux</a>
-<ul>
-<li><a href="#sec-5-9-1">5.9.1 Steps</a></li>
-<li><a href="#sec-5-9-2">5.9.2 Links</a></li>
+<li><a href="#sec-5-8-1">5.8.1 Backup the SD Card</a></li>
+<li><a href="#sec-5-8-2">5.8.2 Restore the SD Card</a></li>
+<li><a href="#sec-5-8-3">5.8.3 Backup Data to Web Storage</a></li>
+<li><a href="#sec-5-8-4">5.8.4 Links</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-6">6 Simple Sample Programs</a>
+<li><a href="#sec-6">6 HOWTO</a>
 <ul>
-<li><a href="#sec-6-1">6.1 Burgler</a>
+<li><a href="#sec-6-1">6.1 Obtain Hardware</a></li>
+<li><a href="#sec-6-2">6.2 Copy Debian Image to SD Card</a>
 <ul>
-<li><a href="#sec-6-1-1">6.1.1 Source</a></li>
-<li><a href="#sec-6-1-2">6.1.2 Notes</a></li>
+<li><a href="#sec-6-2-1">6.2.1 Overview</a></li>
+<li><a href="#sec-6-2-2">6.2.2 Steps</a></li>
+<li><a href="#sec-6-2-3">6.2.3 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-6-2">6.2 Basic Output to LCD Screen</a>
+<li><a href="#sec-6-3">6.3 Configure Touchscreen (script.bin)</a>
 <ul>
-<li><a href="#sec-6-2-1">6.2.1 MainWindow.cpp</a></li>
-<li><a href="#sec-6-2-2">6.2.2 MainWindow.h</a></li>
-<li><a href="#sec-6-2-3">6.2.3 moc_mainwindow.cpp</a></li>
-<li><a href="#sec-6-2-4">6.2.4 ui_mainwindow.h</a></li>
-<li><a href="#sec-6-2-5">6.2.5 mainwindow.ui</a></li>
+<li><a href="#sec-6-3-1">6.3.1 Overview</a></li>
+<li><a href="#sec-6-3-2">6.3.2 Steps</a></li>
+<li><a href="#sec-6-3-3">6.3.3 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-6-3">6.3 Hello World Program</a>
+<li><a href="#sec-6-4">6.4 Modifying the script.bin file (Optional)</a>
 <ul>
-<li><a href="#sec-6-3-1">6.3.1 Source Code</a></li>
+<li><a href="#sec-6-4-1">6.4.1 Overview</a></li>
+<li><a href="#sec-6-4-2">6.4.2 Installation</a></li>
+<li><a href="#sec-6-4-3">6.4.3 General Usage</a></li>
+<li><a href="#sec-6-4-4">6.4.4 Errors</a></li>
+<li><a href="#sec-6-4-5">6.4.5 Links</a></li>
 </ul>
 </li>
-<li><a href="#sec-6-4">6.4 Toggle A LED (A13-Olimex-Micro)</a>
+<li><a href="#sec-6-5">6.5 Configure Debian</a>
 <ul>
-<li><a href="#sec-6-4-1">6.4.1 Using the Commandline</a></li>
-<li><a href="#sec-6-4-2">6.4.2 Using C Code</a></li>
-<li><a href="#sec-6-4-3">6.4.3 Links</a></li>
+<li><a href="#sec-6-5-1">6.5.1 Configure Wireless (Dynamic IP Address)</a></li>
+<li><a href="#sec-6-5-2">6.5.2 Configure Static IP Address</a></li>
+<li><a href="#sec-6-5-3">6.5.3 Set Date</a></li>
+<li><a href="#sec-6-5-4">6.5.4 Set Keyboard Locale</a></li>
+<li><a href="#sec-6-5-5">6.5.5 Install Programs</a></li>
+<li><a href="#sec-6-5-6">6.5.6 Configure SSH to start on Boot</a></li>
+<li><a href="#sec-6-5-7">6.5.7 Install XFCE (Optional)</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-6">6.6 Configure Serial Communication with Bluetooth Module</a>
+<ul>
+<li><a href="#sec-6-6-1">6.6.1 Communicate to Bluetooth</a></li>
+<li><a href="#sec-6-6-2">6.6.2 Get Serial Over Linux</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-7">6.7 Install ARM Toolchain with Buildroot</a>
+<ul>
+<li><a href="#sec-6-7-1">6.7.1 Steps</a></li>
+<li><a href="#sec-6-7-2">6.7.2 Links</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-8">6.8 Configure tslib on Device</a>
+<ul>
+<li><a href="#sec-6-8-1">6.8.1 Overview</a></li>
+<li><a href="#sec-6-8-2">6.8.2 Steps</a></li>
+<li><a href="#sec-6-8-3">6.8.3 Errors</a></li>
+<li><a href="#sec-6-8-4">6.8.4 Test tslib Input Received from Touchscreen</a></li>
+<li><a href="#sec-6-8-5">6.8.5 Links</a></li>
+</ul>
+</li>
+<li><a href="#sec-6-9">6.9 Configure QT for Embedded Linux</a>
+<ul>
+<li><a href="#sec-6-9-1">6.9.1 Steps</a></li>
+<li><a href="#sec-6-9-2">6.9.2 Links</a></li>
 </ul></li>
 </ul>
 </li>
-<li><a href="#sec-7">7 GNU Free Documentation License</a></li>
+<li><a href="#sec-7">7 Simple Sample Programs</a>
+<ul>
+<li><a href="#sec-7-1">7.1 Burgler</a>
+<ul>
+<li><a href="#sec-7-1-1">7.1.1 Source</a></li>
+<li><a href="#sec-7-1-2">7.1.2 Notes</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-2">7.2 Basic Output to LCD Screen</a>
+<ul>
+<li><a href="#sec-7-2-1">7.2.1 MainWindow.cpp</a></li>
+<li><a href="#sec-7-2-2">7.2.2 MainWindow.h</a></li>
+<li><a href="#sec-7-2-3">7.2.3 moc_mainwindow.cpp</a></li>
+<li><a href="#sec-7-2-4">7.2.4 ui_mainwindow.h</a></li>
+<li><a href="#sec-7-2-5">7.2.5 mainwindow.ui</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-3">7.3 Hello World Program</a>
+<ul>
+<li><a href="#sec-7-3-1">7.3.1 Source Code</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-4">7.4 Toggle A LED (A13-Olimex-Micro)</a>
+<ul>
+<li><a href="#sec-7-4-1">7.4.1 Using the Commandline</a></li>
+<li><a href="#sec-7-4-2">7.4.2 Using C Code</a></li>
+<li><a href="#sec-7-4-3">7.4.3 Links</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-8">8 GNU Free Documentation License</a></li>
 </ul>
 </div>
 </div>
@@ -298,7 +308,7 @@ for the JavaScript code in this tag.
 <h3 id="sec-1-1"><span class="section-number-3">1.1</span> A note from the Author</h3>
 <div class="outline-text-3" id="text-1-1">
 
-<p>This documentation is written under the <a href="#sec-7">GNU Free Documentation License</a>. The SVN repository with the source code for this project can be found <a href="http://code.google.com/p/embedd-gui/">here</a>. This documentation is viewable as an <a href="./index.html">html info file</a>, a <a href="./full.html">single html file</a>, a <a href="./index.pdf">pdf</a>, and in its original <a href="http://nickguthrie.com/embedd_gui/doc/index.org">org-mode</a> format. This project would not be possible without funding from the <a href="http://rcos.rpi.edu/">Rensselaer Center for Open Source</a>.  The RCOS Observatory Project page can be found <a href="http://rcos.rpi.edu/projects/embedd-gui/">here</a>. <br/>
+<p>This documentation is written under the <a href="#sec-8">GNU Free Documentation License</a>. The SVN repository with the source code for this project can be found <a href="http://code.google.com/p/embedd-gui/">here</a>. This documentation is viewable as an <a href="./index.html">html info file</a>, a <a href="./full.html">single html file</a>, a <a href="./index.pdf">pdf</a>, and in its original <a href="http://nickguthrie.com/embedd_gui/doc/index.org">org-mode</a> format. This project would not be possible without funding from the <a href="http://rcos.rpi.edu/">Rensselaer Center for Open Source</a>.  The RCOS Observatory Project page can be found <a href="http://rcos.rpi.edu/projects/embedd-gui/">here</a>. <br/>
 <br/>
 I would like to extend a special thanks to:
 </p><ul>
@@ -427,8 +437,16 @@ Free Documentation License".
 </div>
 
 <div id="outline-container-2-1" class="outline-3">
-<h3 id="sec-2-1"><span class="section-number-3">2.1</span> A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo</h3>
+<h3 id="sec-2-1"><span class="section-number-3">2.1</span> RCOS Summer 2013 - Final Presentation</h3>
 <div class="outline-text-3" id="text-2-1">
+
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2"><span class="section-number-3">2.2</span> A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo</h3>
+<div class="outline-text-3" id="text-2-2">
 
 <ul>
 <li><a href="http://youtu.be/v-ndT9fh3e0">Video</a>
@@ -440,9 +458,9 @@ Free Documentation License".
 
 </div>
 
-<div id="outline-container-2-2" class="outline-3">
-<h3 id="sec-2-2"><span class="section-number-3">2.2</span> RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI</h3>
-<div class="outline-text-3" id="text-2-2">
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3"><span class="section-number-3">2.3</span> RCOS Summer 2013 - Meeting 7 - Open Source Spectrometer + Embedded GUI</h3>
+<div class="outline-text-3" id="text-2-3">
 
 <ul>
 <li><a href="http://youtu.be/aGBMwWWGzmk">Video</a>
@@ -455,9 +473,9 @@ Free Documentation License".
 
 </div>
 
-<div id="outline-container-2-3" class="outline-3">
-<h3 id="sec-2-3"><span class="section-number-3">2.3</span> A13-OLinuXino-MICRO Qt Embedded Fluidlauncher Video</h3>
-<div class="outline-text-3" id="text-2-3">
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4"><span class="section-number-3">2.4</span> A13-OLinuXino-MICRO Qt Embedded Fluidlauncher Video</h3>
+<div class="outline-text-3" id="text-2-4">
 
 <ul>
 <li><a href="http://youtu.be/rqEB2OLgkCY">Video</a>
@@ -468,9 +486,9 @@ Free Documentation License".
 
 </div>
 
-<div id="outline-container-2-4" class="outline-3">
-<h3 id="sec-2-4"><span class="section-number-3">2.4</span> RCOS Summer 2013 - Initial Presentation</h3>
-<div class="outline-text-3" id="text-2-4">
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="section-number-3">2.5</span> RCOS Summer 2013 - Initial Presentation</h3>
+<div class="outline-text-3" id="text-2-5">
 
 <ul>
 <li><a href="./doc/OSSEG1.pdf">Presentation Slides</a>
@@ -1228,15 +1246,366 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </div>
 
 <div id="outline-container-4" class="outline-2">
-<h2 id="sec-4"><span class="section-number-2">4</span> Quick Reference</h2>
+<h2 id="sec-4"><span class="section-number-2">4</span> Getting Started</h2>
 <div class="outline-text-2" id="text-4">
+
+<p>This contains complete documentation of all steps taken including solutions to errors I encountered.  If you are installing the system from scratch, its probably better to start at the base of the HOWTO.  If you want to use a prebuilt image and start writing GUIS:
+</p>
+</div>
+
+<div id="outline-container-4-1" class="outline-3">
+<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Getting the Development Environment Set Up</h3>
+<div class="outline-text-3" id="text-4-1">
+
+<ol>
+<li>Set up the <a href="#sec-6-7">Cross Compiling Toolchain</a>
+</li>
+<li>Compile <a href="#sec-6-8">TSLIB from Source</a>
+</li>
+<li><a href="#sec-6-9">Compile QT from Source</a>
+</li>
+<li>Install QT Creator
+
+
+
+<pre class="src src-sh">sudo apt-get install qtcreator
+</pre>
+
+</li>
+</ol>
 
 
 </div>
 
-<div id="outline-container-4-1" class="outline-3">
-<h3 id="sec-4-1"><span class="section-number-3">4.1</span> Connect to Serial via Bluetooth</h3>
-<div class="outline-text-3" id="text-4-1">
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Compiling Programs</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<ol>
+<li>You must first build the makefile using the Qmake compiled in the last step, mine exists in /usr/local/qt/bin/qmake.  If I had a program created in qt_creator called my_program:
+
+
+
+<pre class="src src-sh">/usr/local/qt/bin/qmake my_program.pro
+</pre>
+
+<ul>
+<li>only needs to be done once on the system
+</li>
+</ul>
+
+</li>
+<li>Afterwards, compile the program with:
+
+
+
+<pre class="src src-sh">make clean; make
+</pre>
+
+<ul>
+<li>If all your path variables are set correctly this will then create a program in the ARM Architechture, which can then be run on the device.
+</li>
+<li>If you aren't using anything specific to the device (I used some code with the virtual screen, so I can't run on the desktop), you can build it on the host machine just for testing purposes with the regular qmake.
+
+
+
+<pre class="src src-sh">qmake my_program.pro;
+make clean; make
+</pre>
+
+<ul>
+<li>of course to run it on the device, you would need to run it with the correct qmake, before building
+</li>
+</ul>
+
+</li>
+<li>Emacs has great support for debugging with Make files (M-x compile) then enter the build commands (make clean; make)
+</li>
+</ul>
+
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Sending Programs over to the Device</h3>
+<div class="outline-text-3" id="text-4-3">
+
+<p>After building the program, it must be sent to the device in order to run
+</p><ol>
+<li>Set up SFTP
+<ol>
+<li>Connect to the device
+
+
+
+<pre class="src src-sh">sftp root@192.168.12.222
+</pre>
+
+<ul>
+<li>This is the static IP, so it should work, otherwise check the device IP
+</li>
+</ul>
+
+</li>
+<li>Set the local directory (where the binary is to send)
+
+
+
+<pre class="src src-sh">lcd /home/slaye/Desktop/myprogram/
+</pre>
+
+</li>
+<li>Set the directory where you want to send the program
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> ./Desktop
+</pre>
+
+</li>
+</ol>
+
+</li>
+<li>Send the program to the Device
+
+
+
+<pre class="src src-sh">put myprogram
+</pre>
+
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4"><span class="section-number-3">4.4</span> Running a Program</h3>
+<div class="outline-text-3" id="text-4-4">
+
+<ol>
+<li>Plug in the Wireless, and USB Keyboard before booting
+<ul>
+<li>WARNING: not plugging in the keyboard may mess up the settings that tell TSLIB where to look for touchscreen input.  Currently a keyboard is always needed, which is why it is configured this way, this can be modified in the <a href="#sec-6-8">TSLIB configuration</a> on the device for more permanent results.
+</li>
+</ul>
+
+</li>
+<li>Plug in Power
+</li>
+<li>Login:
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">Username</td><td class="left">root</td></tr>
+<tr><td class="left">Password</td><td class="left">password</td></tr>
+</tbody>
+</table>
+
+</li>
+<li>Navigate to the Directory
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">cd</span> ./Desktop/; <span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">go to Desktop</span>
+<span style="color: #b0c4de;">cd</span> ..;         <span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">go to the previous directory</span>
+ls;            <span style="color: #fa8072;"># </span><span style="color: #ff7f24; font-style: italic;">show the files in the current directory</span>
+</pre>
+
+</li>
+<li>Once you are in the dirtory with your program (say, my_program), run it with:
+
+
+
+<pre class="src src-sh">./my_program -qws
+</pre>
+
+<ul>
+<li>the "-qws" is the command to run the virtual screen
+</li>
+</ul>
+
+</li>
+<li>Killing the Program
+   since these programs are meant to run "permanently" there is no way to exit from within the program, you can kill the process from another shell to end the program.
+<ol>
+<li>Type Ctrl + Alt + F2 to switch to the second terminal
+</li>
+<li>Login (Username: root, Password, password)
+</li>
+<li>Find your process name (aka the CMD)
+
+
+
+<pre class="src src-sh">ps -a
+</pre>
+
+</li>
+<li>Kill the Process
+
+
+
+<pre class="src src-sh">killall my_program
+</pre>
+
+</li>
+<li>Check the process is dead
+
+
+
+<pre class="src src-sh">ps -a
+</pre>
+
+<ul>
+<li>the program should be gone
+</li>
+<li>you can kill it with more power with:
+
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">kill</span> -9 my_program
+</pre>
+
+<p>
+        OR
+</p>
+
+
+<pre class="src src-sh"><span style="color: #b0c4de;">kill</span> -9 PID
+</pre>
+
+<ul>
+<li>where you use the PID found with "ps -a"
+</li>
+</ul>
+
+</li>
+</ul>
+
+</li>
+<li>Switch back to your other terminal with Ctrl + Alt + F1
+</li>
+</ol>
+
+</li>
+</ol>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-5" class="outline-3">
+<h3 id="sec-4-5"><span class="section-number-3">4.5</span> Calibrating the Toucscreen</h3>
+<div class="outline-text-3" id="text-4-5">
+
+<ul>
+<li>You can calibrate the toucschreen with:
+
+
+
+<pre class="src src-sh">ts_calibrate
+</pre>
+
+</li>
+<li>There are also a few other ts program, such as:
+
+
+
+<pre class="src src-sh">ts_calibrate;
+ts_harvest;
+ts_print;
+ts_print_raw;
+ts_test;
+</pre>
+
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-4-6" class="outline-3">
+<h3 id="sec-4-6"><span class="section-number-3">4.6</span> Contributing to the Documentation</h3>
+<div class="outline-text-3" id="text-4-6">
+
+<ul>
+<li>This documentation is generated with org-mode in Emacs.
+</li>
+<li>Org-Mode is included by default in Emacs.
+</li>
+<li>You must add the project to a list, then you compile
+</li>
+<li>Add this to your ~/.emacs file.
+
+
+
+<pre class="src src-elisp"><span style="color: #fa8072;">;; </span><span style="color: #ff7f24; font-style: italic;">-------------------------------------</span>
+<span style="color: #fa8072;">;; </span><span style="color: #ff7f24; font-style: italic;">-- Publish Websites</span>
+<span style="color: #fa8072;">;; </span><span style="color: #ff7f24; font-style: italic;">-------------------------------------</span>
+(setq org-publish-project-alist
+      '((<span style="color: #ffc1c1;">"embedd-gui"</span>
+         <span style="color: #b0c4de;">:base-directory</span> <span style="color: #ffc1c1;">"~/svn/embedd-gui/doc/"</span>
+         <span style="color: #b0c4de;">:publishing-directory</span> <span style="color: #ffc1c1;">"~/svn/embedd-gui/doc/"</span>
+         )))
+</pre>
+
+<ul>
+<li>obviously changing the based directory where the /doc dir is and the publish to wherever you want to output the results.
+</li>
+</ul>
+
+</li>
+<li>To publish, in Emacs open the embedd-gui/docs/notes.org file, and type: C-u C-c C-e E.
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C-u</td><td class="left">forces all to be published, since it won't recoginize some files have changed due to the way they are linked</td></tr>
+<tr><td class="left">C-c C-e</td><td class="left">is the same thing as M-x org-export</td></tr>
+<tr><td class="left">E</td><td class="left">the option to export all projects</td></tr>
+</tbody>
+</table>
+
+<ul>
+<li>you should then find the freshly exported documentation in your publish directory
+<ul>
+<li>This will publish in all of the useful export formats, including a javascript file, 2 html files, and pdf. (All linked to at the top).
+</li>
+</ul>
+
+</li>
+<li>The style sheet is a custom css I wrote (nmg.css), which must be included at the root of the directory for it to look pretty.
+</li>
+</ul>
+
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-5" class="outline-2">
+<h2 id="sec-5"><span class="section-number-2">5</span> Quick Reference</h2>
+<div class="outline-text-2" id="text-5">
+
+
+</div>
+
+<div id="outline-container-5-1" class="outline-3">
+<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Connect to Serial via Bluetooth</h3>
+<div class="outline-text-3" id="text-5-1">
 
 <p>Prerequisite: configure <a href="#Serial-Communicate-with-Board-with-Bluetooth-Module-Add-On">rfcomm.conf</a>
 </p><ol>
@@ -1264,9 +1633,9 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 
 </div>
 
-<div id="outline-container-4-2" class="outline-3">
-<h3 id="sec-4-2"><span class="section-number-3">4.2</span> Communicate via SSH</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-5-2" class="outline-3">
+<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Communicate via SSH</h3>
+<div class="outline-text-3" id="text-5-2">
 
 
 
@@ -1278,9 +1647,9 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 
 </div>
 
-<div id="outline-container-4-3" class="outline-3">
-<h3 id="sec-4-3"><span class="section-number-3">4.3</span> Connect with SFTP for File Transfer</h3>
-<div class="outline-text-3" id="text-4-3">
+<div id="outline-container-5-3" class="outline-3">
+<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Connect with SFTP for File Transfer</h3>
+<div class="outline-text-3" id="text-5-3">
 
 
 
@@ -1320,28 +1689,28 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 
 </div>
 
-<div id="outline-container-4-4" class="outline-3">
-<h3 id="sec-4-4"><span class="section-number-3">4.4</span> Send Files via SCP</h3>
-<div class="outline-text-3" id="text-4-4">
+<div id="outline-container-5-4" class="outline-3">
+<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Send Files via SCP</h3>
+<div class="outline-text-3" id="text-5-4">
 
 
 </div>
 
-<div id="outline-container-4-4-1" class="outline-4">
-<h4 id="sec-4-4-1"><span class="section-number-4">4.4.1</span> Overview</h4>
-<div class="outline-text-4" id="text-4-4-1">
+<div id="outline-container-5-4-1" class="outline-4">
+<h4 id="sec-5-4-1"><span class="section-number-4">5.4.1</span> Overview</h4>
+<div class="outline-text-4" id="text-5-4-1">
 
 <p>scp allows files to be copied to, from, or between different hosts. It uses ssh for data transfer and provides the same authentication and same level of security as ssh.
 </p></div>
 
 </div>
 
-<div id="outline-container-4-4-2" class="outline-4">
-<h4 id="sec-4-4-2"><span class="section-number-4">4.4.2</span> Examples</h4>
-<div class="outline-text-4" id="text-4-4-2">
+<div id="outline-container-5-4-2" class="outline-4">
+<h4 id="sec-5-4-2"><span class="section-number-4">5.4.2</span> Examples</h4>
+<div class="outline-text-4" id="text-5-4-2">
 
 <ul>
-<li id="sec-4-4-2-1">Copy the file "foobar.txt" from a remote host to the local host<br/>
+<li id="sec-5-4-2-1">Copy the file "foobar.txt" from a remote host to the local host<br/>
 
 
 
@@ -1351,7 +1720,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-2-2">Copy the file "foobar.txt" from the local host to a remote host<br/>
+<li id="sec-5-4-2-2">Copy the file "foobar.txt" from the local host to a remote host<br/>
 
 
 
@@ -1361,7 +1730,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-2-3">Copy the directory "foo" from the local host to a remote host's directory "bar"<br/>
+<li id="sec-5-4-2-3">Copy the directory "foo" from the local host to a remote host's directory "bar"<br/>
 
 
 
@@ -1371,7 +1740,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-2-4">Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"<br/>
+<li id="sec-5-4-2-4">Copy the file "foobar.txt" from remote host "rh1.edu" to remote host "rh2.edu"<br/>
 
 
 
@@ -1381,7 +1750,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-2-5">Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host<br/>
+<li id="sec-5-4-2-5">Copying the files "foo.txt" and "bar.txt" from the local host to your home directory on the remote host<br/>
 
 
 
@@ -1391,7 +1760,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-2-6">Copy the file "foobar.txt" from the local host to a remote host using port 2264<br/>
+<li id="sec-5-4-2-6">Copy the file "foobar.txt" from the local host to a remote host using port 2264<br/>
 
 
 
@@ -1401,7 +1770,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-2-7">Copy multiple files from the remote host to your current directory on the local host<br/>
+<li id="sec-5-4-2-7">Copy multiple files from the remote host to your current directory on the local host<br/>
 
 
 
@@ -1413,7 +1782,7 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 </li>
 </ul>
 <ul>
-<li id="sec-4-4-2-8">Receive and Entire Directory<br/>
+<li id="sec-5-4-2-8">Receive and Entire Directory<br/>
 
 
 
@@ -1426,9 +1795,9 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 </div>
 
-<div id="outline-container-4-4-3" class="outline-4">
-<h4 id="sec-4-4-3"><span class="section-number-4">4.4.3</span> Links</h4>
-<div class="outline-text-4" id="text-4-4-3">
+<div id="outline-container-5-4-3" class="outline-4">
+<h4 id="sec-5-4-3"><span class="section-number-4">5.4.3</span> Links</h4>
+<div class="outline-text-4" id="text-5-4-3">
 
 <ul>
 <li><a href="http://www.hypexr.org/linux_scp_help.php">http://www.hypexr.org/linux_scp_help.php</a>
@@ -1440,9 +1809,9 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 </div>
 
-<div id="outline-container-4-5" class="outline-3">
-<h3 id="sec-4-5"><span class="section-number-3">4.5</span> Check Remaining Space on Hard Drive</h3>
-<div class="outline-text-3" id="text-4-5">
+<div id="outline-container-5-5" class="outline-3">
+<h3 id="sec-5-5"><span class="section-number-3">5.5</span> Check Remaining Space on Hard Drive</h3>
+<div class="outline-text-3" id="text-5-5">
 
 
 
@@ -1454,16 +1823,16 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 </div>
 
-<div id="outline-container-4-6" class="outline-3">
-<h3 id="sec-4-6"><span class="section-number-3">4.6</span> Sync Files with rsync</h3>
-<div class="outline-text-3" id="text-4-6">
+<div id="outline-container-5-6" class="outline-3">
+<h3 id="sec-5-6"><span class="section-number-3">5.6</span> Sync Files with rsync</h3>
+<div class="outline-text-3" id="text-5-6">
 
 
 </div>
 
-<div id="outline-container-4-6-1" class="outline-4">
-<h4 id="sec-4-6-1"><span class="section-number-4">4.6.1</span> Sync a Directory From Host To Device</h4>
-<div class="outline-text-4" id="text-4-6-1">
+<div id="outline-container-5-6-1" class="outline-4">
+<h4 id="sec-5-6-1"><span class="section-number-4">5.6.1</span> Sync a Directory From Host To Device</h4>
+<div class="outline-text-4" id="text-5-6-1">
 
 <p>/ will not modify host directory /
 </p>
@@ -1476,9 +1845,9 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 </div>
 
-<div id="outline-container-4-6-2" class="outline-4">
-<h4 id="sec-4-6-2"><span class="section-number-4">4.6.2</span> Links</h4>
-<div class="outline-text-4" id="text-4-6-2">
+<div id="outline-container-5-6-2" class="outline-4">
+<h4 id="sec-5-6-2"><span class="section-number-4">5.6.2</span> Links</h4>
+<div class="outline-text-4" id="text-5-6-2">
 
 <ul>
 <li><a href="http://mike-hostetler.com/blog/2007/12/08/rsync-non-standard-ssh-port/">http://mike-hostetler.com/blog/2007/12/08/rsync-non-standard-ssh-port/</a>
@@ -1492,9 +1861,9 @@ scp -P 22122 root@192.168.12.200:~/<span style="color: #ffc1c1;">\{</span>foo.tx
 
 </div>
 
-<div id="outline-container-4-7" class="outline-3">
-<h3 id="sec-4-7"><span class="section-number-3">4.7</span> Building Projects with Qmake</h3>
-<div class="outline-text-3" id="text-4-7">
+<div id="outline-container-5-7" class="outline-3">
+<h3 id="sec-5-7"><span class="section-number-3">5.7</span> Building Projects with Qmake</h3>
+<div class="outline-text-3" id="text-5-7">
 
 <ol>
 <li>Build Project
@@ -1517,16 +1886,16 @@ make
 
 </div>
 
-<div id="outline-container-4-8" class="outline-3">
-<h3 id="sec-4-8"><span class="section-number-3">4.8</span> Backups</h3>
-<div class="outline-text-3" id="text-4-8">
+<div id="outline-container-5-8" class="outline-3">
+<h3 id="sec-5-8"><span class="section-number-3">5.8</span> Backups</h3>
+<div class="outline-text-3" id="text-5-8">
 
 
 </div>
 
-<div id="outline-container-4-8-1" class="outline-4">
-<h4 id="sec-4-8-1"><span class="section-number-4">4.8.1</span> Backup the SD Card</h4>
-<div class="outline-text-4" id="text-4-8-1">
+<div id="outline-container-5-8-1" class="outline-4">
+<h4 id="sec-5-8-1"><span class="section-number-4">5.8.1</span> Backup the SD Card</h4>
+<div class="outline-text-4" id="text-5-8-1">
 
 <ol>
 <li>Navigate to backup directoryhttp://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi
@@ -1553,9 +1922,9 @@ make
 
 </div>
 
-<div id="outline-container-4-8-2" class="outline-4">
-<h4 id="sec-4-8-2"><span class="section-number-4">4.8.2</span> Restore the SD Card</h4>
-<div class="outline-text-4" id="text-4-8-2">
+<div id="outline-container-5-8-2" class="outline-4">
+<h4 id="sec-5-8-2"><span class="section-number-4">5.8.2</span> Restore the SD Card</h4>
+<div class="outline-text-4" id="text-5-8-2">
 
 <ol>
 <li>insert unmounted card
@@ -1574,9 +1943,9 @@ make
 
 </div>
 
-<div id="outline-container-4-8-3" class="outline-4">
-<h4 id="sec-4-8-3"><span class="section-number-4">4.8.3</span> Backup Data to Web Storage</h4>
-<div class="outline-text-4" id="text-4-8-3">
+<div id="outline-container-5-8-3" class="outline-4">
+<h4 id="sec-5-8-3"><span class="section-number-4">5.8.3</span> Backup Data to Web Storage</h4>
+<div class="outline-text-4" id="text-5-8-3">
 
 
 
@@ -1588,12 +1957,12 @@ make
 
 </div>
 
-<div id="outline-container-4-8-4" class="outline-4">
-<h4 id="sec-4-8-4"><span class="section-number-4">4.8.4</span> Links</h4>
-<div class="outline-text-4" id="text-4-8-4">
+<div id="outline-container-5-8-4" class="outline-4">
+<h4 id="sec-5-8-4"><span class="section-number-4">5.8.4</span> Links</h4>
+<div class="outline-text-4" id="text-5-8-4">
 
 <ul>
-<li id="sec-4-8-4-1">How do I make a Backup of my Rasberry Pi <a href="http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi">{Link}</a><br/>
+<li id="sec-5-8-4-1">How do I make a Backup of my Rasberry Pi <a href="http://raspberrypi.stackexchange.com/questions/311/how-do-i-backup-my-raspberry-pi">{Link}</a><br/>
 <ol>
 <li>Make a full backup of the image
 <ul>
@@ -1649,16 +2018,16 @@ make
 
 </div>
 
-<div id="outline-container-5" class="outline-2">
-<h2 id="sec-5"><span class="section-number-2">5</span> HOWTO</h2>
-<div class="outline-text-2" id="text-5">
+<div id="outline-container-6" class="outline-2">
+<h2 id="sec-6"><span class="section-number-2">6</span> HOWTO</h2>
+<div class="outline-text-2" id="text-6">
 
 
 </div>
 
-<div id="outline-container-5-1" class="outline-3">
-<h3 id="sec-5-1"><span class="section-number-3">5.1</span> Obtain Hardware</h3>
-<div class="outline-text-3" id="text-5-1">
+<div id="outline-container-6-1" class="outline-3">
+<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Obtain Hardware</h3>
+<div class="outline-text-3" id="text-6-1">
 
 <p>The hardware used in this guide:
 </p><ul>
@@ -1672,16 +2041,16 @@ make
 
 </div>
 
-<div id="outline-container-5-2" class="outline-3">
-<h3 id="sec-5-2"><span class="section-number-3">5.2</span> Copy Debian Image to SD Card</h3>
-<div class="outline-text-3" id="text-5-2">
+<div id="outline-container-6-2" class="outline-3">
+<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Copy Debian Image to SD Card</h3>
+<div class="outline-text-3" id="text-6-2">
 
 
 </div>
 
-<div id="outline-container-5-2-1" class="outline-4">
-<h4 id="sec-5-2-1"><span class="section-number-4">5.2.1</span> Overview</h4>
-<div class="outline-text-4" id="text-5-2-1">
+<div id="outline-container-6-2-1" class="outline-4">
+<h4 id="sec-6-2-1"><span class="section-number-4">6.2.1</span> Overview</h4>
+<div class="outline-text-4" id="text-6-2-1">
 
 <ul>
 <li>I am installing a Debian Image found <a href="https://www.olimex.com/wiki/Prebuilt_SD_card_images_running_debian">here</a>.
@@ -1698,9 +2067,9 @@ make
 
 </div>
 
-<div id="outline-container-5-2-2" class="outline-4">
-<h4 id="sec-5-2-2"><span class="section-number-4">5.2.2</span> Steps</h4>
-<div class="outline-text-4" id="text-5-2-2">
+<div id="outline-container-6-2-2" class="outline-4">
+<h4 id="sec-6-2-2"><span class="section-number-4">6.2.2</span> Steps</h4>
+<div class="outline-text-4" id="text-6-2-2">
 
 <ol>
 <li>Download Debian Image
@@ -1732,9 +2101,9 @@ make
 
 </div>
 
-<div id="outline-container-5-2-3" class="outline-4">
-<h4 id="sec-5-2-3"><span class="section-number-4">5.2.3</span> Links</h4>
-<div class="outline-text-4" id="text-5-2-3">
+<div id="outline-container-6-2-3" class="outline-4">
+<h4 id="sec-6-2-3"><span class="section-number-4">6.2.3</span> Links</h4>
+<div class="outline-text-4" id="text-6-2-3">
 
 <ul>
 <li><a href="http://www.cnx-software.com/2012/12/21/olimex-a13-olinuxino-micro-development-board-unboxing-and-review/">http://www.cnx-software.com/2012/12/21/olimex-a13-olinuxino-micro-development-board-unboxing-and-review/</a>
@@ -1748,16 +2117,16 @@ make
 
 </div>
 
-<div id="outline-container-5-3" class="outline-3">
-<h3 id="sec-5-3"><span class="section-number-3">5.3</span> Configure Touchscreen (script.bin)</h3>
-<div class="outline-text-3" id="text-5-3">
+<div id="outline-container-6-3" class="outline-3">
+<h3 id="sec-6-3"><span class="section-number-3">6.3</span> Configure Touchscreen (script.bin)</h3>
+<div class="outline-text-3" id="text-6-3">
 
 
 </div>
 
-<div id="outline-container-5-3-1" class="outline-4">
-<h4 id="sec-5-3-1"><span class="section-number-4">5.3.1</span> Overview</h4>
-<div class="outline-text-4" id="text-5-3-1">
+<div id="outline-container-6-3-1" class="outline-4">
+<h4 id="sec-6-3-1"><span class="section-number-4">6.3.1</span> Overview</h4>
+<div class="outline-text-4" id="text-6-3-1">
 
 <ul>
 <li>The script.bin will determine what display can be used.
@@ -1770,9 +2139,9 @@ make
 
 </div>
 
-<div id="outline-container-5-3-2" class="outline-4">
-<h4 id="sec-5-3-2"><span class="section-number-4">5.3.2</span> Steps</h4>
-<div class="outline-text-4" id="text-5-3-2">
+<div id="outline-container-6-3-2" class="outline-4">
+<h4 id="sec-6-3-2"><span class="section-number-4">6.3.2</span> Steps</h4>
+<div class="outline-text-4" id="text-6-3-2">
 
 <ol>
 <li>Create LCD script directory
@@ -1820,9 +2189,9 @@ cp script.bin script.bin.BAK
 
 </div>
 
-<div id="outline-container-5-3-3" class="outline-4">
-<h4 id="sec-5-3-3"><span class="section-number-4">5.3.3</span> Links</h4>
-<div class="outline-text-4" id="text-5-3-3">
+<div id="outline-container-6-3-3" class="outline-4">
+<h4 id="sec-6-3-3"><span class="section-number-4">6.3.3</span> Links</h4>
+<div class="outline-text-4" id="text-6-3-3">
 
 <ul>
 <li><a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">Olimex.com Wiki: Configuration of hardware in the Debian Image</a>
@@ -1834,16 +2203,16 @@ cp script.bin script.bin.BAK
 
 </div>
 
-<div id="outline-container-5-4" class="outline-3">
-<h3 id="sec-5-4"><span class="section-number-3">5.4</span> Modifying the script.bin file (Optional)</h3>
-<div class="outline-text-3" id="text-5-4">
+<div id="outline-container-6-4" class="outline-3">
+<h3 id="sec-6-4"><span class="section-number-3">6.4</span> Modifying the script.bin file (Optional)</h3>
+<div class="outline-text-3" id="text-6-4">
 
 
 </div>
 
-<div id="outline-container-5-4-1" class="outline-4">
-<h4 id="sec-5-4-1"><span class="section-number-4">5.4.1</span> Overview</h4>
-<div class="outline-text-4" id="text-5-4-1">
+<div id="outline-container-6-4-1" class="outline-4">
+<h4 id="sec-6-4-1"><span class="section-number-4">6.4.1</span> Overview</h4>
+<div class="outline-text-4" id="text-6-4-1">
 
 <ul>
 <li>The bin2fex and fex2bin program supplied by Olimex can be used to convert the script.bin binary file to a readable/editable text file, which can then be modified and converted back into a script.bin binary file.
@@ -1854,9 +2223,9 @@ cp script.bin script.bin.BAK
 
 </div>
 
-<div id="outline-container-5-4-2" class="outline-4">
-<h4 id="sec-5-4-2"><span class="section-number-4">5.4.2</span> Installation</h4>
-<div class="outline-text-4" id="text-5-4-2">
+<div id="outline-container-6-4-2" class="outline-4">
+<h4 id="sec-6-4-2"><span class="section-number-4">6.4.2</span> Installation</h4>
+<div class="outline-text-4" id="text-6-4-2">
 
 <ol>
 <li>extract A13 tar file
@@ -1891,12 +2260,12 @@ make -k
 
 </div>
 
-<div id="outline-container-5-4-3" class="outline-4">
-<h4 id="sec-5-4-3"><span class="section-number-4">5.4.3</span> General Usage</h4>
-<div class="outline-text-4" id="text-5-4-3">
+<div id="outline-container-6-4-3" class="outline-4">
+<h4 id="sec-6-4-3"><span class="section-number-4">6.4.3</span> General Usage</h4>
+<div class="outline-text-4" id="text-6-4-3">
 
 <ul>
-<li id="sec-5-4-3-1">Using bin2fex<br/>
+<li id="sec-6-4-3-1">Using bin2fex<br/>
 <ul>
 <li>First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
 
@@ -1918,7 +2287,7 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-3-2">Using fex2bin<br/>
+<li id="sec-6-4-3-2">Using fex2bin<br/>
 <ul>
 <li>To convert back, it's simply the reverse:
 
@@ -1942,14 +2311,14 @@ make -k
 
 </div>
 
-<div id="outline-container-5-4-4" class="outline-4">
-<h4 id="sec-5-4-4"><span class="section-number-4">5.4.4</span> Errors</h4>
-<div class="outline-text-4" id="text-5-4-4">
+<div id="outline-container-6-4-4" class="outline-4">
+<h4 id="sec-6-4-4"><span class="section-number-4">6.4.4</span> Errors</h4>
+<div class="outline-text-4" id="text-6-4-4">
 
 <ul>
-<li id="sec-5-4-4-1">INIT: cannot execute "/sbin/getty"<br/>
+<li id="sec-6-4-4-1">INIT: cannot execute "/sbin/getty"<br/>
 <ul>
-<li id="sec-5-4-4-1-1">Description<br/>
+<li id="sec-6-4-4-1-1">Description<br/>
 <ul>
 <li>During boot, serial connaction outputs error:
 
@@ -1964,7 +2333,7 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-4-1-2">Probable Cause<br/>
+<li id="sec-6-4-4-1-2">Probable Cause<br/>
 <ul>
 <li>The util-linux is not installed
 </li>
@@ -1979,16 +2348,16 @@ make -k
 
 </div>
 
-<div id="outline-container-5-4-5" class="outline-4">
-<h4 id="sec-5-4-5"><span class="section-number-4">5.4.5</span> Links</h4>
-<div class="outline-text-4" id="text-5-4-5">
+<div id="outline-container-6-4-5" class="outline-4">
+<h4 id="sec-6-4-5"><span class="section-number-4">6.4.5</span> Links</h4>
+<div class="outline-text-4" id="text-6-4-5">
 
 <ul>
-<li id="sec-5-4-5-1">Configuration of hardware in the debian image <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
+<li id="sec-6-4-5-1">Configuration of hardware in the debian image <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
 <ul>
-<li id="sec-5-4-5-1-1">Tools<br/>
+<li id="sec-6-4-5-1-1">Tools<br/>
 <ul>
-<li id="sec-5-4-5-1-1-1">Script file<br/>
+<li id="sec-6-4-5-1-1-1">Script file<br/>
 <ul>
 <li>The script.bin is a text file with very important configuration parameters like port GPIO assignments, DDR memory parameters, Video resolution etc, by changing these parameters in the script.bin you can configure your Linux without need to re-compile your kernel again and again this is smart way Allwinner provides for tweaking A13 Linux Kernel
 </li>
@@ -1997,7 +2366,7 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-1-1-2">fex<br/>
+<li id="sec-6-4-5-1-1-2">fex<br/>
 <ul>
 <li>The fex tool will convert a script.bin file to a text file and back again.
 </li>
@@ -2009,7 +2378,7 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-1-1-3">Tools and script files<br/>
+<li id="sec-6-4-5-1-1-3">Tools and script files<br/>
 <ul>
 <li>A13 script bin and fex tool
 </li>
@@ -2034,14 +2403,14 @@ make -k
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-1-2">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480<br/>
+<li id="sec-6-4-5-1-2">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480<br/>
 <ul>
 <li>The default SD card setup is made with settings for VGA 800x600. If you want to switch between VGA 800x600 and LCD800x480 mode then you have to replace the existing script.bin file from the first SD card partitition (note that this partition is FAT - so you can replace the file under Windows or Linux) with the script.bin file from script_GPIO_VGA directory (if you want to change to VGA800x600 mode) or from script_GPIO_LCD_800x480 directory (if you want to change to LCD800x600 mode).
 </li>
 </ul>
 
 <ul>
-<li id="sec-5-4-5-1-2-1">Establish WIFI connection<br/>
+<li id="sec-6-4-5-1-2-1">Establish WIFI connection<br/>
 <ol>
 <li>plug in MOD-WIFI-RTL8188 if the board is not A13-OLinuXino-WIFI
 
@@ -2145,7 +2514,7 @@ reboot A13-OLinuXino board
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-1-2-2">Establish ethernet connection using USB-ETHERNET adapter recommended supported adapter USB-ETHERNET-AX88772B<br/>
+<li id="sec-6-4-5-1-2-2">Establish ethernet connection using USB-ETHERNET adapter recommended supported adapter USB-ETHERNET-AX88772B<br/>
 <ol>
 <li>plug in USB-ETHERNET-AX88772B adapter
 </li>
@@ -2250,7 +2619,7 @@ reboot A13-OLinuXino board
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-1-2-3">GPIO changing<br/>
+<li id="sec-6-4-5-1-2-3">GPIO changing<br/>
 <ol>
 <li>lsmod
 
@@ -2286,7 +2655,7 @@ reboot A13-OLinuXino board
 
 
 <ul>
-<li id="sec-5-4-5-1-2-3-1">Changing A13 GPIO direction<br/>
+<li id="sec-6-4-5-1-2-3-1">Changing A13 GPIO direction<br/>
 <ol>
 <li>extract fex2bin_bin2fex_tools on linux machine
 
@@ -2305,7 +2674,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-1-2-3-2">GPIOs are defined in the end.<br/>
+<li id="sec-6-4-5-1-2-3-2">GPIOs are defined in the end.<br/>
 <ul>
 <li>where
 
@@ -2339,9 +2708,9 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-2">fex2bin and bin2fex - script.bin <a href="http://www.imajeenyus.com/computer/20130301_android_tablet/android/fex2bin_etc.html">{Link}</a><br/>
+<li id="sec-6-4-5-2">fex2bin and bin2fex - script.bin <a href="http://www.imajeenyus.com/computer/20130301_android_tablet/android/fex2bin_etc.html">{Link}</a><br/>
 <ul>
-<li id="sec-5-4-5-2-1">Overview<br/>
+<li id="sec-6-4-5-2-1">Overview<br/>
 <ul>
 <li>During the boot process, the processor reads a file called script.bin, located in the bootloader (nanda) partition. This file contains all of the processor configuration details (such as pin functions, voltages, clock frequencies, memory configuration etc) and is essential to the correct operation of the tablet. The purpose of this file should be distinguished from that of build.prop, located in /system/build.prop. The latter is a configuration for Android, once it's started. script.bin is configuration for the processor.
 </li>
@@ -2375,7 +2744,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-2-2">Installation<br/>
+<li id="sec-6-4-5-2-2">Installation<br/>
 <ul>
 <li>To get the tools, go to the git repository at <a href="https://github.com/linux-sunxi/sunxi-tools/">https://github.com/linux-sunxi/sunxi-tools/</a> and download the ZIP file (called sunxi-tools-master.zip). Extract this, and place the folder on the Desktop of your Linux machine. Open a terminal, cd to the folder, then run
 
@@ -2396,7 +2765,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-2-3">Using bin2fex<br/>
+<li id="sec-6-4-5-2-3">Using bin2fex<br/>
 <ul>
 <li>First, get hold of the script.bin file located in the boot loader partition (do this by mounting either the RFSFAT16_BOOTLOADER_00000 from Livesuit, or the actual partition image from the tablet). Place it on the Desktop of your Ubuntu machine. Then, from a terminal on the Desktop, run:
 
@@ -2417,7 +2786,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-2-4">Using fex2bin<br/>
+<li id="sec-6-4-5-2-4">Using fex2bin<br/>
 <ul>
 <li>To convert back, it's simply the reverse:
 
@@ -2438,7 +2807,7 @@ gedit /mnt/sd/script_test.fex
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-2-5">Using fex2bin on the COMMON_SYS_CONFIG100000 LiveSuit file<br/>
+<li id="sec-6-4-5-2-5">Using fex2bin on the COMMON_SYS_CONFIG100000 LiveSuit file<br/>
 <ul>
 <li>You can use fex2bin to convert the COMMON_SYS_CONFIG100000 file from the unpacked LiveSuit image into a script.bin file. However, I initially got an error saying "E: CONFIG:696: invalid character at 27" or similar (which means line 696, character 27). Looking at the file, it turned out there were quotes missing at a certain point. Here's the original part of the file:
 
@@ -2466,7 +2835,7 @@ product_name             ="USB Flash Driver"
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-2-6">Which version ends up on the tablet?<br/>
+<li id="sec-6-4-5-2-6">Which version ends up on the tablet?<br/>
 <ul>
 <li>If you're eagle-eyed, you may notice something at this point. In the unpacked LiveSuit files, there are essentially two copies of script.bin. One is the human-readable COMMON_SYS_CONFIG100000 file, the other is the script.bin located within the RFSFAT16_BOOTLOADER_00000 image file. The two copies are identical (if you use fex2bin/bin2fex to convert between them, and remember the quotation marks). So, which one actually ends up on the tablet?
 </li>
@@ -2480,25 +2849,25 @@ product_name             ="USB Flash Driver"
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-3">imx233-olinuxino-with-lcd-4-3-and-touchscreen <a href="http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/">{Link}</a><br/>
+<li id="sec-6-4-5-3">imx233-olinuxino-with-lcd-4-3-and-touchscreen <a href="http://olimex.wordpress.com/2012/12/17/imx233-olinuxino-with-lcd-4-3-and-touchscreen/">{Link}</a><br/>
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-4">Product Info <a href="http://microcontrollershop.com/product_info.php?products_id=5557">{Link}</a><br/>
+<li id="sec-6-4-5-4">Product Info <a href="http://microcontrollershop.com/product_info.php?products_id=5557">{Link}</a><br/>
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-5">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
+<li id="sec-6-4-5-5">Changing A13-OLinuxino settings to VGA800x600 or LCD800x480 <a href="https://www.olimex.com/wiki/Configuration_of_hardware_in_the_debian_image">{Link}</a><br/>
 
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-6"><a href="http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/">http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/</a><br/>
+<li id="sec-6-4-5-6"><a href="http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/">http://olimex.wordpress.com/2012/12/19/a13-lcd7ts-support-in-linux/</a><br/>
 
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-7">(As of 1 March 2013, the current Debian build for this MICRO version does not yet support a touch panel.)<br/>
+<li id="sec-6-4-5-7">(As of 1 March 2013, the current Debian build for this MICRO version does not yet support a touch panel.)<br/>
 <ul>
 <li><a href="http://184.172.168.133-static.reverse.softlayer.com/product_info.php?cPath=&amp;products_id=5414">http://184.172.168.133-static.reverse.softlayer.com/product_info.php?cPath=&amp;products_id=5414</a>
 </li>
@@ -2507,7 +2876,7 @@ product_name             ="USB Flash Driver"
 </li>
 </ul>
 <ul>
-<li id="sec-5-4-5-8"><a href="https://www.olimex.com/forum/index.php?topic=753.0">How to make 7" LCD Screen working on the A13Micro with Debian or Custom distrib?</a><br/>
+<li id="sec-6-4-5-8"><a href="https://www.olimex.com/forum/index.php?topic=753.0">How to make 7" LCD Screen working on the A13Micro with Debian or Custom distrib?</a><br/>
 </li>
 </ul>
 </div>
@@ -2515,21 +2884,21 @@ product_name             ="USB Flash Driver"
 
 </div>
 
-<div id="outline-container-5-5" class="outline-3">
-<h3 id="sec-5-5"><span class="section-number-3">5.5</span> Configure Debian</h3>
-<div class="outline-text-3" id="text-5-5">
+<div id="outline-container-6-5" class="outline-3">
+<h3 id="sec-6-5"><span class="section-number-3">6.5</span> Configure Debian</h3>
+<div class="outline-text-3" id="text-6-5">
 
 
 </div>
 
-<div id="outline-container-5-5-1" class="outline-4">
-<h4 id="sec-5-5-1"><span class="section-number-4">5.5.1</span> Configure Wireless (Dynamic IP Address)</h4>
-<div class="outline-text-4" id="text-5-5-1">
+<div id="outline-container-6-5-1" class="outline-4">
+<h4 id="sec-6-5-1"><span class="section-number-4">6.5.1</span> Configure Wireless (Dynamic IP Address)</h4>
+<div class="outline-text-4" id="text-6-5-1">
 
 <ul>
-<li id="sec-5-5-1-1">Steps<br/>
+<li id="sec-6-5-1-1">Steps<br/>
 <ul>
-<li id="sec-5-5-1-1-1">Determine Wireless Device<br/>
+<li id="sec-6-5-1-1-1">Determine Wireless Device<br/>
 
 
 
@@ -2545,7 +2914,7 @@ product_name             ="USB Flash Driver"
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-1-1-2">Configure /etc/network/interfaces as Root<br/>
+<li id="sec-6-5-1-1-2">Configure /etc/network/interfaces as Root<br/>
 
 
 
@@ -2559,7 +2928,7 @@ iface wlan3 inet dhcp
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-1-1-3">Restart the Networking Service<br/>
+<li id="sec-6-5-1-1-3">Restart the Networking Service<br/>
 
 
 
@@ -2570,7 +2939,7 @@ iface wlan3 inet dhcp
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-1-1-4">Test the Network<br/>
+<li id="sec-6-5-1-1-4">Test the Network<br/>
 
 
 
@@ -2584,7 +2953,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-1-2">Links<br/>
+<li id="sec-6-5-1-2">Links<br/>
 <ul>
 <li><a href="http://blog.tplus1.com/blog/2008/06/13/how-to-connect-to-a-wireless-network-from-the-ubuntu-command-line/">How to connect to a wireless network from the ubuntu command line</a>
 </li>
@@ -2598,14 +2967,14 @@ ping google.com
 
 </div>
 
-<div id="outline-container-5-5-2" class="outline-4">
-<h4 id="sec-5-5-2"><span class="section-number-4">5.5.2</span> Configure Static IP Address</h4>
-<div class="outline-text-4" id="text-5-5-2">
+<div id="outline-container-6-5-2" class="outline-4">
+<h4 id="sec-6-5-2"><span class="section-number-4">6.5.2</span> Configure Static IP Address</h4>
+<div class="outline-text-4" id="text-6-5-2">
 
 <ul>
-<li id="sec-5-5-2-1">Steps<br/>
+<li id="sec-6-5-2-1">Steps<br/>
 <ul>
-<li id="sec-5-5-2-1-1">Determine Information<br/>
+<li id="sec-6-5-2-1-1">Determine Information<br/>
 
 
 
@@ -2631,7 +3000,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-2-1-2">Modify /etc/network/interfaces as Root<br/>
+<li id="sec-6-5-2-1-2">Modify /etc/network/interfaces as Root<br/>
 
 
 
@@ -2647,7 +3016,7 @@ iface wlan3 inet static
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-2-1-3">Modify /etc/resolv.conf as Root<br/>
+<li id="sec-6-5-2-1-3">Modify /etc/resolv.conf as Root<br/>
 
 
 
@@ -2660,7 +3029,7 @@ nameserver 64.22.32.9
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-2-1-4">Restart Networking as Root<br/>
+<li id="sec-6-5-2-1-4">Restart Networking as Root<br/>
 
 
 
@@ -2670,7 +3039,7 @@ nameserver 64.22.32.9
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-2-1-5">Test Results<br/>
+<li id="sec-6-5-2-1-5">Test Results<br/>
 
 
 
@@ -2683,7 +3052,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-2-2">Links<br/>
+<li id="sec-6-5-2-2">Links<br/>
 <ul>
 <li><a href="http://www.howtoforge.com/linux-basics-set-a-static-ip-on-ubuntu">Linux Basics set a Static IP on Ubuntu</a>
 </li>
@@ -2695,12 +3064,12 @@ ping google.com
 
 </div>
 
-<div id="outline-container-5-5-3" class="outline-4">
-<h4 id="sec-5-5-3"><span class="section-number-4">5.5.3</span> Set Date</h4>
-<div class="outline-text-4" id="text-5-5-3">
+<div id="outline-container-6-5-3" class="outline-4">
+<h4 id="sec-6-5-3"><span class="section-number-4">6.5.3</span> Set Date</h4>
+<div class="outline-text-4" id="text-6-5-3">
 
 <ul>
-<li id="sec-5-5-3-1">Steps<br/>
+<li id="sec-6-5-3-1">Steps<br/>
 
 
 
@@ -2710,7 +3079,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-3-2">Links<br/>
+<li id="sec-6-5-3-2">Links<br/>
 <ul>
 <li><a href="http://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/">http://www.cyberciti.biz/faq/howto-set-date-time-from-linux-command-prompt/</a>
 </li>
@@ -2722,12 +3091,12 @@ ping google.com
 
 </div>
 
-<div id="outline-container-5-5-4" class="outline-4">
-<h4 id="sec-5-5-4"><span class="section-number-4">5.5.4</span> Set Keyboard Locale</h4>
-<div class="outline-text-4" id="text-5-5-4">
+<div id="outline-container-6-5-4" class="outline-4">
+<h4 id="sec-6-5-4"><span class="section-number-4">6.5.4</span> Set Keyboard Locale</h4>
+<div class="outline-text-4" id="text-6-5-4">
 
 <ul>
-<li id="sec-5-5-4-1">Overview<br/>
+<li id="sec-6-5-4-1">Overview<br/>
 <ul>
 <li>My keyboard layout was set to UK, which meant I typed things like &not; instead of ~ and &pound; instead of #.
 </li>
@@ -2738,7 +3107,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-4-2">Steps<br/>
+<li id="sec-6-5-4-2">Steps<br/>
 <ol>
 <li>Modify the keyboard locale
 
@@ -2761,7 +3130,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-4-3">Links<br/>
+<li id="sec-6-5-4-3">Links<br/>
 <ul>
 <li><a href="http://askubuntu.com/questions/155424/changing-keyboard-layout-in-ubuntu-12-04-server-command-line-interface">AskUbuntu.com: Changing keyboard layout in ubuntu 12.04 server command-line interface</a>
 </li>
@@ -2773,12 +3142,12 @@ ping google.com
 
 </div>
 
-<div id="outline-container-5-5-5" class="outline-4">
-<h4 id="sec-5-5-5"><span class="section-number-4">5.5.5</span> Install Programs</h4>
-<div class="outline-text-4" id="text-5-5-5">
+<div id="outline-container-6-5-5" class="outline-4">
+<h4 id="sec-6-5-5"><span class="section-number-4">6.5.5</span> Install Programs</h4>
+<div class="outline-text-4" id="text-6-5-5">
 
 <ul>
-<li id="sec-5-5-5-1">Steps<br/>
+<li id="sec-6-5-5-1">Steps<br/>
 <ol>
 <li>update packages 
 
@@ -2809,14 +3178,14 @@ ping google.com
 
 </div>
 
-<div id="outline-container-5-5-6" class="outline-4">
-<h4 id="sec-5-5-6"><span class="section-number-4">5.5.6</span> Configure SSH to start on Boot</h4>
-<div class="outline-text-4" id="text-5-5-6">
+<div id="outline-container-6-5-6" class="outline-4">
+<h4 id="sec-6-5-6"><span class="section-number-4">6.5.6</span> Configure SSH to start on Boot</h4>
+<div class="outline-text-4" id="text-6-5-6">
 
 <ul>
-<li id="sec-5-5-6-1">Steps<br/>
+<li id="sec-6-5-6-1">Steps<br/>
 <ul>
-<li id="sec-5-5-6-1-1">Install ssh server<br/>
+<li id="sec-6-5-6-1-1">Install ssh server<br/>
 
 
 
@@ -2826,7 +3195,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-6-1-2">Create or modify the /etc/init.d/sshd init script as follows:<br/>
+<li id="sec-6-5-6-1-2">Create or modify the /etc/init.d/sshd init script as follows:<br/>
 
 
 
@@ -2856,7 +3225,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-6-1-3">Check that /etc/rc3.d/S89sshd exists (or any sshd startup script exists) and is a soft link to /etc/init.d/sshd.<br/>
+<li id="sec-6-5-6-1-3">Check that /etc/rc3.d/S89sshd exists (or any sshd startup script exists) and is a soft link to /etc/init.d/sshd.<br/>
 <ul>
 <li>If not, create it using the following command:
 
@@ -2871,7 +3240,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-6-1-4">Determine that ssh is running<br/>
+<li id="sec-6-5-6-1-4">Determine that ssh is running<br/>
 
 
 
@@ -2881,7 +3250,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-6-1-5">Determine Port Open<br/>
+<li id="sec-6-5-6-1-5">Determine Port Open<br/>
 
 
 
@@ -2897,7 +3266,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-6-1-6">Determine IP Address to connect to<br/>
+<li id="sec-6-5-6-1-6">Determine IP Address to connect to<br/>
 
 
 
@@ -2908,7 +3277,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-6-1-7">Connect to ssh<br/>
+<li id="sec-6-5-6-1-7">Connect to ssh<br/>
 
 
 
@@ -2920,7 +3289,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-6-2">Debugging<br/>
+<li id="sec-6-5-6-2">Debugging<br/>
 <ul>
 <li>Check ports being listened on
 
@@ -2935,7 +3304,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-6-3">Links<br/>
+<li id="sec-6-5-6-3">Links<br/>
 <ul>
 <li><a href="http://publib.boulder.ibm.com/infocenter/tivihelp/v8r1/index.jsp?topic=%2Fcom.ibm.tnpm.doc%2Finstall%2Fttnpm_installguide_stepconfigureopensshservertostartuponsystemboot-14-12.html">Configure Open SSH Server To Start Up On System Boot</a>
 </li>
@@ -2949,12 +3318,12 @@ ping google.com
 
 </div>
 
-<div id="outline-container-5-5-7" class="outline-4">
-<h4 id="sec-5-5-7"><span class="section-number-4">5.5.7</span> Install XFCE (Optional)</h4>
-<div class="outline-text-4" id="text-5-5-7">
+<div id="outline-container-6-5-7" class="outline-4">
+<h4 id="sec-6-5-7"><span class="section-number-4">6.5.7</span> Install XFCE (Optional)</h4>
+<div class="outline-text-4" id="text-6-5-7">
 
 <ul>
-<li id="sec-5-5-7-1">Overview<br/>
+<li id="sec-6-5-7-1">Overview<br/>
 <ul>
 <li>Most of this guide is dedicated to setting up this micro-controller to run QT Embedded, which allows the use of graphical programs without runnng a graphical desktop (XFCE).  That being said it is possible to install one, I haven't worked on getting touchscreen support working with it, but Olimex has posted a few tutorials and it does work fine with a mouse.
 </li>
@@ -2963,7 +3332,7 @@ ping google.com
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-7-2">Steps<br/>
+<li id="sec-6-5-7-2">Steps<br/>
 
 
 
@@ -2977,17 +3346,17 @@ startx;
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-7-3">Links<br/>
+<li id="sec-6-5-7-3">Links<br/>
 <ul>
-<li id="sec-5-5-7-3-1">Installing GUI<br/>
+<li id="sec-6-5-7-3-1">Installing GUI<br/>
 <a href="http://lcncolinuxino.blogspot.com/p/installing-gui.html">http://lcncolinuxino.blogspot.com/p/installing-gui.html</a>
 <ul>
-<li id="sec-5-5-7-3-1-1">Overview<br/>
+<li id="sec-6-5-7-3-1-1">Overview<br/>
 Optionally if desired, a GUI user interface can be installed. This section describes how to install a small foot print xfce4 user interface.
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-7-3-1-2">Steps<br/>
+<li id="sec-6-5-7-3-1-2">Steps<br/>
 
 
 
@@ -3004,7 +3373,7 @@ startx;
 </li>
 </ul>
 <ul>
-<li id="sec-5-5-7-3-1-3">Links<br/>
+<li id="sec-6-5-7-3-1-3">Links<br/>
 <ul>
 <li>
 </li>
@@ -3022,31 +3391,31 @@ startx;
 
 </div>
 
-<div id="outline-container-5-6" class="outline-3">
-<h3 id="sec-5-6"><span class="section-number-3">5.6</span> Configure Serial Communication with Bluetooth Module</h3>
-<div class="outline-text-3" id="text-5-6">
+<div id="outline-container-6-6" class="outline-3">
+<h3 id="sec-6-6"><span class="section-number-3">6.6</span> Configure Serial Communication with Bluetooth Module</h3>
+<div class="outline-text-3" id="text-6-6">
 
 
 </div>
 
-<div id="outline-container-5-6-1" class="outline-4">
-<h4 id="sec-5-6-1"><span class="section-number-4">5.6.1</span> Communicate to Bluetooth</h4>
-<div class="outline-text-4" id="text-5-6-1">
+<div id="outline-container-6-6-1" class="outline-4">
+<h4 id="sec-6-6-1"><span class="section-number-4">6.6.1</span> Communicate to Bluetooth</h4>
+<div class="outline-text-4" id="text-6-6-1">
 
 <ul>
-<li id="sec-5-6-1-1">Connecting<br/>
+<li id="sec-6-6-1-1">Connecting<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-5-6-1-2">Installation<br/>
+<li id="sec-6-6-1-2">Installation<br/>
 <ul>
-<li id="sec-5-6-1-2-1">Connect to Linvar<br/>
+<li id="sec-6-6-1-2-1">Connect to Linvar<br/>
 Passphrase: 1234
 
 </li>
 </ul>
 <ul>
-<li id="sec-5-6-1-2-2"><a name="rfcomm" id="rfcomm"></a>Configure /etc/bluetooth/rfcomm.conf<br/>
+<li id="sec-6-6-1-2-2"><a name="rfcomm" id="rfcomm"></a>Configure /etc/bluetooth/rfcomm.conf<br/>
 
 
 
@@ -3073,7 +3442,7 @@ rfcomm0 {
 </li>
 </ul>
 <ul>
-<li id="sec-5-6-1-2-3">Restart Bluetooth<br/>
+<li id="sec-6-6-1-2-3">Restart Bluetooth<br/>
 
 
 
@@ -3084,13 +3453,13 @@ rfcomm0 {
 </li>
 </ul>
 <ul>
-<li id="sec-5-6-1-2-4">Determine the Hardware Address<br/>
+<li id="sec-6-6-1-2-4">Determine the Hardware Address<br/>
 The hardware address should be replaced with that of your phone. If you don't know the hardware address of your phone yet, you can get it by running:
 
 </li>
 </ul>
 <ul>
-<li id="sec-5-6-1-2-5">Bind the Address<br/>
+<li id="sec-6-6-1-2-5">Bind the Address<br/>
 
 
 
@@ -3102,7 +3471,7 @@ The hardware address should be replaced with that of your phone. If you don't kn
 </li>
 </ul>
 <ul>
-<li id="sec-5-6-1-3">Links<br/>
+<li id="sec-6-6-1-3">Links<br/>
 <ul>
 <li><a href="http://www.thinkwiki.org/wiki/How_to_setup_Bluetooth">How to setup Bluetooth</a>
 </li>
@@ -3114,18 +3483,18 @@ The hardware address should be replaced with that of your phone. If you don't kn
 
 </div>
 
-<div id="outline-container-5-6-2" class="outline-4">
-<h4 id="sec-5-6-2"><span class="section-number-4">5.6.2</span> Get Serial Over Linux</h4>
-<div class="outline-text-4" id="text-5-6-2">
+<div id="outline-container-6-6-2" class="outline-4">
+<h4 id="sec-6-6-2"><span class="section-number-4">6.6.2</span> Get Serial Over Linux</h4>
+<div class="outline-text-4" id="text-6-6-2">
 
 <ul>
-<li id="sec-5-6-2-1">Installation<br/>
+<li id="sec-6-6-2-1">Installation<br/>
 <ul>
-<li id="sec-5-6-2-1-1">Determine hardware a<br/>
+<li id="sec-6-6-2-1-1">Determine hardware a<br/>
 </li>
 </ul>
 <ul>
-<li id="sec-5-6-2-1-2">Modify /etc/bluetooth/rfcomm.conf as Root<br/>
+<li id="sec-6-6-2-1-2">Modify /etc/bluetooth/rfcomm.conf as Root<br/>
 
 
 
@@ -3147,7 +3516,7 @@ The hardware address should be replaced with that of your phone. If you don't kn
 </li>
 </ul>
 <ul>
-<li id="sec-5-6-2-1-3">Restart Bluetooth<br/>
+<li id="sec-6-6-2-1-3">Restart Bluetooth<br/>
 
 
 
@@ -3160,7 +3529,7 @@ The hardware address should be replaced with that of your phone. If you don't kn
 </li>
 </ul>
 <ul>
-<li id="sec-5-6-2-2">Connecting<br/>
+<li id="sec-6-6-2-2">Connecting<br/>
 <ol>
 <li>Initialize Connection
 
@@ -3185,7 +3554,7 @@ The hardware address should be replaced with that of your phone. If you don't kn
 </li>
 </ul>
 <ul>
-<li id="sec-5-6-2-3">Links<br/>
+<li id="sec-6-6-2-3">Links<br/>
 <ul>
 <li><a href="http://www.cyberciti.biz/hardware/5-linux-unix-commands-for-connecting-to-the-serial-console/">5 linux unix commands for connecting to the serial console</a>
 </li>
@@ -3200,16 +3569,16 @@ The hardware address should be replaced with that of your phone. If you don't kn
 
 </div>
 
-<div id="outline-container-5-7" class="outline-3">
-<h3 id="sec-5-7"><span class="section-number-3">5.7</span> Install ARM Toolchain with Buildroot</h3>
-<div class="outline-text-3" id="text-5-7">
+<div id="outline-container-6-7" class="outline-3">
+<h3 id="sec-6-7"><span class="section-number-3">6.7</span> Install ARM Toolchain with Buildroot</h3>
+<div class="outline-text-3" id="text-6-7">
 
 
 </div>
 
-<div id="outline-container-5-7-1" class="outline-4">
-<h4 id="sec-5-7-1"><span class="section-number-4">5.7.1</span> Steps</h4>
-<div class="outline-text-4" id="text-5-7-1">
+<div id="outline-container-6-7-1" class="outline-4">
+<h4 id="sec-6-7-1"><span class="section-number-4">6.7.1</span> Steps</h4>
+<div class="outline-text-4" id="text-6-7-1">
 
 <ol>
 <li>Download Buildroot
@@ -3290,9 +3659,9 @@ cp /etc/environment /etc/environment.BAK
 
 
 <ul>
-<li id="sec-5-7-1-1">Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"<br/>
+<li id="sec-6-7-1-1">Buildroot Toolchain Error: "error while loading shared libraries: libstdc++.so.6"<br/>
 <ul>
-<li id="sec-5-7-1-1-1">Error:<br/>
+<li id="sec-6-7-1-1-1">Error:<br/>
 <ul>
 <li>error while loading shared libraries: libstdc++.so.6: cannot open shared object file: No such file or directory
 </li>
@@ -3301,7 +3670,7 @@ cp /etc/environment /etc/environment.BAK
 </li>
 </ul>
 <ul>
-<li id="sec-5-7-1-1-2">Probable Cause<br/>
+<li id="sec-6-7-1-1-2">Probable Cause<br/>
 <ul>
 <li>Its looking for 32-bit library, which is not installed since I have a 64-bit system
 </li>
@@ -3310,7 +3679,7 @@ cp /etc/environment /etc/environment.BAK
 </li>
 </ul>
 <ul>
-<li id="sec-5-7-1-1-3">Solution<br/>
+<li id="sec-6-7-1-1-3">Solution<br/>
 <ul>
 <li>Install the 32 bit libraries
 </li>
@@ -3325,7 +3694,7 @@ cp /etc/environment /etc/environment.BAK
 </li>
 </ul>
 <ul>
-<li id="sec-5-7-1-1-4">Links<br/>
+<li id="sec-6-7-1-1-4">Links<br/>
 <ul>
 <li><a href="http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory">http://stackoverflow.com/questions/11471722/libstdc-so-6-cannot-open-shared-object-file-no-such-file-or-directory</a>
 </li>
@@ -3339,9 +3708,9 @@ cp /etc/environment /etc/environment.BAK
 
 </div>
 
-<div id="outline-container-5-7-2" class="outline-4">
-<h4 id="sec-5-7-2"><span class="section-number-4">5.7.2</span> Links</h4>
-<div class="outline-text-4" id="text-5-7-2">
+<div id="outline-container-6-7-2" class="outline-4">
+<h4 id="sec-6-7-2"><span class="section-number-4">6.7.2</span> Links</h4>
+<div class="outline-text-4" id="text-6-7-2">
 
 <ul>
 <li><a href="./doc/using-buildroot-real-project.pdf">Using buildroot for real projects</a>
@@ -3358,16 +3727,16 @@ cp /etc/environment /etc/environment.BAK
 
 </div>
 
-<div id="outline-container-5-8" class="outline-3">
-<h3 id="sec-5-8"><span class="section-number-3">5.8</span> Configure tslib on Device</h3>
-<div class="outline-text-3" id="text-5-8">
+<div id="outline-container-6-8" class="outline-3">
+<h3 id="sec-6-8"><span class="section-number-3">6.8</span> Configure tslib on Device</h3>
+<div class="outline-text-3" id="text-6-8">
 
 
 </div>
 
-<div id="outline-container-5-8-1" class="outline-4">
-<h4 id="sec-5-8-1"><span class="section-number-4">5.8.1</span> Overview</h4>
-<div class="outline-text-4" id="text-5-8-1">
+<div id="outline-container-6-8-1" class="outline-4">
+<h4 id="sec-6-8-1"><span class="section-number-4">6.8.1</span> Overview</h4>
+<div class="outline-text-4" id="text-6-8-1">
 
 
 
@@ -3387,9 +3756,9 @@ Here is a full step-by-step manual how to get the device works well under Debian
 
 </div>
 
-<div id="outline-container-5-8-2" class="outline-4">
-<h4 id="sec-5-8-2"><span class="section-number-4">5.8.2</span> Steps</h4>
-<div class="outline-text-4" id="text-5-8-2">
+<div id="outline-container-6-8-2" class="outline-4">
+<h4 id="sec-6-8-2"><span class="section-number-4">6.8.2</span> Steps</h4>
+<div class="outline-text-4" id="text-6-8-2">
 
 <ol>
 <li>Install make and automake
@@ -3506,14 +3875,14 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 
 </div>
 
-<div id="outline-container-5-8-3" class="outline-4">
-<h4 id="sec-5-8-3"><span class="section-number-4">5.8.3</span> Errors</h4>
-<div class="outline-text-4" id="text-5-8-3">
+<div id="outline-container-6-8-3" class="outline-4">
+<h4 id="sec-6-8-3"><span class="section-number-4">6.8.3</span> Errors</h4>
+<div class="outline-text-4" id="text-6-8-3">
 
 <ul>
-<li id="sec-5-8-3-1">undefined macro: AC_DISABLE_STATIC<br/>
+<li id="sec-6-8-3-1">undefined macro: AC_DISABLE_STATIC<br/>
 <ul>
-<li id="sec-5-8-3-1-1">Error Caused<br/>
+<li id="sec-6-8-3-1-1">Error Caused<br/>
 <ul>
 <li>while attempting to do "autoreconf -vi" when building tslib
 </li>
@@ -3522,7 +3891,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </li>
 </ul>
 <ul>
-<li id="sec-5-8-3-1-2">Error Message<br/>
+<li id="sec-6-8-3-1-2">Error Message<br/>
 
 
 
@@ -3534,7 +3903,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </li>
 </ul>
 <ul>
-<li id="sec-5-8-3-1-3">Solution<br/>
+<li id="sec-6-8-3-1-3">Solution<br/>
 
 
 
@@ -3544,7 +3913,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </li>
 </ul>
 <ul>
-<li id="sec-5-8-3-1-4">Links<br/>
+<li id="sec-6-8-3-1-4">Links<br/>
 <ul>
 <li><a href="http://www.friendlyarm.net/forum/topic/621">http://www.friendlyarm.net/forum/topic/621</a>
 </li>
@@ -3558,9 +3927,9 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 
 </div>
 
-<div id="outline-container-5-8-4" class="outline-4">
-<h4 id="sec-5-8-4"><span class="section-number-4">5.8.4</span> Test tslib Input Received from Touchscreen</h4>
-<div class="outline-text-4" id="text-5-8-4">
+<div id="outline-container-6-8-4" class="outline-4">
+<h4 id="sec-6-8-4"><span class="section-number-4">6.8.4</span> Test tslib Input Received from Touchscreen</h4>
+<div class="outline-text-4" id="text-6-8-4">
 
 
 
@@ -3572,9 +3941,9 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 
 </div>
 
-<div id="outline-container-5-8-5" class="outline-4">
-<h4 id="sec-5-8-5"><span class="section-number-4">5.8.5</span> Links</h4>
-<div class="outline-text-4" id="text-5-8-5">
+<div id="outline-container-6-8-5" class="outline-4">
+<h4 id="sec-6-8-5"><span class="section-number-4">6.8.5</span> Links</h4>
+<div class="outline-text-4" id="text-6-8-5">
 
 <ul>
 <li><a href="http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html">http://www.dimrobotics.com/2013/06/olinuxino-a13-touchscreen-support-in.html</a>
@@ -3588,19 +3957,19 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 
 </div>
 
-<div id="outline-container-5-9" class="outline-3">
-<h3 id="sec-5-9"><span class="section-number-3">5.9</span> Configure QT for Embedded Linux</h3>
-<div class="outline-text-3" id="text-5-9">
+<div id="outline-container-6-9" class="outline-3">
+<h3 id="sec-6-9"><span class="section-number-3">6.9</span> Configure QT for Embedded Linux</h3>
+<div class="outline-text-3" id="text-6-9">
 
 
 </div>
 
-<div id="outline-container-5-9-1" class="outline-4">
-<h4 id="sec-5-9-1"><span class="section-number-4">5.9.1</span> Steps</h4>
-<div class="outline-text-4" id="text-5-9-1">
+<div id="outline-container-6-9-1" class="outline-4">
+<h4 id="sec-6-9-1"><span class="section-number-4">6.9.1</span> Steps</h4>
+<div class="outline-text-4" id="text-6-9-1">
 
 <ul>
-<li id="sec-5-9-1-1">Install QT on Development Platform<br/>
+<li id="sec-6-9-1-1">Install QT on Development Platform<br/>
 <a href="http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/">http://suchakra.wordpress.com/2011/05/17/qt-on-mini2440/</a>
 
 
@@ -3611,7 +3980,7 @@ TSLIB_PLUGINDIR=/usr/lib/ts
 </li>
 </ul>
 <ul>
-<li id="sec-5-9-1-2">Install TSLIB on Development Platform<br/>
+<li id="sec-6-9-1-2">Install TSLIB on Development Platform<br/>
 <a href="http://billforums.station51.net/viewtopic.php?f=8&amp;t=15">http://billforums.station51.net/viewtopic.php?f=8&amp;t=15</a>
 
 
@@ -3646,9 +4015,9 @@ QMAKE_LIBDIR  += /usr/local/tslib/lib
 </li>
 </ul>
 <ul>
-<li id="sec-5-9-1-3">Install qt-everywhere on Development Platform<br/>
+<li id="sec-6-9-1-3">Install qt-everywhere on Development Platform<br/>
 <ul>
-<li id="sec-5-9-1-3-1">Steps<br/>
+<li id="sec-6-9-1-3-1">Steps<br/>
 <ol>
 <li>Install Source
 
@@ -3747,7 +4116,7 @@ make install
 </li>
 </ul>
 <ul>
-<li id="sec-5-9-1-3-2">Errors<br/>
+<li id="sec-6-9-1-3-2">Errors<br/>
 <ul>
 <li><i>opt/ext_toolchain/bin</i>../lib/gcc/arm-linux-gnueabihf/4.7.3/../../../../arm-linux-gnueabihf/bin/ld: cannot find -lbootstrap
 </li>
@@ -3759,9 +4128,9 @@ make install
 </li>
 </ul>
 <ul>
-<li id="sec-5-9-1-4">Copy Libraries Over to Device<br/>
+<li id="sec-6-9-1-4">Copy Libraries Over to Device<br/>
 <ul>
-<li id="sec-5-9-1-4-1">Steps<br/>
+<li id="sec-6-9-1-4-1">Steps<br/>
 <ol>
 <li>Copy qt libraries to device.
 
@@ -3821,7 +4190,7 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </li>
 </ul>
 <ul>
-<li id="sec-5-9-1-4-2">Warning<br/>
+<li id="sec-6-9-1-4-2">Warning<br/>
 <ul>
 <li>/dev/input/event# may change depending on the ordering and number of USB inputs you have plugged in.
 </li>
@@ -3845,9 +4214,9 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 
 </div>
 
-<div id="outline-container-5-9-2" class="outline-4">
-<h4 id="sec-5-9-2"><span class="section-number-4">5.9.2</span> Links</h4>
-<div class="outline-text-4" id="text-5-9-2">
+<div id="outline-container-6-9-2" class="outline-4">
+<h4 id="sec-6-9-2"><span class="section-number-4">6.9.2</span> Links</h4>
+<div class="outline-text-4" id="text-6-9-2">
 
 <ul>
 <li><a href="http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux">http://qt-project.org/wiki/Building_Qt_for_Embedded_Linux</a>
@@ -3885,75 +4254,342 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 
 </div>
 
-<div id="outline-container-6" class="outline-2">
-<h2 id="sec-6"><span class="section-number-2">6</span> Simple Sample Programs</h2>
-<div class="outline-text-2" id="text-6">
+<div id="outline-container-7" class="outline-2">
+<h2 id="sec-7"><span class="section-number-2">7</span> Simple Sample Programs</h2>
+<div class="outline-text-2" id="text-7">
 
 
 </div>
 
-<div id="outline-container-6-1" class="outline-3">
-<h3 id="sec-6-1"><span class="section-number-3">6.1</span> Burgler</h3>
-<div class="outline-text-3" id="text-6-1">
+<div id="outline-container-7-1" class="outline-3">
+<h3 id="sec-7-1"><span class="section-number-3">7.1</span> Burgler</h3>
+<div class="outline-text-3" id="text-7-1">
 
 
 </div>
 
-<div id="outline-container-6-1-1" class="outline-4">
-<h4 id="sec-6-1-1"><span class="section-number-4">6.1.1</span> Source</h4>
-<div class="outline-text-4" id="text-6-1-1">
+<div id="outline-container-7-1-1" class="outline-4">
+<h4 id="sec-7-1-1"><span class="section-number-4">7.1.1</span> Source</h4>
+<div class="outline-text-4" id="text-7-1-1">
 
 <ul>
-<li id="sec-6-1-1-1">MainWindow.cpp<br/>
+<li id="sec-7-1-1-1">MainWindow.cpp<br/>
 
 
 
-<pre class="src src-cpp"><span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
+<pre class="src src-cpp"><span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @file mainwindow.cpp</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief A basic 5 channel controller program.</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> *  The program allows a person to turn a light on and off, as well as control 5</span>
+<span style="color: #ff7f24; font-style: italic;"> *  channels.</span>
+<span style="color: #ff7f24; font-style: italic;"> *  </span>
+<span style="color: #ff7f24; font-style: italic;"> *  @title Burgler</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @author Nicholas Guthrie</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @web http//nickguthrie.com</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @created July 23, 2013</span>
+<span style="color: #ff7f24; font-style: italic;"> * </span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> * This program is free software: you can redistribute it and/or modify it under</span>
+<span style="color: #ff7f24; font-style: italic;"> * the terms of the GNU General Public License as published by the Free Software</span>
+<span style="color: #ff7f24; font-style: italic;"> * Foundation, either version 3 of the License, or (at your option) any later</span>
+<span style="color: #ff7f24; font-style: italic;"> * version.</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> * This program is distributed in the hope that it will be useful, but WITHOUT</span>
+<span style="color: #ff7f24; font-style: italic;"> * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS</span>
+<span style="color: #ff7f24; font-style: italic;"> * FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more</span>
+<span style="color: #ff7f24; font-style: italic;"> * details.</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> * You should have received a copy of the GNU General Public License along with</span>
+<span style="color: #ff7f24; font-style: italic;"> * this program.  If not, see &lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">------------------------------------------------------------------ :Libraries:</span>
+<span style="color: #fa8072;">//                      </span><span style="color: #ff7f24; font-style: italic;">_    _ _                 _        </span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">| |  (_) |__ _ _ __ _ _ _(_)___ ___</span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">| |__| | '_ \ '_/ _` | '_| / -_|_-&lt;</span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">|____|_|_.__/_| \__,_|_| |_\___/__/</span>
+<span style="color: #fa8072;">//                                                        </span>
+<span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">-----------------------------------------------------------------------------</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"channel.h"</span>
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"ui_mainwindow.h"</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QTimer&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;string&gt;</span>
 
+<span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">--------------------------------------------------------------------- :Global:</span>
+<span style="color: #fa8072;">//                            </span><span style="color: #ff7f24; font-style: italic;">___ _     _          _ </span>
+<span style="color: #fa8072;">//                           </span><span style="color: #ff7f24; font-style: italic;">/ __| |___| |__  __ _| |</span>
+<span style="color: #fa8072;">//                          </span><span style="color: #ff7f24; font-style: italic;">| (_ | / _ \ '_ \/ _` | |</span>
+<span style="color: #fa8072;">//                           </span><span style="color: #ff7f24; font-style: italic;">\___|_\___/_.__/\__,_|_|</span>
+<span style="color: #fa8072;">//                                                   </span>
+<span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">-----------------------------------------------------------------------------</span>
 <span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #7fffd4;">INCRAMENT</span> 10
+<span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #7fffd4;">NUM_CHAN</span> 5
 
 <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">PUSHED</span>;
+<span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">mode</span>;
+channel * cholder;
 
 <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">MainWindow</span>(<span style="color: #63b8ff;">QWidget</span> *<span style="color: #7fffd4;">parent</span>) :
     QMainWindow(parent),
     ui(<span style="color: #00ffff;">new</span> <span style="color: #8470ff; font-weight: bold;">Ui</span>::<span style="color: #63b8ff;">MainWindow</span>)
 {
     PUSHED = 0;
-    ui-&gt;setupUi(<span style="color: #00ffff;">this</span>);
-    ui-&gt;progressBar-&gt;setValue(1);
-    ui-&gt;progressBar-&gt;setRange(-1,101);
+    ui-&gt;setupUi(<span style="color: #00ffff;">this</span>); 
 
+    <span style="color: #fa8072;">////////////////////////////////////////</span>
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Sliders - Connect sliders to LCD</span>
+    <span style="color: #fa8072;">////////////////////////////////////////</span>
     <span style="color: #fa8072;">/*</span><span style="color: #ff7f24; font-style: italic;">connect(ui-&gt;verticalSlider,SIGNAL(valueChanged(int)),</span>
 <span style="color: #ff7f24; font-style: italic;">      ui-&gt;progressBar,SLOT(setValue(int))); */</span>
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">connect(ui-&gt;hslider_01, SIGNAL(valueChanged(int)),</span>
+    <span style="color: #fa8072;">//      </span><span style="color: #ff7f24; font-style: italic;">ui-&gt;lcd_01, SLOT(display(int)));</span>
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">connect(ui-&gt;hslider_02, SIGNAL(valueChanged(int)),</span>
+    <span style="color: #fa8072;">//      </span><span style="color: #ff7f24; font-style: italic;">ui-&gt;lcd_02, SLOT(display(int)));</span>
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">connect(ui-&gt;hslider_03, SIGNAL(valueChanged(int)),</span>
+    <span style="color: #fa8072;">//      </span><span style="color: #ff7f24; font-style: italic;">ui-&gt;lcd_03, SLOT(display(int)));</span>
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">connect(ui-&gt;hslider_04, SIGNAL(valueChanged(int)),</span>
+    <span style="color: #fa8072;">//      </span><span style="color: #ff7f24; font-style: italic;">ui-&gt;lcd_04, SLOT(display(int)));</span>
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">connect(ui-&gt;hslider_05, SIGNAL(valueChanged(int)),</span>
+    <span style="color: #fa8072;">//      </span><span style="color: #ff7f24; font-style: italic;">ui-&gt;lcd_05, SLOT(display(int)));</span>
 
+    <span style="color: #fa8072;">////////////////////////////////////////</span>
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Channels</span>
+    <span style="color: #fa8072;">////////////////////////////////////////</span>
+    cholder = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">channel</span>[NUM_CHAN];
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Testing</span>
+    <span style="color: #00ffff;">for</span>( <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">i</span>=0; i&lt;NUM_CHAN; i++ )
+    {
+        mode = i;
+        cholder[i].set_value(i+50);
+        UpdateLCD();
+    }
+
+
+    <span style="color: #fa8072;">////////////////////////////////////////</span>
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Button Incramenting</span>
+    <span style="color: #fa8072;">////////////////////////////////////////</span>
+    number = 0;
+    timerTimeout = 0;
+    timer = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QTimer</span>(<span style="color: #00ffff;">this</span>);
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Incrament Button Connections</span>
+    connect(timer, <span style="color: #63b8ff;">SIGNAL</span>(<span style="color: #7fffd4;">timeout</span>()), <span style="color: #00ffff;">this</span>, <span style="color: #63b8ff;">SLOT</span>(<span style="color: #7fffd4;">doIncrement</span>()));
+    connect(ui-&gt;pb_value_incrament, <span style="color: #63b8ff;">SIGNAL</span>(<span style="color: #7fffd4;">pressed</span>()), <span style="color: #00ffff;">this</span>, <span style="color: #63b8ff;">SLOT</span>(<span style="color: #7fffd4;">buttonPressed</span>()));
+    connect(ui-&gt;pb_value_incrament, <span style="color: #63b8ff;">SIGNAL</span>(<span style="color: #7fffd4;">released</span>()), <span style="color: #00ffff;">this</span>, <span style="color: #63b8ff;">SLOT</span>(<span style="color: #7fffd4;">buttonReleased</span>()));
+    connect(ui-&gt;pb_value_decrament, <span style="color: #63b8ff;">SIGNAL</span>(<span style="color: #7fffd4;">pressed</span>()), <span style="color: #00ffff;">this</span>, <span style="color: #63b8ff;">SLOT</span>(<span style="color: #7fffd4;">buttonPressed</span>()));
+    connect(ui-&gt;pb_value_decrament, <span style="color: #63b8ff;">SIGNAL</span>(<span style="color: #7fffd4;">released</span>()), <span style="color: #00ffff;">this</span>, <span style="color: #63b8ff;">SLOT</span>(<span style="color: #7fffd4;">buttonReleased</span>()));
 }
-
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Window deconstructor.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
 <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::~MainWindow()
 {
     <span style="color: #00ffff;">delete</span> ui;
 }
-
-<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_up_pressed</span>()
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Updates the LCD of the current mode set.  This function should be</span>
+<span style="color: #ff7f24; font-style: italic;"> *  called every time a channel value is modified with the appropriate mode.</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @warning Does not verify the mode is valid.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">wvoid</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">UpdateLCD</span>()
 {
-    ui-&gt;pb_up-&gt;setText(<span style="color: #ffc1c1;">"Pushed"</span>);
-    <span style="color: #00ffff;">if</span>(PUSHED &lt; 100)
-        PUSHED += INCRAMENT;
-    ui-&gt;progressBar-&gt;setValue(PUSHED);
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Update Slider</span>
+    ui-&gt;channelSlider-&gt;setRange(cholder[mode].get_min(), cholder[mode].get_max());
+    ui-&gt;channelSlider-&gt;setValue(cholder[mode].get_value());
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Update LCD Screens</span>
+    <span style="color: #00ffff;">switch</span> (mode)
+    {
+    <span style="color: #00ffff;">case</span> 0:
+        ui-&gt;lcd_0-&gt;display(cholder[0].get_value());
+        <span style="color: #00ffff;">break</span>;
+    <span style="color: #00ffff;">case</span> 1:
+        ui-&gt;lcd_1-&gt;display(cholder[1].get_value());
+        <span style="color: #00ffff;">break</span>;
+    <span style="color: #00ffff;">case</span> 2:
+        ui-&gt;lcd_2-&gt;display(cholder[2].get_value());
+        <span style="color: #00ffff;">break</span>;
+    <span style="color: #00ffff;">case</span> 3:
+        ui-&gt;lcd_3-&gt;display(cholder[3].get_value());
+        <span style="color: #00ffff;">break</span>;
+    <span style="color: #00ffff;">case</span> 4:
+        ui-&gt;lcd_4-&gt;display(cholder[4].get_value());
+        <span style="color: #00ffff;">break</span>;
+    <span style="color: #00ffff;">default</span>:
+        <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">ERROR</span>
+        <span style="color: #00ffff;">break</span>;
+    }    
 }
-
-<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_down_pressed</span>()
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Modifies the mode for button 0.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_cbutton_0_clicked</span>()
 {
-    <span style="color: #00ffff;">if</span>(PUSHED &gt;= INCRAMENT)
-        PUSHED -= INCRAMENT;
-   ui-&gt;progressBar-&gt;setValue(PUSHED);
+    mode = 0;
+    ui-&gt;mode_label-&gt;setText(<span style="color: #ffc1c1;">"Channel 0"</span>);
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Modifies the mode for button 1.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_cbutton_1_clicked</span>()
+{
+    mode = 1;
+    ui-&gt;mode_label-&gt;setText(<span style="color: #ffc1c1;">"Channel 1"</span>);
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Modifies the mode for button 2.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_cbutton_2_clicked</span>()
+{
+    mode = 2;
+    ui-&gt;mode_label-&gt;setText(<span style="color: #ffc1c1;">"Channel 2"</span>);
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Modifies the mode for button 3.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_cbutton_3_clicked</span>()
+{
+    mode = 3;
+    ui-&gt;mode_label-&gt;setText(<span style="color: #ffc1c1;">"Channel 3"</span>);
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Modifies the mode for button 4.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_cbutton_4_clicked</span>()
+{
+    mode = 4;
+    ui-&gt;mode_label-&gt;setText(<span style="color: #ffc1c1;">"Channel 4"</span>);
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Sets a channel to its minimum value.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_value_off_clicked</span>()
+{
+    cholder[mode].set_value(cholder[mode].get_min());
+    UpdateLCD();
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Sets a channel to its maximum</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_value_full_clicked</span>()
+{
+    cholder[mode].set_value(cholder[mode].get_max());
+    UpdateLCD();
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Sets a channel to half of its value (max - min)/2.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_value_half_clicked</span>()
+{
+    <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">val</span> = (cholder[mode].get_max()
+               - cholder[mode].get_min()) / 2;
+    cholder[mode].set_value(val);
+    UpdateLCD();
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Watches if the slider value changes and modifies the channel.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_channelSlider_valueChanged</span>(<span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">value</span>)
+{
+    <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">val</span> = ui-&gt;channelSlider-&gt;value();
+    cholder[mode].set_value(val);
+    UpdateLCD();
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Incraments the channel while the incrament button is held down.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_value_incrament_pressed</span>()
+{
+    incrament = <span style="color: #8470ff; font-weight: bold;">true</span>;
+    timerTimeout = 2000;
+    doIncrement();
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Decraments the channel while the incrament button is held down.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_value_decrament_pressed</span>()
+{
+    incrament = <span style="color: #8470ff; font-weight: bold;">false</span>;
+    timerTimeout = 2000;
+    doIncrement();
+
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief A timer function for the incrament/decrament buttons.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">buttonPressed</span>()
+{
+    timerTimeout = 2000;
+    doIncrement();
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief A timer function for the incrament/decrament buttons.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">buttonReleased</span>()
+{
+    timer-&gt;stop();
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Timer function that modifies the values for incrament and decrament.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">doIncrement</span>()
+{
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">If the incrament button, incrament channel</span>
+    <span style="color: #00ffff;">if</span>( incrament )
+        cholder[mode].incrament();
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">If the decrament button, decrament channel</span>
+    <span style="color: #00ffff;">else</span>
+        cholder[mode].decrament();
+    <span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">ui-&gt;label-&gt;setText(QString("Value: %1").arg(number));</span>
+    <span style="color: #00ffff;">if</span>( timerTimeout &gt; 10 )
+        timerTimeout = timerTimeout / 4;
+    timer-&gt;start(timerTimeout);
+    UpdateLCD();
 }
 </pre>
 
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-1-2">MainWindow.h<br/>
+<li id="sec-7-1-1-2">MainWindow.h<br/>
 
 
 
@@ -3972,16 +4608,36 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 
 <span style="color: #00ffff;">public</span>:
     <span style="color: #00ffff;">explicit</span> MainWindow(<span style="color: #63b8ff;">QWidget</span> *<span style="color: #7fffd4;">parent</span> = 0);
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">UpdateLCD</span>();
     ~<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">MainWindow</span>();
 
 <span style="color: #00ffff;">private</span> <span style="color: #00ffff;">slots</span>:
-    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_up_pressed</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_cbutton_0_clicked</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_cbutton_1_clicked</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_cbutton_2_clicked</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_cbutton_3_clicked</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_cbutton_4_clicked</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_value_off_clicked</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_value_full_clicked</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_value_half_clicked</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_channelSlider_valueChanged</span>(<span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">value</span>);
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_value_incrament_pressed</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_value_decrament_pressed</span>();
 
+<span style="color: #00ffff;">protected</span> <span style="color: #00ffff;">slots</span>:
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">buttonPressed</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">buttonReleased</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">doIncrement</span>();
 
-    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_pb_down_pressed</span>();
 
 <span style="color: #00ffff;">private</span>:
     <span style="color: #8470ff; font-weight: bold;">Ui</span>::MainWindow *ui;
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Button Incramenter</span>
+    QTimer *timer;
+    <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">timerTimeout</span>;
+    <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">number</span>;
+    <span style="color: #63b8ff;">bool</span> <span style="color: #7fffd4;">incrament</span>;
 };
 
 <span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">MAINWINDOW_H</span>
@@ -3990,14 +4646,14 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-1-3">moc_mainwindow.cpp<br/>
+<li id="sec-7-1-1-3">moc_mainwindow.cpp<br/>
 
 
 
 <pre class="src src-cpp"><span style="color: #fa8072;">/****************************************************************************</span>
 <span style="color: #ff7f24; font-style: italic;">** Meta object code from reading C++ file 'mainwindow.h'</span>
 <span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** Created: Mon Jul 15 17:14:06 2013</span>
+<span style="color: #ff7f24; font-style: italic;">** Created: Tue Jul 23 17:04:08 2013</span>
 <span style="color: #ff7f24; font-style: italic;">**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)</span>
 <span style="color: #ff7f24; font-style: italic;">**</span>
 <span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost!</span>
@@ -4019,7 +4675,7 @@ QT_BEGIN_MOC_NAMESPACE
        6,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">revision</span>
        0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classname</span>
        0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classinfo</span>
-       2,   14, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">methods</span>
+      14,   14, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">methods</span>
        0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">properties</span>
        0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">enums/sets</span>
        0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">constructors</span>
@@ -4028,14 +4684,35 @@ QT_BEGIN_MOC_NAMESPACE
 
  <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">slots: signature, parameters, type, tag, flags</span>
       12,   11,   11,   11, 0x08,
-      31,   11,   11,   11, 0x08,
+      35,   11,   11,   11, 0x08,
+      58,   11,   11,   11, 0x08,
+      81,   11,   11,   11, 0x08,
+     104,   11,   11,   11, 0x08,
+     127,   11,   11,   11, 0x08,
+     153,   11,   11,   11, 0x08,
+     180,   11,   11,   11, 0x08,
+     213,  207,   11,   11, 0x08,
+     248,   11,   11,   11, 0x08,
+     280,   11,   11,   11, 0x08,
+     312,   11,   11,   11, 0x09,
+     328,   11,   11,   11, 0x09,
+     345,   11,   11,   11, 0x09,
 
        0        <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">eod</span>
 };
 
 <span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">char</span> <span style="color: #7fffd4;">qt_meta_stringdata_MainWindow</span>[] = {
-    <span style="color: #ffc1c1;">"MainWindow\0\0on_pb_up_pressed()\0"</span>
-    <span style="color: #ffc1c1;">"on_pb_down_pressed()\0"</span>
+    <span style="color: #ffc1c1;">"MainWindow\0\0on_cbutton_0_clicked()\0"</span>
+    <span style="color: #ffc1c1;">"on_cbutton_1_clicked()\0on_cbutton_2_clicked()\0"</span>
+    <span style="color: #ffc1c1;">"on_cbutton_3_clicked()\0on_cbutton_4_clicked()\0"</span>
+    <span style="color: #ffc1c1;">"on_pb_value_off_clicked()\0"</span>
+    <span style="color: #ffc1c1;">"on_pb_value_full_clicked()\0"</span>
+    <span style="color: #ffc1c1;">"on_pb_value_half_clicked()\0value\0"</span>
+    <span style="color: #ffc1c1;">"on_channelSlider_valueChanged(int)\0"</span>
+    <span style="color: #ffc1c1;">"on_pb_value_incrament_pressed()\0"</span>
+    <span style="color: #ffc1c1;">"on_pb_value_decrament_pressed()\0"</span>
+    <span style="color: #ffc1c1;">"buttonPressed()\0buttonReleased()\0"</span>
+    <span style="color: #ffc1c1;">"doIncrement()\0"</span>
 };
 
 <span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_static_metacall</span>(<span style="color: #63b8ff;">QObject</span> *<span style="color: #7fffd4;">_o</span>, <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">Call</span> <span style="color: #7fffd4;">_c</span>, <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">_id</span>, <span style="color: #63b8ff;">void</span> **<span style="color: #7fffd4;">_a</span>)
@@ -4044,12 +4721,23 @@ QT_BEGIN_MOC_NAMESPACE
         Q_ASSERT(staticMetaObject.cast(_o));
         MainWindow *_t = <span style="color: #00ffff;">static_cast</span>&lt;MainWindow *&gt;(_o);
         <span style="color: #00ffff;">switch</span> (_id) {
-        <span style="color: #00ffff;">case</span> 0: _t-&gt;on_pb_up_pressed(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 1: _t-&gt;on_pb_down_pressed(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 0: _t-&gt;on_cbutton_0_clicked(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 1: _t-&gt;on_cbutton_1_clicked(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 2: _t-&gt;on_cbutton_2_clicked(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 3: _t-&gt;on_cbutton_3_clicked(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 4: _t-&gt;on_cbutton_4_clicked(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 5: _t-&gt;on_pb_value_off_clicked(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 6: _t-&gt;on_pb_value_full_clicked(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 7: _t-&gt;on_pb_value_half_clicked(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 8: _t-&gt;on_channelSlider_valueChanged((*<span style="color: #00ffff;">reinterpret_cast</span>&lt; <span style="color: #63b8ff;">int</span>(*)&gt;(_a[1]))); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 9: _t-&gt;on_pb_value_incrament_pressed(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 10: _t-&gt;on_pb_value_decrament_pressed(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 11: _t-&gt;buttonPressed(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 12: _t-&gt;buttonReleased(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 13: _t-&gt;doIncrement(); <span style="color: #00ffff;">break</span>;
         <span style="color: #00ffff;">default</span>: ;
         }
     }
-    <span style="color: #63b8ff;">Q_UNUSED</span>(<span style="color: #7fffd4;">_a</span>);
 }
 
 <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObjectExtraData</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #7fffd4;">staticMetaObjectExtraData</span> = {
@@ -4084,9 +4772,9 @@ QT_BEGIN_MOC_NAMESPACE
     <span style="color: #00ffff;">if</span> (_id &lt; 0)
         <span style="color: #00ffff;">return</span> _id;
     <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::InvokeMetaMethod) {
-        <span style="color: #00ffff;">if</span> (_id &lt; 2)
+        <span style="color: #00ffff;">if</span> (_id &lt; 14)
             qt_static_metacall(<span style="color: #00ffff;">this</span>, _c, _id, _a);
-        _id -= 2;
+        _id -= 14;
     }
     <span style="color: #00ffff;">return</span> _id;
 }
@@ -4096,14 +4784,14 @@ QT_END_MOC_NAMESPACE
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-1-4">ui_mainwindow.h<br/>
+<li id="sec-7-1-1-4">ui_mainwindow.h<br/>
 
 
 
 <pre class="src src-cpp"><span style="color: #fa8072;">/********************************************************************************</span>
 <span style="color: #ff7f24; font-style: italic;">** Form generated from reading UI file 'mainwindow.ui'</span>
 <span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** Created: Mon Jul 15 17:32:19 2013</span>
+<span style="color: #ff7f24; font-style: italic;">** Created: Tue Jul 23 17:04:06 2013</span>
 <span style="color: #ff7f24; font-style: italic;">**      by: Qt User Interface Compiler version 4.8.4</span>
 <span style="color: #ff7f24; font-style: italic;">**</span>
 <span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost when recompiling UI file!</span>
@@ -4116,11 +4804,13 @@ QT_END_MOC_NAMESPACE
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QAction&gt;</span>
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QApplication&gt;</span>
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QButtonGroup&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QFrame&gt;</span>
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QHeaderView&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QLCDNumber&gt;</span>
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QLabel&gt;</span>
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QMainWindow&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QProgressBar&gt;</span>
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QPushButton&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QSlider&gt;</span>
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QTabWidget&gt;</span>
 <span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QWidget&gt;</span>
 
@@ -4133,9 +4823,27 @@ QT_BEGIN_NAMESPACE
     QLabel *label;
     QTabWidget *tabWidget;
     QWidget *tab;
-    QProgressBar *progressBar;
     QPushButton *pb_down;
     QPushButton *pb_up;
+    QWidget *tab_3;
+    QFrame *frame;
+    QPushButton *cbutton_0;
+    QPushButton *cbutton_1;
+    QPushButton *cbutton_2;
+    QPushButton *cbutton_3;
+    QPushButton *cbutton_4;
+    QLCDNumber *lcd_0;
+    QLCDNumber *lcd_1;
+    QLCDNumber *lcd_2;
+    QLCDNumber *lcd_3;
+    QLCDNumber *lcd_4;
+    QPushButton *pb_value_full;
+    QPushButton *pb_value_off;
+    QPushButton *pb_value_decrament;
+    QPushButton *pb_value_incrament;
+    QSlider *channelSlider;
+    QLabel *mode_label;
+    QPushButton *pb_value_half;
     QWidget *tab_2;
 
     <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">setupUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
@@ -4150,35 +4858,151 @@ QT_BEGIN_NAMESPACE
         label = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(centralWidget);
         label-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label"</span>));
         label-&gt;setGeometry(QRect(10, 10, 371, 41));
-        label-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-image: url(:/new/prefix1/rcos.png);"</span>));
+        label-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"image: url(:/img/rcos.png);"</span>));
         tabWidget = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QTabWidget</span>(centralWidget);
         tabWidget-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tabWidget"</span>));
         tabWidget-&gt;setGeometry(QRect(0, 60, 481, 251));
-        tabWidget-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(255, 255, 0, 69), stop:0.375 rgba(255, 255, 0, 69), stop:0.423533 rgba(251, 255, 0, 145), stop:0.45 rgba(247, 255, 0, 208), stop:0.477581 rgba(255, 244, 71, 130), stop:0.518717 rgba(255, 218, 71, 130), stop:0.55 rgba(255, 255, 0, 255), stop:0.57754 rgba(255, 203, 0, 130), stop:0.625 rgba(255, 255, 0, 69), stop:1 rgba(255, 255, 0, 69));"</span>));
+        tabWidget-&gt;setFocusPolicy(<span style="color: #8470ff; font-weight: bold;">Qt</span>::StrongFocus);
+        tabWidget-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(51, 51, 51);"</span>));
+        tabWidget-&gt;setTabPosition(<span style="color: #8470ff; font-weight: bold;">QTabWidget</span>::West);
+        tabWidget-&gt;setTabShape(<span style="color: #8470ff; font-weight: bold;">QTabWidget</span>::Rounded);
+        tabWidget-&gt;setIconSize(QSize(42, 50));
         tab = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
         tab-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab"</span>));
-        progressBar = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QProgressBar</span>(tab);
-        progressBar-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"progressBar"</span>));
-        progressBar-&gt;setGeometry(QRect(10, 150, 460, 25));
-        progressBar-&gt;setMinimumSize(QSize(460, 0));
-        progressBar-&gt;setValue(24);
         pb_down = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab);
         pb_down-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_down"</span>));
-        pb_down-&gt;setGeometry(QRect(30, 30, 171, 91));
-        pb_down-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, fx:0.5, fy:0.5, stop:0 rgba(0, 169, 255, 147), stop:0.497326 rgba(0, 0, 0, 147), stop:1 rgba(0, 169, 255, 147));"</span>));
+        pb_down-&gt;setGeometry(QRect(20, 60, 171, 91));
+        <span style="color: #63b8ff;">QFont</span> <span style="color: #7fffd4;">font</span>;
+        font.setFamily(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"Abyssinica SIL"</span>));
+        font.setPointSize(40);
+        pb_down-&gt;setFont(font);
+        pb_down-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);\n"</span>
+<span style="color: #ffc1c1;">"background-color: rgb(148, 3, 0);\n"</span>
+<span style="color: #ffc1c1;">"alternate-background-color: rgb(148, 3, 0);"</span>));
         pb_up = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab);
         pb_up-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_up"</span>));
-        pb_up-&gt;setGeometry(QRect(250, 30, 171, 91));
+        pb_up-&gt;setGeometry(QRect(210, 60, 171, 91));
         pb_up-&gt;setMinimumSize(QSize(171, 27));
-        pb_up-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(35, 40, 3, 255), stop:0.16 rgba(136, 106, 22, 255), stop:0.225 rgba(166, 140, 41, 255), stop:0.285 rgba(204, 181, 74, 255), stop:0.345 rgba(235, 219, 102, 255), stop:0.415 rgba(245, 236, 112, 255), stop:0.52 rgba(209, 190, 76, 255), stop:0.57 rgba(187, 156, 51, 255), stop:0.635 rgba(168, 142, 42, 255), stop:0.695 rgba(202, 174, 68, 255), stop:0.75 rgba(218, 202, 86, 255), stop:0.815 rgba(208, 187, 73, 255), stop:0.88 rgba(187, 156, 51, 255), stop:0.935 rgba(137, 108, 26, 255), stop:1 rgba(35, 40, 3, 255));"</span>));
-        tabWidget-&gt;addTab(tab, QString());
-        label-&gt;raise();
-        progressBar-&gt;raise();
-        pb_down-&gt;raise();
-        pb_up-&gt;raise();
+        pb_up-&gt;setFont(font);
+        pb_up-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(84, 152, 91);"</span>));
+        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon</span>;
+        icon.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/gpl_logo_sideways_colored.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
+        tabWidget-&gt;addTab(tab, icon, QString());
+        tab_3 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
+        tab_3-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab_3"</span>));
+        frame = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QFrame</span>(tab_3);
+        frame-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"frame"</span>));
+        frame-&gt;setGeometry(QRect(0, 0, 191, 211));
+        frame-&gt;setFrameShape(<span style="color: #8470ff; font-weight: bold;">QFrame</span>::StyledPanel);
+        frame-&gt;setFrameShadow(<span style="color: #8470ff; font-weight: bold;">QFrame</span>::Raised);
+        cbutton_0 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(frame);
+        cbutton_0-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"cbutton_0"</span>));
+        cbutton_0-&gt;setGeometry(QRect(0, 0, 100, 40));
+        cbutton_0-&gt;setMinimumSize(QSize(100, 40));
+        cbutton_0-&gt;setMaximumSize(QSize(80, 40));
+        cbutton_0-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(255, 0, 0);"</span>));
+        cbutton_1 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(frame);
+        cbutton_1-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"cbutton_1"</span>));
+        cbutton_1-&gt;setGeometry(QRect(0, 40, 100, 40));
+        cbutton_1-&gt;setMinimumSize(QSize(100, 40));
+        cbutton_1-&gt;setMaximumSize(QSize(80, 40));
+        cbutton_1-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(255, 170, 0);"</span>));
+        cbutton_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(frame);
+        cbutton_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"cbutton_2"</span>));
+        cbutton_2-&gt;setGeometry(QRect(0, 80, 100, 40));
+        cbutton_2-&gt;setMinimumSize(QSize(100, 40));
+        cbutton_2-&gt;setMaximumSize(QSize(80, 40));
+        cbutton_2-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(85, 255, 0);"</span>));
+        cbutton_3 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(frame);
+        cbutton_3-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"cbutton_3"</span>));
+        cbutton_3-&gt;setGeometry(QRect(0, 120, 100, 40));
+        cbutton_3-&gt;setMinimumSize(QSize(100, 40));
+        cbutton_3-&gt;setMaximumSize(QSize(80, 40));
+        cbutton_3-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(0, 170, 255);"</span>));
+        cbutton_4 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(frame);
+        cbutton_4-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"cbutton_4"</span>));
+        cbutton_4-&gt;setGeometry(QRect(0, 160, 100, 40));
+        cbutton_4-&gt;setMinimumSize(QSize(100, 40));
+        cbutton_4-&gt;setMaximumSize(QSize(80, 40));
+        cbutton_4-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(85, 85, 255);"</span>));
+        lcd_0 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLCDNumber</span>(frame);
+        lcd_0-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lcd_0"</span>));
+        lcd_0-&gt;setGeometry(QRect(100, 0, 80, 40));
+        lcd_0-&gt;setMinimumSize(QSize(80, 40));
+        lcd_1 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLCDNumber</span>(frame);
+        lcd_1-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lcd_1"</span>));
+        lcd_1-&gt;setGeometry(QRect(100, 40, 80, 40));
+        lcd_1-&gt;setMinimumSize(QSize(80, 40));
+        lcd_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLCDNumber</span>(frame);
+        lcd_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lcd_2"</span>));
+        lcd_2-&gt;setGeometry(QRect(100, 80, 80, 40));
+        lcd_2-&gt;setMinimumSize(QSize(80, 40));
+        lcd_3 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLCDNumber</span>(frame);
+        lcd_3-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lcd_3"</span>));
+        lcd_3-&gt;setGeometry(QRect(100, 120, 80, 40));
+        lcd_3-&gt;setMinimumSize(QSize(80, 40));
+        lcd_4 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLCDNumber</span>(frame);
+        lcd_4-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lcd_4"</span>));
+        lcd_4-&gt;setGeometry(QRect(100, 160, 80, 40));
+        lcd_4-&gt;setMinimumSize(QSize(80, 40));
+        pb_value_full = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_3);
+        pb_value_full-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_value_full"</span>));
+        pb_value_full-&gt;setGeometry(QRect(340, 50, 60, 51));
+        pb_value_full-&gt;setMinimumSize(QSize(60, 27));
+        <span style="color: #63b8ff;">QFont</span> <span style="color: #7fffd4;">font1</span>;
+        font1.setFamily(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"Abyssinica SIL"</span>));
+        font1.setPointSize(20);
+        pb_value_full-&gt;setFont(font1);
+        pb_value_full-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(84, 152, 91);"</span>));
+        pb_value_off = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_3);
+        pb_value_off-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_value_off"</span>));
+        pb_value_off-&gt;setGeometry(QRect(200, 50, 60, 51));
+        pb_value_off-&gt;setMinimumSize(QSize(60, 27));
+        pb_value_off-&gt;setFont(font1);
+        pb_value_off-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(148, 3, 0);"</span>));
+        pb_value_decrament = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_3);
+        pb_value_decrament-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_value_decrament"</span>));
+        pb_value_decrament-&gt;setGeometry(QRect(200, 110, 91, 51));
+        pb_value_decrament-&gt;setMinimumSize(QSize(80, 27));
+        <span style="color: #63b8ff;">QFont</span> <span style="color: #7fffd4;">font2</span>;
+        font2.setFamily(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"Symbol"</span>));
+        font2.setPointSize(36);
+        pb_value_decrament-&gt;setFont(font2);
+        pb_value_decrament-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(148, 3, 0);"</span>));
+        pb_value_incrament = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_3);
+        pb_value_incrament-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_value_incrament"</span>));
+        pb_value_incrament-&gt;setGeometry(QRect(300, 110, 101, 51));
+        pb_value_incrament-&gt;setMinimumSize(QSize(80, 27));
+        pb_value_incrament-&gt;setFont(font2);
+        pb_value_incrament-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(84, 152, 91);"</span>));
+        channelSlider = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QSlider</span>(tab_3);
+        channelSlider-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"channelSlider"</span>));
+        channelSlider-&gt;setGeometry(QRect(200, 180, 201, 21));
+        channelSlider-&gt;setFocusPolicy(<span style="color: #8470ff; font-weight: bold;">Qt</span>::ClickFocus);
+        channelSlider-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(245, 224, 176, 255), stop:0.09 rgba(246, 189, 237, 255), stop:0.14 rgba(194, 207, 246, 255), stop:0.19 rgba(184, 160, 168, 255), stop:0.25 rgba(171, 186, 248, 255), stop:0.32 rgba(243, 248, 224, 255), stop:0.385 rgba(249, 162, 183, 255), stop:0.47 rgba(100, 115, 124, 255), stop:0.58 rgba(251, 205, 202, 255), stop:0.65 rgba(170, 128, 185, 255), stop:0.75 rgba(252, 222, 204, 255), stop:0.805 rgba(206, 122, 218, 255), stop:0.86 rgba(254, 223, 175, 255), stop:0.91 rgba(254, 236, 244, 255), stop:1 rgba(255, 191, 221, 255));"</span>));
+        channelSlider-&gt;setOrientation(<span style="color: #8470ff; font-weight: bold;">Qt</span>::Horizontal);
+        mode_label = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(tab_3);
+        mode_label-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"mode_label"</span>));
+        mode_label-&gt;setGeometry(QRect(200, 10, 201, 31));
+        <span style="color: #63b8ff;">QFont</span> <span style="color: #7fffd4;">font3</span>;
+        font3.setFamily(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"Abyssinica SIL"</span>));
+        font3.setPointSize(18);
+        mode_label-&gt;setFont(font3);
+        mode_label-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);"</span>));
+        pb_value_half = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_3);
+        pb_value_half-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_value_half"</span>));
+        pb_value_half-&gt;setGeometry(QRect(270, 50, 60, 51));
+        pb_value_half-&gt;setMinimumSize(QSize(60, 27));
+        pb_value_half-&gt;setFont(font1);
+        pb_value_half-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(255, 85, 0);"</span>));
+        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon1</span>;
+        icon1.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/gpl_logo_sideways_red.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
+        tabWidget-&gt;addTab(tab_3, icon1, QString());
         tab_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
         tab_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab_2"</span>));
-        tabWidget-&gt;addTab(tab_2, QString());
+        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon2</span>;
+        icon2.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/gpl_logo_sideways_blue.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
+        tabWidget-&gt;addTab(tab_2, icon2, QString());
         MainWindow-&gt;setCentralWidget(centralWidget);
 
         <span style="color: #63b8ff;">retranslateUi</span>(<span style="color: #7fffd4;">MainWindow</span>);
@@ -4193,10 +5017,22 @@ QT_BEGIN_NAMESPACE
     {
         MainWindow-&gt;setWindowTitle(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"MainWindow"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
         label-&gt;setText(QString());
-        pb_down-&gt;setText(QString());
-        pb_up-&gt;setText(QString());
-        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab), <span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Tab 1"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab_2), <span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Tab 2"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        pb_down-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"OFF"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        pb_up-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"ON"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab), QString());
+        cbutton_0-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"channel 0"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        cbutton_1-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"channel 1"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        cbutton_2-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"channel 2"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        cbutton_3-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"channel 3"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        cbutton_4-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"channel 4"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        pb_value_full-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Full"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        pb_value_off-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Off"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        pb_value_decrament-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"-"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        pb_value_incrament-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"+"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        mode_label-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Select Channel"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        pb_value_half-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"1/2"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab_3), QString());
+        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab_2), QString());
     } <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">retranslateUi</span>
 
 };
@@ -4213,7 +5049,7 @@ QT_END_NAMESPACE
 </li>
 </ul>
 <ul>
-<li id="sec-6-1-1-5">mainwindow.ui<br/>
+<li id="sec-7-1-1-5">mainwindow.ui<br/>
 
 
 
@@ -4255,7 +5091,7 @@ QT_END_NAMESPACE
      &lt;/rect&gt;
     &lt;/property&gt;
     &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
-     &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-image: url(:/new/prefix1/rcos.png);&lt;/string&gt;
+     &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;image: url(:/img/rcos.png);&lt;/string&gt;
     &lt;/property&gt;
     &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
      &lt;string/&gt;
@@ -4270,56 +5106,64 @@ QT_END_NAMESPACE
       &lt;height&gt;251&lt;/height&gt;
      &lt;/rect&gt;
     &lt;/property&gt;
+    &lt;property name=<span style="color: #ffc1c1;">"focusPolicy"</span>&gt;
+     &lt;enum&gt;Qt::StrongFocus&lt;/enum&gt;
+    &lt;/property&gt;
     &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
-     &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: qconicalgradient(cx:0, cy:0, angle:135, stop:0 rgba(255, 255, 0, 69), stop:0.375 rgba(255, 255, 0, 69), stop:0.423533 rgba(251, 255, 0, 145), stop:0.45 rgba(247, 255, 0, 208), stop:0.477581 rgba(255, 244, 71, 130), stop:0.518717 rgba(255, 218, 71, 130), stop:0.55 rgba(255, 255, 0, 255), stop:0.57754 rgba(255, 203, 0, 130), stop:0.625 rgba(255, 255, 0, 69), stop:1 rgba(255, 255, 0, 69));&lt;/string&gt;
+     &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(51, 51, 51);&lt;/string&gt;
+    &lt;/property&gt;
+    &lt;property name=<span style="color: #ffc1c1;">"tabPosition"</span>&gt;
+     &lt;enum&gt;QTabWidget::West&lt;/enum&gt;
+    &lt;/property&gt;
+    &lt;property name=<span style="color: #ffc1c1;">"tabShape"</span>&gt;
+     &lt;enum&gt;QTabWidget::Rounded&lt;/enum&gt;
     &lt;/property&gt;
     &lt;property name=<span style="color: #ffc1c1;">"currentIndex"</span>&gt;
      &lt;number&gt;0&lt;/number&gt;
     &lt;/property&gt;
+    &lt;property name=<span style="color: #ffc1c1;">"iconSize"</span>&gt;
+     &lt;size&gt;
+      &lt;width&gt;42&lt;/width&gt;
+      &lt;height&gt;50&lt;/height&gt;
+     &lt;/size&gt;
+    &lt;/property&gt;
     &lt;widget class=<span style="color: #ffc1c1;">"QWidget"</span> name=<span style="color: #ffc1c1;">"tab"</span>&gt;
-     &lt;attribute name=<span style="color: #ffc1c1;">"title"</span>&gt;
-      &lt;string&gt;Tab 1&lt;/string&gt;
+     &lt;attribute name=<span style="color: #ffc1c1;">"icon"</span>&gt;
+      &lt;iconset resource=<span style="color: #ffc1c1;">"Loot.qrc"</span>&gt;
+       &lt;normaloff&gt;:/img/gpl_logo_sideways_colored.png&lt;/normaloff&gt;:/img/gpl_logo_sideways_colored.png&lt;/iconset&gt;
      &lt;/attribute&gt;
-     &lt;widget class=<span style="color: #ffc1c1;">"QProgressBar"</span> name=<span style="color: #ffc1c1;">"progressBar"</span>&gt;
-      &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
-       &lt;rect&gt;
-        &lt;x&gt;10&lt;/x&gt;
-        &lt;y&gt;150&lt;/y&gt;
-        &lt;width&gt;460&lt;/width&gt;
-        &lt;height&gt;25&lt;/height&gt;
-       &lt;/rect&gt;
-      &lt;/property&gt;
-      &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
-       &lt;size&gt;
-        &lt;width&gt;460&lt;/width&gt;
-        &lt;height&gt;0&lt;/height&gt;
-       &lt;/size&gt;
-      &lt;/property&gt;
-      &lt;property name=<span style="color: #ffc1c1;">"value"</span>&gt;
-       &lt;number&gt;24&lt;/number&gt;
-      &lt;/property&gt;
-     &lt;/widget&gt;
+     &lt;attribute name=<span style="color: #ffc1c1;">"title"</span>&gt;
+      &lt;string/&gt;
+     &lt;/attribute&gt;
      &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"pb_down"</span>&gt;
       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
        &lt;rect&gt;
-        &lt;x&gt;30&lt;/x&gt;
-        &lt;y&gt;30&lt;/y&gt;
+        &lt;x&gt;20&lt;/x&gt;
+        &lt;y&gt;60&lt;/y&gt;
         &lt;width&gt;171&lt;/width&gt;
         &lt;height&gt;91&lt;/height&gt;
        &lt;/rect&gt;
       &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"font"</span>&gt;
+       &lt;font&gt;
+        &lt;family&gt;Abyssinica SIL&lt;/family&gt;
+        &lt;pointsize&gt;40&lt;/pointsize&gt;
+       &lt;/font&gt;
+      &lt;/property&gt;
       &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
-       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, fx:0.5, fy:0.5, stop:0 rgba(0, 169, 255, 147), stop:0.497326 rgba(0, 0, 0, 147), stop:1 rgba(0, 169, 255, 147));&lt;/string&gt;
+       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;color: rgb(255, 255, 255);
+background-color: rgb(148, 3, 0);
+alternate-background-color: rgb(148, 3, 0);&lt;/string&gt;
       &lt;/property&gt;
       &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
-       &lt;string/&gt;
+       &lt;string&gt;OFF&lt;/string&gt;
       &lt;/property&gt;
      &lt;/widget&gt;
      &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"pb_up"</span>&gt;
       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
        &lt;rect&gt;
-        &lt;x&gt;250&lt;/x&gt;
-        &lt;y&gt;30&lt;/y&gt;
+        &lt;x&gt;210&lt;/x&gt;
+        &lt;y&gt;60&lt;/y&gt;
         &lt;width&gt;171&lt;/width&gt;
         &lt;height&gt;91&lt;/height&gt;
        &lt;/rect&gt;
@@ -4330,28 +5174,462 @@ QT_END_NAMESPACE
         &lt;height&gt;27&lt;/height&gt;
        &lt;/size&gt;
       &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"font"</span>&gt;
+       &lt;font&gt;
+        &lt;family&gt;Abyssinica SIL&lt;/family&gt;
+        &lt;pointsize&gt;40&lt;/pointsize&gt;
+       &lt;/font&gt;
+      &lt;/property&gt;
       &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
-       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: qconicalgradient(cx:0.5, cy:0.5, angle:0, stop:0 rgba(35, 40, 3, 255), stop:0.16 rgba(136, 106, 22, 255), stop:0.225 rgba(166, 140, 41, 255), stop:0.285 rgba(204, 181, 74, 255), stop:0.345 rgba(235, 219, 102, 255), stop:0.415 rgba(245, 236, 112, 255), stop:0.52 rgba(209, 190, 76, 255), stop:0.57 rgba(187, 156, 51, 255), stop:0.635 rgba(168, 142, 42, 255), stop:0.695 rgba(202, 174, 68, 255), stop:0.75 rgba(218, 202, 86, 255), stop:0.815 rgba(208, 187, 73, 255), stop:0.88 rgba(187, 156, 51, 255), stop:0.935 rgba(137, 108, 26, 255), stop:1 rgba(35, 40, 3, 255));&lt;/string&gt;
+       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(84, 152, 91);&lt;/string&gt;
       &lt;/property&gt;
       &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
-       &lt;string/&gt;
+       &lt;string&gt;ON&lt;/string&gt;
       &lt;/property&gt;
      &lt;/widget&gt;
-     &lt;zorder&gt;label&lt;/zorder&gt;
-     &lt;zorder&gt;progressBar&lt;/zorder&gt;
-     &lt;zorder&gt;pb_down&lt;/zorder&gt;
-     &lt;zorder&gt;pb_up&lt;/zorder&gt;
+    &lt;/widget&gt;
+    &lt;widget class=<span style="color: #ffc1c1;">"QWidget"</span> name=<span style="color: #ffc1c1;">"tab_3"</span>&gt;
+     &lt;attribute name=<span style="color: #ffc1c1;">"icon"</span>&gt;
+      &lt;iconset resource=<span style="color: #ffc1c1;">"Loot.qrc"</span>&gt;
+       &lt;normaloff&gt;:/img/gpl_logo_sideways_red.png&lt;/normaloff&gt;:/img/gpl_logo_sideways_red.png&lt;/iconset&gt;
+     &lt;/attribute&gt;
+     &lt;attribute name=<span style="color: #ffc1c1;">"title"</span>&gt;
+      &lt;string/&gt;
+     &lt;/attribute&gt;
+     &lt;widget class=<span style="color: #ffc1c1;">"QFrame"</span> name=<span style="color: #ffc1c1;">"frame"</span>&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+       &lt;rect&gt;
+        &lt;x&gt;0&lt;/x&gt;
+        &lt;y&gt;0&lt;/y&gt;
+        &lt;width&gt;191&lt;/width&gt;
+        &lt;height&gt;211&lt;/height&gt;
+       &lt;/rect&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"frameShape"</span>&gt;
+       &lt;enum&gt;QFrame::StyledPanel&lt;/enum&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"frameShadow"</span>&gt;
+       &lt;enum&gt;QFrame::Raised&lt;/enum&gt;
+      &lt;/property&gt;
+      &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"cbutton_0"</span>&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+        &lt;rect&gt;
+         &lt;x&gt;0&lt;/x&gt;
+         &lt;y&gt;0&lt;/y&gt;
+         &lt;width&gt;100&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/rect&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;100&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"maximumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+        &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(255, 0, 0);&lt;/string&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+        &lt;string&gt;channel 0&lt;/string&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+      &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"cbutton_1"</span>&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+        &lt;rect&gt;
+         &lt;x&gt;0&lt;/x&gt;
+         &lt;y&gt;40&lt;/y&gt;
+         &lt;width&gt;100&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/rect&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;100&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"maximumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+        &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(255, 170, 0);&lt;/string&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+        &lt;string&gt;channel 1&lt;/string&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+      &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"cbutton_2"</span>&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+        &lt;rect&gt;
+         &lt;x&gt;0&lt;/x&gt;
+         &lt;y&gt;80&lt;/y&gt;
+         &lt;width&gt;100&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/rect&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;100&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"maximumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+        &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(85, 255, 0);&lt;/string&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+        &lt;string&gt;channel 2&lt;/string&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+      &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"cbutton_3"</span>&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+        &lt;rect&gt;
+         &lt;x&gt;0&lt;/x&gt;
+         &lt;y&gt;120&lt;/y&gt;
+         &lt;width&gt;100&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/rect&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;100&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"maximumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+        &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(0, 170, 255);&lt;/string&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+        &lt;string&gt;channel 3&lt;/string&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+      &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"cbutton_4"</span>&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+        &lt;rect&gt;
+         &lt;x&gt;0&lt;/x&gt;
+         &lt;y&gt;160&lt;/y&gt;
+         &lt;width&gt;100&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/rect&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;100&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"maximumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+        &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(85, 85, 255);&lt;/string&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+        &lt;string&gt;channel 4&lt;/string&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+      &lt;widget class=<span style="color: #ffc1c1;">"QLCDNumber"</span> name=<span style="color: #ffc1c1;">"lcd_0"</span>&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+        &lt;rect&gt;
+         &lt;x&gt;100&lt;/x&gt;
+         &lt;y&gt;0&lt;/y&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/rect&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+      &lt;widget class=<span style="color: #ffc1c1;">"QLCDNumber"</span> name=<span style="color: #ffc1c1;">"lcd_1"</span>&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+        &lt;rect&gt;
+         &lt;x&gt;100&lt;/x&gt;
+         &lt;y&gt;40&lt;/y&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/rect&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+      &lt;widget class=<span style="color: #ffc1c1;">"QLCDNumber"</span> name=<span style="color: #ffc1c1;">"lcd_2"</span>&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+        &lt;rect&gt;
+         &lt;x&gt;100&lt;/x&gt;
+         &lt;y&gt;80&lt;/y&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/rect&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+      &lt;widget class=<span style="color: #ffc1c1;">"QLCDNumber"</span> name=<span style="color: #ffc1c1;">"lcd_3"</span>&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+        &lt;rect&gt;
+         &lt;x&gt;100&lt;/x&gt;
+         &lt;y&gt;120&lt;/y&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/rect&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+      &lt;widget class=<span style="color: #ffc1c1;">"QLCDNumber"</span> name=<span style="color: #ffc1c1;">"lcd_4"</span>&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+        &lt;rect&gt;
+         &lt;x&gt;100&lt;/x&gt;
+         &lt;y&gt;160&lt;/y&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/rect&gt;
+       &lt;/property&gt;
+       &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+        &lt;size&gt;
+         &lt;width&gt;80&lt;/width&gt;
+         &lt;height&gt;40&lt;/height&gt;
+        &lt;/size&gt;
+       &lt;/property&gt;
+      &lt;/widget&gt;
+     &lt;/widget&gt;
+     &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"pb_value_full"</span>&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+       &lt;rect&gt;
+        &lt;x&gt;340&lt;/x&gt;
+        &lt;y&gt;50&lt;/y&gt;
+        &lt;width&gt;60&lt;/width&gt;
+        &lt;height&gt;51&lt;/height&gt;
+       &lt;/rect&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+       &lt;size&gt;
+        &lt;width&gt;60&lt;/width&gt;
+        &lt;height&gt;27&lt;/height&gt;
+       &lt;/size&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"font"</span>&gt;
+       &lt;font&gt;
+        &lt;family&gt;Abyssinica SIL&lt;/family&gt;
+        &lt;pointsize&gt;20&lt;/pointsize&gt;
+       &lt;/font&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(84, 152, 91);&lt;/string&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+       &lt;string&gt;Full&lt;/string&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
+     &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"pb_value_off"</span>&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+       &lt;rect&gt;
+        &lt;x&gt;200&lt;/x&gt;
+        &lt;y&gt;50&lt;/y&gt;
+        &lt;width&gt;60&lt;/width&gt;
+        &lt;height&gt;51&lt;/height&gt;
+       &lt;/rect&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+       &lt;size&gt;
+        &lt;width&gt;60&lt;/width&gt;
+        &lt;height&gt;27&lt;/height&gt;
+       &lt;/size&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"font"</span>&gt;
+       &lt;font&gt;
+        &lt;family&gt;Abyssinica SIL&lt;/family&gt;
+        &lt;pointsize&gt;20&lt;/pointsize&gt;
+       &lt;/font&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(148, 3, 0);&lt;/string&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+       &lt;string&gt;Off&lt;/string&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
+     &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"pb_value_decrament"</span>&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+       &lt;rect&gt;
+        &lt;x&gt;200&lt;/x&gt;
+        &lt;y&gt;110&lt;/y&gt;
+        &lt;width&gt;91&lt;/width&gt;
+        &lt;height&gt;51&lt;/height&gt;
+       &lt;/rect&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+       &lt;size&gt;
+        &lt;width&gt;80&lt;/width&gt;
+        &lt;height&gt;27&lt;/height&gt;
+       &lt;/size&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"font"</span>&gt;
+       &lt;font&gt;
+        &lt;family&gt;Symbol&lt;/family&gt;
+        &lt;pointsize&gt;36&lt;/pointsize&gt;
+       &lt;/font&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(148, 3, 0);&lt;/string&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+       &lt;string&gt;-&lt;/string&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
+     &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"pb_value_incrament"</span>&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+       &lt;rect&gt;
+        &lt;x&gt;300&lt;/x&gt;
+        &lt;y&gt;110&lt;/y&gt;
+        &lt;width&gt;101&lt;/width&gt;
+        &lt;height&gt;51&lt;/height&gt;
+       &lt;/rect&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+       &lt;size&gt;
+        &lt;width&gt;80&lt;/width&gt;
+        &lt;height&gt;27&lt;/height&gt;
+       &lt;/size&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"font"</span>&gt;
+       &lt;font&gt;
+        &lt;family&gt;Symbol&lt;/family&gt;
+        &lt;pointsize&gt;36&lt;/pointsize&gt;
+       &lt;/font&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(84, 152, 91);&lt;/string&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+       &lt;string&gt;+&lt;/string&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
+     &lt;widget class=<span style="color: #ffc1c1;">"QSlider"</span> name=<span style="color: #ffc1c1;">"channelSlider"</span>&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+       &lt;rect&gt;
+        &lt;x&gt;200&lt;/x&gt;
+        &lt;y&gt;180&lt;/y&gt;
+        &lt;width&gt;201&lt;/width&gt;
+        &lt;height&gt;21&lt;/height&gt;
+       &lt;/rect&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"focusPolicy"</span>&gt;
+       &lt;enum&gt;Qt::ClickFocus&lt;/enum&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(245, 224, 176, 255), stop:0.09 rgba(246, 189, 237, 255), stop:0.14 rgba(194, 207, 246, 255), stop:0.19 rgba(184, 160, 168, 255), stop:0.25 rgba(171, 186, 248, 255), stop:0.32 rgba(243, 248, 224, 255), stop:0.385 rgba(249, 162, 183, 255), stop:0.47 rgba(100, 115, 124, 255), stop:0.58 rgba(251, 205, 202, 255), stop:0.65 rgba(170, 128, 185, 255), stop:0.75 rgba(252, 222, 204, 255), stop:0.805 rgba(206, 122, 218, 255), stop:0.86 rgba(254, 223, 175, 255), stop:0.91 rgba(254, 236, 244, 255), stop:1 rgba(255, 191, 221, 255));&lt;/string&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"orientation"</span>&gt;
+       &lt;enum&gt;Qt::Horizontal&lt;/enum&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
+     &lt;widget class=<span style="color: #ffc1c1;">"QLabel"</span> name=<span style="color: #ffc1c1;">"mode_label"</span>&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+       &lt;rect&gt;
+        &lt;x&gt;200&lt;/x&gt;
+        &lt;y&gt;10&lt;/y&gt;
+        &lt;width&gt;201&lt;/width&gt;
+        &lt;height&gt;31&lt;/height&gt;
+       &lt;/rect&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"font"</span>&gt;
+       &lt;font&gt;
+        &lt;family&gt;Abyssinica SIL&lt;/family&gt;
+        &lt;pointsize&gt;18&lt;/pointsize&gt;
+       &lt;/font&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;color: rgb(255, 255, 255);&lt;/string&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+       &lt;string&gt;Select Channel&lt;/string&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
+     &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"pb_value_half"</span>&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
+       &lt;rect&gt;
+        &lt;x&gt;270&lt;/x&gt;
+        &lt;y&gt;50&lt;/y&gt;
+        &lt;width&gt;60&lt;/width&gt;
+        &lt;height&gt;51&lt;/height&gt;
+       &lt;/rect&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"minimumSize"</span>&gt;
+       &lt;size&gt;
+        &lt;width&gt;60&lt;/width&gt;
+        &lt;height&gt;27&lt;/height&gt;
+       &lt;/size&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"font"</span>&gt;
+       &lt;font&gt;
+        &lt;family&gt;Abyssinica SIL&lt;/family&gt;
+        &lt;pointsize&gt;20&lt;/pointsize&gt;
+       &lt;/font&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"styleSheet"</span>&gt;
+       &lt;string notr=<span style="color: #ffc1c1;">"true"</span>&gt;background-color: rgb(255, 85, 0);&lt;/string&gt;
+      &lt;/property&gt;
+      &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
+       &lt;string&gt;1/2&lt;/string&gt;
+      &lt;/property&gt;
+     &lt;/widget&gt;
     &lt;/widget&gt;
     &lt;widget class=<span style="color: #ffc1c1;">"QWidget"</span> name=<span style="color: #ffc1c1;">"tab_2"</span>&gt;
+     &lt;attribute name=<span style="color: #ffc1c1;">"icon"</span>&gt;
+      &lt;iconset resource=<span style="color: #ffc1c1;">"Loot.qrc"</span>&gt;
+       &lt;normaloff&gt;:/img/gpl_logo_sideways_blue.png&lt;/normaloff&gt;:/img/gpl_logo_sideways_blue.png&lt;/iconset&gt;
+     &lt;/attribute&gt;
      &lt;attribute name=<span style="color: #ffc1c1;">"title"</span>&gt;
-      &lt;string&gt;Tab 2&lt;/string&gt;
+      &lt;string/&gt;
      &lt;/attribute&gt;
     &lt;/widget&gt;
    &lt;/widget&gt;
   &lt;/widget&gt;
  &lt;/widget&gt;
  &lt;layoutdefault spacing=<span style="color: #ffc1c1;">"6"</span> margin=<span style="color: #ffc1c1;">"11"</span>/&gt;
- &lt;resources/&gt;
+ &lt;resources&gt;
+  &lt;include location=<span style="color: #ffc1c1;">"Loot.qrc"</span>/&gt;
+ &lt;/resources&gt;
  &lt;connections/&gt;
 &lt;/ui&gt;
 </pre>
@@ -4362,9 +5640,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-6-1-2" class="outline-4">
-<h4 id="sec-6-1-2"><span class="section-number-4">6.1.2</span> Notes</h4>
-<div class="outline-text-4" id="text-6-1-2">
+<div id="outline-container-7-1-2" class="outline-4">
+<h4 id="sec-7-1-2"><span class="section-number-4">7.1.2</span> Notes</h4>
+<div class="outline-text-4" id="text-7-1-2">
 
 <ul>
 <li><a href="http://stackoverflow.com/questions/1675992/how-do-i-set-a-background-color-for-the-whole-window-of-a-qt-application">Change the background color of the qt application</a>
@@ -4377,16 +5655,16 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-6-2" class="outline-3">
-<h3 id="sec-6-2"><span class="section-number-3">6.2</span> Basic Output to LCD Screen</h3>
-<div class="outline-text-3" id="text-6-2">
+<div id="outline-container-7-2" class="outline-3">
+<h3 id="sec-7-2"><span class="section-number-3">7.2</span> Basic Output to LCD Screen</h3>
+<div class="outline-text-3" id="text-7-2">
 
 
 </div>
 
-<div id="outline-container-6-2-1" class="outline-4">
-<h4 id="sec-6-2-1"><span class="section-number-4">6.2.1</span> MainWindow.cpp</h4>
-<div class="outline-text-4" id="text-6-2-1">
+<div id="outline-container-7-2-1" class="outline-4">
+<h4 id="sec-7-2-1"><span class="section-number-4">7.2.1</span> MainWindow.cpp</h4>
+<div class="outline-text-4" id="text-7-2-1">
 
 
 
@@ -4419,9 +5697,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-6-2-2" class="outline-4">
-<h4 id="sec-6-2-2"><span class="section-number-4">6.2.2</span> MainWindow.h</h4>
-<div class="outline-text-4" id="text-6-2-2">
+<div id="outline-container-7-2-2" class="outline-4">
+<h4 id="sec-7-2-2"><span class="section-number-4">7.2.2</span> MainWindow.h</h4>
+<div class="outline-text-4" id="text-7-2-2">
 
 
 
@@ -4457,9 +5735,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-6-2-3" class="outline-4">
-<h4 id="sec-6-2-3"><span class="section-number-4">6.2.3</span> moc_mainwindow.cpp</h4>
-<div class="outline-text-4" id="text-6-2-3">
+<div id="outline-container-7-2-3" class="outline-4">
+<h4 id="sec-7-2-3"><span class="section-number-4">7.2.3</span> moc_mainwindow.cpp</h4>
+<div class="outline-text-4" id="text-7-2-3">
 
 
 
@@ -4580,9 +5858,9 @@ QT_END_MOC_NAMESPACE
 
 </div>
 
-<div id="outline-container-6-2-4" class="outline-4">
-<h4 id="sec-6-2-4"><span class="section-number-4">6.2.4</span> ui_mainwindow.h</h4>
-<div class="outline-text-4" id="text-6-2-4">
+<div id="outline-container-7-2-4" class="outline-4">
+<h4 id="sec-7-2-4"><span class="section-number-4">7.2.4</span> ui_mainwindow.h</h4>
+<div class="outline-text-4" id="text-7-2-4">
 
 
 
@@ -4681,9 +5959,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-6-2-5" class="outline-4">
-<h4 id="sec-6-2-5"><span class="section-number-4">6.2.5</span> mainwindow.ui</h4>
-<div class="outline-text-4" id="text-6-2-5">
+<div id="outline-container-7-2-5" class="outline-4">
+<h4 id="sec-7-2-5"><span class="section-number-4">7.2.5</span> mainwindow.ui</h4>
+<div class="outline-text-4" id="text-7-2-5">
 
 
 
@@ -4792,16 +6070,16 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-6-3" class="outline-3">
-<h3 id="sec-6-3"><span class="section-number-3">6.3</span> Hello World Program</h3>
-<div class="outline-text-3" id="text-6-3">
+<div id="outline-container-7-3" class="outline-3">
+<h3 id="sec-7-3"><span class="section-number-3">7.3</span> Hello World Program</h3>
+<div class="outline-text-3" id="text-7-3">
 
 
 </div>
 
-<div id="outline-container-6-3-1" class="outline-4">
-<h4 id="sec-6-3-1"><span class="section-number-4">6.3.1</span> Source Code</h4>
-<div class="outline-text-4" id="text-6-3-1">
+<div id="outline-container-7-3-1" class="outline-4">
+<h4 id="sec-7-3-1"><span class="section-number-4">7.3.1</span> Source Code</h4>
+<div class="outline-text-4" id="text-7-3-1">
 
 
 
@@ -4912,19 +6190,19 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-6-4" class="outline-3">
-<h3 id="sec-6-4"><span class="section-number-3">6.4</span> Toggle A LED (A13-Olimex-Micro)</h3>
-<div class="outline-text-3" id="text-6-4">
+<div id="outline-container-7-4" class="outline-3">
+<h3 id="sec-7-4"><span class="section-number-3">7.4</span> Toggle A LED (A13-Olimex-Micro)</h3>
+<div class="outline-text-3" id="text-7-4">
 
 
 </div>
 
-<div id="outline-container-6-4-1" class="outline-4">
-<h4 id="sec-6-4-1"><span class="section-number-4">6.4.1</span> Using the Commandline</h4>
-<div class="outline-text-4" id="text-6-4-1">
+<div id="outline-container-7-4-1" class="outline-4">
+<h4 id="sec-7-4-1"><span class="section-number-4">7.4.1</span> Using the Commandline</h4>
+<div class="outline-text-4" id="text-7-4-1">
 
 <ul>
-<li id="sec-6-4-1-1">Turn it On<br/>
+<li id="sec-7-4-1-1">Turn it On<br/>
 
 
 
@@ -4934,7 +6212,7 @@ QT_END_NAMESPACE
 </li>
 </ul>
 <ul>
-<li id="sec-6-4-1-2">Turn it Off<br/>
+<li id="sec-7-4-1-2">Turn it Off<br/>
 
 
 
@@ -4947,9 +6225,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-6-4-2" class="outline-4">
-<h4 id="sec-6-4-2"><span class="section-number-4">6.4.2</span> Using C Code</h4>
-<div class="outline-text-4" id="text-6-4-2">
+<div id="outline-container-7-4-2" class="outline-4">
+<h4 id="sec-7-4-2"><span class="section-number-4">7.4.2</span> Using C Code</h4>
+<div class="outline-text-4" id="text-7-4-2">
 
 
 
@@ -5063,9 +6341,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-6-4-3" class="outline-4">
-<h4 id="sec-6-4-3"><span class="section-number-4">6.4.3</span> Links</h4>
-<div class="outline-text-4" id="text-6-4-3">
+<div id="outline-container-7-4-3" class="outline-4">
+<h4 id="sec-7-4-3"><span class="section-number-4">7.4.3</span> Links</h4>
+<div class="outline-text-4" id="text-7-4-3">
 
 <ul>
 <li><a href="http://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/">A13 Olinuxino Playing with GPIOS</a>
@@ -5079,9 +6357,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-7" class="outline-2">
-<h2 id="sec-7"><span class="section-number-2">7</span> GNU Free Documentation License</h2>
-<div class="outline-text-2" id="text-7">
+<div id="outline-container-8" class="outline-2">
+<h2 id="sec-8"><span class="section-number-2">8</span> GNU Free Documentation License</h2>
+<div class="outline-text-2" id="text-8">
 
 
 
@@ -5544,7 +6822,7 @@ to permit their use in free software.
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-07-15T17:44-0400</p>
+<p class="date">Date: 2013-08-06T15:29-0400</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
