@@ -47,6 +47,7 @@ It is easy for small companies and hobbyists to prototype microcontroller based 
 + Links
   + http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html
 * RCOS Presentations and Multimedia
+** RCOS Summer 2013 - Final Presentation
 ** A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo
 + [[http://youtu.be/v-ndT9fh3e0][Video]]
   Here is a demonstration of Qt Embedded touchscreen running the raycasting demo and the styledemo.
@@ -320,6 +321,137 @@ A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-I
 + 4.3" FPC4304006 MP4 MP5 GPS lcd display panel
 + Place of Origin: Guangdong, China (Mainland)
 + Brand Name: BYD
+
+* Getting Started
+This contains complete documentation of all steps taken including solutions to errors I encountered.  If you are installing the system from scratch, its probably better to start at the base of the HOWTO.  If you want to use a prebuilt image and start writing GUIS:
+** Getting the Development Environment Set Up
+1. Set up the [[Install%20ARM%20Toolchain%20with%20Buildroot][Cross Compiling Toolchain]]
+2. Compile [[Configure%20tslib%20on%20Device][TSLIB from Source]]
+3. [[Configure%20QT%20for%20Embedded%20Linux][Compile QT from Source]]
+4. Install QT Creator
+   #+BEGIN_SRC sh
+     sudo apt-get install qtcreator
+   #+END_SRC
+
+** Compiling Programs
+1. You must first build the makefile using the Qmake compiled in the last step, mine exists in /usr/local/qt/bin/qmake.  If I had a program created in qt_creator called my_program:
+   #+BEGIN_SRC sh
+     /usr/local/qt/bin/qmake my_program.pro
+   #+END_SRC
+   + only needs to be done once on the system
+2. Afterwards, compile the program with:
+   #+BEGIN_SRC sh
+     make clean; make
+   #+END_SRC
+   + If all your path variables are set correctly this will then create a program in the ARM Architechture, which can then be run on the device.
+   + If you aren't using anything specific to the device (I used some code with the virtual screen, so I can't run on the desktop), you can build it on the host machine just for testing purposes with the regular qmake.
+     #+BEGIN_SRC sh
+       qmake my_program.pro;
+       make clean; make
+     #+END_SRC
+     + of course to run it on the device, you would need to run it with the correct qmake, before building
+   + Emacs has great support for debugging with Make files (M-x compile) then enter the build commands (make clean; make)
+** Sending Programs over to the Device
+After building the program, it must be sent to the device in order to run
+1. Set up SFTP
+   1. Connect to the device
+      #+BEGIN_SRC sh
+        sftp root@192.168.12.222
+      #+END_SRC
+      + This is the static IP, so it should work, otherwise check the device IP
+   2. Set the local directory (where the binary is to send)
+      #+BEGIN_SRC sh
+        lcd /home/slaye/Desktop/myprogram/
+      #+END_SRC
+   3. Set the directory where you want to send the program
+      #+BEGIN_SRC sh
+        cd ./Desktop
+      #+END_SRC
+2. Send the program to the Device
+   #+BEGIN_SRC sh
+     put myprogram
+   #+END_SRC
+** Running a Program
+1. Plug in the Wireless, and USB Keyboard before booting
+   + WARNING: not plugging in the keyboard may mess up the settings that tell TSLIB where to look for touchscreen input.  Currently a keyboard is always needed, which is why it is configured this way, this can be modified in the [[Configure%20tslib%20on%20Device][TSLIB configuration]] on the device for more permanent results.
+2. Plug in Power
+3. Login:
+   | Username | root |
+   | Password | password |
+4. Navigate to the Directory
+   #+BEGIN_SRC sh
+     cd ./Desktop/; # go to Desktop
+     cd ..;         # go to the previous directory
+     ls;            # show the files in the current directory
+   #+END_SRC
+5. Once you are in the dirtory with your program (say, my_program), run it with:
+   #+BEGIN_SRC sh
+     ./my_program -qws
+   #+END_SRC
+   + the "-qws" is the command to run the virtual screen
+6. Killing the Program
+   since these programs are meant to run "permanently" there is no way to exit from within the program, you can kill the process from another shell to end the program.
+   1. Type Ctrl + Alt + F2 to switch to the second terminal
+   2. Login (Username: root, Password, password)
+   3. Find your process name (aka the CMD)
+      #+BEGIN_SRC sh
+        ps -a
+      #+END_SRC
+   4. Kill the Process
+      #+BEGIN_SRC sh
+        killall my_program
+      #+END_SRC
+   5. Check the process is dead
+      #+BEGIN_SRC sh
+        ps -a
+      #+END_SRC
+      + the program should be gone
+      + you can kill it with more power with:
+        #+BEGIN_SRC sh
+          kill -9 my_program
+        #+END_SRC
+        OR
+        #+BEGIN_SRC sh
+          kill -9 PID
+        #+END_SRC
+        + where you use the PID found with "ps -a"
+   6. Switch back to your other terminal with Ctrl + Alt + F1
+** Calibrating the Toucscreen
++ You can calibrate the toucschreen with:
+  #+BEGIN_SRC sh
+    ts_calibrate
+  #+END_SRC
++ There are also a few other ts program, such as:
+  #+BEGIN_SRC sh
+    ts_calibrate;
+    ts_harvest;
+    ts_print;
+    ts_print_raw;
+    ts_test;
+  #+END_SRC
+** Contributing to the Documentation
++ This documentation is generated with org-mode in Emacs.
++ Org-Mode is included by default in Emacs.
++ You must add the project to a list, then you compile
++ Add this to your ~/.emacs file.
+  #+BEGIN_SRC elisp
+    ;; -------------------------------------
+    ;; -- Publish Websites
+    ;; -------------------------------------
+    (setq org-publish-project-alist
+          '(("embedd-gui"
+             :base-directory "~/svn/embedd-gui/doc/"
+             :publishing-directory "~/svn/embedd-gui/doc/"
+             )))
+  #+END_SRC
+  + obviously changing the based directory where the /doc dir is and the publish to wherever you want to output the results.
++ To publish, in Emacs open the embedd-gui/docs/notes.org file, and type: C-u C-c C-e E.
+  | C-u | forces all to be published, since it won't recoginize some files have changed due to the way they are linked |
+  | C-c C-e | is the same thing as M-x org-export                                                                          |
+  | E   | the option to export all projects                                                                            |
+  + you should then find the freshly exported documentation in your publish directory
+    + This will publish in all of the useful export formats, including a javascript file, 2 html files, and pdf. (All linked to at the top).
+  + The style sheet is a custom css I wrote (nmg.css), which must be included at the root of the directory for it to look pretty.
 
 * Quick Reference
 ** Connect to Serial via Bluetooth

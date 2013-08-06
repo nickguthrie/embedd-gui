@@ -5,5 +5,6 @@
         <file>img/vv_text.png</file>
         <file>img/color_wheel.png</file>
         <file>img/gradiant.png</file>
+        <file>img/vv_logo_full_slogan.png</file>
     </qresource>
 </RCC>
