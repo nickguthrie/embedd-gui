@@ -51,7 +51,7 @@
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="iconSize">
      <size>
@@ -64,7 +64,7 @@
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="icon">
-      <iconset resource="Resources.qrc">
+      <iconset>
        <normaloff>:/img/vv_icon.png</normaloff>:/img/vv_icon.png</iconset>
      </attribute>
      <attribute name="title">
@@ -141,7 +141,7 @@ color: rgb(0, 0, 0);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="Resources.qrc">:/img/vv_logo_full_slogan.png</pixmap>
+       <pixmap>:/img/vv_logo_full_slogan.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -153,7 +153,7 @@ color: rgb(0, 0, 0);</string>
     </widget>
     <widget class="QWidget" name="tab_2">
      <attribute name="icon">
-      <iconset resource="Resources.qrc">
+      <iconset>
        <normaloff>:/img/gradiant.png</normaloff>:/img/gradiant.png</iconset>
      </attribute>
      <attribute name="title">
@@ -172,7 +172,7 @@ color: rgb(0, 0, 0);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="Resources.qrc">:/img/vv_logo_full_slogan.png</pixmap>
+       <pixmap>:/img/vv_logo_full_slogan.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -287,7 +287,7 @@ background-color: rgb(255, 0, 127);</string>
     </widget>
     <widget class="QWidget" name="tab_3">
      <attribute name="icon">
-      <iconset resource="Resources.qrc">
+      <iconset>
        <normaloff>:/img/color_wheel.png</normaloff>:/img/color_wheel.png</iconset>
      </attribute>
      <attribute name="title">
@@ -306,7 +306,7 @@ background-color: rgb(255, 0, 127);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="Resources.qrc">:/img/color_wheel.png</pixmap>
+       <pixmap>:/img/color_wheel.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -356,7 +356,7 @@ background-color: rgb(255, 0, 127);</string>
        <string/>
       </property>
       <property name="pixmap">
-       <pixmap resource="Resources.qrc">:/img/vv_logo_full_slogan.png</pixmap>
+       <pixmap>:/img/vv_logo_full_slogan.png</pixmap>
       </property>
       <property name="scaledContents">
        <bool>true</bool>
@@ -373,8 +373,6 @@ background-color: rgb(255, 0, 127);</string>
   </widget>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources>
-  <include location="Resources.qrc"/>
- </resources>
+ <resources/>
  <connections/>
 </ui>
