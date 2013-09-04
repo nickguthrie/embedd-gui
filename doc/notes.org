@@ -48,6 +48,11 @@ It is easy for small companies and hobbyists to prototype microcontroller based 
   + http://qt-project.org/doc/qt-4.8/qt-embedded-linux.html
 * RCOS Presentations and Multimedia
 ** RCOS Summer 2013 - Final Presentation
++ [[http://youtu.be/g0xSY7x0GME][Video]]
++ [[./doc/OSSEG3.pdf][Presentation Slides]]
+** Prototype Lightswitch GUI Videos
++ [[http://youtu.be/XWMzWnA78z0][Vital Vio Controller]]
++ [[http://youtu.be/5cpHjrTNl-s][RPI RCOS Embedd-GUI Controller]]
 ** A13 OlinuXino 4.3" Touchscreen Qt Embedded Demo
 + [[http://youtu.be/v-ndT9fh3e0][Video]]
   Here is a demonstration of Qt Embedded touchscreen running the raycasting demo and the styledemo.
