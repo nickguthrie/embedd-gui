@@ -331,7 +331,7 @@ A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-I
 This contains complete documentation of all steps taken including solutions to errors I encountered.  If you are installing the system from scratch, its probably better to start at the base of the HOWTO.  If you want to use a prebuilt image and start writing GUIS:
 ** Getting the Development Environment Set Up
 1. Set up the [[Install%20ARM%20Toolchain%20with%20Buildroot][Cross Compiling Toolchain]]
-2. Compile [[Configure%20tslib%20on%20Device][TSLIB from Source]]
+2. Compile [[Configure%20QT%20for%20Embedded%20Linux][TSLIB from Source on Development Platform]]
 3. [[Configure%20QT%20for%20Embedded%20Linux][Compile QT from Source]]
 4. Install QT Creator
    #+BEGIN_SRC sh
@@ -1639,6 +1639,19 @@ http://www.qtcentre.org/archive/index.php/t-41850.html
 + [[./doc/Getting%20Started%20with%20Qt.pdf][Getting started with Qt.pdf]]
   + has working notes for proper installation of tslib.
 * Simple Sample Programs
+** Vital Vio Controller
+*** Main.cpp
+#+INCLUDE: "../src/vital_vio/vital_vio/main.cpp" src cpp
+*** MainWindow.cpp
+#+INCLUDE: "../src/vital_vio/vital_vio/mainwindow.cpp" src cpp
+*** MainWindow.h
+#+INCLUDE: "../src/vital_vio/vital_vio/mainwindow.h" src cpp
+*** moc_mainwindow.cpp
+#+INCLUDE: "../src/vital_vio/vital_vio/moc_mainwindow.cpp" src cpp
+*** ui_mainwindow.h
+#+INCLUDE: "../src/vital_vio/vital_vio/ui_mainwindow.h" src cpp
+*** mainwindow.ui
+#+INCLUDE: "../src/vital_vio/vital_vio/!mainwindow.ui" src txt
 ** Burgler
 *** Source
 **** MainWindow.cpp

@@ -275,31 +275,41 @@ This documentation is written under the <a href="#sec-8">GNU Free Documentation 
 </li>
 <li><a href="#sec-7">Simple Sample Programs</a>
 <ul>
-<li><a href="#sec-7-1">Burgler</a>
+<li><a href="#sec-7-1">Vital Vio Controller</a>
 <ul>
-<li><a href="#sec-7-1-1">Source</a></li>
-<li><a href="#sec-7-1-2">Notes</a></li>
+<li><a href="#sec-7-1-1">Main.cpp</a></li>
+<li><a href="#sec-7-1-2">MainWindow.cpp</a></li>
+<li><a href="#sec-7-1-3">MainWindow.h</a></li>
+<li><a href="#sec-7-1-4">moc_mainwindow.cpp</a></li>
+<li><a href="#sec-7-1-5">ui_mainwindow.h</a></li>
+<li><a href="#sec-7-1-6">mainwindow.ui</a></li>
 </ul>
 </li>
-<li><a href="#sec-7-2">Basic Output to LCD Screen</a>
+<li><a href="#sec-7-2">Burgler</a>
 <ul>
-<li><a href="#sec-7-2-1">MainWindow.cpp</a></li>
-<li><a href="#sec-7-2-2">MainWindow.h</a></li>
-<li><a href="#sec-7-2-3">moc_mainwindow.cpp</a></li>
-<li><a href="#sec-7-2-4">ui_mainwindow.h</a></li>
-<li><a href="#sec-7-2-5">mainwindow.ui</a></li>
+<li><a href="#sec-7-2-1">Source</a></li>
+<li><a href="#sec-7-2-2">Notes</a></li>
 </ul>
 </li>
-<li><a href="#sec-7-3">Hello World Program</a>
+<li><a href="#sec-7-3">Basic Output to LCD Screen</a>
 <ul>
-<li><a href="#sec-7-3-1">Source Code</a></li>
+<li><a href="#sec-7-3-1">MainWindow.cpp</a></li>
+<li><a href="#sec-7-3-2">MainWindow.h</a></li>
+<li><a href="#sec-7-3-3">moc_mainwindow.cpp</a></li>
+<li><a href="#sec-7-3-4">ui_mainwindow.h</a></li>
+<li><a href="#sec-7-3-5">mainwindow.ui</a></li>
 </ul>
 </li>
-<li><a href="#sec-7-4">Toggle A LED (A13-Olimex-Micro)</a>
+<li><a href="#sec-7-4">Hello World Program</a>
 <ul>
-<li><a href="#sec-7-4-1">Using the Commandline</a></li>
-<li><a href="#sec-7-4-2">Using C Code</a></li>
-<li><a href="#sec-7-4-3">Links</a></li>
+<li><a href="#sec-7-4-1">Source Code</a></li>
+</ul>
+</li>
+<li><a href="#sec-7-5">Toggle A LED (A13-Olimex-Micro)</a>
+<ul>
+<li><a href="#sec-7-5-1">Using the Commandline</a></li>
+<li><a href="#sec-7-5-2">Using C Code</a></li>
+<li><a href="#sec-7-5-3">Links</a></li>
 </ul></li>
 </ul>
 </li>
@@ -1293,7 +1303,7 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 <ol>
 <li>Set up the <a href="#sec-6-7">Cross Compiling Toolchain</a>
 </li>
-<li>Compile <a href="#sec-6-8">TSLIB from Source</a>
+<li>Compile <a href="#sec-6-9">TSLIB from Source on Development Platform</a>
 </li>
 <li><a href="#sec-6-9">Compile QT from Source</a>
 </li>
@@ -4295,18 +4305,588 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 </div>
 
 <div id="outline-container-7-1" class="outline-3">
-<h3 id="sec-7-1">Burgler</h3>
+<h3 id="sec-7-1">Vital Vio Controller</h3>
 <div class="outline-text-3" id="text-7-1">
 
 
 </div>
 
 <div id="outline-container-7-1-1" class="outline-4">
-<h4 id="sec-7-1-1">Source</h4>
+<h4 id="sec-7-1-1">Main.cpp</h4>
 <div class="outline-text-4" id="text-7-1-1">
 
+
+
+
+<pre class="src src-cpp"><span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">------------------------------------------------------------------ :Libraries:</span>
+<span style="color: #fa8072;">//                      </span><span style="color: #ff7f24; font-style: italic;">_    _ _                 _        </span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">| |  (_) |__ _ _ __ _ _ _(_)___ ___</span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">| |__| | '_ \ '_/ _` | '_| / -_|_-&lt;</span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">|____|_|_.__/_| \__,_|_| |_\___/__/</span>
+<span style="color: #fa8072;">//                                                        </span>
+<span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">-----------------------------------------------------------------------------</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QApplication&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QWSServer&gt;</span>
+
+<span style="color: #63b8ff;">int</span> main(<span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">argc</span>, <span style="color: #63b8ff;">char</span> *<span style="color: #7fffd4;">argv</span>[])
+{
+    <span style="color: #63b8ff;">QApplication</span> <span style="color: #7fffd4;">a</span>(argc, argv);
+
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Change the background Color</span>
+    <span style="color: #63b8ff;">QPalette</span> <span style="color: #7fffd4;">pal</span> = a.palette();
+    pal.setColor(<span style="color: #8470ff; font-weight: bold;">QPalette</span>::Window, <span style="color: #8470ff; font-weight: bold;">Qt</span>::black);
+    a.setPalette(pal);
+
+<span style="color: #6495ed; font-style: italic;">#ifdef</span> Q_WS_QWS
+    <span style="color: #8470ff; font-weight: bold;">QWSServer</span>::<span style="color: #63b8ff;">setCursorVisible</span>( <span style="color: #8470ff; font-weight: bold;">false</span> );
+<span style="color: #6495ed; font-style: italic;">#endif</span>
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Start the GUI</span>
+    <span style="color: #63b8ff;">MainWindow</span> <span style="color: #7fffd4;">w</span>;
+    w.showFullScreen();
+    w.show();
+
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Exit the program</span>
+    <span style="color: #00ffff;">return</span> a.exec();
+}
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-2" class="outline-4">
+<h4 id="sec-7-1-2">MainWindow.cpp</h4>
+<div class="outline-text-4" id="text-7-1-2">
+
+
+
+
+<pre class="src src-cpp"><span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @file mainwindow.cpp</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief A basic Vital Vio Controller.</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> *  A graphical interface to control lights.</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @title Vital Vio</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @author Nicholas Guthrie</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @web http//nickguthrie.com/embedd_gui/doc/</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @created July 29, 2013</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> * This program is free software: you can redistribute it and/or modify it under</span>
+<span style="color: #ff7f24; font-style: italic;"> * the terms of the GNU Lesser General Public License as published by the Free</span>
+<span style="color: #ff7f24; font-style: italic;"> * Software Foundation, either version 3 of the License, or (at your option) any</span>
+<span style="color: #ff7f24; font-style: italic;"> * later version.</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> * This program is distributed in the hope that it will be useful, but WITHOUT</span>
+<span style="color: #ff7f24; font-style: italic;"> * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS</span>
+<span style="color: #ff7f24; font-style: italic;"> * FOR A PARTICULAR PURPOSE.  See the GNU Lesser General Public License for more</span>
+<span style="color: #ff7f24; font-style: italic;"> * details.</span>
+<span style="color: #ff7f24; font-style: italic;"> *</span>
+<span style="color: #ff7f24; font-style: italic;"> * You should have received a copy of the GNU Lesser General Public License</span>
+<span style="color: #ff7f24; font-style: italic;"> * along with this program.  If not, see &lt;<a href="http://www.gnu.org/licenses/">http://www.gnu.org/licenses/</a>&gt;.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">------------------------------------------------------------------ :Libraries:</span>
+<span style="color: #fa8072;">//                      </span><span style="color: #ff7f24; font-style: italic;">_    _ _                 _</span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">| |  (_) |__ _ _ __ _ _ _(_)___ ___</span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">| |__| | '_ \ '_/ _` | '_| / -_|_-&lt;</span>
+<span style="color: #fa8072;">//                     </span><span style="color: #ff7f24; font-style: italic;">|____|_|_.__/_| \__,_|_| |_\___/__/</span>
+<span style="color: #fa8072;">//</span>
+<span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">-----------------------------------------------------------------------------</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"ui_mainwindow.h"</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QPushButton&gt;</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Sets up the Main Interface.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">MainWindow</span>(<span style="color: #63b8ff;">QWidget</span> *<span style="color: #7fffd4;">parent</span>) :
+    QMainWindow(parent),
+    ui(<span style="color: #00ffff;">new</span> <span style="color: #8470ff; font-weight: bold;">Ui</span>::<span style="color: #63b8ff;">MainWindow</span>)
+{
+    <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Set up User Interface</span>
+    ui-&gt;setupUi(<span style="color: #00ffff;">this</span>);
+    <span style="color: #00ffff;">this</span>-&gt;DeleteButtonInit();
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Window deconstructor.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::~MainWindow()
+{
+    <span style="color: #00ffff;">delete</span> ui;
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Initializes the on default "off state" buton.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">DeleteButtonInit</span>()
+{
+    <span style="color: #00ffff;">this</span>-&gt;deleteButton = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(<span style="color: #00ffff;">this</span>);
+    <span style="color: #00ffff;">this</span>-&gt;deleteButton-&gt;setStyleSheet(<span style="color: #ffc1c1;">"background-color: black;"</span>
+                                      <span style="color: #ffc1c1;">"selection-background-color: black;"</span>);
+    <span style="color: #00ffff;">this</span>-&gt;deleteButton-&gt;setFixedSize(500,300);
+    connect(deleteButton, <span style="color: #63b8ff;">SIGNAL</span>(<span style="color: #7fffd4;">pressed</span>()), <span style="color: #00ffff;">this</span>, <span style="color: #63b8ff;">SLOT</span>(<span style="color: #7fffd4;">DeleteButtonHide</span>()));
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Hides the "off state" button.</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">DeleteButtonHide</span>()
+{
+    <span style="color: #00ffff;">this</span>-&gt;deleteButton-&gt;setVisible(<span style="color: #8470ff; font-weight: bold;">false</span>);
+}
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #fa8072;">/**</span>
+<span style="color: #ff7f24; font-style: italic;"> *  @brief Makes the screen go blank (turns the lights off).</span>
+<span style="color: #ff7f24; font-style: italic;"> */</span>
+<span style="color: #fa8072;">////////////////////////////////////////////////////////////////////////////////</span>
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_offButton_clicked</span>()
+{
+    <span style="color: #00ffff;">this</span>-&gt;deleteButton-&gt;setVisible(<span style="color: #8470ff; font-weight: bold;">true</span>);
+}
+
+<span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">void MainWindow::on_label_3_linkActivated()</span>
+<span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">{</span>
+<span style="color: #fa8072;">//     </span><span style="color: #ff7f24; font-style: italic;">ui-&gt;tabWidget-&gt;setCurrentIndex(0);</span>
+<span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">}</span>
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-3" class="outline-4">
+<h4 id="sec-7-1-3">MainWindow.h</h4>
+<div class="outline-text-4" id="text-7-1-3">
+
+
+
+
+<pre class="src src-cpp"><span style="color: #6495ed; font-style: italic;">#if</span><span style="color: #6495ed; font-style: italic;">n</span><span style="color: #6495ed; font-style: italic;">def</span> MAINWINDOW_H
+<span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #7fffd4;">MAINWINDOW_H</span>
+
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QMainWindow&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QPushButton&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QProxyStyle&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QScrollBar&gt;</span>
+
+<span style="color: #00ffff;">namespace</span> <span style="color: #8470ff; font-weight: bold;">Ui</span> {
+    <span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">MainWindow</span>;
+}
+
+<span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">MainWindow</span> : <span style="color: #00ffff;">public</span> <span style="color: #63b8ff;">QMainWindow</span>
+{
+
+
+    Q_OBJECT
+
+        <span style="color: #00ffff;">public</span>:
+    <span style="color: #00ffff;">explicit</span> MainWindow(<span style="color: #63b8ff;">QWidget</span> *<span style="color: #7fffd4;">parent</span> = 0);
+    ~<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">MainWindow</span>();
+
+    <span style="color: #00ffff;">private</span> <span style="color: #00ffff;">slots</span>:
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">DeleteButtonInit</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">DeleteButtonHide</span>();
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">on_offButton_clicked</span>();
+
+    <span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">void on_label_3_linkActivated();</span>
+
+<span style="color: #00ffff;">private</span>:
+    <span style="color: #8470ff; font-weight: bold;">Ui</span>::MainWindow *ui;
+    QPushButton *deleteButton;
+};
+
+
+<span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">Override style for better Touchscreen handling</span>
+<span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">MyProxyStyle</span> : <span style="color: #00ffff;">public</span> <span style="color: #63b8ff;">QProxyStyle</span>
+{
+  <span style="color: #00ffff;">public</span>:
+    <span style="color: #63b8ff;">int</span> pixelMetric ( <span style="color: #63b8ff;">PixelMetric</span> <span style="color: #7fffd4;">metric</span>, <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QStyleOption</span> * <span style="color: #7fffd4;">option</span> = 0,
+                      <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QWidget</span> * <span style="color: #7fffd4;">widget</span> = 0 ) <span style="color: #00ffff;">const</span>
+    {
+        <span style="color: #00ffff;">switch</span>(metric) {
+          <span style="color: #00ffff;">case</span> PM_SliderControlThickness  : <span style="color: #00ffff;">return</span> 50;
+          <span style="color: #00ffff;">default</span>                         : <span style="color: #00ffff;">return</span>
+                (<span style="color: #8470ff; font-weight: bold;">QProxyStyle</span>::pixelMetric(metric,option,widget));
+        }
+    }
+
+};
+
+
+
+
+<span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">MAINWINDOW_H</span>
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-4" class="outline-4">
+<h4 id="sec-7-1-4">moc_mainwindow.cpp</h4>
+<div class="outline-text-4" id="text-7-1-4">
+
+
+
+
+<pre class="src src-cpp"><span style="color: #fa8072;">/****************************************************************************</span>
+<span style="color: #ff7f24; font-style: italic;">** Meta object code from reading C++ file 'mainwindow.h'</span>
+<span style="color: #ff7f24; font-style: italic;">**</span>
+<span style="color: #ff7f24; font-style: italic;">** Created: Tue Aug 6 14:27:31 2013</span>
+<span style="color: #ff7f24; font-style: italic;">**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)</span>
+<span style="color: #ff7f24; font-style: italic;">**</span>
+<span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost!</span>
+<span style="color: #ff7f24; font-style: italic;">*****************************************************************************/</span>
+
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
+<span style="color: #6495ed; font-style: italic;">#if</span> !<span style="color: #6495ed; font-style: italic;">defined</span>(Q_MOC_OUTPUT_REVISION)
+<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"The header file 'mainwindow.h' doesn't include &lt;QObject&gt;."</span>
+<span style="color: #6495ed; font-style: italic;">#elif</span> Q_MOC_OUTPUT_REVISION != 63
+<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"This file was generated using the moc from 4.8.4. It"</span>
+<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"cannot be used with the include files from this version of Qt."</span>
+<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"(The moc has changed too much.)"</span>
+<span style="color: #6495ed; font-style: italic;">#endif</span>
+
+QT_BEGIN_MOC_NAMESPACE
+<span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">uint</span> <span style="color: #7fffd4;">qt_meta_data_MainWindow</span>[] = {
+
+ <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">content:</span>
+       6,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">revision</span>
+       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classname</span>
+       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classinfo</span>
+       3,   14, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">methods</span>
+       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">properties</span>
+       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">enums/sets</span>
+       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">constructors</span>
+       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">flags</span>
+       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">signalCount</span>
+
+ <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">slots: signature, parameters, type, tag, flags</span>
+      12,   11,   11,   11, 0x08,
+      31,   11,   11,   11, 0x08,
+      50,   11,   11,   11, 0x08,
+
+       0        <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">eod</span>
+};
+
+<span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">char</span> <span style="color: #7fffd4;">qt_meta_stringdata_MainWindow</span>[] = {
+    <span style="color: #ffc1c1;">"MainWindow\0\0DeleteButtonInit()\0"</span>
+    <span style="color: #ffc1c1;">"DeleteButtonHide()\0on_offButton_clicked()\0"</span>
+};
+
+<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_static_metacall</span>(<span style="color: #63b8ff;">QObject</span> *<span style="color: #7fffd4;">_o</span>, <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">Call</span> <span style="color: #7fffd4;">_c</span>, <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">_id</span>, <span style="color: #63b8ff;">void</span> **<span style="color: #7fffd4;">_a</span>)
+{
+    <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::InvokeMetaMethod) {
+        Q_ASSERT(staticMetaObject.cast(_o));
+        MainWindow *_t = <span style="color: #00ffff;">static_cast</span>&lt;MainWindow *&gt;(_o);
+        <span style="color: #00ffff;">switch</span> (_id) {
+        <span style="color: #00ffff;">case</span> 0: _t-&gt;DeleteButtonInit(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 1: _t-&gt;DeleteButtonHide(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">case</span> 2: _t-&gt;on_offButton_clicked(); <span style="color: #00ffff;">break</span>;
+        <span style="color: #00ffff;">default</span>: ;
+        }
+    }
+    <span style="color: #63b8ff;">Q_UNUSED</span>(<span style="color: #7fffd4;">_a</span>);
+}
+
+<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObjectExtraData</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #7fffd4;">staticMetaObjectExtraData</span> = {
+    0,  qt_static_metacall 
+};
+
+<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #7fffd4;">staticMetaObject</span> = {
+    { &amp;<span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::staticMetaObject, qt_meta_stringdata_MainWindow,
+      qt_meta_data_MainWindow, &amp;staticMetaObjectExtraData }
+};
+
+<span style="color: #6495ed; font-style: italic;">#ifdef</span> Q_NO_DATA_RELOCATION
+<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> &amp;<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">getStaticMetaObject</span>() { <span style="color: #00ffff;">return</span> staticMetaObject; }
+<span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">Q_NO_DATA_RELOCATION</span>
+
+<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> *<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">metaObject</span>() <span style="color: #00ffff;">const</span>
+{
+    <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;metaObject ? <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;metaObject : &amp;staticMetaObject;
+}
+
+<span style="color: #63b8ff;">void</span> *<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_metacast</span>(<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">char</span> *<span style="color: #7fffd4;">_clname</span>)
+{
+    <span style="color: #00ffff;">if</span> (!_clname) <span style="color: #00ffff;">return</span> 0;
+    <span style="color: #00ffff;">if</span> (!strcmp(_clname, qt_meta_stringdata_MainWindow))
+        <span style="color: #00ffff;">return</span> <span style="color: #00ffff;">static_cast</span>&lt;<span style="color: #63b8ff;">void</span>*&gt;(<span style="color: #00ffff;">const_cast</span>&lt; MainWindow*&gt;(<span style="color: #00ffff;">this</span>));
+    <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::qt_metacast(_clname);
+}
+
+<span style="color: #63b8ff;">int</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_metacall</span>(<span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">Call</span> <span style="color: #7fffd4;">_c</span>, <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">_id</span>, <span style="color: #63b8ff;">void</span> **<span style="color: #7fffd4;">_a</span>)
+{
+    _id = <span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::qt_metacall(_c, _id, _a);
+    <span style="color: #00ffff;">if</span> (_id &lt; 0)
+        <span style="color: #00ffff;">return</span> _id;
+    <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::InvokeMetaMethod) {
+        <span style="color: #00ffff;">if</span> (_id &lt; 3)
+            qt_static_metacall(<span style="color: #00ffff;">this</span>, _c, _id, _a);
+        _id -= 3;
+    }
+    <span style="color: #00ffff;">return</span> _id;
+}
+QT_END_MOC_NAMESPACE
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-5" class="outline-4">
+<h4 id="sec-7-1-5">ui_mainwindow.h</h4>
+<div class="outline-text-4" id="text-7-1-5">
+
+
+
+
+<pre class="src src-cpp"><span style="color: #fa8072;">/********************************************************************************</span>
+<span style="color: #ff7f24; font-style: italic;">** Form generated from reading UI file 'mainwindow.ui'</span>
+<span style="color: #ff7f24; font-style: italic;">**</span>
+<span style="color: #ff7f24; font-style: italic;">** Created: Tue Aug 6 14:27:29 2013</span>
+<span style="color: #ff7f24; font-style: italic;">**      by: Qt User Interface Compiler version 4.8.4</span>
+<span style="color: #ff7f24; font-style: italic;">**</span>
+<span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost when recompiling UI file!</span>
+<span style="color: #ff7f24; font-style: italic;">********************************************************************************/</span>
+
+<span style="color: #6495ed; font-style: italic;">#if</span><span style="color: #6495ed; font-style: italic;">n</span><span style="color: #6495ed; font-style: italic;">def</span> UI_MAINWINDOW_H
+<span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #7fffd4;">UI_MAINWINDOW_H</span>
+
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtCore/QVariant&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QAction&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QApplication&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QButtonGroup&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QDial&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QHeaderView&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QLabel&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QMainWindow&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QPushButton&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QScrollBar&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QTabWidget&gt;</span>
+<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QWidget&gt;</span>
+
+QT_BEGIN_NAMESPACE
+
+<span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">Ui_MainWindow</span>
+{
+<span style="color: #00ffff;">public</span>:
+    QWidget *centralWidget;
+    QTabWidget *tabWidget;
+    QWidget *tab;
+    QPushButton *pushButton_2;
+    QPushButton *offButton;
+    QLabel *label_6;
+    QWidget *tab_2;
+    QLabel *label_2;
+    QPushButton *pushButton;
+    QPushButton *pushButton_3;
+    QPushButton *pushButton_4;
+    QScrollBar *verticalScrollBar;
+    QWidget *tab_3;
+    QLabel *label_4;
+    QDial *dial;
+    QLabel *label_5;
+
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">setupUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
+    {
+        <span style="color: #00ffff;">if</span> (MainWindow-&gt;objectName().isEmpty())
+            MainWindow-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"MainWindow"</span>));
+        MainWindow-&gt;resize(480, 272);
+        MainWindow-&gt;setFocusPolicy(<span style="color: #8470ff; font-weight: bold;">Qt</span>::StrongFocus);
+        centralWidget = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>(MainWindow);
+        centralWidget-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"centralWidget"</span>));
+        tabWidget = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QTabWidget</span>(centralWidget);
+        tabWidget-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tabWidget"</span>));
+        tabWidget-&gt;setGeometry(QRect(2, 0, 573, 414));
+        <span style="color: #63b8ff;">QSizePolicy</span> <span style="color: #7fffd4;">sizePolicy</span>(<span style="color: #8470ff; font-weight: bold;">QSizePolicy</span>::Fixed, <span style="color: #8470ff; font-weight: bold;">QSizePolicy</span>::Expanding);
+        sizePolicy.setHorizontalStretch(0);
+        sizePolicy.setVerticalStretch(0);
+        sizePolicy.setHeightForWidth(tabWidget-&gt;sizePolicy().hasHeightForWidth());
+        tabWidget-&gt;setSizePolicy(sizePolicy);
+        tabWidget-&gt;setMinimumSize(QSize(480, 272));
+        tabWidget-&gt;setFocusPolicy(<span style="color: #8470ff; font-weight: bold;">Qt</span>::NoFocus);
+        tabWidget-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(51, 51, 51);"</span>));
+        tabWidget-&gt;setTabPosition(<span style="color: #8470ff; font-weight: bold;">QTabWidget</span>::West);
+        tabWidget-&gt;setTabShape(<span style="color: #8470ff; font-weight: bold;">QTabWidget</span>::Rounded);
+        tabWidget-&gt;setIconSize(QSize(50, 50));
+        tabWidget-&gt;setElideMode(<span style="color: #8470ff; font-weight: bold;">Qt</span>::ElideMiddle);
+        tab = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
+        tab-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab"</span>));
+        pushButton_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab);
+        pushButton_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pushButton_2"</span>));
+        pushButton_2-&gt;setGeometry(QRect(0, 160, 420, 111));
+        pushButton_2-&gt;setMinimumSize(QSize(420, 100));
+        <span style="color: #63b8ff;">QFont</span> <span style="color: #7fffd4;">font</span>;
+        font.setFamily(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"Abyssinica SIL"</span>));
+        font.setPointSize(40);
+        pushButton_2-&gt;setFont(font);
+        pushButton_2-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(155, 42, 132);\n"</span>
+<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);"</span>));
+        offButton = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab);
+        offButton-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"offButton"</span>));
+        offButton-&gt;setGeometry(QRect(0, 60, 420, 101));
+        offButton-&gt;setMinimumSize(QSize(420, 100));
+        offButton-&gt;setFont(font);
+        offButton-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(13, 103, 182);\n"</span>
+<span style="color: #ffc1c1;">"color: rgb(0, 0, 0);"</span>));
+        label_6 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(tab);
+        label_6-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label_6"</span>));
+        label_6-&gt;setGeometry(QRect(0, 0, 341, 61));
+        label_6-&gt;setPixmap(QPixmap(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/vv_logo_full_slogan.png"</span>)));
+        label_6-&gt;setScaledContents(<span style="color: #8470ff; font-weight: bold;">true</span>);
+        label_6-&gt;setWordWrap(<span style="color: #8470ff; font-weight: bold;">false</span>);
+        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon</span>;
+        icon.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/vv_icon.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
+        tabWidget-&gt;addTab(tab, icon, QString());
+        tab_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
+        tab_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab_2"</span>));
+        label_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(tab_2);
+        label_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label_2"</span>));
+        label_2-&gt;setGeometry(QRect(0, 0, 341, 61));
+        label_2-&gt;setPixmap(QPixmap(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/vv_logo_full_slogan.png"</span>)));
+        label_2-&gt;setScaledContents(<span style="color: #8470ff; font-weight: bold;">true</span>);
+        label_2-&gt;setWordWrap(<span style="color: #8470ff; font-weight: bold;">false</span>);
+        pushButton = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_2);
+        pushButton-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pushButton"</span>));
+        pushButton-&gt;setGeometry(QRect(0, 60, 331, 71));
+        pushButton-&gt;setFont(font);
+        pushButton-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);\n"</span>
+<span style="color: #ffc1c1;">"background-color: rgb(170, 0, 255);"</span>));
+        pushButton_3 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_2);
+        pushButton_3-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pushButton_3"</span>));
+        pushButton_3-&gt;setGeometry(QRect(0, 130, 331, 71));
+        pushButton_3-&gt;setFont(font);
+        pushButton_3-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);\n"</span>
+<span style="color: #ffc1c1;">"background-color: rgb(0, 85, 127);"</span>));
+        pushButton_4 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_2);
+        pushButton_4-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pushButton_4"</span>));
+        pushButton_4-&gt;setGeometry(QRect(0, 200, 331, 71));
+        pushButton_4-&gt;setFont(font);
+        pushButton_4-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);\n"</span>
+<span style="color: #ffc1c1;">"background-color: rgb(255, 0, 127);"</span>));
+        verticalScrollBar = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QScrollBar</span>(tab_2);
+        verticalScrollBar-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"verticalScrollBar"</span>));
+        verticalScrollBar-&gt;setGeometry(QRect(350, 0, 71, 271));
+        verticalScrollBar-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, fx:0.5, fy:0.5, stop:0 rgba(13, 103, 182), stop:0.497326 rgba(13, 103, 182), stop:1 rgba(13, 103, 182));"</span>));
+        verticalScrollBar-&gt;setMaximum(1000);
+        verticalScrollBar-&gt;setSingleStep(1);
+        verticalScrollBar-&gt;setPageStep(100);
+        verticalScrollBar-&gt;setTracking(<span style="color: #8470ff; font-weight: bold;">true</span>);
+        verticalScrollBar-&gt;setOrientation(<span style="color: #8470ff; font-weight: bold;">Qt</span>::Vertical);
+        verticalScrollBar-&gt;setInvertedAppearance(<span style="color: #8470ff; font-weight: bold;">false</span>);
+        verticalScrollBar-&gt;setInvertedControls(<span style="color: #8470ff; font-weight: bold;">false</span>);
+        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon1</span>;
+        icon1.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/gradiant.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
+        tabWidget-&gt;addTab(tab_2, icon1, QString());
+        tab_3 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
+        tab_3-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab_3"</span>));
+        label_4 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(tab_3);
+        label_4-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label_4"</span>));
+        label_4-&gt;setGeometry(QRect(80, 50, 221, 221));
+        label_4-&gt;setPixmap(QPixmap(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/color_wheel.png"</span>)));
+        label_4-&gt;setScaledContents(<span style="color: #8470ff; font-weight: bold;">true</span>);
+        dial = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QDial</span>(tab_3);
+        dial-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"dial"</span>));
+        dial-&gt;setGeometry(QRect(80, 50, 221, 221));
+        dial-&gt;setMaximum(360);
+        dial-&gt;setSingleStep(1);
+        dial-&gt;setPageStep(1);
+        dial-&gt;setTracking(<span style="color: #8470ff; font-weight: bold;">true</span>);
+        dial-&gt;setWrapping(<span style="color: #8470ff; font-weight: bold;">true</span>);
+        dial-&gt;setNotchTarget(15);
+        dial-&gt;setNotchesVisible(<span style="color: #8470ff; font-weight: bold;">false</span>);
+        label_5 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(tab_3);
+        label_5-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label_5"</span>));
+        label_5-&gt;setGeometry(QRect(0, 0, 331, 51));
+        label_5-&gt;setPixmap(QPixmap(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/vv_logo_full_slogan.png"</span>)));
+        label_5-&gt;setScaledContents(<span style="color: #8470ff; font-weight: bold;">true</span>);
+        label_5-&gt;setWordWrap(<span style="color: #8470ff; font-weight: bold;">false</span>);
+        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon2</span>;
+        icon2.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/color_wheel.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
+        tabWidget-&gt;addTab(tab_3, icon2, QString());
+        label_5-&gt;raise();
+        label_4-&gt;raise();
+        dial-&gt;raise();
+        MainWindow-&gt;setCentralWidget(centralWidget);
+
+        <span style="color: #63b8ff;">retranslateUi</span>(<span style="color: #7fffd4;">MainWindow</span>);
+
+        tabWidget-&gt;setCurrentIndex(0);
+
+
+        <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">connectSlotsByName</span>(<span style="color: #7fffd4;">MainWindow</span>);
+    } <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">setupUi</span>
+
+    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">retranslateUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
+    {
+        MainWindow-&gt;setWindowTitle(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"MainWindow"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        pushButton_2-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Clean"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        offButton-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Off"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        label_6-&gt;setText(QString());
+        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab), QString());
+        label_2-&gt;setText(QString());
+        pushButton-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"4000"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        pushButton_3-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"5000"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        pushButton_4-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"7000"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
+        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab_2), QString());
+        label_4-&gt;setText(QString());
+        label_5-&gt;setText(QString());
+        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab_3), QString());
+    } <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">retranslateUi</span>
+
+};
+
+<span style="color: #00ffff;">namespace</span> <span style="color: #8470ff; font-weight: bold;">Ui</span> {
+    <span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">MainWindow</span>: <span style="color: #00ffff;">public</span> <span style="color: #63b8ff;">Ui_MainWindow</span> {};
+} <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">namespace Ui</span>
+
+QT_END_NAMESPACE
+
+<span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">UI_MAINWINDOW_H</span>
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-7-1-6" class="outline-4">
+<h4 id="sec-7-1-6">mainwindow.ui</h4>
+<div class="outline-text-4" id="text-7-1-6">
+
+<p>CANNOT INCLUDE FILE ../src/vital_vio/vital_vio/!mainwindow.ui
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-7-2" class="outline-3">
+<h3 id="sec-7-2">Burgler</h3>
+<div class="outline-text-3" id="text-7-2">
+
+
+</div>
+
+<div id="outline-container-7-2-1" class="outline-4">
+<h4 id="sec-7-2-1">Source</h4>
+<div class="outline-text-4" id="text-7-2-1">
+
 <ul>
-<li id="sec-7-1-1-1">MainWindow.cpp<br/>
+<li id="sec-7-2-1-1">MainWindow.cpp<br/>
 
 
 
@@ -4622,7 +5202,7 @@ channel * cholder;
 </li>
 </ul>
 <ul>
-<li id="sec-7-1-1-2">MainWindow.h<br/>
+<li id="sec-7-2-1-2">MainWindow.h<br/>
 
 
 
@@ -4679,7 +5259,7 @@ channel * cholder;
 </li>
 </ul>
 <ul>
-<li id="sec-7-1-1-3">moc_mainwindow.cpp<br/>
+<li id="sec-7-2-1-3">moc_mainwindow.cpp<br/>
 
 
 
@@ -4817,7 +5397,7 @@ QT_END_MOC_NAMESPACE
 </li>
 </ul>
 <ul>
-<li id="sec-7-1-1-4">ui_mainwindow.h<br/>
+<li id="sec-7-2-1-4">ui_mainwindow.h<br/>
 
 
 
@@ -5082,7 +5662,7 @@ QT_END_NAMESPACE
 </li>
 </ul>
 <ul>
-<li id="sec-7-1-1-5">mainwindow.ui<br/>
+<li id="sec-7-2-1-5">mainwindow.ui<br/>
 
 
 
@@ -5673,9 +6253,9 @@ alternate-background-color: rgb(148, 3, 0);&lt;/string&gt;
 
 </div>
 
-<div id="outline-container-7-1-2" class="outline-4">
-<h4 id="sec-7-1-2">Notes</h4>
-<div class="outline-text-4" id="text-7-1-2">
+<div id="outline-container-7-2-2" class="outline-4">
+<h4 id="sec-7-2-2">Notes</h4>
+<div class="outline-text-4" id="text-7-2-2">
 
 <ul>
 <li><a href="http://stackoverflow.com/questions/1675992/how-do-i-set-a-background-color-for-the-whole-window-of-a-qt-application">Change the background color of the qt application</a>
@@ -5688,16 +6268,16 @@ alternate-background-color: rgb(148, 3, 0);&lt;/string&gt;
 
 </div>
 
-<div id="outline-container-7-2" class="outline-3">
-<h3 id="sec-7-2">Basic Output to LCD Screen</h3>
-<div class="outline-text-3" id="text-7-2">
+<div id="outline-container-7-3" class="outline-3">
+<h3 id="sec-7-3">Basic Output to LCD Screen</h3>
+<div class="outline-text-3" id="text-7-3">
 
 
 </div>
 
-<div id="outline-container-7-2-1" class="outline-4">
-<h4 id="sec-7-2-1">MainWindow.cpp</h4>
-<div class="outline-text-4" id="text-7-2-1">
+<div id="outline-container-7-3-1" class="outline-4">
+<h4 id="sec-7-3-1">MainWindow.cpp</h4>
+<div class="outline-text-4" id="text-7-3-1">
 
 
 
@@ -5730,9 +6310,9 @@ alternate-background-color: rgb(148, 3, 0);&lt;/string&gt;
 
 </div>
 
-<div id="outline-container-7-2-2" class="outline-4">
-<h4 id="sec-7-2-2">MainWindow.h</h4>
-<div class="outline-text-4" id="text-7-2-2">
+<div id="outline-container-7-3-2" class="outline-4">
+<h4 id="sec-7-3-2">MainWindow.h</h4>
+<div class="outline-text-4" id="text-7-3-2">
 
 
 
@@ -5768,9 +6348,9 @@ alternate-background-color: rgb(148, 3, 0);&lt;/string&gt;
 
 </div>
 
-<div id="outline-container-7-2-3" class="outline-4">
-<h4 id="sec-7-2-3">moc_mainwindow.cpp</h4>
-<div class="outline-text-4" id="text-7-2-3">
+<div id="outline-container-7-3-3" class="outline-4">
+<h4 id="sec-7-3-3">moc_mainwindow.cpp</h4>
+<div class="outline-text-4" id="text-7-3-3">
 
 
 
@@ -5891,9 +6471,9 @@ QT_END_MOC_NAMESPACE
 
 </div>
 
-<div id="outline-container-7-2-4" class="outline-4">
-<h4 id="sec-7-2-4">ui_mainwindow.h</h4>
-<div class="outline-text-4" id="text-7-2-4">
+<div id="outline-container-7-3-4" class="outline-4">
+<h4 id="sec-7-3-4">ui_mainwindow.h</h4>
+<div class="outline-text-4" id="text-7-3-4">
 
 
 
@@ -5992,9 +6572,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-7-2-5" class="outline-4">
-<h4 id="sec-7-2-5">mainwindow.ui</h4>
-<div class="outline-text-4" id="text-7-2-5">
+<div id="outline-container-7-3-5" class="outline-4">
+<h4 id="sec-7-3-5">mainwindow.ui</h4>
+<div class="outline-text-4" id="text-7-3-5">
 
 
 
@@ -6103,16 +6683,16 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-7-3" class="outline-3">
-<h3 id="sec-7-3">Hello World Program</h3>
-<div class="outline-text-3" id="text-7-3">
+<div id="outline-container-7-4" class="outline-3">
+<h3 id="sec-7-4">Hello World Program</h3>
+<div class="outline-text-3" id="text-7-4">
 
 
 </div>
 
-<div id="outline-container-7-3-1" class="outline-4">
-<h4 id="sec-7-3-1">Source Code</h4>
-<div class="outline-text-4" id="text-7-3-1">
+<div id="outline-container-7-4-1" class="outline-4">
+<h4 id="sec-7-4-1">Source Code</h4>
+<div class="outline-text-4" id="text-7-4-1">
 
 
 
@@ -6223,19 +6803,19 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-7-4" class="outline-3">
-<h3 id="sec-7-4">Toggle A LED (A13-Olimex-Micro)</h3>
-<div class="outline-text-3" id="text-7-4">
+<div id="outline-container-7-5" class="outline-3">
+<h3 id="sec-7-5">Toggle A LED (A13-Olimex-Micro)</h3>
+<div class="outline-text-3" id="text-7-5">
 
 
 </div>
 
-<div id="outline-container-7-4-1" class="outline-4">
-<h4 id="sec-7-4-1">Using the Commandline</h4>
-<div class="outline-text-4" id="text-7-4-1">
+<div id="outline-container-7-5-1" class="outline-4">
+<h4 id="sec-7-5-1">Using the Commandline</h4>
+<div class="outline-text-4" id="text-7-5-1">
 
 <ul>
-<li id="sec-7-4-1-1">Turn it On<br/>
+<li id="sec-7-5-1-1">Turn it On<br/>
 
 
 
@@ -6245,7 +6825,7 @@ QT_END_NAMESPACE
 </li>
 </ul>
 <ul>
-<li id="sec-7-4-1-2">Turn it Off<br/>
+<li id="sec-7-5-1-2">Turn it Off<br/>
 
 
 
@@ -6258,9 +6838,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-7-4-2" class="outline-4">
-<h4 id="sec-7-4-2">Using C Code</h4>
-<div class="outline-text-4" id="text-7-4-2">
+<div id="outline-container-7-5-2" class="outline-4">
+<h4 id="sec-7-5-2">Using C Code</h4>
+<div class="outline-text-4" id="text-7-5-2">
 
 
 
@@ -6374,9 +6954,9 @@ QT_END_NAMESPACE
 
 </div>
 
-<div id="outline-container-7-4-3" class="outline-4">
-<h4 id="sec-7-4-3">Links</h4>
-<div class="outline-text-4" id="text-7-4-3">
+<div id="outline-container-7-5-3" class="outline-4">
+<h4 id="sec-7-5-3">Links</h4>
+<div class="outline-text-4" id="text-7-5-3">
 
 <ul>
 <li><a href="http://olimex.wordpress.com/2012/10/23/a13-olinuxino-playing-with-gpios/">A13 Olinuxino Playing with GPIOS</a>
