@@ -195,7 +195,7 @@ for the JavaScript code in this tag.
 <h1 class="title">Embedd GUI</h1>
 
 <p>Documentation: | <a href="./index.html">INFO.js</a> | <a href="./index.pdf">pdf</a> | <a href="./full.html">Single HTML</a> | <a href="http://nickguthrie.com/embedd_gui/doc/index.org">Org-Mode</a> | <br/>
-Project Links:   | <a href="http://code.google.com/p/embedd-gui/">SVN Repository</a> | <a href="http://rcos.rpi.edu/projects/embedd-gui/">RCOS Observatory</a> | <a href="http://nickguthrie.com/embedd_gui/bin/A13-OlinuXino/">Prebuilt Debian Images</a> | <a href="https://www.olimex.com/forum/index.php?topic=1595.0">Olimex Forum Post</a> | <br/>
+Project Links:   | <a href="http://code.google.com/p/embedd-gui/">SVN Repository</a> | <a href="http://rcos.rpi.edu/projects/embedd-gui/">RCOS Observatory</a> | <a href="http://nickguthrie.com/embedd_gui/bin/Finalized/nickguthrie-a13-olinuxino-complete-v1.image.gz">Prebuilt Debian Images</a> | <a href="https://www.olimex.com/forum/index.php?topic=1595.0">Olimex Forum Post</a> | <br/>
 This documentation is written under the <a href="#sec-8">GNU Free Documentation License</a>. <br/>
 </p>
 
@@ -242,12 +242,14 @@ This documentation is written under the <a href="#sec-8">GNU Free Documentation 
 </li>
 <li><a href="#sec-4">Getting Started</a>
 <ul>
-<li><a href="#sec-4-1">Getting the Development Environment Set Up</a></li>
-<li><a href="#sec-4-2">Compiling Programs</a></li>
-<li><a href="#sec-4-3">Sending Programs over to the Device</a></li>
-<li><a href="#sec-4-4">Running a Program</a></li>
-<li><a href="#sec-4-5">Calibrating the Toucscreen</a></li>
-<li><a href="#sec-4-6">Contributing to the Documentation</a></li>
+<li><a href="#sec-4-1">Overview</a></li>
+<li><a href="#sec-4-2">Copy the prebuilt Debian Image to the Device</a></li>
+<li><a href="#sec-4-3">Getting the Development Environment Set Up</a></li>
+<li><a href="#sec-4-4">Compiling Programs</a></li>
+<li><a href="#sec-4-5">Sending Programs over to the Device</a></li>
+<li><a href="#sec-4-6">Running a Program</a></li>
+<li><a href="#sec-4-7">Calibrating the Toucscreen</a></li>
+<li><a href="#sec-4-8">Contributing to the Documentation</a></li>
 </ul>
 </li>
 <li><a href="#sec-5">Quick Reference</a>
@@ -1363,13 +1365,54 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 <h2 id="sec-4">Getting Started</h2>
 <div class="outline-text-2" id="text-4">
 
-<p>This contains complete documentation of all steps taken including solutions to errors I encountered.  If you are installing the system from scratch, its probably better to start at the base of the HOWTO.  If you want to use a prebuilt image and start writing GUIS:
-</p>
+
 </div>
 
 <div id="outline-container-4-1" class="outline-3">
-<h3 id="sec-4-1">Getting the Development Environment Set Up</h3>
+<h3 id="sec-4-1">Overview</h3>
 <div class="outline-text-3" id="text-4-1">
+
+<p>This contains complete documentation of all steps taken including solutions to errors I encountered.  If you are installing the system from scratch, its probably better to start at the base of the HOWTO.  If you want to use a prebuilt image and start writing GUIS:
+</p></div>
+
+</div>
+
+<div id="outline-container-4-2" class="outline-3">
+<h3 id="sec-4-2">Copy the prebuilt Debian Image to the Device</h3>
+<div class="outline-text-3" id="text-4-2">
+
+<ol>
+<li>Download A13-OlinuXino Debian Image (<a href="http://nickguthrie.com/embedd_gui/bin/Finalized/nickguthrie-a13-olinuxino-complete-v1.image.gz">here</a>).
+</li>
+<li>Mount SD Card on Computer
+</li>
+<li>Copy Image onto SD card
+
+
+
+<pre class="src src-sh">sudo gzip -dc /path/to/nickguthrie-a13-olinuxino-complete-v1.image.gz | dd <span style="color: #7fffd4;">of</span>=/dev/mmcblk0
+</pre>
+
+<ul>
+<li>WARNING: will overwrite everything on card
+</li>
+<li>obviously replacing "<i>path/to</i>" with the location of the image on your computer
+</li>
+<li>"/dev/mmcblk0" should be where you mounted the SD card on your computer
+</li>
+</ul>
+
+</li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-4-3" class="outline-3">
+<h3 id="sec-4-3">Getting the Development Environment Set Up</h3>
+<div class="outline-text-3" id="text-4-3">
 
 <ol>
 <li>Set up the <a href="#sec-6-7">Cross Compiling Toolchain</a>
@@ -1393,9 +1436,9 @@ make <span style="color: #7fffd4;">ARCH</span>=arm menuconfig
 
 </div>
 
-<div id="outline-container-4-2" class="outline-3">
-<h3 id="sec-4-2">Compiling Programs</h3>
-<div class="outline-text-3" id="text-4-2">
+<div id="outline-container-4-4" class="outline-3">
+<h3 id="sec-4-4">Compiling Programs</h3>
+<div class="outline-text-3" id="text-4-4">
 
 <ol>
 <li>You must first build the makefile using the Qmake compiled in the last step, mine exists in /usr/local/qt/bin/qmake.  If I had a program created in qt_creator called my_program:
@@ -1446,9 +1489,9 @@ make clean; make
 
 </div>
 
-<div id="outline-container-4-3" class="outline-3">
-<h3 id="sec-4-3">Sending Programs over to the Device</h3>
-<div class="outline-text-3" id="text-4-3">
+<div id="outline-container-4-5" class="outline-3">
+<h3 id="sec-4-5">Sending Programs over to the Device</h3>
+<div class="outline-text-3" id="text-4-5">
 
 <p>After building the program, it must be sent to the device in order to run
 </p><ol>
@@ -1500,9 +1543,9 @@ make clean; make
 
 </div>
 
-<div id="outline-container-4-4" class="outline-3">
-<h3 id="sec-4-4">Running a Program</h3>
-<div class="outline-text-3" id="text-4-4">
+<div id="outline-container-4-6" class="outline-3">
+<h3 id="sec-4-6">Running a Program</h3>
+<div class="outline-text-3" id="text-4-6">
 
 <ol>
 <li>Plug in the Wireless, and USB Keyboard before booting
@@ -1616,9 +1659,9 @@ ls;            <span style="color: #fa8072;"># </span><span style="color: #ff7f2
 
 </div>
 
-<div id="outline-container-4-5" class="outline-3">
-<h3 id="sec-4-5">Calibrating the Toucscreen</h3>
-<div class="outline-text-3" id="text-4-5">
+<div id="outline-container-4-7" class="outline-3">
+<h3 id="sec-4-7">Calibrating the Toucscreen</h3>
+<div class="outline-text-3" id="text-4-7">
 
 <ul>
 <li>You can calibrate the toucschreen with:
@@ -1647,9 +1690,9 @@ ts_test;
 
 </div>
 
-<div id="outline-container-4-6" class="outline-3">
-<h3 id="sec-4-6">Contributing to the Documentation</h3>
-<div class="outline-text-3" id="text-4-6">
+<div id="outline-container-4-8" class="outline-3">
+<h3 id="sec-4-8">Contributing to the Documentation</h3>
+<div class="outline-text-3" id="text-4-8">
 
 <ul>
 <li>This documentation is generated with org-mode in Emacs.
