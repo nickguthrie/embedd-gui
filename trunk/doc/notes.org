@@ -328,7 +328,19 @@ A13-OLinuXino is a low-cost single-board Linux computer in a very compact nano-I
 + Brand Name: BYD
 
 * Getting Started
+** Overview
 This contains complete documentation of all steps taken including solutions to errors I encountered.  If you are installing the system from scratch, its probably better to start at the base of the HOWTO.  If you want to use a prebuilt image and start writing GUIS:
+** Copy the prebuilt Debian Image to the Device
+1. Download A13-OlinuXino Debian Image ([[http://nickguthrie.com/embedd_gui/bin/Finalized/nickguthrie-a13-olinuxino-complete-v1.image.gz][here]]).
+2. Mount SD Card on Computer
+3. Copy Image onto SD card
+   #+BEGIN_SRC sh
+     sudo gzip -dc /path/to/nickguthrie-a13-olinuxino-complete-v1.image.gz | dd of=/dev/mmcblk0
+   #+END_SRC
+   + WARNING: will overwrite everything on card
+   + obviously replacing "/path/to/" with the location of the image on your computer
+   + "/dev/mmcblk0" should be where you mounted the SD card on your computer
+
 ** Getting the Development Environment Set Up
 1. Set up the [[Install%20ARM%20Toolchain%20with%20Buildroot][Cross Compiling Toolchain]]
 2. Compile [[Configure%20QT%20for%20Embedded%20Linux][TSLIB from Source on Development Platform]]
@@ -568,7 +580,7 @@ du -h <path_of_the_dir> | tail -1
 1. insert unmounted card
 2. unzip to card
    #+BEGIN_SRC sh
-   sudo gzip -dc /path/to/debian_configured_v1.image.gz | dd of=/dev/mmcblk0
+     sudo gzip -dc /path/to/debian_configured_v1.image.gz | dd of=/dev/mmcblk0
    #+END_SRC
 *** Backup Data to Web Storage
 #+BEGIN_SRC sh
