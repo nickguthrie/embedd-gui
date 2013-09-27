@@ -7,8 +7,8 @@
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
 <meta name="title" content="Embedd GUI"/>
 <meta name="generator" content="Org-mode"/>
-<meta name="generated" content="2013-09-10T15:22-0400"/>
-<meta name="author" content="Nick"/>
+<meta name="generated" content="2013-09-27T14:32-0400"/>
+<meta name="author" content="Nick Guthrie"/>
 <meta name="description" content=""/>
 <meta name="keywords" content=""/>
 <style type="text/css">
@@ -4573,111 +4573,8 @@ QWS_DISPLAY=LinuxFB:mmWidth=310:mmHeight=190
 <h4 id="sec-7-1-4"><span class="section-number-4">7.1.4</span> moc_mainwindow.cpp</h4>
 <div class="outline-text-4" id="text-7-1-4">
 
-
-
-
-<pre class="src src-cpp"><span style="color: #fa8072;">/****************************************************************************</span>
-<span style="color: #ff7f24; font-style: italic;">** Meta object code from reading C++ file 'mainwindow.h'</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** Created: Tue Aug 6 14:27:31 2013</span>
-<span style="color: #ff7f24; font-style: italic;">**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost!</span>
-<span style="color: #ff7f24; font-style: italic;">*****************************************************************************/</span>
-
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
-<span style="color: #6495ed; font-style: italic;">#if</span> !<span style="color: #6495ed; font-style: italic;">defined</span>(Q_MOC_OUTPUT_REVISION)
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"The header file 'mainwindow.h' doesn't include &lt;QObject&gt;."</span>
-<span style="color: #6495ed; font-style: italic;">#elif</span> Q_MOC_OUTPUT_REVISION != 63
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"This file was generated using the moc from 4.8.4. It"</span>
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"cannot be used with the include files from this version of Qt."</span>
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"(The moc has changed too much.)"</span>
-<span style="color: #6495ed; font-style: italic;">#endif</span>
-
-QT_BEGIN_MOC_NAMESPACE
-<span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">uint</span> <span style="color: #7fffd4;">qt_meta_data_MainWindow</span>[] = {
-
- <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">content:</span>
-       6,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">revision</span>
-       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classname</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classinfo</span>
-       3,   14, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">methods</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">properties</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">enums/sets</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">constructors</span>
-       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">flags</span>
-       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">signalCount</span>
-
- <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">slots: signature, parameters, type, tag, flags</span>
-      12,   11,   11,   11, 0x08,
-      31,   11,   11,   11, 0x08,
-      50,   11,   11,   11, 0x08,
-
-       0        <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">eod</span>
-};
-
-<span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">char</span> <span style="color: #7fffd4;">qt_meta_stringdata_MainWindow</span>[] = {
-    <span style="color: #ffc1c1;">"MainWindow\0\0DeleteButtonInit()\0"</span>
-    <span style="color: #ffc1c1;">"DeleteButtonHide()\0on_offButton_clicked()\0"</span>
-};
-
-<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_static_metacall</span>(<span style="color: #63b8ff;">QObject</span> *<span style="color: #7fffd4;">_o</span>, <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">Call</span> <span style="color: #7fffd4;">_c</span>, <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">_id</span>, <span style="color: #63b8ff;">void</span> **<span style="color: #7fffd4;">_a</span>)
-{
-    <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::InvokeMetaMethod) {
-        Q_ASSERT(staticMetaObject.cast(_o));
-        MainWindow *_t = <span style="color: #00ffff;">static_cast</span>&lt;MainWindow *&gt;(_o);
-        <span style="color: #00ffff;">switch</span> (_id) {
-        <span style="color: #00ffff;">case</span> 0: _t-&gt;DeleteButtonInit(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 1: _t-&gt;DeleteButtonHide(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 2: _t-&gt;on_offButton_clicked(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">default</span>: ;
-        }
-    }
-    <span style="color: #63b8ff;">Q_UNUSED</span>(<span style="color: #7fffd4;">_a</span>);
-}
-
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObjectExtraData</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #7fffd4;">staticMetaObjectExtraData</span> = {
-    0,  qt_static_metacall 
-};
-
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #7fffd4;">staticMetaObject</span> = {
-    { &amp;<span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::staticMetaObject, qt_meta_stringdata_MainWindow,
-      qt_meta_data_MainWindow, &amp;staticMetaObjectExtraData }
-};
-
-<span style="color: #6495ed; font-style: italic;">#ifdef</span> Q_NO_DATA_RELOCATION
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> &amp;<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">getStaticMetaObject</span>() { <span style="color: #00ffff;">return</span> staticMetaObject; }
-<span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">Q_NO_DATA_RELOCATION</span>
-
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> *<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">metaObject</span>() <span style="color: #00ffff;">const</span>
-{
-    <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;metaObject ? <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;metaObject : &amp;staticMetaObject;
-}
-
-<span style="color: #63b8ff;">void</span> *<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_metacast</span>(<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">char</span> *<span style="color: #7fffd4;">_clname</span>)
-{
-    <span style="color: #00ffff;">if</span> (!_clname) <span style="color: #00ffff;">return</span> 0;
-    <span style="color: #00ffff;">if</span> (!strcmp(_clname, qt_meta_stringdata_MainWindow))
-        <span style="color: #00ffff;">return</span> <span style="color: #00ffff;">static_cast</span>&lt;<span style="color: #63b8ff;">void</span>*&gt;(<span style="color: #00ffff;">const_cast</span>&lt; MainWindow*&gt;(<span style="color: #00ffff;">this</span>));
-    <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::qt_metacast(_clname);
-}
-
-<span style="color: #63b8ff;">int</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_metacall</span>(<span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">Call</span> <span style="color: #7fffd4;">_c</span>, <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">_id</span>, <span style="color: #63b8ff;">void</span> **<span style="color: #7fffd4;">_a</span>)
-{
-    _id = <span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::qt_metacall(_c, _id, _a);
-    <span style="color: #00ffff;">if</span> (_id &lt; 0)
-        <span style="color: #00ffff;">return</span> _id;
-    <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::InvokeMetaMethod) {
-        <span style="color: #00ffff;">if</span> (_id &lt; 3)
-            qt_static_metacall(<span style="color: #00ffff;">this</span>, _c, _id, _a);
-        _id -= 3;
-    }
-    <span style="color: #00ffff;">return</span> _id;
-}
-QT_END_MOC_NAMESPACE
-</pre>
-
-</div>
+<p>CANNOT INCLUDE FILE ../src/vital_vio/vital_vio/moc_mainwindow.cpp
+</p></div>
 
 </div>
 
@@ -4685,215 +4582,8 @@ QT_END_MOC_NAMESPACE
 <h4 id="sec-7-1-5"><span class="section-number-4">7.1.5</span> ui_mainwindow.h</h4>
 <div class="outline-text-4" id="text-7-1-5">
 
-
-
-
-<pre class="src src-cpp"><span style="color: #fa8072;">/********************************************************************************</span>
-<span style="color: #ff7f24; font-style: italic;">** Form generated from reading UI file 'mainwindow.ui'</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** Created: Tue Aug 6 14:27:29 2013</span>
-<span style="color: #ff7f24; font-style: italic;">**      by: Qt User Interface Compiler version 4.8.4</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost when recompiling UI file!</span>
-<span style="color: #ff7f24; font-style: italic;">********************************************************************************/</span>
-
-<span style="color: #6495ed; font-style: italic;">#if</span><span style="color: #6495ed; font-style: italic;">n</span><span style="color: #6495ed; font-style: italic;">def</span> UI_MAINWINDOW_H
-<span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #7fffd4;">UI_MAINWINDOW_H</span>
-
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtCore/QVariant&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QAction&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QApplication&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QButtonGroup&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QDial&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QHeaderView&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QLabel&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QMainWindow&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QPushButton&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QScrollBar&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QTabWidget&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QWidget&gt;</span>
-
-QT_BEGIN_NAMESPACE
-
-<span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">Ui_MainWindow</span>
-{
-<span style="color: #00ffff;">public</span>:
-    QWidget *centralWidget;
-    QTabWidget *tabWidget;
-    QWidget *tab;
-    QPushButton *pushButton_2;
-    QPushButton *offButton;
-    QLabel *label_6;
-    QWidget *tab_2;
-    QLabel *label_2;
-    QPushButton *pushButton;
-    QPushButton *pushButton_3;
-    QPushButton *pushButton_4;
-    QScrollBar *verticalScrollBar;
-    QWidget *tab_3;
-    QLabel *label_4;
-    QDial *dial;
-    QLabel *label_5;
-
-    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">setupUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
-    {
-        <span style="color: #00ffff;">if</span> (MainWindow-&gt;objectName().isEmpty())
-            MainWindow-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"MainWindow"</span>));
-        MainWindow-&gt;resize(480, 272);
-        MainWindow-&gt;setFocusPolicy(<span style="color: #8470ff; font-weight: bold;">Qt</span>::StrongFocus);
-        centralWidget = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>(MainWindow);
-        centralWidget-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"centralWidget"</span>));
-        tabWidget = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QTabWidget</span>(centralWidget);
-        tabWidget-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tabWidget"</span>));
-        tabWidget-&gt;setGeometry(QRect(2, 0, 573, 414));
-        <span style="color: #63b8ff;">QSizePolicy</span> <span style="color: #7fffd4;">sizePolicy</span>(<span style="color: #8470ff; font-weight: bold;">QSizePolicy</span>::Fixed, <span style="color: #8470ff; font-weight: bold;">QSizePolicy</span>::Expanding);
-        sizePolicy.setHorizontalStretch(0);
-        sizePolicy.setVerticalStretch(0);
-        sizePolicy.setHeightForWidth(tabWidget-&gt;sizePolicy().hasHeightForWidth());
-        tabWidget-&gt;setSizePolicy(sizePolicy);
-        tabWidget-&gt;setMinimumSize(QSize(480, 272));
-        tabWidget-&gt;setFocusPolicy(<span style="color: #8470ff; font-weight: bold;">Qt</span>::NoFocus);
-        tabWidget-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(51, 51, 51);"</span>));
-        tabWidget-&gt;setTabPosition(<span style="color: #8470ff; font-weight: bold;">QTabWidget</span>::West);
-        tabWidget-&gt;setTabShape(<span style="color: #8470ff; font-weight: bold;">QTabWidget</span>::Rounded);
-        tabWidget-&gt;setIconSize(QSize(50, 50));
-        tabWidget-&gt;setElideMode(<span style="color: #8470ff; font-weight: bold;">Qt</span>::ElideMiddle);
-        tab = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
-        tab-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab"</span>));
-        pushButton_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab);
-        pushButton_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pushButton_2"</span>));
-        pushButton_2-&gt;setGeometry(QRect(0, 160, 420, 111));
-        pushButton_2-&gt;setMinimumSize(QSize(420, 100));
-        <span style="color: #63b8ff;">QFont</span> <span style="color: #7fffd4;">font</span>;
-        font.setFamily(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"Abyssinica SIL"</span>));
-        font.setPointSize(40);
-        pushButton_2-&gt;setFont(font);
-        pushButton_2-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(155, 42, 132);\n"</span>
-<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);"</span>));
-        offButton = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab);
-        offButton-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"offButton"</span>));
-        offButton-&gt;setGeometry(QRect(0, 60, 420, 101));
-        offButton-&gt;setMinimumSize(QSize(420, 100));
-        offButton-&gt;setFont(font);
-        offButton-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(13, 103, 182);\n"</span>
-<span style="color: #ffc1c1;">"color: rgb(0, 0, 0);"</span>));
-        label_6 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(tab);
-        label_6-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label_6"</span>));
-        label_6-&gt;setGeometry(QRect(0, 0, 341, 61));
-        label_6-&gt;setPixmap(QPixmap(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/vv_logo_full_slogan.png"</span>)));
-        label_6-&gt;setScaledContents(<span style="color: #8470ff; font-weight: bold;">true</span>);
-        label_6-&gt;setWordWrap(<span style="color: #8470ff; font-weight: bold;">false</span>);
-        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon</span>;
-        icon.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/vv_icon.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
-        tabWidget-&gt;addTab(tab, icon, QString());
-        tab_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
-        tab_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab_2"</span>));
-        label_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(tab_2);
-        label_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label_2"</span>));
-        label_2-&gt;setGeometry(QRect(0, 0, 341, 61));
-        label_2-&gt;setPixmap(QPixmap(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/vv_logo_full_slogan.png"</span>)));
-        label_2-&gt;setScaledContents(<span style="color: #8470ff; font-weight: bold;">true</span>);
-        label_2-&gt;setWordWrap(<span style="color: #8470ff; font-weight: bold;">false</span>);
-        pushButton = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_2);
-        pushButton-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pushButton"</span>));
-        pushButton-&gt;setGeometry(QRect(0, 60, 331, 71));
-        pushButton-&gt;setFont(font);
-        pushButton-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);\n"</span>
-<span style="color: #ffc1c1;">"background-color: rgb(170, 0, 255);"</span>));
-        pushButton_3 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_2);
-        pushButton_3-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pushButton_3"</span>));
-        pushButton_3-&gt;setGeometry(QRect(0, 130, 331, 71));
-        pushButton_3-&gt;setFont(font);
-        pushButton_3-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);\n"</span>
-<span style="color: #ffc1c1;">"background-color: rgb(0, 85, 127);"</span>));
-        pushButton_4 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_2);
-        pushButton_4-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pushButton_4"</span>));
-        pushButton_4-&gt;setGeometry(QRect(0, 200, 331, 71));
-        pushButton_4-&gt;setFont(font);
-        pushButton_4-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);\n"</span>
-<span style="color: #ffc1c1;">"background-color: rgb(255, 0, 127);"</span>));
-        verticalScrollBar = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QScrollBar</span>(tab_2);
-        verticalScrollBar-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"verticalScrollBar"</span>));
-        verticalScrollBar-&gt;setGeometry(QRect(350, 0, 71, 271));
-        verticalScrollBar-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: qradialgradient(spread:repeat, cx:0.5, cy:0.5, radius:0.077, fx:0.5, fy:0.5, stop:0 rgba(13, 103, 182), stop:0.497326 rgba(13, 103, 182), stop:1 rgba(13, 103, 182));"</span>));
-        verticalScrollBar-&gt;setMaximum(1000);
-        verticalScrollBar-&gt;setSingleStep(1);
-        verticalScrollBar-&gt;setPageStep(100);
-        verticalScrollBar-&gt;setTracking(<span style="color: #8470ff; font-weight: bold;">true</span>);
-        verticalScrollBar-&gt;setOrientation(<span style="color: #8470ff; font-weight: bold;">Qt</span>::Vertical);
-        verticalScrollBar-&gt;setInvertedAppearance(<span style="color: #8470ff; font-weight: bold;">false</span>);
-        verticalScrollBar-&gt;setInvertedControls(<span style="color: #8470ff; font-weight: bold;">false</span>);
-        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon1</span>;
-        icon1.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/gradiant.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
-        tabWidget-&gt;addTab(tab_2, icon1, QString());
-        tab_3 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
-        tab_3-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab_3"</span>));
-        label_4 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(tab_3);
-        label_4-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label_4"</span>));
-        label_4-&gt;setGeometry(QRect(80, 50, 221, 221));
-        label_4-&gt;setPixmap(QPixmap(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/color_wheel.png"</span>)));
-        label_4-&gt;setScaledContents(<span style="color: #8470ff; font-weight: bold;">true</span>);
-        dial = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QDial</span>(tab_3);
-        dial-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"dial"</span>));
-        dial-&gt;setGeometry(QRect(80, 50, 221, 221));
-        dial-&gt;setMaximum(360);
-        dial-&gt;setSingleStep(1);
-        dial-&gt;setPageStep(1);
-        dial-&gt;setTracking(<span style="color: #8470ff; font-weight: bold;">true</span>);
-        dial-&gt;setWrapping(<span style="color: #8470ff; font-weight: bold;">true</span>);
-        dial-&gt;setNotchTarget(15);
-        dial-&gt;setNotchesVisible(<span style="color: #8470ff; font-weight: bold;">false</span>);
-        label_5 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(tab_3);
-        label_5-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label_5"</span>));
-        label_5-&gt;setGeometry(QRect(0, 0, 331, 51));
-        label_5-&gt;setPixmap(QPixmap(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/vv_logo_full_slogan.png"</span>)));
-        label_5-&gt;setScaledContents(<span style="color: #8470ff; font-weight: bold;">true</span>);
-        label_5-&gt;setWordWrap(<span style="color: #8470ff; font-weight: bold;">false</span>);
-        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon2</span>;
-        icon2.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/color_wheel.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
-        tabWidget-&gt;addTab(tab_3, icon2, QString());
-        label_5-&gt;raise();
-        label_4-&gt;raise();
-        dial-&gt;raise();
-        MainWindow-&gt;setCentralWidget(centralWidget);
-
-        <span style="color: #63b8ff;">retranslateUi</span>(<span style="color: #7fffd4;">MainWindow</span>);
-
-        tabWidget-&gt;setCurrentIndex(0);
-
-
-        <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">connectSlotsByName</span>(<span style="color: #7fffd4;">MainWindow</span>);
-    } <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">setupUi</span>
-
-    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">retranslateUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
-    {
-        MainWindow-&gt;setWindowTitle(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"MainWindow"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        pushButton_2-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Clean"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        offButton-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Off"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        label_6-&gt;setText(QString());
-        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab), QString());
-        label_2-&gt;setText(QString());
-        pushButton-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"4000"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        pushButton_3-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"5000"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        pushButton_4-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"7000"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab_2), QString());
-        label_4-&gt;setText(QString());
-        label_5-&gt;setText(QString());
-        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab_3), QString());
-    } <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">retranslateUi</span>
-
-};
-
-<span style="color: #00ffff;">namespace</span> <span style="color: #8470ff; font-weight: bold;">Ui</span> {
-    <span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">MainWindow</span>: <span style="color: #00ffff;">public</span> <span style="color: #63b8ff;">Ui_MainWindow</span> {};
-} <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">namespace Ui</span>
-
-QT_END_NAMESPACE
-
-<span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">UI_MAINWINDOW_H</span>
-</pre>
-
-</div>
+<p>CANNOT INCLUDE FILE ../src/vital_vio/vital_vio/ui_mainwindow.h
+</p></div>
 
 </div>
 
@@ -5293,405 +4983,12 @@ channel * cholder;
 </ul>
 <ul>
 <li id="sec-7-2-1-3">moc_mainwindow.cpp<br/>
-
-
-
-<pre class="src src-cpp"><span style="color: #fa8072;">/****************************************************************************</span>
-<span style="color: #ff7f24; font-style: italic;">** Meta object code from reading C++ file 'mainwindow.h'</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** Created: Tue Jul 23 17:04:08 2013</span>
-<span style="color: #ff7f24; font-style: italic;">**      by: The Qt Meta Object Compiler version 63 (Qt 4.8.4)</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost!</span>
-<span style="color: #ff7f24; font-style: italic;">*****************************************************************************/</span>
-
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
-<span style="color: #6495ed; font-style: italic;">#if</span> !<span style="color: #6495ed; font-style: italic;">defined</span>(Q_MOC_OUTPUT_REVISION)
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"The header file 'mainwindow.h' doesn't include &lt;QObject&gt;."</span>
-<span style="color: #6495ed; font-style: italic;">#elif</span> Q_MOC_OUTPUT_REVISION != 63
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"This file was generated using the moc from 4.8.4. It"</span>
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"cannot be used with the include files from this version of Qt."</span>
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"(The moc has changed too much.)"</span>
-<span style="color: #6495ed; font-style: italic;">#endif</span>
-
-QT_BEGIN_MOC_NAMESPACE
-<span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">uint</span> <span style="color: #7fffd4;">qt_meta_data_MainWindow</span>[] = {
-
- <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">content:</span>
-       6,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">revision</span>
-       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classname</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classinfo</span>
-      14,   14, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">methods</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">properties</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">enums/sets</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">constructors</span>
-       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">flags</span>
-       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">signalCount</span>
-
- <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">slots: signature, parameters, type, tag, flags</span>
-      12,   11,   11,   11, 0x08,
-      35,   11,   11,   11, 0x08,
-      58,   11,   11,   11, 0x08,
-      81,   11,   11,   11, 0x08,
-     104,   11,   11,   11, 0x08,
-     127,   11,   11,   11, 0x08,
-     153,   11,   11,   11, 0x08,
-     180,   11,   11,   11, 0x08,
-     213,  207,   11,   11, 0x08,
-     248,   11,   11,   11, 0x08,
-     280,   11,   11,   11, 0x08,
-     312,   11,   11,   11, 0x09,
-     328,   11,   11,   11, 0x09,
-     345,   11,   11,   11, 0x09,
-
-       0        <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">eod</span>
-};
-
-<span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">char</span> <span style="color: #7fffd4;">qt_meta_stringdata_MainWindow</span>[] = {
-    <span style="color: #ffc1c1;">"MainWindow\0\0on_cbutton_0_clicked()\0"</span>
-    <span style="color: #ffc1c1;">"on_cbutton_1_clicked()\0on_cbutton_2_clicked()\0"</span>
-    <span style="color: #ffc1c1;">"on_cbutton_3_clicked()\0on_cbutton_4_clicked()\0"</span>
-    <span style="color: #ffc1c1;">"on_pb_value_off_clicked()\0"</span>
-    <span style="color: #ffc1c1;">"on_pb_value_full_clicked()\0"</span>
-    <span style="color: #ffc1c1;">"on_pb_value_half_clicked()\0value\0"</span>
-    <span style="color: #ffc1c1;">"on_channelSlider_valueChanged(int)\0"</span>
-    <span style="color: #ffc1c1;">"on_pb_value_incrament_pressed()\0"</span>
-    <span style="color: #ffc1c1;">"on_pb_value_decrament_pressed()\0"</span>
-    <span style="color: #ffc1c1;">"buttonPressed()\0buttonReleased()\0"</span>
-    <span style="color: #ffc1c1;">"doIncrement()\0"</span>
-};
-
-<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_static_metacall</span>(<span style="color: #63b8ff;">QObject</span> *<span style="color: #7fffd4;">_o</span>, <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">Call</span> <span style="color: #7fffd4;">_c</span>, <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">_id</span>, <span style="color: #63b8ff;">void</span> **<span style="color: #7fffd4;">_a</span>)
-{
-    <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::InvokeMetaMethod) {
-        Q_ASSERT(staticMetaObject.cast(_o));
-        MainWindow *_t = <span style="color: #00ffff;">static_cast</span>&lt;MainWindow *&gt;(_o);
-        <span style="color: #00ffff;">switch</span> (_id) {
-        <span style="color: #00ffff;">case</span> 0: _t-&gt;on_cbutton_0_clicked(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 1: _t-&gt;on_cbutton_1_clicked(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 2: _t-&gt;on_cbutton_2_clicked(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 3: _t-&gt;on_cbutton_3_clicked(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 4: _t-&gt;on_cbutton_4_clicked(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 5: _t-&gt;on_pb_value_off_clicked(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 6: _t-&gt;on_pb_value_full_clicked(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 7: _t-&gt;on_pb_value_half_clicked(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 8: _t-&gt;on_channelSlider_valueChanged((*<span style="color: #00ffff;">reinterpret_cast</span>&lt; <span style="color: #63b8ff;">int</span>(*)&gt;(_a[1]))); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 9: _t-&gt;on_pb_value_incrament_pressed(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 10: _t-&gt;on_pb_value_decrament_pressed(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 11: _t-&gt;buttonPressed(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 12: _t-&gt;buttonReleased(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">case</span> 13: _t-&gt;doIncrement(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">default</span>: ;
-        }
-    }
-}
-
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObjectExtraData</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #7fffd4;">staticMetaObjectExtraData</span> = {
-    0,  qt_static_metacall 
-};
-
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #7fffd4;">staticMetaObject</span> = {
-    { &amp;<span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::staticMetaObject, qt_meta_stringdata_MainWindow,
-      qt_meta_data_MainWindow, &amp;staticMetaObjectExtraData }
-};
-
-<span style="color: #6495ed; font-style: italic;">#ifdef</span> Q_NO_DATA_RELOCATION
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> &amp;<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">getStaticMetaObject</span>() { <span style="color: #00ffff;">return</span> staticMetaObject; }
-<span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">//</span><span style="color: #ff7f24; font-style: italic;">Q_NO_DATA_RELOCATION</span>
-
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> *<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">metaObject</span>() <span style="color: #00ffff;">const</span>
-{
-    <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;metaObject ? <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;metaObject : &amp;staticMetaObject;
-}
-
-<span style="color: #63b8ff;">void</span> *<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_metacast</span>(<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">char</span> *<span style="color: #7fffd4;">_clname</span>)
-{
-    <span style="color: #00ffff;">if</span> (!_clname) <span style="color: #00ffff;">return</span> 0;
-    <span style="color: #00ffff;">if</span> (!strcmp(_clname, qt_meta_stringdata_MainWindow))
-        <span style="color: #00ffff;">return</span> <span style="color: #00ffff;">static_cast</span>&lt;<span style="color: #63b8ff;">void</span>*&gt;(<span style="color: #00ffff;">const_cast</span>&lt; MainWindow*&gt;(<span style="color: #00ffff;">this</span>));
-    <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::qt_metacast(_clname);
-}
-
-<span style="color: #63b8ff;">int</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_metacall</span>(<span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">Call</span> <span style="color: #7fffd4;">_c</span>, <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">_id</span>, <span style="color: #63b8ff;">void</span> **<span style="color: #7fffd4;">_a</span>)
-{
-    _id = <span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::qt_metacall(_c, _id, _a);
-    <span style="color: #00ffff;">if</span> (_id &lt; 0)
-        <span style="color: #00ffff;">return</span> _id;
-    <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::InvokeMetaMethod) {
-        <span style="color: #00ffff;">if</span> (_id &lt; 14)
-            qt_static_metacall(<span style="color: #00ffff;">this</span>, _c, _id, _a);
-        _id -= 14;
-    }
-    <span style="color: #00ffff;">return</span> _id;
-}
-QT_END_MOC_NAMESPACE
-</pre>
-
+CANNOT INCLUDE FILE ../src/testing/Burgler/moc_mainwindow.cpp
 </li>
 </ul>
 <ul>
 <li id="sec-7-2-1-4">ui_mainwindow.h<br/>
-
-
-
-<pre class="src src-cpp"><span style="color: #fa8072;">/********************************************************************************</span>
-<span style="color: #ff7f24; font-style: italic;">** Form generated from reading UI file 'mainwindow.ui'</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** Created: Tue Jul 23 17:04:06 2013</span>
-<span style="color: #ff7f24; font-style: italic;">**      by: Qt User Interface Compiler version 4.8.4</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost when recompiling UI file!</span>
-<span style="color: #ff7f24; font-style: italic;">********************************************************************************/</span>
-
-<span style="color: #6495ed; font-style: italic;">#if</span><span style="color: #6495ed; font-style: italic;">n</span><span style="color: #6495ed; font-style: italic;">def</span> UI_MAINWINDOW_H
-<span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #7fffd4;">UI_MAINWINDOW_H</span>
-
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtCore/QVariant&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QAction&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QApplication&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QButtonGroup&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QFrame&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QHeaderView&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QLCDNumber&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QLabel&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QMainWindow&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QPushButton&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QSlider&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QTabWidget&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtGui/QWidget&gt;</span>
-
-QT_BEGIN_NAMESPACE
-
-<span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">Ui_MainWindow</span>
-{
-<span style="color: #00ffff;">public</span>:
-    QWidget *centralWidget;
-    QLabel *label;
-    QTabWidget *tabWidget;
-    QWidget *tab;
-    QPushButton *pb_down;
-    QPushButton *pb_up;
-    QWidget *tab_3;
-    QFrame *frame;
-    QPushButton *cbutton_0;
-    QPushButton *cbutton_1;
-    QPushButton *cbutton_2;
-    QPushButton *cbutton_3;
-    QPushButton *cbutton_4;
-    QLCDNumber *lcd_0;
-    QLCDNumber *lcd_1;
-    QLCDNumber *lcd_2;
-    QLCDNumber *lcd_3;
-    QLCDNumber *lcd_4;
-    QPushButton *pb_value_full;
-    QPushButton *pb_value_off;
-    QPushButton *pb_value_decrament;
-    QPushButton *pb_value_incrament;
-    QSlider *channelSlider;
-    QLabel *mode_label;
-    QPushButton *pb_value_half;
-    QWidget *tab_2;
-
-    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">setupUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
-    {
-        <span style="color: #00ffff;">if</span> (MainWindow-&gt;objectName().isEmpty())
-            MainWindow-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"MainWindow"</span>));
-        MainWindow-&gt;resize(480, 272);
-        MainWindow-&gt;setMinimumSize(QSize(480, 272));
-        MainWindow-&gt;setMaximumSize(QSize(480, 272));
-        centralWidget = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>(MainWindow);
-        centralWidget-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"centralWidget"</span>));
-        label = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(centralWidget);
-        label-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"label"</span>));
-        label-&gt;setGeometry(QRect(10, 10, 371, 41));
-        label-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"image: url(:/img/rcos.png);"</span>));
-        tabWidget = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QTabWidget</span>(centralWidget);
-        tabWidget-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tabWidget"</span>));
-        tabWidget-&gt;setGeometry(QRect(0, 60, 481, 251));
-        tabWidget-&gt;setFocusPolicy(<span style="color: #8470ff; font-weight: bold;">Qt</span>::StrongFocus);
-        tabWidget-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(51, 51, 51);"</span>));
-        tabWidget-&gt;setTabPosition(<span style="color: #8470ff; font-weight: bold;">QTabWidget</span>::West);
-        tabWidget-&gt;setTabShape(<span style="color: #8470ff; font-weight: bold;">QTabWidget</span>::Rounded);
-        tabWidget-&gt;setIconSize(QSize(42, 50));
-        tab = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
-        tab-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab"</span>));
-        pb_down = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab);
-        pb_down-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_down"</span>));
-        pb_down-&gt;setGeometry(QRect(20, 60, 171, 91));
-        <span style="color: #63b8ff;">QFont</span> <span style="color: #7fffd4;">font</span>;
-        font.setFamily(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"Abyssinica SIL"</span>));
-        font.setPointSize(40);
-        pb_down-&gt;setFont(font);
-        pb_down-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);\n"</span>
-<span style="color: #ffc1c1;">"background-color: rgb(148, 3, 0);\n"</span>
-<span style="color: #ffc1c1;">"alternate-background-color: rgb(148, 3, 0);"</span>));
-        pb_up = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab);
-        pb_up-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_up"</span>));
-        pb_up-&gt;setGeometry(QRect(210, 60, 171, 91));
-        pb_up-&gt;setMinimumSize(QSize(171, 27));
-        pb_up-&gt;setFont(font);
-        pb_up-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(84, 152, 91);"</span>));
-        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon</span>;
-        icon.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/gpl_logo_sideways_colored.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
-        tabWidget-&gt;addTab(tab, icon, QString());
-        tab_3 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
-        tab_3-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab_3"</span>));
-        frame = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QFrame</span>(tab_3);
-        frame-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"frame"</span>));
-        frame-&gt;setGeometry(QRect(0, 0, 191, 211));
-        frame-&gt;setFrameShape(<span style="color: #8470ff; font-weight: bold;">QFrame</span>::StyledPanel);
-        frame-&gt;setFrameShadow(<span style="color: #8470ff; font-weight: bold;">QFrame</span>::Raised);
-        cbutton_0 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(frame);
-        cbutton_0-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"cbutton_0"</span>));
-        cbutton_0-&gt;setGeometry(QRect(0, 0, 100, 40));
-        cbutton_0-&gt;setMinimumSize(QSize(100, 40));
-        cbutton_0-&gt;setMaximumSize(QSize(80, 40));
-        cbutton_0-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(255, 0, 0);"</span>));
-        cbutton_1 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(frame);
-        cbutton_1-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"cbutton_1"</span>));
-        cbutton_1-&gt;setGeometry(QRect(0, 40, 100, 40));
-        cbutton_1-&gt;setMinimumSize(QSize(100, 40));
-        cbutton_1-&gt;setMaximumSize(QSize(80, 40));
-        cbutton_1-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(255, 170, 0);"</span>));
-        cbutton_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(frame);
-        cbutton_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"cbutton_2"</span>));
-        cbutton_2-&gt;setGeometry(QRect(0, 80, 100, 40));
-        cbutton_2-&gt;setMinimumSize(QSize(100, 40));
-        cbutton_2-&gt;setMaximumSize(QSize(80, 40));
-        cbutton_2-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(85, 255, 0);"</span>));
-        cbutton_3 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(frame);
-        cbutton_3-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"cbutton_3"</span>));
-        cbutton_3-&gt;setGeometry(QRect(0, 120, 100, 40));
-        cbutton_3-&gt;setMinimumSize(QSize(100, 40));
-        cbutton_3-&gt;setMaximumSize(QSize(80, 40));
-        cbutton_3-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(0, 170, 255);"</span>));
-        cbutton_4 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(frame);
-        cbutton_4-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"cbutton_4"</span>));
-        cbutton_4-&gt;setGeometry(QRect(0, 160, 100, 40));
-        cbutton_4-&gt;setMinimumSize(QSize(100, 40));
-        cbutton_4-&gt;setMaximumSize(QSize(80, 40));
-        cbutton_4-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(85, 85, 255);"</span>));
-        lcd_0 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLCDNumber</span>(frame);
-        lcd_0-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lcd_0"</span>));
-        lcd_0-&gt;setGeometry(QRect(100, 0, 80, 40));
-        lcd_0-&gt;setMinimumSize(QSize(80, 40));
-        lcd_1 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLCDNumber</span>(frame);
-        lcd_1-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lcd_1"</span>));
-        lcd_1-&gt;setGeometry(QRect(100, 40, 80, 40));
-        lcd_1-&gt;setMinimumSize(QSize(80, 40));
-        lcd_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLCDNumber</span>(frame);
-        lcd_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lcd_2"</span>));
-        lcd_2-&gt;setGeometry(QRect(100, 80, 80, 40));
-        lcd_2-&gt;setMinimumSize(QSize(80, 40));
-        lcd_3 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLCDNumber</span>(frame);
-        lcd_3-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lcd_3"</span>));
-        lcd_3-&gt;setGeometry(QRect(100, 120, 80, 40));
-        lcd_3-&gt;setMinimumSize(QSize(80, 40));
-        lcd_4 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLCDNumber</span>(frame);
-        lcd_4-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"lcd_4"</span>));
-        lcd_4-&gt;setGeometry(QRect(100, 160, 80, 40));
-        lcd_4-&gt;setMinimumSize(QSize(80, 40));
-        pb_value_full = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_3);
-        pb_value_full-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_value_full"</span>));
-        pb_value_full-&gt;setGeometry(QRect(340, 50, 60, 51));
-        pb_value_full-&gt;setMinimumSize(QSize(60, 27));
-        <span style="color: #63b8ff;">QFont</span> <span style="color: #7fffd4;">font1</span>;
-        font1.setFamily(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"Abyssinica SIL"</span>));
-        font1.setPointSize(20);
-        pb_value_full-&gt;setFont(font1);
-        pb_value_full-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(84, 152, 91);"</span>));
-        pb_value_off = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_3);
-        pb_value_off-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_value_off"</span>));
-        pb_value_off-&gt;setGeometry(QRect(200, 50, 60, 51));
-        pb_value_off-&gt;setMinimumSize(QSize(60, 27));
-        pb_value_off-&gt;setFont(font1);
-        pb_value_off-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(148, 3, 0);"</span>));
-        pb_value_decrament = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_3);
-        pb_value_decrament-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_value_decrament"</span>));
-        pb_value_decrament-&gt;setGeometry(QRect(200, 110, 91, 51));
-        pb_value_decrament-&gt;setMinimumSize(QSize(80, 27));
-        <span style="color: #63b8ff;">QFont</span> <span style="color: #7fffd4;">font2</span>;
-        font2.setFamily(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"Symbol"</span>));
-        font2.setPointSize(36);
-        pb_value_decrament-&gt;setFont(font2);
-        pb_value_decrament-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(148, 3, 0);"</span>));
-        pb_value_incrament = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_3);
-        pb_value_incrament-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_value_incrament"</span>));
-        pb_value_incrament-&gt;setGeometry(QRect(300, 110, 101, 51));
-        pb_value_incrament-&gt;setMinimumSize(QSize(80, 27));
-        pb_value_incrament-&gt;setFont(font2);
-        pb_value_incrament-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(84, 152, 91);"</span>));
-        channelSlider = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QSlider</span>(tab_3);
-        channelSlider-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"channelSlider"</span>));
-        channelSlider-&gt;setGeometry(QRect(200, 180, 201, 21));
-        channelSlider-&gt;setFocusPolicy(<span style="color: #8470ff; font-weight: bold;">Qt</span>::ClickFocus);
-        channelSlider-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: qlineargradient(spread:pad, x1:0, y1:0, x2:1, y2:0, stop:0 rgba(245, 224, 176, 255), stop:0.09 rgba(246, 189, 237, 255), stop:0.14 rgba(194, 207, 246, 255), stop:0.19 rgba(184, 160, 168, 255), stop:0.25 rgba(171, 186, 248, 255), stop:0.32 rgba(243, 248, 224, 255), stop:0.385 rgba(249, 162, 183, 255), stop:0.47 rgba(100, 115, 124, 255), stop:0.58 rgba(251, 205, 202, 255), stop:0.65 rgba(170, 128, 185, 255), stop:0.75 rgba(252, 222, 204, 255), stop:0.805 rgba(206, 122, 218, 255), stop:0.86 rgba(254, 223, 175, 255), stop:0.91 rgba(254, 236, 244, 255), stop:1 rgba(255, 191, 221, 255));"</span>));
-        channelSlider-&gt;setOrientation(<span style="color: #8470ff; font-weight: bold;">Qt</span>::Horizontal);
-        mode_label = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(tab_3);
-        mode_label-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"mode_label"</span>));
-        mode_label-&gt;setGeometry(QRect(200, 10, 201, 31));
-        <span style="color: #63b8ff;">QFont</span> <span style="color: #7fffd4;">font3</span>;
-        font3.setFamily(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"Abyssinica SIL"</span>));
-        font3.setPointSize(18);
-        mode_label-&gt;setFont(font3);
-        mode_label-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"color: rgb(255, 255, 255);"</span>));
-        pb_value_half = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(tab_3);
-        pb_value_half-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"pb_value_half"</span>));
-        pb_value_half-&gt;setGeometry(QRect(270, 50, 60, 51));
-        pb_value_half-&gt;setMinimumSize(QSize(60, 27));
-        pb_value_half-&gt;setFont(font1);
-        pb_value_half-&gt;setStyleSheet(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"background-color: rgb(255, 85, 0);"</span>));
-        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon1</span>;
-        icon1.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/gpl_logo_sideways_red.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
-        tabWidget-&gt;addTab(tab_3, icon1, QString());
-        tab_2 = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>();
-        tab_2-&gt;setObjectName(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">"tab_2"</span>));
-        <span style="color: #63b8ff;">QIcon</span> <span style="color: #7fffd4;">icon2</span>;
-        icon2.addFile(<span style="color: #8470ff; font-weight: bold;">QString</span>::fromUtf8(<span style="color: #ffc1c1;">":/img/gpl_logo_sideways_blue.png"</span>), QSize(), <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Normal, <span style="color: #8470ff; font-weight: bold;">QIcon</span>::Off);
-        tabWidget-&gt;addTab(tab_2, icon2, QString());
-        MainWindow-&gt;setCentralWidget(centralWidget);
-
-        <span style="color: #63b8ff;">retranslateUi</span>(<span style="color: #7fffd4;">MainWindow</span>);
-
-        tabWidget-&gt;setCurrentIndex(0);
-
-
-        <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">connectSlotsByName</span>(<span style="color: #7fffd4;">MainWindow</span>);
-    } <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">setupUi</span>
-
-    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">retranslateUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
-    {
-        MainWindow-&gt;setWindowTitle(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"MainWindow"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        label-&gt;setText(QString());
-        pb_down-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"OFF"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        pb_up-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"ON"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab), QString());
-        cbutton_0-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"channel 0"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        cbutton_1-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"channel 1"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        cbutton_2-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"channel 2"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        cbutton_3-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"channel 3"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        cbutton_4-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"channel 4"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        pb_value_full-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Full"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        pb_value_off-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Off"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        pb_value_decrament-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"-"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        pb_value_incrament-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"+"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        mode_label-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"Select Channel"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        pb_value_half-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"1/2"</span>, 0, <span style="color: #8470ff; font-weight: bold;">QApplication</span>::UnicodeUTF8));
-        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab_3), QString());
-        tabWidget-&gt;setTabText(tabWidget-&gt;indexOf(tab_2), QString());
-    } <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">retranslateUi</span>
-
-};
-
-<span style="color: #00ffff;">namespace</span> <span style="color: #8470ff; font-weight: bold;">Ui</span> {
-    <span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">MainWindow</span>: <span style="color: #00ffff;">public</span> <span style="color: #63b8ff;">Ui_MainWindow</span> {};
-} <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">namespace Ui</span>
-
-QT_END_NAMESPACE
-
-<span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">UI_MAINWINDOW_H</span>
-</pre>
-
+CANNOT INCLUDE FILE ../src/testing/Burgler/ui_mainwindow.h
 </li>
 </ul>
 <ul>
@@ -6312,34 +5609,8 @@ alternate-background-color: rgb(148, 3, 0);&lt;/string&gt;
 <h4 id="sec-7-3-1"><span class="section-number-4">7.3.1</span> MainWindow.cpp</h4>
 <div class="outline-text-4" id="text-7-3-1">
 
-
-
-
-<pre class="src src-cpp"><span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"ui_mainwindow.h"</span>
-
-
-
-<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">MainWindow</span>(<span style="color: #63b8ff;">QWidget</span> *<span style="color: #7fffd4;">parent</span>) :
-    QMainWindow(parent),
-    ui(<span style="color: #00ffff;">new</span> <span style="color: #8470ff; font-weight: bold;">Ui</span>::<span style="color: #63b8ff;">MainWindow</span>)
-{
-    ui-&gt;setupUi(<span style="color: #00ffff;">this</span>);
-    <span style="color: #8470ff; font-weight: bold;">QWidget</span>::showFullScreen();
-}
-
-<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::~MainWindow()
-{
-    <span style="color: #00ffff;">delete</span> ui;
-}
-
-<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">buttonClickHandler</span>()
-{
-
-}
-</pre>
-
-</div>
+<p>CANNOT INCLUDE FILE ../src/testing/qt/hello_qt/mainwindow.cpp
+</p></div>
 
 </div>
 
@@ -6347,37 +5618,8 @@ alternate-background-color: rgb(148, 3, 0);&lt;/string&gt;
 <h4 id="sec-7-3-2"><span class="section-number-4">7.3.2</span> MainWindow.h</h4>
 <div class="outline-text-4" id="text-7-3-2">
 
-
-
-
-<pre class="src src-cpp"><span style="color: #6495ed; font-style: italic;">#if</span><span style="color: #6495ed; font-style: italic;">n</span><span style="color: #6495ed; font-style: italic;">def</span> MAINWINDOW_H
-<span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #7fffd4;">MAINWINDOW_H</span>
-
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QMainWindow&gt;</span>
-
-<span style="color: #00ffff;">namespace</span> <span style="color: #8470ff; font-weight: bold;">Ui</span> {
-<span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">MainWindow</span>;
-}
-
-<span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">MainWindow</span> : <span style="color: #00ffff;">public</span> <span style="color: #63b8ff;">QMainWindow</span>
-{
-    Q_OBJECT
-
-<span style="color: #00ffff;">public</span>:
-    <span style="color: #00ffff;">explicit</span> MainWindow(<span style="color: #63b8ff;">QWidget</span> *<span style="color: #7fffd4;">parent</span> = 0);
-    ~<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">MainWindow</span>();
-
-<span style="color: #00ffff;">public</span> <span style="color: #00ffff;">slots</span>:
-    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">buttonClickHandler</span>();
-
-<span style="color: #00ffff;">private</span>:
-    <span style="color: #8470ff; font-weight: bold;">Ui</span>::MainWindow *ui;
-};
-
-<span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">MAINWINDOW_H</span>
-</pre>
-
-</div>
+<p>CANNOT INCLUDE FILE ../src/testing/qt/hello_qt/mainwindow.h
+</p></div>
 
 </div>
 
@@ -6385,122 +5627,8 @@ alternate-background-color: rgb(148, 3, 0);&lt;/string&gt;
 <h4 id="sec-7-3-3"><span class="section-number-4">7.3.3</span> moc_mainwindow.cpp</h4>
 <div class="outline-text-4" id="text-7-3-3">
 
-
-
-
-<pre class="src src-cpp"><span style="color: #fa8072;">/****************************************************************************</span>
-<span style="color: #ff7f24; font-style: italic;">** Meta object code from reading C++ file 'mainwindow.h'</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** Created by: The Qt Meta Object Compiler version 67 (Qt 5.0.1)</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost!</span>
-<span style="color: #ff7f24; font-style: italic;">*****************************************************************************/</span>
-
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">"mainwindow.h"</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtCore/qbytearray.h&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtCore/qmetatype.h&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#if</span> !<span style="color: #6495ed; font-style: italic;">defined</span>(Q_MOC_OUTPUT_REVISION)
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"The header file 'mainwindow.h' doesn't include &lt;QObject&gt;."</span>
-<span style="color: #6495ed; font-style: italic;">#elif</span> Q_MOC_OUTPUT_REVISION != 67
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"This file was generated using the moc from 5.0.1. It"</span>
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"cannot be used with the include files from this version of Qt."</span>
-<span style="color: #6495ed; font-style: italic;">#error</span> <span style="color: #ffc1c1;">"(The moc has changed too much.)"</span>
-<span style="color: #6495ed; font-style: italic;">#endif</span>
-
-QT_BEGIN_MOC_NAMESPACE
-<span style="color: #00ffff;">struct</span> <span style="color: #63b8ff;">qt_meta_stringdata_MainWindow_t</span> {
-    <span style="color: #63b8ff;">QByteArrayData</span> <span style="color: #7fffd4;">data</span>[3];
-    <span style="color: #63b8ff;">char</span> <span style="color: #7fffd4;">stringdata</span>[32];
-};
-<span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">QT_MOC_LITERAL</span>(<span style="color: #7fffd4;">idx</span>, <span style="color: #7fffd4;">ofs</span>, <span style="color: #7fffd4;">len</span>) \
-    Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
-    offsetof(qt_meta_stringdata_MainWindow_t, stringdata) + ofs \
-        - idx * <span style="color: #00ffff;">sizeof</span>(QByteArrayData) \
-ORG-LIST-END-MARKER
-    )
-<span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">qt_meta_stringdata_MainWindow_t</span> <span style="color: #7fffd4;">qt_meta_stringdata_MainWindow</span> = {
-    {
-QT_MOC_LITERAL(0, 0, 10),
-QT_MOC_LITERAL(1, 11, 18),
-QT_MOC_LITERAL(2, 30, 0)
-    },
-    <span style="color: #ffc1c1;">"MainWindow\0buttonClickHandler\0\0"</span>
-};
-<span style="color: #6495ed; font-style: italic;">#undef</span> QT_MOC_LITERAL
-
-<span style="color: #00ffff;">static</span> <span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">uint</span> <span style="color: #7fffd4;">qt_meta_data_MainWindow</span>[] = {
-
- <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">content:</span>
-       7,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">revision</span>
-       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classname</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">classinfo</span>
-       1,   14, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">methods</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">properties</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">enums/sets</span>
-       0,    0, <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">constructors</span>
-       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">flags</span>
-       0,       <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">signalCount</span>
-
- <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">slots: name, argc, parameters, tag, flags</span>
-       1,    0,   19,    2, 0x0a,
-
- <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">slots: parameters</span>
-    <span style="color: #8470ff; font-weight: bold;">QMetaType</span>::Void,
-
-       0        <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">eod</span>
-};
-
-<span style="color: #63b8ff;">void</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_static_metacall</span>(<span style="color: #63b8ff;">QObject</span> *<span style="color: #7fffd4;">_o</span>, <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">Call</span> <span style="color: #7fffd4;">_c</span>, <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">_id</span>, <span style="color: #63b8ff;">void</span> **<span style="color: #7fffd4;">_a</span>)
-{
-    <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::InvokeMetaMethod) {
-        MainWindow *_t = <span style="color: #00ffff;">static_cast</span>&lt;MainWindow *&gt;(_o);
-        <span style="color: #00ffff;">switch</span> (_id) {
-        <span style="color: #00ffff;">case</span> 0: _t-&gt;buttonClickHandler(); <span style="color: #00ffff;">break</span>;
-        <span style="color: #00ffff;">default</span>: ;
-        }
-    }
-    <span style="color: #63b8ff;">Q_UNUSED</span>(<span style="color: #7fffd4;">_a</span>);
-}
-
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #7fffd4;">staticMetaObject</span> = {
-    { &amp;<span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::staticMetaObject, qt_meta_stringdata_MainWindow.data,
-      qt_meta_data_MainWindow,  qt_static_metacall, 0, 0}
-};
-
-
-<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">QMetaObject</span> *<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">metaObject</span>() <span style="color: #00ffff;">const</span>
-{
-    <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;metaObject ? <span style="color: #8470ff; font-weight: bold;">QObject</span>::d_ptr-&gt;dynamicMetaObject() : &amp;staticMetaObject;
-}
-
-<span style="color: #63b8ff;">void</span> *<span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_metacast</span>(<span style="color: #00ffff;">const</span> <span style="color: #63b8ff;">char</span> *<span style="color: #7fffd4;">_clname</span>)
-{
-    <span style="color: #00ffff;">if</span> (!_clname) <span style="color: #00ffff;">return</span> 0;
-    <span style="color: #00ffff;">if</span> (!strcmp(_clname, qt_meta_stringdata_MainWindow.stringdata))
-        <span style="color: #00ffff;">return</span> <span style="color: #00ffff;">static_cast</span>&lt;<span style="color: #63b8ff;">void</span>*&gt;(<span style="color: #00ffff;">const_cast</span>&lt; MainWindow*&gt;(<span style="color: #00ffff;">this</span>));
-    <span style="color: #00ffff;">return</span> <span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::qt_metacast(_clname);
-}
-
-<span style="color: #63b8ff;">int</span> <span style="color: #8470ff; font-weight: bold;">MainWindow</span>::<span style="color: #00fa9a; font-size: 110%; font-weight: bold;">qt_metacall</span>(<span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">Call</span> <span style="color: #7fffd4;">_c</span>, <span style="color: #63b8ff;">int</span> <span style="color: #7fffd4;">_id</span>, <span style="color: #63b8ff;">void</span> **<span style="color: #7fffd4;">_a</span>)
-{
-    _id = <span style="color: #8470ff; font-weight: bold;">QMainWindow</span>::qt_metacall(_c, _id, _a);
-    <span style="color: #00ffff;">if</span> (_id &lt; 0)
-        <span style="color: #00ffff;">return</span> _id;
-    <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::InvokeMetaMethod) {
-        <span style="color: #00ffff;">if</span> (_id &lt; 1)
-            qt_static_metacall(<span style="color: #00ffff;">this</span>, _c, _id, _a);
-        _id -= 1;
-    } <span style="color: #00ffff;">else</span> <span style="color: #00ffff;">if</span> (_c == <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::RegisterMethodArgumentMetaType) {
-        <span style="color: #00ffff;">if</span> (_id &lt; 1)
-            *<span style="color: #00ffff;">reinterpret_cast</span>&lt;<span style="color: #63b8ff;">int</span>*&gt;(_a[0]) = -1;
-        _id -= 1;
-    }
-    <span style="color: #00ffff;">return</span> _id;
-}
-QT_END_MOC_NAMESPACE
-</pre>
-
-</div>
+<p>CANNOT INCLUDE FILE ../src/testing/qt/hello_qt/moc_mainwindow.cpp
+</p></div>
 
 </div>
 
@@ -6508,100 +5636,8 @@ QT_END_MOC_NAMESPACE
 <h4 id="sec-7-3-4"><span class="section-number-4">7.3.4</span> ui_mainwindow.h</h4>
 <div class="outline-text-4" id="text-7-3-4">
 
-
-
-
-<pre class="src src-cpp"><span style="color: #fa8072;">/********************************************************************************</span>
-<span style="color: #ff7f24; font-style: italic;">** Form generated from reading UI file 'mainwindow.ui'</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** Created by: Qt User Interface Compiler version 5.0.1</span>
-<span style="color: #ff7f24; font-style: italic;">**</span>
-<span style="color: #ff7f24; font-style: italic;">** WARNING! All changes made in this file will be lost when recompiling UI file!</span>
-<span style="color: #ff7f24; font-style: italic;">********************************************************************************/</span>
-
-<span style="color: #6495ed; font-style: italic;">#if</span><span style="color: #6495ed; font-style: italic;">n</span><span style="color: #6495ed; font-style: italic;">def</span> UI_MAINWINDOW_H
-<span style="color: #6495ed; font-style: italic;">#define</span> <span style="color: #7fffd4;">UI_MAINWINDOW_H</span>
-
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtCore/QVariant&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QAction&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QApplication&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QButtonGroup&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QHeaderView&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QLabel&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QLineEdit&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QMainWindow&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QMenuBar&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QPushButton&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QStatusBar&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QToolBar&gt;</span>
-<span style="color: #6495ed; font-style: italic;">#include</span> <span style="color: #ffc1c1;">&lt;QtWidgets/QWidget&gt;</span>
-
-QT_BEGIN_NAMESPACE
-
-<span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">Ui_MainWindow</span>
-{
-<span style="color: #00ffff;">public</span>:
-    QWidget *centralWidget;
-    QPushButton *pushButton;
-    QLabel *label;
-    QLineEdit *lineEdit;
-    QMenuBar *menuBar;
-    QToolBar *mainToolBar;
-    QStatusBar *statusBar;
-
-    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">setupUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
-    {
-        <span style="color: #00ffff;">if</span> (MainWindow-&gt;objectName().isEmpty())
-            MainWindow-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"MainWindow"</span>));
-        MainWindow-&gt;resize(524, 300);
-        centralWidget = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QWidget</span>(MainWindow);
-        centralWidget-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"centralWidget"</span>));
-        pushButton = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QPushButton</span>(centralWidget);
-        pushButton-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"pushButton"</span>));
-        pushButton-&gt;setGeometry(QRect(20, 110, 93, 27));
-        label = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLabel</span>(centralWidget);
-        label-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"label"</span>));
-        label-&gt;setGeometry(QRect(20, 40, 62, 17));
-        lineEdit = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QLineEdit</span>(centralWidget);
-        lineEdit-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"lineEdit"</span>));
-        lineEdit-&gt;setGeometry(QRect(20, 70, 113, 27));
-        MainWindow-&gt;setCentralWidget(centralWidget);
-        menuBar = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QMenuBar</span>(MainWindow);
-        menuBar-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"menuBar"</span>));
-        menuBar-&gt;setGeometry(QRect(0, 0, 524, 25));
-        MainWindow-&gt;setMenuBar(menuBar);
-        mainToolBar = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QToolBar</span>(MainWindow);
-        mainToolBar-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"mainToolBar"</span>));
-        MainWindow-&gt;addToolBar(<span style="color: #8470ff; font-weight: bold;">Qt</span>::TopToolBarArea, mainToolBar);
-        statusBar = <span style="color: #00ffff;">new</span> <span style="color: #63b8ff;">QStatusBar</span>(MainWindow);
-        statusBar-&gt;setObjectName(QStringLiteral(<span style="color: #ffc1c1;">"statusBar"</span>));
-        MainWindow-&gt;setStatusBar(statusBar);
-
-        <span style="color: #63b8ff;">retranslateUi</span>(<span style="color: #7fffd4;">MainWindow</span>);
-        <span style="color: #8470ff; font-weight: bold;">QObject</span>::connect(pushButton, <span style="color: #63b8ff;">SIGNAL</span>(<span style="color: #7fffd4;">clicked</span>()), MainWindow, <span style="color: #63b8ff;">SLOT</span>(<span style="color: #7fffd4;">buttonClickHandler</span>()));
-
-        <span style="color: #8470ff; font-weight: bold;">QMetaObject</span>::<span style="color: #63b8ff;">connectSlotsByName</span>(<span style="color: #7fffd4;">MainWindow</span>);
-    } <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">setupUi</span>
-
-    <span style="color: #63b8ff;">void</span> <span style="color: #00fa9a; font-size: 110%; font-weight: bold;">retranslateUi</span>(<span style="color: #63b8ff;">QMainWindow</span> *<span style="color: #7fffd4;">MainWindow</span>)
-    {
-        MainWindow-&gt;setWindowTitle(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"MainWindow"</span>, 0));
-        pushButton-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"PushButton"</span>, 0));
-        label-&gt;setText(<span style="color: #8470ff; font-weight: bold;">QApplication</span>::translate(<span style="color: #ffc1c1;">"MainWindow"</span>, <span style="color: #ffc1c1;">"TextLabel"</span>, 0));
-    } <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">retranslateUi</span>
-
-};
-
-<span style="color: #00ffff;">namespace</span> <span style="color: #8470ff; font-weight: bold;">Ui</span> {
-    <span style="color: #00ffff;">class</span> <span style="color: #63b8ff;">MainWindow</span>: <span style="color: #00ffff;">public</span> <span style="color: #63b8ff;">Ui_MainWindow</span> {};
-} <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">namespace Ui</span>
-
-QT_END_NAMESPACE
-
-<span style="color: #6495ed; font-style: italic;">#endif</span> <span style="color: #fa8072;">// </span><span style="color: #ff7f24; font-style: italic;">UI_MAINWINDOW_H</span>
-</pre>
-
-</div>
+<p>CANNOT INCLUDE FILE ../src/testing/qt/hello_qt/ui_mainwindow.h
+</p></div>
 
 </div>
 
@@ -6609,109 +5645,8 @@ QT_END_NAMESPACE
 <h4 id="sec-7-3-5"><span class="section-number-4">7.3.5</span> mainwindow.ui</h4>
 <div class="outline-text-4" id="text-7-3-5">
 
-
-
-
-<pre class="src src-txt">&lt;?xml version=<span style="color: #ffc1c1;">"1.0"</span> encoding=<span style="color: #ffc1c1;">"UTF-8"</span>?&gt;
-&lt;ui version=<span style="color: #ffc1c1;">"4.0"</span>&gt;
- &lt;class&gt;MainWindow&lt;/class&gt;
- &lt;widget class=<span style="color: #ffc1c1;">"QMainWindow"</span> name=<span style="color: #ffc1c1;">"MainWindow"</span>&gt;
-  &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
-   &lt;rect&gt;
-    &lt;x&gt;0&lt;/x&gt;
-    &lt;y&gt;0&lt;/y&gt;
-    &lt;width&gt;524&lt;/width&gt;
-    &lt;height&gt;300&lt;/height&gt;
-   &lt;/rect&gt;
-  &lt;/property&gt;
-  &lt;property name=<span style="color: #ffc1c1;">"windowTitle"</span>&gt;
-   &lt;string&gt;MainWindow&lt;/string&gt;
-  &lt;/property&gt;
-  &lt;widget class=<span style="color: #ffc1c1;">"QWidget"</span> name=<span style="color: #ffc1c1;">"centralWidget"</span>&gt;
-   &lt;widget class=<span style="color: #ffc1c1;">"QPushButton"</span> name=<span style="color: #ffc1c1;">"pushButton"</span>&gt;
-    &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
-     &lt;rect&gt;
-      &lt;x&gt;20&lt;/x&gt;
-      &lt;y&gt;110&lt;/y&gt;
-      &lt;width&gt;93&lt;/width&gt;
-      &lt;height&gt;27&lt;/height&gt;
-     &lt;/rect&gt;
-    &lt;/property&gt;
-    &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
-     &lt;string&gt;PushButton&lt;/string&gt;
-    &lt;/property&gt;
-   &lt;/widget&gt;
-   &lt;widget class=<span style="color: #ffc1c1;">"QLabel"</span> name=<span style="color: #ffc1c1;">"label"</span>&gt;
-    &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
-     &lt;rect&gt;
-      &lt;x&gt;20&lt;/x&gt;
-      &lt;y&gt;40&lt;/y&gt;
-      &lt;width&gt;62&lt;/width&gt;
-      &lt;height&gt;17&lt;/height&gt;
-     &lt;/rect&gt;
-    &lt;/property&gt;
-    &lt;property name=<span style="color: #ffc1c1;">"text"</span>&gt;
-     &lt;string&gt;TextLabel&lt;/string&gt;
-    &lt;/property&gt;
-   &lt;/widget&gt;
-   &lt;widget class=<span style="color: #ffc1c1;">"QLineEdit"</span> name=<span style="color: #ffc1c1;">"lineEdit"</span>&gt;
-    &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
-     &lt;rect&gt;
-      &lt;x&gt;20&lt;/x&gt;
-      &lt;y&gt;70&lt;/y&gt;
-      &lt;width&gt;113&lt;/width&gt;
-      &lt;height&gt;27&lt;/height&gt;
-     &lt;/rect&gt;
-    &lt;/property&gt;
-   &lt;/widget&gt;
-  &lt;/widget&gt;
-  &lt;widget class=<span style="color: #ffc1c1;">"QMenuBar"</span> name=<span style="color: #ffc1c1;">"menuBar"</span>&gt;
-   &lt;property name=<span style="color: #ffc1c1;">"geometry"</span>&gt;
-    &lt;rect&gt;
-     &lt;x&gt;0&lt;/x&gt;
-     &lt;y&gt;0&lt;/y&gt;
-     &lt;width&gt;524&lt;/width&gt;
-     &lt;height&gt;25&lt;/height&gt;
-    &lt;/rect&gt;
-   &lt;/property&gt;
-  &lt;/widget&gt;
-  &lt;widget class=<span style="color: #ffc1c1;">"QToolBar"</span> name=<span style="color: #ffc1c1;">"mainToolBar"</span>&gt;
-   &lt;attribute name=<span style="color: #ffc1c1;">"toolBarArea"</span>&gt;
-    &lt;enum&gt;TopToolBarArea&lt;/enum&gt;
-   &lt;/attribute&gt;
-   &lt;attribute name=<span style="color: #ffc1c1;">"toolBarBreak"</span>&gt;
-    &lt;bool&gt;false&lt;/bool&gt;
-   &lt;/attribute&gt;
-  &lt;/widget&gt;
-  &lt;widget class=<span style="color: #ffc1c1;">"QStatusBar"</span> name=<span style="color: #ffc1c1;">"statusBar"</span>/&gt;
- &lt;/widget&gt;
- &lt;layoutdefault spacing=<span style="color: #ffc1c1;">"6"</span> margin=<span style="color: #ffc1c1;">"11"</span>/&gt;
- &lt;resources/&gt;
- &lt;connections&gt;
-  &lt;connection&gt;
-   &lt;sender&gt;pushButton&lt;/sender&gt;
-   &lt;signal&gt;clicked()&lt;/signal&gt;
-   &lt;receiver&gt;MainWindow&lt;/receiver&gt;
-   &lt;slot&gt;buttonClickHandler()&lt;/slot&gt;
-   &lt;hints&gt;
-    &lt;hint type=<span style="color: #ffc1c1;">"sourcelabel"</span>&gt;
-     &lt;x&gt;82&lt;/x&gt;
-     &lt;y&gt;165&lt;/y&gt;
-    &lt;/hint&gt;
-    &lt;hint type=<span style="color: #ffc1c1;">"destinationlabel"</span>&gt;
-     &lt;x&gt;145&lt;/x&gt;
-     &lt;y&gt;199&lt;/y&gt;
-    &lt;/hint&gt;
-   &lt;/hints&gt;
-  &lt;/connection&gt;
- &lt;/connections&gt;
- &lt;slots&gt;
-  &lt;slot&gt;buttonClickHandler()&lt;/slot&gt;
- &lt;/slots&gt;
-&lt;/ui&gt;
-</pre>
-
-</div>
+<p>CANNOT INCLUDE FILE ../src/testing/qt/hello_qt/mainwindow.ui
+</p></div>
 </div>
 
 </div>
@@ -7007,15 +5942,468 @@ QT_END_NAMESPACE
 <h2 id="sec-8"><span class="section-number-2">8</span> GNU Free Documentation License</h2>
 <div class="outline-text-2" id="text-8">
 
-<p>CANNOT INCLUDE FILE ./license.txt
-</p>
+
+
+
+<pre class="src src-txt">                GNU Free Documentation License
+                 Version 1.3, 3 November 2008
+
+ Copyright (C) 2000, 2001, 2002, 2007, 2008 Free Software Foundation, Inc.
+     &lt;<a href="http://fsf.org/">http://fsf.org/</a>&gt;
+ Everyone is permitted to copy and distribute verbatim copies
+ of this license document, but changing it is not allowed.
+
+0. PREAMBLE
+
+The purpose of this License is to make a manual, textbook, or other
+functional and useful document <span style="color: #ffc1c1;">"free"</span> in the sense of freedom: to
+assure everyone the effective freedom to copy and redistribute it,
+with or without modifying it, either commercially or noncommercially.
+Secondarily, this License preserves for the author and publisher a way
+to get credit for their work, while not being considered responsible
+for modifications made by others.
+
+This License is a kind of <span style="color: #ffc1c1;">"copyleft"</span>, which means that derivative
+works of the document must themselves be free in the same sense.  It
+complements the GNU General Public License, which is a copyleft
+license designed for free software.
+
+We have designed this License in order to use it for manuals for free
+software, because free software needs free documentation: a free
+program should come with manuals providing the same freedoms that the
+software does.  But this License is not limited to software manuals;
+it can be used for any textual work, regardless of subject matter or
+whether it is published as a printed book.  We recommend this License
+principally for works whose purpose is instruction or reference.
+
+
+1. APPLICABILITY AND DEFINITIONS
+
+This License applies to any manual or other work, in any medium, that
+contains a notice placed by the copyright holder saying it can be
+distributed under the terms of this License.  Such a notice grants a
+world-wide, royalty-free license, unlimited in duration, to use that
+work under the conditions stated herein.  The <span style="color: #ffc1c1;">"Document"</span>, below,
+refers to any such manual or work.  Any member of the public is a
+licensee, and is addressed as <span style="color: #ffc1c1;">"you"</span>.  You accept the license if you
+copy, modify or distribute the work in a way requiring permission
+under copyright law.
+
+A <span style="color: #ffc1c1;">"Modified Version"</span> of the Document means any work containing the
+Document or a portion of it, either copied verbatim, or with
+modifications and/or translated into another language.
+
+A <span style="color: #ffc1c1;">"Secondary Section"</span> is a named appendix or a front-matter section of
+the Document that deals exclusively with the relationship of the
+publishers or authors of the Document to the Document's overall
+subject (or to related matters) and contains nothing that could fall
+directly within that overall subject.  (Thus, if the Document is in
+part a textbook of mathematics, a Secondary Section may not explain
+any mathematics.)  The relationship could be a matter of historical
+connection with the subject or with related matters, or of legal,
+commercial, philosophical, ethical or political position regarding
+them.
+
+The <span style="color: #ffc1c1;">"Invariant Sections"</span> are certain Secondary Sections whose titles
+are designated, as being those of Invariant Sections, in the notice
+that says that the Document is released under this License.  If a
+section does not fit the above definition of Secondary then it is not
+allowed to be designated as Invariant.  The Document may contain zero
+Invariant Sections.  If the Document does not identify any Invariant
+Sections then there are none.
+
+The <span style="color: #ffc1c1;">"Cover Texts"</span> are certain short passages of text that are listed,
+as Front-Cover Texts or Back-Cover Texts, in the notice that says that
+the Document is released under this License.  A Front-Cover Text may
+be at most 5 words, and a Back-Cover Text may be at most 25 words.
+
+A <span style="color: #ffc1c1;">"Transparent"</span> copy of the Document means a machine-readable copy,
+represented in a format whose specification is available to the
+general public, that is suitable for revising the document
+straightforwardly with generic text editors or (for images composed of
+pixels) generic paint programs or (for drawings) some widely available
+drawing editor, and that is suitable for input to text formatters or
+for automatic translation to a variety of formats suitable for input
+to text formatters.  A copy made in an otherwise Transparent file
+format whose markup, or absence of markup, has been arranged to thwart
+or discourage subsequent modification by readers is not Transparent.
+An image format is not Transparent if used for any substantial amount
+of text.  A copy that is not <span style="color: #ffc1c1;">"Transparent"</span> is called <span style="color: #ffc1c1;">"Opaque"</span>.
+
+Examples of suitable formats for Transparent copies include plain
+ASCII without markup, Texinfo input format, LaTeX input format, SGML
+or XML using a publicly available DTD, and standard-conforming simple
+HTML, PostScript or PDF designed for human modification.  Examples of
+transparent image formats include PNG, XCF and JPG.  Opaque formats
+include proprietary formats that can be read and edited only by
+proprietary word processors, SGML or XML for which the DTD and/or
+processing tools are not generally available, and the
+machine-generated HTML, PostScript or PDF produced by some word
+processors for output purposes only.
+
+The <span style="color: #ffc1c1;">"Title Page"</span> means, for a printed book, the title page itself,
+plus such following pages as are needed to hold, legibly, the material
+this License requires to appear in the title page.  For works in
+formats which do not have any title page as such, <span style="color: #ffc1c1;">"Title Page"</span> means
+the text near the most prominent appearance of the work's title,
+preceding the beginning of the body of the text.
+
+The <span style="color: #ffc1c1;">"publisher"</span> means any person or entity that distributes copies of
+the Document to the public.
+
+A section <span style="color: #ffc1c1;">"Entitled XYZ"</span> means a named subunit of the Document whose
+title either is precisely XYZ or contains XYZ in parentheses following
+text that translates XYZ in another language.  (Here XYZ stands for a
+specific section name mentioned below, such as <span style="color: #ffc1c1;">"Acknowledgements"</span>,
+<span style="color: #ffc1c1;">"Dedications"</span>, <span style="color: #ffc1c1;">"Endorsements"</span>, or <span style="color: #ffc1c1;">"History"</span>.)  To <span style="color: #ffc1c1;">"Preserve the Title"</span>
+of such a section when you modify the Document means that it remains a
+section <span style="color: #ffc1c1;">"Entitled XYZ"</span> according to this definition.
+
+The Document may include Warranty Disclaimers next to the notice which
+states that this License applies to the Document.  These Warranty
+Disclaimers are considered to be included by reference in this
+License, but only as regards disclaiming warranties: any other
+implication that these Warranty Disclaimers may have is void and has
+no effect on the meaning of this License.
+
+2. VERBATIM COPYING
+
+You may copy and distribute the Document in any medium, either
+commercially or noncommercially, provided that this License, the
+copyright notices, and the license notice saying this License applies
+to the Document are reproduced in all copies, and that you add no
+other conditions whatsoever to those of this License.  You may not use
+technical measures to obstruct or control the reading or further
+copying of the copies you make or distribute.  However, you may accept
+compensation in exchange for copies.  If you distribute a large enough
+number of copies you must also follow the conditions in section 3.
+
+You may also lend copies, under the same conditions stated above, and
+you may publicly display copies.
+
+
+3. COPYING IN QUANTITY
+
+If you publish printed copies (or copies in media that commonly have
+printed covers) of the Document, numbering more than 100, and the
+Document's license notice requires Cover Texts, you must enclose the
+copies in covers that carry, clearly and legibly, all these Cover
+Texts: Front-Cover Texts on the front cover, and Back-Cover Texts on
+the back cover.  Both covers must also clearly and legibly identify
+you as the publisher of these copies.  The front cover must present
+the full title with all words of the title equally prominent and
+visible.  You may add other material on the covers in addition.
+Copying with changes limited to the covers, as long as they preserve
+the title of the Document and satisfy these conditions, can be treated
+as verbatim copying in other respects.
+
+If the required texts for either cover are too voluminous to fit
+legibly, you should put the first ones listed (as many as fit
+reasonably) on the actual cover, and continue the rest onto adjacent
+pages.
+
+If you publish or distribute Opaque copies of the Document numbering
+more than 100, you must either include a machine-readable Transparent
+copy along with each Opaque copy, or state in or with each Opaque copy
+a computer-network location from which the general network-using
+public has access to download using public-standard network protocols
+a complete Transparent copy of the Document, free of added material.
+If you use the latter option, you must take reasonably prudent steps,
+when you begin distribution of Opaque copies in quantity, to ensure
+that this Transparent copy will remain thus accessible at the stated
+location until at least one year after the last time you distribute an
+Opaque copy (directly or through your agents or retailers) of that
+edition to the public.
+
+It is requested, but not required, that you contact the authors of the
+Document well before redistributing any large number of copies, to
+give them a chance to provide you with an updated version of the
+Document.
+
+
+4. MODIFICATIONS
+
+You may copy and distribute a Modified Version of the Document under
+the conditions of sections 2 and 3 above, provided that you release
+the Modified Version under precisely this License, with the Modified
+Version filling the role of the Document, thus licensing distribution
+and modification of the Modified Version to whoever possesses a copy
+of it.  In addition, you must do these things in the Modified Version:
+
+A. Use in the Title Page (and on the covers, if any) a title distinct
+   from that of the Document, and from those of previous versions
+   (which should, if there were any, be listed in the History section
+   of the Document).  You may use the same title as a previous version
+   if the original publisher of that version gives permission.
+B. List on the Title Page, as authors, one or more persons or entities
+   responsible for authorship of the modifications in the Modified
+   Version, together with at least five of the principal authors of the
+   Document (all of its principal authors, if it has fewer than five),
+   unless they release you from this requirement.
+C. State on the Title page the name of the publisher of the
+   Modified Version, as the publisher.
+D. Preserve all the copyright notices of the Document.
+E. Add an appropriate copyright notice for your modifications
+   adjacent to the other copyright notices.
+F. Include, immediately after the copyright notices, a license notice
+   giving the public permission to use the Modified Version under the
+   terms of this License, in the form shown in the Addendum below.
+G. Preserve in that license notice the full lists of Invariant Sections
+   and required Cover Texts given in the Document's license notice.
+H. Include an unaltered copy of this License.
+I. Preserve the section Entitled <span style="color: #ffc1c1;">"History"</span>, Preserve its Title, and add
+   to it an item stating at least the title, year, new authors, and
+   publisher of the Modified Version as given on the Title Page.  If
+   there is no section Entitled <span style="color: #ffc1c1;">"History"</span> in the Document, create one
+   stating the title, year, authors, and publisher of the Document as
+   given on its Title Page, then add an item describing the Modified
+   Version as stated in the previous sentence.
+J. Preserve the network location, if any, given in the Document for
+   public access to a Transparent copy of the Document, and likewise
+   the network locations given in the Document for previous versions
+   it was based on.  These may be placed in the <span style="color: #ffc1c1;">"History"</span> section.
+   You may omit a network location for a work that was published at
+   least four years before the Document itself, or if the original
+   publisher of the version it refers to gives permission.
+K. For any section Entitled <span style="color: #ffc1c1;">"Acknowledgements"</span> or <span style="color: #ffc1c1;">"Dedications"</span>,
+   Preserve the Title of the section, and preserve in the section all
+   the substance and tone of each of the contributor acknowledgements
+   and/or dedications given therein.
+L. Preserve all the Invariant Sections of the Document,
+   unaltered in their text and in their titles.  Section numbers
+   or the equivalent are not considered part of the section titles.
+M. Delete any section Entitled <span style="color: #ffc1c1;">"Endorsements"</span>.  Such a section
+   may not be included in the Modified Version.
+N. Do not retitle any existing section to be Entitled <span style="color: #ffc1c1;">"Endorsements"</span>
+   or to conflict in title with any Invariant Section.
+O. Preserve any Warranty Disclaimers.
+
+If the Modified Version includes new front-matter sections or
+appendices that qualify as Secondary Sections and contain no material
+copied from the Document, you may at your option designate some or all
+of these sections as invariant.  To do this, add their titles to the
+list of Invariant Sections in the Modified Version's license notice.
+These titles must be distinct from any other section titles.
+
+You may add a section Entitled <span style="color: #ffc1c1;">"Endorsements"</span>, provided it contains
+nothing but endorsements of your Modified Version by various
+parties--for example, statements of peer review or that the text has
+been approved by an organization as the authoritative definition of a
+standard.
+
+You may add a passage of up to five words as a Front-Cover Text, and a
+passage of up to 25 words as a Back-Cover Text, to the end of the list
+of Cover Texts in the Modified Version.  Only one passage of
+Front-Cover Text and one of Back-Cover Text may be added by (or
+through arrangements made by) any one entity.  If the Document already
+includes a cover text for the same cover, previously added by you or
+by arrangement made by the same entity you are acting on behalf of,
+you may not add another; but you may replace the old one, on explicit
+permission from the previous publisher that added the old one.
+
+The author(s) and publisher(s) of the Document do not by this License
+give permission to use their names for publicity for or to assert or
+imply endorsement of any Modified Version.
+
+
+5. COMBINING DOCUMENTS
+
+You may combine the Document with other documents released under this
+License, under the terms defined in section 4 above for modified
+versions, provided that you include in the combination all of the
+Invariant Sections of all of the original documents, unmodified, and
+list them all as Invariant Sections of your combined work in its
+license notice, and that you preserve all their Warranty Disclaimers.
+
+The combined work need only contain one copy of this License, and
+multiple identical Invariant Sections may be replaced with a single
+copy.  If there are multiple Invariant Sections with the same name but
+different contents, make the title of each such section unique by
+adding at the end of it, in parentheses, the name of the original
+author or publisher of that section if known, or else a unique number.
+Make the same adjustment to the section titles in the list of
+Invariant Sections in the license notice of the combined work.
+
+In the combination, you must combine any sections Entitled <span style="color: #ffc1c1;">"History"</span>
+in the various original documents, forming one section Entitled
+<span style="color: #ffc1c1;">"History"</span>; likewise combine any sections Entitled <span style="color: #ffc1c1;">"Acknowledgements"</span>,
+and any sections Entitled <span style="color: #ffc1c1;">"Dedications"</span>.  You must delete all sections
+Entitled <span style="color: #ffc1c1;">"Endorsements"</span>.
+
+
+6. COLLECTIONS OF DOCUMENTS
+
+You may make a collection consisting of the Document and other
+documents released under this License, and replace the individual
+copies of this License in the various documents with a single copy
+that is included in the collection, provided that you follow the rules
+of this License for verbatim copying of each of the documents in all
+other respects.
+
+You may extract a single document from such a collection, and
+distribute it individually under this License, provided you insert a
+copy of this License into the extracted document, and follow this
+License in all other respects regarding verbatim copying of that
+document.
+
+
+7. AGGREGATION WITH INDEPENDENT WORKS
+
+A compilation of the Document or its derivatives with other separate
+and independent documents or works, in or on a volume of a storage or
+distribution medium, is called an <span style="color: #ffc1c1;">"aggregate"</span> if the copyright
+resulting from the compilation is not used to limit the legal rights
+of the compilation's users beyond what the individual works permit.
+When the Document is included in an aggregate, this License does not
+apply to the other works in the aggregate which are not themselves
+derivative works of the Document.
+
+If the Cover Text requirement of section 3 is applicable to these
+copies of the Document, then if the Document is less than one half of
+the entire aggregate, the Document's Cover Texts may be placed on
+covers that bracket the Document within the aggregate, or the
+electronic equivalent of covers if the Document is in electronic form.
+Otherwise they must appear on printed covers that bracket the whole
+aggregate.
+
+
+8. TRANSLATION
+
+Translation is considered a kind of modification, so you may
+distribute translations of the Document under the terms of section 4.
+Replacing Invariant Sections with translations requires special
+permission from their copyright holders, but you may include
+translations of some or all Invariant Sections in addition to the
+original versions of these Invariant Sections.  You may include a
+translation of this License, and all the license notices in the
+Document, and any Warranty Disclaimers, provided that you also include
+the original English version of this License and the original versions
+of those notices and disclaimers.  In case of a disagreement between
+the translation and the original version of this License or a notice
+or disclaimer, the original version will prevail.
+
+If a section in the Document is Entitled <span style="color: #ffc1c1;">"Acknowledgements"</span>,
+<span style="color: #ffc1c1;">"Dedications"</span>, or <span style="color: #ffc1c1;">"History"</span>, the requirement (section 4) to Preserve
+its Title (section 1) will typically require changing the actual
+title.
+
+
+9. TERMINATION
+
+You may not copy, modify, sublicense, or distribute the Document
+except as expressly provided under this License.  Any attempt
+otherwise to copy, modify, sublicense, or distribute it is void, and
+will automatically terminate your rights under this License.
+
+However, if you cease all violation of this License, then your license
+from a particular copyright holder is reinstated (a) provisionally,
+unless and until the copyright holder explicitly and finally
+terminates your license, and (b) permanently, if the copyright holder
+fails to notify you of the violation by some reasonable means prior to
+60 days after the cessation.
+
+Moreover, your license from a particular copyright holder is
+reinstated permanently if the copyright holder notifies you of the
+violation by some reasonable means, this is the first time you have
+received notice of violation of this License (for any work) from that
+copyright holder, and you cure the violation prior to 30 days after
+your receipt of the notice.
+
+Termination of your rights under this section does not terminate the
+licenses of parties who have received copies or rights from you under
+this License.  If your rights have been terminated and not permanently
+reinstated, receipt of a copy of some or all of the same material does
+not give you any rights to use it.
+
+
+10. FUTURE REVISIONS OF THIS LICENSE
+
+The Free Software Foundation may publish new, revised versions of the
+GNU Free Documentation License from time to time.  Such new versions
+will be similar in spirit to the present version, but may differ in
+detail to address new problems or concerns.  See
+http://www.gnu.org/copyleft/.
+
+Each version of the License is given a distinguishing version number.
+If the Document specifies that a particular numbered version of this
+License <span style="color: #ffc1c1;">"or any later version"</span> applies to it, you have the option of
+following the terms and conditions either of that specified version or
+of any later version that has been published (not as a draft) by the
+Free Software Foundation.  If the Document does not specify a version
+number of this License, you may choose any version ever published (not
+as a draft) by the Free Software Foundation.  If the Document
+specifies that a proxy can decide which future versions of this
+License can be used, that proxy's public statement of acceptance of a
+version permanently authorizes you to choose that version for the
+Document.
+
+11. RELICENSING
+
+<span style="color: #ffc1c1;">"Massive Multiauthor Collaboration Site"</span> (or <span style="color: #ffc1c1;">"MMC Site"</span>) means any
+World Wide Web server that publishes copyrightable works and also
+provides prominent facilities for anybody to edit those works.  A
+public wiki that anybody can edit is an example of such a server.  A
+<span style="color: #ffc1c1;">"Massive Multiauthor Collaboration"</span> (or <span style="color: #ffc1c1;">"MMC"</span>) contained in the site
+means any set of copyrightable works thus published on the MMC site.
+
+<span style="color: #ffc1c1;">"CC-BY-SA"</span> means the Creative Commons Attribution-Share Alike 3.0
+license published by Creative Commons Corporation, a not-for-profit
+corporation with a principal place of business in San Francisco,
+California, as well as future copyleft versions of that license
+published by that same organization.
+
+<span style="color: #ffc1c1;">"Incorporate"</span> means to publish or republish a Document, in whole or in
+part, as part of another Document.
+
+An MMC is <span style="color: #ffc1c1;">"eligible for relicensing"</span> if it is licensed under this
+License, and if all works that were first published under this License
+somewhere other than this MMC, and subsequently incorporated in whole or
+in part into the MMC, (1) had no cover texts or invariant sections, and
+(2) were thus incorporated prior to November 1, 2008.
+
+The operator of an MMC Site may republish an MMC contained in the site
+under CC-BY-SA on the same site at any time before August 1, 2009,
+provided the MMC is eligible for relicensing.
+
+
+ADDENDUM: How to use this License for your documents
+
+To use this License in a document you have written, include a copy of
+the License in the document and put the following copyright and
+license notices just after the title page:
+
+    Copyright (c)  YEAR  YOUR NAME.
+    Permission is granted to copy, distribute and/or modify this document
+    under the terms of the GNU Free Documentation License, Version 1.3
+    or any later version published by the Free Software Foundation;
+    with no Invariant Sections, no Front-Cover Texts, and no Back-Cover Texts.
+    A copy of the license is included in the section entitled <span style="color: #ffc1c1;">"GNU</span>
+<span style="color: #ffc1c1;">    Free Documentation License"</span>.
+
+If you have Invariant Sections, Front-Cover Texts and Back-Cover Texts,
+replace the <span style="color: #ffc1c1;">"with...Texts."</span> line with this:
+
+    with the Invariant Sections being LIST THEIR TITLES, with the
+    Front-Cover Texts being LIST, and with the Back-Cover Texts being LIST.
+
+If you have Invariant Sections without Cover Texts, or some other
+combination of the three, merge those two alternatives to suit the
+situation.
+
+If your document contains nontrivial examples of program code, we
+recommend releasing these examples in parallel under your choice of
+free software license, such as the GNU General Public License,
+to permit their use in free software.
+</pre>
+
+
 
 </div>
 </div>
 </div>
 
 <div id="postamble">
-<p class="date">Date: 2013-09-10T15:22-0400</p>
+<p class="date">Date: 2013-09-27T14:32-0400</p>
 <p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.2 with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 23</p>
 <a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
 
